@@ -16351,7 +16351,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.WIC.ImageEncoder.WriteFrame(SharpDX.Direct2D1.Image,SharpDX.WIC.BitmapFrameEncode,SharpDX.WIC.ImageParameters@)">
+        <member name="M:SharpDX.WIC.ImageEncoder.WriteFrame(SharpDX.Direct2D1.Image,SharpDX.WIC.BitmapFrameEncode,SharpDX.WIC.ImageParameters)">
             <summary>	
             No documentation.	
             </summary>	
@@ -16360,10 +16360,10 @@
             <param name="imageParametersRef">No documentation.</param>	
             <returns>No documentation.</returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICImageEncoder::WriteFrame']/*"/>	
-            <unmanaged>HRESULT IWICImageEncoder::WriteFrame([In] ID2D1Image* pImage,[In] IWICBitmapFrameEncode* pFrameEncode,[In] const WICImageParameters* pImageParameters)</unmanaged>	
+            <unmanaged>HRESULT IWICImageEncoder::WriteFrame([In] ID2D1Image* pImage,[In] IWICBitmapFrameEncode* pFrameEncode,[In, Value] const WICImageParameters* pImageParameters)</unmanaged>	
             <unmanaged-short>IWICImageEncoder::WriteFrame</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.ImageEncoder.WriteFrameThumbnail(SharpDX.Direct2D1.Image,SharpDX.WIC.BitmapFrameEncode,SharpDX.WIC.ImageParameters@)">
+        <member name="M:SharpDX.WIC.ImageEncoder.WriteFrameThumbnail(SharpDX.Direct2D1.Image,SharpDX.WIC.BitmapFrameEncode,SharpDX.WIC.ImageParameters)">
             <summary>	
             No documentation.	
             </summary>	
@@ -16372,10 +16372,10 @@
             <param name="imageParametersRef">No documentation.</param>	
             <returns>No documentation.</returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICImageEncoder::WriteFrameThumbnail']/*"/>	
-            <unmanaged>HRESULT IWICImageEncoder::WriteFrameThumbnail([In] ID2D1Image* pImage,[In] IWICBitmapFrameEncode* pFrameEncode,[In] const WICImageParameters* pImageParameters)</unmanaged>	
+            <unmanaged>HRESULT IWICImageEncoder::WriteFrameThumbnail([In] ID2D1Image* pImage,[In] IWICBitmapFrameEncode* pFrameEncode,[In, Value] const WICImageParameters* pImageParameters)</unmanaged>	
             <unmanaged-short>IWICImageEncoder::WriteFrameThumbnail</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.ImageEncoder.WriteThumbnail(SharpDX.Direct2D1.Image,SharpDX.WIC.BitmapEncoder,SharpDX.WIC.ImageParameters@)">
+        <member name="M:SharpDX.WIC.ImageEncoder.WriteThumbnail(SharpDX.Direct2D1.Image,SharpDX.WIC.BitmapEncoder,SharpDX.WIC.ImageParameters)">
             <summary>	
             No documentation.	
             </summary>	
@@ -16384,8 +16384,18 @@
             <param name="imageParametersRef">No documentation.</param>	
             <returns>No documentation.</returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICImageEncoder::WriteThumbnail']/*"/>	
-            <unmanaged>HRESULT IWICImageEncoder::WriteThumbnail([In] ID2D1Image* pImage,[In] IWICBitmapEncoder* pEncoder,[In] const WICImageParameters* pImageParameters)</unmanaged>	
+            <unmanaged>HRESULT IWICImageEncoder::WriteThumbnail([In] ID2D1Image* pImage,[In] IWICBitmapEncoder* pEncoder,[In, Value] const WICImageParameters* pImageParameters)</unmanaged>	
             <unmanaged-short>IWICImageEncoder::WriteThumbnail</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.ImageEncoder.#ctor(SharpDX.WIC.ImagingFactory2,SharpDX.Direct2D1.Device)">
+            <summary>
+            Creates a new image encoder object.
+            </summary>
+            <param name="factory">The WIC factory.</param>
+            <param name="d2dDevice">The <see cref="T:SharpDX.Direct2D1.Device"/> object on which the corresponding image encoder is created.</param>
+            <msdn-id>hh880849</msdn-id>
+              <unmanaged>HRESULT IWICImagingFactory2::CreateImageEncoder([In] ID2D1Device* pD2DDevice,[In] IWICImageEncoder** ppWICImageEncoder)</unmanaged>
+              <unmanaged-short>IWICImagingFactory2::CreateImageEncoder</unmanaged-short>
         </member>
         <member name="T:SharpDX.WIC.ImagingFactory">
             <summary>	
@@ -16775,7 +16785,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.WIC.ImagingFactory2.CreateImageEncoder(SharpDX.Direct2D1.Device,SharpDX.WIC.ImageEncoder@)">
+        <member name="M:SharpDX.WIC.ImagingFactory2.CreateImageEncoder(SharpDX.Direct2D1.Device,SharpDX.WIC.ImageEncoder)">
             <summary>	
             No documentation.	
             </summary>	
@@ -16783,7 +16793,7 @@
             <param name="wICImageEncoderOut">No documentation.</param>	
             <returns>No documentation.</returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICImagingFactory2::CreateImageEncoder']/*"/>	
-            <unmanaged>HRESULT IWICImagingFactory2::CreateImageEncoder([In] ID2D1Device* pD2DDevice,[In] IWICImageEncoder** ppWICImageEncoder)</unmanaged>	
+            <unmanaged>HRESULT IWICImagingFactory2::CreateImageEncoder([In] ID2D1Device* pD2DDevice,[Out, Fast] IWICImageEncoder** ppWICImageEncoder)</unmanaged>	
             <unmanaged-short>IWICImagingFactory2::CreateImageEncoder</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.ImagingFactory2.#ctor">
@@ -17792,6 +17802,18 @@
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='WICImageParameters::PixelHeight']/*"/>	
             <unmanaged>unsigned int PixelHeight</unmanaged>	
             <unmanaged-short>unsigned int PixelHeight</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.ImageParameters.#ctor(SharpDX.Direct2D1.PixelFormat,System.Single,System.Single,System.Single,System.Single,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.ImageParameters"/> struct.
+            </summary>
+            <param name="pixelFormat">The pixel format.</param>
+            <param name="dpiX">The dpi X.</param>
+            <param name="dpiY">The dpi Y.</param>
+            <param name="top">The top.</param>
+            <param name="left">The left.</param>
+            <param name="pixelWidth">Width in pixel.</param>
+            <param name="pixelHeight">Height in pixel.</param>
         </member>
         <member name="T:SharpDX.WIC.RawCapabilitiesInfo">
             <summary>	

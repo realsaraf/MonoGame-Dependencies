@@ -439,7 +439,7 @@
             <unmanaged>HRESULT IDirectSoundCaptureBuffer::Lock([In] unsigned int dwOffset,[In] unsigned int dwBytes,[Out] void** ppvAudioPtr1,[Out] unsigned int* pdwAudioBytes1,[Out] void** ppvAudioPtr2,[Out, Optional] unsigned int* pdwAudioBytes2,[In] unsigned int dwFlags)</unmanaged>	
             <unmanaged-short>IDirectSoundCaptureBuffer::Lock</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectSound.CaptureBufferBase.Start(System.Boolean)">
+        <member name="M:SharpDX.DirectSound.CaptureBufferBase.Start(SharpDX.Bool)">
             <summary>	
             The Start method begins capturing data into the buffer. If the buffer is already capturing, the method has no effect.	
             </summary>	
@@ -5521,6 +5521,24 @@
             <unmanaged>DSCFXAec</unmanaged>	
             <unmanaged-short>DSCFXAec</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.DirectSound.AcousticEchoCancelSettings.Enable">
+            <summary>	
+            <dd> Boolean value that specifies whether the effect is enabled. </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DSCFXAec::fEnable']/*"/>	
+            <msdn-id>microsoft.directx_sdk.reference.dscfxaec</msdn-id>	
+            <unmanaged>BOOL fEnable</unmanaged>	
+            <unmanaged-short>BOOL fEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DirectSound.AcousticEchoCancelSettings.NoiseFill">
+            <summary>	
+            <dd> Boolean value that specifies whether to enable background comfort noise, which makes the capture signal sound more natural by preventing periods of dead silence. By default, background comfort noise is not enabled. </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DSCFXAec::fNoiseFill']/*"/>	
+            <msdn-id>microsoft.directx_sdk.reference.dscfxaec</msdn-id>	
+            <unmanaged>BOOL fNoiseFill</unmanaged>	
+            <unmanaged-short>BOOL fNoiseFill</unmanaged-short>	
+        </member>
         <member name="F:SharpDX.DirectSound.AcousticEchoCancelSettings.Mode">
             <summary>	
             <dd> Operation mode. This member contains one of the following values. <table> <tr><th>Value	
@@ -5537,24 +5555,6 @@
             <msdn-id>microsoft.directx_sdk.reference.dscfxaec</msdn-id>	
             <unmanaged>DSCFX_AEC_MODE dwMode</unmanaged>	
             <unmanaged-short>DSCFX_AEC_MODE dwMode</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.DirectSound.AcousticEchoCancelSettings.Enable">
-            <summary>	
-            <dd> Boolean value that specifies whether the effect is enabled. </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DSCFXAec::fEnable']/*"/>	
-            <msdn-id>microsoft.directx_sdk.reference.dscfxaec</msdn-id>	
-            <unmanaged>BOOL fEnable</unmanaged>	
-            <unmanaged-short>BOOL fEnable</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.DirectSound.AcousticEchoCancelSettings.NoiseFill">
-            <summary>	
-            <dd> Boolean value that specifies whether to enable background comfort noise, which makes the capture signal sound more natural by preventing periods of dead silence. By default, background comfort noise is not enabled. </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DSCFXAec::fNoiseFill']/*"/>	
-            <msdn-id>microsoft.directx_sdk.reference.dscfxaec</msdn-id>	
-            <unmanaged>BOOL fNoiseFill</unmanaged>	
-            <unmanaged-short>BOOL fNoiseFill</unmanaged-short>	
         </member>
         <member name="T:SharpDX.DirectSound.BufferCapabilities">
             <summary>	
@@ -6188,7 +6188,7 @@
             <unmanaged>DSCFXNoiseSuppress</unmanaged>	
             <unmanaged-short>DSCFXNoiseSuppress</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.DirectSound.NoiseSuppressSettings.Enable">
+        <member name="F:SharpDX.DirectSound.NoiseSuppressSettings.Enable">
             <summary>	
             <dd> Boolean value that specifies whether the effect is enabled. </dd>	
             </summary>	

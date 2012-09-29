@@ -5973,6 +5973,11 @@
             <unmanaged>unsigned int Denominator</unmanaged>	
             <unmanaged-short>unsigned int Denominator</unmanaged-short>	
         </member>
+        <member name="F:SharpDX.DXGI.Rational.Empty">
+            <summary>
+            An empty rational that can be used for comparisons. 
+            </summary>
+        </member>
         <member name="M:SharpDX.DXGI.Rational.#ctor(System.Int32,System.Int32)">
             <summary>
               Initializes a new instance of the <see cref = "T:SharpDX.DXGI.Rational" /> structure.
