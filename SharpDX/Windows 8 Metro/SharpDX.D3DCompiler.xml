@@ -1720,7 +1720,7 @@
             <unmanaged>D3D_SVT_TEXTURE2DMSARRAY</unmanaged>	
             <unmanaged-short>D3D_SVT_TEXTURE2DMSARRAY</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Texturecubearray">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.TextureCubeArray">
             <summary>	
             <dd> <p>The variable is a 1D read-and-write texture.</p> </dd>	
             </summary>	
