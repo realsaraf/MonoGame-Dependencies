@@ -3844,14 +3844,14 @@
         </member>
         <member name="P:SharpDX.Direct3D11.EffectInterfaceVariable.ClassInstance">
             <summary>	
-            <p>Get a class instance.</p>	
+            <p>Get or sets a class instance.</p>	
             </summary>	
             <remarks>	
             <p><strong>Note</strong>??The DirectX SDK does not supply any compiled binaries for effects. You must use Effects 11 source to build  your effects-type application. For more information about using Effects 11 source, see Differences Between Effects 10 and Effects 11.</p>	
             </remarks>	
             <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX11EffectInterfaceVariable::GetClassInstance']/*"/>	
             <msdn-id>ff476695</msdn-id>	
-            <unmanaged>GetClassInstance</unmanaged>	
+            <unmanaged>GetClassInstance / SetClassInstance</unmanaged>	
             <unmanaged-short>GetClassInstance</unmanaged-short>	
             <unmanaged>HRESULT ID3DX11EffectInterfaceVariable::GetClassInstance([In] ID3DX11EffectClassInstanceVariable** ppEffectClassInstance)</unmanaged>
         </member>

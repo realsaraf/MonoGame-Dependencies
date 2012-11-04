@@ -400,11 +400,11 @@
         </member>
         <member name="P:SharpDX.Direct3D11.Resource.EvictionPriority">
             <summary>	
-            <p>Get the eviction priority of a resource.</p>	
+            <p>Get or sets the eviction priority of a resource.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11Resource::GetEvictionPriority']/*"/>	
             <msdn-id>ff476585</msdn-id>	
-            <unmanaged>GetEvictionPriority</unmanaged>	
+            <unmanaged>GetEvictionPriority / SetEvictionPriority</unmanaged>	
             <unmanaged-short>GetEvictionPriority</unmanaged-short>	
             <unmanaged>unsigned int ID3D11Resource::GetEvictionPriority()</unmanaged>
         </member>
@@ -905,14 +905,14 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the description for blending state that you used to create the blend-state object.</p>	
             </summary>	
             <remarks>	
-            <p>You use the description for blending state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendDescription1@,SharpDX.Direct3D11.BlendState1)"/></strong> method to create the blend-state object.</p>	
+            <p>You use the description for blending state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendStateDescription1@,SharpDX.Direct3D11.BlendState1)"/></strong> method to create the blend-state object.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11BlendState1']/*"/>	
             <msdn-id>hh404573</msdn-id>	
             <unmanaged>ID3D11BlendState1</unmanaged>	
             <unmanaged-short>ID3D11BlendState1</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.BlendState1.#ctor(SharpDX.Direct3D11.Device1,SharpDX.Direct3D11.BlendDescription1)">
+        <member name="M:SharpDX.Direct3D11.BlendState1.#ctor(SharpDX.Direct3D11.Device1,SharpDX.Direct3D11.BlendStateDescription1)">
             <summary>
               Constructs a new <see cref = "T:SharpDX.Direct3D11.BlendState1" /> based on the specified description.
             </summary>
@@ -920,7 +920,7 @@
             <param name = "description">The state description.</param>
             <returns>The newly created object.</returns>
         </member>
-        <member name="M:SharpDX.Direct3D11.BlendState1.#ctor(SharpDX.Direct3D11.Device1,SharpDX.Direct3D11.BlendDescription1@)">
+        <member name="M:SharpDX.Direct3D11.BlendState1.#ctor(SharpDX.Direct3D11.Device1,SharpDX.Direct3D11.BlendStateDescription1@)">
             <summary>
               Constructs a new <see cref = "T:SharpDX.Direct3D11.BlendState1" /> based on the specified description.
             </summary>
@@ -943,13 +943,13 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct3D11.BlendState1.GetDescription1(SharpDX.Direct3D11.BlendDescription1@)">
+        <member name="M:SharpDX.Direct3D11.BlendState1.GetDescription1(SharpDX.Direct3D11.BlendStateDescription1@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the description for blending state that you used to create the blend-state object.</p>	
             </summary>	
-            <param name="descRef"><dd> <p>A reference to a <strong><see cref="T:SharpDX.Direct3D11.BlendDescription1"/></strong> structure that receives a description of the blend state. This blend state can specify logical operations as well as blending operations.</p> </dd></param>	
+            <param name="descRef"><dd> <p>A reference to a <strong><see cref="T:SharpDX.Direct3D11.BlendStateDescription1"/></strong> structure that receives a description of the blend state. This blend state can specify logical operations as well as blending operations.</p> </dd></param>	
             <remarks>	
-            <p>You use the description for blending state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendDescription1@,SharpDX.Direct3D11.BlendState1)"/></strong> method to create the blend-state object.</p>	
+            <p>You use the description for blending state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendStateDescription1@,SharpDX.Direct3D11.BlendState1)"/></strong> method to create the blend-state object.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11BlendState1::GetDesc1']/*"/>	
             <msdn-id>hh404573</msdn-id>	
@@ -961,13 +961,191 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the description for blending state that you used to create the blend-state object.</p>	
             </summary>	
             <remarks>	
-            <p>You use the description for blending state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendDescription1@,SharpDX.Direct3D11.BlendState1)"/></strong> method to create the blend-state object.</p>	
+            <p>You use the description for blending state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendStateDescription1@,SharpDX.Direct3D11.BlendState1)"/></strong> method to create the blend-state object.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11BlendState1::GetDesc1']/*"/>	
             <msdn-id>hh404573</msdn-id>	
             <unmanaged>GetDesc1</unmanaged>	
             <unmanaged-short>GetDesc1</unmanaged-short>	
             <unmanaged>void ID3D11BlendState1::GetDesc1([Out] D3D11_BLEND_DESC1* pDesc)</unmanaged>
+        </member>
+        <member name="T:SharpDX.Direct3D11.BlendStateDescription1">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p><strong>Note</strong>??This structure is supported by the Direct3D 11.1 runtime, which is available on Windows?8 Consumer Preview and later operating systems.</p><p>Describes the blend state that you use in a call to <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendStateDescription1@,SharpDX.Direct3D11.BlendState1)"/></strong> to create a blend-state object.</p>	
+            </summary>	
+            <remarks>	
+            <p>Here are the default values for blend state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>AlphaToCoverageEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>IndependentBlendEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].BlendEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].LogicOpEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].SrcBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>RenderTarget[0].DestBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>RenderTarget[0].BlendOp</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>RenderTarget[0].SrcBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>RenderTarget[0].DestBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>RenderTarget[0].BlendOpAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>RenderTarget[0].LogicOp</td><td><see cref="F:SharpDX.Direct3D11.LogicOperation.Noop"/></td></tr> <tr><td>RenderTarget[0].RenderTargetWriteMask</td><td><see cref="F:SharpDX.Direct3D11.ColorWriteMaskFlags.All"/></td></tr> </table><p>?</p><p>If the driver type is set to <strong><see cref="F:SharpDX.Direct3D.DriverType.Hardware"/></strong>, the feature level is set to less than or equal to <strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_3"/></strong>, and the pixel format of the render target is set to <strong><see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UNorm_SRgb"/></strong>, <strong><see cref="F:SharpDX.DXGI.Format.B8G8R8A8_UNorm_SRgb"/></strong>, or <strong><see cref="F:SharpDX.DXGI.Format.B8G8R8X8_UNorm_SRgb"/></strong>, the display device performs the blend in standard RGB (sRGB) space and not in linear space. However, if the feature level is set to greater than <strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_3"/></strong>, the display device performs the blend in linear space, which is ideal.</p><p>When you set the <strong>LogicOpEnable</strong> member of the first element of the <strong>RenderTarget</strong> array (<strong>RenderTarget</strong>[0]) to <strong>TRUE</strong>, you must also set the <strong>BlendEnable</strong> member of  <strong>RenderTarget</strong>[0] to <strong><see cref="F:SharpDX.Result.False"/></strong>, and the <strong>IndependentBlendEnable</strong> member of  this <strong><see cref="T:SharpDX.Direct3D11.BlendStateDescription1"/></strong> to <strong><see cref="F:SharpDX.Result.False"/></strong>.  This reflects the limitation in hardware that you can't mix logic operations with blending across multiple render targets, and that when you use a logic operation, you must apply the same logic operation to all render targets.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC1']/*"/>	
+            <msdn-id>hh404435</msdn-id>	
+            <unmanaged>D3D11_BLEND_DESC1</unmanaged>	
+            <unmanaged-short>D3D11_BLEND_DESC1</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.BlendStateDescription1.Default">
+            <summary>
+            Returns default values for <see cref="T:SharpDX.Direct3D11.BlendStateDescription1"/>. 
+            </summary>
+            <remarks>
+            See MSDN documentation for default values.
+            </remarks>
+        </member>
+        <member name="M:SharpDX.Direct3D11.BlendStateDescription1.Clone">
+            <summary>
+            Clones this instance.
+            </summary>
+            <returns>A copy of this instance.</returns>
+            <remarks>
+            Because this structure contains an array, it is not possible to modify it without making an explicit clone method.
+            </remarks>
+        </member>
+        <member name="F:SharpDX.Direct3D11.BlendStateDescription1.AlphaToCoverageEnable">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC1::AlphaToCoverageEnable']/*"/>	
+            <unmanaged>BOOL AlphaToCoverageEnable</unmanaged>	
+            <unmanaged-short>BOOL AlphaToCoverageEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.BlendStateDescription1.IndependentBlendEnable">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC1::IndependentBlendEnable']/*"/>	
+            <unmanaged>BOOL IndependentBlendEnable</unmanaged>	
+            <unmanaged-short>BOOL IndependentBlendEnable</unmanaged-short>	
+        </member>
+        <member name="P:SharpDX.Direct3D11.BlendStateDescription1.RenderTarget">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC1::RenderTarget']/*"/>	
+            <unmanaged>D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget[8]</unmanaged>	
+            <unmanaged-short>D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.Direct3D11.RasterizerStateDescription1">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p><strong>Note</strong>??This structure is supported by the Direct3D 11.1 runtime, which is available on Windows?8 Consumer Preview and later operating systems.</p><p>Describes rasterizer state.</p>	
+            </summary>	
+            <remarks>	
+            <p>Rasterizer state defines the behavior of the rasterizer stage. To create a rasterizer-state object, call <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerStateDescription1@,SharpDX.Direct3D11.RasterizerState1)"/></strong>. To set rasterizer state, call <strong><see cref="M:SharpDX.Direct3D11.RasterizerStage.SetState(SharpDX.Direct3D11.RasterizerState)"/></strong>.</p><p>If you do not specify some rasterizer state,  the Direct3D runtime uses the following default values for rasterizer state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td><strong>FillMode</strong></td><td>Solid</td></tr> <tr><td><strong>CullMode</strong></td><td>Back</td></tr> <tr><td><strong>FrontCounterClockwise</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td><strong>DepthBias</strong></td><td>0</td></tr> <tr><td><strong>SlopeScaledDepthBias</strong></td><td>0.0f</td></tr> <tr><td><strong>DepthBiasClamp</strong></td><td>0.0f</td></tr> <tr><td><strong>DepthClipEnable</strong></td><td><strong>TRUE</strong></td></tr> <tr><td><strong>ScissorEnable</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td><strong>MultisampleEnable</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td><strong>AntialiasedLineEnable</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td><strong>ForcedSampleCount</strong></td><td>0</td></tr> </table><p>?</p><p><strong>Note</strong>??For feature levels 9.1, 9.2, 9.3, and 10.0, if you set <strong>MultisampleEnable</strong> to <strong><see cref="F:SharpDX.Result.False"/></strong>, the runtime renders all points, lines, and triangles without anti-aliasing even for render targets with a sample count greater than 1. For feature levels 10.1 and higher, the setting of <strong>MultisampleEnable</strong> has no effect on points and triangles with regard to MSAA and impacts only the selection of the line-rendering algorithm as shown in this table:</p><p> </p><table> <tr><th>Line-rendering algorithm</th><th><strong>MultisampleEnable</strong></th><th><strong>AntialiasedLineEnable</strong></th></tr> <tr><td>Aliased</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>Alpha antialiased</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td><td><strong>TRUE</strong></td></tr> <tr><td>Quadrilateral</td><td><strong>TRUE</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>Quadrilateral</td><td><strong>TRUE</strong></td><td><strong>TRUE</strong></td></tr> </table><p>?</p><p>The settings of the <strong>MultisampleEnable</strong> and <strong>AntialiasedLineEnable</strong> members apply only to multisample antialiasing (MSAA) render targets (that is, render targets with sample counts greater than 1). Because of the differences in feature-level behavior and as long as you aren?t performing any line drawing or don?t mind that lines render as quadrilaterals, we recommend that you always set <strong>MultisampleEnable</strong> to <strong>TRUE</strong> whenever you render on MSAA render targets.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>D3D11_RASTERIZER_DESC1</unmanaged>	
+            <unmanaged-short>D3D11_RASTERIZER_DESC1</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.RasterizerStateDescription1.Default">
+            <summary>
+            Returns default values for <see cref="T:SharpDX.Direct3D11.RasterizerStateDescription1"/>. 
+            </summary>
+            <remarks>
+            See MSDN documentation for default values.
+            </remarks>
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.FillMode">
+            <summary>	
+            <dd> <p>Determines the fill mode to use when rendering.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::FillMode']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>D3D11_FILL_MODE FillMode</unmanaged>	
+            <unmanaged-short>D3D11_FILL_MODE FillMode</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.CullMode">
+            <summary>	
+            <dd> <p>Indicates that triangles facing the specified direction are not drawn.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::CullMode']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>D3D11_CULL_MODE CullMode</unmanaged>	
+            <unmanaged-short>D3D11_CULL_MODE CullMode</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.IsFrontCounterClockwise">
+            <summary>	
+            <dd> <p>Specifies whether a triangle is front- or back-facing. If <strong>TRUE</strong>, a triangle will be considered front-facing if its vertices are counter-clockwise on the render target and considered back-facing if they are clockwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the opposite is true.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::FrontCounterClockwise']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>BOOL FrontCounterClockwise</unmanaged>	
+            <unmanaged-short>BOOL FrontCounterClockwise</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.DepthBias">
+            <summary>	
+            <dd> <p>Depth value added to a given pixel. For info about depth bias, see Depth Bias.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::DepthBias']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>int DepthBias</unmanaged>	
+            <unmanaged-short>int DepthBias</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.DepthBiasClamp">
+            <summary>	
+            <dd> <p>Maximum depth bias of a pixel. For info about depth bias, see Depth Bias.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::DepthBiasClamp']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>float DepthBiasClamp</unmanaged>	
+            <unmanaged-short>float DepthBiasClamp</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.SlopeScaledDepthBias">
+            <summary>	
+            <dd> <p>Scalar on a given pixel's slope. For info about depth bias, see Depth Bias.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::SlopeScaledDepthBias']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>float SlopeScaledDepthBias</unmanaged>	
+            <unmanaged-short>float SlopeScaledDepthBias</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.IsDepthClipEnabled">
+            <summary>	
+            <dd> <p>Specifies whether to enable clipping based on distance.</p> <p>The hardware always performs x and y clipping of rasterized coordinates. When <strong>DepthClipEnable</strong> is set to the default?<strong>TRUE</strong>, the hardware also clips the z value (that is, the hardware performs the last step of the following algorithm).	
+            </p> <code> 0 &lt; w	
+            -w &lt;= x &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden)	
+            -w &lt;= y &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden)	
+            0 &lt;= z &lt;= w	
+            </code> <p>When you set <strong>DepthClipEnable</strong> to <strong><see cref="F:SharpDX.Result.False"/></strong>, the hardware skips the z clipping (that is, the last step in the preceding algorithm). However, the hardware still performs the "0 &lt; w" clipping. When z clipping is disabled, improper depth ordering at the pixel level might result. However, when z clipping is disabled, stencil shadow implementations are simplified. In other words, you can avoid complex special-case handling for geometry that goes beyond the back clipping plane.	
+            </p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::DepthClipEnable']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>BOOL DepthClipEnable</unmanaged>	
+            <unmanaged-short>BOOL DepthClipEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.IsScissorEnabled">
+            <summary>	
+            <dd> <p>Specifies whether to enable scissor-rectangle culling. All pixels outside an active scissor rectangle are culled.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::ScissorEnable']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>BOOL ScissorEnable</unmanaged>	
+            <unmanaged-short>BOOL ScissorEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.IsMultisampleEnabled">
+            <summary>	
+            <dd> <p>Specifies whether to use the quadrilateral or alpha line anti-aliasing algorithm on multisample antialiasing (MSAA) render targets. Set to <strong>TRUE</strong> to use the quadrilateral line anti-aliasing algorithm and to <strong><see cref="F:SharpDX.Result.False"/></strong> to use the alpha line anti-aliasing algorithm. For more info about this member, see Remarks.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::MultisampleEnable']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>BOOL MultisampleEnable</unmanaged>	
+            <unmanaged-short>BOOL MultisampleEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.IsAntialiasedLineEnabled">
+            <summary>	
+            <dd> <p>Specifies whether to enable line antialiasing; only applies if doing line drawing and <strong>MultisampleEnable</strong> is <strong><see cref="F:SharpDX.Result.False"/></strong>. For more info about this member, see Remarks.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::AntialiasedLineEnable']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>BOOL AntialiasedLineEnable</unmanaged>	
+            <unmanaged-short>BOOL AntialiasedLineEnable</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.RasterizerStateDescription1.ForcedSampleCount">
+            <summary>	
+            <dd> <p>The sample count that is forced while UAV rendering or rasterizing. Valid values are 0, 1, 2, 4, 8, and optionally 16. 0 indicates that the sample count is not forced.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::ForcedSampleCount']/*"/>	
+            <msdn-id>hh404489</msdn-id>	
+            <unmanaged>unsigned int ForcedSampleCount</unmanaged>	
+            <unmanaged-short>unsigned int ForcedSampleCount</unmanaged-short>	
         </member>
         <member name="T:SharpDX.Direct3D11.DepthStencilStateDescription">
             <summary>	
@@ -1096,6 +1274,9 @@
             <param name="driverType">
             Type of the driver.
             </param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.DXGI.Adapter)">
             <summary>
@@ -1104,6 +1285,9 @@
             <param name="adapter">
             The adapter.
             </param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.Direct3D.DriverType,SharpDX.Direct3D11.DeviceCreationFlags)">
             <summary>
@@ -1111,6 +1295,9 @@
             </summary>
             <param name="driverType">Type of the driver.</param>
             <param name="flags">The flags.</param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.DXGI.Adapter,SharpDX.Direct3D11.DeviceCreationFlags)">
             <summary>
@@ -1118,6 +1305,9 @@
             </summary>
             <param name="adapter"></param>
             <param name="flags"></param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.Direct3D.DriverType,SharpDX.Direct3D11.DeviceCreationFlags,SharpDX.Direct3D.FeatureLevel[])">
             <summary>
@@ -1126,6 +1316,9 @@
             <param name="driverType"></param>
             <param name="flags"></param>
             <param name="featureLevels"></param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.DXGI.Adapter,SharpDX.Direct3D11.DeviceCreationFlags,SharpDX.Direct3D.FeatureLevel[])">
             <summary>
@@ -1134,6 +1327,9 @@
             <param name="adapter"></param>
             <param name="flags"></param>
             <param name="featureLevels"></param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.GetCounterMetadata(SharpDX.Direct3D11.CounterDescription)">
             <summary>
@@ -1946,14 +2142,14 @@
         </member>
         <member name="P:SharpDX.Direct3D11.Device.ExceptionMode">
             <summary>	
-            <p>Get the exception-mode flags.</p>	
+            <p>Get or sets the exception-mode flags.</p>	
             </summary>	
             <remarks>	
             <p>An exception-mode flag is used to elevate an error condition to a non-continuable exception. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11Device::GetExceptionMode']/*"/>	
             <msdn-id>ff476527</msdn-id>	
-            <unmanaged>GetExceptionMode</unmanaged>	
+            <unmanaged>GetExceptionMode / SetExceptionMode</unmanaged>	
             <unmanaged-short>GetExceptionMode</unmanaged-short>	
             <unmanaged>unsigned int ID3D11Device::GetExceptionMode()</unmanaged>
         </member>
@@ -2232,7 +2428,7 @@
             <unmanaged>HRESULT ID3D11Device1::CreateDeferredContext1([In] unsigned int ContextFlags,[Out, Fast] ID3D11DeviceContext1** ppDeferredContext)</unmanaged>	
             <unmanaged-short>ID3D11Device1::CreateDeferredContext1</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendDescription1@,SharpDX.Direct3D11.BlendState1)">
+        <member name="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendStateDescription1@,SharpDX.Direct3D11.BlendState1)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates a blend-state object that encapsulates blend state for the output-merger stage and allows the configuration of logic operations.</p>	
             </summary>	
@@ -2247,7 +2443,7 @@
             <unmanaged>HRESULT ID3D11Device1::CreateBlendState1([In] const D3D11_BLEND_DESC1* pBlendStateDesc,[Out, Fast] ID3D11BlendState1** ppBlendState)</unmanaged>	
             <unmanaged-short>ID3D11Device1::CreateBlendState1</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerDescription1@,SharpDX.Direct3D11.RasterizerState1)">
+        <member name="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerStateDescription1@,SharpDX.Direct3D11.RasterizerState1)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates a rasterizer state object that informs the rasterizer stage how to behave and forces the sample count while UAV rendering or rasterizing.</p>	
             </summary>	
@@ -2460,7 +2656,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>The rasterizer-state interface holds a description for rasterizer state that you can bind to the rasterizer stage. This rasterizer-state interface supports forced sample count.</p>	
             </summary>	
             <remarks>	
-            <p>To create a rasterizer-state object, call <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerDescription1@,SharpDX.Direct3D11.RasterizerState1)"/></strong>. To bind the rasterizer-state object to the rasterizer stage, call <strong><see cref="M:SharpDX.Direct3D11.RasterizerStage.SetState(SharpDX.Direct3D11.RasterizerState)"/></strong>.</p>	
+            <p>To create a rasterizer-state object, call <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerStateDescription1@,SharpDX.Direct3D11.RasterizerState1)"/></strong>. To bind the rasterizer-state object to the rasterizer stage, call <strong><see cref="M:SharpDX.Direct3D11.RasterizerStage.SetState(SharpDX.Direct3D11.RasterizerState)"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11RasterizerState1']/*"/>	
             <msdn-id>hh446828</msdn-id>	
@@ -2546,7 +2742,7 @@
             <unmanaged-short>GetDesc</unmanaged-short>	
             <unmanaged>void ID3D11RasterizerState::GetDesc([Out] D3D11_RASTERIZER_DESC* pDesc)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct3D11.RasterizerState1.#ctor(SharpDX.Direct3D11.Device1,SharpDX.Direct3D11.RasterizerDescription1)">
+        <member name="M:SharpDX.Direct3D11.RasterizerState1.#ctor(SharpDX.Direct3D11.Device1,SharpDX.Direct3D11.RasterizerStateDescription1)">
             <summary>
               Constructs a new <see cref = "T:SharpDX.Direct3D11.RasterizerState1" /> based on the specified description.
             </summary>
@@ -2554,7 +2750,7 @@
             <param name = "description">The state description.</param>
             <returns>The newly created object.</returns>
         </member>
-        <member name="M:SharpDX.Direct3D11.RasterizerState1.#ctor(SharpDX.Direct3D11.Device1,SharpDX.Direct3D11.RasterizerDescription1@)">
+        <member name="M:SharpDX.Direct3D11.RasterizerState1.#ctor(SharpDX.Direct3D11.Device1,SharpDX.Direct3D11.RasterizerStateDescription1@)">
             <summary>
               Constructs a new <see cref = "T:SharpDX.Direct3D11.RasterizerState1" /> based on the specified description.
             </summary>
@@ -2577,13 +2773,13 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct3D11.RasterizerState1.GetDescription1(SharpDX.Direct3D11.RasterizerDescription1@)">
+        <member name="M:SharpDX.Direct3D11.RasterizerState1.GetDescription1(SharpDX.Direct3D11.RasterizerStateDescription1@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the description for rasterizer state that you used to create the rasterizer-state object.</p>	
             </summary>	
-            <param name="descRef"><dd> <p>A reference to a <strong> <see cref="T:SharpDX.Direct3D11.RasterizerDescription1"/></strong> structure that receives a description of the rasterizer state. This rasterizer state can specify forced sample count.</p> </dd></param>	
+            <param name="descRef"><dd> <p>A reference to a <strong> <see cref="T:SharpDX.Direct3D11.RasterizerStateDescription1"/></strong> structure that receives a description of the rasterizer state. This rasterizer state can specify forced sample count.</p> </dd></param>	
             <remarks>	
-            <p>You use the description for rasterizer state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerDescription1@,SharpDX.Direct3D11.RasterizerState1)"/></strong> method to create the rasterizer-state object.</p>	
+            <p>You use the description for rasterizer state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerStateDescription1@,SharpDX.Direct3D11.RasterizerState1)"/></strong> method to create the rasterizer-state object.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11RasterizerState1::GetDesc1']/*"/>	
             <msdn-id>hh446830</msdn-id>	
@@ -2595,7 +2791,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the description for rasterizer state that you used to create the rasterizer-state object.</p>	
             </summary>	
             <remarks>	
-            <p>You use the description for rasterizer state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerDescription1@,SharpDX.Direct3D11.RasterizerState1)"/></strong> method to create the rasterizer-state object.</p>	
+            <p>You use the description for rasterizer state in a call to the <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerStateDescription1@,SharpDX.Direct3D11.RasterizerState1)"/></strong> method to create the rasterizer-state object.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11RasterizerState1::GetDesc1']/*"/>	
             <msdn-id>hh446830</msdn-id>	
@@ -4279,7 +4475,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct3D11.ResourceView.GetResource(SharpDX.Direct3D11.Resource@)">
+        <member name="M:SharpDX.Direct3D11.ResourceView.GetResource(System.IntPtr@)">
             <summary>	
             <p>Get the resource that is accessed through this view.</p>	
             </summary>	
@@ -4289,8 +4485,20 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11View::GetResource']/*"/>	
             <msdn-id>ff476643</msdn-id>	
-            <unmanaged>void ID3D11View::GetResource([Out] ID3D11Resource** ppResource)</unmanaged>	
+            <unmanaged>void ID3D11View::GetResource([Out] void** ppResource)</unmanaged>	
             <unmanaged-short>ID3D11View::GetResource</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.ResourceView.ResourceAs``1">
+            <summary>	
+            <p>Get the resource that is accessed through this view.</p>	
+            </summary>	
+            <remarks>	
+            <p>This function increments the reference count of the resource by one, so it is necessary to call <strong>Dispose</strong> on the returned reference when the application is done with it. Destroying (or losing) the returned reference before <strong>Release</strong> is called will result in a memory leak.</p>	
+            </remarks>	
+            <msdn-id>ff476643</msdn-id>	
+            <unmanaged>GetResource</unmanaged>	
+            <unmanaged-short>GetResource</unmanaged-short>	
+            <unmanaged>void ID3D11View::GetResource([Out] ID3D11Resource** ppResource)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D11.ResourceView.Resource">
             <summary>	
@@ -4299,7 +4507,6 @@
             <remarks>	
             <p>This function increments the reference count of the resource by one, so it is necessary to call <strong>Release</strong> on the returned reference when the application is done with it. Destroying (or losing) the returned reference before <strong>Release</strong> is called will result in a memory leak.</p>	
             </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11View::GetResource']/*"/>	
             <msdn-id>ff476643</msdn-id>	
             <unmanaged>GetResource</unmanaged>	
             <unmanaged-short>GetResource</unmanaged-short>	
@@ -5428,24 +5635,24 @@
         </member>
         <member name="P:SharpDX.Direct3D11.InputAssemblerStage.InputLayout">
             <summary>	
-            <p>Get a reference to the input-layout object that is bound to the input-assembler stage.</p>	
+            <p>Get or sets a reference to the input-layout object that is bound to the input-assembler stage.</p>	
             </summary>	
             <remarks>	
             <p>For information about creating an input-layout object, see Creating the Input-Layout Object.</p><p>Any returned interfaces will have their reference count incremented by one. Applications should call IUnknown::Release on the returned interfaces when they are no longer needed to avoid memory leaks.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11DeviceContext::IAGetInputLayout']/*"/>	
             <msdn-id>ff476450</msdn-id>	
-            <unmanaged>IAGetInputLayout</unmanaged>	
+            <unmanaged>IAGetInputLayout / IASetInputLayout</unmanaged>	
             <unmanaged-short>IAGetInputLayout</unmanaged-short>	
             <unmanaged>void ID3D11DeviceContext::IAGetInputLayout([Out] ID3D11InputLayout** ppInputLayout)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D11.InputAssemblerStage.PrimitiveTopology">
             <summary>	
-            <p>Get information about the primitive type, and data order that describes input data for the input assembler stage.</p>	
+            <p>Get or sets information about the primitive type, and data order that describes input data for the input assembler stage.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11DeviceContext::IAGetPrimitiveTopology']/*"/>	
             <msdn-id>ff476451</msdn-id>	
-            <unmanaged>IAGetPrimitiveTopology</unmanaged>	
+            <unmanaged>IAGetPrimitiveTopology / IASetPrimitiveTopology</unmanaged>	
             <unmanaged-short>IAGetPrimitiveTopology</unmanaged-short>	
             <unmanaged>void ID3D11DeviceContext::IAGetPrimitiveTopology([Out] D3D_PRIMITIVE_TOPOLOGY* pTopology)</unmanaged>
         </member>
@@ -6187,14 +6394,14 @@
         </member>
         <member name="P:SharpDX.Direct3D11.RasterizerStage.State">
             <summary>	
-            <p>Get the <strong>rasterizer state</strong> from the rasterizer stage of the pipeline.</p>	
+            <p>Get or sets the <strong>rasterizer state</strong> from the rasterizer stage of the pipeline.</p>	
             </summary>	
             <remarks>	
             <p>Any returned interfaces will have their reference count incremented by one. Applications should call IUnknown::Release on the returned interfaces when they are no longer needed to avoid memory leaks.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11DeviceContext::RSGetState']/*"/>	
             <msdn-id>ff476476</msdn-id>	
-            <unmanaged>RSGetState</unmanaged>	
+            <unmanaged>RSGetState / RSSetState</unmanaged>	
             <unmanaged-short>RSGetState</unmanaged-short>	
             <unmanaged>void ID3D11DeviceContext::RSGetState([Out] ID3D11RasterizerState** ppRasterizerState)</unmanaged>
         </member>
@@ -15400,42 +15607,6 @@
             <unmanaged>unsigned int UnrestrictedProtectedSharedResourceCount</unmanaged>	
             <unmanaged-short>unsigned int UnrestrictedProtectedSharedResourceCount</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.Direct3D11.BlendDescription1">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p><strong>Note</strong>??This structure is supported by the Direct3D 11.1 runtime, which is available on Windows?8 Consumer Preview and later operating systems.</p><p>Describes the blend state that you use in a call to <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateBlendState1(SharpDX.Direct3D11.BlendDescription1@,SharpDX.Direct3D11.BlendState1)"/></strong> to create a blend-state object.</p>	
-            </summary>	
-            <remarks>	
-            <p>Here are the default values for blend state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>AlphaToCoverageEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>IndependentBlendEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].BlendEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].LogicOpEnable</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>RenderTarget[0].SrcBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>RenderTarget[0].DestBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>RenderTarget[0].BlendOp</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>RenderTarget[0].SrcBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>RenderTarget[0].DestBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>RenderTarget[0].BlendOpAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>RenderTarget[0].LogicOp</td><td><see cref="F:SharpDX.Direct3D11.LogicOperation.Noop"/></td></tr> <tr><td>RenderTarget[0].RenderTargetWriteMask</td><td><see cref="F:SharpDX.Direct3D11.ColorWriteMaskFlags.All"/></td></tr> </table><p>?</p><p>If the driver type is set to <strong><see cref="F:SharpDX.Direct3D.DriverType.Hardware"/></strong>, the feature level is set to less than or equal to <strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_3"/></strong>, and the pixel format of the render target is set to <strong><see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UNorm_SRgb"/></strong>, <strong><see cref="F:SharpDX.DXGI.Format.B8G8R8A8_UNorm_SRgb"/></strong>, or <strong><see cref="F:SharpDX.DXGI.Format.B8G8R8X8_UNorm_SRgb"/></strong>, the display device performs the blend in standard RGB (sRGB) space and not in linear space. However, if the feature level is set to greater than <strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_3"/></strong>, the display device performs the blend in linear space, which is ideal.</p><p>When you set the <strong>LogicOpEnable</strong> member of the first element of the <strong>RenderTarget</strong> array (<strong>RenderTarget</strong>[0]) to <strong>TRUE</strong>, you must also set the <strong>BlendEnable</strong> member of  <strong>RenderTarget</strong>[0] to <strong><see cref="F:SharpDX.Result.False"/></strong>, and the <strong>IndependentBlendEnable</strong> member of  this <strong><see cref="T:SharpDX.Direct3D11.BlendDescription1"/></strong> to <strong><see cref="F:SharpDX.Result.False"/></strong>.  This reflects the limitation in hardware that you can't mix logic operations with blending across multiple render targets, and that when you use a logic operation, you must apply the same logic operation to all render targets.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC1']/*"/>	
-            <msdn-id>hh404435</msdn-id>	
-            <unmanaged>D3D11_BLEND_DESC1</unmanaged>	
-            <unmanaged-short>D3D11_BLEND_DESC1</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.BlendDescription1.AlphaToCoverageEnable">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC1::AlphaToCoverageEnable']/*"/>	
-            <unmanaged>BOOL AlphaToCoverageEnable</unmanaged>	
-            <unmanaged-short>BOOL AlphaToCoverageEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.BlendDescription1.IndependentBlendEnable">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC1::IndependentBlendEnable']/*"/>	
-            <unmanaged>BOOL IndependentBlendEnable</unmanaged>	
-            <unmanaged-short>BOOL IndependentBlendEnable</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Direct3D11.BlendDescription1.RenderTarget">
-            <summary>	
-            No documentation.	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_BLEND_DESC1::RenderTarget']/*"/>	
-            <unmanaged>D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget[8]</unmanaged>	
-            <unmanaged-short>D3D11_RENDER_TARGET_BLEND_DESC1 RenderTarget</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.Direct3D11.Cd3d11VideoDefault">
             <summary>	
             No documentation.	
@@ -15989,7 +16160,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p><strong>Note</strong>??This structure is supported by the Direct3D 11.1 runtime, which is available on Windows?8 Consumer Preview and later operating systems.</p><p>Describes Direct3D 11.1 feature options in the current graphics driver.</p>	
             </summary>	
             <remarks>	
-            <p>If a Microsoft Direct3D device supports feature level 11.1 (<strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_11_1"/></strong>), when you call <strong><see cref="M:SharpDX.Direct3D11.Device.CheckFeatureSupport(SharpDX.Direct3D11.Feature)"/></strong> with <strong><see cref="F:SharpDX.Direct3D11.Feature.D3D11Options"/></strong>, <strong>CheckFeatureSupport</strong> returns a reference to <strong><see cref="T:SharpDX.Direct3D11.FeatureDataD3D11Options"/></strong> with all member set to <strong>TRUE</strong> except the <strong>SAD4ShaderInstructions</strong> and <strong>ExtendedDoublesShaderInstructions</strong> members, which are optionally supported by the hardware and driver and therefore can be <strong>TRUE</strong> or <strong><see cref="F:SharpDX.Result.False"/></strong>.</p><p>Feature level 11.1  provides the following additional features:</p><ul> <li>UAVs at every shader stage with 64 UAV bind slots instead of 8.</li> <li>Target-independent rasterization, which enables you  to set the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerDescription1"/></strong> to 1, 4, 8, or 16 and to render to RTVs with a single sample.</li> <li>UAV-only rendering with the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerDescription1"/></strong> set to up to 16 (only up to 8 for feature level 11).</li> </ul><p>The runtime always sets the following groupings of members identically. That is, all the values in a grouping are <strong>TRUE</strong> or <strong><see cref="F:SharpDX.Result.False"/></strong> together:</p><ul> <li><strong>DiscardAPIsSeenByDriver</strong> and <strong>FlagsForUpdateAndCopySeenByDriver</strong></li> <li><strong>ClearView</strong>, <strong>CopyWithOverlap</strong>, <strong>ConstantBufferPartialUpdate</strong>, <strong>ConstantBufferOffsetting</strong>, and <strong>MapNoOverwriteOnDynamicConstantBuffer</strong></li> <li><strong>MapNoOverwriteOnDynamicBufferSRV</strong> and <strong>MultisampleRTVWithForcedSampleCountOne</strong></li> </ul>	
+            <p>If a Microsoft Direct3D device supports feature level 11.1 (<strong><see cref="F:SharpDX.Direct3D.FeatureLevel.Level_11_1"/></strong>), when you call <strong><see cref="M:SharpDX.Direct3D11.Device.CheckFeatureSupport(SharpDX.Direct3D11.Feature)"/></strong> with <strong><see cref="F:SharpDX.Direct3D11.Feature.D3D11Options"/></strong>, <strong>CheckFeatureSupport</strong> returns a reference to <strong><see cref="T:SharpDX.Direct3D11.FeatureDataD3D11Options"/></strong> with all member set to <strong>TRUE</strong> except the <strong>SAD4ShaderInstructions</strong> and <strong>ExtendedDoublesShaderInstructions</strong> members, which are optionally supported by the hardware and driver and therefore can be <strong>TRUE</strong> or <strong><see cref="F:SharpDX.Result.False"/></strong>.</p><p>Feature level 11.1  provides the following additional features:</p><ul> <li>UAVs at every shader stage with 64 UAV bind slots instead of 8.</li> <li>Target-independent rasterization, which enables you  to set the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerStateDescription1"/></strong> to 1, 4, 8, or 16 and to render to RTVs with a single sample.</li> <li>UAV-only rendering with the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerStateDescription1"/></strong> set to up to 16 (only up to 8 for feature level 11).</li> </ul><p>The runtime always sets the following groupings of members identically. That is, all the values in a grouping are <strong>TRUE</strong> or <strong><see cref="F:SharpDX.Result.False"/></strong> together:</p><ul> <li><strong>DiscardAPIsSeenByDriver</strong> and <strong>FlagsForUpdateAndCopySeenByDriver</strong></li> <li><strong>ClearView</strong>, <strong>CopyWithOverlap</strong>, <strong>ConstantBufferPartialUpdate</strong>, <strong>ConstantBufferOffsetting</strong>, and <strong>MapNoOverwriteOnDynamicConstantBuffer</strong></li> <li><strong>MapNoOverwriteOnDynamicBufferSRV</strong> and <strong>MultisampleRTVWithForcedSampleCountOne</strong></li> </ul>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_FEATURE_DATA_D3D11_OPTIONS']/*"/>	
             <msdn-id>hh404457</msdn-id>	
@@ -16007,7 +16178,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.UAVOnlyRenderingForcedSampleCount">
             <summary>	
-            <dd> <p>Specifies whether the driver can render with no RTVs or DSVs and only UAVs bound. The runtime sets this member to <strong>TRUE</strong> if  the driver can render with no RTVs or DSVs and only UAVs bound and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. If <strong>TRUE</strong>, you can set the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerDescription1"/></strong> to 1, 4, or 8 when you render with no RTVs or DSV and only UAVs bound.  For feature level 11.1, this member is always <strong>TRUE</strong> and you can also set <strong>ForcedSampleCount</strong> to 16 in addition to 1, 4, or 8.  The default value of <strong>ForcedSampleCount</strong> is 0, which means the same as if the value is set to 1. You can always set <strong>ForcedSampleCount</strong> to 0 or 1 for UAV-only rendering independently of how this member is set.</p> </dd>	
+            <dd> <p>Specifies whether the driver can render with no RTVs or DSVs and only UAVs bound. The runtime sets this member to <strong>TRUE</strong> if  the driver can render with no RTVs or DSVs and only UAVs bound and <strong><see cref="F:SharpDX.Result.False"/></strong> otherwise. If <strong>TRUE</strong>, you can set the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerStateDescription1"/></strong> to 1, 4, or 8 when you render with no RTVs or DSV and only UAVs bound.  For feature level 11.1, this member is always <strong>TRUE</strong> and you can also set <strong>ForcedSampleCount</strong> to 16 in addition to 1, 4, or 8.  The default value of <strong>ForcedSampleCount</strong> is 0, which means the same as if the value is set to 1. You can always set <strong>ForcedSampleCount</strong> to 0 or 1 for UAV-only rendering independently of how this member is set.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_FEATURE_DATA_D3D11_OPTIONS::UAVOnlyRenderingForcedSampleCount']/*"/>	
             <msdn-id>hh404457</msdn-id>	
@@ -16088,7 +16259,7 @@
         </member>
         <member name="F:SharpDX.Direct3D11.FeatureDataD3D11Options.MultisampleRTVWithForcedSampleCountOne">
             <summary>	
-            <dd> <p>Specifies whether the driver supports multisample rendering when you render with RTVs bound. If <strong>TRUE</strong>, you can set the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerDescription1"/></strong> to 1 with a multisample RTV bound. The driver can support this option on feature level 10 and higher.  If <strong><see cref="F:SharpDX.Result.False"/></strong>, the rasterizer-state creation will fail because the driver is legacy or the feature level is too low.</p> </dd>	
+            <dd> <p>Specifies whether the driver supports multisample rendering when you render with RTVs bound. If <strong>TRUE</strong>, you can set the <strong>ForcedSampleCount</strong> member of <strong><see cref="T:SharpDX.Direct3D11.RasterizerStateDescription1"/></strong> to 1 with a multisample RTV bound. The driver can support this option on feature level 10 and higher.  If <strong><see cref="F:SharpDX.Result.False"/></strong>, the rasterizer-state creation will fail because the driver is legacy or the feature level is too low.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_FEATURE_DATA_D3D11_OPTIONS::MultisampleRTVWithForcedSampleCountOne']/*"/>	
             <msdn-id>hh404457</msdn-id>	
@@ -16618,123 +16789,6 @@
             <unmanaged>D3D11_QUERY_MISC_FLAG MiscFlags</unmanaged>	
             <unmanaged-short>D3D11_QUERY_MISC_FLAG MiscFlags</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.Direct3D11.RasterizerDescription1">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p><strong>Note</strong>??This structure is supported by the Direct3D 11.1 runtime, which is available on Windows?8 Consumer Preview and later operating systems.</p><p>Describes rasterizer state.</p>	
-            </summary>	
-            <remarks>	
-            <p>Rasterizer state defines the behavior of the rasterizer stage. To create a rasterizer-state object, call <strong><see cref="M:SharpDX.Direct3D11.Device1.CreateRasterizerState1(SharpDX.Direct3D11.RasterizerDescription1@,SharpDX.Direct3D11.RasterizerState1)"/></strong>. To set rasterizer state, call <strong><see cref="M:SharpDX.Direct3D11.RasterizerStage.SetState(SharpDX.Direct3D11.RasterizerState)"/></strong>.</p><p>If you do not specify some rasterizer state,  the Direct3D runtime uses the following default values for rasterizer state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td><strong>FillMode</strong></td><td>Solid</td></tr> <tr><td><strong>CullMode</strong></td><td>Back</td></tr> <tr><td><strong>FrontCounterClockwise</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td><strong>DepthBias</strong></td><td>0</td></tr> <tr><td><strong>SlopeScaledDepthBias</strong></td><td>0.0f</td></tr> <tr><td><strong>DepthBiasClamp</strong></td><td>0.0f</td></tr> <tr><td><strong>DepthClipEnable</strong></td><td><strong>TRUE</strong></td></tr> <tr><td><strong>ScissorEnable</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td><strong>MultisampleEnable</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td><strong>AntialiasedLineEnable</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td><strong>ForcedSampleCount</strong></td><td>0</td></tr> </table><p>?</p><p><strong>Note</strong>??For feature levels 9.1, 9.2, 9.3, and 10.0, if you set <strong>MultisampleEnable</strong> to <strong><see cref="F:SharpDX.Result.False"/></strong>, the runtime renders all points, lines, and triangles without anti-aliasing even for render targets with a sample count greater than 1. For feature levels 10.1 and higher, the setting of <strong>MultisampleEnable</strong> has no effect on points and triangles with regard to MSAA and impacts only the selection of the line-rendering algorithm as shown in this table:</p><p> </p><table> <tr><th>Line-rendering algorithm</th><th><strong>MultisampleEnable</strong></th><th><strong>AntialiasedLineEnable</strong></th></tr> <tr><td>Aliased</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>Alpha antialiased</td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td><td><strong>TRUE</strong></td></tr> <tr><td>Quadrilateral</td><td><strong>TRUE</strong></td><td><strong><see cref="F:SharpDX.Result.False"/></strong></td></tr> <tr><td>Quadrilateral</td><td><strong>TRUE</strong></td><td><strong>TRUE</strong></td></tr> </table><p>?</p><p>The settings of the <strong>MultisampleEnable</strong> and <strong>AntialiasedLineEnable</strong> members apply only to multisample antialiasing (MSAA) render targets (that is, render targets with sample counts greater than 1). Because of the differences in feature-level behavior and as long as you aren?t performing any line drawing or don?t mind that lines render as quadrilaterals, we recommend that you always set <strong>MultisampleEnable</strong> to <strong>TRUE</strong> whenever you render on MSAA render targets.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>D3D11_RASTERIZER_DESC1</unmanaged>	
-            <unmanaged-short>D3D11_RASTERIZER_DESC1</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.FillMode">
-            <summary>	
-            <dd> <p>Determines the fill mode to use when rendering.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::FillMode']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>D3D11_FILL_MODE FillMode</unmanaged>	
-            <unmanaged-short>D3D11_FILL_MODE FillMode</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.CullMode">
-            <summary>	
-            <dd> <p>Indicates that triangles facing the specified direction are not drawn.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::CullMode']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>D3D11_CULL_MODE CullMode</unmanaged>	
-            <unmanaged-short>D3D11_CULL_MODE CullMode</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.FrontCounterClockwise">
-            <summary>	
-            <dd> <p>Specifies whether a triangle is front- or back-facing. If <strong>TRUE</strong>, a triangle will be considered front-facing if its vertices are counter-clockwise on the render target and considered back-facing if they are clockwise. If <strong><see cref="F:SharpDX.Result.False"/></strong>, the opposite is true.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::FrontCounterClockwise']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>BOOL FrontCounterClockwise</unmanaged>	
-            <unmanaged-short>BOOL FrontCounterClockwise</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.DepthBias">
-            <summary>	
-            <dd> <p>Depth value added to a given pixel. For info about depth bias, see Depth Bias.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::DepthBias']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>int DepthBias</unmanaged>	
-            <unmanaged-short>int DepthBias</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.DepthBiasClamp">
-            <summary>	
-            <dd> <p>Maximum depth bias of a pixel. For info about depth bias, see Depth Bias.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::DepthBiasClamp']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>float DepthBiasClamp</unmanaged>	
-            <unmanaged-short>float DepthBiasClamp</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.SlopeScaledDepthBias">
-            <summary>	
-            <dd> <p>Scalar on a given pixel's slope. For info about depth bias, see Depth Bias.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::SlopeScaledDepthBias']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>float SlopeScaledDepthBias</unmanaged>	
-            <unmanaged-short>float SlopeScaledDepthBias</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.DepthClipEnable">
-            <summary>	
-            <dd> <p>Specifies whether to enable clipping based on distance.</p> <p>The hardware always performs x and y clipping of rasterized coordinates. When <strong>DepthClipEnable</strong> is set to the default?<strong>TRUE</strong>, the hardware also clips the z value (that is, the hardware performs the last step of the following algorithm).	
-            </p> <code> 0 &lt; w	
-            -w &lt;= x &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden)	
-            -w &lt;= y &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden)	
-            0 &lt;= z &lt;= w	
-            </code> <p>When you set <strong>DepthClipEnable</strong> to <strong><see cref="F:SharpDX.Result.False"/></strong>, the hardware skips the z clipping (that is, the last step in the preceding algorithm). However, the hardware still performs the "0 &lt; w" clipping. When z clipping is disabled, improper depth ordering at the pixel level might result. However, when z clipping is disabled, stencil shadow implementations are simplified. In other words, you can avoid complex special-case handling for geometry that goes beyond the back clipping plane.	
-            </p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::DepthClipEnable']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>BOOL DepthClipEnable</unmanaged>	
-            <unmanaged-short>BOOL DepthClipEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.ScissorEnable">
-            <summary>	
-            <dd> <p>Specifies whether to enable scissor-rectangle culling. All pixels outside an active scissor rectangle are culled.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::ScissorEnable']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>BOOL ScissorEnable</unmanaged>	
-            <unmanaged-short>BOOL ScissorEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.MultisampleEnable">
-            <summary>	
-            <dd> <p>Specifies whether to use the quadrilateral or alpha line anti-aliasing algorithm on multisample antialiasing (MSAA) render targets. Set to <strong>TRUE</strong> to use the quadrilateral line anti-aliasing algorithm and to <strong><see cref="F:SharpDX.Result.False"/></strong> to use the alpha line anti-aliasing algorithm. For more info about this member, see Remarks.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::MultisampleEnable']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>BOOL MultisampleEnable</unmanaged>	
-            <unmanaged-short>BOOL MultisampleEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.AntialiasedLineEnable">
-            <summary>	
-            <dd> <p>Specifies whether to enable line antialiasing; only applies if doing line drawing and <strong>MultisampleEnable</strong> is <strong><see cref="F:SharpDX.Result.False"/></strong>. For more info about this member, see Remarks.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::AntialiasedLineEnable']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>BOOL AntialiasedLineEnable</unmanaged>	
-            <unmanaged-short>BOOL AntialiasedLineEnable</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.Direct3D11.RasterizerDescription1.ForcedSampleCount">
-            <summary>	
-            <dd> <p>The sample count that is forced while UAV rendering or rasterizing. Valid values are 0, 1, 2, 4, 8, and optionally 16. 0 indicates that the sample count is not forced.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RASTERIZER_DESC1::ForcedSampleCount']/*"/>	
-            <msdn-id>hh404489</msdn-id>	
-            <unmanaged>unsigned int ForcedSampleCount</unmanaged>	
-            <unmanaged-short>unsigned int ForcedSampleCount</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.Direct3D11.RenderTargetBlendDescription">
             <summary>	
             <p>Describes the blend state for a render target.</p>	
@@ -16837,7 +16891,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p><strong>Note</strong>??This structure is supported by the Direct3D 11.1 runtime, which is available on Windows?8 Consumer Preview and later operating systems.</p><p>Describes the blend state for a render target.</p>	
             </summary>	
             <remarks>	
-            <p>You specify an array of <strong><see cref="T:SharpDX.Direct3D11.RenderTargetBlendDescription1"/></strong> structures in the <strong>RenderTarget</strong> member of the <strong><see cref="T:SharpDX.Direct3D11.BlendDescription1"/></strong> structure to describe the blend states for render targets; you can bind up to eight render targets to the output-merger stage at one time.</p><p>For info about how blending is done, see the output-merger stage.</p><p>Here are the default values for blend state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>BlendEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>LogicOpEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>SrcBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>DestBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>BlendOp</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>SrcBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>DestBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>BlendOpAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>LogicOp</td><td><see cref="F:SharpDX.Direct3D11.LogicOperation.Noop"/></td></tr> <tr><td>RenderTargetWriteMask</td><td><see cref="F:SharpDX.Direct3D11.ColorWriteMaskFlags.All"/></td></tr> </table><p>?</p>	
+            <p>You specify an array of <strong><see cref="T:SharpDX.Direct3D11.RenderTargetBlendDescription1"/></strong> structures in the <strong>RenderTarget</strong> member of the <strong><see cref="T:SharpDX.Direct3D11.BlendStateDescription1"/></strong> structure to describe the blend states for render targets; you can bind up to eight render targets to the output-merger stage at one time.</p><p>For info about how blending is done, see the output-merger stage.</p><p>Here are the default values for blend state.</p><table> <tr><th>State</th><th>Default Value</th></tr> <tr><td>BlendEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>LogicOpEnable</td><td><see cref="F:SharpDX.Result.False"/></td></tr> <tr><td>SrcBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>DestBlend</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>BlendOp</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>SrcBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.One"/></td></tr> <tr><td>DestBlendAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOption.Zero"/></td></tr> <tr><td>BlendOpAlpha</td><td><see cref="F:SharpDX.Direct3D11.BlendOperation.Add"/></td></tr> <tr><td>LogicOp</td><td><see cref="F:SharpDX.Direct3D11.LogicOperation.Noop"/></td></tr> <tr><td>RenderTargetWriteMask</td><td><see cref="F:SharpDX.Direct3D11.ColorWriteMaskFlags.All"/></td></tr> </table><p>?</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='D3D11_RENDER_TARGET_BLEND_DESC1']/*"/>	
             <msdn-id>hh404492</msdn-id>	
@@ -16853,7 +16907,7 @@
             <unmanaged>BOOL BlendEnable</unmanaged>	
             <unmanaged-short>BOOL BlendEnable</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.RenderTargetBlendDescription1.LogicOpEnable">
+        <member name="F:SharpDX.Direct3D11.RenderTargetBlendDescription1.IsLogicOperationEnabled">
             <summary>	
             <dd> <p>Enable (or disable) a logical operation.</p> </dd>	
             </summary>	
@@ -16916,7 +16970,7 @@
             <unmanaged>D3D11_BLEND_OP BlendOpAlpha</unmanaged>	
             <unmanaged-short>D3D11_BLEND_OP BlendOpAlpha</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.RenderTargetBlendDescription1.LogicOp">
+        <member name="F:SharpDX.Direct3D11.RenderTargetBlendDescription1.LogicOperation">
             <summary>	
             <dd> <p>A  <strong><see cref="T:SharpDX.Direct3D11.LogicOperation"/></strong>-typed value that specifies the logical operation to configure for the render target.</p> </dd>	
             </summary>	
@@ -20017,6 +20071,11 @@
         <member name="F:SharpDX.Direct3D11.ImageLoadInformation.FileDefaultValue">
             <summary>
             The default value for load options.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Direct3D11.ImageLoadInformation.Default">
+            <summary>
+            Gets an ImageLoadInformation that is setup with all default values (<see cref="F:SharpDX.Direct3D11.ImageLoadInformation.FileDefaultValue"/>).
             </summary>
         </member>
         <member name="T:SharpDX.Direct3D11.ModuleInit">

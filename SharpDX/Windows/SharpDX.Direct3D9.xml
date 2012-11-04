@@ -1468,14 +1468,14 @@
         </member>
         <member name="P:SharpDX.Direct3D9.BaseTexture.AutoMipGenerationFilter">
             <summary>	
-            <p>Get the filter type that is used for automatically generated mipmap sublevels.</p>	
+            <p>Get or sets the filter type that is used for automatically generated mipmap sublevels.</p>	
             </summary>	
             <remarks>	
             <p>Changing the filter type "dirties" the mipmap sublevels and causes them to be regenerated.</p><p>The (default) filter type set at texture creation time is <see cref="F:SharpDX.Direct3D9.TextureFilter.Linear"/>. If the driver doesn't support a linear filter, the filter type will be set to <see cref="F:SharpDX.Direct3D9.TextureFilter.Point"/>. All filter types supported by the driver for regular texture filtering are supported for autogeneration except <see cref="F:SharpDX.Direct3D9.TextureFilter.None"/>. For each resource type, drivers should support all the filter types reported in the corresponding texture, CubeTexture, and volumetexture filter caps. For more information about texture types, see <strong><see cref="T:SharpDX.Direct3D9.TextureFilter"/></strong>.</p><p>This method has no effect if the texture is not created with <see cref="F:SharpDX.Direct3D9.Usage.AutoGenerateMipMap"/>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DBaseTexture9::GetAutoGenFilterType']/*"/>	
             <msdn-id>bb174324</msdn-id>	
-            <unmanaged>GetAutoGenFilterType</unmanaged>	
+            <unmanaged>GetAutoGenFilterType / SetAutoGenFilterType</unmanaged>	
             <unmanaged-short>GetAutoGenFilterType</unmanaged-short>	
             <unmanaged>D3DTEXTUREFILTERTYPE IDirect3DBaseTexture9::GetAutoGenFilterType()</unmanaged>
         </member>
@@ -6385,161 +6385,161 @@
         </member>
         <member name="P:SharpDX.Direct3D9.Device.DepthStencilSurface">
             <summary>	
-            <p>Gets the depth-stencil surface owned by the Direct3DDevice object.</p>	
+            <p>Gets or sets the depth-stencil surface owned by the Direct3DDevice object.</p>	
             </summary>	
             <remarks>	
             <p>Calling this method will increase the internal reference count on the <strong><see cref="T:SharpDX.Direct3D9.Surface"/></strong> interface. Failure to call <strong>IUnknown::Release</strong> when finished using this <strong><see cref="T:SharpDX.Direct3D9.Surface"/></strong> interface results in a memory leak.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetDepthStencilSurface']/*"/>	
             <msdn-id>bb174384</msdn-id>	
-            <unmanaged>GetDepthStencilSurface</unmanaged>	
+            <unmanaged>GetDepthStencilSurface / SetDepthStencilSurface</unmanaged>	
             <unmanaged-short>GetDepthStencilSurface</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetDepthStencilSurface([Out] IDirect3DSurface9** ppZStencilSurface)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.Viewport">
             <summary>	
-            <p>Retrieves the viewport parameters currently set for the device.</p>	
+            <p>Retrieves or sets the viewport parameters currently set for the device.</p>	
             </summary>	
             <remarks>	
             <p>Typically, methods that return state will not work on a device that is created using <see cref="F:SharpDX.Direct3D9.CreateFlags.PureDevice"/>. This method however, will work even on a pure device.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetViewport']/*"/>	
             <msdn-id>bb174420</msdn-id>	
-            <unmanaged>GetViewport</unmanaged>	
+            <unmanaged>GetViewport / SetViewport</unmanaged>	
             <unmanaged-short>GetViewport</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetViewport([Out] D3DVIEWPORT9* pViewport)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.Material">
             <summary>	
-            <p>Retrieves the current material properties for the device.</p>	
+            <p>Retrieves or sets the current material properties for the device.</p>	
             </summary>	
             <remarks>	
             <p>This method will not return device state for a device that is created using <see cref="F:SharpDX.Direct3D9.CreateFlags.PureDevice"/>. If you want to use this method, you must create your device with any of the other values in <see cref="T:SharpDX.Direct3D9.CreateFlags"/>. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetMaterial']/*"/>	
             <msdn-id>bb174394</msdn-id>	
-            <unmanaged>GetMaterial</unmanaged>	
+            <unmanaged>GetMaterial / SetMaterial</unmanaged>	
             <unmanaged-short>GetMaterial</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetMaterial([Out] D3DMATERIAL9* pMaterial)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.ClipStatus">
             <summary>	
-            <p>Retrieves the clip status.</p>	
+            <p>Retrieves or sets the clip status.</p>	
             </summary>	
             <remarks>	
             <p>When clipping is enabled during vertex processing (by <strong><see cref="M:SharpDX.Direct3D9.Device.ProcessVertices(System.Int32,System.Int32,System.Int32,SharpDX.Direct3D9.VertexBuffer,SharpDX.Direct3D9.VertexDeclaration,SharpDX.Direct3D9.LockFlags)"/></strong>, <strong><see cref="M:SharpDX.Direct3D9.Device.DrawPrimitives(SharpDX.Direct3D9.PrimitiveType,System.Int32,System.Int32)"/></strong>, or other drawing functions), Direct3D computes a clip code for every vertex. The clip code is a combination of D3DCS_* bits. When a vertex is outside a particular clipping plane, the corresponding bit is set in the clipping code. Direct3D maintains the clip status using <strong><see cref="T:SharpDX.Direct3D9.ClipStatus"/></strong>, which has ClipUnion and ClipIntersection members. ClipUnion is a bitwise "OR" of all vertex clip codes and ClipIntersection is a bitwise "AND" of all vertex clip codes. Initial values are zero for ClipUnion and 0xFFFFFFFF for ClipIntersection. When <see cref="F:SharpDX.Direct3D9.RenderState.Clipping"/> is set to <strong><see cref="F:SharpDX.Result.False"/></strong>, ClipUnion and ClipIntersection are set to zero. Direct3D updates the clip status during drawing calls. To compute clip status for a particular object, set ClipUnion and ClipIntersection to their initial value and continue drawing.</p><p>Clip status is not updated by <strong><see cref="M:SharpDX.Direct3D9.Device.DrawRectanglePatch(System.Int32,System.Single[])"/></strong> and <strong><see cref="M:SharpDX.Direct3D9.Device.DrawTrianglePatch(System.Int32,System.Single[])"/></strong> because there is no software emulation for them.</p><p>Clip status is used during software vertex processing. Therefore, this method is not supported on pure or nonpure hardware processing devices. For more information about pure devices, see <see cref="T:SharpDX.Direct3D9.CreateFlags"/>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetClipStatus']/*"/>	
             <msdn-id>bb174381</msdn-id>	
-            <unmanaged>GetClipStatus</unmanaged>	
+            <unmanaged>GetClipStatus / SetClipStatus</unmanaged>	
             <unmanaged-short>GetClipStatus</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetClipStatus([Out] D3DCLIPSTATUS9* pClipStatus)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.CurrentTexturePalette">
             <summary>	
-            <p>Retrieves the current texture palette.</p>	
+            <p>Retrieves or sets the current texture palette.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetCurrentTexturePalette']/*"/>	
             <msdn-id>bb174383</msdn-id>	
-            <unmanaged>GetCurrentTexturePalette</unmanaged>	
+            <unmanaged>GetCurrentTexturePalette / SetCurrentTexturePalette</unmanaged>	
             <unmanaged-short>GetCurrentTexturePalette</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetCurrentTexturePalette([Out] unsigned int* PaletteNumber)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.ScissorRect">
             <summary>	
-            <p>Gets the scissor rectangle.</p>	
+            <p>Gets or sets the scissor rectangle.</p>	
             </summary>	
             <remarks>	
             <p>The scissor rectangle is used as a rectangular clipping region.</p><p>See Rectangles (Direct3D 9) for further information on the use of rectangles in DirectX.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetScissorRect']/*"/>	
             <msdn-id>bb174407</msdn-id>	
-            <unmanaged>GetScissorRect</unmanaged>	
+            <unmanaged>GetScissorRect / SetScissorRect</unmanaged>	
             <unmanaged-short>GetScissorRect</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetScissorRect([Out] RECT* pRect)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.SoftwareVertexProcessing">
             <summary>	
-            <p>Gets the vertex processing (hardware or software) mode.</p>	
+            <p>Gets or sets the vertex processing (hardware or software) mode.</p>	
             </summary>	
             <remarks>	
             <p>An application can create a mixed-mode device to use both the software vertex processing and the hardware vertex processing. To switch between the two vertex processing modes in DirectX 8.x, use <strong><see cref="M:SharpDX.Direct3D9.Device.SetRenderState(SharpDX.Direct3D9.RenderState,System.Boolean)"/></strong> with the render state D3DRS_SOFTWAREVERTEXPROCESSING and the appropriate <see cref="T:SharpDX.Bool"/> argument. The drawback of the render state approach was the difficulty in defining the semantics for state blocks. Applications and the runtime had to do extra work and be careful while recording and playing back state blocks.</p><p>In Direct3D 9, use <strong><see cref="M:SharpDX.Direct3D9.Device.SetSoftwareVertexProcessing(SharpDX.Bool)"/></strong> instead. This new API is not recorded by StateBlocks.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetSoftwareVertexProcessing']/*"/>	
             <msdn-id>bb174408</msdn-id>	
-            <unmanaged>GetSoftwareVertexProcessing</unmanaged>	
+            <unmanaged>GetSoftwareVertexProcessing / SetSoftwareVertexProcessing</unmanaged>	
             <unmanaged-short>GetSoftwareVertexProcessing</unmanaged-short>	
             <unmanaged>BOOL IDirect3DDevice9::GetSoftwareVertexProcessing()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.NPatchMode">
             <summary>	
-            <p>Gets the N-patch mode segments.</p>	
+            <p>Gets or sets the N-patch mode segments.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetNPatchMode']/*"/>	
             <msdn-id>bb174395</msdn-id>	
-            <unmanaged>GetNPatchMode</unmanaged>	
+            <unmanaged>GetNPatchMode / SetNPatchMode</unmanaged>	
             <unmanaged-short>GetNPatchMode</unmanaged-short>	
             <unmanaged>float IDirect3DDevice9::GetNPatchMode()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.VertexDeclaration">
             <summary>	
-            <p>Gets a vertex shader declaration.</p>	
+            <p>Gets or sets a vertex shader declaration.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetVertexDeclaration']/*"/>	
             <msdn-id>bb174415</msdn-id>	
-            <unmanaged>GetVertexDeclaration</unmanaged>	
+            <unmanaged>GetVertexDeclaration / SetVertexDeclaration</unmanaged>	
             <unmanaged-short>GetVertexDeclaration</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetVertexDeclaration([Out] IDirect3DVertexDeclaration9** ppDecl)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.VertexFormat">
             <summary>	
-            <p>Gets the fixed vertex function declaration.</p>	
+            <p>Gets or sets the fixed vertex function declaration.</p>	
             </summary>	
             <remarks>	
             <p>The fixed vertex function declaration is a set of FVF flags that determine how vertices processed by the fixed function pipeline will be used.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetFVF']/*"/>	
             <msdn-id>bb174389</msdn-id>	
-            <unmanaged>GetFVF</unmanaged>	
+            <unmanaged>GetFVF / SetFVF</unmanaged>	
             <unmanaged-short>GetFVF</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetFVF([Out] D3DFVF* pFVF)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.VertexShader">
             <summary>	
-            <p>Retrieves the currently set vertex shader.</p>	
+            <p>Retrieves or sets the currently set vertex shader.</p>	
             </summary>	
             <remarks>	
             <p>Typically, methods that return state will not work on a device that is created using <see cref="F:SharpDX.Direct3D9.CreateFlags.PureDevice"/>. This method however, will work even on a pure device because it returns an interface.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetVertexShader']/*"/>	
             <msdn-id>bb174416</msdn-id>	
-            <unmanaged>GetVertexShader</unmanaged>	
+            <unmanaged>GetVertexShader / SetVertexShader</unmanaged>	
             <unmanaged-short>GetVertexShader</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetVertexShader([Out] IDirect3DVertexShader9** ppShader)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.Indices">
             <summary>	
-            <p>Retrieves index data.</p>	
+            <p>Retrieves or sets index data.</p>	
             </summary>	
             <remarks>	
             <p> Calling this method will increase the internal reference count on the <strong><see cref="T:SharpDX.Direct3D9.IndexBuffer"/></strong> interface. Failure to call <strong>IUnknown::Release</strong> when finished using this <strong><see cref="T:SharpDX.Direct3D9.IndexBuffer"/></strong> interface results in a memory leak.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetIndices']/*"/>	
             <msdn-id>bb174391</msdn-id>	
-            <unmanaged>GetIndices</unmanaged>	
+            <unmanaged>GetIndices / SetIndices</unmanaged>	
             <unmanaged-short>GetIndices</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetIndices([Out] IDirect3DIndexBuffer9** ppIndexData)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Device.PixelShader">
             <summary>	
-            <p>Retrieves the currently set pixel shader.</p>	
+            <p>Retrieves or sets the currently set pixel shader.</p>	
             </summary>	
             <remarks>	
             <p>This method will not work on a device that is created using <see cref="F:SharpDX.Direct3D9.CreateFlags.PureDevice"/>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9::GetPixelShader']/*"/>	
             <msdn-id>bb174398</msdn-id>	
-            <unmanaged>GetPixelShader</unmanaged>	
+            <unmanaged>GetPixelShader / SetPixelShader</unmanaged>	
             <unmanaged-short>GetPixelShader</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9::GetPixelShader([Out] IDirect3DPixelShader9** ppShader)</unmanaged>
         </member>
@@ -7000,27 +7000,27 @@
         </member>
         <member name="P:SharpDX.Direct3D9.DeviceEx.GPUThreadPriority">
             <summary>	
-            <p>Get the priority of the GPU thread.</p>	
+            <p>Get or sets the priority of the GPU thread.</p>	
             </summary>	
             <remarks>	
             <p>Use <strong><see cref="M:SharpDX.Direct3D9.DeviceEx.SetGPUThreadPriority(System.Int32)"/></strong> to set the priority of a thread.</p><p>This method will retrieve the priority of the thread stored with the Direct3D device even if it was created with the <see cref="F:SharpDX.Direct3D9.CreateFlags.PureDevice"/> flag.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9Ex::GetGPUThreadPriority']/*"/>	
             <msdn-id>bb174341</msdn-id>	
-            <unmanaged>GetGPUThreadPriority</unmanaged>	
+            <unmanaged>GetGPUThreadPriority / SetGPUThreadPriority</unmanaged>	
             <unmanaged-short>GetGPUThreadPriority</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9Ex::GetGPUThreadPriority([Out] int* pPriority)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.DeviceEx.MaximumFrameLatency">
             <summary>	
-            <p>Retrieves the number of frames of data that the system is allowed to queue.</p>	
+            <p>Retrieves or sets the number of frames of data that the system is allowed to queue.</p>	
             </summary>	
             <remarks>	
             <p>Frame latency is the number of frames that are allowed to be stored in a queue, before submission for rendering. Latency is often used to control how the CPU chooses between responding to user input and frames that are in the render queue.</p><p>It is often beneficial for applications that have no user input (for example, video playback) to queue more than 3 frames of data.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDirect3DDevice9Ex::GetMaximumFrameLatency']/*"/>	
             <msdn-id>bb174342</msdn-id>	
-            <unmanaged>GetMaximumFrameLatency</unmanaged>	
+            <unmanaged>GetMaximumFrameLatency / SetMaximumFrameLatency</unmanaged>	
             <unmanaged-short>GetMaximumFrameLatency</unmanaged-short>	
             <unmanaged>HRESULT IDirect3DDevice9Ex::GetMaximumFrameLatency([Out] unsigned int* pMaxLatency)</unmanaged>
         </member>
@@ -8194,14 +8194,14 @@
         </member>
         <member name="P:SharpDX.Direct3D9.Effect.StateManager">
             <summary>	
-            <p>Get the effect state manager.</p>	
+            <p>Get or sets the effect state manager.</p>	
             </summary>	
             <remarks>	
             <p>The <strong><see cref="T:SharpDX.Direct3D9.EffectStateManager"/></strong> is a user-implemented interface that furnishes callbacks into an application for setting device state from an effect.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXEffect::GetStateManager']/*"/>	
             <msdn-id>bb205828</msdn-id>	
-            <unmanaged>GetStateManager</unmanaged>	
+            <unmanaged>GetStateManager / SetStateManager</unmanaged>	
             <unmanaged-short>GetStateManager</unmanaged-short>	
             <unmanaged>HRESULT ID3DXEffect::GetStateManager([Out] ID3DXEffectStateManager** ppManager)</unmanaged>
         </member>
@@ -23084,14 +23084,14 @@
         </member>
         <member name="P:SharpDX.Direct3D9.AnimationController.PriorityBlend">
             <summary>	
-            <p>Gets the current priority blending weight used by the animation controller.</p>	
+            <p>Gets or sets the current priority blending weight used by the animation controller.</p>	
             </summary>	
             <remarks>	
             <p>The priority blending weight is used to blend high and low priority tracks together.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXAnimationController::GetPriorityBlend']/*"/>	
             <msdn-id>bb205639</msdn-id>	
-            <unmanaged>GetPriorityBlend</unmanaged>	
+            <unmanaged>GetPriorityBlend / SetPriorityBlend</unmanaged>	
             <unmanaged-short>GetPriorityBlend</unmanaged-short>	
             <unmanaged>float ID3DXAnimationController::GetPriorityBlend()</unmanaged>
         </member>
@@ -25086,51 +25086,51 @@
         </member>
         <member name="P:SharpDX.Direct3D9.Line.Pattern">
             <summary>	
-            <p>Gets the line stipple pattern.</p>	
+            <p>Gets or sets the line stipple pattern.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXLine::GetPattern']/*"/>	
             <msdn-id>bb174024</msdn-id>	
-            <unmanaged>GetPattern</unmanaged>	
+            <unmanaged>GetPattern / SetPattern</unmanaged>	
             <unmanaged-short>GetPattern</unmanaged-short>	
             <unmanaged>unsigned int ID3DXLine::GetPattern()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Line.PatternScale">
             <summary>	
-            <p>Gets the stipple-pattern scale value.</p>	
+            <p>Gets or sets the stipple-pattern scale value.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXLine::GetPatternScale']/*"/>	
             <msdn-id>bb174025</msdn-id>	
-            <unmanaged>GetPatternScale</unmanaged>	
+            <unmanaged>GetPatternScale / SetPatternScale</unmanaged>	
             <unmanaged-short>GetPatternScale</unmanaged-short>	
             <unmanaged>float ID3DXLine::GetPatternScale()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Line.Width">
             <summary>	
-            <p>Gets the thickness of the line.</p>	
+            <p>Gets or sets the thickness of the line.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXLine::GetWidth']/*"/>	
             <msdn-id>bb174026</msdn-id>	
-            <unmanaged>GetWidth</unmanaged>	
+            <unmanaged>GetWidth / SetWidth</unmanaged>	
             <unmanaged-short>GetWidth</unmanaged-short>	
             <unmanaged>float ID3DXLine::GetWidth()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Line.Antialias">
             <summary>	
-            <p>Gets the line antialiasing state.</p>	
+            <p>Gets or sets the line antialiasing state.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXLine::GetAntialias']/*"/>	
             <msdn-id>bb174021</msdn-id>	
-            <unmanaged>GetAntialias</unmanaged>	
+            <unmanaged>GetAntialias / SetAntialias</unmanaged>	
             <unmanaged-short>GetAntialias</unmanaged-short>	
             <unmanaged>BOOL ID3DXLine::GetAntialias()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.Line.GLLines">
             <summary>	
-            <p>Gets the OpenGL-style line-drawing mode.</p>	
+            <p>Gets or sets the OpenGL-style line-drawing mode.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXLine::GetGLLines']/*"/>	
             <msdn-id>bb174023</msdn-id>	
-            <unmanaged>GetGLLines</unmanaged>	
+            <unmanaged>GetGLLines / SetGLLines</unmanaged>	
             <unmanaged-short>GetGLLines</unmanaged-short>	
             <unmanaged>BOOL ID3DXLine::GetGLLines()</unmanaged>
         </member>
@@ -27099,24 +27099,24 @@
         </member>
         <member name="P:SharpDX.Direct3D9.SkinInfo.MinBoneInfluence">
             <summary>	
-            <p>Gets the minimum bone influence. Influence values smaller than this are ignored.</p>	
+            <p>Gets or sets the minimum bone influence. Influence values smaller than this are ignored.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXSkinInfo::GetMinBoneInfluence']/*"/>	
             <msdn-id>bb174219</msdn-id>	
-            <unmanaged>GetMinBoneInfluence</unmanaged>	
+            <unmanaged>GetMinBoneInfluence / SetMinBoneInfluence</unmanaged>	
             <unmanaged-short>GetMinBoneInfluence</unmanaged-short>	
             <unmanaged>float ID3DXSkinInfo::GetMinBoneInfluence()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D9.SkinInfo.FVF">
             <summary>	
-            <p>Gets the fixed function vertex value.</p>	
+            <p>Gets or sets the fixed function vertex value.</p>	
             </summary>	
             <remarks>	
             <p>This method can return 0 if the vertex format cannot be mapped directly to an FVF code.  This will occur for a mesh created from a vertex declaration that doesn't have the same order and elements supported by the FVF codes.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXSkinInfo::GetFVF']/*"/>	
             <msdn-id>bb174216</msdn-id>	
-            <unmanaged>GetFVF</unmanaged>	
+            <unmanaged>GetFVF / SetFVF</unmanaged>	
             <unmanaged-short>GetFVF</unmanaged-short>	
             <unmanaged>unsigned int ID3DXSkinInfo::GetFVF()</unmanaged>
         </member>
@@ -27337,23 +27337,6 @@
             <unmanaged>HRESULT ID3DXSprite::Draw([In] IDirect3DTexture9* pTexture,[In] const RECT* pSrcRect,[In] const D3DXVECTOR3* pCenter,[In] const D3DXVECTOR3* pPosition,[In] D3DCOLOR Color)</unmanaged>	
             <unmanaged-short>ID3DXSprite::Draw</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D9.Sprite.Draw(SharpDX.Direct3D9.Texture,SharpDX.ColorBGRA,System.Nullable{SharpDX.DrawingRectangle},System.Nullable{SharpDX.Vector3},System.Nullable{SharpDX.Vector3})">
-            <summary>	
-            <p>Adds a sprite to the list of batched sprites.</p>	
-            </summary>	
-            <param name="textureRef"><dd>  <p>Pointer to an <strong><see cref="T:SharpDX.Direct3D9.Texture"/></strong> interface that represents the sprite texture.</p> </dd></param>	
-            <param name="srcRectRef"><dd>  <p>Pointer to a <strong><see cref="T:SharpDX.Rectangle"/></strong> structure that indicates the portion of the source texture to use for the sprite. If this parameter is <strong><c>null</c></strong>, then the entire source image is used for the sprite.</p> </dd></param>	
-            <param name="centerRef"><dd>  <p>Pointer to a <strong><see cref="T:SharpDX.Vector3"/></strong> vector that identifies the center of the sprite. If this argument is <strong><c>null</c></strong>, the point (0,0,0) is used, which is the upper-left corner.</p> </dd></param>	
-            <param name="positionRef"><dd>  <p>Pointer to a <strong><see cref="T:SharpDX.Vector3"/></strong> vector that identifies the position of the sprite. If this argument is <strong><c>null</c></strong>, the point (0,0,0) is used, which is the upper-left corner.</p> </dd></param>	
-            <param name="color"><dd>  <p> <strong><see cref="T:SharpDX.Color4"/></strong> type. The color and alpha channels are modulated by this value. A value of 0xFFFFFFFF maintains the original source color and alpha data. Use the <strong>D3DCOLOR_RGBA</strong> macro to help generate this color.</p> </dd></param>	
-            <returns><p>If the method succeeds, the return value is <see cref="F:SharpDX.Result.Ok"/>. If the method fails, the return value can be one of the following: <see cref="F:SharpDX.Direct3D9.ResultCode.InvalidCall"/>, D3DXERR_INVALIDDATA.</p></returns>	
-            <remarks>	
-            <p>To scale, rotate, or translate a sprite, call <strong><see cref="M:SharpDX.Direct3D9.Sprite.SetTransform(SharpDX.Matrix@)"/></strong> with a matrix that contains the scale, rotate, and translate (SRT) values, before calling <see cref="M:SharpDX.Direct3D9.Sprite.Draw(SharpDX.Direct3D9.Texture,System.IntPtr,System.IntPtr,System.IntPtr,SharpDX.ColorBGRA)"/>. For information about setting SRT values in a matrix, see Matrix Transforms.</p>	
-            </remarks>	
-            <msdn-id>bb174251</msdn-id>	
-            <unmanaged>HRESULT ID3DXSprite::Draw([In] IDirect3DTexture9* pTexture,[In] const RECT* pSrcRect,[In] const D3DXVECTOR3* pCenter,[In] const D3DXVECTOR3* pPosition,[In] D3DCOLOR Color)</unmanaged>	
-            <unmanaged-short>ID3DXSprite::Draw</unmanaged-short>	
-        </member>
         <member name="P:SharpDX.Direct3D9.Sprite.Device">
             <summary>	
             <p>Retrieves the device associated with the sprite object.</p>	
@@ -27369,11 +27352,11 @@
         </member>
         <member name="P:SharpDX.Direct3D9.Sprite.Transform">
             <summary>	
-            <p>Gets the sprite transform.</p>	
+            <p>Gets or sets the sprite transform.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DXSprite::GetTransform']/*"/>	
             <msdn-id>bb174255</msdn-id>	
-            <unmanaged>GetTransform</unmanaged>	
+            <unmanaged>GetTransform / SetTransform</unmanaged>	
             <unmanaged-short>GetTransform</unmanaged-short>	
             <unmanaged>HRESULT ID3DXSprite::GetTransform([Out] D3DXMATRIX* pTransform)</unmanaged>
         </member>
