@@ -83,6 +83,23 @@
             <summary>Constant LoopInfinite.</summary>
             <unmanaged>XAUDIO2_LOOP_INFINITE</unmanaged>
         </member>
+        <member name="M:SharpDX.XAudio2.AudioBuffer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.XAudio2.AudioBuffer"/> class.
+            </summary>
+        </member>
+        <member name="M:SharpDX.XAudio2.AudioBuffer.#ctor(SharpDX.DataStream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.XAudio2.AudioBuffer"/> class.
+            </summary>
+            <param name="stream">The stream to get the audio buffer from.</param>
+        </member>
+        <member name="M:SharpDX.XAudio2.AudioBuffer.#ctor(SharpDX.DataPointer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.XAudio2.AudioBuffer"/> class.
+            </summary>
+            <param name="dataBuffer">The buffer to get the audio buffer from.</param>
+        </member>
         <member name="F:SharpDX.XAudio2.AudioBuffer.Flags">
             <summary>	
             No documentation.	

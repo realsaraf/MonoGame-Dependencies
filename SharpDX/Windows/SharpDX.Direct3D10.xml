@@ -588,14 +588,14 @@
         </member>
         <member name="P:SharpDX.Direct3D10.Resource.EvictionPriority">
             <summary>	
-            <p>Get the eviction priority of a resource.</p>	
+            <p>Get or sets the eviction priority of a resource.</p>	
             </summary>	
             <remarks>	
             <p>This method is a wrapper for <strong>GetEvictionPriority</strong> and is provided in the <strong><see cref="T:SharpDX.Direct3D10.Resource"/> Interface</strong> interface for convenience.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D10Resource::GetEvictionPriority']/*"/>	
             <msdn-id>bb173830</msdn-id>	
-            <unmanaged>GetEvictionPriority</unmanaged>	
+            <unmanaged>GetEvictionPriority / SetEvictionPriority</unmanaged>	
             <unmanaged-short>GetEvictionPriority</unmanaged-short>	
             <unmanaged>unsigned int ID3D10Resource::GetEvictionPriority()</unmanaged>
         </member>
@@ -1009,24 +1009,24 @@
         </member>
         <member name="P:SharpDX.Direct3D10.InputAssemblerStage.InputLayout">
             <summary>	
-            <p>Get a reference to the input-layout object that is bound to the input-assembler stage.</p>	
+            <p>Get or sets a reference to the input-layout object that is bound to the input-assembler stage.</p>	
             </summary>	
             <remarks>	
             <p>For information about creating an input-layout object, see Creating the Input-Layout Object.</p><p>Any returned interfaces will have their reference count incremented by one. Applications should call IUnknown::Release on the returned interfaces when they are no longer needed to avoid memory leaks.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D10Device::IAGetInputLayout']/*"/>	
             <msdn-id>bb173585</msdn-id>	
-            <unmanaged>IAGetInputLayout</unmanaged>	
+            <unmanaged>IAGetInputLayout / IASetInputLayout</unmanaged>	
             <unmanaged-short>IAGetInputLayout</unmanaged-short>	
             <unmanaged>void ID3D10Device::IAGetInputLayout([Out] ID3D10InputLayout** ppInputLayout)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D10.InputAssemblerStage.PrimitiveTopology">
             <summary>	
-            <p>Get information about the primitive type, and data order that describes input data for the input assembler stage.</p>	
+            <p>Get or sets information about the primitive type, and data order that describes input data for the input assembler stage.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D10Device::IAGetPrimitiveTopology']/*"/>	
             <msdn-id>bb173586</msdn-id>	
-            <unmanaged>IAGetPrimitiveTopology</unmanaged>	
+            <unmanaged>IAGetPrimitiveTopology / IASetPrimitiveTopology</unmanaged>	
             <unmanaged-short>IAGetPrimitiveTopology</unmanaged-short>	
             <unmanaged>void ID3D10Device::IAGetPrimitiveTopology([Out] D3D_PRIMITIVE_TOPOLOGY* pTopology)</unmanaged>
         </member>
@@ -1253,27 +1253,27 @@
         </member>
         <member name="P:SharpDX.Direct3D10.DeviceDebug.PresentPerRenderOpDelay">
             <summary>	
-            <p>Get the number of milliseconds to sleep after <strong>Present</strong> is called.</p>	
+            <p>Get or sets the number of milliseconds to sleep after <strong>Present</strong> is called.</p>	
             </summary>	
             <remarks>	
             <p>Value is set with <strong><see cref="M:SharpDX.Direct3D10.DeviceDebug.SetPresentPerRenderOpDelay(System.Int32)"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D10Debug::GetPresentPerRenderOpDelay']/*"/>	
             <msdn-id>bb173518</msdn-id>	
-            <unmanaged>GetPresentPerRenderOpDelay</unmanaged>	
+            <unmanaged>GetPresentPerRenderOpDelay / SetPresentPerRenderOpDelay</unmanaged>	
             <unmanaged-short>GetPresentPerRenderOpDelay</unmanaged-short>	
             <unmanaged>unsigned int ID3D10Debug::GetPresentPerRenderOpDelay()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D10.DeviceDebug.SwapChain">
             <summary>	
-            <p>Get the swap chain that the runtime will use for automatically calling <strong>Present</strong>.</p>	
+            <p>Get or sets the swap chain that the runtime will use for automatically calling <strong>Present</strong>.</p>	
             </summary>	
             <remarks>	
             <p>The swap chain retrieved by this method will only be used if <see cref="F:SharpDX.Direct3D10.DebugFeatureFlags.PresentPerRender"/> is set in the <strong>feature mask</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D10Debug::GetSwapChain']/*"/>	
             <msdn-id>bb173519</msdn-id>	
-            <unmanaged>GetSwapChain</unmanaged>	
+            <unmanaged>GetSwapChain / SetSwapChain</unmanaged>	
             <unmanaged-short>GetSwapChain</unmanaged-short>	
             <unmanaged>HRESULT ID3D10Debug::GetSwapChain([Out] IDXGISwapChain** ppSwapChain)</unmanaged>
         </member>
@@ -2644,14 +2644,14 @@
         </member>
         <member name="P:SharpDX.Direct3D10.Device.ExceptionMode">
             <summary>	
-            <p>Get the exception-mode flags.</p>	
+            <p>Get or sets the exception-mode flags.</p>	
             </summary>	
             <remarks>	
             <p>An exception-mode flag is used to elevate an error condition to a non-continuable exception. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D10Device::GetExceptionMode']/*"/>	
             <msdn-id>bb173572</msdn-id>	
-            <unmanaged>GetExceptionMode</unmanaged>	
+            <unmanaged>GetExceptionMode / SetExceptionMode</unmanaged>	
             <unmanaged-short>GetExceptionMode</unmanaged-short>	
             <unmanaged>unsigned int ID3D10Device::GetExceptionMode()</unmanaged>
         </member>
@@ -3147,14 +3147,14 @@
         </member>
         <member name="P:SharpDX.Direct3D10.RasterizerStage.State">
             <summary>	
-            <p>Get the <strong>rasterizer state</strong> from the rasterizer stage of the pipeline.</p>	
+            <p>Get or sets the <strong>rasterizer state</strong> from the rasterizer stage of the pipeline.</p>	
             </summary>	
             <remarks>	
             <p>Any returned interfaces will have their reference count incremented by one. Applications should call IUnknown::Release on the returned interfaces when they are no longer needed to avoid memory leaks.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D10Device::RSGetState']/*"/>	
             <msdn-id>bb173609</msdn-id>	
-            <unmanaged>RSGetState</unmanaged>	
+            <unmanaged>RSGetState / RSSetState</unmanaged>	
             <unmanaged-short>RSGetState</unmanaged-short>	
             <unmanaged>void ID3D10Device::RSGetState([Out] ID3D10RasterizerState** ppRasterizerState)</unmanaged>
         </member>
@@ -15627,14 +15627,14 @@ Flags that defines the behavior of method <see cref="M:SharpDX.Direct3D10.Asynch
         </member>
         <member name="P:SharpDX.Direct3D10.InfoQueue.MessageCountLimit">
             <summary>	
-            <p>Get the maximum number of messages that can be added to the message queue.</p>	
+            <p>Get or sets the maximum number of messages that can be added to the message queue.</p>	
             </summary>	
             <remarks>	
             <p>When the number of messages in the message queue has reached the maximum limit, new messages coming in will push old messages out.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D10InfoQueue::GetMessageCountLimit']/*"/>	
             <msdn-id>bb173791</msdn-id>	
-            <unmanaged>GetMessageCountLimit</unmanaged>	
+            <unmanaged>GetMessageCountLimit / SetMessageCountLimit</unmanaged>	
             <unmanaged-short>GetMessageCountLimit</unmanaged-short>	
             <unmanaged>unsigned longlong ID3D10InfoQueue::GetMessageCountLimit()</unmanaged>
         </member>
@@ -15713,11 +15713,11 @@ Flags that defines the behavior of method <see cref="M:SharpDX.Direct3D10.Asynch
         </member>
         <member name="P:SharpDX.Direct3D10.InfoQueue.MuteDebugOutput">
             <summary>	
-            <p>Get a boolean that turns the debug output on or off.</p>	
+            <p>Get or sets a boolean that turns the debug output on or off.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D10InfoQueue::GetMuteDebugOutput']/*"/>	
             <msdn-id>bb173792</msdn-id>	
-            <unmanaged>GetMuteDebugOutput</unmanaged>	
+            <unmanaged>GetMuteDebugOutput / SetMuteDebugOutput</unmanaged>	
             <unmanaged-short>GetMuteDebugOutput</unmanaged-short>	
             <unmanaged>BOOL ID3D10InfoQueue::GetMuteDebugOutput()</unmanaged>
         </member>
@@ -17580,21 +17580,21 @@ Flags that defines the behavior of method <see cref="M:SharpDX.Direct3D10.Asynch
         </member>
         <member name="P:SharpDX.Direct3D10.Sprite.ViewTransform">
             <summary>	
-            <p>Get the view transform that applies to all sprites.</p>	
+            <p>Get or sets the view transform that applies to all sprites.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX10Sprite::GetViewTransform']/*"/>	
             <msdn-id>bb205609</msdn-id>	
-            <unmanaged>GetViewTransform</unmanaged>	
+            <unmanaged>GetViewTransform / SetViewTransform</unmanaged>	
             <unmanaged-short>GetViewTransform</unmanaged-short>	
             <unmanaged>HRESULT ID3DX10Sprite::GetViewTransform([Out] D3DXMATRIX* pViewTransform)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D10.Sprite.ProjectionTransform">
             <summary>	
-            <p>Get the sprite projection matrix that is applied to all sprites.</p>	
+            <p>Get or sets the sprite projection matrix that is applied to all sprites.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX10Sprite::GetProjectionTransform']/*"/>	
             <msdn-id>bb205608</msdn-id>	
-            <unmanaged>GetProjectionTransform</unmanaged>	
+            <unmanaged>GetProjectionTransform / SetProjectionTransform</unmanaged>	
             <unmanaged-short>GetProjectionTransform</unmanaged-short>	
             <unmanaged>HRESULT ID3DX10Sprite::GetProjectionTransform([Out] D3DXMATRIX* pProjectionTransform)</unmanaged>
         </member>
@@ -19563,6 +19563,11 @@ Flags that defines the behavior of method <see cref="M:SharpDX.Direct3D10.Asynch
             <msdn-id>bb172696</msdn-id>	
             <unmanaged>D3DX10_IMAGE_INFO* pSrcInfo</unmanaged>	
             <unmanaged-short>D3DX10_IMAGE_INFO pSrcInfo</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D10.ImageLoadInformation.Default">
+            <summary>
+            Gets an ImageLoadInformation that is setup with all default values (<see cref="F:SharpDX.Direct3D10.ImageLoadInformation.FileDefaultValue"/>).
+            </summary>
         </member>
         <member name="T:SharpDX.Direct3D10.InfoQueueFilter">
             <summary>	

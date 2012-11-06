@@ -873,24 +873,24 @@
         </member>
         <member name="P:SharpDX.Direct2D1.Brush.Opacity">
             <summary>	
-            <p>Gets the degree of opacity of this brush.   </p>	
+            <p>Gets or sets the degree of opacity of this brush.   </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1Brush::GetOpacity']/*"/>	
             <msdn-id>dd371176</msdn-id>	
-            <unmanaged>GetOpacity</unmanaged>	
+            <unmanaged>GetOpacity / SetOpacity</unmanaged>	
             <unmanaged-short>GetOpacity</unmanaged-short>	
             <unmanaged>float ID2D1Brush::GetOpacity()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.Brush.Transform">
             <summary>	
-            <p>Gets the transform applied to this brush. </p>	
+            <p>Gets or sets the transform applied to this brush. </p>	
             </summary>	
             <remarks>	
             <p>When the brush transform is the identity matrix, the brush appears in the same coordinate space as the render target in which it is drawn.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1Brush::GetTransform']/*"/>	
             <msdn-id>dd371179</msdn-id>	
-            <unmanaged>GetTransform</unmanaged>	
+            <unmanaged>GetTransform / SetTransform</unmanaged>	
             <unmanaged-short>GetTransform</unmanaged-short>	
             <unmanaged>void ID2D1Brush::GetTransform([Out] D2D_MATRIX_3X2_F* transform)</unmanaged>
         </member>
@@ -1049,50 +1049,50 @@
         </member>
         <member name="P:SharpDX.Direct2D1.BitmapBrush.ExtendModeX">
             <summary>	
-            <p> Gets the method by which the brush horizontally tiles those areas that extend past its bitmap. </p>	
+            <p>Gets or sets the method by which the brush horizontally tiles those areas that extend past its bitmap. </p>	
             </summary>	
             <remarks>	
             <p>Like all brushes, <strong><see cref="T:SharpDX.Direct2D1.BitmapBrush"/></strong> defines an infinite plane of content. Because bitmaps are finite, it relies on an extend mode to determine how the plane is filled horizontally and vertically.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1BitmapBrush::GetExtendModeX']/*"/>	
             <msdn-id>dd371128</msdn-id>	
-            <unmanaged>GetExtendModeX</unmanaged>	
+            <unmanaged>GetExtendModeX / SetExtendModeX</unmanaged>	
             <unmanaged-short>GetExtendModeX</unmanaged-short>	
             <unmanaged>D2D1_EXTEND_MODE ID2D1BitmapBrush::GetExtendModeX()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.BitmapBrush.ExtendModeY">
             <summary>	
-            <p> Gets the method by which the brush vertically tiles those areas that extend past its bitmap. </p>	
+            <p>Gets or sets the method by which the brush vertically tiles those areas that extend past its bitmap. </p>	
             </summary>	
             <remarks>	
             <p>Like all brushes, <strong><see cref="T:SharpDX.Direct2D1.BitmapBrush"/></strong> defines an infinite plane of content.  Because bitmaps are finite, it relies on an extend mode to determine how the plane is filled horizontally and vertically.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1BitmapBrush::GetExtendModeY']/*"/>	
             <msdn-id>dd371132</msdn-id>	
-            <unmanaged>GetExtendModeY</unmanaged>	
+            <unmanaged>GetExtendModeY / SetExtendModeY</unmanaged>	
             <unmanaged-short>GetExtendModeY</unmanaged-short>	
             <unmanaged>D2D1_EXTEND_MODE ID2D1BitmapBrush::GetExtendModeY()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.BitmapBrush.InterpolationMode">
             <summary>	
-            <p>Gets the interpolation method used when the brush bitmap is scaled or rotated. </p>	
+            <p>Gets or sets the interpolation method used when the brush bitmap is scaled or rotated. </p>	
             </summary>	
             <remarks>	
             <p>This method gets the interpolation mode of a bitmap, which is specified by the <strong><see cref="T:SharpDX.Direct2D1.BitmapInterpolationMode"/></strong> enumeration type.   <strong><see cref="F:SharpDX.Direct2D1.BitmapInterpolationMode.NearestNeighbor"/></strong> represents nearest neighbor filtering. It looks up the bitmap pixel nearest to the current rendering pixel and chooses its exact color. <strong><see cref="F:SharpDX.Direct2D1.BitmapInterpolationMode.Linear"/></strong> represents linear filtering, and  interpolates a color from the four nearest bitmap pixels.</p><p>The interpolation mode of a bitmap also affects subpixel translations. In a subpixel translation, linear interpolation positions the bitmap more precisely to the application request, but blurs the bitmap in the process. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1BitmapBrush::GetInterpolationMode']/*"/>	
             <msdn-id>dd371134</msdn-id>	
-            <unmanaged>GetInterpolationMode</unmanaged>	
+            <unmanaged>GetInterpolationMode / SetInterpolationMode</unmanaged>	
             <unmanaged-short>GetInterpolationMode</unmanaged-short>	
             <unmanaged>D2D1_BITMAP_INTERPOLATION_MODE ID2D1BitmapBrush::GetInterpolationMode()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.BitmapBrush.Bitmap">
             <summary>	
-            <p> Gets the bitmap source that this brush uses to paint.</p>	
+            <p>Gets or sets the bitmap source that this brush uses to paint.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1BitmapBrush::GetBitmap']/*"/>	
             <msdn-id>dd371124</msdn-id>	
-            <unmanaged>GetBitmap</unmanaged>	
+            <unmanaged>GetBitmap / SetBitmap</unmanaged>	
             <unmanaged-short>GetBitmap</unmanaged-short>	
             <unmanaged>void ID2D1BitmapBrush::GetBitmap([Out] ID2D1Bitmap** bitmap)</unmanaged>
         </member>
@@ -1172,7 +1172,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1BitmapBrush1::GetInterpolationMode1']/*"/>	
             <msdn-id>hh871447</msdn-id>	
-            <unmanaged>GetInterpolationMode1</unmanaged>	
+            <unmanaged>GetInterpolationMode1 / SetInterpolationMode1</unmanaged>	
             <unmanaged-short>GetInterpolationMode1</unmanaged-short>	
             <unmanaged>D2D1_INTERPOLATION_MODE ID2D1BitmapBrush1::GetInterpolationMode1()</unmanaged>
         </member>
@@ -1593,7 +1593,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1BlendTransform::GetDescription']/*"/>	
             <msdn-id>hh404363</msdn-id>	
-            <unmanaged>GetDescription</unmanaged>	
+            <unmanaged>GetDescription / SetDescription</unmanaged>	
             <unmanaged-short>GetDescription</unmanaged-short>	
             <unmanaged>void ID2D1BlendTransform::GetDescription([Out] D2D1_BLEND_DESCRIPTION* description)</unmanaged>
         </member>
@@ -1682,7 +1682,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1BorderTransform::GetExtendModeX']/*"/>	
             <msdn-id>hh404381</msdn-id>	
-            <unmanaged>GetExtendModeX</unmanaged>	
+            <unmanaged>GetExtendModeX / SetExtendModeX</unmanaged>	
             <unmanaged-short>GetExtendModeX</unmanaged-short>	
             <unmanaged>D2D1_EXTEND_MODE ID2D1BorderTransform::GetExtendModeX()</unmanaged>
         </member>
@@ -1692,7 +1692,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1BorderTransform::GetExtendModeY']/*"/>	
             <msdn-id>hh404383</msdn-id>	
-            <unmanaged>GetExtendModeY</unmanaged>	
+            <unmanaged>GetExtendModeY / SetExtendModeY</unmanaged>	
             <unmanaged-short>GetExtendModeY</unmanaged-short>	
             <unmanaged>D2D1_EXTEND_MODE ID2D1BorderTransform::GetExtendModeY()</unmanaged>
         </member>
@@ -5225,21 +5225,21 @@
         </member>
         <member name="P:SharpDX.Direct2D1.DrawingStateBlock.Description">
             <summary>	
-            <p>Retrieves the antialiasing mode, transform, and tags portion of the drawing state.</p>	
+            <p>Retrieves or sets the antialiasing mode, transform, and tags portion of the drawing state.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1DrawingStateBlock::GetDescription']/*"/>	
             <msdn-id>dd371223</msdn-id>	
-            <unmanaged>GetDescription</unmanaged>	
+            <unmanaged>GetDescription / SetDescription</unmanaged>	
             <unmanaged-short>GetDescription</unmanaged-short>	
             <unmanaged>void ID2D1DrawingStateBlock::GetDescription([Out] D2D1_DRAWING_STATE_DESCRIPTION* stateDescription)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.DrawingStateBlock.TextRenderingParams">
             <summary>	
-            <p>Retrieves the text-rendering configuration of the drawing state.</p>	
+            <p>Retrieves or sets the text-rendering configuration of the drawing state.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1DrawingStateBlock::GetTextRenderingParams']/*"/>	
             <msdn-id>dd371227</msdn-id>	
-            <unmanaged>GetTextRenderingParams</unmanaged>	
+            <unmanaged>GetTextRenderingParams / SetTextRenderingParams</unmanaged>	
             <unmanaged-short>GetTextRenderingParams</unmanaged-short>	
             <unmanaged>void ID2D1DrawingStateBlock::GetTextRenderingParams([Out, Optional] IDWriteRenderingParams** textRenderingParams)</unmanaged>
         </member>
@@ -5309,7 +5309,7 @@
             No documentation.	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1DrawingStateBlock1::GetDescription']/*"/>	
-            <unmanaged>GetDescription</unmanaged>	
+            <unmanaged>GetDescription / SetDescription</unmanaged>	
             <unmanaged-short>GetDescription</unmanaged-short>	
             <unmanaged>void ID2D1DrawingStateBlock1::GetDescription([Out] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription)</unmanaged>
         </member>
@@ -6429,7 +6429,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1Effect::GetInputCount']/*"/>	
             <msdn-id>hh404582</msdn-id>	
-            <unmanaged>GetInputCount</unmanaged>	
+            <unmanaged>GetInputCount / SetInputCount</unmanaged>	
             <unmanaged-short>GetInputCount</unmanaged-short>	
             <unmanaged>unsigned int ID2D1Effect::GetInputCount()</unmanaged>
         </member>
@@ -8470,7 +8470,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1Device::GetMaximumTextureMemory']/*"/>	
             <msdn-id>hh847984</msdn-id>	
-            <unmanaged>GetMaximumTextureMemory</unmanaged>	
+            <unmanaged>GetMaximumTextureMemory / SetMaximumTextureMemory</unmanaged>	
             <unmanaged-short>GetMaximumTextureMemory</unmanaged-short>	
             <unmanaged>unsigned longlong ID2D1Device::GetMaximumTextureMemory()</unmanaged>
         </member>
@@ -9536,44 +9536,44 @@
         </member>
         <member name="P:SharpDX.Direct2D1.RenderTarget.Transform">
             <summary>	
-            <p>Gets the current transform of the render target. </p>	
+            <p>Gets or sets the current transform of the render target. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1RenderTarget::GetTransform']/*"/>	
             <msdn-id>dd316845</msdn-id>	
-            <unmanaged>GetTransform</unmanaged>	
+            <unmanaged>GetTransform / SetTransform</unmanaged>	
             <unmanaged-short>GetTransform</unmanaged-short>	
             <unmanaged>void ID2D1RenderTarget::GetTransform([Out] D2D_MATRIX_3X2_F* transform)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.RenderTarget.AntialiasMode">
             <summary>	
-            <p> Retrieves the current antialiasing mode for nontext drawing operations.</p>	
+            <p>Retrieves or sets the current antialiasing mode for nontext drawing operations.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1RenderTarget::GetAntialiasMode']/*"/>	
             <msdn-id>dd316805</msdn-id>	
-            <unmanaged>GetAntialiasMode</unmanaged>	
+            <unmanaged>GetAntialiasMode / SetAntialiasMode</unmanaged>	
             <unmanaged-short>GetAntialiasMode</unmanaged-short>	
             <unmanaged>D2D1_ANTIALIAS_MODE ID2D1RenderTarget::GetAntialiasMode()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.RenderTarget.TextAntialiasMode">
             <summary>	
-            <p>Gets the current antialiasing mode for text and glyph drawing operations. </p>	
+            <p>Gets or sets the current antialiasing mode for text and glyph drawing operations. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1RenderTarget::GetTextAntialiasMode']/*"/>	
             <msdn-id>dd316835</msdn-id>	
-            <unmanaged>GetTextAntialiasMode</unmanaged>	
+            <unmanaged>GetTextAntialiasMode / SetTextAntialiasMode</unmanaged>	
             <unmanaged-short>GetTextAntialiasMode</unmanaged-short>	
             <unmanaged>D2D1_TEXT_ANTIALIAS_MODE ID2D1RenderTarget::GetTextAntialiasMode()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.RenderTarget.TextRenderingParams">
             <summary>	
-            <p>Retrieves the render target's current text rendering options. </p>	
+            <p>Retrieves or sets the render target's current text rendering options. </p>	
             </summary>	
             <remarks>	
             <p>If the settings specified by  <em>textRenderingParams</em> are incompatible with the render target's text antialiasing mode (specified by <strong>SetTextAntialiasMode</strong>), subsequent text and glyph drawing operations will fail and put the render target into an error state.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1RenderTarget::GetTextRenderingParams']/*"/>	
             <msdn-id>dd316841</msdn-id>	
-            <unmanaged>GetTextRenderingParams</unmanaged>	
+            <unmanaged>GetTextRenderingParams / SetTextRenderingParams</unmanaged>	
             <unmanaged-short>GetTextRenderingParams</unmanaged-short>	
             <unmanaged>void ID2D1RenderTarget::GetTextRenderingParams([Out, Optional] IDWriteRenderingParams** textRenderingParams)</unmanaged>
         </member>
@@ -10293,7 +10293,7 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1DeviceContext::GetTarget']/*"/>	
             <msdn-id>hh404523</msdn-id>	
-            <unmanaged>GetTarget</unmanaged>	
+            <unmanaged>GetTarget / SetTarget</unmanaged>	
             <unmanaged-short>GetTarget</unmanaged-short>	
             <unmanaged>void ID2D1DeviceContext::GetTarget([Out, Optional] ID2D1Image** image)</unmanaged>
         </member>
@@ -10303,7 +10303,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1DeviceContext::GetRenderingControls']/*"/>	
             <msdn-id>hh404519</msdn-id>	
-            <unmanaged>GetRenderingControls</unmanaged>	
+            <unmanaged>GetRenderingControls / SetRenderingControls</unmanaged>	
             <unmanaged-short>GetRenderingControls</unmanaged-short>	
             <unmanaged>void ID2D1DeviceContext::GetRenderingControls([Out] D2D1_RENDERING_CONTROLS* renderingControls)</unmanaged>
         </member>
@@ -10313,7 +10313,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1DeviceContext::GetPrimitiveBlend']/*"/>	
             <msdn-id>hh404517</msdn-id>	
-            <unmanaged>GetPrimitiveBlend</unmanaged>	
+            <unmanaged>GetPrimitiveBlend / SetPrimitiveBlend</unmanaged>	
             <unmanaged-short>GetPrimitiveBlend</unmanaged-short>	
             <unmanaged>D2D1_PRIMITIVE_BLEND ID2D1DeviceContext::GetPrimitiveBlend()</unmanaged>
         </member>
@@ -10323,7 +10323,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1DeviceContext::GetUnitMode']/*"/>	
             <msdn-id>hh404525</msdn-id>	
-            <unmanaged>GetUnitMode</unmanaged>	
+            <unmanaged>GetUnitMode / SetUnitMode</unmanaged>	
             <unmanaged-short>GetUnitMode</unmanaged-short>	
             <unmanaged>D2D1_UNIT_MODE ID2D1DeviceContext::GetUnitMode()</unmanaged>
         </member>
@@ -15899,94 +15899,94 @@
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.ExposureCompensation">
             <summary>	
-            <p>Gets the exposure compensation stop value of the raw image.</p>	
+            <p>Gets or sets the exposure compensation stop value of the raw image.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetExposureCompensation']/*"/>	
             <msdn-id>ee690234</msdn-id>	
-            <unmanaged>GetExposureCompensation</unmanaged>	
+            <unmanaged>GetExposureCompensation / SetExposureCompensation</unmanaged>	
             <unmanaged-short>GetExposureCompensation</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetExposureCompensation([Out] double* pEV)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.NamedWhitePoint">
             <summary>	
-            <p>Gets the named white point of the raw image.</p>	
+            <p>Gets or sets the named white point of the raw image.</p>	
             </summary>	
             <remarks>	
             <p>If the named white points are not supported by the raw image or the raw file contains named white points that are not supported by this API, the codec implementer should still mark this capability as supported.</p><p>If the named white points are not supported by the raw image, a best effort should be made to adjust the image to the named white point even when it isn't a pre-defined white point of the raw file.</p><p>If the raw file containes named white points not supported by this API, the codec implementer should support the named white points in <strong><see cref="T:SharpDX.WIC.NamedWhitePoint"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetNamedWhitePoint']/*"/>	
             <msdn-id>ee690237</msdn-id>	
-            <unmanaged>GetNamedWhitePoint</unmanaged>	
+            <unmanaged>GetNamedWhitePoint / SetNamedWhitePoint</unmanaged>	
             <unmanaged-short>GetNamedWhitePoint</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetNamedWhitePoint([Out] WICNamedWhitePoint* pWhitePoint)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.WhitePointKelvin">
             <summary>	
-            <p>Gets the white point Kelvin temperature of the raw image.</p>	
+            <p>Gets or sets the white point Kelvin temperature of the raw image.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetWhitePointKelvin']/*"/>	
             <msdn-id>ee690245</msdn-id>	
-            <unmanaged>GetWhitePointKelvin</unmanaged>	
+            <unmanaged>GetWhitePointKelvin / SetWhitePointKelvin</unmanaged>	
             <unmanaged-short>GetWhitePointKelvin</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetWhitePointKelvin([Out] unsigned int* pWhitePointKelvin)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.Contrast">
             <summary>	
-            <p>Gets the contrast value of the raw image.</p>	
+            <p>Gets or sets the contrast value of the raw image.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetContrast']/*"/>	
             <msdn-id>ee690232</msdn-id>	
-            <unmanaged>GetContrast</unmanaged>	
+            <unmanaged>GetContrast / SetContrast</unmanaged>	
             <unmanaged-short>GetContrast</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetContrast([Out] double* pContrast)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.Gamma">
             <summary>	
-            <p>Gets the current gamma setting of the raw image.</p>	
+            <p>Gets or sets the current gamma setting of the raw image.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetGamma']/*"/>	
             <msdn-id>ee690235</msdn-id>	
-            <unmanaged>GetGamma</unmanaged>	
+            <unmanaged>GetGamma / SetGamma</unmanaged>	
             <unmanaged-short>GetGamma</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetGamma([Out] double* pGamma)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.Sharpness">
             <summary>	
-            <p>Gets the sharpness value of the raw image.</p>	
+            <p>Gets or sets the sharpness value of the raw image.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetSharpness']/*"/>	
             <msdn-id>ee690242</msdn-id>	
-            <unmanaged>GetSharpness</unmanaged>	
+            <unmanaged>GetSharpness / SetSharpness</unmanaged>	
             <unmanaged-short>GetSharpness</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetSharpness([Out] double* pSharpness)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.Saturation">
             <summary>	
-            <p>Gets the saturation value of the raw image.</p>	
+            <p>Gets or sets the saturation value of the raw image.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetSaturation']/*"/>	
             <msdn-id>ee690241</msdn-id>	
-            <unmanaged>GetSaturation</unmanaged>	
+            <unmanaged>GetSaturation / SetSaturation</unmanaged>	
             <unmanaged-short>GetSaturation</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetSaturation([Out] double* pSaturation)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.Tint">
             <summary>	
-            <p>Gets the tint value of the raw image.</p>	
+            <p>Gets or sets the tint value of the raw image.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetTint']/*"/>	
             <msdn-id>ee690243</msdn-id>	
-            <unmanaged>GetTint</unmanaged>	
+            <unmanaged>GetTint / SetTint</unmanaged>	
             <unmanaged-short>GetTint</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetTint([Out] double* pTint)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.NoiseReduction">
             <summary>	
-            <p>Gets the noise reduction value of the raw image.</p>	
+            <p>Gets or sets the noise reduction value of the raw image.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetNoiseReduction']/*"/>	
             <msdn-id>ee690238</msdn-id>	
-            <unmanaged>GetNoiseReduction</unmanaged>	
+            <unmanaged>GetNoiseReduction / SetNoiseReduction</unmanaged>	
             <unmanaged-short>GetNoiseReduction</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetNoiseReduction([Out] double* pNoiseReduction)</unmanaged>
         </member>
@@ -16002,21 +16002,21 @@
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.Rotation">
             <summary>	
-            <p>Gets the current rotation angle.</p>	
+            <p>Gets or sets the current rotation angle.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetRotation']/*"/>	
             <msdn-id>ee690240</msdn-id>	
-            <unmanaged>GetRotation</unmanaged>	
+            <unmanaged>GetRotation / SetRotation</unmanaged>	
             <unmanaged-short>GetRotation</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetRotation([Out] double* pRotation)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.DevelopRaw.RenderMode">
             <summary>	
-            <p>Gets the current <strong><see cref="T:SharpDX.WIC.RawRenderMode"/></strong>.</p>	
+            <p>Gets or sets the current <strong><see cref="T:SharpDX.WIC.RawRenderMode"/></strong>.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::GetRenderMode']/*"/>	
             <msdn-id>ee690239</msdn-id>	
-            <unmanaged>GetRenderMode</unmanaged>	
+            <unmanaged>GetRenderMode / SetRenderMode</unmanaged>	
             <unmanaged-short>GetRenderMode</unmanaged-short>	
             <unmanaged>HRESULT IWICDevelopRaw::GetRenderMode([Out] WICRawRenderMode* pRenderMode)</unmanaged>
         </member>
@@ -17563,11 +17563,11 @@
         </member>
         <member name="P:SharpDX.WIC.ProgressiveLevelControl.CurrentLevel">
             <summary>	
-            <p>Gets the last level set by the <strong>SetCurrentLevel</strong> call.</p>	
+            <p>Gets or sets the last level set by the <strong>SetCurrentLevel</strong> call.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICProgressiveLevelControl::GetCurrentLevel']/*"/>	
             <msdn-id>ee719779</msdn-id>	
-            <unmanaged>GetCurrentLevel</unmanaged>	
+            <unmanaged>GetCurrentLevel / SetCurrentLevel</unmanaged>	
             <unmanaged-short>GetCurrentLevel</unmanaged-short>	
             <unmanaged>HRESULT IWICProgressiveLevelControl::GetCurrentLevel([Out] unsigned int* pnLevel)</unmanaged>
         </member>
@@ -18471,7 +18471,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1ImageBrush::GetImage']/*"/>	
             <msdn-id>hh446807</msdn-id>	
-            <unmanaged>GetImage</unmanaged>	
+            <unmanaged>GetImage / SetImage</unmanaged>	
             <unmanaged-short>GetImage</unmanaged-short>	
             <unmanaged>void ID2D1ImageBrush::GetImage([Out] ID2D1Image** image)</unmanaged>
         </member>
@@ -18481,7 +18481,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1ImageBrush::GetExtendModeX']/*"/>	
             <msdn-id>hh446805</msdn-id>	
-            <unmanaged>GetExtendModeX</unmanaged>	
+            <unmanaged>GetExtendModeX / SetExtendModeX</unmanaged>	
             <unmanaged-short>GetExtendModeX</unmanaged-short>	
             <unmanaged>D2D1_EXTEND_MODE ID2D1ImageBrush::GetExtendModeX()</unmanaged>
         </member>
@@ -18491,7 +18491,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1ImageBrush::GetExtendModeY']/*"/>	
             <msdn-id>hh446806</msdn-id>	
-            <unmanaged>GetExtendModeY</unmanaged>	
+            <unmanaged>GetExtendModeY / SetExtendModeY</unmanaged>	
             <unmanaged-short>GetExtendModeY</unmanaged-short>	
             <unmanaged>D2D1_EXTEND_MODE ID2D1ImageBrush::GetExtendModeY()</unmanaged>
         </member>
@@ -18501,7 +18501,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1ImageBrush::GetInterpolationMode']/*"/>	
             <msdn-id>hh446808</msdn-id>	
-            <unmanaged>GetInterpolationMode</unmanaged>	
+            <unmanaged>GetInterpolationMode / SetInterpolationMode</unmanaged>	
             <unmanaged-short>GetInterpolationMode</unmanaged-short>	
             <unmanaged>D2D1_INTERPOLATION_MODE ID2D1ImageBrush::GetInterpolationMode()</unmanaged>
         </member>
@@ -18511,7 +18511,7 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1ImageBrush::GetSourceRectangle']/*"/>	
             <msdn-id>hh446809</msdn-id>	
-            <unmanaged>GetSourceRectangle</unmanaged>	
+            <unmanaged>GetSourceRectangle / SetSourceRectangle</unmanaged>	
             <unmanaged-short>GetSourceRectangle</unmanaged-short>	
             <unmanaged>void ID2D1ImageBrush::GetSourceRectangle([Out] D2D_RECT_F* sourceRectangle)</unmanaged>
         </member>
@@ -19950,24 +19950,24 @@
         </member>
         <member name="P:SharpDX.DirectWrite.BitmapRenderTarget.PixelsPerDip">
             <summary>	
-            <p> Gets the number of bitmap pixels per DIP.  </p>	
+            <p>Gets or sets the number of bitmap pixels per DIP.  </p>	
             </summary>	
             <remarks>	
             <p>A DIP (device-independent pixel) is 1/96 inch. Therefore, this value is the number if pixels per inch divided by 96.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteBitmapRenderTarget::GetPixelsPerDip']/*"/>	
             <msdn-id>dd368173</msdn-id>	
-            <unmanaged>GetPixelsPerDip</unmanaged>	
+            <unmanaged>GetPixelsPerDip / SetPixelsPerDip</unmanaged>	
             <unmanaged-short>GetPixelsPerDip</unmanaged-short>	
             <unmanaged>float IDWriteBitmapRenderTarget::GetPixelsPerDip()</unmanaged>
         </member>
         <member name="P:SharpDX.DirectWrite.BitmapRenderTarget.CurrentTransform">
             <summary>	
-            <p> Gets the transform that maps abstract coordinates to DIPs. By default this is the identity  transform. Note that this is unrelated to the world transform of the underlying device context. </p>	
+            <p>Gets or sets the transform that maps abstract coordinates to DIPs. By default this is the identity  transform. Note that this is unrelated to the world transform of the underlying device context. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteBitmapRenderTarget::GetCurrentTransform']/*"/>	
             <msdn-id>dd368169</msdn-id>	
-            <unmanaged>GetCurrentTransform</unmanaged>	
+            <unmanaged>GetCurrentTransform / SetCurrentTransform</unmanaged>	
             <unmanaged-short>GetCurrentTransform</unmanaged-short>	
             <unmanaged>HRESULT IDWriteBitmapRenderTarget::GetCurrentTransform([Out] DWRITE_MATRIX* transform)</unmanaged>
         </member>
@@ -23522,61 +23522,61 @@
         </member>
         <member name="P:SharpDX.DirectWrite.TextFormat.TextAlignment">
             <summary>	
-            <p> Gets the alignment option of text relative to the layout box's leading and trailing edge. </p>	
+            <p>Gets or sets the alignment option of text relative to the layout box's leading and trailing edge. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextFormat::GetTextAlignment']/*"/>	
             <msdn-id>dd316681</msdn-id>	
-            <unmanaged>GetTextAlignment</unmanaged>	
+            <unmanaged>GetTextAlignment / SetTextAlignment</unmanaged>	
             <unmanaged-short>GetTextAlignment</unmanaged-short>	
             <unmanaged>DWRITE_TEXT_ALIGNMENT IDWriteTextFormat::GetTextAlignment()</unmanaged>
         </member>
         <member name="P:SharpDX.DirectWrite.TextFormat.ParagraphAlignment">
             <summary>	
-            <p> Gets the alignment option of a paragraph which is  relative to the top and bottom edges of a layout box. </p>	
+            <p>Gets or sets the alignment option of a paragraph which is  relative to the top and bottom edges of a layout box. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextFormat::GetParagraphAlignment']/*"/>	
             <msdn-id>dd316675</msdn-id>	
-            <unmanaged>GetParagraphAlignment</unmanaged>	
+            <unmanaged>GetParagraphAlignment / SetParagraphAlignment</unmanaged>	
             <unmanaged-short>GetParagraphAlignment</unmanaged-short>	
             <unmanaged>DWRITE_PARAGRAPH_ALIGNMENT IDWriteTextFormat::GetParagraphAlignment()</unmanaged>
         </member>
         <member name="P:SharpDX.DirectWrite.TextFormat.WordWrapping">
             <summary>	
-            <p> Gets the word wrapping option. </p>	
+            <p>Gets or sets the word wrapping option. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextFormat::GetWordWrapping']/*"/>	
             <msdn-id>dd316688</msdn-id>	
-            <unmanaged>GetWordWrapping</unmanaged>	
+            <unmanaged>GetWordWrapping / SetWordWrapping</unmanaged>	
             <unmanaged-short>GetWordWrapping</unmanaged-short>	
             <unmanaged>DWRITE_WORD_WRAPPING IDWriteTextFormat::GetWordWrapping()</unmanaged>
         </member>
         <member name="P:SharpDX.DirectWrite.TextFormat.ReadingDirection">
             <summary>	
-            <p> Gets the  current reading direction for text in a paragraph. </p>	
+            <p>Gets or sets the  current reading direction for text in a paragraph. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextFormat::GetReadingDirection']/*"/>	
             <msdn-id>dd316678</msdn-id>	
-            <unmanaged>GetReadingDirection</unmanaged>	
+            <unmanaged>GetReadingDirection / SetReadingDirection</unmanaged>	
             <unmanaged-short>GetReadingDirection</unmanaged-short>	
             <unmanaged>DWRITE_READING_DIRECTION IDWriteTextFormat::GetReadingDirection()</unmanaged>
         </member>
         <member name="P:SharpDX.DirectWrite.TextFormat.FlowDirection">
             <summary>	
-            <p> Gets the direction that text lines flow. </p>	
+            <p>Gets or sets the direction that text lines flow. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextFormat::GetFlowDirection']/*"/>	
             <msdn-id>dd316631</msdn-id>	
-            <unmanaged>GetFlowDirection</unmanaged>	
+            <unmanaged>GetFlowDirection / SetFlowDirection</unmanaged>	
             <unmanaged-short>GetFlowDirection</unmanaged-short>	
             <unmanaged>DWRITE_FLOW_DIRECTION IDWriteTextFormat::GetFlowDirection()</unmanaged>
         </member>
         <member name="P:SharpDX.DirectWrite.TextFormat.IncrementalTabStop">
             <summary>	
-            <p> Gets the  incremental tab stop position. </p>	
+            <p>Gets or sets the  incremental tab stop position. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextFormat::GetIncrementalTabStop']/*"/>	
             <msdn-id>dd316655</msdn-id>	
-            <unmanaged>GetIncrementalTabStop</unmanaged>	
+            <unmanaged>GetIncrementalTabStop / SetIncrementalTabStop</unmanaged>	
             <unmanaged-short>GetIncrementalTabStop</unmanaged-short>	
             <unmanaged>float IDWriteTextFormat::GetIncrementalTabStop()</unmanaged>
         </member>
@@ -24423,21 +24423,21 @@
         </member>
         <member name="P:SharpDX.DirectWrite.TextLayout.MaxWidth">
             <summary>	
-            <p> Gets the layout maximum width. </p>	
+            <p>Gets or sets the layout maximum width. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextLayout::GetMaxWidth']/*"/>	
             <msdn-id>dd316781</msdn-id>	
-            <unmanaged>GetMaxWidth</unmanaged>	
+            <unmanaged>GetMaxWidth / SetMaxWidth</unmanaged>	
             <unmanaged-short>GetMaxWidth</unmanaged-short>	
             <unmanaged>float IDWriteTextLayout::GetMaxWidth()</unmanaged>
         </member>
         <member name="P:SharpDX.DirectWrite.TextLayout.MaxHeight">
             <summary>	
-            <p> Gets the layout maximum height. </p>	
+            <p>Gets or sets the layout maximum height. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextLayout::GetMaxHeight']/*"/>	
             <msdn-id>dd316776</msdn-id>	
-            <unmanaged>GetMaxHeight</unmanaged>	
+            <unmanaged>GetMaxHeight / SetMaxHeight</unmanaged>	
             <unmanaged-short>GetMaxHeight</unmanaged-short>	
             <unmanaged>float IDWriteTextLayout::GetMaxHeight()</unmanaged>
         </member>
@@ -35383,27 +35383,27 @@
         </member>
         <member name="P:SharpDX.Direct2D1.LinearGradientBrush.StartPoint">
             <summary>	
-            <p>Retrieves the starting coordinates of the linear gradient. </p>	
+            <p>Retrieves or sets the starting coordinates of the linear gradient. </p>	
             </summary>	
             <remarks>	
             <p>The start point and end point are described in the brush's space and are mapped to the render target when the brush is used.  If there is a non-identity brush transform or render target transform, the brush's start point and end point are also transformed.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1LinearGradientBrush::GetStartPoint']/*"/>	
             <msdn-id>dd371497</msdn-id>	
-            <unmanaged>GetStartPoint</unmanaged>	
+            <unmanaged>GetStartPoint / SetStartPoint</unmanaged>	
             <unmanaged-short>GetStartPoint</unmanaged-short>	
             <unmanaged>D2D_POINT_2F ID2D1LinearGradientBrush::GetStartPoint()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.LinearGradientBrush.EndPoint">
             <summary>	
-            <p>Retrieves the ending coordinates of the linear gradient. </p>	
+            <p>Retrieves or sets the ending coordinates of the linear gradient. </p>	
             </summary>	
             <remarks>	
             <p>The start point and end point are described in the brush's space and are mapped to the render target when the brush is used.  If there is a non-identity brush transform or render target transform, the brush's start point and end point are also transformed.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1LinearGradientBrush::GetEndPoint']/*"/>	
             <msdn-id>dd371492</msdn-id>	
-            <unmanaged>GetEndPoint</unmanaged>	
+            <unmanaged>GetEndPoint / SetEndPoint</unmanaged>	
             <unmanaged-short>GetEndPoint</unmanaged-short>	
             <unmanaged>D2D_POINT_2F ID2D1LinearGradientBrush::GetEndPoint()</unmanaged>
         </member>
@@ -35701,41 +35701,41 @@
         </member>
         <member name="P:SharpDX.Direct2D1.RadialGradientBrush.Center">
             <summary>	
-            <p>Retrieves the center of the gradient ellipse.  </p>	
+            <p>Retrieves or sets the center of the gradient ellipse.  </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1RadialGradientBrush::GetCenter']/*"/>	
             <msdn-id>dd371532</msdn-id>	
-            <unmanaged>GetCenter</unmanaged>	
+            <unmanaged>GetCenter / SetCenter</unmanaged>	
             <unmanaged-short>GetCenter</unmanaged-short>	
             <unmanaged>D2D_POINT_2F ID2D1RadialGradientBrush::GetCenter()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.RadialGradientBrush.GradientOriginOffset">
             <summary>	
-            <p>Retrieves the offset of the gradient origin relative to the gradient ellipse's center. </p>	
+            <p>Retrieves or sets the offset of the gradient origin relative to the gradient ellipse's center. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1RadialGradientBrush::GetGradientOriginOffset']/*"/>	
             <msdn-id>dd371535</msdn-id>	
-            <unmanaged>GetGradientOriginOffset</unmanaged>	
+            <unmanaged>GetGradientOriginOffset / SetGradientOriginOffset</unmanaged>	
             <unmanaged-short>GetGradientOriginOffset</unmanaged-short>	
             <unmanaged>D2D_POINT_2F ID2D1RadialGradientBrush::GetGradientOriginOffset()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.RadialGradientBrush.RadiusX">
             <summary>	
-            <p>Retrieves the x-radius of the gradient ellipse. </p>	
+            <p>Retrieves or sets the x-radius of the gradient ellipse. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1RadialGradientBrush::GetRadiusX']/*"/>	
             <msdn-id>dd371542</msdn-id>	
-            <unmanaged>GetRadiusX</unmanaged>	
+            <unmanaged>GetRadiusX / SetRadiusX</unmanaged>	
             <unmanaged-short>GetRadiusX</unmanaged-short>	
             <unmanaged>float ID2D1RadialGradientBrush::GetRadiusX()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct2D1.RadialGradientBrush.RadiusY">
             <summary>	
-            <p>Retrieves the y-radius of the gradient ellipse. </p>	
+            <p>Retrieves or sets the y-radius of the gradient ellipse. </p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1RadialGradientBrush::GetRadiusY']/*"/>	
             <msdn-id>dd371544</msdn-id>	
-            <unmanaged>GetRadiusY</unmanaged>	
+            <unmanaged>GetRadiusY / SetRadiusY</unmanaged>	
             <unmanaged-short>GetRadiusY</unmanaged-short>	
             <unmanaged>float ID2D1RadialGradientBrush::GetRadiusY()</unmanaged>
         </member>
@@ -35924,11 +35924,11 @@
         </member>
         <member name="P:SharpDX.Direct2D1.SolidColorBrush.Color">
             <summary>	
-            <p> Retrieves the color of the solid color brush.</p>	
+            <p>Retrieves or sets the color of the solid color brush.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1SolidColorBrush::GetColor']/*"/>	
             <msdn-id>dd372209</msdn-id>	
-            <unmanaged>GetColor</unmanaged>	
+            <unmanaged>GetColor / SetColor</unmanaged>	
             <unmanaged-short>GetColor</unmanaged-short>	
             <unmanaged>D2D_COLOR_F ID2D1SolidColorBrush::GetColor()</unmanaged>
         </member>

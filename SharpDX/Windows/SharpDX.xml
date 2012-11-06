@@ -494,14 +494,14 @@
         </member>
         <member name="M:SharpDX.Bool.op_Implicit(SharpDX.Bool)~System.Boolean">
             <summary>
-            Performs an explicit conversion from <see cref="T:SharpDX.Color4"/> to <see cref="T:System.Drawing.Color"/>.
+            Performs an explicit conversion from <see cref="T:SharpDX.Bool"/> to <see cref="T:System.Boolean"/>.
             </summary>
             <param name="booleanValue">The value.</param>
             <returns>The result of the conversion.</returns>
         </member>
         <member name="M:SharpDX.Bool.op_Implicit(System.Boolean)~SharpDX.Bool">
             <summary>
-            Performs an explicit conversion from <see cref="T:SharpDX.Color4"/> to <see cref="T:System.Drawing.Color"/>.
+            Performs an explicit conversion from <see cref="T:System.Boolean"/> to <see cref="T:SharpDX.Bool"/>.
             </summary>
             <param name="boolValue">The value.</param>
             <returns>The result of the conversion.</returns>
@@ -1355,6 +1355,42 @@
             Releases unmanaged and - optionally - managed resources
             </summary>
             <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="T:SharpDX.Collections.ObservableCollection`1">
+            <summary>
+            An observable collection.
+            </summary>
+            <typeparam name="T">Type of a collection item</typeparam>
+        </member>
+        <member name="E:SharpDX.Collections.ObservableCollection`1.ItemAdded">
+            <summary>
+            Raised when an item is added to this instance.
+            </summary>
+            <param name="" />
+        </member>
+        <member name="E:SharpDX.Collections.ObservableCollection`1.ItemRemoved">
+            <summary>
+            Raised when a item is removed from this instance.
+            </summary>
+            <param name="" />
+        </member>
+        <member name="T:SharpDX.Collections.ObservableCollectionEventArgs`1">
+            <summary>
+            An event providing the item changed in a collection (inserted or removed).
+            </summary>
+            <typeparam name="T">Type of a collection item</typeparam>
+        </member>
+        <member name="M:SharpDX.Collections.ObservableCollectionEventArgs`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Collections.ObservableCollectionEventArgs`1"/> class.
+            </summary>
+            <param name="item">The item from the collection.</param>
+        </member>
+        <member name="P:SharpDX.Collections.ObservableCollectionEventArgs`1.Item">
+            <summary>
+            Gets the item from the collection that was inserted or removed.
+            </summary>
+            <value>The collection item.</value>
         </member>
         <member name="T:SharpDX.ComArray">
             <summary>
@@ -3592,9 +3628,110 @@
             <returns>The value of the component at the specified index.</returns>
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the <paramref name="index"/> is out of the range [0, 3].</exception>
         </member>
+        <member name="T:SharpDX.IComponent">
+            <summary>
+            Base interface for a component base.
+            </summary>
+        </member>
+        <member name="P:SharpDX.IComponent.Name">
+            <summary>
+            Gets the name of this component.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="T:SharpDX.IServiceRegistry">
+            <summary>
+            A service registry is a <see cref="T:System.IServiceProvider"/> that provides methods to register and unregister services.
+            </summary>
+        </member>
+        <member name="M:SharpDX.IServiceRegistry.AddService(System.Type,System.Object)">
+            <summary>
+            Adds a service to this service provider.
+            </summary>
+            <param name="type">The type of service to add.</param>
+            <param name="provider">The instance of the service provider to add.</param>
+            <exception cref="T:System.ArgumentNullException">Service type cannot be null</exception>
+            <exception cref="T:System.ArgumentException">Service is already registered</exception>
+        </member>
+        <member name="M:SharpDX.IServiceRegistry.RemoveService(System.Type)">
+            <summary>
+            Removes the object providing a specified service.
+            </summary>
+            <param name="type">The type of service.</param>
+        </member>
+        <member name="E:SharpDX.IServiceRegistry.ServiceAdded">
+            <summary>
+            Occurs when a new service is added.
+            </summary>
+        </member>
+        <member name="E:SharpDX.IServiceRegistry.ServiceRemoved">
+            <summary>
+            Occurs when when a service is removed.
+            </summary>
+        </member>
+        <member name="T:SharpDX.IO.PathUtility">
+            <summary>
+            Path utility methods.
+            </summary>
+        </member>
+        <member name="M:SharpDX.IO.PathUtility.GetNormalizedPath(System.String)">
+            <summary>
+            Transform a path by replacing '/' by '\' and transforming relative '..' or current path '.' to an absolute path. See remarks.
+            </summary>
+            <param name="path">A path string</param>
+            <returns>A normalized path.</returns>
+            <remarks>
+            Unlike <see cref="T:System.IO.Path"/> , this doesn't make a path absolute to the actual file system.
+            </remarks>
+        </member>
+        <member name="T:SharpDX.Serialization.ArrayLengthType">
+            <summary>
+            Specify the size used for encoding length for array while using a <see cref="T:SharpDX.Serialization.BinarySerializer"/>, just before an array is encoded.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Serialization.ArrayLengthType.Dynamic">
+            <summary>
+            Use variable length 7Bit Encoding that will output from 1 byte to 5 byte depending on the range of length value.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Serialization.ArrayLengthType.Byte">
+            <summary>
+            Output a length as a byte. The length must not be greater than 255.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Serialization.ArrayLengthType.UShort">
+            <summary>
+            Output a length as an ushort. The length must not be greater than 65535.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Serialization.ArrayLengthType.Int">
+            <summary>
+            Output a length as an int. The length must not be greater than 2^31 - 1.
+            </summary>
+        </member>
         <member name="T:SharpDX.Serialization.NamespaceDoc">
             <summary>
             The <see cref="N:SharpDX.Serialization"/> namespace contains a serialization API.
+            </summary>
+        </member>
+        <member name="T:SharpDX.Serialization.SerializeFlags">
+            <summary>
+            Flags used when serializing a value with a <see cref="T:SharpDX.Serialization.BinarySerializer"/>.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Serialization.SerializeFlags.Normal">
+            <summary>
+            Normal serialize (not dynamic, not nullable).
+            </summary>
+        </member>
+        <member name="F:SharpDX.Serialization.SerializeFlags.Dynamic">
+            <summary>
+            Serialize a value as a dynamic value (the output stream will contain a magic-code for each encoded object). 
+            </summary>
+        </member>
+        <member name="F:SharpDX.Serialization.SerializeFlags.Nullable">
+            <summary>
+            Serialize a value that can be null.
             </summary>
         </member>
         <member name="T:SharpDX.SingletonString">
@@ -4466,28 +4603,38 @@
         </member>
         <member name="M:SharpDX.Serialization.BinarySerializer.SerializeDynamic``1(``0@)">
             <summary>
-            Serializes a dynamic value.
+            Serializes a dynamic value that can be nullable.
             </summary>
             <typeparam name="T">Known type of the value to serialize. The known type is not the runtime type that will be actually serialized.</typeparam>
             <param name="value">The value to serialize based on its runtime type.</param>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0@)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.SerializeDynamic``1(``0@,SharpDX.Serialization.SerializeFlags)">
+            <summary>
+            Serializes a dynamic value.
+            </summary>
+            <typeparam name="T">Known type of the value to serialize. The known type is not the runtime type that will be actually serialized.</typeparam>
+            <param name="value">The value to serialize based on its runtime type.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
+        </member>
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0@,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes a static value implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface.
             </summary>
             <typeparam name="T">Type of the data to serialize.</typeparam>
             <param name="value">The value to serialize</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.SerializeWithNoInstance``1(``0@)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.SerializeWithNoInstance``1(``0@,SharpDX.Serialization.SerializeFlags)">
             <summary>
-            Serializes a static value implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface. Unlike <see cref="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0@)"/>, 
+            Serializes a static value implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface. Unlike <see cref="!:Serialize&lt;T&gt;(ref T)"/>, 
             this method doesn't allocate a new instance when reading but use the reference value.
             </summary>
             <typeparam name="T">Type of the data to serialize.</typeparam>
             <param name="value">The value to serialize</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
@@ -4503,18 +4650,19 @@
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0[]@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0})">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0[]@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0},SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes an array of primitives using serialization methods implemented by this instance for each item in the array.
             </summary>
             <typeparam name="T">Type of the primitive data to serialize.</typeparam>
             <param name="valueArray">An array of primitive value to serialize</param>
             <param name="serializer">The serializer to user to serialize the T values.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0[]@,System.Int32,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0})">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0[]@,System.Int32,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0},SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes count elements in an array of primitives using serialization methods implemented by this instance for each item in the array. 
             </summary>
@@ -4522,101 +4670,110 @@
             <param name="valueArray">An array of primitive value to serialize</param>
             <param name="count">Count elements to serialize. See remarks.</param>
             <param name="serializer">The serializer to user to serialize the T values.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
             <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0[]@)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0[]@,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes an array of static values that are implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface.
             </summary>
             <typeparam name="T">Type of the data to serialize.</typeparam>
             <param name="valueArray">An array of value to serialize</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.SerializeWithNoInstance``1(``0[]@)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.SerializeWithNoInstance``1(``0[]@,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes an array of static values that are implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface.
             </summary>
             <typeparam name="T">Type of the data to serialize.</typeparam>
             <param name="valueArray">An array of value to serialize</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0[]@,System.Int32)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(``0[]@,System.Int32,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes count elements in an array of static values that are implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface.
             </summary>
             <typeparam name="T">Type of the data to serialize.</typeparam>
             <param name="valueArray">An array of value to serialize</param>
             <param name="count">Count elements to serialize. See remarks.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
             <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize(System.Byte[]@)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize(System.Byte[]@,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes an array of bytes.
             </summary>
             <param name="valueArray">An array of bytes to serialize</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize(System.Byte[]@,System.Int32)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize(System.Byte[]@,System.Int32,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes an array of bytes.
             </summary>
             <param name="valueArray">An array of bytes to serialize</param>
             <param name="count">Count elements to serialize. See remarks.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
             <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(System.Collections.Generic.List{``0}@)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(System.Collections.Generic.List{``0}@,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes a list of static values that are implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface.
             </summary>
             <typeparam name="T">Type of the data to serialize.</typeparam>
             <param name="valueList">A list of value to serialize</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(System.Collections.Generic.List{``0}@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0})">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(System.Collections.Generic.List{``0}@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0},SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes a list of primitive values using a specific serializer method from this instance.
             </summary>
             <typeparam name="T">Type of the data to serialize.</typeparam>
             <param name="valueList">A list of value to serialize</param>
             <param name="serializerMethod">A method of this instance to serialize the primitive T type</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(System.Collections.Generic.List{``0}@,System.Int32)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(System.Collections.Generic.List{``0}@,System.Int32,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes count elements from a list of static values that are implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface.
             </summary>
             <typeparam name="T">Type of the data to serialize.</typeparam>
             <param name="valueList">A list of value to serialize</param>
             <param name="count">Count elements to serialize. See remarks.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
             <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(System.Collections.Generic.List{``0}@,System.Int32,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0})">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``1(System.Collections.Generic.List{``0}@,System.Int32,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0},SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes count  elements from a list of primitive values using a specific serializer method from this instance.
             </summary>
@@ -4624,24 +4781,26 @@
             <param name="valueList">A list of value to serialize</param>
             <param name="serializerMethod">A method of this instance to serialize the primitive T type</param>
             <param name="count">Count elements to serialize. See remarks.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
             <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``2(System.Collections.Generic.Dictionary{``0,``1}@)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``2(System.Collections.Generic.Dictionary{``0,``1}@,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes a dictionary of key/values that are both implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface.
             </summary>
             <typeparam name="TKey">Type of key to serialize.</typeparam>
             <typeparam name="TValue">Type of value to serialize.</typeparam>
             <param name="dictionary">A dictionary to serialize</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``2(System.Collections.Generic.Dictionary{``0,``1}@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``1})">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``2(System.Collections.Generic.Dictionary{``0,``1}@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``1},SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes a dictionary of key/values.
             </summary>
@@ -4649,11 +4808,12 @@
             <typeparam name="TValue">Type of primitive value with its associated serializer.</typeparam>
             <param name="dictionary">A dictionary to serialize</param>
             <param name="valueSerializer">Serializer used for the TValue.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``2(System.Collections.Generic.Dictionary{``0,``1}@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0})">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``2(System.Collections.Generic.Dictionary{``0,``1}@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0},SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes a dictionary of key/values.
             </summary>
@@ -4661,11 +4821,12 @@
             <typeparam name="TValue">Type of value to serialize that is implementing the <see cref="T:SharpDX.Serialization.IDataSerializable"/> interface.</typeparam>
             <param name="dictionary">A dictionary to serialize</param>
             <param name="keySerializer">Serializer used for the TKey.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``2(System.Collections.Generic.Dictionary{``0,``1}@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0},SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``1})">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize``2(System.Collections.Generic.Dictionary{``0,``1}@,SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``0},SharpDX.Serialization.BinarySerializer.SerializerPrimitiveAction{``1},SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes a dictionary of key/values.
             </summary>
@@ -4674,6 +4835,7 @@
             <param name="dictionary">A dictionary to serialize</param>
             <param name="keySerializer">Serializer used for the TKey.</param>
             <param name="valueSerializer">Serializer used for the TValue.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             </remarks>
@@ -4688,12 +4850,24 @@
             This string is serialized with the current <see cref="P:SharpDX.Serialization.BinarySerializer.Encoding"/> set on this instance.
             </remarks>
         </member>
-        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize(System.String@,System.Boolean)">
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize(System.String@,SharpDX.Serialization.SerializeFlags)">
+            <summary>
+            Serializes a single <strong>string</strong> value.
+            </summary>
+            <param name="value">The value to serialize</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
+            <remarks>
+            Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
+            This string is serialized with the current <see cref="P:SharpDX.Serialization.BinarySerializer.Encoding"/> set on this instance.
+            </remarks>
+        </member>
+        <member name="M:SharpDX.Serialization.BinarySerializer.Serialize(System.String@,System.Boolean,SharpDX.Serialization.SerializeFlags)">
             <summary>
             Serializes a single <strong>string</strong> value.
             </summary>
             <param name="value">The value to serialize</param>
             <param name="writeNullTerminatedString">Write a null byte at the end of the string.</param>
+            <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
             This string is serialized with the current <see cref="P:SharpDX.Serialization.BinarySerializer.Encoding"/> set on this instance.
@@ -4771,6 +4945,16 @@
             <param name="value">The value to serialize</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
+            </remarks>
+        </member>
+        <member name="M:SharpDX.Serialization.BinarySerializer.SerializeMemoryRegion(SharpDX.DataPointer)">
+            <summary>
+            Serializes a memory region.
+            </summary>
+            <param name="dataRegion">The pointer to an unmanaged memory region. For read operation, this pointer must be allocated by the caller.</param>
+            <exception cref="T:System.IO.EndOfStreamException">If the end of stream was reached before reading all the bytes.</exception>
+            <remarks>Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
+            This method doesn't serialize the sizeInBytes of the region, so the size must be serialized serparetely.
             </remarks>
         </member>
         <member name="M:SharpDX.Serialization.BinarySerializer.SerializeMemoryRegion(System.IntPtr,System.Int32)">
@@ -4883,13 +5067,6 @@
             </summary>
             <value>The encoding.</value>
             <exception cref="T:System.ArgumentNullException">When setting a null encoding</exception>
-        </member>
-        <member name="P:SharpDX.Serialization.BinarySerializer.AllowNull">
-            <summary>
-            Enables to serializing null value. Default is <strong>false</strong>.
-            </summary>
-            <value><c>true</c> if [allow null]; otherwise, <c>false</c>.</value>
-            <exception cref="T:System.InvalidOperationException">If an invalid matching pair of true/false is detected.</exception>
         </member>
         <member name="P:SharpDX.Serialization.BinarySerializer.AllowIdentity">
             <summary>
@@ -5641,24 +5818,6 @@
             The result of the operator.
             </returns>
         </member>
-        <member name="M:SharpDX.DrawingSizeF.op_Implicit(System.Drawing.SizeF)~SharpDX.DrawingSizeF">
-            <summary>
-            Performs an implicit conversion from <see cref="T:System.Drawing.SizeF"/> to <see cref="T:SharpDX.DrawingSizeF"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DrawingSizeF.op_Implicit(SharpDX.DrawingSizeF)~System.Drawing.SizeF">
-            <summary>
-            Performs an implicit conversion from <see cref="T:SharpDX.DrawingSizeF"/> to <see cref="T:System.Drawing.SizeF"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
         <member name="M:SharpDX.DrawingSizeF.SharpDX#Serialization#IDataSerializable#Serialize(SharpDX.Serialization.BinarySerializer)">
             <inheritdoc/>
         </member>
@@ -5717,24 +5876,6 @@
             <param name="right">The right.</param>
             <returns>
             The result of the operator.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DrawingSize.op_Implicit(System.Drawing.Size)~SharpDX.DrawingSize">
-            <summary>
-            Performs an implicit conversion from <see cref="T:System.Drawing.Size"/> to <see cref="T:SharpDX.DrawingSize"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DrawingSize.op_Implicit(SharpDX.DrawingSize)~System.Drawing.Size">
-            <summary>
-            Performs an implicit conversion from <see cref="T:SharpDX.DrawingSize"/> to <see cref="T:System.Drawing.Size"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
             </returns>
         </member>
         <member name="M:SharpDX.DrawingSize.SharpDX#Serialization#IDataSerializable#Serialize(SharpDX.Serialization.BinarySerializer)">
@@ -5815,24 +5956,6 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.DrawingPointF.op_Implicit(System.Drawing.PointF)~SharpDX.DrawingPointF">
-            <summary>
-            Performs an implicit conversion from <see cref="T:System.Drawing.PointF"/> to <see cref="T:SharpDX.DrawingPointF"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DrawingPointF.op_Implicit(SharpDX.DrawingPointF)~System.Drawing.PointF">
-            <summary>
-            Performs an implicit conversion from <see cref="T:SharpDX.DrawingPointF"/> to <see cref="T:System.Drawing.PointF"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
         <member name="M:SharpDX.DrawingPointF.SharpDX#Serialization#IDataSerializable#Serialize(SharpDX.Serialization.BinarySerializer)">
             <inheritdoc/>
         </member>
@@ -5893,24 +6016,6 @@
             The result of the operator.
             </returns>
         </member>
-        <member name="M:SharpDX.DrawingPoint.op_Implicit(System.Drawing.Point)~SharpDX.DrawingPoint">
-            <summary>
-            Performs an implicit conversion from <see cref="T:System.Drawing.Point"/> to <see cref="T:SharpDX.DrawingPoint"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DrawingPoint.op_Implicit(SharpDX.DrawingPoint)~System.Drawing.Point">
-            <summary>
-            Performs an implicit conversion from <see cref="T:SharpDX.DrawingPoint"/> to <see cref="T:System.Drawing.Point"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
         <member name="M:SharpDX.DrawingPoint.SharpDX#Serialization#IDataSerializable#Serialize(SharpDX.Serialization.BinarySerializer)">
             <inheritdoc/>
         </member>
@@ -5918,6 +6023,13 @@
             <summary>
             Structure using the same layout than <see cref="T:System.Drawing.RectangleF"/>
             </summary>
+        </member>
+        <member name="M:SharpDX.DrawingRectangleF.#ctor(SharpDX.Vector2,SharpDX.Vector2)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.DrawingRectangleF"/> struct.
+            </summary>
+            <param name="position">The x-y position of this rectangle.</param>
+            <param name="size">The x-y size of this rectangle.</param>
         </member>
         <member name="M:SharpDX.DrawingRectangleF.#ctor(System.Single,System.Single,System.Single,System.Single)">
             <summary>
@@ -5928,24 +6040,14 @@
             <param name="width">The width.</param>
             <param name="height">The height.</param>
         </member>
-        <member name="F:SharpDX.DrawingRectangleF.X">
+        <member name="F:SharpDX.DrawingRectangleF.Position">
             <summary>
-            Left coordinate.
+            The Position.
             </summary>
         </member>
-        <member name="F:SharpDX.DrawingRectangleF.Y">
+        <member name="F:SharpDX.DrawingRectangleF.Size">
             <summary>
-            Top coordinate.
-            </summary>
-        </member>
-        <member name="F:SharpDX.DrawingRectangleF.Width">
-            <summary>
-            Width of this rectangle.
-            </summary>
-        </member>
-        <member name="F:SharpDX.DrawingRectangleF.Height">
-            <summary>
-            Height of this rectangle.
+            The Size.
             </summary>
         </member>
         <member name="M:SharpDX.DrawingRectangleF.Equals(SharpDX.DrawingRectangleF)">
@@ -5983,26 +6085,28 @@
             The result of the operator.
             </returns>
         </member>
-        <member name="M:SharpDX.DrawingRectangleF.op_Implicit(System.Drawing.RectangleF)~SharpDX.DrawingRectangleF">
-            <summary>
-            Performs an implicit conversion from <see cref="T:System.Drawing.RectangleF"/> to <see cref="T:SharpDX.DrawingRectangleF"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DrawingRectangleF.op_Implicit(SharpDX.DrawingRectangleF)~System.Drawing.RectangleF">
-            <summary>
-            Performs an implicit conversion from <see cref="T:SharpDX.DrawingRectangleF"/> to <see cref="T:System.Drawing.RectangleF"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
         <member name="M:SharpDX.DrawingRectangleF.SharpDX#Serialization#IDataSerializable#Serialize(SharpDX.Serialization.BinarySerializer)">
             <inheritdoc/>
+        </member>
+        <member name="P:SharpDX.DrawingRectangleF.X">
+            <summary>
+            Left coordinate.
+            </summary>
+        </member>
+        <member name="P:SharpDX.DrawingRectangleF.Y">
+            <summary>
+            Top coordinate.
+            </summary>
+        </member>
+        <member name="P:SharpDX.DrawingRectangleF.Width">
+            <summary>
+            Width of this rectangle.
+            </summary>
+        </member>
+        <member name="P:SharpDX.DrawingRectangleF.Height">
+            <summary>
+            Height of this rectangle.
+            </summary>
         </member>
         <member name="T:SharpDX.Direct3D.PixHelper">
             <summary>
@@ -6075,6 +6179,11 @@
             Structure using the same layout than <see cref="T:System.Drawing.Rectangle"/> 
             </summary>
         </member>
+        <member name="F:SharpDX.DrawingRectangle.Empty">
+            <summary>
+            An empty drawing rectangle.
+            </summary>
+        </member>
         <member name="M:SharpDX.DrawingRectangle.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.DrawingRectangle"/> struct.
@@ -6139,24 +6248,6 @@
             The result of the operator.
             </returns>
         </member>
-        <member name="M:SharpDX.DrawingRectangle.op_Implicit(System.Drawing.Rectangle)~SharpDX.DrawingRectangle">
-            <summary>
-            Performs an implicit conversion from <see cref="T:System.Drawing.Rectangle"/> to <see cref="T:SharpDX.DrawingRectangle"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DrawingRectangle.op_Implicit(SharpDX.DrawingRectangle)~System.Drawing.Rectangle">
-            <summary>
-            Performs an implicit conversion from <see cref="T:SharpDX.DrawingRectangle"/> to <see cref="T:System.Drawing.Rectangle"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
         <member name="M:SharpDX.DrawingRectangle.SharpDX#Serialization#IDataSerializable#Serialize(SharpDX.Serialization.BinarySerializer)">
             <inheritdoc/>
         </member>
@@ -6185,20 +6276,6 @@
             </summary>
             <param name="path">The file to open for reading. </param>
             <returns>A string containing all lines of the file.</returns>
-        </member>
-        <member name="M:SharpDX.IO.NativeFile.Create(System.String,SharpDX.IO.NativeFileAccess,SharpDX.IO.NativeFileShare,System.IntPtr,SharpDX.IO.NativeFileMode,SharpDX.IO.NativeFileOptions,System.IntPtr)">
-            <summary>
-            Creates the file.
-            </summary>
-            <param name="fileName">Name of the file.</param>
-            <param name="desiredAccess">The desired access.</param>
-            <param name="shareMode">The share mode.</param>
-            <param name="securityAttributes">The security attributes.</param>
-            <param name="mode">The creation disposition.</param>
-            <param name="flagsAndOptions">The flags and attributes.</param>
-            <param name="templateFile">The template file.</param>
-            <returns>A handle to the created file. IntPtr.Zero if failed.</returns>
-            <unmanaged>CreateFile</unmanaged>
         </member>
         <member name="M:SharpDX.IO.NativeFile.ReadFile(System.IntPtr,System.IntPtr,System.Int32,System.Int32@,System.IntPtr)">
             <summary>
@@ -6242,6 +6319,20 @@
             <param name="handle">The handle.</param>
             <returns></returns>
             <unmanaged>SetEndOfFile</unmanaged>
+        </member>
+        <member name="M:SharpDX.IO.NativeFile.Create(System.String,SharpDX.IO.NativeFileAccess,SharpDX.IO.NativeFileShare,System.IntPtr,SharpDX.IO.NativeFileMode,SharpDX.IO.NativeFileOptions,System.IntPtr)">
+            <summary>
+            Creates the file.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="desiredAccess">The desired access.</param>
+            <param name="shareMode">The share mode.</param>
+            <param name="securityAttributes">The security attributes.</param>
+            <param name="mode">The creation disposition.</param>
+            <param name="flagsAndOptions">The flags and attributes.</param>
+            <param name="templateFile">The template file.</param>
+            <returns>A handle to the created file. IntPtr.Zero if failed.</returns>
+            <unmanaged>CreateFile</unmanaged>
         </member>
         <member name="M:SharpDX.IO.NativeFile.GetFileSizeEx(System.IntPtr,System.Int64@)">
             <summary>
@@ -8329,6 +8420,20 @@
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
         </member>
+        <member name="M:SharpDX.Color4.op_Explicit(SharpDX.ColorBGRA)~SharpDX.Color4">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Vector3"/> to <see cref="T:SharpDX.Color4"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.Color4.op_Explicit(SharpDX.Color4)~SharpDX.ColorBGRA">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Vector4"/> to <see cref="T:SharpDX.Color4"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="M:SharpDX.Color4.op_Explicit(SharpDX.Color4)~System.Int32">
             <summary>
             Performs an explicit conversion from <see cref="T:SharpDX.Color4"/> to <see cref="T:System.Int32"/>.
@@ -8889,6 +8994,11 @@
             <value>
             	<c>true</c> if this instance is disposed; otherwise, <c>false</c>.
             </value>
+        </member>
+        <member name="E:SharpDX.Component.Disposing">
+            <summary>
+            Occurs when when Dispose is called.
+            </summary>
         </member>
         <member name="T:SharpDX.Configuration">
             <summary>
@@ -9718,6 +9828,14 @@
             <param name = "offset">The zero-based byte offset in buffer at which to begin storing
               the data read from the current buffer.</param>
             <param name = "count">The number of values to be read from the current buffer.</param>
+        </member>
+        <member name="M:SharpDX.DataBuffer.Set``1(System.Int32,``0@)">
+            <summary>
+              Sets a single value to the buffer at a specified position.
+            </summary>
+            <typeparam name = "T">The type of the value to be written to the buffer.</typeparam>
+            <param name="positionInBytes">Relative position in bytes from the beginning of the buffer to set the data to.</param>
+            <param name = "value">The value to write to the buffer.</param>
         </member>
         <member name="M:SharpDX.DataBuffer.Set``1(System.Int32,``0)">
             <summary>
@@ -37890,6 +38008,13 @@
             <param name="value">The matrix whose transpose is to be calculated.</param>
             <param name="result">When the method completes, contains the transpose of the specified matrix.</param>
         </member>
+        <member name="M:SharpDX.Matrix.TransposeByRef(SharpDX.Matrix@,SharpDX.Matrix@)">
+            <summary>
+            Calculates the transpose of the specified matrix.
+            </summary>
+            <param name="value">The matrix whose transpose is to be calculated.</param>
+            <param name="result">When the method completes, contains the transpose of the specified matrix.</param>
+        </member>
         <member name="M:SharpDX.Matrix.Transpose(SharpDX.Matrix)">
             <summary>
             Calculates the transpose of the specified matrix.
@@ -39349,6 +39474,11 @@
             A FourCC descriptor.
             </summary>
         </member>
+        <member name="F:SharpDX.Multimedia.FourCC.Empty">
+            <summary>
+            Empty FourCC.
+            </summary>
+        </member>
         <member name="M:SharpDX.Multimedia.FourCC.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Multimedia.FourCC"/> struct.
@@ -39663,6 +39793,67 @@
             <summary>
             The <see cref="N:SharpDX.Text"/> namespace provides missing ASCIIEncoding for Win8 Modern platform.
             </summary>
+        </member>
+        <member name="T:SharpDX.TimerTick">
+            <summary>
+            This provides timing information similar to <see cref="T:System.Diagnostics.Stopwatch"/> but an update occuring only on a <see cref="M:SharpDX.TimerTick.Tick"/> method.
+            </summary>
+        </member>
+        <member name="M:SharpDX.TimerTick.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.TimerTick"/> class.
+            </summary>
+        </member>
+        <member name="M:SharpDX.TimerTick.Reset">
+            <summary>
+            Resets this instance. <see cref="P:SharpDX.TimerTick.TotalTime"/> is set to zero.
+            </summary>
+        </member>
+        <member name="M:SharpDX.TimerTick.Resume">
+            <summary>
+            Resumes this instance, only if a call to <see cref="M:SharpDX.TimerTick.Pause"/> has been already issued.
+            </summary>
+        </member>
+        <member name="M:SharpDX.TimerTick.Tick">
+            <summary>
+            Update the <see cref="P:SharpDX.TimerTick.TotalTime"/> and <see cref="P:SharpDX.TimerTick.ElapsedTime"/>,
+            </summary>
+            <remarks>
+            This method must be called on a regular basis at every *tick*.
+            </remarks>
+        </member>
+        <member name="M:SharpDX.TimerTick.Pause">
+            <summary>
+            Pauses this instance.
+            </summary>
+        </member>
+        <member name="M:SharpDX.TimerTick.ConvertRawToTimestamp(System.Int64)">
+            <summary>
+            Converts a <see cref="T:System.Diagnostics.Stopwatch"/> raw time to a <see cref="T:System.TimeSpan"/>.
+            </summary>
+            <param name="delta">The delta.</param>
+            <returns>The <see cref="T:System.TimeSpan"/>.</returns>
+        </member>
+        <member name="P:SharpDX.TimerTick.TotalTime">
+            <summary>
+            Gets the total time elasped since the last reset or when this timer was created.
+            </summary>
+        </member>
+        <member name="P:SharpDX.TimerTick.ElapsedAdjustedTime">
+            <summary>
+            Gets the elapsed adjusted time since the previous call to <see cref="M:SharpDX.TimerTick.Tick"/> taking into account <see cref="M:SharpDX.TimerTick.Pause"/> time.
+            </summary>
+        </member>
+        <member name="P:SharpDX.TimerTick.ElapsedTime">
+            <summary>
+            Gets the elapsed time since the previous call to <see cref="M:SharpDX.TimerTick.Tick"/>.
+            </summary>
+        </member>
+        <member name="P:SharpDX.TimerTick.IsPaused">
+            <summary>
+            Gets a value indicating whether this instance is paused.
+            </summary>
+            <value><c>true</c> if this instance is paused; otherwise, <c>false</c>.</value>
         </member>
         <member name="T:SharpDX.Win32Native">
             <summary>
@@ -40917,33 +41108,19 @@
             A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
             </returns>
         </member>
-        <member name="M:SharpDX.Rectangle.op_Implicit(System.Drawing.Rectangle)~SharpDX.Rectangle">
-            <summary>
-            Performs an implicit conversion from <see cref="T:System.Drawing.Rectangle"/> to <see cref="T:SharpDX.Rectangle"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>The result of the conversion.</returns>
-        </member>
-        <member name="M:SharpDX.Rectangle.op_Implicit(SharpDX.Rectangle)~System.Drawing.Rectangle">
-            <summary>
-            Rectangles the specified input.
-            </summary>
-            <param name="input">The input.</param>
-            <returns></returns>
-        </member>
         <member name="M:SharpDX.Rectangle.op_Implicit(SharpDX.DrawingRectangle)~SharpDX.Rectangle">
             <summary>
-            Performs an implicit conversion from <see cref="T:System.Drawing.Rectangle"/> to <see cref="T:SharpDX.Rectangle"/>.
+            Performs an implicit conversion from <see cref="T:SharpDX.DrawingRectangle"/> to <see cref="T:SharpDX.Rectangle"/>.
             </summary>
             <param name="input">The input.</param>
             <returns>The result of the conversion.</returns>
         </member>
         <member name="M:SharpDX.Rectangle.op_Implicit(SharpDX.Rectangle)~SharpDX.DrawingRectangle">
             <summary>
-            Rectangles the specified input.
+            Performs an implicit conversion from <see cref="T:SharpDX.Rectangle"/> to <see cref="T:SharpDX.DrawingRectangle"/>.
             </summary>
             <param name="input">The input.</param>
-            <returns></returns>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="M:SharpDX.Rectangle.op_Equality(SharpDX.Rectangle,SharpDX.Rectangle)">
             <summary>
@@ -41052,20 +41229,6 @@
             <returns>
             A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
             </returns>
-        </member>
-        <member name="M:SharpDX.RectangleF.op_Implicit(System.Drawing.RectangleF)~SharpDX.RectangleF">
-            <summary>
-            Performs an implicit conversion from <see cref="T:System.Drawing.RectangleF"/> to <see cref="T:SharpDX.RectangleF"/>.
-            </summary>
-            <param name="input">The input.</param>
-            <returns>The result of the conversion.</returns>
-        </member>
-        <member name="M:SharpDX.RectangleF.op_Implicit(SharpDX.RectangleF)~System.Drawing.RectangleF">
-            <summary>
-            Rectangles the F.
-            </summary>
-            <param name="input">The input.</param>
-            <returns></returns>
         </member>
         <member name="M:SharpDX.RectangleF.op_Implicit(SharpDX.DrawingRectangleF)~SharpDX.RectangleF">
             <summary>
@@ -41255,6 +41418,13 @@
             </summary>
             <param name="ex">The exception</param>
             <returns>The associated result code</returns>
+        </member>
+        <member name="M:SharpDX.Result.GetResultFromWin32Error(System.Int32)">
+            <summary>
+            Gets the result from win32 error.
+            </summary>
+            <param name="win32Error">The win32Error.</param>
+            <returns>A HRESULT.</returns>
         </member>
         <member name="F:SharpDX.Result.Ok">
             <summary>
@@ -41935,6 +42105,12 @@
             <param name="customEffectType">Type of the custom effect.</param>
             <param name="propertyInfo">The property info to set the value to.</param>
             <returns>A compiled delegate</returns>
+        </member>
+        <member name="M:SharpDX.Utilities.Sleep(System.TimeSpan)">
+            <summary>
+            Suspends the current thread of a <see cref="!:sleepTimeInMillis"/>.
+            </summary>
+            <param name="sleepTimeInMillis">The duration to sleep in milliseconds.</param>
         </member>
         <member name="M:SharpDX.Utilities.FindExplicitConverstion(System.Type,System.Type)">
             <summary>
@@ -44696,7 +44872,7 @@
             Runs the specified main loop in the specified context.
             </summary>
         </member>
-        <member name="M:SharpDX.Windows.RenderLoop.Run(System.Windows.Forms.Form,SharpDX.Windows.RenderLoop.RenderCallback)">
+        <member name="M:SharpDX.Windows.RenderLoop.Run(System.Windows.Forms.Control,SharpDX.Windows.RenderLoop.RenderCallback)">
             <summary>
             Runs the specified main loop for the specified windows form.
             </summary>
@@ -44734,7 +44910,7 @@
             ProxyNativeWindow, used only to detect if the original window is destroyed
             </summary>
         </member>
-        <member name="M:SharpDX.Windows.RenderLoop.ProxyNativeWindow.#ctor(System.Windows.Forms.Form)">
+        <member name="M:SharpDX.Windows.RenderLoop.ProxyNativeWindow.#ctor(System.Windows.Forms.Control)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Windows.RenderLoop.ProxyNativeWindow"/> class.
             </summary>

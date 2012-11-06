@@ -547,11 +547,11 @@
         </member>
         <member name="P:SharpDX.Direct3D11.Resource.EvictionPriority">
             <summary>	
-            <p>Get the eviction priority of a resource.</p>	
+            <p>Get or sets the eviction priority of a resource.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11Resource::GetEvictionPriority']/*"/>	
             <msdn-id>ff476585</msdn-id>	
-            <unmanaged>GetEvictionPriority</unmanaged>	
+            <unmanaged>GetEvictionPriority / SetEvictionPriority</unmanaged>	
             <unmanaged-short>GetEvictionPriority</unmanaged-short>	
             <unmanaged>unsigned int ID3D11Resource::GetEvictionPriority()</unmanaged>
         </member>
@@ -1562,27 +1562,27 @@
         </member>
         <member name="P:SharpDX.Direct3D11.DeviceDebug.PresentDelay">
             <summary>	
-            <p>Get the number of milliseconds to sleep after <strong><see cref="M:SharpDX.DXGI.SwapChain.Present(System.Int32,SharpDX.DXGI.PresentFlags)"/></strong> is called.</p>	
+            <p>Get or sets the number of milliseconds to sleep after <strong><see cref="M:SharpDX.DXGI.SwapChain.Present(System.Int32,SharpDX.DXGI.PresentFlags)"/></strong> is called.</p>	
             </summary>	
             <remarks>	
             <p>Value is set with <strong><see cref="M:SharpDX.Direct3D11.DeviceDebug.SetPresentDelay(System.Int32)"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11Debug::GetPresentPerRenderOpDelay']/*"/>	
             <msdn-id>ff476368</msdn-id>	
-            <unmanaged>GetPresentPerRenderOpDelay</unmanaged>	
+            <unmanaged>GetPresentPerRenderOpDelay / SetPresentPerRenderOpDelay</unmanaged>	
             <unmanaged-short>GetPresentPerRenderOpDelay</unmanaged-short>	
             <unmanaged>unsigned int ID3D11Debug::GetPresentPerRenderOpDelay()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D11.DeviceDebug.SwapChain">
             <summary>	
-            <p>Get the swap chain that the runtime will use for automatically calling <strong><see cref="M:SharpDX.DXGI.SwapChain.Present(System.Int32,SharpDX.DXGI.PresentFlags)"/></strong>.</p>	
+            <p>Get or sets the swap chain that the runtime will use for automatically calling <strong><see cref="M:SharpDX.DXGI.SwapChain.Present(System.Int32,SharpDX.DXGI.PresentFlags)"/></strong>.</p>	
             </summary>	
             <remarks>	
             <p>The swap chain retrieved by this method will only be used if <see cref="F:SharpDX.Direct3D11.DebugFeatureFlags.PresentPerRender"/> is set in the <strong>feature mask</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11Debug::GetSwapChain']/*"/>	
             <msdn-id>ff476369</msdn-id>	
-            <unmanaged>GetSwapChain</unmanaged>	
+            <unmanaged>GetSwapChain / SetSwapChain</unmanaged>	
             <unmanaged-short>GetSwapChain</unmanaged-short>	
             <unmanaged>HRESULT ID3D11Debug::GetSwapChain([Out] IDXGISwapChain** ppSwapChain)</unmanaged>
         </member>
@@ -1700,7 +1700,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct3D11.ResourceView.GetResource(SharpDX.Direct3D11.Resource@)">
+        <member name="M:SharpDX.Direct3D11.ResourceView.GetResource(System.IntPtr@)">
             <summary>	
             <p>Get the resource that is accessed through this view.</p>	
             </summary>	
@@ -1710,8 +1710,20 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11View::GetResource']/*"/>	
             <msdn-id>ff476643</msdn-id>	
-            <unmanaged>void ID3D11View::GetResource([Out] ID3D11Resource** ppResource)</unmanaged>	
+            <unmanaged>void ID3D11View::GetResource([Out] void** ppResource)</unmanaged>	
             <unmanaged-short>ID3D11View::GetResource</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Direct3D11.ResourceView.ResourceAs``1">
+            <summary>	
+            <p>Get the resource that is accessed through this view.</p>	
+            </summary>	
+            <remarks>	
+            <p>This function increments the reference count of the resource by one, so it is necessary to call <strong>Dispose</strong> on the returned reference when the application is done with it. Destroying (or losing) the returned reference before <strong>Release</strong> is called will result in a memory leak.</p>	
+            </remarks>	
+            <msdn-id>ff476643</msdn-id>	
+            <unmanaged>GetResource</unmanaged>	
+            <unmanaged-short>GetResource</unmanaged-short>	
+            <unmanaged>void ID3D11View::GetResource([Out] ID3D11Resource** ppResource)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D11.ResourceView.Resource">
             <summary>	
@@ -1720,7 +1732,6 @@
             <remarks>	
             <p>This function increments the reference count of the resource by one, so it is necessary to call <strong>Release</strong> on the returned reference when the application is done with it. Destroying (or losing) the returned reference before <strong>Release</strong> is called will result in a memory leak.</p>	
             </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11View::GetResource']/*"/>	
             <msdn-id>ff476643</msdn-id>	
             <unmanaged>GetResource</unmanaged>	
             <unmanaged-short>GetResource</unmanaged-short>	
@@ -1801,6 +1812,9 @@
             <param name="driverType">
             Type of the driver.
             </param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.DXGI.Adapter)">
             <summary>
@@ -1809,6 +1823,9 @@
             <param name="adapter">
             The adapter.
             </param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.Direct3D.DriverType,SharpDX.Direct3D11.DeviceCreationFlags)">
             <summary>
@@ -1816,6 +1833,9 @@
             </summary>
             <param name="driverType">Type of the driver.</param>
             <param name="flags">The flags.</param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.DXGI.Adapter,SharpDX.Direct3D11.DeviceCreationFlags)">
             <summary>
@@ -1823,6 +1843,9 @@
             </summary>
             <param name="adapter"></param>
             <param name="flags"></param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.Direct3D.DriverType,SharpDX.Direct3D11.DeviceCreationFlags,SharpDX.Direct3D.FeatureLevel[])">
             <summary>
@@ -1831,6 +1854,9 @@
             <param name="driverType"></param>
             <param name="flags"></param>
             <param name="featureLevels"></param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.#ctor(SharpDX.DXGI.Adapter,SharpDX.Direct3D11.DeviceCreationFlags,SharpDX.Direct3D.FeatureLevel[])">
             <summary>
@@ -1839,6 +1865,9 @@
             <param name="adapter"></param>
             <param name="flags"></param>
             <param name="featureLevels"></param>
+            <msdn-id>ff476082</msdn-id>	
+            <unmanaged>HRESULT D3D11CreateDevice([In, Optional] IDXGIAdapter* pAdapter,[In] D3D_DRIVER_TYPE DriverType,[In] HINSTANCE Software,[In] D3D11_CREATE_DEVICE_FLAG Flags,[In, Buffer, Optional] const D3D_FEATURE_LEVEL* pFeatureLevels,[In] unsigned int FeatureLevels,[In] unsigned int SDKVersion,[Out, Fast] ID3D11Device** ppDevice,[Out, Optional] D3D_FEATURE_LEVEL* pFeatureLevel,[Out, Optional] ID3D11DeviceContext** ppImmediateContext)</unmanaged>	
+            <unmanaged-short>D3D11CreateDevice</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.Device.CreateWithSwapChain(SharpDX.Direct3D.DriverType,SharpDX.Direct3D11.DeviceCreationFlags,SharpDX.DXGI.SwapChainDescription,SharpDX.Direct3D11.Device@,SharpDX.DXGI.SwapChain@)">
             <summary>
@@ -2671,14 +2700,14 @@
         </member>
         <member name="P:SharpDX.Direct3D11.Device.ExceptionMode">
             <summary>	
-            <p>Get the exception-mode flags.</p>	
+            <p>Get or sets the exception-mode flags.</p>	
             </summary>	
             <remarks>	
             <p>An exception-mode flag is used to elevate an error condition to a non-continuable exception. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11Device::GetExceptionMode']/*"/>	
             <msdn-id>ff476527</msdn-id>	
-            <unmanaged>GetExceptionMode</unmanaged>	
+            <unmanaged>GetExceptionMode / SetExceptionMode</unmanaged>	
             <unmanaged-short>GetExceptionMode</unmanaged-short>	
             <unmanaged>unsigned int ID3D11Device::GetExceptionMode()</unmanaged>
         </member>
@@ -4694,24 +4723,24 @@
         </member>
         <member name="P:SharpDX.Direct3D11.InputAssemblerStage.InputLayout">
             <summary>	
-            <p>Get a reference to the input-layout object that is bound to the input-assembler stage.</p>	
+            <p>Get or sets a reference to the input-layout object that is bound to the input-assembler stage.</p>	
             </summary>	
             <remarks>	
             <p>For information about creating an input-layout object, see Creating the Input-Layout Object.</p><p>Any returned interfaces will have their reference count incremented by one. Applications should call IUnknown::Release on the returned interfaces when they are no longer needed to avoid memory leaks.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11DeviceContext::IAGetInputLayout']/*"/>	
             <msdn-id>ff476450</msdn-id>	
-            <unmanaged>IAGetInputLayout</unmanaged>	
+            <unmanaged>IAGetInputLayout / IASetInputLayout</unmanaged>	
             <unmanaged-short>IAGetInputLayout</unmanaged-short>	
             <unmanaged>void ID3D11DeviceContext::IAGetInputLayout([Out] ID3D11InputLayout** ppInputLayout)</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D11.InputAssemblerStage.PrimitiveTopology">
             <summary>	
-            <p>Get information about the primitive type, and data order that describes input data for the input assembler stage.</p>	
+            <p>Get or sets information about the primitive type, and data order that describes input data for the input assembler stage.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11DeviceContext::IAGetPrimitiveTopology']/*"/>	
             <msdn-id>ff476451</msdn-id>	
-            <unmanaged>IAGetPrimitiveTopology</unmanaged>	
+            <unmanaged>IAGetPrimitiveTopology / IASetPrimitiveTopology</unmanaged>	
             <unmanaged-short>IAGetPrimitiveTopology</unmanaged-short>	
             <unmanaged>void ID3D11DeviceContext::IAGetPrimitiveTopology([Out] D3D_PRIMITIVE_TOPOLOGY* pTopology)</unmanaged>
         </member>
@@ -5453,14 +5482,14 @@
         </member>
         <member name="P:SharpDX.Direct3D11.RasterizerStage.State">
             <summary>	
-            <p>Get the <strong>rasterizer state</strong> from the rasterizer stage of the pipeline.</p>	
+            <p>Get or sets the <strong>rasterizer state</strong> from the rasterizer stage of the pipeline.</p>	
             </summary>	
             <remarks>	
             <p>Any returned interfaces will have their reference count incremented by one. Applications should call IUnknown::Release on the returned interfaces when they are no longer needed to avoid memory leaks.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11DeviceContext::RSGetState']/*"/>	
             <msdn-id>ff476476</msdn-id>	
-            <unmanaged>RSGetState</unmanaged>	
+            <unmanaged>RSGetState / RSSetState</unmanaged>	
             <unmanaged-short>RSGetState</unmanaged-short>	
             <unmanaged>void ID3D11DeviceContext::RSGetState([Out] ID3D11RasterizerState** ppRasterizerState)</unmanaged>
         </member>
@@ -5837,21 +5866,21 @@
         </member>
         <member name="P:SharpDX.Direct3D11.FastFourierTransform.ForwardScale">
             <summary>	
-            <p>Gets the scale for forward transforms.</p>	
+            <p>Gets or sets the scale for forward transforms.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX11FFT::GetForwardScale']/*"/>	
             <msdn-id>ff476849</msdn-id>	
-            <unmanaged>GetForwardScale</unmanaged>	
+            <unmanaged>GetForwardScale / SetForwardScale</unmanaged>	
             <unmanaged-short>GetForwardScale</unmanaged-short>	
             <unmanaged>float ID3DX11FFT::GetForwardScale()</unmanaged>
         </member>
         <member name="P:SharpDX.Direct3D11.FastFourierTransform.InverseScale">
             <summary>	
-            <p>Get the scale for inverse transforms.</p>	
+            <p>Get or sets the scale for inverse transforms.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX11FFT::GetInverseScale']/*"/>	
             <msdn-id>ff476850</msdn-id>	
-            <unmanaged>GetInverseScale</unmanaged>	
+            <unmanaged>GetInverseScale / SetInverseScale</unmanaged>	
             <unmanaged-short>GetInverseScale</unmanaged-short>	
             <unmanaged>float ID3DX11FFT::GetInverseScale()</unmanaged>
         </member>
@@ -16679,14 +16708,14 @@
         </member>
         <member name="P:SharpDX.Direct3D11.InfoQueue.MessageCountLimit">
             <summary>	
-            <p>Get the maximum number of messages that can be added to the message queue.</p>	
+            <p>Get or sets the maximum number of messages that can be added to the message queue.</p>	
             </summary>	
             <remarks>	
             <p>When the number of messages in the message queue has reached the maximum limit, new messages coming in will push old messages out.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11InfoQueue::GetMessageCountLimit']/*"/>	
             <msdn-id>ff476550</msdn-id>	
-            <unmanaged>GetMessageCountLimit</unmanaged>	
+            <unmanaged>GetMessageCountLimit / SetMessageCountLimit</unmanaged>	
             <unmanaged-short>GetMessageCountLimit</unmanaged-short>	
             <unmanaged>unsigned longlong ID3D11InfoQueue::GetMessageCountLimit()</unmanaged>
         </member>
@@ -16765,11 +16794,11 @@
         </member>
         <member name="P:SharpDX.Direct3D11.InfoQueue.MuteDebugOutput">
             <summary>	
-            <p>Get a boolean that turns the debug output on or off.</p>	
+            <p>Get or sets a boolean that turns the debug output on or off.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3D11InfoQueue::GetMuteDebugOutput']/*"/>	
             <msdn-id>ff476551</msdn-id>	
-            <unmanaged>GetMuteDebugOutput</unmanaged>	
+            <unmanaged>GetMuteDebugOutput / SetMuteDebugOutput</unmanaged>	
             <unmanaged-short>GetMuteDebugOutput</unmanaged-short>	
             <unmanaged>BOOL ID3D11InfoQueue::GetMuteDebugOutput()</unmanaged>
         </member>
@@ -19196,6 +19225,11 @@
             <msdn-id>ff476317</msdn-id>	
             <unmanaged>D3DX11_IMAGE_INFO* pSrcInfo</unmanaged>	
             <unmanaged-short>D3DX11_IMAGE_INFO pSrcInfo</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.Direct3D11.ImageLoadInformation.Default">
+            <summary>
+            Gets an ImageLoadInformation that is setup with all default values (<see cref="F:SharpDX.Direct3D11.ImageLoadInformation.FileDefaultValue"/>).
+            </summary>
         </member>
         <member name="T:SharpDX.Direct3D11.InfoQueueFilter">
             <summary>	
