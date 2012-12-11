@@ -842,6 +842,26 @@
             <unmanaged>HRESULT XAudio2Create([Out, Fast] IXAudio2** ppXAudio2,[In] unsigned int Flags,[In] unsigned int XAudio2Processor)</unmanaged>	
             <unmanaged-short>XAudio2Create</unmanaged-short>	
         </member>
+        <member name="M:SharpDX.XAudio2.XAudio2Functions.CreateAudioReverb(SharpDX.ComObject)">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <param name="apoOut">No documentation.</param>	
+            <returns>No documentation.</returns>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='CreateAudioReverb']/*"/>	
+            <unmanaged>HRESULT CreateAudioReverb([Out, Fast] IUnknown** ppApo)</unmanaged>	
+            <unmanaged-short>CreateAudioReverb</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.XAudio2.XAudio2Functions.CreateAudioVolumeMeter(SharpDX.ComObject)">
+            <summary>	
+            No documentation.	
+            </summary>	
+            <param name="apoOut">No documentation.</param>	
+            <returns>No documentation.</returns>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='CreateAudioVolumeMeter']/*"/>	
+            <unmanaged>HRESULT CreateAudioVolumeMeter([Out, Fast] IUnknown** ppApo)</unmanaged>	
+            <unmanaged-short>CreateAudioVolumeMeter</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.XAudio2.Fx.ReverbI3DL2Parameters">
             <summary>	
             Describes I3DL2 (Interactive 3D Audio Rendering Guidelines Level 2.0) parameters for use in  theReverbConvertI3DL2ToNativefunction.	
