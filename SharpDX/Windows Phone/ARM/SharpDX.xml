@@ -39848,12 +39848,45 @@
         </member>
         <member name="M:SharpDX.MathUtil.Clamp(System.Single,System.Single,System.Single)">
             <summary>
-            Clamp a value.
+            Clamps the specified value.
             </summary>
-            <param name="value"></param>
-            <param name="min"></param>
-            <param name="max"></param>
-            <returns></returns>
+            <param name="value">The value.</param>
+            <param name="min">The min.</param>
+            <param name="max">The max.</param>
+            <returns>The result of clamiping a value between min and max</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Mod(System.Single,System.Single)">
+            <summary>
+            Calculates the modulo of the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="modulo">The modulo.</param>
+            <returns>The result of the modulo applied to value</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Mod2PI(System.Single)">
+            <summary>
+            Calculates the modulo 2*PI of the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the modulo applied to value</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Wrap(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Wraps the specified value into a range.
+            </summary>
+            <param name="value">The value to wrap.</param>
+            <param name="min">The min.</param>
+            <param name="max">The max.</param>
+            <returns>Result of the wrapping.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Wrap(System.Single,System.Single,System.Single)">
+            <summary>
+            Wraps the specified value into a range.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="min">The min.</param>
+            <param name="max">The max.</param>
+            <returns>Result of the wrapping.</returns>
         </member>
         <member name="T:SharpDX.Matrix">
             <summary>
