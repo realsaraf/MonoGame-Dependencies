@@ -1693,7 +1693,7 @@
             <unmanaged>HRESULT ID3DX11EffectPass::GetPixelShaderDesc([Out] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>	
             <unmanaged-short>ID3DX11EffectPass::GetPixelShaderDesc</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.EffectPass.GetHullShaderDescription(SharpDX.Direct3D11.EffectPassShaderDescription)">
+        <member name="M:SharpDX.Direct3D11.EffectPass.GetHullShaderDescription(SharpDX.Direct3D11.EffectPassShaderDescription@)">
             <summary>	
             <p>Get hull-shader description.</p>	
             </summary>	
@@ -1704,10 +1704,10 @@
             </remarks>	
             <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX11EffectPass::GetHullShaderDesc']/*"/>	
             <msdn-id>ff476715</msdn-id>	
-            <unmanaged>HRESULT ID3DX11EffectPass::GetHullShaderDesc([In] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>	
+            <unmanaged>HRESULT ID3DX11EffectPass::GetHullShaderDesc([Out] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>	
             <unmanaged-short>ID3DX11EffectPass::GetHullShaderDesc</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.EffectPass.GetDomainShaderDescription(SharpDX.Direct3D11.EffectPassShaderDescription)">
+        <member name="M:SharpDX.Direct3D11.EffectPass.GetDomainShaderDescription(SharpDX.Direct3D11.EffectPassShaderDescription@)">
             <summary>	
             <p>Get a domain-shader description.</p>	
             </summary>	
@@ -1718,10 +1718,10 @@
             </remarks>	
             <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX11EffectPass::GetDomainShaderDesc']/*"/>	
             <msdn-id>ff476713</msdn-id>	
-            <unmanaged>HRESULT ID3DX11EffectPass::GetDomainShaderDesc([In] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>	
+            <unmanaged>HRESULT ID3DX11EffectPass::GetDomainShaderDesc([Out] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>	
             <unmanaged-short>ID3DX11EffectPass::GetDomainShaderDesc</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct3D11.EffectPass.GetComputeShaderDescription(SharpDX.Direct3D11.EffectPassShaderDescription)">
+        <member name="M:SharpDX.Direct3D11.EffectPass.GetComputeShaderDescription(SharpDX.Direct3D11.EffectPassShaderDescription@)">
             <summary>	
             <p>Get a compute-shader description.</p>	
             </summary>	
@@ -1732,7 +1732,7 @@
             </remarks>	
             <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX11EffectPass::GetComputeShaderDesc']/*"/>	
             <msdn-id>ff476711</msdn-id>	
-            <unmanaged>HRESULT ID3DX11EffectPass::GetComputeShaderDesc([In] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>	
+            <unmanaged>HRESULT ID3DX11EffectPass::GetComputeShaderDesc([Out] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>	
             <unmanaged-short>ID3DX11EffectPass::GetComputeShaderDesc</unmanaged-short>	
         </member>
         <member name="M:SharpDX.Direct3D11.EffectPass.GetAnnotationByIndex(System.Int32)">
@@ -1856,6 +1856,45 @@
             <unmanaged>GetPixelShaderDesc</unmanaged>	
             <unmanaged-short>GetPixelShaderDesc</unmanaged-short>	
             <unmanaged>HRESULT ID3DX11EffectPass::GetPixelShaderDesc([Out] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>
+        </member>
+        <member name="P:SharpDX.Direct3D11.EffectPass.HullShaderDescription">
+            <summary>	
+            <p>Get hull-shader description.</p>	
+            </summary>	
+            <remarks>	
+            <p><strong>Note</strong>??The DirectX SDK does not supply any compiled binaries for effects. You must use Effects 11 source to build  your effects-type application. For more information about using Effects 11 source, see Differences Between Effects 10 and Effects 11.</p>	
+            </remarks>	
+            <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX11EffectPass::GetHullShaderDesc']/*"/>	
+            <msdn-id>ff476715</msdn-id>	
+            <unmanaged>GetHullShaderDesc</unmanaged>	
+            <unmanaged-short>GetHullShaderDesc</unmanaged-short>	
+            <unmanaged>HRESULT ID3DX11EffectPass::GetHullShaderDesc([Out] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>
+        </member>
+        <member name="P:SharpDX.Direct3D11.EffectPass.DomainShaderDescription">
+            <summary>	
+            <p>Get a domain-shader description.</p>	
+            </summary>	
+            <remarks>	
+            <p><strong>Note</strong>??The DirectX SDK does not supply any compiled binaries for effects. You must use Effects 11 source to build  your effects-type application. For more information about using Effects 11 source, see Differences Between Effects 10 and Effects 11.</p>	
+            </remarks>	
+            <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX11EffectPass::GetDomainShaderDesc']/*"/>	
+            <msdn-id>ff476713</msdn-id>	
+            <unmanaged>GetDomainShaderDesc</unmanaged>	
+            <unmanaged-short>GetDomainShaderDesc</unmanaged-short>	
+            <unmanaged>HRESULT ID3DX11EffectPass::GetDomainShaderDesc([Out] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>
+        </member>
+        <member name="P:SharpDX.Direct3D11.EffectPass.ComputeShaderDescription">
+            <summary>	
+            <p>Get a compute-shader description.</p>	
+            </summary>	
+            <remarks>	
+            <p><strong>Note</strong>??The DirectX SDK does not supply any compiled binaries for effects. You must use Effects 11 source to build  your effects-type application. For more information about using Effects 11 source, see Differences Between Effects 10 and Effects 11.</p>	
+            </remarks>	
+            <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID3DX11EffectPass::GetComputeShaderDesc']/*"/>	
+            <msdn-id>ff476711</msdn-id>	
+            <unmanaged>GetComputeShaderDesc</unmanaged>	
+            <unmanaged-short>GetComputeShaderDesc</unmanaged-short>	
+            <unmanaged>HRESULT ID3DX11EffectPass::GetComputeShaderDesc([Out] D3DX11_PASS_SHADER_DESC* pDesc)</unmanaged>
         </member>
         <member name="T:SharpDX.Direct3D11.EffectPassDescription">
             <summary>	
@@ -4644,7 +4683,7 @@
             <unmanaged>D3DX11_STATE_BLOCK_MASK</unmanaged>	
             <unmanaged-short>D3DX11_STATE_BLOCK_MASK</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.StateBlockMask.Vs">
+        <member name="F:SharpDX.Direct3D11.StateBlockMask.VertexShader">
             <summary>	
             <dd> <p>Boolean value indicating whether to save the vertex shader state. </p> </dd>	
             </summary>	
@@ -4653,7 +4692,7 @@
             <unmanaged>unsigned char VS</unmanaged>	
             <unmanaged-short>unsigned char VS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.StateBlockMask.Hs">
+        <member name="F:SharpDX.Direct3D11.StateBlockMask.HullShader">
             <summary>	
             <dd> <p>Boolean value indicating whether to save the hull shader state. </p> </dd>	
             </summary>	
@@ -4662,7 +4701,7 @@
             <unmanaged>unsigned char HS</unmanaged>	
             <unmanaged-short>unsigned char HS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.StateBlockMask.Ds">
+        <member name="F:SharpDX.Direct3D11.StateBlockMask.DomainShader">
             <summary>	
             <dd> <p>Boolean value indicating whether to save the domain shader state. </p> </dd>	
             </summary>	
@@ -4671,7 +4710,7 @@
             <unmanaged>unsigned char DS</unmanaged>	
             <unmanaged-short>unsigned char DS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.StateBlockMask.Gs">
+        <member name="F:SharpDX.Direct3D11.StateBlockMask.GeometryShader">
             <summary>	
             <dd> <p>Boolean value indicating whether to save the geometry shader state. </p> </dd>	
             </summary>	
@@ -4680,7 +4719,7 @@
             <unmanaged>unsigned char GS</unmanaged>	
             <unmanaged-short>unsigned char GS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.StateBlockMask.Ps">
+        <member name="F:SharpDX.Direct3D11.StateBlockMask.PixelShader">
             <summary>	
             <dd> <p>Boolean value indicating whether to save the pixel shader state.</p> </dd>	
             </summary>	
@@ -4698,7 +4737,7 @@
             <unmanaged>unsigned char PSUnorderedAccessViews</unmanaged>	
             <unmanaged-short>unsigned char PSUnorderedAccessViews</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct3D11.StateBlockMask.Cs">
+        <member name="F:SharpDX.Direct3D11.StateBlockMask.ComputeShader">
             <summary>	
             <dd> <p>Boolean value indicating whether to save the compute shader state.</p> </dd>	
             </summary>	

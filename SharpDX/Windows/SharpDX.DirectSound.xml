@@ -3400,7 +3400,7 @@
             <unmanaged>DSFX_I3DL2_MATERIAL_PRESET_SINGLEWINDOW</unmanaged>	
             <unmanaged-short>DSFX_I3DL2_MATERIAL_PRESET_SINGLEWINDOW</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DirectSound.I3DL2ReverbPreset.Doublewindow">
+        <member name="F:SharpDX.DirectSound.I3DL2ReverbPreset.DoubleWindow">
             <summary>	
             No documentation.	
             </summary>	
@@ -3640,7 +3640,7 @@
             <unmanaged>DSFXR_UNKNOWN</unmanaged>	
             <unmanaged-short>DSFXR_UNKNOWN</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DirectSound.SoundEffectResult.DsfxrSendloop">
+        <member name="F:SharpDX.DirectSound.SoundEffectResult.SendLoop">
             <summary>	
             No documentation.	
             </summary>	

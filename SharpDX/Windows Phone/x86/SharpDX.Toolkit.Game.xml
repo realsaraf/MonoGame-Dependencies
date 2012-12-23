@@ -81,7 +81,7 @@
             Gets or sets a value indicating whether to synochrnize present with vertical blanking.
             </summary>
         </member>
-        <member name="T:SharpDX.Toolkit.GameWindowWinRT">
+        <member name="T:SharpDX.Toolkit.GameWindowWP8">
             <summary>
             An abstract window.
             </summary>

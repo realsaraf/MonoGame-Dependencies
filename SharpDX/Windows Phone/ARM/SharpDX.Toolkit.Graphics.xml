@@ -471,7 +471,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.GraphicsPresenter">
             <summary>
-            This class is a frontend to <see cref="T:SharpDX.DXGI.SwapChain"/> and <see cref="!:SwapChain1"/>.
+            This class is a frontend to <see cref="T:SharpDX.DXGI.SwapChain"/> and <see cref="T:SharpDX.DXGI.SwapChain1"/>.
             </summary>
             <remarks>
             In order to create a new <see cref="T:SharpDX.Toolkit.Graphics.GraphicsPresenter"/>, a <see cref="P:SharpDX.Toolkit.Graphics.GraphicsPresenter.GraphicsDevice"/> should have been initialized first.
@@ -530,7 +530,7 @@
         </member>
         <member name="P:SharpDX.Toolkit.Graphics.GraphicsPresenter.NativePresenter">
             <summary>
-            Gets the underlying native presenter (can be a <see cref="T:SharpDX.DXGI.SwapChain"/> or <see cref="!:SharpDX.DXGI.SwapChain1"/> or null, depending on the platform).
+            Gets the underlying native presenter (can be a <see cref="T:SharpDX.DXGI.SwapChain"/> or <see cref="T:SharpDX.DXGI.SwapChain1"/> or null, depending on the platform).
             </summary>
             <value>The native presenter.</value>
         </member>
@@ -8528,39 +8528,6 @@
              Mip2 |      |      |      |
                   ----------------------
             </example>
-        </member>
-        <member name="M:SharpDX.Toolkit.Graphics.WICHelper.ToDXGI(System.Guid)">
-            <summary>
-            Converts a WIC <see cref="T:SharpDX.WIC.PixelFormat"/> to a <see cref="T:SharpDX.DXGI.Format"/>.
-            </summary>
-            <param name="guid">A WIC <see cref="T:SharpDX.WIC.PixelFormat"/> </param>
-            <returns>A <see cref="T:SharpDX.DXGI.Format"/></returns>
-        </member>
-        <member name="M:SharpDX.Toolkit.Graphics.WICHelper.ToWIC(SharpDX.DXGI.Format,System.Guid@)">
-            <summary>
-            Converts a <see cref="T:SharpDX.DXGI.Format"/> to a a WIC <see cref="T:SharpDX.WIC.PixelFormat"/>.
-            </summary>
-            <param name="format">A <see cref="T:SharpDX.DXGI.Format"/></param>
-            <param name="guid">A WIC <see cref="T:SharpDX.WIC.PixelFormat"/> Guid.</param>
-            <returns>True if conversion succeed, false otherwise.</returns>
-        </member>
-        <member name="M:SharpDX.Toolkit.Graphics.WICHelper.GetBitsPerPixel(System.Guid)">
-            <summary>
-            Gets the number of bits per pixels for a WIC <see cref="T:SharpDX.WIC.PixelFormat"/> Guid.
-            </summary>
-            <param name="targetGuid">A WIC <see cref="T:SharpDX.WIC.PixelFormat"/> Guid.</param>
-            <returns>The number of bits per pixels for a WIC. If this method is failing to calculate the number of pixels, return 0.</returns>
-        </member>
-        <member name="M:SharpDX.Toolkit.Graphics.WICHelper.DecodeMetadata(SharpDX.Toolkit.Graphics.WICFlags,SharpDX.WIC.BitmapDecoder,SharpDX.WIC.BitmapFrameDecode,System.Guid@)">
-            <summary>
-            Determines metadata for image
-            </summary>
-            <param name="flags">The flags.</param>
-            <param name="decoder">The decoder.</param>
-            <param name="frame">The frame.</param>
-            <param name="pixelFormat">The pixel format.</param>
-            <returns></returns>
-            <exception cref="T:System.InvalidOperationException">If pixel format is not supported.</exception>
         </member>
     </members>
 </doc>

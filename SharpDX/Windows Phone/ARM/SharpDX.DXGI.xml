@@ -293,6 +293,394 @@
             <unmanaged>DXGI</unmanaged>	
             <unmanaged-short>DXGI</unmanaged-short>	
         </member>
+        <member name="T:SharpDX.DXGI.Output1">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Creates a desktop duplication interface from the <strong><see cref="T:SharpDX.DXGI.Output1"/></strong> interface that represents an adapter output.</p>	
+            </summary>	
+            <remarks>	
+            <p>If an application wants to duplicate the entire desktop, it must create a desktop duplication interface on each active output on the desktop. This interface does not provide an explicit way to synchronize the timing of each output image. Instead, the application must use the time stamp of each output, and then determine how to combine the images.</p><p>For <strong>DuplicateOutput</strong> to succeed, you must create <em>pDevice</em> from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong> or a later version of a DXGI factory interface that inherits from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong>.</p><p>If the current mode is a stereo mode, the desktop duplication interface provides the image for the left stereo image only.</p><p>By default, only four processes can use a <strong>IDXGIOutputDuplication</strong> interface at the same time within a single session. A process can have only one desktop duplication interface on a single desktop output; however, that process can have a desktop duplication interface for each output that is part of the desktop. </p><p>If <strong>DuplicateOutput</strong> fails with <see cref="F:SharpDX.DXGI.ResultCode.Unsupported"/>, the application can wait for system notification of desktop switches and mode changes and then call <strong>DuplicateOutput</strong> again after such a notification occurs.  For more information, see information in desktop switch (<strong>EVENT_SYSTEM_DESKTOPSWITCH</strong>) and mode change notification (<strong>WM_DISPLAYCHANGE</strong>). </p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1']/*"/>	
+            <msdn-id>hh404600</msdn-id>	
+            <unmanaged>IDXGIOutput1</unmanaged>	
+            <unmanaged-short>IDXGIOutput1</unmanaged-short>	
+        </member>
+        <member name="T:SharpDX.DXGI.Output">
+            <summary>	
+            <p>An <strong><see cref="T:SharpDX.DXGI.Output"/></strong> interface represents an adapter output (such as a monitor).</p>	
+            </summary>	
+            <remarks>	
+            <p>To see the outputs available, use <strong><see cref="M:SharpDX.DXGI.Adapter.GetOutput(System.Int32)"/></strong>. To see the specific output that the swap chain will update, use <strong><see cref="M:SharpDX.DXGI.SwapChain.GetContainingOutput(SharpDX.DXGI.Output@)"/></strong>.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput']/*"/>	
+            <msdn-id>bb174546</msdn-id>	
+            <unmanaged>IDXGIOutput</unmanaged>	
+            <unmanaged-short>IDXGIOutput</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.#ctor(System.IntPtr)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.DXGI.Output"/> class.
+            </summary>
+            <param name="nativePtr">The native pointer.</param>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.op_Explicit(System.IntPtr)~SharpDX.DXGI.Output">
+            <summary>
+            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.DXGI.Output"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
+            </summary>
+            <param name="nativePointer">The native pointer.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.DXGI.Output.GetDescription(SharpDX.DXGI.OutputDescription@)">
+            <summary>	
+            <p>Get a description of the output.</p>	
+            </summary>	
+            <param name="descRef"><dd>  <p>A reference to the output description (see <strong><see cref="T:SharpDX.DXGI.OutputDescription"/></strong>).</p> </dd></param>	
+            <returns><p>Returns a code that indicates success or failure. <see cref="F:SharpDX.Result.Ok"/> if successful, <see cref="F:SharpDX.DXGI.ResultCode.InvalidCall"/> if <em>pDesc</em> is passed in as <strong><c>null</c></strong>.</p></returns>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetDesc']/*"/>	
+            <msdn-id>bb174548</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::GetDesc([Out] DXGI_OUTPUT_DESC* pDesc)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::GetDesc</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.GetDisplayModeList(SharpDX.DXGI.Format,System.Int32,System.Int32@,SharpDX.DXGI.ModeDescription[])">
+            <summary>	
+            <p>[Starting with Direct3D 11.1, we recommend not to use <strong>GetDisplayModeList</strong> anymore to retrieve the matching display mode. Instead, use <strong><see cref="M:SharpDX.DXGI.Output1.GetDisplayModeList1(SharpDX.DXGI.Format,SharpDX.DXGI.DisplayModeEnumerationFlags)"/></strong>, which supports stereo display mode.]</p><p>Gets the display modes that match the requested format and other input options.</p>	
+            </summary>	
+            <param name="enumFormat">No documentation.</param>	
+            <param name="flags">No documentation.</param>	
+            <param name="numModesRef">No documentation.</param>	
+            <param name="descRef">No documentation.</param>	
+            <returns><p>Returns one of the following DXGI_ERROR. It is rare, but possible, that the display modes available can change immediately after calling  this method, in which case <see cref="F:SharpDX.DXGI.ResultCode.MoreData"/> is returned (if there is not enough room for all the display modes).   If <strong>GetDisplayModeList</strong> is called from a Remote Desktop Services session (formerly Terminal Services session), <see cref="F:SharpDX.DXGI.ResultCode.NotCurrentlyAvailable"/> is returned.</p></returns>	
+            <remarks>	
+            <p>In general, when switching from windowed to full-screen mode, a swap chain automatically chooses a display mode that meets (or exceeds) the resolution, color  depth and refresh rate of the swap chain. To exercise more control over the display mode, use this API to poll the set of display modes that are validated  against monitor capabilities, or all modes that match the desktop (if the desktop settings are not validated against the monitor).</p><p>As shown, this API is designed to be called twice. First to get the number of modes available, and second to return a description of the modes.</p><pre><code> UINT num = 0;	
+            <see cref="T:SharpDX.DXGI.Format"/> format = <see cref="F:SharpDX.DXGI.Format.R32G32B32A32_Float"/>;	
+            UINT flags         = <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Interlaced"/>; pOutput-&gt;GetDisplayModeList( format, flags, &amp;num, 0); ... <see cref="T:SharpDX.DXGI.ModeDescription"/> * pDescs = new <see cref="T:SharpDX.DXGI.ModeDescription"/>[num];	
+            pOutput-&gt;GetDisplayModeList( format, flags, &amp;num, pDescs); </code></pre>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetDisplayModeList']/*"/>	
+            <msdn-id>bb174549</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::GetDisplayModeList([In] DXGI_FORMAT EnumFormat,[In] unsigned int Flags,[InOut] unsigned int* pNumModes,[Out, Buffer, Optional] DXGI_MODE_DESC* pDesc)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::GetDisplayModeList</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.FindClosestMatchingMode(SharpDX.DXGI.ModeDescription@,SharpDX.DXGI.ModeDescription@,SharpDX.ComObject)">
+            <summary>	
+            <p>[Starting with Direct3D 11.1, we recommend not to use <strong>FindClosestMatchingMode</strong> anymore to find the display mode that most closely matches the requested display mode. Instead, use <strong><see cref="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)"/></strong>, which supports stereo display mode.]</p><p>Finds the display mode that most closely matches the requested display mode.</p>	
+            </summary>	
+            <param name="modeToMatchRef">No documentation.</param>	
+            <param name="closestMatchRef">No documentation.</param>	
+            <param name="concernedDeviceRef">No documentation.</param>	
+            <returns><p>Returns one of the following DXGI_ERROR.</p></returns>	
+            <remarks>	
+            <p><strong>FindClosestMatchingMode</strong> behaves similarly to the <strong><see cref="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)"/></strong> except <strong>FindClosestMatchingMode</strong> considers only the mono display modes. <strong><see cref="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)"/></strong> considers only stereo modes if you set the <strong>Stereo</strong> member in the <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structure that <em>pModeToMatch</em> points to, and considers only mono modes if <strong>Stereo</strong> is not set.</p><p> <strong><see cref="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)"/></strong> returns a matched display-mode set with only stereo modes or only mono modes.	
+            <strong>FindClosestMatchingMode</strong> behaves as though you specified the input mode as mono.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::FindClosestMatchingMode']/*"/>	
+            <msdn-id>bb174547</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::FindClosestMatchingMode([In] const DXGI_MODE_DESC* pModeToMatch,[Out] DXGI_MODE_DESC* pClosestMatch,[In, Optional] IUnknown* pConcernedDevice)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::FindClosestMatchingMode</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.WaitForVerticalBlank">
+            <summary>	
+            <p>Halt a thread until the next vertical blank occurs.</p>	
+            </summary>	
+            <returns><p>Returns one of the following DXGI_ERROR.</p></returns>	
+            <remarks>	
+            <p>A vertical blank occurs when the raster moves from the lower right corner to the upper left corner to begin drawing the next frame.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::WaitForVBlank']/*"/>	
+            <msdn-id>bb174559</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::WaitForVBlank()</unmanaged>	
+            <unmanaged-short>IDXGIOutput::WaitForVBlank</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.TakeOwnership(SharpDX.ComObject,SharpDX.Bool)">
+            <summary>	
+            <p>Takes ownership of an output.</p>	
+            </summary>	
+            <param name="deviceRef"><dd>  <p>A reference to the <strong><see cref="T:SharpDX.ComObject"/></strong> interface of a device (such as an <strong>ID3D10Device</strong>).</p> </dd></param>	
+            <param name="exclusive"><dd>  <p>Set to <strong>TRUE</strong> to enable other threads or applications to take ownership of the device; otherwise, set to <strong><see cref="F:SharpDX.Result.False"/></strong>.</p> </dd></param>	
+            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
+            <remarks>	
+            <p>When you are finished with the output, call <strong><see cref="M:SharpDX.DXGI.Output.ReleaseOwnership"/></strong>.</p><p><strong>TakeOwnership</strong> should not be called directly by applications, since results will be unpredictable. It is called implicitly by the DXGI swap chain object during full-screen transitions, and should not be used as a substitute for swap-chain methods.</p>Notes for Metro style apps<p>If a Metro style app uses <strong>TakeOwnership</strong>, it fails with <see cref="F:SharpDX.DXGI.ResultCode.NotCurrentlyAvailable"/>.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::TakeOwnership']/*"/>	
+            <msdn-id>Bb174558</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::TakeOwnership([In] IUnknown* pDevice,[In] BOOL Exclusive)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::TakeOwnership</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.ReleaseOwnership">
+            <summary>	
+            <p>Releases ownership of the output.</p>	
+            </summary>	
+            <remarks>	
+            <p>If you are not using a swap chain, get access to an output by calling <strong><see cref="M:SharpDX.DXGI.Output.TakeOwnership(SharpDX.ComObject,SharpDX.Bool)"/></strong> and release it when you are finished by calling <strong><see cref="M:SharpDX.DXGI.Output.ReleaseOwnership"/></strong>. An application that uses a swap chain will typically not call either of these methods.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::ReleaseOwnership']/*"/>	
+            <msdn-id>Bb174554</msdn-id>	
+            <unmanaged>void IDXGIOutput::ReleaseOwnership()</unmanaged>	
+            <unmanaged-short>IDXGIOutput::ReleaseOwnership</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.GetGammaControlCapabilities(SharpDX.DXGI.GammaControlCapabilities@)">
+            <summary>	
+            <p>Gets a description of the gamma-control capabilities.</p>	
+            </summary>	
+            <param name="gammaCapsRef"><dd>  <p>A reference to a  description of the gamma-control capabilities (see <strong><see cref="T:SharpDX.DXGI.GammaControlCapabilities"/></strong>).</p> </dd></param>	
+            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
+            <remarks>	
+            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetGammaControlCapabilities']/*"/>	
+            <msdn-id>bb174553</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::GetGammaControlCapabilities([Out] DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::GetGammaControlCapabilities</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.SetGammaControl(SharpDX.DXGI.GammaControl@)">
+            <summary>	
+            <p>Sets the gamma controls.</p>	
+            </summary>	
+            <param name="arrayRef"><dd>  <p>A reference to an array of gamma controls (see <strong><see cref="T:SharpDX.DXGI.GammaControl"/></strong>).</p> </dd></param>	
+            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
+            <remarks>	
+            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::SetGammaControl']/*"/>	
+            <msdn-id>Bb174557</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::SetGammaControl([In] const DXGI_GAMMA_CONTROL* pArray)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::SetGammaControl</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.GetGammaControl(SharpDX.DXGI.GammaControl@)">
+            <summary>	
+            <p>Gets the gamma control settings.</p>	
+            </summary>	
+            <param name="arrayRef"><dd>  <p>An array of gamma control settings (see <strong><see cref="T:SharpDX.DXGI.GammaControl"/></strong>).</p> </dd></param>	
+            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
+            <remarks>	
+            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetGammaControl']/*"/>	
+            <msdn-id>bb174552</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::GetGammaControl([Out] DXGI_GAMMA_CONTROL* pArray)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::GetGammaControl</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.SetDisplaySurface(SharpDX.DXGI.Surface)">
+            <summary>	
+            <p>Changes the display mode.</p>	
+            </summary>	
+            <param name="scanoutSurfaceRef"><dd>  <p>A reference to a surface (see <strong><see cref="T:SharpDX.DXGI.Surface"/></strong>) used for rendering an image to the screen. The surface must have been created as a back buffer (DXGI_USAGE_BACKBUFFER).</p> </dd></param>	
+            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
+            <remarks>	
+            <p><strong><see cref="M:SharpDX.DXGI.Output.SetDisplaySurface(SharpDX.DXGI.Surface)"/></strong> should not be called directly by applications, since results will be unpredictable. It is called implicitly by the DXGI swap chain object during full-screen transitions, and should not be used as a substitute for swap-chain methods.</p><p>This method should only be called between <strong><see cref="M:SharpDX.DXGI.Output.TakeOwnership(SharpDX.ComObject,SharpDX.Bool)"/></strong> and <strong><see cref="M:SharpDX.DXGI.Output.ReleaseOwnership"/></strong> calls.</p>Notes for Metro style apps<p>If a Metro style app uses <strong>SetDisplaySurface</strong>, it fails with <see cref="F:SharpDX.DXGI.ResultCode.NotCurrentlyAvailable"/>.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::SetDisplaySurface']/*"/>	
+            <msdn-id>bb174556</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::SetDisplaySurface([In] IDXGISurface* pScanoutSurface)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::SetDisplaySurface</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)">
+            <summary>	
+            <p>[Starting with Direct3D 11.1, we recommend not to use <strong>GetDisplaySurfaceData</strong> anymore to retrieve the current display surface. Instead, use <strong><see cref="M:SharpDX.DXGI.Output1.GetDisplaySurfaceData1(SharpDX.DXGI.Resource)"/></strong>, which supports stereo display mode.]</p><p>Gets a copy of the current display surface.</p>	
+            </summary>	
+            <param name="destinationRef">No documentation.</param>	
+            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
+            <remarks>	
+            <p><strong><see cref="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)"/></strong> can only be called when an output is in full-screen mode. If the method succeeds, DXGI fills the destination surface.</p><p>Use <strong><see cref="M:SharpDX.DXGI.Output.GetDescription(SharpDX.DXGI.OutputDescription@)"/></strong> to determine the size (width and height) of the output when you want to allocate space for the destination surface. This is true regardless of target monitor rotation. A destination surface created by a graphics component (such as Direct3D 10) must be created with CPU-write permission (see D3D10_CPU_ACCESS_WRITE). Other surfaces should be created with CPU read-write permission (see D3D10_CPU_ACCESS_READ_WRITE). This method will modify the surface data to fit the destination surface (stretch, shrink, convert format, rotate). The stretch and shrink is performed with point-sampling.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetDisplaySurfaceData']/*"/>	
+            <msdn-id>bb174550</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::GetDisplaySurfaceData([In] IDXGISurface* pDestination)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::GetDisplaySurfaceData</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.GetFrameStatistics(SharpDX.DXGI.FrameStatistics@)">
+            <summary>	
+            <p>Gets statistics about recently rendered frames.</p>	
+            </summary>	
+            <param name="statsRef"><dd>  <p>A reference to frame statistics (see <strong><see cref="T:SharpDX.DXGI.FrameStatistics"/></strong>).</p> </dd></param>	
+            <returns><p>If this function succeeds, it returns <see cref="F:SharpDX.Result.Ok"/>. Otherwise, it might return <see cref="F:SharpDX.DXGI.ResultCode.InvalidCall"/>.</p></returns>	
+            <remarks>	
+            <p>This API is similar to <strong><see cref="M:SharpDX.DXGI.SwapChain.GetFrameStatistics(SharpDX.DXGI.FrameStatistics@)"/></strong>.</p><p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetFrameStatistics']/*"/>	
+            <msdn-id>bb174551</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput::GetFrameStatistics([Out] DXGI_FRAME_STATISTICS* pStats)</unmanaged>	
+            <unmanaged-short>IDXGIOutput::GetFrameStatistics</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output.GetClosestMatchingMode(SharpDX.ComObject,SharpDX.DXGI.ModeDescription,SharpDX.DXGI.ModeDescription@)">
+            <summary>	
+            Find the display mode that most closely matches the requested display mode.	
+            </summary>	
+            <remarks>	
+            Direct3D devices require UNORM formats. This method finds the closest matching available display mode to the mode specified in pModeToMatch. Similarly ranked fields (ie. all specified, or all unspecified, etc) are resolved in the following order.  ScanlineOrdering Scaling Format Resolution RefreshRate  When determining the closest value for a particular field, previously matched fields are used to filter the display mode list choices, and  other fields are ignored. For example, when matching Resolution, the display mode list will have already been filtered by a certain ScanlineOrdering,  Scaling, and Format, while RefreshRate is ignored. This ordering doesn't define the absolute ordering for every usage scenario of FindClosestMatchingMode, because  the application can choose some values initially, effectively changing the order that fields are chosen. Fields of the display mode are matched one at a time, generally in a specified order. If a field is unspecified, FindClosestMatchingMode gravitates toward the values for the desktop related to this output.  If this output is not part of the desktop, then the default desktop output is used to find values. If an application uses a fully unspecified  display mode, FindClosestMatchingMode will typically return a display mode that matches the desktop settings for this output.   Unspecified fields are lower priority than specified fields and will be resolved later than specified fields. 	
+            </remarks>	
+            <param name="device">A reference to the Direct3D device interface. If this parameter is NULL, only modes whose format matches that of pModeToMatch will  be returned; otherwise, only those formats that are supported for scan-out by the device are returned. </param>
+            <param name="modeToMatch">The desired display mode (see <see cref="T:SharpDX.DXGI.ModeDescription"/>). Members of DXGI_MODE_DESC can be unspecified indicating no preference for  that member.  A value of 0 for Width or Height indicates the value is unspecified.  If either Width or  Height are 0 both must be 0.  A numerator and denominator of 0 in RefreshRate indicate it is unspecified. Other members  of DXGI_MODE_DESC have enumeration values indicating the member is unspecified.  If pConnectedDevice is NULL Format cannot be DXGI_FORMAT_UNKNOWN. </param>
+            <param name="closestMatch">The mode that most closely matches pModeToMatch. </param>
+            <returns>Returns one of the following <see cref="!:SharpDX.DXGI.DXGIError"/>. </returns>
+            <unmanaged>HRESULT IDXGIOutput::FindClosestMatchingMode([In] const DXGI_MODE_DESC* pModeToMatch,[Out] DXGI_MODE_DESC* pClosestMatch,[In, Optional] IUnknown* pConcernedDevice)</unmanaged>
+        </member>
+        <member name="M:SharpDX.DXGI.Output.GetDisplayModeList(SharpDX.DXGI.Format,SharpDX.DXGI.DisplayModeEnumerationFlags)">
+            <summary>	
+            Gets the display modes that match the requested format and other input options.	
+            </summary>	
+            <remarks>	
+            In general, when switching from windowed to full-screen mode, a swap chain automatically chooses a display mode that meets (or exceeds) the resolution, color  depth and refresh rate of the swap chain. To exercise more control over the display mode, use this API to poll the set of display modes that are validated  against monitor capabilities, or all modes that match the desktop (if the desktop settings are not validated against the monitor). As shown, this API is designed to be called twice. First to get the number of modes available, and second to return a description of the modes. 	
+            <code> UINT num = 0;	
+            DXGI_FORMAT format = DXGI_FORMAT_R32G32B32A32_FLOAT;	
+            UINT flags         = DXGI_ENUM_MODES_INTERLACED; pOutput-&gt;GetDisplayModeList( format, flags, &amp;num, 0); ... DXGI_MODE_DESC * pDescs = new DXGI_MODE_DESC[num];	
+            pOutput-&gt;GetDisplayModeList( format, flags, &amp;num, pDescs); </code>	
+            	
+             	
+            </remarks>	
+            <param name="format">The color format (see <see cref="T:SharpDX.DXGI.Format"/>). </param>
+            <param name="flags">format for modes to include (see {{DXGI_ENUM_MODES}}). DXGI_ENUM_MODES_SCALING needs to be specified to expose the display modes that require scaling.  Centered modes, requiring no  scaling and corresponding directly to the display output, are enumerated by default. </param>
+            <returns>Returns a list of display modes (see <see cref="T:SharpDX.DXGI.ModeDescription"/>); </returns>
+            <unmanaged>HRESULT IDXGIOutput::GetDisplayModeList([None] DXGI_FORMAT EnumFormat,[None] int Flags,[InOut] int* pNumModes,[Out, Buffer, Optional] DXGI_MODE_DESC* pDesc)</unmanaged>
+        </member>
+        <member name="P:SharpDX.DXGI.Output.Description">
+            <summary>	
+            <p>Get a description of the output.</p>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetDesc']/*"/>	
+            <msdn-id>bb174548</msdn-id>	
+            <unmanaged>GetDesc</unmanaged>	
+            <unmanaged-short>GetDesc</unmanaged-short>	
+            <unmanaged>HRESULT IDXGIOutput::GetDesc([Out] DXGI_OUTPUT_DESC* pDesc)</unmanaged>
+        </member>
+        <member name="P:SharpDX.DXGI.Output.GammaControlCapabilities">
+            <summary>	
+            <p>Gets a description of the gamma-control capabilities.</p>	
+            </summary>	
+            <remarks>	
+            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetGammaControlCapabilities']/*"/>	
+            <msdn-id>bb174553</msdn-id>	
+            <unmanaged>GetGammaControlCapabilities</unmanaged>	
+            <unmanaged-short>GetGammaControlCapabilities</unmanaged-short>	
+            <unmanaged>HRESULT IDXGIOutput::GetGammaControlCapabilities([Out] DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps)</unmanaged>
+        </member>
+        <member name="P:SharpDX.DXGI.Output.GammaControl">
+            <summary>	
+            <p>Gets or sets the gamma control settings.</p>	
+            </summary>	
+            <remarks>	
+            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetGammaControl']/*"/>	
+            <msdn-id>bb174552</msdn-id>	
+            <unmanaged>GetGammaControl / SetGammaControl</unmanaged>	
+            <unmanaged-short>GetGammaControl</unmanaged-short>	
+            <unmanaged>HRESULT IDXGIOutput::GetGammaControl([Out] DXGI_GAMMA_CONTROL* pArray)</unmanaged>
+        </member>
+        <member name="P:SharpDX.DXGI.Output.FrameStatistics">
+            <summary>	
+            <p>Gets statistics about recently rendered frames.</p>	
+            </summary>	
+            <remarks>	
+            <p>This API is similar to <strong><see cref="M:SharpDX.DXGI.SwapChain.GetFrameStatistics(SharpDX.DXGI.FrameStatistics@)"/></strong>.</p><p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetFrameStatistics']/*"/>	
+            <msdn-id>bb174551</msdn-id>	
+            <unmanaged>GetFrameStatistics</unmanaged>	
+            <unmanaged-short>GetFrameStatistics</unmanaged-short>	
+            <unmanaged>HRESULT IDXGIOutput::GetFrameStatistics([Out] DXGI_FRAME_STATISTICS* pStats)</unmanaged>
+        </member>
+        <member name="M:SharpDX.DXGI.Output1.GetDisplayModeList1(SharpDX.DXGI.Format,SharpDX.DXGI.DisplayModeEnumerationFlags)">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the display modes that match the requested format and other input options.</p>	
+            </summary>	
+            <param name="enumFormat"><dd> <p>A <strong><see cref="T:SharpDX.DXGI.Format"/></strong>-typed value for the color format.</p> </dd></param>	
+            <param name="flags"><dd> <p>A combination of DXGI_ENUM_MODES-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for display modes to include. You must specify <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Scaling"/> to expose the display modes that require scaling.  Centered modes that require no  scaling and correspond directly to the display output are enumerated by default.</p> </dd></param>	
+            <returns>A list of display modes</returns>	
+            <remarks>	
+            <p><strong>GetDisplayModeList1</strong> is updated from  <strong>GetDisplayModeList</strong> to return a list of <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structures, which are updated mode descriptions.  <strong>GetDisplayModeList</strong> behaves as though it calls <strong>GetDisplayModeList1</strong> because  <strong>GetDisplayModeList</strong> can return all of the modes that are specified by DXGI_ENUM_MODES, including stereo mode.  However, <strong>GetDisplayModeList</strong> returns a list of <strong><see cref="T:SharpDX.DXGI.ModeDescription"/></strong> structures, which are the former mode descriptions and do not indicate stereo mode.</p><p>The <strong>GetDisplayModeList1</strong> method does not enumerate stereo modes unless you specify the <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Stereo"/> flag in the <em>Flags</em> parameter.  If you specify <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Stereo"/>, stereo modes are included in the list of returned modes that the <em>pDesc</em> parameter points to.  In other words, the method returns both stereo and mono modes.</p><p>In general, when you switch from windowed to full-screen mode, a swap chain automatically chooses a display mode that meets (or exceeds) the resolution, color  depth, and refresh rate of the swap chain. To exercise more control over the display mode, use <strong>GetDisplayModeList1</strong> to poll the set of display modes that are validated  against monitor capabilities, or all modes that match the desktop (if the desktop settings are not validated against the monitor).</p><p>The following example code shows that you need to call <strong>GetDisplayModeList1</strong> twice. First call <strong>GetDisplayModeList1</strong> to get the number of modes available, and second call <strong>GetDisplayModeList1</strong> to return a description of the modes.</p><pre><code> UINT num = 0;	
+            <see cref="T:SharpDX.DXGI.Format"/> format = <see cref="F:SharpDX.DXGI.Format.R32G32B32A32_Float"/>;	
+            UINT flags         = <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Interlaced"/>; pOutput-&gt;GetDisplayModeList1( format, flags, &amp;num, 0); ... <see cref="T:SharpDX.DXGI.ModeDescription1"/> * pDescs = new <see cref="T:SharpDX.DXGI.ModeDescription1"/>[num];	
+            pOutput-&gt;GetDisplayModeList1( format, flags, &amp;num, pDescs); </code></pre>	
+            </remarks>	
+            <msdn-id>hh404606</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput1::GetDisplayModeList1([In] DXGI_FORMAT EnumFormat,[In] unsigned int Flags,[InOut] unsigned int* pNumModes,[Out, Buffer, Optional] DXGI_MODE_DESC1* pDesc)</unmanaged>	
+            <unmanaged-short>IDXGIOutput1::GetDisplayModeList1</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output1.#ctor(System.IntPtr)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.DXGI.Output1"/> class.
+            </summary>
+            <param name="nativePtr">The native pointer.</param>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output1.op_Explicit(System.IntPtr)~SharpDX.DXGI.Output1">
+            <summary>
+            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.DXGI.Output1"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
+            </summary>
+            <param name="nativePointer">The native pointer.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.DXGI.Output1.GetDisplayModeList1(SharpDX.DXGI.Format,System.Int32,System.Int32@,SharpDX.DXGI.ModeDescription1[])">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the display modes that match the requested format and other input options.</p>	
+            </summary>	
+            <param name="enumFormat"><dd> <p>A <strong><see cref="T:SharpDX.DXGI.Format"/></strong>-typed value for the color format.</p> </dd></param>	
+            <param name="flags"><dd> <p>A combination of DXGI_ENUM_MODES-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for display modes to include. You must specify <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Scaling"/> to expose the display modes that require scaling.  Centered modes that require no  scaling and correspond directly to the display output are enumerated by default.</p> </dd></param>	
+            <param name="numModesRef"><dd> <p>A reference to a variable that receives the number of display modes that <strong>GetDisplayModeList1</strong> returns in the memory block to which <em>pDesc</em> points. Set <em>pDesc</em> to <strong><c>null</c></strong> so that <em>pNumModes</em> returns the number of display modes that match the format and the options. Otherwise, <em>pNumModes</em> returns the number of display modes returned in <em>pDesc</em>.</p> </dd></param>	
+            <param name="descRef"><dd> <p>A reference to a list of display modes; set to <strong><c>null</c></strong> to get the number of display modes.</p> </dd></param>	
+            <returns><p>Returns one of the error codes described in the DXGI_ERROR topic. It is rare, but possible, that the display modes available can change immediately after calling  this method, in which case <see cref="F:SharpDX.DXGI.ResultCode.MoreData"/> is returned (if there is not enough room for all the display modes).</p></returns>	
+            <remarks>	
+            <p><strong>GetDisplayModeList1</strong> is updated from  <strong>GetDisplayModeList</strong> to return a list of <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structures, which are updated mode descriptions.  <strong>GetDisplayModeList</strong> behaves as though it calls <strong>GetDisplayModeList1</strong> because  <strong>GetDisplayModeList</strong> can return all of the modes that are specified by DXGI_ENUM_MODES, including stereo mode.  However, <strong>GetDisplayModeList</strong> returns a list of <strong><see cref="T:SharpDX.DXGI.ModeDescription"/></strong> structures, which are the former mode descriptions and do not indicate stereo mode.</p><p>The <strong>GetDisplayModeList1</strong> method does not enumerate stereo modes unless you specify the <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Stereo"/> flag in the <em>Flags</em> parameter.  If you specify <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Stereo"/>, stereo modes are included in the list of returned modes that the <em>pDesc</em> parameter points to.  In other words, the method returns both stereo and mono modes.</p><p>In general, when you switch from windowed to full-screen mode, a swap chain automatically chooses a display mode that meets (or exceeds) the resolution, color  depth, and refresh rate of the swap chain. To exercise more control over the display mode, use <strong>GetDisplayModeList1</strong> to poll the set of display modes that are validated  against monitor capabilities, or all modes that match the desktop (if the desktop settings are not validated against the monitor).</p><p>The following example code shows that you need to call <strong>GetDisplayModeList1</strong> twice. First call <strong>GetDisplayModeList1</strong> to get the number of modes available, and second call <strong>GetDisplayModeList1</strong> to return a description of the modes.</p><pre><code> UINT num = 0;	
+            <see cref="T:SharpDX.DXGI.Format"/> format = <see cref="F:SharpDX.DXGI.Format.R32G32B32A32_Float"/>;	
+            UINT flags         = <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Interlaced"/>; pOutput-&gt;GetDisplayModeList1( format, flags, &amp;num, 0); ... <see cref="T:SharpDX.DXGI.ModeDescription1"/> * pDescs = new <see cref="T:SharpDX.DXGI.ModeDescription1"/>[num];	
+            pOutput-&gt;GetDisplayModeList1( format, flags, &amp;num, pDescs); </code></pre>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1::GetDisplayModeList1']/*"/>	
+            <msdn-id>hh404606</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput1::GetDisplayModeList1([In] DXGI_FORMAT EnumFormat,[In] unsigned int Flags,[InOut] unsigned int* pNumModes,[Out, Buffer, Optional] DXGI_MODE_DESC1* pDesc)</unmanaged>	
+            <unmanaged-short>IDXGIOutput1::GetDisplayModeList1</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Finds the display mode that most closely matches the requested display mode.</p>	
+            </summary>	
+            <param name="modeToMatchRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structure that describes the display mode to match. Members of <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> can be unspecified, which indicates no preference for  that member.  A value of 0 for <strong>Width</strong> or <strong>Height</strong> indicates that the value is unspecified.  If either <strong>Width</strong> or  <strong>Height</strong> is 0, both must be 0.  A numerator and denominator of 0 in <strong>RefreshRate</strong> indicate it is unspecified. Other members  of <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> have enumeration values that indicate that the member is unspecified.  If <em>pConcernedDevice</em> is <strong><c>null</c></strong>, the <strong>Format</strong> member of <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> cannot be <strong><see cref="F:SharpDX.DXGI.Format.Unknown"/></strong>.</p> </dd></param>	
+            <param name="closestMatchRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structure that receives a description of the display mode that most closely matches the display mode described at <em>pModeToMatch</em>.</p> </dd></param>	
+            <param name="concernedDeviceRef"><dd> <p>A reference to the Direct3D device interface. If this parameter is <strong><c>null</c></strong>, <strong>FindClosestMatchingMode1</strong> returns only modes whose format matches that of <em>pModeToMatch</em>; otherwise, <strong>FindClosestMatchingMode1</strong> returns only those formats that are supported for scan-out by the device. For info about the formats that are supported for scan-out by the device at each feature level, see Hardware Support for Direct3D 10 Formats, Hardware Support for Direct3D 10.1 Formats, Hardware Support for Direct3D 10Level9 Formats, Hardware Support for Direct3D 11 Formats, and Hardware Support for Direct3D 11.1 Formats.</p> </dd></param>	
+            <returns><p>Returns one of the error codes described in the DXGI_ERROR topic.</p></returns>	
+            <remarks>	
+            <p>Direct3D devices require UNORM formats.</p><p><strong>FindClosestMatchingMode1</strong> finds the closest matching available display mode to the mode that you specify in <em>pModeToMatch</em>.</p><p>If you set the <strong>Stereo</strong> member in the <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structure to which <em>pModeToMatch</em> points to specify a stereo mode as input, <strong>FindClosestMatchingMode1</strong> considers only stereo modes. <strong>FindClosestMatchingMode1</strong> considers only mono modes if <strong>Stereo</strong> is not set.</p><p><strong>FindClosestMatchingMode1</strong> resolves similarly ranked members of display modes (that is, all specified, or all unspecified, and so on) in the following order:</p><ol> <li><strong>ScanlineOrdering</strong></li> <li><strong>Scaling</strong></li> <li><strong>Format</strong></li> <li><strong>Resolution</strong></li> <li><strong>RefreshRate</strong></li> </ol><p>When <strong>FindClosestMatchingMode1</strong> determines the closest value for a particular member, it uses previously matched members to filter the display mode list choices, and  ignores other members. For example, when <strong>FindClosestMatchingMode1</strong> matches <strong>Resolution</strong>, it already filtered the display mode list by a certain <strong>ScanlineOrdering</strong>,  <strong>Scaling</strong>, and <strong>Format</strong>, while it ignores <strong>RefreshRate</strong>. This ordering doesn't define the absolute ordering for every usage scenario of <strong>FindClosestMatchingMode1</strong>, because  the application can choose some values initially, which effectively changes the order of resolving members.</p><p><strong>FindClosestMatchingMode1</strong> matches members of the display mode one at a time, generally in a specified order.</p><p>If a member is unspecified, <strong>FindClosestMatchingMode1</strong> gravitates toward the values for the desktop related to this output.  If this output is not part of the desktop, <strong>FindClosestMatchingMode1</strong> uses the default desktop output to find values. If an application uses a fully unspecified  display mode, <strong>FindClosestMatchingMode1</strong> typically returns a display mode that matches the desktop settings for this output.   Because unspecified members are lower priority than specified members, <strong>FindClosestMatchingMode1</strong> resolves unspecified members later than specified members.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1::FindClosestMatchingMode1']/*"/>	
+            <msdn-id>hh404603</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput1::FindClosestMatchingMode1([In] const DXGI_MODE_DESC1* pModeToMatch,[Out] DXGI_MODE_DESC1* pClosestMatch,[In, Optional] IUnknown* pConcernedDevice)</unmanaged>	
+            <unmanaged-short>IDXGIOutput1::FindClosestMatchingMode1</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output1.GetDisplaySurfaceData1(SharpDX.DXGI.Resource)">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Copies the display surface (front buffer) to a user-provided resource.</p>	
+            </summary>	
+            <param name="destinationRef"><dd> <p>A reference to a resource interface that represents the resource to which <strong>GetDisplaySurfaceData1</strong> copies the display surface.</p> </dd></param>	
+            <returns><p>Returns one of the error codes described in the DXGI_ERROR topic.</p></returns>	
+            <remarks>	
+            <p><strong>GetDisplaySurfaceData1</strong> is similar to <strong><see cref="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)"/></strong> except <strong>GetDisplaySurfaceData1</strong> takes an <strong><see cref="T:SharpDX.DXGI.Resource"/></strong> and <strong><see cref="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)"/></strong> takes an <strong><see cref="T:SharpDX.DXGI.Surface"/></strong>.</p><p><strong>GetDisplaySurfaceData1</strong> returns an error if the input resource is not a 2D texture (represented by the <strong><see cref="!:SharpDX.Direct3D11.Texture2D"/></strong> interface) with an array size (<strong>ArraySize</strong> member of the <strong><see cref="!:SharpDX.Direct3D11.Texture2DDescription"/></strong> structure) that is equal to the swap chain buffers.</p><p>The original <strong><see cref="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)"/></strong> and the updated <strong>GetDisplaySurfaceData1</strong> behave exactly the same. <strong>GetDisplaySurfaceData1</strong> was required because textures with an array size equal to 2 (<strong>ArraySize</strong> = 2) do not implement <strong><see cref="T:SharpDX.DXGI.Surface"/></strong>.</p><p> You can call <strong>GetDisplaySurfaceData1</strong> only when an output is in full-screen mode. If <strong>GetDisplaySurfaceData1</strong> succeeds, it fills the destination resource.</p><p>Use <strong><see cref="M:SharpDX.DXGI.Output.GetDescription(SharpDX.DXGI.OutputDescription@)"/></strong> to determine the size (width and height) of the output when you want to allocate space for the destination resource. This is true regardless of target monitor rotation. A destination resource created by a graphics component (such as Direct3D 11) must be created with CPU write permission (see <strong><see cref="!:SharpDX.Direct3D11.CpuAccessFlags.Write"/></strong>). Other surfaces can be created with CPU read-write permission (<strong><see cref="!:SharpDX.Direct3D11.CpuAccessFlags.Read"/></strong> | <strong><see cref="!:SharpDX.Direct3D11.CpuAccessFlags.Write"/></strong>). <strong>GetDisplaySurfaceData1</strong> modifies the surface data to fit the destination resource (stretch, shrink, convert format, rotate). <strong>GetDisplaySurfaceData1</strong> performs the stretch and shrink with point sampling. </p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1::GetDisplaySurfaceData1']/*"/>	
+            <msdn-id>hh404609</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput1::GetDisplaySurfaceData1([In] IDXGIResource* pDestination)</unmanaged>	
+            <unmanaged-short>IDXGIOutput1::GetDisplaySurfaceData1</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.DXGI.Output1.DuplicateOutput(SharpDX.ComObject,System.IntPtr@)">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Creates a desktop duplication interface from the <strong><see cref="T:SharpDX.DXGI.Output1"/></strong> interface that represents an adapter output.</p>	
+            </summary>	
+            <param name="deviceRef">No documentation.</param>	
+            <param name="outputDuplicationOut">No documentation.</param>	
+            <returns><p><strong>DuplicateOutput</strong> returns: </p><ul> <li><see cref="F:SharpDX.Result.Ok"/> if <strong>DuplicateOutput</strong> successfully created the desktop duplication interface.</li> <li>E_INVALIDARG for one of the following reasons: <ul> <li>The specified device (<em>pDevice</em>) is invalid, was not created on the correct adapter, or was not created from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong> (or a later version of a DXGI factory interface that inherits from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong>).</li> <li>The calling application is already duplicating this desktop output.</li> </ul>For more information about this error, see Remarks.</li> <li>E_ACCESSDENIED if the application does not have access privilege  to the current desktop image.  For example, only an application that runs at LOCAL_SYSTEM can access the secure desktop.</li> <li><see cref="F:SharpDX.DXGI.ResultCode.Unsupported"/> if the created <strong>IDXGIOutputDuplication</strong> interface does not support the current desktop mode or scenario.  For example, 8bpp and non-DWM desktop modes are not supported.</li> <li><see cref="F:SharpDX.DXGI.ResultCode.NotCurrentlyAvailable"/> if DXGI reached the limit on the maximum number of concurrent duplication applications (default of four). Therefore, the calling application cannot create any desktop duplication interfaces until the other applications close.</li> <li><see cref="F:SharpDX.DXGI.ResultCode.SessionDisconnected"/> if <strong>DuplicateOutput</strong> failed because the session is currently disconnected.</li> <li>Other error codes are described in the DXGI_ERROR topic.</li> </ul></returns>	
+            <remarks>	
+            <p>If an application wants to duplicate the entire desktop, it must create a desktop duplication interface on each active output on the desktop. This interface does not provide an explicit way to synchronize the timing of each output image. Instead, the application must use the time stamp of each output, and then determine how to combine the images.</p><p>For <strong>DuplicateOutput</strong> to succeed, you must create <em>pDevice</em> from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong> or a later version of a DXGI factory interface that inherits from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong>.</p><p>If the current mode is a stereo mode, the desktop duplication interface provides the image for the left stereo image only.</p><p>By default, only four processes can use a <strong>IDXGIOutputDuplication</strong> interface at the same time within a single session. A process can have only one desktop duplication interface on a single desktop output; however, that process can have a desktop duplication interface for each output that is part of the desktop. </p><p>If <strong>DuplicateOutput</strong> fails with <see cref="F:SharpDX.DXGI.ResultCode.Unsupported"/>, the application can wait for system notification of desktop switches and mode changes and then call <strong>DuplicateOutput</strong> again after such a notification occurs.  For more information, see information in desktop switch (<strong>EVENT_SYSTEM_DESKTOPSWITCH</strong>) and mode change notification (<strong>WM_DISPLAYCHANGE</strong>). </p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1::DuplicateOutput']/*"/>	
+            <msdn-id>hh404600</msdn-id>	
+            <unmanaged>HRESULT IDXGIOutput1::DuplicateOutput([In] IUnknown* pDevice,[Out] void** ppOutputDuplication)</unmanaged>	
+            <unmanaged-short>IDXGIOutput1::DuplicateOutput</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.DXGI.NamespaceDoc">
             <summary>
             The <see cref="N:SharpDX.DXGI"/> namespace provides a managed DXGI API.
@@ -418,15 +806,15 @@
             <unmanaged>HRESULT IDXGISurface::GetDesc([Out] DXGI_SURFACE_DESC* pDesc)</unmanaged>	
             <unmanaged-short>IDXGISurface::GetDesc</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRect@,System.Int32)">
+        <member name="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRectangle@,System.Int32)">
             <summary>	
             <p>Get a reference to the data contained in the surface, and deny GPU access to the surface.</p>	
             </summary>	
-            <param name="lockedRectRef"><dd>  <p>A reference to the surface data (see <strong><see cref="T:SharpDX.DXGI.MappedRect"/></strong>).</p> </dd></param>	
+            <param name="lockedRectRef"><dd>  <p>A reference to the surface data (see <strong><see cref="T:SharpDX.DXGI.MappedRectangle"/></strong>).</p> </dd></param>	
             <param name="mapFlags"><dd>  <p>CPU read-write flags. These flags can be combined with a logical OR. </p> <ul> <li><see cref="F:SharpDX.DXGI.MapFlags.Read"/> - Allow CPU read access.</li> <li><see cref="F:SharpDX.DXGI.MapFlags.Write"/> - Allow CPU write access.</li> <li><see cref="F:SharpDX.DXGI.MapFlags.Discard"/> - Discard the previous contents of a resource when it is mapped.</li> </ul> </dd></param>	
             <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful; otherwise, returns one of the error codes that are described in the DXGI_ERROR topic.</p></returns>	
             <remarks>	
-            <p>Use <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRect@,System.Int32)"/></strong> to access a surface from the CPU. To release a mapped surface (and allow GPU access) call <strong><see cref="M:SharpDX.DXGI.Surface.Unmap"/></strong>.</p>	
+            <p>Use <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRectangle@,System.Int32)"/></strong> to access a surface from the CPU. To release a mapped surface (and allow GPU access) call <strong><see cref="M:SharpDX.DXGI.Surface.Unmap"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGISurface::Map']/*"/>	
             <msdn-id>bb174567</msdn-id>	
@@ -435,7 +823,7 @@
         </member>
         <member name="M:SharpDX.DXGI.Surface.Unmap">
             <summary>	
-            <p>Invalidate the reference to the surface retrieved by <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRect@,System.Int32)"/></strong> and re-enable GPU access to the resource.</p>	
+            <p>Invalidate the reference to the surface retrieved by <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRectangle@,System.Int32)"/></strong> and re-enable GPU access to the resource.</p>	
             </summary>	
             <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful; otherwise, returns one of the error codes that are described in the DXGI_ERROR topic.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGISurface::Unmap']/*"/>	
@@ -1032,7 +1420,7 @@
             <param name="swapChainOut">No documentation.</param>	
             <returns><p> <see cref="F:SharpDX.DXGI.ResultCode.InvalidCall"/> if <em>pDesc</em> or <em>ppSwapChain</em> is <strong><c>null</c></strong>, <see cref="F:SharpDX.DXGI.DXGIStatus.Occluded"/> if you request full-screen mode and it is unavailable, or E_OUTOFMEMORY. Other error codes defined by the type of device passed in may also be returned.</p></returns>	
             <remarks>	
-            <p>If you attempt to create a swap chain in full-screen mode, and full-screen mode is unavailable, the swap chain will be created in windowed mode and <see cref="F:SharpDX.DXGI.DXGIStatus.Occluded"/> will be returned.</p><p>If the buffer width or the buffer height is zero, the sizes will be inferred from the output window size in the swap-chain description.</p><p>Because the target output cannot be chosen explicitly when the swap-chain is created, you should not create a full-screen swap chain. This can reduce presentation performance if the swap chain size and the output window size do not match. Here are two ways to ensure that the sizes match:</p><ul> <li>Create a windowed swap chain and then set it full-screen using <strong><see cref="M:SharpDX.DXGI.SwapChain.SetFullscreenState(SharpDX.Bool,SharpDX.DXGI.Output)"/></strong>.</li> <li>Save a reference to the swap chain immediately after creation, and use it to get the output window size during a WM_SIZE event. Then resize the swap chain buffers (with <strong><see cref="M:SharpDX.DXGI.SwapChain.ResizeBuffers(System.Int32,System.Int32,System.Int32,SharpDX.DXGI.Format,SharpDX.DXGI.SwapChainFlags)"/></strong>) during the transition from windowed to full-screen.</li> </ul><p>If the swap chain is in full-screen mode, before you release it you must use <strong>SetFullscreenState</strong> to switch it to windowed mode. For more information about releasing a swap chain, see the "Destroying a Swap Chain" section of DXGI Overview.</p><p>You can specify <strong><see cref="T:SharpDX.DXGI.SwapEffect"/></strong> and <strong><see cref="T:SharpDX.DXGI.SwapChainFlags"/></strong> values in the swap-chain description that <em>pDesc</em> points to. These values allow you to use features like flip-model presentation and content protection by using pre-Windows Developer Preview APIs.</p><p>However, to use stereo presentation and to change resize behavior for the flip model, applications must use the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong> method. Otherwise, the back-buffer contents implicitly scale to fit the presentation target size; that is, you can't turn off scaling.</p>Notes for Metro style apps<p>If a Metro style app calls <strong>CreateSwapChain</strong> with full screen specified, <strong>CreateSwapChain</strong> fails.</p><p>Metro style apps call the  <strong>IDXGIFactory2::CreateSwapChainForImmersiveWindow</strong> method to create a swap chain.</p>	
+            <p>If you attempt to create a swap chain in full-screen mode, and full-screen mode is unavailable, the swap chain will be created in windowed mode and <see cref="F:SharpDX.DXGI.DXGIStatus.Occluded"/> will be returned.</p><p>If the buffer width or the buffer height is zero, the sizes will be inferred from the output window size in the swap-chain description.</p><p>Because the target output cannot be chosen explicitly when the swap-chain is created, you should not create a full-screen swap chain. This can reduce presentation performance if the swap chain size and the output window size do not match. Here are two ways to ensure that the sizes match:</p><ul> <li>Create a windowed swap chain and then set it full-screen using <strong><see cref="M:SharpDX.DXGI.SwapChain.SetFullscreenState(SharpDX.Bool,SharpDX.DXGI.Output)"/></strong>.</li> <li>Save a reference to the swap chain immediately after creation, and use it to get the output window size during a WM_SIZE event. Then resize the swap chain buffers (with <strong><see cref="M:SharpDX.DXGI.SwapChain.ResizeBuffers(System.Int32,System.Int32,System.Int32,SharpDX.DXGI.Format,SharpDX.DXGI.SwapChainFlags)"/></strong>) during the transition from windowed to full-screen.</li> </ul><p>If the swap chain is in full-screen mode, before you release it you must use <strong>SetFullscreenState</strong> to switch it to windowed mode. For more information about releasing a swap chain, see the "Destroying a Swap Chain" section of DXGI Overview.</p><p>You can specify <strong><see cref="T:SharpDX.DXGI.SwapEffect"/></strong> and <strong><see cref="T:SharpDX.DXGI.SwapChainFlags"/></strong> values in the swap-chain description that <em>pDesc</em> points to. These values allow you to use features like flip-model presentation and content protection by using pre-Windows Developer Preview APIs.</p><p>However, to use stereo presentation and to change resize behavior for the flip model, applications must use the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong> method. Otherwise, the back-buffer contents implicitly scale to fit the presentation target size; that is, you can't turn off scaling.</p>Notes for Metro style apps<p>If a Metro style app calls <strong>CreateSwapChain</strong> with full screen specified, <strong>CreateSwapChain</strong> fails.</p><p>Metro style apps call the  <strong>IDXGIFactory2::CreateSwapChainForImmersiveWindow</strong> method to create a swap chain.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIFactory::CreateSwapChain']/*"/>	
             <msdn-id>bb174537</msdn-id>	
@@ -1235,7 +1623,7 @@
             <p>Identifies the type of DXGI adapter.</p>	
             </summary>	
             <remarks>	
-            <p>The <strong><see cref="T:SharpDX.DXGI.AdapterFlags"/></strong> enumerated type is used by the <strong>Flags</strong> member of the <strong><see cref="T:SharpDX.DXGI.AdapterDescription1"/></strong> or <strong><see cref="T:SharpDX.DXGI.AdapterDesc2"/></strong> structure to  identify the type of DXGI adapter.</p>	
+            <p>The <strong><see cref="T:SharpDX.DXGI.AdapterFlags"/></strong> enumerated type is used by the <strong>Flags</strong> member of the <strong><see cref="T:SharpDX.DXGI.AdapterDescription1"/></strong> or <strong><see cref="T:SharpDX.DXGI.AdapterDescription2"/></strong> structure to  identify the type of DXGI adapter.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_FLAG']/*"/>	
             <msdn-id>ff471327</msdn-id>	
@@ -1322,7 +1710,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Identifies the granularity at which the graphics processing unit (GPU) can be preempted from performing its current compute task.</p>	
             </summary>	
             <remarks>	
-            <p>You call the <strong><see cref="M:SharpDX.DXGI.Adapter2.GetDesc2(SharpDX.DXGI.AdapterDesc2@)"/></strong> method to retrieve the granularity level at which the GPU can be preempted from performing its current compute task. The operating system specifies the compute granularity level in the  <strong>ComputePreemptionGranularity</strong> member of the <strong><see cref="T:SharpDX.DXGI.AdapterDesc2"/></strong> structure.</p>	
+            <p>You call the <strong><see cref="M:SharpDX.DXGI.Adapter2.GetDesc2(SharpDX.DXGI.AdapterDescription2@)"/></strong> method to retrieve the granularity level at which the GPU can be preempted from performing its current compute task. The operating system specifies the compute granularity level in the  <strong>ComputePreemptionGranularity</strong> member of the <strong><see cref="T:SharpDX.DXGI.AdapterDescription2"/></strong> structure.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_COMPUTE_PREEMPTION_GRANULARITY']/*"/>	
             <msdn-id>hh404499</msdn-id>	
@@ -2719,7 +3107,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Identifies the granularity at which the graphics processing unit (GPU) can be preempted from performing its current graphics rendering task.</p>	
             </summary>	
             <remarks>	
-            <p>You call the <strong><see cref="M:SharpDX.DXGI.Adapter2.GetDesc2(SharpDX.DXGI.AdapterDesc2@)"/></strong> method to retrieve the granularity level at which the GPU can be preempted from performing its current graphics rendering task. The operating system specifies the graphics granularity level in the  <strong>GraphicsPreemptionGranularity</strong> member of the <strong><see cref="T:SharpDX.DXGI.AdapterDesc2"/></strong> structure.</p><p>The following figure shows granularity of graphics rendering tasks.</p>	
+            <p>You call the <strong><see cref="M:SharpDX.DXGI.Adapter2.GetDesc2(SharpDX.DXGI.AdapterDescription2@)"/></strong> method to retrieve the granularity level at which the GPU can be preempted from performing its current graphics rendering task. The operating system specifies the graphics granularity level in the  <strong>GraphicsPreemptionGranularity</strong> member of the <strong><see cref="T:SharpDX.DXGI.AdapterDescription2"/></strong> structure.</p><p>The following figure shows granularity of graphics rendering tasks.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_GRAPHICS_PREEMPTION_GRANULARITY']/*"/>	
             <msdn-id>hh404504</msdn-id>	
@@ -3000,7 +3388,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Identifies resize behavior when the back-buffer size does not match the size of the target output.</p>	
             </summary>	
             <remarks>	
-            <p>The <strong><see cref="F:SharpDX.DXGI.Scaling.None"/></strong> value is supported only for flip presentation model swap chains that you create with the <strong><see cref="F:SharpDX.DXGI.SwapEffect.FlipSequential"/></strong> value. You pass these values in a call to <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForCoreWindow(SharpDX.ComObject,SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>, or  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>. </p>	
+            <p>The <strong><see cref="F:SharpDX.DXGI.Scaling.None"/></strong> value is supported only for flip presentation model swap chains that you create with the <strong><see cref="F:SharpDX.DXGI.SwapEffect.FlipSequential"/></strong> value. You pass these values in a call to <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForCoreWindow(SharpDX.ComObject,SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>, or  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_SCALING']/*"/>	
             <msdn-id>hh404526</msdn-id>	
@@ -3070,7 +3458,7 @@
             <p>Options for swap-chain behavior.</p>	
             </summary>	
             <remarks>	
-            <p>This enumeration is used by the <strong><see cref="T:SharpDX.DXGI.SwapChainDescription"/></strong> structure and the <strong><see cref="M:SharpDX.DXGI.SwapChain.ResizeTarget(SharpDX.DXGI.ModeDescription@)"/></strong> method.</p><p>This enumeration is also used by the  <strong><see cref="T:SharpDX.DXGI.SwapChainDescription1"/></strong> structure.</p><p>Swap chains that you create in full-screen mode with the <strong><see cref="M:SharpDX.DXGI.Factory.CreateSwapChain(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription@,SharpDX.DXGI.SwapChain)"/></strong> method behave as if <strong><see cref="F:SharpDX.DXGI.SwapChainFlags.DisplayOnly"/></strong> is set even though the flag is not set. That is, presented content is not accessible by remote access or through the <strong>desktop duplication APIs</strong>.  </p><p>Swap chains that you create with the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong>IDXGIFactory2::CreateSwapChainForImmersiveWindow</strong>, and  <strong>IDXGIFactory2::CreateSwapChainForCompositionSurface</strong> methods are not protected if <strong><see cref="F:SharpDX.DXGI.SwapChainFlags.DisplayOnly"/></strong> is not set and are protected if <strong><see cref="F:SharpDX.DXGI.SwapChainFlags.DisplayOnly"/></strong> is set. When swap chains are protected, screen scraping is prevented and, in full-screen mode, presented content is not accessible through the <strong>desktop duplication APIs</strong>.</p>	
+            <p>This enumeration is used by the <strong><see cref="T:SharpDX.DXGI.SwapChainDescription"/></strong> structure and the <strong><see cref="M:SharpDX.DXGI.SwapChain.ResizeTarget(SharpDX.DXGI.ModeDescription@)"/></strong> method.</p><p>This enumeration is also used by the  <strong><see cref="T:SharpDX.DXGI.SwapChainDescription1"/></strong> structure.</p><p>Swap chains that you create in full-screen mode with the <strong><see cref="M:SharpDX.DXGI.Factory.CreateSwapChain(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription@,SharpDX.DXGI.SwapChain)"/></strong> method behave as if <strong><see cref="F:SharpDX.DXGI.SwapChainFlags.DisplayOnly"/></strong> is set even though the flag is not set. That is, presented content is not accessible by remote access or through the <strong>desktop duplication APIs</strong>.  </p><p>Swap chains that you create with the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong>IDXGIFactory2::CreateSwapChainForImmersiveWindow</strong>, and  <strong>IDXGIFactory2::CreateSwapChainForCompositionSurface</strong> methods are not protected if <strong><see cref="F:SharpDX.DXGI.SwapChainFlags.DisplayOnly"/></strong> is not set and are protected if <strong><see cref="F:SharpDX.DXGI.SwapChainFlags.DisplayOnly"/></strong> is set. When swap chains are protected, screen scraping is prevented and, in full-screen mode, presented content is not accessible through the <strong>desktop duplication APIs</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_SWAP_CHAIN_FLAG']/*"/>	
             <msdn-id>bb173076</msdn-id>	
@@ -3353,8 +3741,8 @@
             <summary>Constant DeviceHung.</summary>
             <unmanaged>DXGI_ERROR_DEVICE_HUNG</unmanaged>
         </member>
-        <member name="F:SharpDX.DXGI.ResultCode.RemoteOutofmemory">
-            <summary>Constant RemoteOutofmemory.</summary>
+        <member name="F:SharpDX.DXGI.ResultCode.RemoteOufOfMemory">
+            <summary>Constant RemoteOufOfMemory.</summary>
             <unmanaged>DXGI_ERROR_REMOTE_OUTOFMEMORY</unmanaged>
         </member>
         <member name="F:SharpDX.DXGI.ResultCode.Unsupported">
@@ -3490,11 +3878,11 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.DXGI.Adapter2.GetDesc2(SharpDX.DXGI.AdapterDesc2@)">
+        <member name="M:SharpDX.DXGI.Adapter2.GetDesc2(SharpDX.DXGI.AdapterDescription2@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets a Microsoft DirectX Graphics Infrastructure (DXGI) 1.2 description of an adapter or video card. This description includes information about the granularity at which the graphics processing unit (GPU) can be preempted from performing its current task.</p>	
             </summary>	
-            <param name="descRef"><dd> <p>A reference to a <strong><see cref="T:SharpDX.DXGI.AdapterDesc2"/></strong> structure that describes the adapter.   This parameter must not be <strong><c>null</c></strong>.</p> </dd></param>	
+            <param name="descRef"><dd> <p>A reference to a <strong><see cref="T:SharpDX.DXGI.AdapterDescription2"/></strong> structure that describes the adapter.   This parameter must not be <strong><c>null</c></strong>.</p> </dd></param>	
             <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful; otherwise, returns E_INVALIDARG if the <em>pDesc</em> parameter is <strong><c>null</c></strong>.   </p></returns>	
             <remarks>	
             <p>Use the <strong>GetDesc2</strong> method to get a DXGI 1.2 description of an adapter.  To get a DXGI 1.1 description, use the <strong><see cref="M:SharpDX.DXGI.Adapter1.GetDescription1(SharpDX.DXGI.AdapterDescription1@)"/></strong> method. To get a DXGI 1.0 description, use the <strong><see cref="M:SharpDX.DXGI.Adapter.GetDescription(SharpDX.DXGI.AdapterDescription@)"/></strong> method.</p><p>The Windows Display Driver Model (WDDM) scheduler can preempt the GPU's execution of application tasks. The granularity at which the GPU can be preempted from performing its current task in the WDDM 1.1 or earlier driver model is a direct memory access (DMA) buffer for graphics tasks or a compute packet for compute tasks. The GPU can switch between tasks only after it completes the currently executing unit of work, a DMA buffer or a compute packet. </p><p>A DMA buffer is the largest independent unit of graphics work that the WDDM scheduler can submit to the GPU. This buffer contains a set of GPU instructions that the WDDM driver and GPU use. A compute packet is the largest independent unit of compute work that the WDDM scheduler can submit to the GPU. A compute packet contains dispatches (for example, calls to the <strong><see cref="!:SharpDX.Direct3D11.DeviceContext.Dispatch"/></strong> method), which contain thread groups. The WDDM 1.2 or later driver model allows the GPU to be preempted at finer granularity levels than a DMA buffer or compute packet. You can use the <strong>GetDesc2</strong> method to retrieve the granularity levels for graphics and compute tasks.</p>	
@@ -3695,7 +4083,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates a swap chain that is associated with an <strong>IWindow</strong> object for the output window for the swap chain.</p>	
             </summary>	
             <remarks>	
-            <p><strong>Note</strong>??Use this method in Metro style apps rather than <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong>.</p><p>If you specify the width, height, or both (<strong>Width</strong> and <strong>Height</strong> members of <strong><see cref="T:SharpDX.DXGI.SwapChainDescription1"/></strong> that <em>pDesc</em> points to) of the swap chain as zero, the runtime obtains the size from the output window that the <em>pWindow</em> parameter specifies. You can subsequently call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetDescription1(SharpDX.DXGI.SwapChainDescription1@)"/></strong> method to retrieve the assigned width or height value.</p><p>Because you can associate only one flip presentation model swap chain at a time with an <strong>IWindow</strong>, the Microsoft Direct3D?11 policy of deferring the destruction of objects can cause problems if you attempt to destroy a flip presentation model swap chain and replace it with another swap chain. For more info about this situation, see <strong>Deferred Destruction Issues with Flip Presentation Swap Chains</strong>.</p>	
+            <p><strong>Note</strong>??Use this method in Metro style apps rather than <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong>.</p><p>If you specify the width, height, or both (<strong>Width</strong> and <strong>Height</strong> members of <strong><see cref="T:SharpDX.DXGI.SwapChainDescription1"/></strong> that <em>pDesc</em> points to) of the swap chain as zero, the runtime obtains the size from the output window that the <em>pWindow</em> parameter specifies. You can subsequently call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetDescription1(SharpDX.DXGI.SwapChainDescription1@)"/></strong> method to retrieve the assigned width or height value.</p><p>Because you can associate only one flip presentation model swap chain at a time with an <strong>IWindow</strong>, the Microsoft Direct3D?11 policy of deferring the destruction of objects can cause problems if you attempt to destroy a flip presentation model swap chain and replace it with another swap chain. For more info about this situation, see <strong>Deferred Destruction Issues with Flip Presentation Swap Chains</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIFactory2']/*"/>	
             <msdn-id>hh404559</msdn-id>	
@@ -3730,7 +4118,7 @@
             <unmanaged>BOOL IDXGIFactory2::IsWindowedStereoEnabled()</unmanaged>	
             <unmanaged-short>IDXGIFactory2::IsWindowedStereoEnabled</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)">
+        <member name="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Creates a swap chain that is associated with an <strong><see cref="T:System.IntPtr"/></strong> handle to the output window for the swap chain.</p>	
             </summary>	
@@ -3758,7 +4146,7 @@
             <param name="restrictToOutputRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.DXGI.Output"/></strong> interface that the swap chain is restricted to. If the swap chain is moved to a different output, the content is black. You can optionally set this parameter to an output target that uses <strong><see cref="F:SharpDX.DXGI.PresentFlags.RestrictToOutput"/></strong> to restrict the content on this output. If you do not set this parameter to restrict content on an output target, you can set it to <strong><c>null</c></strong>. </p> </dd></param>	
             <returns><dd> <p>A reference to a variable that receives a reference to the <strong><see cref="T:SharpDX.DXGI.SwapChain1"/></strong> interface for the swap chain that <strong>CreateSwapChainForCoreWindow</strong> creates.</p> </dd></returns>	
             <remarks>	
-            <p><strong>Note</strong>??Use this method in Metro style apps rather than <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong>.</p><p>If you specify the width, height, or both (<strong>Width</strong> and <strong>Height</strong> members of <strong><see cref="T:SharpDX.DXGI.SwapChainDescription1"/></strong> that <em>pDesc</em> points to) of the swap chain as zero, the runtime obtains the size from the output window that the <em>pWindow</em> parameter specifies. You can subsequently call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetDescription1(SharpDX.DXGI.SwapChainDescription1@)"/></strong> method to retrieve the assigned width or height value.</p><p>Because you can associate only one flip presentation model swap chain at a time with an <strong>IWindow</strong>, the Microsoft Direct3D?11 policy of deferring the destruction of objects can cause problems if you attempt to destroy a flip presentation model swap chain and replace it with another swap chain. For more info about this situation, see <strong>Deferred Destruction Issues with Flip Presentation Swap Chains</strong>.</p>	
+            <p><strong>Note</strong>??Use this method in Metro style apps rather than <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong>.</p><p>If you specify the width, height, or both (<strong>Width</strong> and <strong>Height</strong> members of <strong><see cref="T:SharpDX.DXGI.SwapChainDescription1"/></strong> that <em>pDesc</em> points to) of the swap chain as zero, the runtime obtains the size from the output window that the <em>pWindow</em> parameter specifies. You can subsequently call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetDescription1(SharpDX.DXGI.SwapChainDescription1@)"/></strong> method to retrieve the assigned width or height value.</p><p>Because you can associate only one flip presentation model swap chain at a time with an <strong>IWindow</strong>, the Microsoft Direct3D?11 policy of deferring the destruction of objects can cause problems if you attempt to destroy a flip presentation model swap chain and replace it with another swap chain. For more info about this situation, see <strong>Deferred Destruction Issues with Flip Presentation Swap Chains</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIFactory2::CreateSwapChainForCoreWindow']/*"/>	
             <msdn-id>hh404559</msdn-id>	
@@ -3941,377 +4329,6 @@
             <unmanaged>HRESULT IDXGIKeyedMutex::ReleaseSync([In] unsigned longlong Key)</unmanaged>	
             <unmanaged-short>IDXGIKeyedMutex::ReleaseSync</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.DXGI.Output">
-            <summary>	
-            <p>An <strong><see cref="T:SharpDX.DXGI.Output"/></strong> interface represents an adapter output (such as a monitor).</p>	
-            </summary>	
-            <remarks>	
-            <p>To see the outputs available, use <strong><see cref="M:SharpDX.DXGI.Adapter.GetOutput(System.Int32)"/></strong>. To see the specific output that the swap chain will update, use <strong><see cref="M:SharpDX.DXGI.SwapChain.GetContainingOutput(SharpDX.DXGI.Output@)"/></strong>.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput']/*"/>	
-            <msdn-id>bb174546</msdn-id>	
-            <unmanaged>IDXGIOutput</unmanaged>	
-            <unmanaged-short>IDXGIOutput</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.DXGI.Output"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.op_Explicit(System.IntPtr)~SharpDX.DXGI.Output">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.DXGI.Output"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DXGI.Output.GetDescription(SharpDX.DXGI.OutputDescription@)">
-            <summary>	
-            <p>Get a description of the output.</p>	
-            </summary>	
-            <param name="descRef"><dd>  <p>A reference to the output description (see <strong><see cref="T:SharpDX.DXGI.OutputDescription"/></strong>).</p> </dd></param>	
-            <returns><p>Returns a code that indicates success or failure. <see cref="F:SharpDX.Result.Ok"/> if successful, <see cref="F:SharpDX.DXGI.ResultCode.InvalidCall"/> if <em>pDesc</em> is passed in as <strong><c>null</c></strong>.</p></returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetDesc']/*"/>	
-            <msdn-id>bb174548</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::GetDesc([Out] DXGI_OUTPUT_DESC* pDesc)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::GetDesc</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.GetDisplayModeList(SharpDX.DXGI.Format,System.Int32,System.Int32@,SharpDX.DXGI.ModeDescription[])">
-            <summary>	
-            <p>[Starting with Direct3D 11.1, we recommend not to use <strong>GetDisplayModeList</strong> anymore to retrieve the matching display mode. Instead, use <strong><see cref="M:SharpDX.DXGI.Output1.GetDisplayModeList1(SharpDX.DXGI.Format,System.Int32,System.Int32@,SharpDX.DXGI.ModeDescription1[])"/></strong>, which supports stereo display mode.]</p><p>Gets the display modes that match the requested format and other input options.</p>	
-            </summary>	
-            <param name="enumFormat">No documentation.</param>	
-            <param name="flags">No documentation.</param>	
-            <param name="numModesRef">No documentation.</param>	
-            <param name="descRef">No documentation.</param>	
-            <returns><p>Returns one of the following DXGI_ERROR. It is rare, but possible, that the display modes available can change immediately after calling  this method, in which case <see cref="F:SharpDX.DXGI.ResultCode.MoreData"/> is returned (if there is not enough room for all the display modes).   If <strong>GetDisplayModeList</strong> is called from a Remote Desktop Services session (formerly Terminal Services session), <see cref="F:SharpDX.DXGI.ResultCode.NotCurrentlyAvailable"/> is returned.</p></returns>	
-            <remarks>	
-            <p>In general, when switching from windowed to full-screen mode, a swap chain automatically chooses a display mode that meets (or exceeds) the resolution, color  depth and refresh rate of the swap chain. To exercise more control over the display mode, use this API to poll the set of display modes that are validated  against monitor capabilities, or all modes that match the desktop (if the desktop settings are not validated against the monitor).</p><p>As shown, this API is designed to be called twice. First to get the number of modes available, and second to return a description of the modes.</p><pre><code> UINT num = 0;	
-            <see cref="T:SharpDX.DXGI.Format"/> format = <see cref="F:SharpDX.DXGI.Format.R32G32B32A32_Float"/>;	
-            UINT flags         = <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Interlaced"/>; pOutput-&gt;GetDisplayModeList( format, flags, &amp;num, 0); ... <see cref="T:SharpDX.DXGI.ModeDescription"/> * pDescs = new <see cref="T:SharpDX.DXGI.ModeDescription"/>[num];	
-            pOutput-&gt;GetDisplayModeList( format, flags, &amp;num, pDescs); </code></pre>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetDisplayModeList']/*"/>	
-            <msdn-id>bb174549</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::GetDisplayModeList([In] DXGI_FORMAT EnumFormat,[In] unsigned int Flags,[InOut] unsigned int* pNumModes,[Out, Buffer, Optional] DXGI_MODE_DESC* pDesc)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::GetDisplayModeList</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.FindClosestMatchingMode(SharpDX.DXGI.ModeDescription@,SharpDX.DXGI.ModeDescription@,SharpDX.ComObject)">
-            <summary>	
-            <p>[Starting with Direct3D 11.1, we recommend not to use <strong>FindClosestMatchingMode</strong> anymore to find the display mode that most closely matches the requested display mode. Instead, use <strong><see cref="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)"/></strong>, which supports stereo display mode.]</p><p>Finds the display mode that most closely matches the requested display mode.</p>	
-            </summary>	
-            <param name="modeToMatchRef">No documentation.</param>	
-            <param name="closestMatchRef">No documentation.</param>	
-            <param name="concernedDeviceRef">No documentation.</param>	
-            <returns><p>Returns one of the following DXGI_ERROR.</p></returns>	
-            <remarks>	
-            <p><strong>FindClosestMatchingMode</strong> behaves similarly to the <strong><see cref="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)"/></strong> except <strong>FindClosestMatchingMode</strong> considers only the mono display modes. <strong><see cref="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)"/></strong> considers only stereo modes if you set the <strong>Stereo</strong> member in the <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structure that <em>pModeToMatch</em> points to, and considers only mono modes if <strong>Stereo</strong> is not set.</p><p> <strong><see cref="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)"/></strong> returns a matched display-mode set with only stereo modes or only mono modes.	
-            <strong>FindClosestMatchingMode</strong> behaves as though you specified the input mode as mono.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::FindClosestMatchingMode']/*"/>	
-            <msdn-id>bb174547</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::FindClosestMatchingMode([In] const DXGI_MODE_DESC* pModeToMatch,[Out] DXGI_MODE_DESC* pClosestMatch,[In, Optional] IUnknown* pConcernedDevice)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::FindClosestMatchingMode</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.WaitForVerticalBlank">
-            <summary>	
-            <p>Halt a thread until the next vertical blank occurs.</p>	
-            </summary>	
-            <returns><p>Returns one of the following DXGI_ERROR.</p></returns>	
-            <remarks>	
-            <p>A vertical blank occurs when the raster moves from the lower right corner to the upper left corner to begin drawing the next frame.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::WaitForVBlank']/*"/>	
-            <msdn-id>bb174559</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::WaitForVBlank()</unmanaged>	
-            <unmanaged-short>IDXGIOutput::WaitForVBlank</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.TakeOwnership(SharpDX.ComObject,SharpDX.Bool)">
-            <summary>	
-            <p>Takes ownership of an output.</p>	
-            </summary>	
-            <param name="deviceRef"><dd>  <p>A reference to the <strong><see cref="T:SharpDX.ComObject"/></strong> interface of a device (such as an <strong>ID3D10Device</strong>).</p> </dd></param>	
-            <param name="exclusive"><dd>  <p>Set to <strong>TRUE</strong> to enable other threads or applications to take ownership of the device; otherwise, set to <strong><see cref="F:SharpDX.Result.False"/></strong>.</p> </dd></param>	
-            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
-            <remarks>	
-            <p>When you are finished with the output, call <strong><see cref="M:SharpDX.DXGI.Output.ReleaseOwnership"/></strong>.</p><p><strong>TakeOwnership</strong> should not be called directly by applications, since results will be unpredictable. It is called implicitly by the DXGI swap chain object during full-screen transitions, and should not be used as a substitute for swap-chain methods.</p>Notes for Metro style apps<p>If a Metro style app uses <strong>TakeOwnership</strong>, it fails with <see cref="F:SharpDX.DXGI.ResultCode.NotCurrentlyAvailable"/>.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::TakeOwnership']/*"/>	
-            <msdn-id>Bb174558</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::TakeOwnership([In] IUnknown* pDevice,[In] BOOL Exclusive)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::TakeOwnership</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.ReleaseOwnership">
-            <summary>	
-            <p>Releases ownership of the output.</p>	
-            </summary>	
-            <remarks>	
-            <p>If you are not using a swap chain, get access to an output by calling <strong><see cref="M:SharpDX.DXGI.Output.TakeOwnership(SharpDX.ComObject,SharpDX.Bool)"/></strong> and release it when you are finished by calling <strong><see cref="M:SharpDX.DXGI.Output.ReleaseOwnership"/></strong>. An application that uses a swap chain will typically not call either of these methods.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::ReleaseOwnership']/*"/>	
-            <msdn-id>Bb174554</msdn-id>	
-            <unmanaged>void IDXGIOutput::ReleaseOwnership()</unmanaged>	
-            <unmanaged-short>IDXGIOutput::ReleaseOwnership</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.GetGammaControlCapabilities(SharpDX.DXGI.GammaControlCapabilities@)">
-            <summary>	
-            <p>Gets a description of the gamma-control capabilities.</p>	
-            </summary>	
-            <param name="gammaCapsRef"><dd>  <p>A reference to a  description of the gamma-control capabilities (see <strong><see cref="T:SharpDX.DXGI.GammaControlCapabilities"/></strong>).</p> </dd></param>	
-            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
-            <remarks>	
-            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetGammaControlCapabilities']/*"/>	
-            <msdn-id>bb174553</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::GetGammaControlCapabilities([Out] DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::GetGammaControlCapabilities</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.SetGammaControl(SharpDX.DXGI.GammaControl@)">
-            <summary>	
-            <p>Sets the gamma controls.</p>	
-            </summary>	
-            <param name="arrayRef"><dd>  <p>A reference to an array of gamma controls (see <strong><see cref="T:SharpDX.DXGI.GammaControl"/></strong>).</p> </dd></param>	
-            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
-            <remarks>	
-            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::SetGammaControl']/*"/>	
-            <msdn-id>Bb174557</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::SetGammaControl([In] const DXGI_GAMMA_CONTROL* pArray)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::SetGammaControl</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.GetGammaControl(SharpDX.DXGI.GammaControl@)">
-            <summary>	
-            <p>Gets the gamma control settings.</p>	
-            </summary>	
-            <param name="arrayRef"><dd>  <p>An array of gamma control settings (see <strong><see cref="T:SharpDX.DXGI.GammaControl"/></strong>).</p> </dd></param>	
-            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
-            <remarks>	
-            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetGammaControl']/*"/>	
-            <msdn-id>bb174552</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::GetGammaControl([Out] DXGI_GAMMA_CONTROL* pArray)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::GetGammaControl</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.SetDisplaySurface(SharpDX.DXGI.Surface)">
-            <summary>	
-            <p>Changes the display mode.</p>	
-            </summary>	
-            <param name="scanoutSurfaceRef"><dd>  <p>A reference to a surface (see <strong><see cref="T:SharpDX.DXGI.Surface"/></strong>) used for rendering an image to the screen. The surface must have been created as a back buffer (DXGI_USAGE_BACKBUFFER).</p> </dd></param>	
-            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
-            <remarks>	
-            <p><strong><see cref="M:SharpDX.DXGI.Output.SetDisplaySurface(SharpDX.DXGI.Surface)"/></strong> should not be called directly by applications, since results will be unpredictable. It is called implicitly by the DXGI swap chain object during full-screen transitions, and should not be used as a substitute for swap-chain methods.</p><p>This method should only be called between <strong><see cref="M:SharpDX.DXGI.Output.TakeOwnership(SharpDX.ComObject,SharpDX.Bool)"/></strong> and <strong><see cref="M:SharpDX.DXGI.Output.ReleaseOwnership"/></strong> calls.</p>Notes for Metro style apps<p>If a Metro style app uses <strong>SetDisplaySurface</strong>, it fails with <see cref="F:SharpDX.DXGI.ResultCode.NotCurrentlyAvailable"/>.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::SetDisplaySurface']/*"/>	
-            <msdn-id>bb174556</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::SetDisplaySurface([In] IDXGISurface* pScanoutSurface)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::SetDisplaySurface</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)">
-            <summary>	
-            <p>[Starting with Direct3D 11.1, we recommend not to use <strong>GetDisplaySurfaceData</strong> anymore to retrieve the current display surface. Instead, use <strong><see cref="M:SharpDX.DXGI.Output1.GetDisplaySurfaceData1(SharpDX.DXGI.Resource)"/></strong>, which supports stereo display mode.]</p><p>Gets a copy of the current display surface.</p>	
-            </summary>	
-            <param name="destinationRef">No documentation.</param>	
-            <returns><p>Returns one of the DXGI_ERROR values.</p></returns>	
-            <remarks>	
-            <p><strong><see cref="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)"/></strong> can only be called when an output is in full-screen mode. If the method succeeds, DXGI fills the destination surface.</p><p>Use <strong><see cref="M:SharpDX.DXGI.Output.GetDescription(SharpDX.DXGI.OutputDescription@)"/></strong> to determine the size (width and height) of the output when you want to allocate space for the destination surface. This is true regardless of target monitor rotation. A destination surface created by a graphics component (such as Direct3D 10) must be created with CPU-write permission (see D3D10_CPU_ACCESS_WRITE). Other surfaces should be created with CPU read-write permission (see D3D10_CPU_ACCESS_READ_WRITE). This method will modify the surface data to fit the destination surface (stretch, shrink, convert format, rotate). The stretch and shrink is performed with point-sampling.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetDisplaySurfaceData']/*"/>	
-            <msdn-id>bb174550</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::GetDisplaySurfaceData([In] IDXGISurface* pDestination)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::GetDisplaySurfaceData</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.GetFrameStatistics(SharpDX.DXGI.FrameStatistics@)">
-            <summary>	
-            <p>Gets statistics about recently rendered frames.</p>	
-            </summary>	
-            <param name="statsRef"><dd>  <p>A reference to frame statistics (see <strong><see cref="T:SharpDX.DXGI.FrameStatistics"/></strong>).</p> </dd></param>	
-            <returns><p>If this function succeeds, it returns <see cref="F:SharpDX.Result.Ok"/>. Otherwise, it might return <see cref="F:SharpDX.DXGI.ResultCode.InvalidCall"/>.</p></returns>	
-            <remarks>	
-            <p>This API is similar to <strong><see cref="M:SharpDX.DXGI.SwapChain.GetFrameStatistics(SharpDX.DXGI.FrameStatistics@)"/></strong>.</p><p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetFrameStatistics']/*"/>	
-            <msdn-id>bb174551</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput::GetFrameStatistics([Out] DXGI_FRAME_STATISTICS* pStats)</unmanaged>	
-            <unmanaged-short>IDXGIOutput::GetFrameStatistics</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output.GetClosestMatchingMode(SharpDX.ComObject,SharpDX.DXGI.ModeDescription,SharpDX.DXGI.ModeDescription@)">
-            <summary>	
-            Find the display mode that most closely matches the requested display mode.	
-            </summary>	
-            <remarks>	
-            Direct3D devices require UNORM formats. This method finds the closest matching available display mode to the mode specified in pModeToMatch. Similarly ranked fields (ie. all specified, or all unspecified, etc) are resolved in the following order.  ScanlineOrdering Scaling Format Resolution RefreshRate  When determining the closest value for a particular field, previously matched fields are used to filter the display mode list choices, and  other fields are ignored. For example, when matching Resolution, the display mode list will have already been filtered by a certain ScanlineOrdering,  Scaling, and Format, while RefreshRate is ignored. This ordering doesn't define the absolute ordering for every usage scenario of FindClosestMatchingMode, because  the application can choose some values initially, effectively changing the order that fields are chosen. Fields of the display mode are matched one at a time, generally in a specified order. If a field is unspecified, FindClosestMatchingMode gravitates toward the values for the desktop related to this output.  If this output is not part of the desktop, then the default desktop output is used to find values. If an application uses a fully unspecified  display mode, FindClosestMatchingMode will typically return a display mode that matches the desktop settings for this output.   Unspecified fields are lower priority than specified fields and will be resolved later than specified fields. 	
-            </remarks>	
-            <param name="device">A reference to the Direct3D device interface. If this parameter is NULL, only modes whose format matches that of pModeToMatch will  be returned; otherwise, only those formats that are supported for scan-out by the device are returned. </param>
-            <param name="modeToMatch">The desired display mode (see <see cref="T:SharpDX.DXGI.ModeDescription"/>). Members of DXGI_MODE_DESC can be unspecified indicating no preference for  that member.  A value of 0 for Width or Height indicates the value is unspecified.  If either Width or  Height are 0 both must be 0.  A numerator and denominator of 0 in RefreshRate indicate it is unspecified. Other members  of DXGI_MODE_DESC have enumeration values indicating the member is unspecified.  If pConnectedDevice is NULL Format cannot be DXGI_FORMAT_UNKNOWN. </param>
-            <param name="closestMatch">The mode that most closely matches pModeToMatch. </param>
-            <returns>Returns one of the following <see cref="!:SharpDX.DXGI.DXGIError"/>. </returns>
-            <unmanaged>HRESULT IDXGIOutput::FindClosestMatchingMode([In] const DXGI_MODE_DESC* pModeToMatch,[Out] DXGI_MODE_DESC* pClosestMatch,[In, Optional] IUnknown* pConcernedDevice)</unmanaged>
-        </member>
-        <member name="M:SharpDX.DXGI.Output.GetDisplayModeList(SharpDX.DXGI.Format,SharpDX.DXGI.DisplayModeEnumerationFlags)">
-            <summary>	
-            Gets the display modes that match the requested format and other input options.	
-            </summary>	
-            <remarks>	
-            In general, when switching from windowed to full-screen mode, a swap chain automatically chooses a display mode that meets (or exceeds) the resolution, color  depth and refresh rate of the swap chain. To exercise more control over the display mode, use this API to poll the set of display modes that are validated  against monitor capabilities, or all modes that match the desktop (if the desktop settings are not validated against the monitor). As shown, this API is designed to be called twice. First to get the number of modes available, and second to return a description of the modes. 	
-            <code> UINT num = 0;	
-            DXGI_FORMAT format = DXGI_FORMAT_R32G32B32A32_FLOAT;	
-            UINT flags         = DXGI_ENUM_MODES_INTERLACED; pOutput-&gt;GetDisplayModeList( format, flags, &amp;num, 0); ... DXGI_MODE_DESC * pDescs = new DXGI_MODE_DESC[num];	
-            pOutput-&gt;GetDisplayModeList( format, flags, &amp;num, pDescs); </code>	
-            	
-             	
-            </remarks>	
-            <param name="format">The color format (see <see cref="T:SharpDX.DXGI.Format"/>). </param>
-            <param name="flags">format for modes to include (see {{DXGI_ENUM_MODES}}). DXGI_ENUM_MODES_SCALING needs to be specified to expose the display modes that require scaling.  Centered modes, requiring no  scaling and corresponding directly to the display output, are enumerated by default. </param>
-            <returns>Returns a list of display modes (see <see cref="T:SharpDX.DXGI.ModeDescription"/>); </returns>
-            <unmanaged>HRESULT IDXGIOutput::GetDisplayModeList([None] DXGI_FORMAT EnumFormat,[None] int Flags,[InOut] int* pNumModes,[Out, Buffer, Optional] DXGI_MODE_DESC* pDesc)</unmanaged>
-        </member>
-        <member name="P:SharpDX.DXGI.Output.Description">
-            <summary>	
-            <p>Get a description of the output.</p>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetDesc']/*"/>	
-            <msdn-id>bb174548</msdn-id>	
-            <unmanaged>GetDesc</unmanaged>	
-            <unmanaged-short>GetDesc</unmanaged-short>	
-            <unmanaged>HRESULT IDXGIOutput::GetDesc([Out] DXGI_OUTPUT_DESC* pDesc)</unmanaged>
-        </member>
-        <member name="P:SharpDX.DXGI.Output.GammaControlCapabilities">
-            <summary>	
-            <p>Gets a description of the gamma-control capabilities.</p>	
-            </summary>	
-            <remarks>	
-            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetGammaControlCapabilities']/*"/>	
-            <msdn-id>bb174553</msdn-id>	
-            <unmanaged>GetGammaControlCapabilities</unmanaged>	
-            <unmanaged-short>GetGammaControlCapabilities</unmanaged-short>	
-            <unmanaged>HRESULT IDXGIOutput::GetGammaControlCapabilities([Out] DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps)</unmanaged>
-        </member>
-        <member name="P:SharpDX.DXGI.Output.GammaControl">
-            <summary>	
-            <p>Gets or sets the gamma control settings.</p>	
-            </summary>	
-            <remarks>	
-            <p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetGammaControl']/*"/>	
-            <msdn-id>bb174552</msdn-id>	
-            <unmanaged>GetGammaControl / SetGammaControl</unmanaged>	
-            <unmanaged-short>GetGammaControl</unmanaged-short>	
-            <unmanaged>HRESULT IDXGIOutput::GetGammaControl([Out] DXGI_GAMMA_CONTROL* pArray)</unmanaged>
-        </member>
-        <member name="P:SharpDX.DXGI.Output.FrameStatistics">
-            <summary>	
-            <p>Gets statistics about recently rendered frames.</p>	
-            </summary>	
-            <remarks>	
-            <p>This API is similar to <strong><see cref="M:SharpDX.DXGI.SwapChain.GetFrameStatistics(SharpDX.DXGI.FrameStatistics@)"/></strong>.</p><p> </p><p><strong>Note</strong>??Calling this method is only supported while in full-screen mode.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput::GetFrameStatistics']/*"/>	
-            <msdn-id>bb174551</msdn-id>	
-            <unmanaged>GetFrameStatistics</unmanaged>	
-            <unmanaged-short>GetFrameStatistics</unmanaged-short>	
-            <unmanaged>HRESULT IDXGIOutput::GetFrameStatistics([Out] DXGI_FRAME_STATISTICS* pStats)</unmanaged>
-        </member>
-        <member name="T:SharpDX.DXGI.Output1">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Creates a desktop duplication interface from the <strong><see cref="T:SharpDX.DXGI.Output1"/></strong> interface that represents an adapter output.</p>	
-            </summary>	
-            <remarks>	
-            <p>If an application wants to duplicate the entire desktop, it must create a desktop duplication interface on each active output on the desktop. This interface does not provide an explicit way to synchronize the timing of each output image. Instead, the application must use the time stamp of each output, and then determine how to combine the images.</p><p>For <strong>DuplicateOutput</strong> to succeed, you must create <em>pDevice</em> from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong> or a later version of a DXGI factory interface that inherits from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong>.</p><p>If the current mode is a stereo mode, the desktop duplication interface provides the image for the left stereo image only.</p><p>By default, only four processes can use a <strong>IDXGIOutputDuplication</strong> interface at the same time within a single session. A process can have only one desktop duplication interface on a single desktop output; however, that process can have a desktop duplication interface for each output that is part of the desktop. </p><p>If <strong>DuplicateOutput</strong> fails with <see cref="F:SharpDX.DXGI.ResultCode.Unsupported"/>, the application can wait for system notification of desktop switches and mode changes and then call <strong>DuplicateOutput</strong> again after such a notification occurs.  For more information, see information in desktop switch (<strong>EVENT_SYSTEM_DESKTOPSWITCH</strong>) and mode change notification (<strong>WM_DISPLAYCHANGE</strong>). </p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1']/*"/>	
-            <msdn-id>hh404600</msdn-id>	
-            <unmanaged>IDXGIOutput1</unmanaged>	
-            <unmanaged-short>IDXGIOutput1</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output1.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.DXGI.Output1"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output1.op_Explicit(System.IntPtr)~SharpDX.DXGI.Output1">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.DXGI.Output1"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.DXGI.Output1.GetDisplayModeList1(SharpDX.DXGI.Format,System.Int32,System.Int32@,SharpDX.DXGI.ModeDescription1[])">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the display modes that match the requested format and other input options.</p>	
-            </summary>	
-            <param name="enumFormat"><dd> <p>A <strong><see cref="T:SharpDX.DXGI.Format"/></strong>-typed value for the color format.</p> </dd></param>	
-            <param name="flags"><dd> <p>A combination of DXGI_ENUM_MODES-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for display modes to include. You must specify <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Scaling"/> to expose the display modes that require scaling.  Centered modes that require no  scaling and correspond directly to the display output are enumerated by default.</p> </dd></param>	
-            <param name="numModesRef"><dd> <p>A reference to a variable that receives the number of display modes that <strong>GetDisplayModeList1</strong> returns in the memory block to which <em>pDesc</em> points. Set <em>pDesc</em> to <strong><c>null</c></strong> so that <em>pNumModes</em> returns the number of display modes that match the format and the options. Otherwise, <em>pNumModes</em> returns the number of display modes returned in <em>pDesc</em>.</p> </dd></param>	
-            <param name="descRef"><dd> <p>A reference to a list of display modes; set to <strong><c>null</c></strong> to get the number of display modes.</p> </dd></param>	
-            <returns><p>Returns one of the error codes described in the DXGI_ERROR topic. It is rare, but possible, that the display modes available can change immediately after calling  this method, in which case <see cref="F:SharpDX.DXGI.ResultCode.MoreData"/> is returned (if there is not enough room for all the display modes).</p></returns>	
-            <remarks>	
-            <p><strong>GetDisplayModeList1</strong> is updated from  <strong>GetDisplayModeList</strong> to return a list of <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structures, which are updated mode descriptions.  <strong>GetDisplayModeList</strong> behaves as though it calls <strong>GetDisplayModeList1</strong> because  <strong>GetDisplayModeList</strong> can return all of the modes that are specified by DXGI_ENUM_MODES, including stereo mode.  However, <strong>GetDisplayModeList</strong> returns a list of <strong><see cref="T:SharpDX.DXGI.ModeDescription"/></strong> structures, which are the former mode descriptions and do not indicate stereo mode.</p><p>The <strong>GetDisplayModeList1</strong> method does not enumerate stereo modes unless you specify the <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Stereo"/> flag in the <em>Flags</em> parameter.  If you specify <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Stereo"/>, stereo modes are included in the list of returned modes that the <em>pDesc</em> parameter points to.  In other words, the method returns both stereo and mono modes.</p><p>In general, when you switch from windowed to full-screen mode, a swap chain automatically chooses a display mode that meets (or exceeds) the resolution, color  depth, and refresh rate of the swap chain. To exercise more control over the display mode, use <strong>GetDisplayModeList1</strong> to poll the set of display modes that are validated  against monitor capabilities, or all modes that match the desktop (if the desktop settings are not validated against the monitor).</p><p>The following example code shows that you need to call <strong>GetDisplayModeList1</strong> twice. First call <strong>GetDisplayModeList1</strong> to get the number of modes available, and second call <strong>GetDisplayModeList1</strong> to return a description of the modes.</p><pre><code> UINT num = 0;	
-            <see cref="T:SharpDX.DXGI.Format"/> format = <see cref="F:SharpDX.DXGI.Format.R32G32B32A32_Float"/>;	
-            UINT flags         = <see cref="F:SharpDX.DXGI.DisplayModeEnumerationFlags.Interlaced"/>; pOutput-&gt;GetDisplayModeList1( format, flags, &amp;num, 0); ... <see cref="T:SharpDX.DXGI.ModeDescription1"/> * pDescs = new <see cref="T:SharpDX.DXGI.ModeDescription1"/>[num];	
-            pOutput-&gt;GetDisplayModeList1( format, flags, &amp;num, pDescs); </code></pre>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1::GetDisplayModeList1']/*"/>	
-            <msdn-id>hh404606</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput1::GetDisplayModeList1([In] DXGI_FORMAT EnumFormat,[In] unsigned int Flags,[InOut] unsigned int* pNumModes,[Out, Buffer, Optional] DXGI_MODE_DESC1* pDesc)</unmanaged>	
-            <unmanaged-short>IDXGIOutput1::GetDisplayModeList1</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output1.FindClosestMatchingMode1(SharpDX.DXGI.ModeDescription1@,SharpDX.DXGI.ModeDescription1@,SharpDX.ComObject)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Finds the display mode that most closely matches the requested display mode.</p>	
-            </summary>	
-            <param name="modeToMatchRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structure that describes the display mode to match. Members of <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> can be unspecified, which indicates no preference for  that member.  A value of 0 for <strong>Width</strong> or <strong>Height</strong> indicates that the value is unspecified.  If either <strong>Width</strong> or  <strong>Height</strong> is 0, both must be 0.  A numerator and denominator of 0 in <strong>RefreshRate</strong> indicate it is unspecified. Other members  of <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> have enumeration values that indicate that the member is unspecified.  If <em>pConcernedDevice</em> is <strong><c>null</c></strong>, the <strong>Format</strong> member of <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> cannot be <strong><see cref="F:SharpDX.DXGI.Format.Unknown"/></strong>.</p> </dd></param>	
-            <param name="closestMatchRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structure that receives a description of the display mode that most closely matches the display mode described at <em>pModeToMatch</em>.</p> </dd></param>	
-            <param name="concernedDeviceRef"><dd> <p>A reference to the Direct3D device interface. If this parameter is <strong><c>null</c></strong>, <strong>FindClosestMatchingMode1</strong> returns only modes whose format matches that of <em>pModeToMatch</em>; otherwise, <strong>FindClosestMatchingMode1</strong> returns only those formats that are supported for scan-out by the device. For info about the formats that are supported for scan-out by the device at each feature level, see Hardware Support for Direct3D 10 Formats, Hardware Support for Direct3D 10.1 Formats, Hardware Support for Direct3D 10Level9 Formats, Hardware Support for Direct3D 11 Formats, and Hardware Support for Direct3D 11.1 Formats.</p> </dd></param>	
-            <returns><p>Returns one of the error codes described in the DXGI_ERROR topic.</p></returns>	
-            <remarks>	
-            <p>Direct3D devices require UNORM formats.</p><p><strong>FindClosestMatchingMode1</strong> finds the closest matching available display mode to the mode that you specify in <em>pModeToMatch</em>.</p><p>If you set the <strong>Stereo</strong> member in the <strong><see cref="T:SharpDX.DXGI.ModeDescription1"/></strong> structure to which <em>pModeToMatch</em> points to specify a stereo mode as input, <strong>FindClosestMatchingMode1</strong> considers only stereo modes. <strong>FindClosestMatchingMode1</strong> considers only mono modes if <strong>Stereo</strong> is not set.</p><p><strong>FindClosestMatchingMode1</strong> resolves similarly ranked members of display modes (that is, all specified, or all unspecified, and so on) in the following order:</p><ol> <li><strong>ScanlineOrdering</strong></li> <li><strong>Scaling</strong></li> <li><strong>Format</strong></li> <li><strong>Resolution</strong></li> <li><strong>RefreshRate</strong></li> </ol><p>When <strong>FindClosestMatchingMode1</strong> determines the closest value for a particular member, it uses previously matched members to filter the display mode list choices, and  ignores other members. For example, when <strong>FindClosestMatchingMode1</strong> matches <strong>Resolution</strong>, it already filtered the display mode list by a certain <strong>ScanlineOrdering</strong>,  <strong>Scaling</strong>, and <strong>Format</strong>, while it ignores <strong>RefreshRate</strong>. This ordering doesn't define the absolute ordering for every usage scenario of <strong>FindClosestMatchingMode1</strong>, because  the application can choose some values initially, which effectively changes the order of resolving members.</p><p><strong>FindClosestMatchingMode1</strong> matches members of the display mode one at a time, generally in a specified order.</p><p>If a member is unspecified, <strong>FindClosestMatchingMode1</strong> gravitates toward the values for the desktop related to this output.  If this output is not part of the desktop, <strong>FindClosestMatchingMode1</strong> uses the default desktop output to find values. If an application uses a fully unspecified  display mode, <strong>FindClosestMatchingMode1</strong> typically returns a display mode that matches the desktop settings for this output.   Because unspecified members are lower priority than specified members, <strong>FindClosestMatchingMode1</strong> resolves unspecified members later than specified members.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1::FindClosestMatchingMode1']/*"/>	
-            <msdn-id>hh404603</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput1::FindClosestMatchingMode1([In] const DXGI_MODE_DESC1* pModeToMatch,[Out] DXGI_MODE_DESC1* pClosestMatch,[In, Optional] IUnknown* pConcernedDevice)</unmanaged>	
-            <unmanaged-short>IDXGIOutput1::FindClosestMatchingMode1</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output1.GetDisplaySurfaceData1(SharpDX.DXGI.Resource)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Copies the display surface (front buffer) to a user-provided resource.</p>	
-            </summary>	
-            <param name="destinationRef"><dd> <p>A reference to a resource interface that represents the resource to which <strong>GetDisplaySurfaceData1</strong> copies the display surface.</p> </dd></param>	
-            <returns><p>Returns one of the error codes described in the DXGI_ERROR topic.</p></returns>	
-            <remarks>	
-            <p><strong>GetDisplaySurfaceData1</strong> is similar to <strong><see cref="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)"/></strong> except <strong>GetDisplaySurfaceData1</strong> takes an <strong><see cref="T:SharpDX.DXGI.Resource"/></strong> and <strong><see cref="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)"/></strong> takes an <strong><see cref="T:SharpDX.DXGI.Surface"/></strong>.</p><p><strong>GetDisplaySurfaceData1</strong> returns an error if the input resource is not a 2D texture (represented by the <strong><see cref="!:SharpDX.Direct3D11.Texture2D"/></strong> interface) with an array size (<strong>ArraySize</strong> member of the <strong><see cref="!:SharpDX.Direct3D11.Texture2DDescription"/></strong> structure) that is equal to the swap chain buffers.</p><p>The original <strong><see cref="M:SharpDX.DXGI.Output.CopyDisplaySurfaceTo(SharpDX.DXGI.Surface)"/></strong> and the updated <strong>GetDisplaySurfaceData1</strong> behave exactly the same. <strong>GetDisplaySurfaceData1</strong> was required because textures with an array size equal to 2 (<strong>ArraySize</strong> = 2) do not implement <strong><see cref="T:SharpDX.DXGI.Surface"/></strong>.</p><p> You can call <strong>GetDisplaySurfaceData1</strong> only when an output is in full-screen mode. If <strong>GetDisplaySurfaceData1</strong> succeeds, it fills the destination resource.</p><p>Use <strong><see cref="M:SharpDX.DXGI.Output.GetDescription(SharpDX.DXGI.OutputDescription@)"/></strong> to determine the size (width and height) of the output when you want to allocate space for the destination resource. This is true regardless of target monitor rotation. A destination resource created by a graphics component (such as Direct3D 11) must be created with CPU write permission (see <strong><see cref="!:SharpDX.Direct3D11.CpuAccessFlags.Write"/></strong>). Other surfaces can be created with CPU read-write permission (<strong><see cref="!:SharpDX.Direct3D11.CpuAccessFlags.Read"/></strong> | <strong><see cref="!:SharpDX.Direct3D11.CpuAccessFlags.Write"/></strong>). <strong>GetDisplaySurfaceData1</strong> modifies the surface data to fit the destination resource (stretch, shrink, convert format, rotate). <strong>GetDisplaySurfaceData1</strong> performs the stretch and shrink with point sampling. </p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1::GetDisplaySurfaceData1']/*"/>	
-            <msdn-id>hh404609</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput1::GetDisplaySurfaceData1([In] IDXGIResource* pDestination)</unmanaged>	
-            <unmanaged-short>IDXGIOutput1::GetDisplaySurfaceData1</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.DXGI.Output1.DuplicateOutput(SharpDX.ComObject,System.IntPtr@)">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Creates a desktop duplication interface from the <strong><see cref="T:SharpDX.DXGI.Output1"/></strong> interface that represents an adapter output.</p>	
-            </summary>	
-            <param name="deviceRef">No documentation.</param>	
-            <param name="outputDuplicationOut">No documentation.</param>	
-            <returns><p><strong>DuplicateOutput</strong> returns: </p><ul> <li><see cref="F:SharpDX.Result.Ok"/> if <strong>DuplicateOutput</strong> successfully created the desktop duplication interface.</li> <li>E_INVALIDARG for one of the following reasons: <ul> <li>The specified device (<em>pDevice</em>) is invalid, was not created on the correct adapter, or was not created from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong> (or a later version of a DXGI factory interface that inherits from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong>).</li> <li>The calling application is already duplicating this desktop output.</li> </ul>For more information about this error, see Remarks.</li> <li>E_ACCESSDENIED if the application does not have access privilege  to the current desktop image.  For example, only an application that runs at LOCAL_SYSTEM can access the secure desktop.</li> <li><see cref="F:SharpDX.DXGI.ResultCode.Unsupported"/> if the created <strong>IDXGIOutputDuplication</strong> interface does not support the current desktop mode or scenario.  For example, 8bpp and non-DWM desktop modes are not supported.</li> <li><see cref="F:SharpDX.DXGI.ResultCode.NotCurrentlyAvailable"/> if DXGI reached the limit on the maximum number of concurrent duplication applications (default of four). Therefore, the calling application cannot create any desktop duplication interfaces until the other applications close.</li> <li><see cref="F:SharpDX.DXGI.ResultCode.SessionDisconnected"/> if <strong>DuplicateOutput</strong> failed because the session is currently disconnected.</li> <li>Other error codes are described in the DXGI_ERROR topic.</li> </ul></returns>	
-            <remarks>	
-            <p>If an application wants to duplicate the entire desktop, it must create a desktop duplication interface on each active output on the desktop. This interface does not provide an explicit way to synchronize the timing of each output image. Instead, the application must use the time stamp of each output, and then determine how to combine the images.</p><p>For <strong>DuplicateOutput</strong> to succeed, you must create <em>pDevice</em> from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong> or a later version of a DXGI factory interface that inherits from <strong><see cref="T:SharpDX.DXGI.Factory1"/></strong>.</p><p>If the current mode is a stereo mode, the desktop duplication interface provides the image for the left stereo image only.</p><p>By default, only four processes can use a <strong>IDXGIOutputDuplication</strong> interface at the same time within a single session. A process can have only one desktop duplication interface on a single desktop output; however, that process can have a desktop duplication interface for each output that is part of the desktop. </p><p>If <strong>DuplicateOutput</strong> fails with <see cref="F:SharpDX.DXGI.ResultCode.Unsupported"/>, the application can wait for system notification of desktop switches and mode changes and then call <strong>DuplicateOutput</strong> again after such a notification occurs.  For more information, see information in desktop switch (<strong>EVENT_SYSTEM_DESKTOPSWITCH</strong>) and mode change notification (<strong>WM_DISPLAYCHANGE</strong>). </p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGIOutput1::DuplicateOutput']/*"/>	
-            <msdn-id>hh404600</msdn-id>	
-            <unmanaged>HRESULT IDXGIOutput1::DuplicateOutput([In] IUnknown* pDevice,[Out] void** ppOutputDuplication)</unmanaged>	
-            <unmanaged-short>IDXGIOutput1::DuplicateOutput</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.DXGI.SwapChain">
             <summary>	
             <p>An <strong><see cref="T:SharpDX.DXGI.SwapChain"/></strong> interface implements one or more <strong>surfaces</strong> for storing rendered data before presenting it to an output.</p>	
@@ -4319,7 +4336,7 @@
             <remarks>	
             <p>You can create a swap chain in several ways. If your application uses Direct3D, create a swap chain when you create a device by 	
             calling <strong>D3D10CreateDeviceAndSwapChain</strong> or <strong>D3D11CreateDeviceAndSwapChain</strong>. If your application does not need Direct3D, create a swap chain for use directly with DXGI by 	
-            calling <strong><see cref="M:SharpDX.DXGI.Factory.CreateSwapChain(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription@,SharpDX.DXGI.SwapChain)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong>IDXGIFactory2::CreateSwapChainForImmersiveWindow</strong>, or <strong>IDXGIFactory2::CreateSwapChainForCompositionSurface</strong>.</p>	
+            calling <strong><see cref="M:SharpDX.DXGI.Factory.CreateSwapChain(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription@,SharpDX.DXGI.SwapChain)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong>IDXGIFactory2::CreateSwapChainForImmersiveWindow</strong>, or <strong>IDXGIFactory2::CreateSwapChainForCompositionSurface</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGISwapChain']/*"/>	
             <msdn-id>bb174569</msdn-id>	
@@ -4578,7 +4595,7 @@
             </summary>	
             <remarks>	
             <p>You can create a swap chain by 	
-            calling <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForCoreWindow(SharpDX.ComObject,SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>, or <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>. You can also create a swap chain when you call <strong>D3D11CreateDeviceAndSwapChain</strong>; however, you can then only access the sub-set of swap-chain functionality that the <strong><see cref="T:SharpDX.DXGI.SwapChain"/></strong> interface provides.</p><p><strong><see cref="T:SharpDX.DXGI.SwapChain1"/></strong> provides the <strong>IsTemporaryMonoSupported</strong> method that you can use to determine whether the swap chain supports "temporary mono? presentation. This type of swap chain is a stereo swap chain that can be used to present mono content.	
+            calling <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForCoreWindow(SharpDX.ComObject,SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>, or <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>. You can also create a swap chain when you call <strong>D3D11CreateDeviceAndSwapChain</strong>; however, you can then only access the sub-set of swap-chain functionality that the <strong><see cref="T:SharpDX.DXGI.SwapChain"/></strong> interface provides.</p><p><strong><see cref="T:SharpDX.DXGI.SwapChain1"/></strong> provides the <strong>IsTemporaryMonoSupported</strong> method that you can use to determine whether the swap chain supports "temporary mono? presentation. This type of swap chain is a stereo swap chain that can be used to present mono content.	
             </p><p><strong>Note</strong>??Some stereo features like the advanced presentation flags are not represented by an explicit interface change.  Furthermore, the original (<strong><see cref="T:SharpDX.DXGI.SwapChain"/></strong>) and new (<strong><see cref="T:SharpDX.DXGI.SwapChain1"/></strong>) swap chain interfaces generally have the same behavior. For information about how <strong><see cref="T:SharpDX.DXGI.SwapChain"/></strong> methods are translated into <strong><see cref="T:SharpDX.DXGI.SwapChain1"/></strong> methods, see the descriptions of the <strong><see cref="T:SharpDX.DXGI.SwapChain1"/></strong> methods.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGISwapChain1']/*"/>	
@@ -4612,11 +4629,11 @@
             <unmanaged>HRESULT IDXGISwapChain1::GetDesc1([Out] DXGI_SWAP_CHAIN_DESC1* pDesc)</unmanaged>	
             <unmanaged-short>IDXGISwapChain1::GetDesc1</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DXGI.SwapChain1.GetFullscreenDescription(SharpDX.DXGI.SwapChainFullscreenDescription@)">
+        <member name="M:SharpDX.DXGI.SwapChain1.GetFullscreenDescription(SharpDX.DXGI.SwapChainFullScreenDescription@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p>Gets a description of a full-screen swap chain.</p>	
             </summary>	
-            <param name="descRef"><dd> <p>A reference to a <strong><see cref="T:SharpDX.DXGI.SwapChainFullscreenDescription"/></strong> structure that describes the full-screen swap chain.</p> </dd></param>	
+            <param name="descRef"><dd> <p>A reference to a <strong><see cref="T:SharpDX.DXGI.SwapChainFullScreenDescription"/></strong> structure that describes the full-screen swap chain.</p> </dd></param>	
             <returns><p><strong>GetFullscreenDesc</strong> returns: </p><ul> <li><see cref="F:SharpDX.Result.Ok"/> if it successfully retrieved the description of the full-screen swap chain.</li> <li> <see cref="F:SharpDX.DXGI.ResultCode.InvalidCall"/> for non-<strong><see cref="T:System.IntPtr"/></strong> swap chains or if <em>pDesc</em> is <strong><c>null</c></strong>.</li> <li>Possibly other error codes that are described in the DXGI_ERROR topic. </li> </ul></returns>	
             <remarks>	
             <p>The semantics of <strong>GetFullscreenDesc</strong> are identical to that of the <strong>IDXGISwapchain::GetDesc</strong> method for <strong><see cref="T:System.IntPtr"/></strong>-based swap chains.</p>	
@@ -4633,7 +4650,7 @@
             <param name="hwndRef">No documentation.</param>	
             <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful; an error code otherwise.  For a list of error codes, see DXGI_ERROR.</p><p>If <em>pHwnd</em> receives <strong><c>null</c></strong> (that is, the swap chain is not <strong><see cref="T:System.IntPtr"/></strong>-based), <strong>GetHwnd</strong> returns <see cref="F:SharpDX.DXGI.ResultCode.InvalidCall"/>.</p></returns>	
             <remarks>	
-            <p>Applications call the  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong> method to create a swap chain that is associated with an <strong><see cref="T:System.IntPtr"/></strong>.</p>	
+            <p>Applications call the  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong> method to create a swap chain that is associated with an <strong><see cref="T:System.IntPtr"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGISwapChain1::GetHwnd']/*"/>	
             <msdn-id>hh404647</msdn-id>	
@@ -4688,7 +4705,7 @@
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the output (the display monitor) to which you can restrict the contents of a present operation.</p>	
             </summary>	
-            <param name="restrictToOutputOut"><dd> <p> A reference to a buffer that receives a reference to the <strong><see cref="T:SharpDX.DXGI.Output"/></strong> interface for the restrict-to output. An application passes this reference to <strong><see cref="T:SharpDX.DXGI.Output"/></strong> in a call to the  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForCoreWindow(SharpDX.ComObject,SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>, or  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong> method to create the swap chain.</p> </dd></param>	
+            <param name="restrictToOutputOut"><dd> <p> A reference to a buffer that receives a reference to the <strong><see cref="T:SharpDX.DXGI.Output"/></strong> interface for the restrict-to output. An application passes this reference to <strong><see cref="T:SharpDX.DXGI.Output"/></strong> in a call to the  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForCoreWindow(SharpDX.ComObject,SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>, or  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong> method to create the swap chain.</p> </dd></param>	
             <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if the restrict-to output was successfully retrieved; otherwise, returns E_INVALIDARG if the reference is invalid.</p></returns>	
             <remarks>	
             <p>If the method succeeds, the runtime fills the buffer at <em>ppRestrictToOutput</em> with a reference to the restrict-to output interface. This restrict-to output interface has its reference count incremented. When you are finished with it, be sure to release the interface to avoid a memory leak.</p><p>The output is also owned by the adapter on which the swap chain's device was created.</p>	
@@ -4705,7 +4722,7 @@
             <param name="colorRef"><dd> <p>A reference to a <strong>DXGI_RGBA</strong> structure that specifies the background color to set.</p> </dd></param>	
             <returns><p><strong>SetBackgroundColor</strong> returns: </p><ul> <li><see cref="F:SharpDX.Result.Ok"/> if it successfully set the background color.</li> <li>E_INVALIDARG if the <em>pColor</em> parameter is incorrect, for example, <em>pColor</em> is <c>null</c> or any of the floating-point values of the members of <strong>DXGI_RGBA</strong> to which <em>pColor</em> points are outside the range from 0.0 through 1.0.</li> <li>Possibly other error codes that are described in the DXGI_ERROR topic.</li> </ul></returns>	
             <remarks>	
-            <p>The background color affects only swap chains that you create with <strong><see cref="F:SharpDX.DXGI.Scaling.None"/></strong> in windowed mode. You pass this value in a call to <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForCoreWindow(SharpDX.ComObject,SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>, or  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>. Typically, the background color is not visible unless the swap-chain contents are smaller than the destination window.</p><p>When you set the background color, it is not immediately realized. It takes effect in conjunction with your next call to the <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> method. The <strong>DXGI_PRESENT</strong> flags that you pass to <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> can help achieve the effect that you require. For example, if you call <strong>SetBackgroundColor</strong> and then call <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> with the <em>Flags</em> parameter set to <strong><see cref="F:SharpDX.DXGI.PresentFlags.DoNotSequence"/></strong>, you change only the background color without changing the displayed contents of the swap chain.</p><p>When you call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> method to display contents of the swap chain, <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> uses the <strong><see cref="T:SharpDX.DXGI.AlphaMode"/></strong> value that is specified in the <strong>AlphaMode</strong> member of the <strong><see cref="T:SharpDX.DXGI.SwapChainDescription1"/></strong> structure to determine how to handle the <strong>a</strong> member of the <strong>DXGI_RGBA</strong> structure, the alpha value of the background color, that achieves window transparency. For example, if <strong>AlphaMode</strong> is <strong><see cref="F:SharpDX.DXGI.AlphaMode.Ignore"/></strong>, <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> ignores the a member of <strong>DXGI_RGBA</strong>.</p>	
+            <p>The background color affects only swap chains that you create with <strong><see cref="F:SharpDX.DXGI.Scaling.None"/></strong> in windowed mode. You pass this value in a call to <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong>, <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForCoreWindow(SharpDX.ComObject,SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>, or  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong>. Typically, the background color is not visible unless the swap-chain contents are smaller than the destination window.</p><p>When you set the background color, it is not immediately realized. It takes effect in conjunction with your next call to the <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> method. The <strong>DXGI_PRESENT</strong> flags that you pass to <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> can help achieve the effect that you require. For example, if you call <strong>SetBackgroundColor</strong> and then call <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> with the <em>Flags</em> parameter set to <strong><see cref="F:SharpDX.DXGI.PresentFlags.DoNotSequence"/></strong>, you change only the background color without changing the displayed contents of the swap chain.</p><p>When you call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> method to display contents of the swap chain, <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> uses the <strong><see cref="T:SharpDX.DXGI.AlphaMode"/></strong> value that is specified in the <strong>AlphaMode</strong> member of the <strong><see cref="T:SharpDX.DXGI.SwapChainDescription1"/></strong> structure to determine how to handle the <strong>a</strong> member of the <strong>DXGI_RGBA</strong> structure, the alpha value of the background color, that achieves window transparency. For example, if <strong>AlphaMode</strong> is <strong><see cref="F:SharpDX.DXGI.AlphaMode.Ignore"/></strong>, <strong><see cref="M:SharpDX.DXGI.SwapChain1.Present1(System.Int32,SharpDX.DXGI.PresentFlags,System.IntPtr)"/></strong> ignores the a member of <strong>DXGI_RGBA</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGISwapChain1::SetBackgroundColor']/*"/>	
             <msdn-id>hh446799</msdn-id>	
@@ -4793,7 +4810,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Retrieves the underlying <strong><see cref="T:System.IntPtr"/></strong> for this swap-chain object.</p>	
             </summary>	
             <remarks>	
-            <p>Applications call the  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong> method to create a swap chain that is associated with an <strong><see cref="T:System.IntPtr"/></strong>.</p>	
+            <p>Applications call the  <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong> method to create a swap chain that is associated with an <strong><see cref="T:System.IntPtr"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGISwapChain1::GetHwnd']/*"/>	
             <msdn-id>hh404647</msdn-id>	
@@ -4849,126 +4866,6 @@
             <unmanaged>GetRotation / SetRotation</unmanaged>	
             <unmanaged-short>GetRotation</unmanaged-short>	
             <unmanaged>HRESULT IDXGISwapChain1::GetRotation([Out] DXGI_MODE_ROTATION* pRotation)</unmanaged>
-        </member>
-        <member name="T:SharpDX.DXGI.AdapterDesc2">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Describes an adapter (or video card) that uses Microsoft DirectX Graphics Infrastructure (DXGI) 1.2.</p>	
-            </summary>	
-            <remarks>	
-            <p>The <strong><see cref="T:SharpDX.DXGI.AdapterDesc2"/></strong> structure provides a DXGI 1.2 description of an adapter.  This structure is initialized by using the <strong><see cref="M:SharpDX.DXGI.Adapter2.GetDesc2(SharpDX.DXGI.AdapterDesc2@)"/></strong> method.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>DXGI_ADAPTER_DESC2</unmanaged>	
-            <unmanaged-short>DXGI_ADAPTER_DESC2</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.Description">
-            <summary>	
-            <dd> <p>A string that contains the adapter description.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::Description']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>wchar_t Description[128]</unmanaged>	
-            <unmanaged-short>wchar_t Description</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.VendorId">
-            <summary>	
-            <dd> <p>The PCI ID of the hardware vendor.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::VendorId']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>unsigned int VendorId</unmanaged>	
-            <unmanaged-short>unsigned int VendorId</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.DeviceId">
-            <summary>	
-            <dd> <p>The PCI ID of the hardware device.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::DeviceId']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>unsigned int DeviceId</unmanaged>	
-            <unmanaged-short>unsigned int DeviceId</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.SubSysId">
-            <summary>	
-            <dd> <p>The PCI ID of the sub system.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::SubSysId']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>unsigned int SubSysId</unmanaged>	
-            <unmanaged-short>unsigned int SubSysId</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.Revision">
-            <summary>	
-            <dd> <p>The PCI ID of the revision number of the adapter.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::Revision']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>unsigned int Revision</unmanaged>	
-            <unmanaged-short>unsigned int Revision</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.DedicatedVideoMemory">
-            <summary>	
-            <dd> <p>The number of bytes of dedicated video memory that are not shared with the CPU.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::DedicatedVideoMemory']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>SIZE_T DedicatedVideoMemory</unmanaged>	
-            <unmanaged-short>SIZE_T DedicatedVideoMemory</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.DedicatedSystemMemory">
-            <summary>	
-            <dd> <p>The number of bytes of dedicated system memory that are not shared with the CPU. This memory is allocated from available system memory at boot time.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::DedicatedSystemMemory']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>SIZE_T DedicatedSystemMemory</unmanaged>	
-            <unmanaged-short>SIZE_T DedicatedSystemMemory</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.SharedSystemMemory">
-            <summary>	
-            <dd> <p>The number of bytes of shared system memory. This is the maximum value of system memory that may be consumed by the adapter during operation. Any incidental memory consumed by the driver as it manages and uses video memory is additional.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::SharedSystemMemory']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>SIZE_T SharedSystemMemory</unmanaged>	
-            <unmanaged-short>SIZE_T SharedSystemMemory</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.AdapterLuid">
-            <summary>	
-            <dd> <p>A unique value that identifies the adapter. See <strong><see cref="T:System.Int64"/></strong> for a definition of the structure. <strong><see cref="T:System.Int64"/></strong> is defined in dxgi.h.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::AdapterLuid']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>LUID AdapterLuid</unmanaged>	
-            <unmanaged-short>LUID AdapterLuid</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.Flags">
-            <summary>	
-            <dd> <p>A value of the <strong><see cref="T:SharpDX.DXGI.AdapterFlags"/></strong> enumerated type that describes the adapter type.  The <strong><see cref="F:SharpDX.DXGI.AdapterFlags.Remote"/></strong> flag is reserved.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::Flags']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>unsigned int Flags</unmanaged>	
-            <unmanaged-short>unsigned int Flags</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.GraphicsPreemptionGranularity">
-            <summary>	
-            <dd> <p>A value of the <strong><see cref="T:SharpDX.DXGI.GraphicsPreemptionGranularity"/></strong> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current graphics rendering task.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::GraphicsPreemptionGranularity']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>DXGI_GRAPHICS_PREEMPTION_GRANULARITY GraphicsPreemptionGranularity</unmanaged>	
-            <unmanaged-short>DXGI_GRAPHICS_PREEMPTION_GRANULARITY GraphicsPreemptionGranularity</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DXGI.AdapterDesc2.ComputePreemptionGranularity">
-            <summary>	
-            <dd> <p>A value of the <strong><see cref="T:SharpDX.DXGI.ComputePreemptionGranularity"/></strong> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current compute task.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::ComputePreemptionGranularity']/*"/>	
-            <msdn-id>hh404493</msdn-id>	
-            <unmanaged>DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity</unmanaged>	
-            <unmanaged-short>DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity</unmanaged-short>	
         </member>
         <member name="T:SharpDX.DXGI.AdapterDescription">
             <summary>	
@@ -5165,6 +5062,126 @@
             <unmanaged>DXGI_ADAPTER_FLAG Flags</unmanaged>	
             <unmanaged-short>DXGI_ADAPTER_FLAG Flags</unmanaged-short>	
         </member>
+        <member name="T:SharpDX.DXGI.AdapterDescription2">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Describes an adapter (or video card) that uses Microsoft DirectX Graphics Infrastructure (DXGI) 1.2.</p>	
+            </summary>	
+            <remarks>	
+            <p>The <strong><see cref="T:SharpDX.DXGI.AdapterDescription2"/></strong> structure provides a DXGI 1.2 description of an adapter.  This structure is initialized by using the <strong><see cref="M:SharpDX.DXGI.Adapter2.GetDesc2(SharpDX.DXGI.AdapterDescription2@)"/></strong> method.</p>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>DXGI_ADAPTER_DESC2</unmanaged>	
+            <unmanaged-short>DXGI_ADAPTER_DESC2</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.Description">
+            <summary>	
+            <dd> <p>A string that contains the adapter description.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::Description']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>wchar_t Description[128]</unmanaged>	
+            <unmanaged-short>wchar_t Description</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.VendorId">
+            <summary>	
+            <dd> <p>The PCI ID of the hardware vendor.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::VendorId']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>unsigned int VendorId</unmanaged>	
+            <unmanaged-short>unsigned int VendorId</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.DeviceId">
+            <summary>	
+            <dd> <p>The PCI ID of the hardware device.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::DeviceId']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>unsigned int DeviceId</unmanaged>	
+            <unmanaged-short>unsigned int DeviceId</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.SubSysId">
+            <summary>	
+            <dd> <p>The PCI ID of the sub system.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::SubSysId']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>unsigned int SubSysId</unmanaged>	
+            <unmanaged-short>unsigned int SubSysId</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.Revision">
+            <summary>	
+            <dd> <p>The PCI ID of the revision number of the adapter.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::Revision']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>unsigned int Revision</unmanaged>	
+            <unmanaged-short>unsigned int Revision</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.DedicatedVideoMemory">
+            <summary>	
+            <dd> <p>The number of bytes of dedicated video memory that are not shared with the CPU.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::DedicatedVideoMemory']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>SIZE_T DedicatedVideoMemory</unmanaged>	
+            <unmanaged-short>SIZE_T DedicatedVideoMemory</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.DedicatedSystemMemory">
+            <summary>	
+            <dd> <p>The number of bytes of dedicated system memory that are not shared with the CPU. This memory is allocated from available system memory at boot time.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::DedicatedSystemMemory']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>SIZE_T DedicatedSystemMemory</unmanaged>	
+            <unmanaged-short>SIZE_T DedicatedSystemMemory</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.SharedSystemMemory">
+            <summary>	
+            <dd> <p>The number of bytes of shared system memory. This is the maximum value of system memory that may be consumed by the adapter during operation. Any incidental memory consumed by the driver as it manages and uses video memory is additional.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::SharedSystemMemory']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>SIZE_T SharedSystemMemory</unmanaged>	
+            <unmanaged-short>SIZE_T SharedSystemMemory</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.AdapterLuid">
+            <summary>	
+            <dd> <p>A unique value that identifies the adapter. See <strong><see cref="T:System.Int64"/></strong> for a definition of the structure. <strong><see cref="T:System.Int64"/></strong> is defined in dxgi.h.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::AdapterLuid']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>LUID AdapterLuid</unmanaged>	
+            <unmanaged-short>LUID AdapterLuid</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.Flags">
+            <summary>	
+            <dd> <p>A value of the <strong><see cref="T:SharpDX.DXGI.AdapterFlags"/></strong> enumerated type that describes the adapter type.  The <strong><see cref="F:SharpDX.DXGI.AdapterFlags.Remote"/></strong> flag is reserved.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::Flags']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>unsigned int Flags</unmanaged>	
+            <unmanaged-short>unsigned int Flags</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.GraphicsPreemptionGranularity">
+            <summary>	
+            <dd> <p>A value of the <strong><see cref="T:SharpDX.DXGI.GraphicsPreemptionGranularity"/></strong> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current graphics rendering task.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::GraphicsPreemptionGranularity']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>DXGI_GRAPHICS_PREEMPTION_GRANULARITY GraphicsPreemptionGranularity</unmanaged>	
+            <unmanaged-short>DXGI_GRAPHICS_PREEMPTION_GRANULARITY GraphicsPreemptionGranularity</unmanaged-short>	
+        </member>
+        <member name="F:SharpDX.DXGI.AdapterDescription2.ComputePreemptionGranularity">
+            <summary>	
+            <dd> <p>A value of the <strong><see cref="T:SharpDX.DXGI.ComputePreemptionGranularity"/></strong> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current compute task.</p> </dd>	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_ADAPTER_DESC2::ComputePreemptionGranularity']/*"/>	
+            <msdn-id>hh404493</msdn-id>	
+            <unmanaged>DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity</unmanaged>	
+            <unmanaged-short>DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity</unmanaged-short>	
+        </member>
         <member name="T:SharpDX.DXGI.FrameStatistics">
             <summary>	
             <p>Describes timing and presentation statistics for a frame.</p>	
@@ -5319,19 +5336,19 @@
             <unmanaged>float ControlPointPositions[1025]</unmanaged>	
             <unmanaged-short>float ControlPointPositions</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.DXGI.MappedRect">
+        <member name="T:SharpDX.DXGI.MappedRectangle">
             <summary>	
             <p>Describes a mapped rectangle that is used to access a surface.</p>	
             </summary>	
             <remarks>	
-            <p>The <strong><see cref="T:SharpDX.DXGI.MappedRect"/></strong> structure is initialized by the <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRect@,System.Int32)"/></strong> method.</p>	
+            <p>The <strong><see cref="T:SharpDX.DXGI.MappedRectangle"/></strong> structure is initialized by the <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRectangle@,System.Int32)"/></strong> method.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_MAPPED_RECT']/*"/>	
             <msdn-id>bb173063</msdn-id>	
             <unmanaged>DXGI_MAPPED_RECT</unmanaged>	
             <unmanaged-short>DXGI_MAPPED_RECT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.MappedRect.Pitch">
+        <member name="F:SharpDX.DXGI.MappedRectangle.Pitch">
             <summary>	
             <dd> <p>A value that describes the width, in bytes, of the surface.</p> </dd>	
             </summary>	
@@ -5340,7 +5357,7 @@
             <unmanaged>int Pitch</unmanaged>	
             <unmanaged-short>int Pitch</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.MappedRect.PBits">
+        <member name="F:SharpDX.DXGI.MappedRectangle.PBits">
             <summary>	
             <dd> <p>A reference to the image buffer of the surface.</p> </dd>	
             </summary>	
@@ -5873,7 +5890,7 @@
         </member>
         <member name="F:SharpDX.DXGI.SwapChainDescription1.Width">
             <summary>	
-            <dd> <p>A value that describes the resolution width. If you specify the width as zero when you call the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong> method to create a swap chain, the runtime obtains the width from the output window and assigns this width value to the swap-chain description. You can subsequently call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetDescription1(SharpDX.DXGI.SwapChainDescription1@)"/></strong> method to retrieve the assigned width value. You cannot specify the width as zero when you call the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong> method.</p> </dd>	
+            <dd> <p>A value that describes the resolution width. If you specify the width as zero when you call the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong> method to create a swap chain, the runtime obtains the width from the output window and assigns this width value to the swap-chain description. You can subsequently call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetDescription1(SharpDX.DXGI.SwapChainDescription1@)"/></strong> method to retrieve the assigned width value. You cannot specify the width as zero when you call the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong> method.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_SWAP_CHAIN_DESC1::Width']/*"/>	
             <msdn-id>hh404528</msdn-id>	
@@ -5882,7 +5899,7 @@
         </member>
         <member name="F:SharpDX.DXGI.SwapChainDescription1.Height">
             <summary>	
-            <dd> <p>A value that describes the resolution height. If you specify the height as zero when you call the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullscreenDescription},SharpDX.DXGI.Output)"/></strong> method to create a swap chain, the runtime obtains the height from the output window and assigns this height value to the swap-chain description. You can subsequently call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetDescription1(SharpDX.DXGI.SwapChainDescription1@)"/></strong> method to retrieve the assigned height value. You cannot specify the height as zero when you call the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong> method.</p> </dd>	
+            <dd> <p>A value that describes the resolution height. If you specify the height as zero when you call the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForHwnd(SharpDX.ComObject,System.IntPtr,SharpDX.DXGI.SwapChainDescription1@,System.Nullable{SharpDX.DXGI.SwapChainFullScreenDescription},SharpDX.DXGI.Output)"/></strong> method to create a swap chain, the runtime obtains the height from the output window and assigns this height value to the swap-chain description. You can subsequently call the <strong><see cref="M:SharpDX.DXGI.SwapChain1.GetDescription1(SharpDX.DXGI.SwapChainDescription1@)"/></strong> method to retrieve the assigned height value. You cannot specify the height as zero when you call the <strong><see cref="M:SharpDX.DXGI.Factory2.CreateSwapChainForComposition(SharpDX.ComObject,SharpDX.DXGI.SwapChainDescription1@,SharpDX.DXGI.Output)"/></strong> method.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_SWAP_CHAIN_DESC1::Height']/*"/>	
             <msdn-id>hh404528</msdn-id>	
@@ -5970,7 +5987,7 @@
             <unmanaged>DXGI_SWAP_CHAIN_FLAG Flags</unmanaged>	
             <unmanaged-short>DXGI_SWAP_CHAIN_FLAG Flags</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.DXGI.SwapChainFullscreenDescription">
+        <member name="T:SharpDX.DXGI.SwapChainFullScreenDescription">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p>Describes full-screen mode for a swap chain.</p>	
             </summary>	
@@ -5979,7 +5996,7 @@
             <unmanaged>DXGI_SWAP_CHAIN_FULLSCREEN_DESC</unmanaged>	
             <unmanaged-short>DXGI_SWAP_CHAIN_FULLSCREEN_DESC</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.SwapChainFullscreenDescription.RefreshRate">
+        <member name="F:SharpDX.DXGI.SwapChainFullScreenDescription.RefreshRate">
             <summary>	
             <dd> <p>A <strong><see cref="T:SharpDX.DXGI.Rational"/></strong> structure that describes the refresh rate in hertz.</p> </dd>	
             </summary>	
@@ -5988,7 +6005,7 @@
             <unmanaged>DXGI_RATIONAL RefreshRate</unmanaged>	
             <unmanaged-short>DXGI_RATIONAL RefreshRate</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.SwapChainFullscreenDescription.ScanlineOrdering">
+        <member name="F:SharpDX.DXGI.SwapChainFullScreenDescription.ScanlineOrdering">
             <summary>	
             <dd> <p>A member of the <strong><see cref="T:SharpDX.DXGI.DisplayModeScanlineOrder"/></strong> enumerated type that describes the scan-line drawing mode.</p> </dd>	
             </summary>	
@@ -5997,7 +6014,7 @@
             <unmanaged>DXGI_MODE_SCANLINE_ORDER ScanlineOrdering</unmanaged>	
             <unmanaged-short>DXGI_MODE_SCANLINE_ORDER ScanlineOrdering</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.SwapChainFullscreenDescription.Scaling">
+        <member name="F:SharpDX.DXGI.SwapChainFullScreenDescription.Scaling">
             <summary>	
             <dd> <p>A member of the <strong><see cref="T:SharpDX.DXGI.DisplayModeScaling"/></strong> enumerated type that describes the scaling mode.</p> </dd>	
             </summary>	
@@ -6006,7 +6023,7 @@
             <unmanaged>DXGI_MODE_SCALING Scaling</unmanaged>	
             <unmanaged-short>DXGI_MODE_SCALING Scaling</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.SwapChainFullscreenDescription.Windowed">
+        <member name="F:SharpDX.DXGI.SwapChainFullScreenDescription.Windowed">
             <summary>	
             No documentation.	
             </summary>	
