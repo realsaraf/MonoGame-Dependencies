@@ -801,7 +801,7 @@
             <unmanaged>D3D_REGISTER_COMPONENT_UINT32</unmanaged>	
             <unmanaged-short>D3D_REGISTER_COMPONENT_UINT32</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.RegisterComponentType.Sint32">
+        <member name="F:SharpDX.D3DCompiler.RegisterComponentType.SInt32">
             <summary>	
             <dd> <p>32-bit signed integer.</p> </dd>	
             </summary>	
@@ -1095,7 +1095,7 @@
             <unmanaged>D3DCOMPILE_PARTIAL_PRECISION</unmanaged>	
             <unmanaged-short>D3DCOMPILE_PARTIAL_PRECISION</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderFlags.ForceVsSoftwareNoOpt">
+        <member name="F:SharpDX.D3DCompiler.ShaderFlags.ForceVertexShaderSoftwareNoOptimization">
             <summary>	
             No documentation.	
             </summary>	
@@ -1103,7 +1103,7 @@
             <unmanaged>D3DCOMPILE_FORCE_VS_SOFTWARE_NO_OPT</unmanaged>	
             <unmanaged-short>D3DCOMPILE_FORCE_VS_SOFTWARE_NO_OPT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderFlags.ForcePsSoftwareNoOpt">
+        <member name="F:SharpDX.D3DCompiler.ShaderFlags.ForcePixelShaderSoftwareNoOptimization">
             <summary>	
             No documentation.	
             </summary>	
@@ -1336,7 +1336,7 @@
             <unmanaged>D3D_SIT_SAMPLER</unmanaged>	
             <unmanaged-short>D3D_SIT_SAMPLER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderInputType.UnorderedAccessViewRwtyped">
+        <member name="F:SharpDX.D3DCompiler.ShaderInputType.UnorderedAccessViewRWTyped">
             <summary>	
             <dd> <p>The shader resource is a read-and-write buffer.</p> </dd>	
             </summary>	
@@ -1354,7 +1354,7 @@
             <unmanaged>D3D_SIT_STRUCTURED</unmanaged>	
             <unmanaged-short>D3D_SIT_STRUCTURED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderInputType.UnorderedAccessViewRwstructured">
+        <member name="F:SharpDX.D3DCompiler.ShaderInputType.UnorderedAccessViewRWStructured">
             <summary>	
             <dd> <p>The shader resource is a read-and-write structured buffer.</p> </dd>	
             </summary>	
@@ -1363,7 +1363,7 @@
             <unmanaged>D3D_SIT_UAV_RWSTRUCTURED</unmanaged>	
             <unmanaged-short>D3D_SIT_UAV_RWSTRUCTURED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderInputType.Byteaddress">
+        <member name="F:SharpDX.D3DCompiler.ShaderInputType.ByteAddress">
             <summary>	
             <dd> <p>The shader resource is a byte-address buffer.</p> </dd>	
             </summary>	
@@ -1399,7 +1399,7 @@
             <unmanaged>D3D_SIT_UAV_CONSUME_STRUCTURED</unmanaged>	
             <unmanaged-short>D3D_SIT_UAV_CONSUME_STRUCTURED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderInputType.UnorderedAccessViewRwstructuredWithCounter">
+        <member name="F:SharpDX.D3DCompiler.ShaderInputType.UnorderedAccessViewRWStructuredWithCounter">
             <summary>	
             <dd> <p>The shader resource is a read-and-write structured buffer that uses the built-in counter to append or consume.</p> </dd>	
             </summary>	
@@ -1660,7 +1660,7 @@
             <unmanaged>D3D_SVT_SAMPLER</unmanaged>	
             <unmanaged-short>D3D_SVT_SAMPLER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Sampler1d">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Sampler1D">
             <summary>	
             <dd> <p>The variable is a pixel shader.</p> </dd>	
             </summary>	
@@ -1669,7 +1669,7 @@
             <unmanaged>D3D_SVT_SAMPLER1D</unmanaged>	
             <unmanaged-short>D3D_SVT_SAMPLER1D</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Sampler2d">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Sampler2D">
             <summary>	
             <dd> <p>The variable is a vertex shader.</p> </dd>	
             </summary>	
@@ -1678,7 +1678,7 @@
             <unmanaged>D3D_SVT_SAMPLER2D</unmanaged>	
             <unmanaged-short>D3D_SVT_SAMPLER2D</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Sampler3d">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Sampler3D">
             <summary>	
             <dd> <p>The variable is an unsigned integer.</p> </dd>	
             </summary>	
@@ -1687,7 +1687,7 @@
             <unmanaged>D3D_SVT_SAMPLER3D</unmanaged>	
             <unmanaged-short>D3D_SVT_SAMPLER3D</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Samplercube">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.SamplerCube">
             <summary>	
             <dd> <p>The variable is an 8-bit unsigned integer.</p> </dd>	
             </summary>	
@@ -1696,7 +1696,7 @@
             <unmanaged>D3D_SVT_SAMPLERCUBE</unmanaged>	
             <unmanaged-short>D3D_SVT_SAMPLERCUBE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Pixelshader">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.PixelShader">
             <summary>	
             <dd> <p>The variable is a geometry shader.</p> </dd>	
             </summary>	
@@ -1705,7 +1705,7 @@
             <unmanaged>D3D_SVT_PIXELSHADER</unmanaged>	
             <unmanaged-short>D3D_SVT_PIXELSHADER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Vertexshader">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.VertexShader">
             <summary>	
             <dd> <p>The variable is a rasterizer-state object.</p> </dd>	
             </summary>	
@@ -1714,7 +1714,7 @@
             <unmanaged>D3D_SVT_VERTEXSHADER</unmanaged>	
             <unmanaged-short>D3D_SVT_VERTEXSHADER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Pixelfragment">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.PixelFragment">
             <summary>	
             <dd> <p>The variable is a depth-stencil-state object.</p> </dd>	
             </summary>	
@@ -1723,7 +1723,7 @@
             <unmanaged>D3D_SVT_PIXELFRAGMENT</unmanaged>	
             <unmanaged-short>D3D_SVT_PIXELFRAGMENT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Vertexfragment">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.VertexFragment">
             <summary>	
             <dd> <p>The variable is a blend-state object.</p> </dd>	
             </summary>	
@@ -1750,7 +1750,7 @@
             <unmanaged>D3D_SVT_UINT8</unmanaged>	
             <unmanaged-short>D3D_SVT_UINT8</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Geometryshader">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.GeometryShader">
             <summary>	
             <dd> <p>The variable is a texture buffer.</p> </dd>	
             </summary>	
@@ -1768,7 +1768,7 @@
             <unmanaged>D3D_SVT_RASTERIZER</unmanaged>	
             <unmanaged-short>D3D_SVT_RASTERIZER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Depthstencil">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.DepthStencil">
             <summary>	
             <dd> <p>The variable is a 2D-texture array.</p> </dd>	
             </summary>	
@@ -1831,7 +1831,7 @@
             <unmanaged>D3D_SVT_TEXTURE2DARRAY</unmanaged>	
             <unmanaged-short>D3D_SVT_TEXTURE2DARRAY</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Rendertargetview">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.RenderTargetView">
             <summary>	
             <dd> <p>The variable holds a compiled domain-shader binary.</p> </dd>	
             </summary>	
@@ -1840,7 +1840,7 @@
             <unmanaged>D3D_SVT_RENDERTARGETVIEW</unmanaged>	
             <unmanaged-short>D3D_SVT_RENDERTARGETVIEW</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Depthstencilview">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.DepthStencilView">
             <summary>	
             <dd> <p>The variable is an interface.</p> </dd>	
             </summary>	
@@ -1876,7 +1876,7 @@
             <unmanaged>D3D_SVT_TEXTURECUBEARRAY</unmanaged>	
             <unmanaged-short>D3D_SVT_TEXTURECUBEARRAY</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Hullshader">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.HullShader">
             <summary>	
             <dd> <p>The variable is an array of 1D read-and-write textures.</p> </dd>	
             </summary>	
@@ -1885,7 +1885,7 @@
             <unmanaged>D3D_SVT_HULLSHADER</unmanaged>	
             <unmanaged-short>D3D_SVT_HULLSHADER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Domainshader">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.DomainShader">
             <summary>	
             <dd> <p>The variable is a 2D read-and-write texture.</p> </dd>	
             </summary>	
@@ -1903,7 +1903,7 @@
             <unmanaged>D3D_SVT_INTERFACE_POINTER</unmanaged>	
             <unmanaged-short>D3D_SVT_INTERFACE_POINTER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.Computeshader">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.ComputeShader">
             <summary>	
             <dd> <p>The variable is a 3D read-and-write texture.</p> </dd>	
             </summary>	
@@ -1975,7 +1975,7 @@
             <unmanaged>D3D_SVT_RWBUFFER</unmanaged>	
             <unmanaged-short>D3D_SVT_RWBUFFER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.ByteaddressBuffer">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.ByteAddressBuffer">
             <summary>	
             <dd> <p>The variable is a void reference.</p> </dd>	
             </summary>	
@@ -2002,7 +2002,7 @@
             <unmanaged>D3D_SVT_STRUCTURED_BUFFER</unmanaged>	
             <unmanaged-short>D3D_SVT_STRUCTURED_BUFFER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.RwstructuredBuffer">
+        <member name="F:SharpDX.D3DCompiler.ShaderVariableType.RWStructuredBuffer">
             <summary>	
             <dd> <p>The variable is a floating-point number.</p> </dd>	
             </summary>	

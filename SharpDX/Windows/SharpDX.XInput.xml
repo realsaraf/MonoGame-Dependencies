@@ -52,7 +52,14 @@
             <summary>
             Gets the state.
             </summary>
-            <returns></returns>
+            <returns>The state of this controller.</returns>
+        </member>
+        <member name="M:SharpDX.XInput.Controller.GetState(SharpDX.XInput.State@)">
+            <summary>
+            Gets the state.
+            </summary>
+            <param name="state">The state of this controller.</param>
+            <returns><c>true</c> if the controller is connected, <c>false</c> otherwise.</returns>
         </member>
         <member name="M:SharpDX.XInput.Controller.SetReporting(System.Boolean)">
             <summary>
@@ -66,6 +73,12 @@
             </summary>
             <param name="vibration">The vibration.</param>
             <returns></returns>
+        </member>
+        <member name="P:SharpDX.XInput.Controller.UserIndex">
+            <summary>
+            Gets the <see cref="P:SharpDX.XInput.Controller.UserIndex"/> associated with this controller.
+            </summary>
+            <value>The index of the user.</value>
         </member>
         <member name="P:SharpDX.XInput.Controller.IsConnected">
             <summary>

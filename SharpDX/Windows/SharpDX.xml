@@ -1392,6 +1392,244 @@
             </summary>
             <value>The collection item.</value>
         </member>
+        <member name="T:SharpDX.ViewportF">
+            <summary>
+            Defines the viewport dimensions using float coordinates for (X,Y,Width,Height).
+            </summary>
+        </member>
+        <member name="F:SharpDX.ViewportF.X">
+            <summary>
+            Position of the pixel coordinate of the upper-left corner of the viewport.
+            </summary>
+        </member>
+        <member name="F:SharpDX.ViewportF.Y">
+            <summary>
+            Position of the pixel coordinate of the upper-left corner of the viewport.
+            </summary>
+        </member>
+        <member name="F:SharpDX.ViewportF.Width">
+            <summary>
+            Width dimension of the viewport.
+            </summary>
+        </member>
+        <member name="F:SharpDX.ViewportF.Height">
+            <summary>
+            Height dimension of the viewport.
+            </summary>
+        </member>
+        <member name="F:SharpDX.ViewportF.MinDepth">
+            <summary>
+            Gets or sets the minimum depth of the clip volume.
+            </summary>
+        </member>
+        <member name="F:SharpDX.ViewportF.MaxDepth">
+            <summary>
+            Gets or sets the maximum depth of the clip volume.
+            </summary>
+        </member>
+        <member name="M:SharpDX.ViewportF.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.ViewportF"/> struct.
+            </summary>
+            <param name="x">The x coordinate of the upper-left corner of the viewport in pixels.</param>
+            <param name="y">The y coordinate of the upper-left corner of the viewport in pixels.</param>
+            <param name="width">The width of the viewport in pixels.</param>
+            <param name="height">The height of the viewport in pixels.</param>
+        </member>
+        <member name="M:SharpDX.ViewportF.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.ViewportF"/> struct.
+            </summary>
+            <param name="x">The x coordinate of the upper-left corner of the viewport in pixels.</param>
+            <param name="y">The y coordinate of the upper-left corner of the viewport in pixels.</param>
+            <param name="width">The width of the viewport in pixels.</param>
+            <param name="height">The height of the viewport in pixels.</param>
+            <param name="minDepth">The minimum depth of the clip volume.</param>
+            <param name="maxDepth">The maximum depth of the clip volume.</param>
+        </member>
+        <member name="M:SharpDX.ViewportF.#ctor(SharpDX.DrawingRectangleF)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.ViewportF"/> struct.
+            </summary>
+            <param name="bounds">A bounding box that defines the location and size of the viewport in a render target.</param>
+        </member>
+        <member name="M:SharpDX.ViewportF.ToString">
+            <summary>
+            Retrieves a string representation of this object.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
+        </member>
+        <member name="M:SharpDX.ViewportF.Project(SharpDX.Vector3,SharpDX.Matrix,SharpDX.Matrix,SharpDX.Matrix)">
+            <summary>
+            Projects a 3D vector from object space into screen space.
+            </summary>
+            <param name="source">The vector to project.</param>
+            <param name="projection">The projection matrix.</param>
+            <param name="view">The view matrix.</param>
+            <param name="world">The world matrix.</param>
+            <returns>Vector3.</returns>
+        </member>
+        <member name="M:SharpDX.ViewportF.Unproject(SharpDX.Vector3,SharpDX.Matrix,SharpDX.Matrix,SharpDX.Matrix)">
+            <summary>
+            Converts a screen space point into a corresponding point in world space.
+            </summary>
+            <param name="source">The vector to project.</param>
+            <param name="projection">The projection matrix.</param>
+            <param name="view">The view matrix.</param>
+            <param name="world">The world matrix.</param>
+            <returns>Vector3.</returns>
+        </member>
+        <member name="M:SharpDX.ViewportF.op_Implicit(SharpDX.Viewport)~SharpDX.ViewportF">
+            <summary>
+            Performs an explicit conversion from <see cref="T:SharpDX.Viewport"/> to <see cref="T:SharpDX.ViewportF"/>.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="P:SharpDX.ViewportF.Bounds">
+            <summary>
+            Gets the size of this resource.
+            </summary>
+            <value>The bounds.</value>
+        </member>
+        <member name="P:SharpDX.ViewportF.AspectRatio">
+            <summary>
+            Gets the aspect ratio used by the viewport
+            </summary>
+            <value>The aspect ratio.</value>
+        </member>
+        <member name="T:SharpDX.Design.Color4Converter">
+            <summary>
+            Defines a type converter for <see cref="T:SharpDX.Color4"/>.
+            </summary>
+        </member>
+        <member name="T:SharpDX.Design.BaseConverter">
+            <summary>
+            Provides a base class for mathematical type converters.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Design.BaseConverter.ConvertFromValues``1(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,``0[])">
+            <summary>
+            Converts values to a string.
+            </summary>
+            <typeparam name="T">Type of the value</typeparam>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="values">The values.</param>
+            <returns>A string representing the values</returns>
+        </member>
+        <member name="M:SharpDX.Design.BaseConverter.ConvertToValues``1(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts a string to values.
+            </summary>
+            <typeparam name="T">Type of the value</typeparam>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="strValue">The string value.</param>
+            <returns>An array of value or null if strValue is not a string.</returns>
+        </member>
+        <member name="M:SharpDX.Design.BaseConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="sourceType">A <see cref="T:System.Type"/> that represents the type you want to convert from.</param>
+            <returns>
+            true if this converter can perform the conversion; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Design.BaseConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert the object to the specified type, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="destinationType">A <see cref="T:System.Type"/> that represents the type you want to convert to.</param>
+            <returns>
+            true if this converter can perform the conversion; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Design.BaseConverter.GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Returns whether changing a value on this object requires a call to <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)"/> to create a new value, using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <returns>
+            true if changing a property on this object requires a call to <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)"/> to create a new value; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Design.BaseConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)">
+            <summary>
+            Gets a value indicating whether this object supports properties using the specified context.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <returns>
+            true because <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)"/> should be called to find the properties of this object. This method never returns false.
+            </returns>
+        </member>
+        <member name="M:SharpDX.Design.BaseConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])">
+            <summary>
+            Gets a collection of properties for the type of object specified by the value parameter.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="value">An <see cref="T:System.Object"/> that specifies the type of object to get the properties for.</param>
+            <param name="attributes">An array of type <see cref="T:System.Attribute"/> that will be used as a filter.</param>
+            <returns>
+            A <see cref="T:System.ComponentModel.PropertyDescriptorCollection"/> with the properties that are exposed for the component, or null if there are no properties.
+            </returns>
+        </member>
+        <member name="P:SharpDX.Design.BaseConverter.Properties">
+            <summary>
+            Gets or sets the collection of exposed properties.
+            </summary>
+            <value>The collection of exposed properties.</value>
+        </member>
+        <member name="M:SharpDX.Design.Color4Converter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Design.Color4Converter"/> class.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Design.Color4Converter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type, using the specified context and culture information.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="culture">A <see cref="T:System.Globalization.CultureInfo"/>. If null is passed, the current culture is assumed.</param>
+            <param name="value">The <see cref="T:System.Object"/> to convert.</param>
+            <param name="destinationType">The <see cref="T:System.Type"/> to convert the <paramref name="value"/> parameter to.</param>
+            <returns>
+            An <see cref="T:System.Object"/> that represents the converted value.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="destinationType"/> parameter is null.
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The conversion cannot be performed.
+            </exception>
+        </member>
+        <member name="M:SharpDX.Design.Color4Converter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the given object to the type of this converter, using the specified context and culture information.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="culture">The <see cref="T:System.Globalization.CultureInfo"/> to use as the current culture.</param>
+            <param name="value">The <see cref="T:System.Object"/> to convert.</param>
+            <returns>
+            An <see cref="T:System.Object"/> that represents the converted value.
+            </returns>
+            <exception cref="T:System.NotSupportedException">
+            The conversion cannot be performed.
+            </exception>
+        </member>
+        <member name="M:SharpDX.Design.Color4Converter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)">
+            <summary>
+            Creates an instance of the type that this <see cref="T:System.ComponentModel.TypeConverter"/> is associated with, using the specified context, given a set of property values for the object.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="propertyValues">An <see cref="T:System.Collections.IDictionary"/> of new property values.</param>
+            <returns>
+            An <see cref="T:System.Object"/> representing the given <see cref="T:System.Collections.IDictionary"/>, or null if the object cannot be created. This method always returns null.
+            </returns>
+        </member>
         <member name="T:SharpDX.ComArray">
             <summary>
             A fast method to pass array of <see cref="T:SharpDX.ComObject"/> to SharpDX methods.
@@ -1504,68 +1742,73 @@
         </member>
         <member name="T:SharpDX.Bool4">
             <summary>
-              Represents a four dimensional mathematical vector of bool (32 bits per bool value).
+            Represents a four dimensional mathematical vector of bool (32 bits per bool value).
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.SizeInBytes">
             <summary>
-              The size of the <see cref="T:SharpDX.Bool4"/> type, in bytes.
+            The size of the <see cref="T:SharpDX.Bool4"/> type, in bytes.
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.False">
             <summary>
-              A <see cref="T:SharpDX.Bool4"/> with all of its components set to false.
+            A <see cref="T:SharpDX.Bool4"/> with all of its components set to false.
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.UnitX">
             <summary>
-              The X unit <see cref="T:SharpDX.Bool4"/> (true, 0, 0, 0).
+            The X unit <see cref="T:SharpDX.Bool4"/> (true, 0, 0, 0).
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.UnitY">
             <summary>
-              The Y unit <see cref="T:SharpDX.Bool4"/> (0, true, 0, 0).
+            The Y unit <see cref="T:SharpDX.Bool4"/> (0, true, 0, 0).
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.UnitZ">
             <summary>
-              The Z unit <see cref="T:SharpDX.Bool4"/> (0, 0, true, 0).
+            The Z unit <see cref="T:SharpDX.Bool4"/> (0, 0, true, 0).
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.UnitW">
             <summary>
-              The W unit <see cref="T:SharpDX.Bool4"/> (0, 0, 0, true).
+            The W unit <see cref="T:SharpDX.Bool4"/> (0, 0, 0, true).
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.One">
             <summary>
-              A <see cref="T:SharpDX.Bool4"/> with all of its components set to true.
+            A <see cref="T:SharpDX.Bool4"/> with all of its components set to true.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Bool4.iX">
+            <summary>
+            The X component of the vector.
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.iY">
             <summary>
-              The Y component of the vector.
+            The Y component of the vector.
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.iZ">
             <summary>
-              The Z component of the vector.
+            The Z component of the vector.
             </summary>
         </member>
         <member name="F:SharpDX.Bool4.iW">
             <summary>
-              The W component of the vector.
+            The W component of the vector.
             </summary>
         </member>
         <member name="M:SharpDX.Bool4.#ctor(System.Boolean)">
             <summary>
-              Initializes a new instance of the <see cref="T:SharpDX.Bool4"/> struct.
+            Initializes a new instance of the <see cref="T:SharpDX.Bool4"/> struct.
             </summary>
             <param name="value">The value that will be assigned to all components.</param>
         </member>
         <member name="M:SharpDX.Bool4.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
-              Initializes a new instance of the <see cref="T:SharpDX.Bool4"/> struct.
+            Initializes a new instance of the <see cref="T:SharpDX.Bool4"/> struct.
             </summary>
             <param name="x">Initial value for the X component of the vector.</param>
             <param name="y">Initial value for the Y component of the vector.</param>
@@ -1574,7 +1817,7 @@
         </member>
         <member name="M:SharpDX.Bool4.#ctor(System.Boolean[])">
             <summary>
-              Initializes a new instance of the <see cref="T:SharpDX.Bool4"/> struct.
+            Initializes a new instance of the <see cref="T:SharpDX.Bool4"/> struct.
             </summary>
             <param name="values">The values to assign to the X, Y, Z, and W components of the vector. This must be an array with four elements.</param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="values"/> is <c>null</c>.</exception>
@@ -1582,13 +1825,13 @@
         </member>
         <member name="M:SharpDX.Bool4.ToArray">
             <summary>
-              Creates an array containing the elements of the vector.
+            Creates an array containing the elements of the vector.
             </summary>
             <returns>A four-element array containing the components of the vector.</returns>
         </member>
         <member name="M:SharpDX.Bool4.op_Equality(SharpDX.Bool4,SharpDX.Bool4)">
             <summary>
-              Tests for equality between two objects.
+            Tests for equality between two objects.
             </summary>
             <param name = "left">The first value to compare.</param>
             <param name = "right">The second value to compare.</param>
@@ -1596,7 +1839,7 @@
         </member>
         <member name="M:SharpDX.Bool4.op_Inequality(SharpDX.Bool4,SharpDX.Bool4)">
             <summary>
-              Tests for inequality between two objects.
+            Tests for inequality between two objects.
             </summary>
             <param name = "left">The first value to compare.</param>
             <param name = "right">The second value to compare.</param>
@@ -1604,10 +1847,10 @@
         </member>
         <member name="M:SharpDX.Bool4.ToString">
             <summary>
-              Returns a <see cref="T:System.String"/> that represents this instance.
+            Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
             <returns>
-              A <see cref="T:System.String"/> that represents this instance.
+            A <see cref="T:System.String"/> that represents this instance.
             </returns>
         </member>
         <member name="M:SharpDX.Bool4.ToString(System.String,System.IFormatProvider)">
@@ -1622,28 +1865,28 @@
         </member>
         <member name="M:SharpDX.Bool4.GetHashCode">
             <summary>
-              Returns a hash code for this instance.
+            Returns a hash code for this instance.
             </summary>
             <returns>
-              A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
             </returns>
         </member>
         <member name="M:SharpDX.Bool4.Equals(SharpDX.Bool4)">
             <summary>
-              Determines whether the specified <see cref="T:SharpDX.Bool4"/> is equal to this instance.
+            Determines whether the specified <see cref="T:SharpDX.Bool4"/> is equal to this instance.
             </summary>
             <param name="other">The <see cref="T:SharpDX.Bool4"/> to compare with this instance.</param>
             <returns>
-              <c>true</c> if the specified <see cref="T:SharpDX.Bool4"/> is equal to this instance; otherwise, <c>false</c>.
+            <c>true</c> if the specified <see cref="T:SharpDX.Bool4"/> is equal to this instance; otherwise, <c>false</c>.
             </returns>
         </member>
         <member name="M:SharpDX.Bool4.Equals(System.Object)">
             <summary>
-              Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
             </summary>
             <param name="value">The <see cref="T:System.Object"/> to compare with this instance.</param>
             <returns>
-              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
             </returns>
         </member>
         <member name="M:SharpDX.Bool4.op_Implicit(System.Boolean[])~SharpDX.Bool4">
@@ -1665,27 +1908,27 @@
         </member>
         <member name="P:SharpDX.Bool4.X">
             <summary>
-              The X component of the vector.
+            The X component of the vector.
             </summary>
         </member>
         <member name="P:SharpDX.Bool4.Y">
             <summary>
-              The Y component of the vector.
+            The Y component of the vector.
             </summary>
         </member>
         <member name="P:SharpDX.Bool4.Z">
             <summary>
-              The Z component of the vector.
+            The Z component of the vector.
             </summary>
         </member>
         <member name="P:SharpDX.Bool4.W">
             <summary>
-              The W component of the vector.
+            The W component of the vector.
             </summary>
         </member>
         <member name="P:SharpDX.Bool4.Item(System.Int32)">
             <summary>
-              Gets or sets the component at the specified index.
+            Gets or sets the component at the specified index.
             </summary>
             <value>The value of the X, Y, Z, or W component, depending on the index.</value>
             <param name="index">The index of the component to access. Use 0 for the X component, 1 for the Y component, 2 for the Z component, and 3 for the W component.</param>
@@ -3627,6 +3870,58 @@
             <param name="index">The index of the component to access. Use 0 for the alpha component, 1 for the red component, 2 for the green component, and 3 for the blue component.</param>
             <returns>The value of the component at the specified index.</returns>
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the <paramref name="index"/> is out of the range [0, 3].</exception>
+        </member>
+        <member name="T:SharpDX.Design.ColorConverter">
+            <summary>
+            Defines a type converter for <see cref="T:SharpDX.Color"/>.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Design.ColorConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Design.ColorConverter"/> class.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Design.ColorConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type, using the specified context and culture information.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="culture">A <see cref="T:System.Globalization.CultureInfo"/>. If null is passed, the current culture is assumed.</param>
+            <param name="value">The <see cref="T:System.Object"/> to convert.</param>
+            <param name="destinationType">The <see cref="T:System.Type"/> to convert the <paramref name="value"/> parameter to.</param>
+            <returns>
+            An <see cref="T:System.Object"/> that represents the converted value.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="destinationType"/> parameter is null.
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The conversion cannot be performed.
+            </exception>
+        </member>
+        <member name="M:SharpDX.Design.ColorConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts the given object to the type of this converter, using the specified context and culture information.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="culture">The <see cref="T:System.Globalization.CultureInfo"/> to use as the current culture.</param>
+            <param name="value">The <see cref="T:System.Object"/> to convert.</param>
+            <returns>
+            An <see cref="T:System.Object"/> that represents the converted value.
+            </returns>
+            <exception cref="T:System.NotSupportedException">
+            The conversion cannot be performed.
+            </exception>
+        </member>
+        <member name="M:SharpDX.Design.ColorConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)">
+            <summary>
+            Creates an instance of the type that this <see cref="T:System.ComponentModel.TypeConverter"/> is associated with, using the specified context, given a set of property values for the object.
+            </summary>
+            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
+            <param name="propertyValues">An <see cref="T:System.Collections.IDictionary"/> of new property values.</param>
+            <returns>
+            An <see cref="T:System.Object"/> representing the given <see cref="T:System.Collections.IDictionary"/>, or null if the object cannot be created. This method always returns null.
+            </returns>
         </member>
         <member name="T:SharpDX.IComponent">
             <summary>
@@ -6040,6 +6335,43 @@
             <param name="width">The width.</param>
             <param name="height">The height.</param>
         </member>
+        <member name="M:SharpDX.DrawingRectangleF.Contains(System.Int32,System.Int32)">
+            <summary>
+            Checks, if specified point is inside <see cref="T:SharpDX.DrawingRectangleF"/>.
+            </summary>
+            <param name="x">X point coordinate.</param>
+            <param name="y">Y point coordinate.</param>
+            <returns><c>true</c> if point is inside <see cref="T:SharpDX.DrawingRectangleF"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DrawingRectangleF.Contains(System.Single,System.Single)">
+            <summary>
+            Checks, if specified point is inside <see cref="T:SharpDX.DrawingRectangleF"/>.
+            </summary>
+            <param name="x">X point coordinate.</param>
+            <param name="y">Y point coordinate.</param>
+            <returns><c>true</c> if point is inside <see cref="T:SharpDX.DrawingRectangleF"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DrawingRectangleF.Contains(SharpDX.Vector2)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.DrawingRectangleF"/>. 
+            </summary> 
+            <param name="vector2D">Coordinate <see cref="T:SharpDX.Vector2"/>.</param>
+            <returns><c>true</c> if <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.DrawingRectangleF"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DrawingRectangleF.Contains(SharpDX.DrawingPoint)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.DrawingPoint"/> is inside <see cref="T:SharpDX.DrawingRectangleF"/>. 
+            </summary>
+            <param name="point">Coordinate <see cref="T:SharpDX.DrawingPoint"/>.</param> 
+            <returns><c>true</c> if <see cref="T:SharpDX.DrawingPoint"/> is inside <see cref="T:SharpDX.DrawingRectangleF"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DrawingRectangleF.Contains(SharpDX.DrawingPointF)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.DrawingPointF"/> is inside <see cref="T:SharpDX.DrawingRectangleF"/>. 
+            </summary>
+            <param name="point">Coordinate <see cref="T:SharpDX.DrawingPointF"/>.</param> 
+            <returns><c>true</c> if <see cref="T:SharpDX.DrawingPointF"/> is inside <see cref="T:SharpDX.DrawingRectangleF"/>, otherwise <c>false</c>.</returns>
+        </member>
         <member name="F:SharpDX.DrawingRectangleF.Position">
             <summary>
             The Position.
@@ -6192,6 +6524,43 @@
             <param name="y">The y.</param>
             <param name="width">The width.</param>
             <param name="height">The height.</param>
+        </member>
+        <member name="M:SharpDX.DrawingRectangle.Contains(System.Int32,System.Int32)">
+            <summary>
+            Checks, if specified point is inside <see cref="T:SharpDX.DrawingRectangle"/>.
+            </summary>
+            <param name="x">X point coordinate.</param>
+            <param name="y">Y point coordinate.</param>
+            <returns><c>true</c> if point is inside <see cref="T:SharpDX.DrawingRectangle"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DrawingRectangle.Contains(System.Single,System.Single)">
+            <summary>
+            Checks, if specified point is inside <see cref="T:SharpDX.DrawingRectangle"/>.
+            </summary>
+            <param name="x">X point coordinate.</param>
+            <param name="y">Y point coordinate.</param>
+            <returns><c>true</c> if point is inside <see cref="T:SharpDX.DrawingRectangle"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DrawingRectangle.Contains(SharpDX.Vector2)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.DrawingRectangle"/>. 
+            </summary> 
+            <param name="vector2D">Coordinate <see cref="T:SharpDX.Vector2"/>.</param>
+            <returns><c>true</c> if <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.DrawingRectangle"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DrawingRectangle.Contains(SharpDX.DrawingPoint)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.DrawingPoint"/> is inside <see cref="T:SharpDX.DrawingRectangle"/>. 
+            </summary>
+            <param name="point">Coordinate <see cref="T:SharpDX.DrawingPoint"/>.</param> 
+            <returns><c>true</c> if <see cref="T:SharpDX.DrawingPoint"/> is inside <see cref="T:SharpDX.DrawingRectangle"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.DrawingRectangle.Contains(SharpDX.DrawingPointF)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.DrawingPointF"/> is inside <see cref="T:SharpDX.DrawingRectangle"/>. 
+            </summary>
+            <param name="point">Coordinate <see cref="T:SharpDX.DrawingPointF"/>.</param> 
+            <returns><c>true</c> if <see cref="T:SharpDX.DrawingPointF"/> is inside <see cref="T:SharpDX.DrawingRectangle"/>, otherwise <c>false</c>.</returns>
         </member>
         <member name="F:SharpDX.DrawingRectangle.X">
             <summary>
@@ -7546,6 +7915,16 @@
             Represents a color in the form of rgb.
             </summary>
         </member>
+        <member name="F:SharpDX.Color3.Black">
+            <summary>
+            The Black color (0, 0, 0).
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color3.White">
+            <summary>
+            The White color (1, 1, 1, 1).
+            </summary>
+        </member>
         <member name="F:SharpDX.Color3.Red">
             <summary>
             The red component of the color.
@@ -8005,6 +8384,16 @@
             Represents a color in the form of rgba.
             </summary>
         </member>
+        <member name="F:SharpDX.Color4.Black">
+            <summary>
+            The Black color (0, 0, 0, 1).
+            </summary>
+        </member>
+        <member name="F:SharpDX.Color4.White">
+            <summary>
+            The White color (1, 1, 1, 1).
+            </summary>
+        </member>
         <member name="F:SharpDX.Color4.Red">
             <summary>
             The red component of the color.
@@ -8072,6 +8461,19 @@
             <param name="values">The values to assign to the red, green, blue, and alpha components of the color. This must be an array with four elements.</param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="values"/> is <c>null</c>.</exception>
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="values"/> contains more or less than four elements.</exception>
+        </member>
+        <member name="M:SharpDX.Color4.#ctor(SharpDX.Color3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color4"/> struct.
+            </summary>
+            <param name="value"><see cref="T:SharpDX.Color3"/> used to initialize the color.</param>
+        </member>
+        <member name="M:SharpDX.Color4.#ctor(SharpDX.Color3,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Color4"/> struct.
+            </summary>
+            <param name="value"><see cref="T:SharpDX.Color3"/> used to initialize the color.</param>
+            <param name="alpha">The alpha component of the color.</param>
         </member>
         <member name="M:SharpDX.Color4.ToBgra">
             <summary>
@@ -9994,86 +10396,6 @@
               Gets the length in bytes of the buffer.
             </summary>
             <value>A long value representing the length of the buffer in bytes.</value>
-        </member>
-        <member name="T:SharpDX.Design.BaseConverter">
-            <summary>
-            Provides a base class for mathematical type converters.
-            </summary>
-        </member>
-        <member name="M:SharpDX.Design.BaseConverter.ConvertFromValues``1(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,``0[])">
-            <summary>
-            Converts values to a string.
-            </summary>
-            <typeparam name="T">Type of the value</typeparam>
-            <param name="context">The context.</param>
-            <param name="culture">The culture.</param>
-            <param name="values">The values.</param>
-            <returns>A string representing the values</returns>
-        </member>
-        <member name="M:SharpDX.Design.BaseConverter.ConvertToValues``1(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
-            <summary>
-            Converts a string to values.
-            </summary>
-            <typeparam name="T">Type of the value</typeparam>
-            <param name="context">The context.</param>
-            <param name="culture">The culture.</param>
-            <param name="strValue">The string value.</param>
-            <returns>An array of value or null if strValue is not a string.</returns>
-        </member>
-        <member name="M:SharpDX.Design.BaseConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
-            <summary>
-            Returns whether this converter can convert an object of the given type to the type of this converter, using the specified context.
-            </summary>
-            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
-            <param name="sourceType">A <see cref="T:System.Type"/> that represents the type you want to convert from.</param>
-            <returns>
-            true if this converter can perform the conversion; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:SharpDX.Design.BaseConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
-            <summary>
-            Returns whether this converter can convert the object to the specified type, using the specified context.
-            </summary>
-            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
-            <param name="destinationType">A <see cref="T:System.Type"/> that represents the type you want to convert to.</param>
-            <returns>
-            true if this converter can perform the conversion; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:SharpDX.Design.BaseConverter.GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext)">
-            <summary>
-            Returns whether changing a value on this object requires a call to <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)"/> to create a new value, using the specified context.
-            </summary>
-            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
-            <returns>
-            true if changing a property on this object requires a call to <see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)"/> to create a new value; otherwise, false.
-            </returns>
-        </member>
-        <member name="M:SharpDX.Design.BaseConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)">
-            <summary>
-            Gets a value indicating whether this object supports properties using the specified context.
-            </summary>
-            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
-            <returns>
-            true because <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)"/> should be called to find the properties of this object. This method never returns false.
-            </returns>
-        </member>
-        <member name="M:SharpDX.Design.BaseConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])">
-            <summary>
-            Gets a collection of properties for the type of object specified by the value parameter.
-            </summary>
-            <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> that provides a format context.</param>
-            <param name="value">An <see cref="T:System.Object"/> that specifies the type of object to get the properties for.</param>
-            <param name="attributes">An array of type <see cref="T:System.Attribute"/> that will be used as a filter.</param>
-            <returns>
-            A <see cref="T:System.ComponentModel.PropertyDescriptorCollection"/> with the properties that are exposed for the component, or null if there are no properties.
-            </returns>
-        </member>
-        <member name="P:SharpDX.Design.BaseConverter.Properties">
-            <summary>
-            Gets or sets the collection of exposed properties.
-            </summary>
-            <value>The collection of exposed properties.</value>
         </member>
         <member name="T:SharpDX.Design.Half2Converter">
             <summary>
@@ -15727,7 +16049,7 @@
             <unmanaged>ERROR_SIGNAL_PENDING</unmanaged>	
             <unmanaged-short>ERROR_SIGNAL_PENDING</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.MaximumThrdsReached">
+        <member name="F:SharpDX.Win32.ErrorCode.MaxThrdsReached">
             <summary>	
             No documentation.	
             </summary>	
@@ -15791,7 +16113,7 @@
             <unmanaged>ERROR_ALREADY_EXISTS</unmanaged>	
             <unmanaged-short>ERROR_ALREADY_EXISTS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.InvalidFlagsNumber">
+        <member name="F:SharpDX.Win32.ErrorCode.InvalidFlagNumber">
             <summary>	
             No documentation.	
             </summary>	
@@ -16367,7 +16689,7 @@
             <unmanaged>ERROR_FAIL_RESTART</unmanaged>	
             <unmanaged-short>ERROR_FAIL_RESTART</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.MaximumSessionsReached">
+        <member name="F:SharpDX.Win32.ErrorCode.MaxSessionsReached">
             <summary>	
             No documentation.	
             </summary>	
@@ -17007,7 +17329,7 @@
             <unmanaged>ERROR_TIMER_RESOLUTION_NOT_SET</unmanaged>	
             <unmanaged-short>ERROR_TIMER_RESOLUTION_NOT_SET</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.InsufficientLogonInformation">
+        <member name="F:SharpDX.Win32.ErrorCode.InsufficientLogonInfo">
             <summary>	
             No documentation.	
             </summary>	
@@ -18151,7 +18473,7 @@
             <unmanaged>ERROR_VOLSNAP_HIBERNATE_READY</unmanaged>	
             <unmanaged-short>ERROR_VOLSNAP_HIBERNATE_READY</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.FsfilterOperationCompletedSuccessfully">
+        <member name="F:SharpDX.Win32.ErrorCode.FsfilterOpCompletedSuccessfully">
             <summary>	
             No documentation.	
             </summary>	
@@ -20639,7 +20961,7 @@
             <unmanaged>ERROR_NO_SECURITY_ON_OBJECT</unmanaged>	
             <unmanaged-short>ERROR_NO_SECURITY_ON_OBJECT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.CantAccessDomainInformation">
+        <member name="F:SharpDX.Win32.ErrorCode.CantAccessDomainInfo">
             <summary>	
             No documentation.	
             </summary>	
@@ -21231,7 +21553,7 @@
             <unmanaged>ERROR_INVALID_EDIT_HEIGHT</unmanaged>	
             <unmanaged-short>ERROR_INVALID_EDIT_HEIGHT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DeviceContextNotFound">
+        <member name="F:SharpDX.Win32.ErrorCode.DcNotFound">
             <summary>	
             No documentation.	
             </summary>	
@@ -23351,7 +23673,7 @@
             <unmanaged>ERROR_CANT_DELETE_LAST_ITEM</unmanaged>	
             <unmanaged-short>ERROR_CANT_DELETE_LAST_ITEM</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.MessageExceedsMaximumSize">
+        <member name="F:SharpDX.Win32.ErrorCode.MessageExceedsMaxSize">
             <summary>	
             No documentation.	
             </summary>	
@@ -24527,7 +24849,7 @@
             <unmanaged>ERROR_CLUSTER_RESOURCES_MUST_BE_ONLINE_ON_THE_SAME_NODE</unmanaged>	
             <unmanaged-short>ERROR_CLUSTER_RESOURCES_MUST_BE_ONLINE_ON_THE_SAME_NODE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.ClusterMaximumNodesInCluster">
+        <member name="F:SharpDX.Win32.ErrorCode.ClusterMaxNodesInCluster">
             <summary>	
             No documentation.	
             </summary>	
@@ -26879,7 +27201,7 @@
             <unmanaged>ERROR_DS_ATT_NOT_DEF_IN_SCHEMA</unmanaged>	
             <unmanaged-short>ERROR_DS_ATT_NOT_DEF_IN_SCHEMA</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsMaximumObjSizeExceeded">
+        <member name="F:SharpDX.Win32.ErrorCode.DsMaxObjSizeExceeded">
             <summary>	
             No documentation.	
             </summary>	
@@ -27263,7 +27585,7 @@
             <unmanaged>ERROR_DS_NOT_AN_OBJECT</unmanaged>	
             <unmanaged-short>ERROR_DS_NOT_AN_OBJECT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsSecDescriptionTooShort">
+        <member name="F:SharpDX.Win32.ErrorCode.DsSecDescTooShort">
             <summary>	
             No documentation.	
             </summary>	
@@ -27271,7 +27593,7 @@
             <unmanaged>ERROR_DS_SEC_DESC_TOO_SHORT</unmanaged>	
             <unmanaged-short>ERROR_DS_SEC_DESC_TOO_SHORT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsSecDescriptionInvalid">
+        <member name="F:SharpDX.Win32.ErrorCode.DsSecDescInvalid">
             <summary>	
             No documentation.	
             </summary>	
@@ -28311,7 +28633,7 @@
             <unmanaged>ERROR_DS_EPOCH_MISMATCH</unmanaged>	
             <unmanaged-short>ERROR_DS_EPOCH_MISMATCH</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsSourceNameMismatch">
+        <member name="F:SharpDX.Win32.ErrorCode.DsSrcNameMismatch">
             <summary>	
             No documentation.	
             </summary>	
@@ -28319,7 +28641,7 @@
             <unmanaged>ERROR_DS_SRC_NAME_MISMATCH</unmanaged>	
             <unmanaged-short>ERROR_DS_SRC_NAME_MISMATCH</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsSourceAndDstNcIdentical">
+        <member name="F:SharpDX.Win32.ErrorCode.DsSrcAndDstNcIdentical">
             <summary>	
             No documentation.	
             </summary>	
@@ -28343,7 +28665,7 @@
             <unmanaged>ERROR_DS_NOT_AUTHORITIVE_FOR_DST_NC</unmanaged>	
             <unmanaged-short>ERROR_DS_NOT_AUTHORITIVE_FOR_DST_NC</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsSourceGuidMismatch">
+        <member name="F:SharpDX.Win32.ErrorCode.DsSrcGuidMismatch">
             <summary>	
             No documentation.	
             </summary>	
@@ -28439,7 +28761,7 @@
             <unmanaged>ERROR_DS_CANT_MOVE_RESOURCE_GROUP</unmanaged>	
             <unmanaged-short>ERROR_DS_CANT_MOVE_RESOURCE_GROUP</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsInvalidSearchFlags">
+        <member name="F:SharpDX.Win32.ErrorCode.DsInvalidSearchFlag">
             <summary>	
             No documentation.	
             </summary>	
@@ -28527,7 +28849,7 @@
             <unmanaged>ERROR_DS_CANT_CREATE_UNDER_SCHEMA</unmanaged>	
             <unmanaged-short>ERROR_DS_CANT_CREATE_UNDER_SCHEMA</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsInstallNoSourceSchVersion">
+        <member name="F:SharpDX.Win32.ErrorCode.DsInstallNoSrcSchVersion">
             <summary>	
             No documentation.	
             </summary>	
@@ -28735,7 +29057,7 @@
             <unmanaged>ERROR_DS_DESTINATION_AUDITING_NOT_ENABLED</unmanaged>	
             <unmanaged-short>ERROR_DS_DESTINATION_AUDITING_NOT_ENABLED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsCantFindDeviceContextForSourceDomain">
+        <member name="F:SharpDX.Win32.ErrorCode.DsCantFindDcForSrcDomain">
             <summary>	
             No documentation.	
             </summary>	
@@ -28743,7 +29065,7 @@
             <unmanaged>ERROR_DS_CANT_FIND_DC_FOR_SRC_DOMAIN</unmanaged>	
             <unmanaged-short>ERROR_DS_CANT_FIND_DC_FOR_SRC_DOMAIN</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsSourceObjNotGroupOrUser">
+        <member name="F:SharpDX.Win32.ErrorCode.DsSrcObjNotGroupOrUser">
             <summary>	
             No documentation.	
             </summary>	
@@ -28751,7 +29073,7 @@
             <unmanaged>ERROR_DS_SRC_OBJ_NOT_GROUP_OR_USER</unmanaged>	
             <unmanaged-short>ERROR_DS_SRC_OBJ_NOT_GROUP_OR_USER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsSourceSidExistsInForest">
+        <member name="F:SharpDX.Win32.ErrorCode.DsSrcSidExistsInForest">
             <summary>	
             No documentation.	
             </summary>	
@@ -28759,7 +29081,7 @@
             <unmanaged>ERROR_DS_SRC_SID_EXISTS_IN_FOREST</unmanaged>	
             <unmanaged-short>ERROR_DS_SRC_SID_EXISTS_IN_FOREST</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsSourceAndDstObjectClassMismatch">
+        <member name="F:SharpDX.Win32.ErrorCode.DsSrcAndDstObjectClassMismatch">
             <summary>	
             No documentation.	
             </summary>	
@@ -28775,7 +29097,7 @@
             <unmanaged>ERROR_SAM_INIT_FAILURE</unmanaged>	
             <unmanaged-short>ERROR_SAM_INIT_FAILURE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsDraSchemaInformationShip">
+        <member name="F:SharpDX.Win32.ErrorCode.DsDraSchemaInfoShip">
             <summary>	
             No documentation.	
             </summary>	
@@ -28903,7 +29225,7 @@
             <unmanaged>ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED</unmanaged>	
             <unmanaged-short>ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsMustBeRunOnDstDeviceContext">
+        <member name="F:SharpDX.Win32.ErrorCode.DsMustBeRunOnDstDc">
             <summary>	
             No documentation.	
             </summary>	
@@ -28911,7 +29233,7 @@
             <unmanaged>ERROR_DS_MUST_BE_RUN_ON_DST_DC</unmanaged>	
             <unmanaged-short>ERROR_DS_MUST_BE_RUN_ON_DST_DC</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsSourceDeviceContextMustBeSp4OrGreater">
+        <member name="F:SharpDX.Win32.ErrorCode.DsSrcDcMustBeSp4OrGreater">
             <summary>	
             No documentation.	
             </summary>	
@@ -29087,7 +29409,7 @@
             <unmanaged>ERROR_DS_NO_OBJECT_MOVE_IN_SCHEMA_NC</unmanaged>	
             <unmanaged-short>ERROR_DS_NO_OBJECT_MOVE_IN_SCHEMA_NC</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsModifydnDisallowedByFlags">
+        <member name="F:SharpDX.Win32.ErrorCode.DsModifydnDisallowedByFlag">
             <summary>	
             No documentation.	
             </summary>	
@@ -29247,7 +29569,7 @@
             <unmanaged>ERROR_DS_INVALID_SCRIPT</unmanaged>	
             <unmanaged-short>ERROR_DS_INVALID_SCRIPT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsRemoteCrossrefOperationFailed">
+        <member name="F:SharpDX.Win32.ErrorCode.DsRemoteCrossrefOpFailed">
             <summary>	
             No documentation.	
             </summary>	
@@ -29407,7 +29729,7 @@
             <unmanaged>ERROR_NO_SECRETS</unmanaged>	
             <unmanaged-short>ERROR_NO_SECRETS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.NoWritableDeviceContextFound">
+        <member name="F:SharpDX.Win32.ErrorCode.NoWritableDcFound">
             <summary>	
             No documentation.	
             </summary>	
@@ -29447,7 +29769,7 @@
             <unmanaged>ERROR_DS_AUDIT_FAILURE</unmanaged>	
             <unmanaged-short>ERROR_DS_AUDIT_FAILURE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsInvalidSearchFlagsSubtree">
+        <member name="F:SharpDX.Win32.ErrorCode.DsInvalidSearchFlagSubtree">
             <summary>	
             No documentation.	
             </summary>	
@@ -29455,7 +29777,7 @@
             <unmanaged>ERROR_DS_INVALID_SEARCH_FLAG_SUBTREE</unmanaged>	
             <unmanaged-short>ERROR_DS_INVALID_SEARCH_FLAG_SUBTREE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.DsInvalidSearchFlagsTuple">
+        <member name="F:SharpDX.Win32.ErrorCode.DsInvalidSearchFlagTuple">
             <summary>	
             No documentation.	
             </summary>	
@@ -30735,7 +31057,7 @@
             <unmanaged>ERROR_IPSEC_DOSP_STATE_LOOKUP_FAILED</unmanaged>	
             <unmanaged-short>ERROR_IPSEC_DOSP_STATE_LOOKUP_FAILED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.IpsecDospMaximumEntries">
+        <member name="F:SharpDX.Win32.ErrorCode.IpsecDospMaxEntries">
             <summary>	
             No documentation.	
             </summary>	
@@ -30759,7 +31081,7 @@
             <unmanaged>ERROR_IPSEC_DOSP_NOT_INSTALLED</unmanaged>	
             <unmanaged-short>ERROR_IPSEC_DOSP_NOT_INSTALLED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.IpsecDospMaximumPerIpRatelimitQueues">
+        <member name="F:SharpDX.Win32.ErrorCode.IpsecDospMaxPerIpRatelimitQueues">
             <summary>	
             No documentation.	
             </summary>	
@@ -31895,7 +32217,7 @@
             <unmanaged>ERROR_EVT_UNRESOLVED_PARAMETER_INSERT</unmanaged>	
             <unmanaged-short>ERROR_EVT_UNRESOLVED_PARAMETER_INSERT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.EvtMaximumInsertsReached">
+        <member name="F:SharpDX.Win32.ErrorCode.EvtMaxInsertsReached">
             <summary>	
             No documentation.	
             </summary>	
@@ -33471,7 +33793,7 @@
             <unmanaged>ERROR_GRAPHICS_INVALID_MONITOR_FREQUENCYRANGE_CONSTRAINT</unmanaged>	
             <unmanaged-short>ERROR_GRAPHICS_INVALID_MONITOR_FREQUENCYRANGE_CONSTRAINT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.GraphicsMaximumNumPathsReached">
+        <member name="F:SharpDX.Win32.ErrorCode.GraphicsMaxNumPathsReached">
             <summary>	
             No documentation.	
             </summary>	
@@ -34583,7 +34905,7 @@
             <unmanaged>ERROR_HV_OBJECT_IN_USE</unmanaged>	
             <unmanaged-short>ERROR_HV_OBJECT_IN_USE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Win32.ErrorCode.HvInvalidProximityDomainInformation">
+        <member name="F:SharpDX.Win32.ErrorCode.HvInvalidProximityDomainInfo">
             <summary>	
             No documentation.	
             </summary>	
@@ -37502,6 +37824,14 @@
             A value specifying the approximation of π/4 which is 45 degrees.
             </summary>
         </member>
+        <member name="M:SharpDX.MathUtil.WithinEpsilon(System.Single,System.Single)">
+            <summary>
+            Checks if a - b are almost equals within a float epsilon.
+            </summary>
+            <param name="a">The left value to compare.</param>
+            <param name="b">The right value to compare.</param>
+            <returns><c>true</c> if a almost equal to b within a float epsilon, <c>false</c> otherwise</returns>
+        </member>
         <member name="M:SharpDX.MathUtil.Array``1(``0,System.Int32)">
             <summary>
             Does something with arrays.
@@ -37590,12 +37920,205 @@
         </member>
         <member name="M:SharpDX.MathUtil.Clamp(System.Single,System.Single,System.Single)">
             <summary>
-            Clamp a value.
+            Clamps the specified value.
             </summary>
-            <param name="value"></param>
-            <param name="min"></param>
-            <param name="max"></param>
-            <returns></returns>
+            <param name="value">The value.</param>
+            <param name="min">The min.</param>
+            <param name="max">The max.</param>
+            <returns>The result of clamiping a value between min and max</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Clamp(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Clamps the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="min">The min.</param>
+            <param name="max">The max.</param>
+            <returns>The result of clamiping a value between min and max</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Mod(System.Single,System.Single)">
+            <summary>
+            Calculates the modulo of the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="modulo">The modulo.</param>
+            <returns>The result of the modulo applied to value</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Mod2PI(System.Single)">
+            <summary>
+            Calculates the modulo 2*PI of the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>The result of the modulo applied to value</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Wrap(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Wraps the specified value into a range.
+            </summary>
+            <param name="value">The value to wrap.</param>
+            <param name="min">The min.</param>
+            <param name="max">The max.</param>
+            <returns>Result of the wrapping.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Wrap(System.Single,System.Single,System.Single)">
+            <summary>
+            Wraps the specified value into a range.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="min">The min.</param>
+            <param name="max">The max.</param>
+            <returns>Result of the wrapping.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Gauss(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Gauss function.
+            </summary>
+            <param name="amplitude">Curve amplitude.</param>
+            <param name="x">Position X.</param>
+            <param name="y">Position Y</param>
+            <param name="radX">Radius X.</param>
+            <param name="radY">Radius Y.</param>
+            <param name="sigmaX">Curve sigma X.</param>
+            <param name="sigmaY">Curve sigma Y.</param>
+            <returns>The result of gaussian function.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Gauss(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Gauss function.
+            </summary>
+            <param name="amplitude">Curve amplitude.</param>
+            <param name="x">Position X.</param>
+            <param name="y">Position Y</param>
+            <param name="radX">Radius X.</param>
+            <param name="radY">Radius Y.</param>
+            <param name="sigmaX">Curve sigma X.</param>
+            <param name="sigmaY">Curve sigma Y.</param>
+            <returns>The result of gaussian function.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextFloat(System.Random,System.Single,System.Single)">
+            <summary>
+            Get random <c>float</c> number within range.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="min">Minimum.</param>
+            <param name="max">Maximum.</param>
+            <returns>Random <c>float</c> number.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextDouble(System.Random,System.Double,System.Double)">
+            <summary>
+            Get random <c>double</c> number within range.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="min">Minimum.</param>
+            <param name="max">Maximum.</param>
+            <returns>Random <c>double</c> number.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextLong(System.Random)">
+            <summary>
+            Get random <c>long</c> number.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <returns>Random <c>long</c> number.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextLong(System.Random,System.Int64,System.Int64)">
+            <summary>
+            Get random <c>long</c> number.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="min">Minimum.</param>
+            <param name="max">Maximum.</param>
+            <returns>Random <c>long</c> number.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextVector2(System.Random,SharpDX.Vector2,SharpDX.Vector2)">
+            <summary>
+            Get random <see cref="T:SharpDX.Vector2"/> within range.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="min">Minimum.</param>
+            <param name="max">Maximum.</param>
+            <returns>Random <see cref="T:SharpDX.Vector2"/>.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextVector3(System.Random,SharpDX.Vector3,SharpDX.Vector3)">
+            <summary>
+            Get random <see cref="T:SharpDX.Vector3"/> within range.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="min">Minimum.</param>
+            <param name="max">Maximum.</param>
+            <returns>Random <see cref="T:SharpDX.Vector3"/>.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextVector4(System.Random,SharpDX.Vector4,SharpDX.Vector4)">
+            <summary>
+            Get random <see cref="T:SharpDX.Vector4"/> within range.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="min">Minimum.</param>
+            <param name="max">Maximum.</param>
+            <returns>Random <see cref="T:SharpDX.Vector4"/>.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextColor(System.Random)">
+            <summary>
+            Get random opaque <see cref="T:SharpDX.Color"/>
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <returns>Random <see cref="T:SharpDX.Color"/>.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextColor(System.Random,System.Single,System.Single)">
+            <summary>
+            Get random opaque <see cref="T:SharpDX.Color"/>
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="minBrightness">Minimum brightness.</param>
+            <param name="maxBrightness">Maximum brightness</param>
+            <returns>Random <see cref="T:SharpDX.Color"/>.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextColor(System.Random,System.Single,System.Single,System.Single)">
+            <summary>
+            Get random <see cref="T:SharpDX.Color"/>.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>   
+            <param name="minBrightness">Minimum brightness.</param>
+            <param name="maxBrightness">Maximum brightness</param>
+            <param name="alpha">Alpha value.</param>
+            <returns>Random <see cref="T:SharpDX.Color"/>.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextColor(System.Random,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Get random <see cref="T:SharpDX.Color"/>.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="minBrightness">Minimum brightness.</param>
+            <param name="maxBrightness">Maximum brightness</param>
+            <param name="minAlpha">Minimum alpha.</param>
+            <param name="maxAlpha">Maximum alpha.</param>
+            <returns>Random <see cref="T:SharpDX.Color"/>.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextDPoint(System.Random,SharpDX.DrawingPoint,SharpDX.DrawingPoint)">
+            <summary>
+            Get random <see cref="T:SharpDX.DrawingPoint"/>.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="min">Minimum.</param>
+            <param name="max">Maximum.</param>
+            <returns>Random <see cref="T:SharpDX.DrawingPoint"/>.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextDPointF(System.Random,SharpDX.DrawingPointF,SharpDX.DrawingPointF)">
+            <summary>
+            Get random <see cref="T:SharpDX.DrawingPointF"/>.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="min">Minimum.</param>
+            <param name="max">Maximum.</param>
+            <returns>Random <see cref="T:SharpDX.DrawingPointF"/>.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.NextTimespan(System.Random,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Get random <see cref="T:System.TimeSpan"/>.
+            </summary>
+            <param name="random">Current <see cref="T:System.Random"/>.</param>
+            <param name="min">Minimum.</param>
+            <param name="max">Maximum.</param>
+            <returns>Random <see cref="T:System.TimeSpan"/>.</returns>
         </member>
         <member name="T:SharpDX.Matrix">
             <summary>
@@ -38944,6 +39467,36 @@
             <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
             </returns>
         </member>
+        <member name="P:SharpDX.Matrix.Up">
+            <summary>
+            Gets or sets the up <see cref="T:SharpDX.Vector3"/> of the matrix; that is M21, M22, and M23.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Matrix.Down">
+            <summary>
+            Gets or sets the down <see cref="T:SharpDX.Vector3"/> of the matrix; that is -M21, -M22, and -M23.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Matrix.Right">
+            <summary>
+            Gets or sets the right <see cref="T:SharpDX.Vector3"/> of the matrix; that is M11, M12, and M13.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Matrix.Left">
+            <summary>
+            Gets or sets the left <see cref="T:SharpDX.Vector3"/> of the matrix; that is -M11, -M12, and -M13.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Matrix.Forward">
+            <summary>
+            Gets or sets the forward <see cref="T:SharpDX.Vector3"/> of the matrix; that is -M31, -M32, and -M33.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Matrix.Backward">
+            <summary>
+            Gets or sets the backward <see cref="T:SharpDX.Vector3"/> of the matrix; that is M31, M32, and M33.
+            </summary>
+        </member>
         <member name="P:SharpDX.Matrix.Row1">
             <summary>
             Gets or sets the first row in the matrix; that is M11, M12, M13, and M14.
@@ -39854,6 +40407,105 @@
             Gets a value indicating whether this instance is paused.
             </summary>
             <value><c>true</c> if this instance is paused; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:SharpDX.Viewport">
+            <summary>
+            Defines the viewport dimensions.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Viewport.X">
+            <summary>
+            Position of the pixel coordinate of the upper-left corner of the viewport.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Viewport.Y">
+            <summary>
+            Position of the pixel coordinate of the upper-left corner of the viewport.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Viewport.Width">
+            <summary>
+            Width dimension of the viewport.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Viewport.Height">
+            <summary>
+            Height dimension of the viewport.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Viewport.MinDepth">
+            <summary>
+            Gets or sets the minimum depth of the clip volume.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Viewport.MaxDepth">
+            <summary>
+            Gets or sets the maximum depth of the clip volume.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Viewport.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Viewport"/> struct.
+            </summary>
+            <param name="x">The x coordinate of the upper-left corner of the viewport in pixels.</param>
+            <param name="y">The y coordinate of the upper-left corner of the viewport in pixels.</param>
+            <param name="width">The width of the viewport in pixels.</param>
+            <param name="height">The height of the viewport in pixels.</param>
+        </member>
+        <member name="M:SharpDX.Viewport.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.ViewportF"/> struct.
+            </summary>
+            <param name="x">The x coordinate of the upper-left corner of the viewport in pixels.</param>
+            <param name="y">The y coordinate of the upper-left corner of the viewport in pixels.</param>
+            <param name="width">The width of the viewport in pixels.</param>
+            <param name="height">The height of the viewport in pixels.</param>
+            <param name="minDepth">The minimum depth of the clip volume.</param>
+            <param name="maxDepth">The maximum depth of the clip volume.</param>
+        </member>
+        <member name="M:SharpDX.Viewport.#ctor(SharpDX.DrawingRectangle)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Viewport"/> struct.
+            </summary>
+            <param name="bounds">A bounding box that defines the location and size of the viewport in a render target.</param>
+        </member>
+        <member name="M:SharpDX.Viewport.ToString">
+            <summary>
+            Retrieves a string representation of this object.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
+        </member>
+        <member name="M:SharpDX.Viewport.Project(SharpDX.Vector3,SharpDX.Matrix,SharpDX.Matrix,SharpDX.Matrix)">
+            <summary>
+            Projects a 3D vector from object space into screen space.
+            </summary>
+            <param name="source">The vector to project.</param>
+            <param name="projection">The projection matrix.</param>
+            <param name="view">The view matrix.</param>
+            <param name="world">The world matrix.</param>
+            <returns>Vector3.</returns>
+        </member>
+        <member name="M:SharpDX.Viewport.Unproject(SharpDX.Vector3,SharpDX.Matrix,SharpDX.Matrix,SharpDX.Matrix)">
+            <summary>
+            Converts a screen space point into a corresponding point in world space.
+            </summary>
+            <param name="source">The vector to project.</param>
+            <param name="projection">The projection matrix.</param>
+            <param name="view">The view matrix.</param>
+            <param name="world">The world matrix.</param>
+            <returns>Vector3.</returns>
+        </member>
+        <member name="P:SharpDX.Viewport.Bounds">
+            <summary>
+            Gets the size of this resource.
+            </summary>
+            <value>The bounds.</value>
+        </member>
+        <member name="P:SharpDX.Viewport.AspectRatio">
+            <summary>
+            Gets the aspect ratio used by the viewport
+            </summary>
+            <value>The aspect ratio.</value>
         </member>
         <member name="T:SharpDX.Win32Native">
             <summary>
@@ -40989,6 +41641,16 @@
             or <see cref="F:SharpDX.Vector3.Zero"/> if there was no intersection.</param>
             <returns>Whether the two objects intersected.</returns>
         </member>
+        <member name="M:SharpDX.Ray.GetPickRay(System.Int32,System.Int32,SharpDX.ViewportF,SharpDX.Matrix)">
+            <summary>
+            Calculates a world space <see cref="T:SharpDX.Ray"/> from 2d screen coordinates.
+            </summary>
+            <param name="x">X coordinate on 2d screen.</param>
+            <param name="y">Y coordinate on 2d screen.</param>
+            <param name="viewport"><see cref="T:SharpDX.ViewportF"/>.</param>
+            <param name="worldViewProjection">Transformation <see cref="T:SharpDX.Matrix"/>.</param>
+            <returns>Resulting <see cref="T:SharpDX.Ray"/>.</returns>
+        </member>
         <member name="M:SharpDX.Ray.op_Equality(SharpDX.Ray,SharpDX.Ray)">
             <summary>
             Tests for equality between two objects.
@@ -41090,6 +41752,43 @@
             <param name="top">The top.</param>
             <param name="right">The right.</param>
             <param name="bottom">The bottom.</param>
+        </member>
+        <member name="M:SharpDX.Rectangle.Contains(System.Int32,System.Int32)">
+            <summary>
+            Checks, if specified point is inside <see cref="T:SharpDX.Rectangle"/>.
+            </summary>
+            <param name="x">X point coordinate.</param>
+            <param name="y">Y point coordinate.</param>
+            <returns><c>true</c> if point is inside <see cref="T:SharpDX.Rectangle"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.Rectangle.Contains(System.Single,System.Single)">
+            <summary>
+            Checks, if specified point is inside <see cref="T:SharpDX.Rectangle"/>.
+            </summary>
+            <param name="x">X point coordinate.</param>
+            <param name="y">Y point coordinate.</param>
+            <returns><c>true</c> if point is inside <see cref="T:SharpDX.Rectangle"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.Rectangle.Contains(SharpDX.Vector2)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.Rectangle"/>. 
+            </summary> 
+            <param name="vector2D">Coordinate <see cref="T:SharpDX.Vector2"/>.</param>
+            <returns><c>true</c> if <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.Rectangle"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.Rectangle.Contains(SharpDX.DrawingPoint)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.DrawingPoint"/> is inside <see cref="T:SharpDX.Rectangle"/>. 
+            </summary>
+            <param name="point">Coordinate <see cref="T:SharpDX.DrawingPoint"/>.</param> 
+            <returns><c>true</c> if <see cref="T:SharpDX.DrawingPoint"/> is inside <see cref="T:SharpDX.Rectangle"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.Rectangle.Contains(SharpDX.DrawingPointF)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.DrawingPointF"/> is inside <see cref="T:SharpDX.Rectangle"/>. 
+            </summary>
+            <param name="point">Coordinate <see cref="T:SharpDX.DrawingPointF"/>.</param> 
+            <returns><c>true</c> if <see cref="T:SharpDX.DrawingPointF"/> is inside <see cref="T:SharpDX.Rectangle"/>, otherwise <c>false</c>.</returns>
         </member>
         <member name="M:SharpDX.Rectangle.Equals(System.Object)">
             <summary>
@@ -41209,6 +41908,43 @@
             <param name="top">The top.</param>
             <param name="right">The right.</param>
             <param name="bottom">The bottom.</param>
+        </member>
+        <member name="M:SharpDX.RectangleF.Contains(System.Int32,System.Int32)">
+            <summary>
+            Checks, if specified point is inside <see cref="T:SharpDX.RectangleF"/>.
+            </summary>
+            <param name="x">X point coordinate.</param>
+            <param name="y">Y point coordinate.</param>
+            <returns><c>true</c> if point is inside <see cref="T:SharpDX.RectangleF"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.RectangleF.Contains(System.Single,System.Single)">
+            <summary>
+            Checks, if specified point is inside <see cref="T:SharpDX.RectangleF"/>.
+            </summary>
+            <param name="x">X point coordinate.</param>
+            <param name="y">Y point coordinate.</param>
+            <returns><c>true</c> if point is inside <see cref="T:SharpDX.RectangleF"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.RectangleF.Contains(SharpDX.Vector2)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.RectangleF"/>. 
+            </summary> 
+            <param name="vector2D">Coordinate <see cref="T:SharpDX.Vector2"/>.</param>
+            <returns><c>true</c> if <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.RectangleF"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.RectangleF.Contains(SharpDX.DrawingPoint)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.DrawingPoint"/> is inside <see cref="T:SharpDX.RectangleF"/>. 
+            </summary>
+            <param name="point">Coordinate <see cref="T:SharpDX.DrawingPoint"/>.</param> 
+            <returns><c>true</c> if <see cref="T:SharpDX.DrawingPoint"/> is inside <see cref="T:SharpDX.RectangleF"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.RectangleF.Contains(SharpDX.DrawingPointF)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.DrawingPointF"/> is inside <see cref="T:SharpDX.RectangleF"/>. 
+            </summary>
+            <param name="point">Coordinate <see cref="T:SharpDX.DrawingPointF"/>.</param> 
+            <returns><c>true</c> if <see cref="T:SharpDX.DrawingPointF"/> is inside <see cref="T:SharpDX.RectangleF"/>, otherwise <c>false</c>.</returns>
         </member>
         <member name="M:SharpDX.RectangleF.Equals(System.Object)">
             <summary>
@@ -41702,13 +42438,6 @@
             </summary>
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
-        </member>
-        <member name="T:SharpDX.Func`1">
-            <summary>
-            Encapsulates a method that has no parameters and returns a value of the type specified by the TResult parameter.
-            </summary>
-            <typeparam name="TResult">The type of the return value of the method that this delegate encapsulates. This type parameter is covariant. That is, you can use either the type you specified or any type that is more derived. </typeparam>
-            <returns>The return value of the method that this delegate encapsulates.</returns>
         </member>
         <member name="T:SharpDX.GetValueFastDelegate`1">
             <summary>
@@ -44683,6 +45412,31 @@
             <param name="errorCode">The error code.</param>
             <returns>A HRESULT code</returns>
         </member>
+        <member name="T:SharpDX.Win32.MessageFilterHook">
+            <summary>
+            Provides a hook to WndProc of an existing window handle using <see cref="T:System.Windows.Forms.IMessageFilter"/>.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Win32.MessageFilterHook.#ctor(System.IntPtr)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Win32.MessageFilterHook"/> class.
+            </summary>
+            <param name="hwnd">The HWND.</param>
+        </member>
+        <member name="M:SharpDX.Win32.MessageFilterHook.AddMessageFilter(System.IntPtr,System.Windows.Forms.IMessageFilter)">
+            <summary>
+            Adds a message filter to a window.
+            </summary>
+            <param name="hwnd">The handle of the window.</param>
+            <param name="messageFilter">The message filter.</param>
+        </member>
+        <member name="M:SharpDX.Win32.MessageFilterHook.RemoveMessageFilter(System.IntPtr,System.Windows.Forms.IMessageFilter)">
+            <summary>
+            Removes a message filter associated with a window.
+            </summary>
+            <param name="hwnd">The handle of the window.</param>
+            <param name="messageFilter">The message filter.</param>
+        </member>
         <member name="T:SharpDX.Win32.NamespaceDoc">
             <summary>
             The <see cref="N:SharpDX.Win32"/> namespace contains common enumerations, structures and helper classes for Win32 low-level API.
@@ -44913,11 +45667,6 @@
         <member name="M:SharpDX.Windows.RenderLoop.ProxyNativeWindow.#ctor(System.Windows.Forms.Control)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Windows.RenderLoop.ProxyNativeWindow"/> class.
-            </summary>
-        </member>
-        <member name="M:SharpDX.Windows.RenderLoop.ProxyNativeWindow.WndProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">
-            <summary>
-            Private WindowProc in order to handle NCDestroy message
             </summary>
         </member>
         <member name="M:SharpDX.Windows.RenderLoop.ProxyNativeWindow.Run(SharpDX.Windows.RenderLoop.RenderCallback)">

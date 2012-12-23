@@ -235,7 +235,7 @@
             <summary>	
             <p>Retrieves the current operating state of a cue.</p><p>[Content-driven]</p>	
             </summary>	
-            <param name="stateRef"><dd> Flags indicating the state of the cue. The flags are as follows:  <table><tr><th>Value</th><th>Description</th></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Created"/></td><td>Created, but nothing else?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Preparing"/></td><td>Preparing to play?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Prepared"/></td><td>Prepared, but not yet played?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Playing"/></td><td>Playing, but can be paused?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Stopping"/></td><td>Stopping?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Stopped"/></td><td>Stopped?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Paused"/></td><td>Paused?</td></tr></table> <table><tr><th>Note </th></tr><tr><td>States represented by these flags are not necessarily mutually exclusive. Therefore, test states using the &amp; (and) operation rather than the == (equals) operation.</td></tr></table> </dd></param>	
+            <param name="stateRef"><dd> Flags indicating the state of the cue. The flags are as follows:  <table><tr><th>Value</th><th>Description</th></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.CreateD"/></td><td>Created, but nothing else?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Preparing"/></td><td>Preparing to play?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Prepared"/></td><td>Prepared, but not yet played?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Playing"/></td><td>Playing, but can be paused?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Stopping"/></td><td>Stopping?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Stopped"/></td><td>Stopped?</td></tr><tr><td><see cref="F:SharpDX.XACT3.CueState.Paused"/></td><td>Paused?</td></tr></table> <table><tr><th>Note </th></tr><tr><td>States represented by these flags are not necessarily mutually exclusive. Therefore, test states using the &amp; (and) operation rather than the == (equals) operation.</td></tr></table> </dd></param>	
             <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful, an error code otherwise.</p></returns>	
             <remarks>	
             <p>This function informs the caller what activity the cue is performing at the moment the call is made. The state returned from <strong>GetState</strong> indicates only the current condition.</p> <p>Only <see cref="F:SharpDX.XACT3.CueState.Paused"/> is used in combination with other state flags. In other words, the <strong>GetState</strong> might return a state value with <see cref="F:SharpDX.XACT3.CueState.Preparing"/> set or <see cref="F:SharpDX.XACT3.CueState.Playing"/> set, but never with both (since both conditions cannot both be true at the same time). However, <strong>GetState</strong> may return a state value with both <see cref="F:SharpDX.XACT3.CueState.Playing"/> and <see cref="F:SharpDX.XACT3.CueState.Paused"/> flags set, to signify that the cue is paused while playing.</p>	
@@ -863,7 +863,7 @@
             <unmanaged>XACT_CONTENT_PREPARATION_FLAGS</unmanaged>	
             <unmanaged-short>XACT_CONTENT_PREPARATION_FLAGS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.XACT3.ContentPreparationFlags.UnitsMs">
+        <member name="F:SharpDX.XACT3.ContentPreparationFlags.UnitsMultisampled">
             <summary>	
             No documentation.	
             </summary>	
@@ -919,7 +919,7 @@
             <unmanaged>XACT_CUE_STATE</unmanaged>	
             <unmanaged-short>XACT_CUE_STATE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.XACT3.CueState.Created">
+        <member name="F:SharpDX.XACT3.CueState.CreateD">
             <summary>	
             No documentation.	
             </summary>	
@@ -1256,7 +1256,7 @@
             <unmanaged>XACT_WAVE_STATE</unmanaged>	
             <unmanaged-short>XACT_WAVE_STATE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.XACT3.WaveState.Created">
+        <member name="F:SharpDX.XACT3.WaveState.CreateD">
             <summary>	
             No documentation.	
             </summary>	

@@ -1216,7 +1216,7 @@
             <unmanaged>float RoomSize</unmanaged>	
             <unmanaged-short>float RoomSize</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.XAudio2.Fx.VolumemeterLevels">
+        <member name="T:SharpDX.XAudio2.Fx.VolumeMeterLevels">
             <summary>	
             Describes parameters for use with the volume meter APO.	
             </summary>	
@@ -1228,7 +1228,7 @@
             <unmanaged>XAUDIO2FX_VOLUMEMETER_LEVELS</unmanaged>	
             <unmanaged-short>XAUDIO2FX_VOLUMEMETER_LEVELS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.XAudio2.Fx.VolumemeterLevels.PeakLevelPointer">
+        <member name="F:SharpDX.XAudio2.Fx.VolumeMeterLevels.PeakLevelPointer">
             <summary>	
             <dd> Array that will be filled with the maximum absolute level for each channel during a processing pass. The array must be at least <strong>ChannelCount</strong> ? sizeof(float) bytes. <strong>pPeakLevels</strong> may be <c>null</c> if <strong>pRMSLevels</strong> is not <c>null</c>. </dd>	
             </summary>	
@@ -1237,7 +1237,7 @@
             <unmanaged>float* pPeakLevels</unmanaged>	
             <unmanaged-short>float pPeakLevels</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.XAudio2.Fx.VolumemeterLevels.RmsLevelsPointer">
+        <member name="F:SharpDX.XAudio2.Fx.VolumeMeterLevels.RmsLevelsPointer">
             <summary>	
             <dd> Array that will be filled with root mean square level for each channel during a processing pass. The array must be at least <strong>ChannelCount</strong> ? sizeof(float) bytes. <strong>pRMSLevels</strong> may be <c>null</c> if <strong>pPeakLevels</strong> is not <c>null</c>. </dd>	
             </summary>	
@@ -1246,7 +1246,7 @@
             <unmanaged>float* pRMSLevels</unmanaged>	
             <unmanaged-short>float pRMSLevels</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.XAudio2.Fx.VolumemeterLevels.ChannelCount">
+        <member name="F:SharpDX.XAudio2.Fx.VolumeMeterLevels.ChannelCount">
             <summary>	
             <dd> Number of channels being processed. </dd>	
             </summary>	
@@ -2522,7 +2522,7 @@
             <unmanaged>void IXAudio2::GetPerformanceData([Out] XAUDIO2_PERFORMANCE_DATA* pPerfData)</unmanaged>	
             <unmanaged-short>IXAudio2::GetPerformanceData</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.XAudio2.XAudio2.SetDebugConfiguration(System.Nullable{SharpDX.XAudio2.DebugConfiguration},System.IntPtr)">
+        <member name="M:SharpDX.XAudio2.XAudio2.SetDebugConfiguration(SharpDX.XAudio2.DebugConfiguration,System.IntPtr)">
             <summary>	
             Changes global debug logging options for XAudio2.<table><tr><th>Note </th></tr><tr><td>This function has no effect in this version of XAudio2.</td></tr></table>	
             </summary>	
@@ -2533,7 +2533,7 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IXAudio2::SetDebugConfiguration']/*"/>	
             <msdn-id>ee418624</msdn-id>	
-            <unmanaged>void IXAudio2::SetDebugConfiguration([In, Optional] const XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration,[In, Optional] void* pReserved)</unmanaged>	
+            <unmanaged>void IXAudio2::SetDebugConfiguration([In, Value] const XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration,[In, Optional] void* pReserved)</unmanaged>	
             <unmanaged-short>IXAudio2::SetDebugConfiguration</unmanaged-short>	
         </member>
         <member name="M:SharpDX.XAudio2.XAudio2.#ctor">
@@ -3842,7 +3842,7 @@
             <unmanaged>XAPO_FLAG_CHANNELS_MUST_MATCH</unmanaged>	
             <unmanaged-short>XAPO_FLAG_CHANNELS_MUST_MATCH</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.XAPO.PropertyFlags.FramerateMustMatch">
+        <member name="F:SharpDX.XAPO.PropertyFlags.FrameRateMustMatch">
             <summary>	
             No documentation.	
             </summary>	
@@ -3858,7 +3858,7 @@
             <unmanaged>XAPO_FLAG_BITSPERSAMPLE_MUST_MATCH</unmanaged>	
             <unmanaged-short>XAPO_FLAG_BITSPERSAMPLE_MUST_MATCH</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.XAPO.PropertyFlags.BuffercountMustMatch">
+        <member name="F:SharpDX.XAPO.PropertyFlags.BufferCountMustMatch">
             <summary>	
             No documentation.	
             </summary>	

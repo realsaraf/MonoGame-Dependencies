@@ -2705,6 +2705,204 @@
             <param name="width">The width.</param>
             <returns>The number of bytes per row.</returns>
         </member>
+        <member name="T:SharpDX.WIC.ResultCode">
+            <summary>	
+            Functions	
+            </summary>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='SharpDX.WIC.ResultCode']/*"/>	
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Badheader">
+            <summary>Constant Badheader.</summary>
+            <unmanaged>WINCODEC_ERR_BADHEADER</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.UnexpectedMetadataType">
+            <summary>Constant UnexpectedMetadataType.</summary>
+            <unmanaged>WINCODEC_ERR_UNEXPECTEDMETADATATYPE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.InvalidQueryCharacter">
+            <summary>Constant InvalidQueryCharacter.</summary>
+            <unmanaged>WINCODEC_ERR_INVALIDQUERYCHARACTER</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.InvalidParameter">
+            <summary>Constant InvalidParameter.</summary>
+            <unmanaged>WINCODEC_ERR_INVALIDPARAMETER</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Valueoutofrange">
+            <summary>Constant Valueoutofrange.</summary>
+            <unmanaged>WINCODEC_ERR_VALUEOUTOFRANGE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Codectoomanyscanlines">
+            <summary>Constant Codectoomanyscanlines.</summary>
+            <unmanaged>WINCODEC_ERR_CODECTOOMANYSCANLINES</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Propertysize">
+            <summary>Constant Propertysize.</summary>
+            <unmanaged>WINCODEC_ERR_PROPERTYSIZE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.OufOfMemory">
+            <summary>Constant OufOfMemory.</summary>
+            <unmanaged>WINCODEC_ERR_OUTOFMEMORY</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Codecpresent">
+            <summary>Constant Codecpresent.</summary>
+            <unmanaged>WINCODEC_ERR_CODECPRESENT</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.NotInitializeD">
+            <summary>Constant NotInitializeD.</summary>
+            <unmanaged>WINCODEC_ERR_NOTINITIALIZED</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Alreadylocked">
+            <summary>Constant Alreadylocked.</summary>
+            <unmanaged>WINCODEC_ERR_ALREADYLOCKED</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Valueoverflow">
+            <summary>Constant Valueoverflow.</summary>
+            <unmanaged>WINCODEC_ERR_VALUEOVERFLOW</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Paletteunavailable">
+            <summary>Constant Paletteunavailable.</summary>
+            <unmanaged>WINCODEC_ERR_PALETTEUNAVAILABLE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Badstreamdata">
+            <summary>Constant Badstreamdata.</summary>
+            <unmanaged>WINCODEC_ERR_BADSTREAMDATA</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Componentinitializefailure">
+            <summary>Constant Componentinitializefailure.</summary>
+            <unmanaged>WINCODEC_ERR_COMPONENTINITIALIZEFAILURE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Aborted">
+            <summary>Constant Aborted.</summary>
+            <unmanaged>WINCODEC_ERR_ABORTED</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Imagesizeoutofrange">
+            <summary>Constant Imagesizeoutofrange.</summary>
+            <unmanaged>WINCODEC_ERR_IMAGESIZEOUTOFRANGE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.UnsupportedPixelFormat">
+            <summary>Constant UnsupportedPixelFormat.</summary>
+            <unmanaged>WINCODEC_ERR_UNSUPPORTEDPIXELFORMAT</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Componentnotfound">
+            <summary>Constant Componentnotfound.</summary>
+            <unmanaged>WINCODEC_ERR_COMPONENTNOTFOUND</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.InvalidRegistration">
+            <summary>Constant InvalidRegistration.</summary>
+            <unmanaged>WINCODEC_ERR_INVALIDREGISTRATION</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.UnexpectedSize">
+            <summary>Constant UnexpectedSize.</summary>
+            <unmanaged>WINCODEC_ERR_UNEXPECTEDSIZE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Internalerror">
+            <summary>Constant Internalerror.</summary>
+            <unmanaged>WINCODEC_ERR_INTERNALERROR</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.WrongState">
+            <summary>Constant WrongState.</summary>
+            <unmanaged>WINCODEC_ERR_WRONGSTATE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Badmetadataheader">
+            <summary>Constant Badmetadataheader.</summary>
+            <unmanaged>WINCODEC_ERR_BADMETADATAHEADER</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.NotImplemented">
+            <summary>Constant NotImplemented.</summary>
+            <unmanaged>WINCODEC_ERR_NOTIMPLEMENTED</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.StreamWrite">
+            <summary>Constant StreamWrite.</summary>
+            <unmanaged>WINCODEC_ERR_STREAMWRITE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.StreamRead">
+            <summary>Constant StreamRead.</summary>
+            <unmanaged>WINCODEC_ERR_STREAMREAD</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Requestonlyvalidatmetadataroot">
+            <summary>Constant Requestonlyvalidatmetadataroot.</summary>
+            <unmanaged>WINCODEC_ERR_REQUESTONLYVALIDATMETADATAROOT</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.SourceRectangleDoesnotmatchdimensions">
+            <summary>Constant SourceRectangleDoesnotmatchdimensions.</summary>
+            <unmanaged>WINCODEC_ERR_SOURCERECTDOESNOTMATCHDIMENSIONS</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.StreamNotAvailable">
+            <summary>Constant StreamNotAvailable.</summary>
+            <unmanaged>WINCODEC_ERR_STREAMNOTAVAILABLE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.InvalidQueryRequest">
+            <summary>Constant InvalidQueryRequest.</summary>
+            <unmanaged>WINCODEC_ERR_INVALIDQUERYREQUEST</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Base">
+            <summary>Constant Base.</summary>
+            <unmanaged>WINCODEC_ERR_BASE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Unknownimageformat">
+            <summary>Constant Unknownimageformat.</summary>
+            <unmanaged>WINCODEC_ERR_UNKNOWNIMAGEFORMAT</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.GenericError">
+            <summary>Constant GenericError.</summary>
+            <unmanaged>WINCODEC_ERR_GENERIC_ERROR</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.InvalidProgressivelevel">
+            <summary>Constant InvalidProgressivelevel.</summary>
+            <unmanaged>WINCODEC_ERR_INVALIDPROGRESSIVELEVEL</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Insufficientbuffer">
+            <summary>Constant Insufficientbuffer.</summary>
+            <unmanaged>WINCODEC_ERR_INSUFFICIENTBUFFER</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.UnsupportedVersion">
+            <summary>Constant UnsupportedVersion.</summary>
+            <unmanaged>WINCODEC_ERR_UNSUPPORTEDVERSION</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.FrameMissing">
+            <summary>Constant FrameMissing.</summary>
+            <unmanaged>WINCODEC_ERR_FRAMEMISSING</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Codecnothumbnail">
+            <summary>Constant Codecnothumbnail.</summary>
+            <unmanaged>WINCODEC_ERR_CODECNOTHUMBNAIL</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.TooMuchmetadata">
+            <summary>Constant TooMuchmetadata.</summary>
+            <unmanaged>WINCODEC_ERR_TOOMUCHMETADATA</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Badimage">
+            <summary>Constant Badimage.</summary>
+            <unmanaged>WINCODEC_ERR_BADIMAGE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Duplicatemetadatapresent">
+            <summary>Constant Duplicatemetadatapresent.</summary>
+            <unmanaged>WINCODEC_ERR_DUPLICATEMETADATAPRESENT</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Propertynotsupported">
+            <summary>Constant Propertynotsupported.</summary>
+            <unmanaged>WINCODEC_ERR_PROPERTYNOTSUPPORTED</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.UnsupportedOperation">
+            <summary>Constant UnsupportedOperation.</summary>
+            <unmanaged>WINCODEC_ERR_UNSUPPORTEDOPERATION</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Win32error">
+            <summary>Constant Win32error.</summary>
+            <unmanaged>WINCODEC_ERR_WIN32ERROR</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.AccessDenied">
+            <summary>Constant AccessDenied.</summary>
+            <unmanaged>WINCODEC_ERR_ACCESSDENIED</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Propertyunexpectedtype">
+            <summary>Constant Propertyunexpectedtype.</summary>
+            <unmanaged>WINCODEC_ERR_PROPERTYUNEXPECTEDTYPE</unmanaged>
+        </member>
+        <member name="F:SharpDX.WIC.ResultCode.Propertynotfound">
+            <summary>Constant Propertynotfound.</summary>
+            <unmanaged>WINCODEC_ERR_PROPERTYNOTFOUND</unmanaged>
+        </member>
         <member name="T:SharpDX.WIC.Bitmap">
             <summary>	
             <p>Defines methods that add the concept of writeability and static in-memory representations of bitmaps to <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong>. </p>	
@@ -2790,7 +2988,7 @@
             <p>Retrieves the color table for indexed pixel formats.</p>	
             </summary>	
             <param name="paletteRef"><dd>  <p>An <strong><see cref="T:SharpDX.WIC.Palette"/></strong>. A palette can be created using the <strong>CreatePalette</strong> method.</p> </dd></param>	
-            <returns><p>Returns one of the following values.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong>WINCODEC_ERR_PALETTEUNAVAILABLE</strong></dt> </dl> </td><td> <p>The palette was unavailable.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The palette was successfully copied.</p> </td></tr> </table><p>?</p></returns>	
+            <returns><p>Returns one of the following values.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.WIC.ResultCode.Paletteunavailable"/></strong></dt> </dl> </td><td> <p>The palette was unavailable.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The palette was successfully copied.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
             <p> If the <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> is an <strong><see cref="T:SharpDX.WIC.BitmapFrameDecode"/></strong>, the function may return the image's global palette if a frame-level palette is not available. The global palette may also be retrieved using the <strong>CopyPalette</strong> method. </p>	
             </remarks>	
@@ -2961,7 +3159,7 @@
             <param name="dpiY"><dd>  <p>The vertical resolution.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p> This method has no effect on the actual pixels or samples stored in the bitmap.  Instead the interpretation of the sampling rate is modified.  This means that a 96 DPI image which is 96 pixels wide is one inch.  If the physical resolution is modified to 48 DPI, then the bitmap is considered to be 2 inches wide but has the same number of pixels.   If the resolution is less than <strong>REAL_EPSILON</strong> (1.192092896e-07F) the error code <strong>WINCODEC_ERR_INVALIDPARAMETER</strong> is returned.</p>	
+            <p> This method has no effect on the actual pixels or samples stored in the bitmap.  Instead the interpretation of the sampling rate is modified.  This means that a 96 DPI image which is 96 pixels wide is one inch.  If the physical resolution is modified to 48 DPI, then the bitmap is considered to be 2 inches wide but has the same number of pixels.   If the resolution is less than <strong>REAL_EPSILON</strong> (1.192092896e-07F) the error code <strong><see cref="F:SharpDX.WIC.ResultCode.InvalidParameter"/></strong> is returned.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmap::SetResolution']/*"/>	
             <msdn-id>ee690191</msdn-id>	
@@ -3700,7 +3898,7 @@
             <param name="paletteRef">No documentation.</param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p><strong>CopyPalette</strong> returns a global palette (a palette that applies to all the frames in the image) if there is one; otherwise, it returns WINCODEC_ERR_PALETTEUNAVAILABLE. If an image doesn't have a global palette, it may still have a frame-level palette, which can be retrieved using <strong>IWICBitmapFrameDecode::CopyPalette</strong>.</p>	
+            <p><strong>CopyPalette</strong> returns a global palette (a palette that applies to all the frames in the image) if there is one; otherwise, it returns <see cref="F:SharpDX.WIC.ResultCode.Paletteunavailable"/>. If an image doesn't have a global palette, it may still have a frame-level palette, which can be retrieved using <strong>IWICBitmapFrameDecode::CopyPalette</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapDecoder::CopyPalette']/*"/>	
             <msdn-id>ee690091</msdn-id>	
@@ -4148,7 +4346,7 @@
             <p>Sets the global palette for the image.</p>	
             </summary>	
             <param name="paletteRef"><dd>  <p>The <strong><see cref="T:SharpDX.WIC.Palette"/></strong> to use as the global palette.</p> </dd></param>	
-            <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful, or an error value otherwise. </p><p>Returns WINCODEC_ERR_UNSUPPORTEDOPERATION if the feature is not supported by the encoder.</p></returns>	
+            <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful, or an error value otherwise. </p><p>Returns <see cref="F:SharpDX.WIC.ResultCode.UnsupportedOperation"/> if the feature is not supported by the encoder.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapEncoder::SetPalette']/*"/>	
             <msdn-id>ee690126</msdn-id>	
             <unmanaged>HRESULT IWICBitmapEncoder::SetPalette([In, Optional] IWICPalette* pIPalette)</unmanaged>	
@@ -4159,7 +4357,7 @@
             <p>Sets the global thumbnail for the image.</p>	
             </summary>	
             <param name="thumbnailRef"><dd>  <p>The <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> to set as the global thumbnail.</p> </dd></param>	
-            <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful, or an error value otherwise. </p><p>Returns WINCODEC_ERR_UNSUPPORTEDOPERATION if the feature is not supported by the encoder.</p></returns>	
+            <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful, or an error value otherwise. </p><p>Returns <see cref="F:SharpDX.WIC.ResultCode.UnsupportedOperation"/> if the feature is not supported by the encoder.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapEncoder::SetThumbnail']/*"/>	
             <msdn-id>ee690129</msdn-id>	
             <unmanaged>HRESULT IWICBitmapEncoder::SetThumbnail([In, Optional] IWICBitmapSource* pIThumbnail)</unmanaged>	
@@ -4170,7 +4368,7 @@
             <p>Sets the global preview for the image.</p>	
             </summary>	
             <param name="previewRef"><dd>  <p>The <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> to use as the global preview.</p> </dd></param>	
-            <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful, or an error value otherwise. </p><p>Returns WINCODEC_ERR_UNSUPPORTEDOPERATION if the feature is not supported by the encoder.</p></returns>	
+            <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful, or an error value otherwise. </p><p>Returns <see cref="F:SharpDX.WIC.ResultCode.UnsupportedOperation"/> if the feature is not supported by the encoder.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapEncoder::SetPreview']/*"/>	
             <msdn-id>ee690128</msdn-id>	
             <unmanaged>HRESULT IWICBitmapEncoder::SetPreview([In, Optional] IWICBitmapSource* pIPreview)</unmanaged>	
@@ -4589,7 +4787,7 @@
             <p>Requests that the encoder use the specified pixel format.</p>	
             </summary>	
             <param name="pixelFormatRef"><dd>  <p>If the method succeeds, contains the specified pixel format <see cref="T:System.Guid"/>; otherwise, contains the closest supported pixel format <see cref="T:System.Guid"/>. For a list of pixel format GUIDs, see Native Pixel Formats.</p> </dd></param>	
-            <returns><p>Possible return values include the following.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>Success.</p> </td></tr> <tr><td> <dl> <dt><strong>WINCODEC_ERR_WRONGSTATE</strong></dt> </dl> </td><td> <p>The <strong><see cref="M:SharpDX.WIC.BitmapFrameEncode.Initialize(SharpDX.Win32.PropertyBag)"/></strong> method was not called.</p> </td></tr> </table><p>?</p></returns>	
+            <returns><p>Possible return values include the following.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>Success.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.WIC.ResultCode.WrongState"/></strong></dt> </dl> </td><td> <p>The <strong><see cref="M:SharpDX.WIC.BitmapFrameEncode.Initialize(SharpDX.Win32.PropertyBag)"/></strong> method was not called.</p> </td></tr> </table><p>?</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapFrameEncode::SetPixelFormat']/*"/>	
             <msdn-id>ee690151</msdn-id>	
             <unmanaged>HRESULT IWICBitmapFrameEncode::SetPixelFormat([InOut] GUID* pPixelFormat)</unmanaged>	
@@ -4638,7 +4836,7 @@
             <p>Sets the frame thumbnail if supported by the codec.</p>	
             </summary>	
             <param name="thumbnailRef"><dd>  <p>The bitmap source to use as the thumbnail.</p> </dd></param>	
-            <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful, or an error value otherwise. </p><p>Returns WINCODEC_ERR_UNSUPPORTEDOPERATION if the feature is not supported by the encoder.</p></returns>	
+            <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful, or an error value otherwise. </p><p>Returns <see cref="F:SharpDX.WIC.ResultCode.UnsupportedOperation"/> if the feature is not supported by the encoder.</p></returns>	
             <remarks>	
             <p><strong>SetThumbnail</strong> should be called before calling <strong>WritePixels</strong> or <strong>WriteSource</strong>. The thumbnail will not be added to the encoded file if <strong>SetThumbnail</strong> after a call to <strong>WritePixels</strong> or <strong>WriteSource</strong>. </p>	
             </remarks>	
@@ -4655,7 +4853,7 @@
             <param name="stride"><dd>  <p>The <em>stride</em> of the image pixels.</p> </dd></param>	
             <param name="bufferSize"><dd>  <p>The size of the pixel buffer.</p> </dd></param>	
             <param name="pixelsRef"><dd>  <p>A reference to the pixel buffer.</p> </dd></param>	
-            <returns><p>Possible return values include the following.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>Success.</p> </td></tr> <tr><td> <dl> <dt><strong>WINCODEC_ERR_CODECTOOMANYSCANLINES</strong></dt> </dl> </td><td> <p>The value of <em>lineCount</em> is larger than the number of scan lines in the image.</p> </td></tr> </table><p>?</p></returns>	
+            <returns><p>Possible return values include the following.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>Success.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.WIC.ResultCode.Codectoomanyscanlines"/></strong></dt> </dl> </td><td> <p>The value of <em>lineCount</em> is larger than the number of scan lines in the image.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
             <p>Successive <strong>WritePixels</strong> calls are assumed to be sequential scanline access in the output image.</p>	
             </remarks>	
@@ -5383,7 +5581,7 @@
             <param name="blue"><dd>  <p>The blue white point value.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>Due to other white point setting methods (e.g. <strong>SetWhitePointKelvin</strong>), care must be taken by codec implementers to ensure proper interoperability. For instance, if the caller sets via a named white point then the codec implementer may whis to disable reading back the correspoinding Kelvin temperature. In specific cases where the codec implementer wishes to deny a given action because of previous calls, <strong>WINCODEC_ERR_WRONGSTATE</strong> should be returned.</p>	
+            <p>Due to other white point setting methods (e.g. <strong>SetWhitePointKelvin</strong>), care must be taken by codec implementers to ensure proper interoperability. For instance, if the caller sets via a named white point then the codec implementer may whis to disable reading back the correspoinding Kelvin temperature. In specific cases where the codec implementer wishes to deny a given action because of previous calls, <strong><see cref="F:SharpDX.WIC.ResultCode.WrongState"/></strong> should be returned.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::SetWhitePointRGB']/*"/>	
             <msdn-id>ee690263</msdn-id>	
@@ -5410,7 +5608,7 @@
             <param name="whitePoint"><dd>  <p>A bitwise combination of the enumeration values.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>If the named white points are not supported by the raw image or the raw file contains named white points that are not supported by this API, the codec implementer should still mark this capability as supported.</p><p>If the named white points are not supported by the raw image, a best effort should be made to adjust the image to the named white point even when it isn't a pre-defined white point of the raw file.</p><p>If the raw file containes named white points not supported by this API, the codec implementer should support the named white points in the API.</p><p>Due to other white point setting methods (e.g. <strong>SetWhitePointKelvin</strong>), care must be taken by codec implementers to ensure proper interoperability. For instance, if the caller sets via a named white point then the codec implementer may whis to disable reading back the correspoinding Kelvin temperature. In specific cases where the codec implementer wishes to deny a given action because of previous calls, <strong>WINCODEC_ERR_WRONGSTATE</strong> should be returned.</p>	
+            <p>If the named white points are not supported by the raw image or the raw file contains named white points that are not supported by this API, the codec implementer should still mark this capability as supported.</p><p>If the named white points are not supported by the raw image, a best effort should be made to adjust the image to the named white point even when it isn't a pre-defined white point of the raw file.</p><p>If the raw file containes named white points not supported by this API, the codec implementer should support the named white points in the API.</p><p>Due to other white point setting methods (e.g. <strong>SetWhitePointKelvin</strong>), care must be taken by codec implementers to ensure proper interoperability. For instance, if the caller sets via a named white point then the codec implementer may whis to disable reading back the correspoinding Kelvin temperature. In specific cases where the codec implementer wishes to deny a given action because of previous calls, <strong><see cref="F:SharpDX.WIC.ResultCode.WrongState"/></strong> should be returned.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::SetNamedWhitePoint']/*"/>	
             <msdn-id>ee690253</msdn-id>	
@@ -5438,7 +5636,7 @@
             <param name="whitePointKelvin"><dd>  <p>The white point Kelvin value. Acceptable Kelvin values are 1,500 through 30,000.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>Codec implementers should faithfully adjust the color temperature within the range supported natively by the raw image. For values outside the native support range, the codec implementer should provide a best effort representation of the image at that color temperature.</p><p>Codec implementers should return <strong>WINCODEC_ERR_VALUEOUTOFRANGE</strong> if the value is out of defined acceptable range.</p><p>Codec implementers must ensure proper interoperability with other white point setting methods such as <strong>SetWhitePointRGB</strong>. For example, if the caller sets the white point via <strong>SetNamedWhitePoint</strong> then the codec implementer may want to disable reading back the correspoinding Kelvin temperature. In specific cases where the codec implementer wants to deny a given action because of previous calls, <strong>WINCODEC_ERR_WRONGSTATE</strong> should be returned.</p>	
+            <p>Codec implementers should faithfully adjust the color temperature within the range supported natively by the raw image. For values outside the native support range, the codec implementer should provide a best effort representation of the image at that color temperature.</p><p>Codec implementers should return <strong><see cref="F:SharpDX.WIC.ResultCode.Valueoutofrange"/></strong> if the value is out of defined acceptable range.</p><p>Codec implementers must ensure proper interoperability with other white point setting methods such as <strong>SetWhitePointRGB</strong>. For example, if the caller sets the white point via <strong>SetNamedWhitePoint</strong> then the codec implementer may want to disable reading back the correspoinding Kelvin temperature. In specific cases where the codec implementer wants to deny a given action because of previous calls, <strong><see cref="F:SharpDX.WIC.ResultCode.WrongState"/></strong> should be returned.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICDevelopRaw::SetWhitePointKelvin']/*"/>	
             <msdn-id>ee690262</msdn-id>	
@@ -5974,7 +6172,7 @@
             </summary>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>If the commit fails and returns <strong>WINCODEC_ERR_STREAMNOTAVAILABLE</strong>, ensure that the image decoder was loaded using the <strong><see cref="F:SharpDX.WIC.DecodeOptions.CacheOnDemand"/></strong> option. A fast metadata encoder is not supported when the decoder is created using the <strong><see cref="F:SharpDX.WIC.DecodeOptions.CacheOnLoad"/></strong> option. </p><p>If the commit fails for any reason, you will need to re-encode the image to ensure the new metadata is added to the image.</p>	
+            <p>If the commit fails and returns <strong><see cref="F:SharpDX.WIC.ResultCode.StreamNotAvailable"/></strong>, ensure that the image decoder was loaded using the <strong><see cref="F:SharpDX.WIC.DecodeOptions.CacheOnDemand"/></strong> option. A fast metadata encoder is not supported when the decoder is created using the <strong><see cref="F:SharpDX.WIC.DecodeOptions.CacheOnLoad"/></strong> option. </p><p>If the commit fails for any reason, you will need to re-encode the image to ensure the new metadata is added to the image.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICFastMetadataEncoder::Commit']/*"/>	
             <msdn-id>ee690270</msdn-id>	
@@ -7977,7 +8175,7 @@
             <unmanaged>void ID2D1RenderTarget::FillRectangle([In] const D2D_RECT_F* rect,[In] ID2D1Brush* brush)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::FillRectangle</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawRoundedRectangle(SharpDX.Direct2D1.RoundedRect@,SharpDX.Direct2D1.Brush,System.Single,SharpDX.Direct2D1.StrokeStyle)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawRoundedRectangle(SharpDX.Direct2D1.RoundedRectangle@,SharpDX.Direct2D1.Brush,System.Single,SharpDX.Direct2D1.StrokeStyle)">
             <summary>	
             <p> Draws the outline of the specified rounded rectangle using the specified stroke style.</p>	
             </summary>	
@@ -7993,7 +8191,7 @@
             <unmanaged>void ID2D1RenderTarget::DrawRoundedRectangle([In] const D2D1_ROUNDED_RECT* roundedRect,[In] ID2D1Brush* brush,[In] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::DrawRoundedRectangle</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.FillRoundedRectangle(SharpDX.Direct2D1.RoundedRect@,SharpDX.Direct2D1.Brush)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.FillRoundedRectangle(SharpDX.Direct2D1.RoundedRectangle@,SharpDX.Direct2D1.Brush)">
             <summary>	
             <p>Paints the interior of the specified rounded rectangle. </p>	
             </summary>	
@@ -8640,7 +8838,7 @@
             <param name="strokeWidth">A value greater than or equal to 0.0f that specifies the width of the rectangle's stroke. The stroke is centered on the rectangle's outline. </param>
             <unmanaged>void ID2D1RenderTarget::DrawRectangle([In] const D2D1_RECT_F* rect,[In] ID2D1Brush* brush,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawRoundedRectangle(SharpDX.Direct2D1.RoundedRect,SharpDX.Direct2D1.Brush)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawRoundedRectangle(SharpDX.Direct2D1.RoundedRectangle,SharpDX.Direct2D1.Brush)">
             <summary>	
             Draws the outline of the specified rounded rectangle.	
             </summary>	
@@ -8651,7 +8849,7 @@
             <param name="brush">The brush used to paint the rounded rectangle's outline.  </param>
             <unmanaged>void ID2D1RenderTarget::DrawRoundedRectangle([In] const D2D1_ROUNDED_RECT* roundedRect,[In] ID2D1Brush* brush,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawRoundedRectangle(SharpDX.Direct2D1.RoundedRect,SharpDX.Direct2D1.Brush,System.Single)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawRoundedRectangle(SharpDX.Direct2D1.RoundedRectangle,SharpDX.Direct2D1.Brush,System.Single)">
             <summary>	
             Draws the outline of the specified rounded rectangle.	
             </summary>	
@@ -8663,7 +8861,7 @@
             <param name="strokeWidth">The width of the rounded rectangle's stroke. The stroke is centered on the rounded rectangle's outline. The default value is 1.0f.  </param>
             <unmanaged>void ID2D1RenderTarget::DrawRoundedRectangle([In] const D2D1_ROUNDED_RECT* roundedRect,[In] ID2D1Brush* brush,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawRoundedRectangle(SharpDX.Direct2D1.RoundedRect,SharpDX.Direct2D1.Brush,System.Single,SharpDX.Direct2D1.StrokeStyle)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawRoundedRectangle(SharpDX.Direct2D1.RoundedRectangle,SharpDX.Direct2D1.Brush,System.Single,SharpDX.Direct2D1.StrokeStyle)">
             <summary>	
             Draws the outline of the specified rounded rectangle using the specified stroke style.	
             </summary>	
@@ -8763,7 +8961,7 @@
             <param name="content">The type of content the opacity mask contains. The value is used to determine the color space in which the opacity mask is blended. </param>
             <unmanaged>void ID2D1RenderTarget::FillOpacityMask([In] ID2D1Bitmap* opacityMask,[In] ID2D1Brush* brush,[None] D2D1_OPACITY_MASK_CONTENT content,[In, Optional] const D2D1_RECT_F* destinationRectangle,[In, Optional] const D2D1_RECT_F* sourceRectangle)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.FillRoundedRectangle(SharpDX.Direct2D1.RoundedRect,SharpDX.Direct2D1.Brush)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.FillRoundedRectangle(SharpDX.Direct2D1.RoundedRectangle,SharpDX.Direct2D1.Brush)">
             <summary>	
             Paints the interior of the specified rounded rectangle.	
             </summary>	
@@ -16383,7 +16581,7 @@
             <unmanaged>DWRITE_INFORMATIONAL_STRING_WIN32_FAMILY_NAMES</unmanaged>	
             <unmanaged-short>DWRITE_INFORMATIONAL_STRING_WIN32_FAMILY_NAMES</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DirectWrite.InformationalStringId.Win32SubfamilyNames">
+        <member name="F:SharpDX.DirectWrite.InformationalStringId.Win32SubFamilyNames">
             <summary>	
             <dd> <p>Indicates the string containing a GDI-compatible subfamily name.</p> </dd>	
             </summary>	
@@ -16392,7 +16590,7 @@
             <unmanaged>DWRITE_INFORMATIONAL_STRING_WIN32_SUBFAMILY_NAMES</unmanaged>	
             <unmanaged-short>DWRITE_INFORMATIONAL_STRING_WIN32_SUBFAMILY_NAMES</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DirectWrite.InformationalStringId.PreferredFamilyNames">
+        <member name="F:SharpDX.DirectWrite.InformationalStringId.PreferRedFamilyNames">
             <summary>	
             <dd> <p>Indicates the string containing the family name preferred by the designer. This enables font designers to group more than four fonts in a single family without losing compatibility with GDI. This name is typically only present if it differs from the GDI-compatible family name.</p> </dd>	
             </summary>	
@@ -16401,7 +16599,7 @@
             <unmanaged>DWRITE_INFORMATIONAL_STRING_PREFERRED_FAMILY_NAMES</unmanaged>	
             <unmanaged-short>DWRITE_INFORMATIONAL_STRING_PREFERRED_FAMILY_NAMES</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DirectWrite.InformationalStringId.PreferredSubfamilyNames">
+        <member name="F:SharpDX.DirectWrite.InformationalStringId.PreferRedSubFamilyNames">
             <summary>	
             <dd> <p>Indicates the string containing the subfamily name preferred by the designer. This name is typically only present if it differs from the GDI-compatible subfamily name.</p> </dd>	
             </summary>	
@@ -19607,8 +19805,8 @@
             <summary>Constant DisplayFormatNotSupported.</summary>
             <unmanaged>D2DERR_DISPLAY_FORMAT_NOT_SUPPORTED</unmanaged>
         </member>
-        <member name="F:SharpDX.Direct2D1.ResultCode.NotInitialized">
-            <summary>Constant NotInitialized.</summary>
+        <member name="F:SharpDX.Direct2D1.ResultCode.NotInitializeD">
+            <summary>Constant NotInitializeD.</summary>
             <unmanaged>D2DERR_NOT_INITIALIZED</unmanaged>
         </member>
         <member name="F:SharpDX.Direct2D1.ResultCode.TargetNotGdiCompatible">
@@ -20514,7 +20712,7 @@
             <unmanaged>HRESULT ID2D1Factory::CreateRectangleGeometry([In] const D2D_RECT_F* rectangle,[Out, Fast] ID2D1RectangleGeometry** rectangleGeometry)</unmanaged>	
             <unmanaged-short>ID2D1Factory::CreateRectangleGeometry</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Factory.CreateRoundedRectangleGeometry(SharpDX.Direct2D1.RoundedRect@,SharpDX.Direct2D1.RoundedRectangleGeometry)">
+        <member name="M:SharpDX.Direct2D1.Factory.CreateRoundedRectangleGeometry(SharpDX.Direct2D1.RoundedRectangle@,SharpDX.Direct2D1.RoundedRectangleGeometry)">
             <summary>	
             <p> Creates an <strong><see cref="T:SharpDX.Direct2D1.RoundedRectangleGeometry"/></strong>. </p>	
             </summary>	
@@ -21957,7 +22155,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct2D1.RoundedRectangleGeometry.GetRoundedRect(SharpDX.Direct2D1.RoundedRect@)">
+        <member name="M:SharpDX.Direct2D1.RoundedRectangleGeometry.GetRoundedRect(SharpDX.Direct2D1.RoundedRectangle@)">
             <summary>	
             <p>Retrieves a rounded rectangle that describes this rounded rectangle geometry. </p>	
             </summary>	
@@ -21967,7 +22165,7 @@
             <unmanaged>void ID2D1RoundedRectangleGeometry::GetRoundedRect([Out] D2D1_ROUNDED_RECT* roundedRect)</unmanaged>	
             <unmanaged-short>ID2D1RoundedRectangleGeometry::GetRoundedRect</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RoundedRectangleGeometry.#ctor(SharpDX.Direct2D1.Factory,SharpDX.Direct2D1.RoundedRect)">
+        <member name="M:SharpDX.Direct2D1.RoundedRectangleGeometry.#ctor(SharpDX.Direct2D1.Factory,SharpDX.Direct2D1.RoundedRectangle)">
             <summary>	
              Creates an <see cref="T:SharpDX.Direct2D1.RoundedRectangleGeometry"/>. 	
             </summary>	
@@ -23024,7 +23222,7 @@
             <param name="usage">A value that specifies how the render target is remoted and whether it should be GDI-compatible.  Set to <see cref="F:SharpDX.Direct2D1.RenderTargetUsage.None"/> to create a render target that is not compatible with GDI and uses Direct3D command-stream remoting if it  is available.</param>
             <param name="minLevel">A value that specifies the minimum Direct3D feature level required for hardware rendering. If the specified minimum level is not available, the render target uses software rendering if the type  member is set to <see cref="F:SharpDX.Direct2D1.RenderTargetType.Default"/>; if  type  is set to to D2D1_RENDER_TARGET_TYPE_HARDWARE, render target creation fails. A value of <see cref="F:SharpDX.Direct2D1.FeatureLevel.Level_DEFAULT"/> indicates that Direct2D should determine whether the Direct3D feature level of the device is adequate. This field is used only when creating <see cref="T:SharpDX.Direct2D1.WindowRenderTarget"/> and <see cref="T:SharpDX.Direct2D1.DeviceContextRenderTarget"/> objects.	</param>  
         </member>
-        <member name="T:SharpDX.Direct2D1.RoundedRect">
+        <member name="T:SharpDX.Direct2D1.RoundedRectangle">
             <summary>	
             <p> Contains the dimensions and corner radii of a rounded rectangle.</p>	
             </summary>	
@@ -23036,7 +23234,7 @@
             <unmanaged>D2D1_ROUNDED_RECT</unmanaged>	
             <unmanaged-short>D2D1_ROUNDED_RECT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct2D1.RoundedRect.Rect">
+        <member name="F:SharpDX.Direct2D1.RoundedRectangle.Rect">
             <summary>	
             <dd> <p>The coordinates of the rectangle.</p> </dd>	
             </summary>	
@@ -23045,7 +23243,7 @@
             <unmanaged>D2D_RECT_F rect</unmanaged>	
             <unmanaged-short>D2D_RECT_F rect</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct2D1.RoundedRect.RadiusX">
+        <member name="F:SharpDX.Direct2D1.RoundedRectangle.RadiusX">
             <summary>	
             <dd> <p>The x-radius for the quarter ellipse that is drawn to replace every corner of the rectangle.</p> </dd>	
             </summary>	
@@ -23054,7 +23252,7 @@
             <unmanaged>float radiusX</unmanaged>	
             <unmanaged-short>float radiusX</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Direct2D1.RoundedRect.RadiusY">
+        <member name="F:SharpDX.Direct2D1.RoundedRectangle.RadiusY">
             <summary>	
             <dd> <p>The y-radius for the quarter ellipse that is drawn to replace every corner of the rectangle.</p> </dd>	
             </summary>	
