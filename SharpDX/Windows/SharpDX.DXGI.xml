@@ -2436,8 +2436,8 @@
             <summary>Constant DeviceHung.</summary>
             <unmanaged>DXGI_ERROR_DEVICE_HUNG</unmanaged>
         </member>
-        <member name="F:SharpDX.DXGI.ResultCode.RemoteOutofmemory">
-            <summary>Constant RemoteOutofmemory.</summary>
+        <member name="F:SharpDX.DXGI.ResultCode.RemoteOufOfMemory">
+            <summary>Constant RemoteOufOfMemory.</summary>
             <unmanaged>DXGI_ERROR_REMOTE_OUTOFMEMORY</unmanaged>
         </member>
         <member name="F:SharpDX.DXGI.ResultCode.MoreData">
@@ -3069,15 +3069,15 @@
             <unmanaged>HRESULT IDXGISurface::GetDesc([Out] DXGI_SURFACE_DESC* pDesc)</unmanaged>	
             <unmanaged-short>IDXGISurface::GetDesc</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRect@,System.Int32)">
+        <member name="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRectangle@,System.Int32)">
             <summary>	
             <p>Get a reference to the data contained in the surface, and deny GPU access to the surface.</p>	
             </summary>	
-            <param name="lockedRectRef"><dd>  <p>A reference to the surface data (see <strong><see cref="T:SharpDX.DXGI.MappedRect"/></strong>).</p> </dd></param>	
+            <param name="lockedRectRef"><dd>  <p>A reference to the surface data (see <strong><see cref="T:SharpDX.DXGI.MappedRectangle"/></strong>).</p> </dd></param>	
             <param name="mapFlags"><dd>  <p>CPU read-write flags. These flags can be combined with a logical OR. </p> <ul> <li><see cref="F:SharpDX.DXGI.MapFlags.Read"/> - Allow CPU read access.</li> <li><see cref="F:SharpDX.DXGI.MapFlags.Write"/> - Allow CPU write access.</li> <li><see cref="F:SharpDX.DXGI.MapFlags.Discard"/> - Discard the previous contents of a resource when it is mapped.</li> </ul> </dd></param>	
             <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful; otherwise, returns one of the error codes that are described in the DXGI_ERROR topic.</p></returns>	
             <remarks>	
-            <p>Use <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRect@,System.Int32)"/></strong> to access a surface from the CPU. To release a mapped surface (and allow GPU access) call <strong><see cref="M:SharpDX.DXGI.Surface.Unmap"/></strong>.</p>	
+            <p>Use <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRectangle@,System.Int32)"/></strong> to access a surface from the CPU. To release a mapped surface (and allow GPU access) call <strong><see cref="M:SharpDX.DXGI.Surface.Unmap"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGISurface::Map']/*"/>	
             <msdn-id>bb174567</msdn-id>	
@@ -3086,7 +3086,7 @@
         </member>
         <member name="M:SharpDX.DXGI.Surface.Unmap">
             <summary>	
-            <p>Invalidate the reference to the surface retrieved by <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRect@,System.Int32)"/></strong> and re-enable GPU access to the resource.</p>	
+            <p>Invalidate the reference to the surface retrieved by <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRectangle@,System.Int32)"/></strong> and re-enable GPU access to the resource.</p>	
             </summary>	
             <returns><p>Returns <see cref="F:SharpDX.Result.Ok"/> if successful; otherwise, returns one of the error codes that are described in the DXGI_ERROR topic.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDXGISurface::Unmap']/*"/>	
@@ -3821,19 +3821,19 @@
             <unmanaged>float ControlPointPositions[1025]</unmanaged>	
             <unmanaged-short>float ControlPointPositions</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.DXGI.MappedRect">
+        <member name="T:SharpDX.DXGI.MappedRectangle">
             <summary>	
             <p>Describes a mapped rectangle that is used to access a surface.</p>	
             </summary>	
             <remarks>	
-            <p>The <strong><see cref="T:SharpDX.DXGI.MappedRect"/></strong> structure is initialized by the <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRect@,System.Int32)"/></strong> method.</p>	
+            <p>The <strong><see cref="T:SharpDX.DXGI.MappedRectangle"/></strong> structure is initialized by the <strong><see cref="M:SharpDX.DXGI.Surface.Map(SharpDX.DXGI.MappedRectangle@,System.Int32)"/></strong> method.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DXGI_MAPPED_RECT']/*"/>	
             <msdn-id>bb173063</msdn-id>	
             <unmanaged>DXGI_MAPPED_RECT</unmanaged>	
             <unmanaged-short>DXGI_MAPPED_RECT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.MappedRect.Pitch">
+        <member name="F:SharpDX.DXGI.MappedRectangle.Pitch">
             <summary>	
             <dd> <p>A value that describes the width, in bytes, of the surface.</p> </dd>	
             </summary>	
@@ -3842,7 +3842,7 @@
             <unmanaged>int Pitch</unmanaged>	
             <unmanaged-short>int Pitch</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DXGI.MappedRect.PBits">
+        <member name="F:SharpDX.DXGI.MappedRectangle.PBits">
             <summary>	
             <dd> <p>A reference to the image buffer of the surface.</p> </dd>	
             </summary>	

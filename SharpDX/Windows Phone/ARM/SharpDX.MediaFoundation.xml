@@ -126,11 +126,11 @@
             <unmanaged>HRESULT IMFByteStream::EndWrite([In] IMFAsyncResult* pResult,[Out] unsigned int* pcbWritten)</unmanaged>	
             <unmanaged-short>IMFByteStream::EndWrite</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.IByteStream.Seek(SharpDX.MediaFoundation.BytestreamSeekOrigin,System.Int64,System.Int32)">
+        <member name="M:SharpDX.MediaFoundation.IByteStream.Seek(SharpDX.MediaFoundation.ByteStreamSeekOrigin,System.Int64,System.Int32)">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Moves the current position in the stream by a specified offset.</p>	
             </summary>	
-            <param name="seekOrigin"><dd> <p> Specifies the origin of the seek as a member of the <strong><see cref="T:SharpDX.MediaFoundation.BytestreamSeekOrigin"/></strong> enumeration. The offset is calculated relative to this position. </p> </dd></param>	
+            <param name="seekOrigin"><dd> <p> Specifies the origin of the seek as a member of the <strong><see cref="!:SharpDX.MediaFoundation.BytestreamSeekOrigin"/></strong> enumeration. The offset is calculated relative to this position. </p> </dd></param>	
             <param name="llSeekOffset"><dd> <p> Specifies the new position, as a byte offset from the seek origin. </p> </dd></param>	
             <param name="dwSeekFlags"><dd> <p> Specifies zero or more flags. The following flags are defined. </p> <table> <tr><th>Value</th><th>Meaning</th></tr> <tr><td><dl> <dt><strong>MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO</strong></dt> </dl> </td><td> <p> All pending I/O requests are canceled after the seek request completes successfully. </p> </td></tr> </table> <p>?</p> </dd></param>	
             <returns>The new position after the seek</returns>	
@@ -308,11 +308,11 @@
             <unmanaged>HRESULT IMFByteStream::EndWrite([In] IMFAsyncResult* pResult,[Out] unsigned int* pcbWritten)</unmanaged>	
             <unmanaged-short>IMFByteStream::EndWrite</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.ByteStream.Seek(SharpDX.MediaFoundation.BytestreamSeekOrigin,System.Int64,System.Int32)">
+        <member name="M:SharpDX.MediaFoundation.ByteStream.Seek(SharpDX.MediaFoundation.ByteStreamSeekOrigin,System.Int64,System.Int32)">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Moves the current position in the stream by a specified offset.</p>	
             </summary>	
-            <param name="seekOrigin"><dd> <p> Specifies the origin of the seek as a member of the <strong><see cref="T:SharpDX.MediaFoundation.BytestreamSeekOrigin"/></strong> enumeration. The offset is calculated relative to this position. </p> </dd></param>	
+            <param name="seekOrigin"><dd> <p> Specifies the origin of the seek as a member of the <strong><see cref="!:SharpDX.MediaFoundation.BytestreamSeekOrigin"/></strong> enumeration. The offset is calculated relative to this position. </p> </dd></param>	
             <param name="llSeekOffset"><dd> <p> Specifies the new position, as a byte offset from the seek origin. </p> </dd></param>	
             <param name="dwSeekFlags"><dd> <p> Specifies zero or more flags. The following flags are defined. </p> <table> <tr><th>Value</th><th>Meaning</th></tr> <tr><td><dl> <dt><strong>MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO</strong></dt> </dl> </td><td> <p> All pending I/O requests are canceled after the seek request completes successfully. </p> </td></tr> </table> <p>?</p> </dd></param>	
             <returns>The new position after the seek</returns>	
@@ -542,11 +542,11 @@
             <unmanaged>HRESULT IMFByteStream::EndWrite([In] IMFAsyncResult* pResult,[Out] unsigned int* pcbWritten)</unmanaged>	
             <unmanaged-short>IMFByteStream::EndWrite</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.ByteStream.Seek_(SharpDX.MediaFoundation.BytestreamSeekOrigin,System.Int64,System.Int32,System.Int64@)">
+        <member name="M:SharpDX.MediaFoundation.ByteStream.Seek_(SharpDX.MediaFoundation.ByteStreamSeekOrigin,System.Int64,System.Int32,System.Int64@)">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Moves the current position in the stream by a specified offset.</p>	
             </summary>	
-            <param name="seekOrigin"><dd> <p> Specifies the origin of the seek as a member of the <strong><see cref="T:SharpDX.MediaFoundation.BytestreamSeekOrigin"/></strong> enumeration. The offset is calculated relative to this position. </p> </dd></param>	
+            <param name="seekOrigin"><dd> <p> Specifies the origin of the seek as a member of the <strong><see cref="T:SharpDX.MediaFoundation.ByteStreamSeekOrigin"/></strong> enumeration. The offset is calculated relative to this position. </p> </dd></param>	
             <param name="llSeekOffset"><dd> <p> Specifies the new position, as a byte offset from the seek origin. </p> </dd></param>	
             <param name="dwSeekFlags"><dd> <p> Specifies zero or more flags. The following flags are defined. </p> <table> <tr><th>Value</th><th>Meaning</th></tr> <tr><td><dl> <dt><strong>MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO</strong></dt> </dl> </td><td> <p> All pending I/O requests are canceled after the seek request completes successfully. </p> </td></tr> </table> <p>?</p> </dd></param>	
             <param name="qwCurrentPositionRef"><dd> <p> Receives the new position after the seek. </p> </dd></param>	
@@ -831,16 +831,16 @@
             <summary>Constant ClsidMFMediaEngineClassFactory.</summary>
             <unmanaged>CLSID_MFMediaEngineClassFactory</unmanaged>
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaEngineClassFactory.CreateInstance(SharpDX.MediaFoundation.MediaEngineCreateflags,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.MediaEngine)">
+        <member name="M:SharpDX.MediaFoundation.MediaEngineClassFactory.CreateInstance(SharpDX.MediaFoundation.MediaEngineCreateFlags,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.MediaEngine)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Creates a new instance of the Media Engine.</p>	
             </summary>	
-            <param name="flags"><dd> <p>A bitwise <strong>OR</strong> of zero or more flags from the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineCreateflags"/></strong> enumeration.</p> </dd></param>	
+            <param name="flags"><dd> <p>A bitwise <strong>OR</strong> of zero or more flags from the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineCreateFlags"/></strong> enumeration.</p> </dd></param>	
             <param name="attrRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaAttributes"/></strong> interface of an attribute store. </p> <p>This parameter  specifies configuration attributes for the Media Engine. Call <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAttributes(SharpDX.MediaFoundation.MediaAttributes,System.Int32)"/></strong> to create the attribute store. Then, set one or more attributes from the list of Media Engine Attributes. For details, see Remarks.</p> </dd></param>	
             <param name="playerOut"><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngine"/></strong> interface. The caller must release the interface.</p> </dd></param>	
             <returns><p>This method can return one of these values.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>Success.</p> </td></tr> <tr><td> <dl> <dt><strong>MF_E_ATTRIBUTENOTFOUND</strong></dt> </dl> </td><td> <p>A required attribute was missing from <em>pAttr</em>, or an invalid combination of attributes was used.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
-            <p>Before calling this method, call <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.Startup(System.Int32,System.Int32)"/></strong>.</p><p>The Media Engine supports three distinct modes:</p><table> <tr><th>Mode</th><th>Description</th></tr> <tr><td>Frame-server mode</td><td> <p>In this mode, the Media Engine delivers uncompressed video frames to the application. The application is responsible for displaying each frame, using Microsoft Direct3D or any other rendering technique. </p> <p>The Media Engine renders the audio; the application is not responsible for audio rendering.</p> <p>Frame-server mode is the default mode. </p> </td></tr> <tr><td>Rendering mode</td><td> <p>In this mode, the Media Engine renders both audio and video. The video is rendered to a window or Microsoft DirectComposition visual provided by the application.</p> <p>To enable rendering mode, set either the MF_MEDIA_ENGINE_PLAYBACK_HWND attribute or the  MF_MEDIA_ENGINE_PLAYBACK_VISUAL attribute.</p> </td></tr> <tr><td>Audio  mode</td><td> <p>In this mode, the Media Engine renders audio only, with no video.</p> <p>To enable audio mode, set the <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineCreateflags.Audioonly"/></strong> flag in the <em>dwFlags</em> parameter.</p> </td></tr> </table><p>?</p>Intialization Attributes<p>The following attributes are defined for the <em>pAttr</em> parameter. Some are required, and some are optional, depending on the  mode you want. </p><table> <tr><th>Feature</th><th>Attributes</th><th>Frame Server Mode</th><th>Rendering Mode</th><th>Audio Mode</th></tr> <tr><td>Event callback</td><td> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.Callback"/> </td><td>Required.</td><td>Required.</td><td>Required.</td></tr> <tr><td>Render target</td><td> <p>One of the following:</p> <dl> <dd> MF_MEDIA_ENGINE_PLAYBACK_HWND </dd> <dd> MF_MEDIA_ENGINE_PLAYBACK_VISUAL </dd> </dl> <p>These attributes are mutually exclusive. Setting either of these attributes puts the Media Engine into rendering mode.</p> </td><td>Do not set.</td><td>Required. </td><td>Do not set.</td></tr> <tr><td>Direct3D format</td><td> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.VideoOutputFormat"/> </td><td>Required.</td><td>Optional.</td><td>Do not set.</td></tr> <tr><td>Microsoft DirectX Graphics Infrastructure (DXGI) device  manager</td><td> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.DxgiManager"/> </td><td>Optional.</td><td>Optional.</td><td>Do not set.</td></tr> <tr><td>Media Engine extensions</td><td> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.Extension"/> </td><td>Optional.</td><td>Optional.</td><td>Optional.</td></tr> <tr><td>Content protection</td><td> <p>Any of the following:</p> <dl> <dd> MF_MEDIA_ENGINE_OPM_HWND </dd> <dd> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.ContentProtectionFlags"/> </dd> <dd> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.ContentProtectionManager"/> </dd> </dl> </td><td>Optional.</td><td>Optional.</td><td>Optional.</td></tr> <tr><td>Audio playback</td><td> <p>Any of the following:</p> <dl> <dd> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.AudioCategory"/> </dd> <dd> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.AudioEndpointRole"/> </dd> </dl> </td><td>Optional.</td><td>Optional.</td><td>Optional.</td></tr> </table><p>?</p>	
+            <p>Before calling this method, call <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.Startup(System.Int32,System.Int32)"/></strong>.</p><p>The Media Engine supports three distinct modes:</p><table> <tr><th>Mode</th><th>Description</th></tr> <tr><td>Frame-server mode</td><td> <p>In this mode, the Media Engine delivers uncompressed video frames to the application. The application is responsible for displaying each frame, using Microsoft Direct3D or any other rendering technique. </p> <p>The Media Engine renders the audio; the application is not responsible for audio rendering.</p> <p>Frame-server mode is the default mode. </p> </td></tr> <tr><td>Rendering mode</td><td> <p>In this mode, the Media Engine renders both audio and video. The video is rendered to a window or Microsoft DirectComposition visual provided by the application.</p> <p>To enable rendering mode, set either the MF_MEDIA_ENGINE_PLAYBACK_HWND attribute or the  MF_MEDIA_ENGINE_PLAYBACK_VISUAL attribute.</p> </td></tr> <tr><td>Audio  mode</td><td> <p>In this mode, the Media Engine renders audio only, with no video.</p> <p>To enable audio mode, set the <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.AudioOnly"/></strong> flag in the <em>dwFlags</em> parameter.</p> </td></tr> </table><p>?</p>Intialization Attributes<p>The following attributes are defined for the <em>pAttr</em> parameter. Some are required, and some are optional, depending on the  mode you want. </p><table> <tr><th>Feature</th><th>Attributes</th><th>Frame Server Mode</th><th>Rendering Mode</th><th>Audio Mode</th></tr> <tr><td>Event callback</td><td> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.Callback"/> </td><td>Required.</td><td>Required.</td><td>Required.</td></tr> <tr><td>Render target</td><td> <p>One of the following:</p> <dl> <dd> MF_MEDIA_ENGINE_PLAYBACK_HWND </dd> <dd> MF_MEDIA_ENGINE_PLAYBACK_VISUAL </dd> </dl> <p>These attributes are mutually exclusive. Setting either of these attributes puts the Media Engine into rendering mode.</p> </td><td>Do not set.</td><td>Required. </td><td>Do not set.</td></tr> <tr><td>Direct3D format</td><td> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.VideoOutputFormat"/> </td><td>Required.</td><td>Optional.</td><td>Do not set.</td></tr> <tr><td>Microsoft DirectX Graphics Infrastructure (DXGI) device  manager</td><td> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.DxgiManager"/> </td><td>Optional.</td><td>Optional.</td><td>Do not set.</td></tr> <tr><td>Media Engine extensions</td><td> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.Extension"/> </td><td>Optional.</td><td>Optional.</td><td>Optional.</td></tr> <tr><td>Content protection</td><td> <p>Any of the following:</p> <dl> <dd> MF_MEDIA_ENGINE_OPM_HWND </dd> <dd> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.ContentProtectionFlags"/> </dd> <dd> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.ContentProtectionManager"/> </dd> </dl> </td><td>Optional.</td><td>Optional.</td><td>Optional.</td></tr> <tr><td>Audio playback</td><td> <p>Any of the following:</p> <dl> <dd> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.AudioCategory"/> </dd> <dd> <see cref="F:SharpDX.MediaFoundation.MediaEngineAttributeKeys.AudioEndpointRole"/> </dd> </dl> </td><td>Optional.</td><td>Optional.</td><td>Optional.</td></tr> </table><p>?</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngineClassFactory::CreateInstance']/*"/>	
             <msdn-id>hh447921</msdn-id>	
@@ -940,7 +940,7 @@
             <param name="srcElementsRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface. The caller must implement this interface. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>This method corresponds to adding a list of <strong>source</strong> elements to a media element in HTML5. </p><p>The Media Engine tries to load each item in the <em>pSrcElements</em> list, until it finds one that loads successfully. After this method is called, the application can use the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface to update the list at any time. To reload the list, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method completes asynchronously. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadstart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadedmetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadeddata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplaythrough"/></strong></li> </ul><p>If the Media Engine is unable to load a URL, it sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>If the application also calls <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong>, the URL passed to <strong>SetSource</strong> takes precedence over the list given to <strong>SetSourceElements</strong>.</p>	
+            <p>This method corresponds to adding a list of <strong>source</strong> elements to a media element in HTML5. </p><p>The Media Engine tries to load each item in the <em>pSrcElements</em> list, until it finds one that loads successfully. After this method is called, the application can use the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface to update the list at any time. To reload the list, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method completes asynchronously. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load a URL, it sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>If the application also calls <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong>, the URL passed to <strong>SetSource</strong> takes precedence over the list given to <strong>SetSourceElements</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetSourceElements']/*"/>	
             <msdn-id>hh448018</msdn-id>	
@@ -954,7 +954,7 @@
             <param name="urlRef"><dd> <p>The URL of the media resource.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>This method corresponds to setting the <strong>src</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>The URL specified by this method takes precedence over media resources specified in the <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong> method. To load the URL, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method asynchronously loads the URL. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadstart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadedmetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadeddata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplaythrough"/></strong></li> </ul><p>If the Media Engine is unable to load the URL, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p>	
+            <p>This method corresponds to setting the <strong>src</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>The URL specified by this method takes precedence over media resources specified in the <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong> method. To load the URL, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method asynchronously loads the URL. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load the URL, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetSource']/*"/>	
             <msdn-id>hh448017</msdn-id>	
@@ -1035,19 +1035,19 @@
             </summary>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>The main purpose of this method is to reload a list of source elements after updating the list. For more information, see <strong>SetSourceElements</strong>. Otherwise, calling this method is generally not required. To load a new media source, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong>.</p><p>The <strong>Load</strong> method explictly invokes the Media Engine's media resource loading algorithm. Before calling this method, you must set the media resource by calling <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong>. </p><p>This method completes asynchronously. When the <strong>Load</strong> operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadstart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadedmetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadeddata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplaythrough"/></strong></li> </ul><p>If the Media Engine is unable to load the file, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>This method corresponds to the <strong>load</strong> method of the <strong>HTMLMediaElement</strong> interface in HTML5. </p>	
+            <p>The main purpose of this method is to reload a list of source elements after updating the list. For more information, see <strong>SetSourceElements</strong>. Otherwise, calling this method is generally not required. To load a new media source, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong>.</p><p>The <strong>Load</strong> method explictly invokes the Media Engine's media resource loading algorithm. Before calling this method, you must set the media resource by calling <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong>. </p><p>This method completes asynchronously. When the <strong>Load</strong> operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load the file, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>This method corresponds to the <strong>load</strong> method of the <strong>HTMLMediaElement</strong> interface in HTML5. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::Load']/*"/>	
             <msdn-id>hh448005</msdn-id>	
             <unmanaged>HRESULT IMFMediaEngine::Load()</unmanaged>	
             <unmanaged-short>IMFMediaEngine::Load</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaEngine.CanPlayType(System.String,SharpDX.MediaFoundation.MediaEngineCanplay@)">
+        <member name="M:SharpDX.MediaFoundation.MediaEngine.CanPlayType(System.String,SharpDX.MediaFoundation.MediaEngineCanPlay@)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries how likely it is that the Media Engine can play a specified type of media resource.</p>	
             </summary>	
             <param name="type"><dd> <p>A string that contains a MIME type with an optional codecs parameter, as defined in RFC 4281.</p> </dd></param>	
-            <param name="answerRef"><dd> <p>Receives an <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineCanplay"/></strong> enumeration value.</p> </dd></param>	
+            <param name="answerRef"><dd> <p>Receives an <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineCanPlay"/></strong> enumeration value.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
             <p>This method corresponds to the <strong>canPlayType</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>The <strong>canPlayType</strong> attribute defines the following values.</p><table> <tr><th>Value</th><th>Description</th></tr> <tr><td>"" (empty string)</td><td>The user-agent cannot play the resource, or the resource type is "application/octet-stream".</td></tr> <tr><td>"probably"</td><td>The user-agent probably can play the resource.</td></tr> <tr><td>"maybe"</td><td>Neither of the previous values applies.</td></tr> </table><p>?</p><p>The value "probably" is used because a MIME type for a media resource is generally not a complete description of the resource. For example, "video/mp4" specifies an MP4 file with video, but does not describe the codec. Even with the optional codecs parameter, the MIME type omits some information, such as the actual coded bit rate. Therefore, it is usually impossible to be certain that playback is possible until the actual media resource is opened.</p>	
@@ -1129,7 +1129,7 @@
             </summary>	
             <returns><p>Returns the duration, in seconds. If no media data is available, the method returns not-a-number (NaN). If the duration is unbounded, the method returns an infinite value.</p></returns>	
             <remarks>	
-            <p>This method corresponds to the <strong>duration</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>If the duration changes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Durationchange"/></strong> event. See <strong><see cref="!:SharpDX.MediaFoundation.MediaEngineNotify.EventNotify"/></strong>.</p>	
+            <p>This method corresponds to the <strong>duration</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>If the duration changes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.DurationChange"/></strong> event. See <strong><see cref="!:SharpDX.MediaFoundation.MediaEngineNotify.EventNotify"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::GetDuration']/*"/>	
             <msdn-id>hh447984</msdn-id>	
@@ -1362,7 +1362,7 @@
             <param name="volume"><dd> <p>The volume level. Volume is expressed as an attenuation level, where 0.0 indicates silence and 1.0 indicates full volume (no attenuation). </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>When the audio balance changes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Volumechange"/></strong> event. See <strong>IMFMediaEventNotify::EventNotify</strong>.</p>	
+            <p>When the audio balance changes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.VolumeChange"/></strong> event. See <strong>IMFMediaEventNotify::EventNotify</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetVolume']/*"/>	
             <msdn-id>hh448019</msdn-id>	
@@ -1461,7 +1461,7 @@
             <unmanaged>HRESULT IMFMediaEngine::OnVideoStreamTick([Out] longlong* pPts)</unmanaged>	
             <unmanaged-short>IMFMediaEngine::OnVideoStreamTick</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaEngine.#ctor(SharpDX.MediaFoundation.MediaEngineClassFactory,SharpDX.MediaFoundation.MediaEngineAttributes,SharpDX.MediaFoundation.MediaEngineCreateflags,SharpDX.MediaFoundation.MediaEngine.MediaEngineNotifyDelegate)">
+        <member name="M:SharpDX.MediaFoundation.MediaEngine.#ctor(SharpDX.MediaFoundation.MediaEngineClassFactory,SharpDX.MediaFoundation.MediaEngineAttributes,SharpDX.MediaFoundation.MediaEngineCreateFlags,SharpDX.MediaFoundation.MediaEngine.MediaEngineNotifyDelegate)">
             <summary>
             Initializes an instance of the <see cref="T:SharpDX.MediaFoundation.MediaEngine"/> class.
             </summary>
@@ -1510,7 +1510,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets a list of media sources.</p>	
             </summary>	
             <remarks>	
-            <p>This method corresponds to adding a list of <strong>source</strong> elements to a media element in HTML5. </p><p>The Media Engine tries to load each item in the <em>pSrcElements</em> list, until it finds one that loads successfully. After this method is called, the application can use the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface to update the list at any time. To reload the list, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method completes asynchronously. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadstart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadedmetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadeddata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplaythrough"/></strong></li> </ul><p>If the Media Engine is unable to load a URL, it sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>If the application also calls <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong>, the URL passed to <strong>SetSource</strong> takes precedence over the list given to <strong>SetSourceElements</strong>.</p>	
+            <p>This method corresponds to adding a list of <strong>source</strong> elements to a media element in HTML5. </p><p>The Media Engine tries to load each item in the <em>pSrcElements</em> list, until it finds one that loads successfully. After this method is called, the application can use the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface to update the list at any time. To reload the list, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method completes asynchronously. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load a URL, it sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>If the application also calls <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong>, the URL passed to <strong>SetSource</strong> takes precedence over the list given to <strong>SetSourceElements</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetSourceElements']/*"/>	
             <msdn-id>hh448018</msdn-id>	
@@ -1523,7 +1523,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the URL of a media resource.</p>	
             </summary>	
             <remarks>	
-            <p>This method corresponds to setting the <strong>src</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>The URL specified by this method takes precedence over media resources specified in the <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong> method. To load the URL, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method asynchronously loads the URL. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadstart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadedmetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadeddata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplaythrough"/></strong></li> </ul><p>If the Media Engine is unable to load the URL, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p>	
+            <p>This method corresponds to setting the <strong>src</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>The URL specified by this method takes precedence over media resources specified in the <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong> method. To load the URL, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method asynchronously loads the URL. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load the URL, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetSource']/*"/>	
             <msdn-id>hh448017</msdn-id>	
@@ -1627,7 +1627,7 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Gets the duration of the media resource.</p>	
             </summary>	
             <remarks>	
-            <p>This method corresponds to the <strong>duration</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>If the duration changes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Durationchange"/></strong> event. See <strong><see cref="!:SharpDX.MediaFoundation.MediaEngineNotify.EventNotify"/></strong>.</p>	
+            <p>This method corresponds to the <strong>duration</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>If the duration changes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.DurationChange"/></strong> event. See <strong><see cref="!:SharpDX.MediaFoundation.MediaEngineNotify.EventNotify"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::GetDuration']/*"/>	
             <msdn-id>hh447984</msdn-id>	
@@ -1868,7 +1868,7 @@
             <param name="balance"><dd> <p>The audio balance. The value can be any number in the following range (inclusive). </p> <table> <tr><th>Value</th><th>Meaning</th></tr> <tr><td> <dl> <dt>-1</dt> </dl> </td><td> <p>The left channel is at full volume; the right channel is silent.</p> </td></tr> <tr><td> <dl> <dt>1</dt> </dl> </td><td> <p>The right channel is at full volume; the left channel is silent.</p> </td></tr> </table> <p>?</p> <p>If the value is zero, the left and right channels are at equal volumes. The default value is zero. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>When the audio balance changes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Balancechange"/></strong> event. See <strong>IMFMediaEventNotify::EventNotify</strong>.</p>	
+            <p>When the audio balance changes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.BalanceChange"/></strong> event. See <strong>IMFMediaEventNotify::EventNotify</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngineEx::SetBalance']/*"/>	
             <msdn-id>hh447954</msdn-id>	
@@ -1896,7 +1896,7 @@
             <param name="forward"><dd> <p>Specify <strong>TRUE</strong> to step forward or <strong><see cref="F:SharpDX.Result.False"/></strong> to step backward.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>The frame-step direction is independent of the current playback direction.</p><p>This method completes asynchronously. When the operation completes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Framestepcompleted"/></strong> event and enters the paused state.</p>	
+            <p>The frame-step direction is independent of the current playback direction.</p><p>This method completes asynchronously. When the operation completes, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.FrameStepCompleted"/></strong> event and enters the paused state.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngineEx::FrameStep']/*"/>	
             <msdn-id>hh447933</msdn-id>	
@@ -2574,7 +2574,7 @@
             <unmanaged>MF2DBuffer_LockFlags_ReadWrite</unmanaged>	
             <unmanaged-short>MF2DBuffer_LockFlags_ReadWrite</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.MediaFoundation.BytestreamSeekOrigin">
+        <member name="T:SharpDX.MediaFoundation.ByteStreamSeekOrigin">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Specifies the origin for a seek request.</p>	
             </summary>	
@@ -2583,7 +2583,7 @@
             <unmanaged>MFBYTESTREAM_SEEK_ORIGIN</unmanaged>	
             <unmanaged-short>MFBYTESTREAM_SEEK_ORIGIN</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamSeekOrigin.MsoBegin">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamSeekOrigin.MsoBegin">
             <summary>	
             <dd> <p>The seek position is specified relative to the start of the stream.</p> </dd>	
             </summary>	
@@ -2592,7 +2592,7 @@
             <unmanaged>msoBegin</unmanaged>	
             <unmanaged-short>msoBegin</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamSeekOrigin.MsoCurrent">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamSeekOrigin.MsoCurrent">
             <summary>	
             <dd> <p>The seek position is specified relative to the current read/write position in the stream.</p> </dd>	
             </summary>	
@@ -2609,7 +2609,7 @@
             <unmanaged>_DMO_INPUT_DATA_BUFFER_FLAGS</unmanaged>	
             <unmanaged-short>_DMO_INPUT_DATA_BUFFER_FLAGS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoInputDataBufferFlags.DmoInputDataBufferfSyncpoint">
+        <member name="F:SharpDX.MediaFoundation.DmoInputDataBufferFlags.DmoInputDataBufferFSyncpoint">
             <summary>	
             No documentation.	
             </summary>	
@@ -2617,7 +2617,7 @@
             <unmanaged>DMO_INPUT_DATA_BUFFERF_SYNCPOINT</unmanaged>	
             <unmanaged-short>DMO_INPUT_DATA_BUFFERF_SYNCPOINT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoInputDataBufferFlags.DmoInputDataBufferfTime">
+        <member name="F:SharpDX.MediaFoundation.DmoInputDataBufferFlags.DmoInputDataBufferFTime">
             <summary>	
             No documentation.	
             </summary>	
@@ -2625,7 +2625,7 @@
             <unmanaged>DMO_INPUT_DATA_BUFFERF_TIME</unmanaged>	
             <unmanaged-short>DMO_INPUT_DATA_BUFFERF_TIME</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoInputDataBufferFlags.DmoInputDataBufferfTimelength">
+        <member name="F:SharpDX.MediaFoundation.DmoInputDataBufferFlags.DmoInputDataBufferFTimelength">
             <summary>	
             No documentation.	
             </summary>	
@@ -2633,7 +2633,7 @@
             <unmanaged>DMO_INPUT_DATA_BUFFERF_TIMELENGTH</unmanaged>	
             <unmanaged-short>DMO_INPUT_DATA_BUFFERF_TIMELENGTH</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoInputDataBufferFlags.DmoInputDataBufferfDiscontinuity">
+        <member name="F:SharpDX.MediaFoundation.DmoInputDataBufferFlags.DmoInputDataBufferFDiscontinuity">
             <summary>	
             No documentation.	
             </summary>	
@@ -2682,7 +2682,7 @@
             <unmanaged>_DMO_INPUT_STREAM_INFO_FLAGS</unmanaged>	
             <unmanaged-short>_DMO_INPUT_STREAM_INFO_FLAGS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoInputStreamInformationFlags.DmoInputStreamfWholeSamples">
+        <member name="F:SharpDX.MediaFoundation.DmoInputStreamInformationFlags.DmoInputStreamFWholeSamples">
             <summary>	
             No documentation.	
             </summary>	
@@ -2690,7 +2690,7 @@
             <unmanaged>DMO_INPUT_STREAMF_WHOLE_SAMPLES</unmanaged>	
             <unmanaged-short>DMO_INPUT_STREAMF_WHOLE_SAMPLES</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoInputStreamInformationFlags.DmoInputStreamfSingleSamplePerBuffer">
+        <member name="F:SharpDX.MediaFoundation.DmoInputStreamInformationFlags.DmoInputStreamFSingleSamplePerBuffer">
             <summary>	
             No documentation.	
             </summary>	
@@ -2698,7 +2698,7 @@
             <unmanaged>DMO_INPUT_STREAMF_SINGLE_SAMPLE_PER_BUFFER</unmanaged>	
             <unmanaged-short>DMO_INPUT_STREAMF_SINGLE_SAMPLE_PER_BUFFER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoInputStreamInformationFlags.DmoInputStreamfFixedSampleSize">
+        <member name="F:SharpDX.MediaFoundation.DmoInputStreamInformationFlags.DmoInputStreamFFixedSampleSize">
             <summary>	
             No documentation.	
             </summary>	
@@ -2706,7 +2706,7 @@
             <unmanaged>DMO_INPUT_STREAMF_FIXED_SAMPLE_SIZE</unmanaged>	
             <unmanaged-short>DMO_INPUT_STREAMF_FIXED_SAMPLE_SIZE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoInputStreamInformationFlags.DmoInputStreamfHoldsBuffers">
+        <member name="F:SharpDX.MediaFoundation.DmoInputStreamInformationFlags.DmoInputStreamFHoldsBuffers">
             <summary>	
             No documentation.	
             </summary>	
@@ -2730,7 +2730,7 @@
             <unmanaged>_DMO_OUTPUT_DATA_BUFFER_FLAGS</unmanaged>	
             <unmanaged-short>_DMO_OUTPUT_DATA_BUFFER_FLAGS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferfSyncpoint">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferFSyncpoint">
             <summary>	
             No documentation.	
             </summary>	
@@ -2738,7 +2738,7 @@
             <unmanaged>DMO_OUTPUT_DATA_BUFFERF_SYNCPOINT</unmanaged>	
             <unmanaged-short>DMO_OUTPUT_DATA_BUFFERF_SYNCPOINT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferfTime">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferFTime">
             <summary>	
             No documentation.	
             </summary>	
@@ -2746,7 +2746,7 @@
             <unmanaged>DMO_OUTPUT_DATA_BUFFERF_TIME</unmanaged>	
             <unmanaged-short>DMO_OUTPUT_DATA_BUFFERF_TIME</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferfTimelength">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferFTimelength">
             <summary>	
             No documentation.	
             </summary>	
@@ -2754,7 +2754,7 @@
             <unmanaged>DMO_OUTPUT_DATA_BUFFERF_TIMELENGTH</unmanaged>	
             <unmanaged-short>DMO_OUTPUT_DATA_BUFFERF_TIMELENGTH</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferfDiscontinuity">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferFDiscontinuity">
             <summary>	
             No documentation.	
             </summary>	
@@ -2762,7 +2762,7 @@
             <unmanaged>DMO_OUTPUT_DATA_BUFFERF_DISCONTINUITY</unmanaged>	
             <unmanaged-short>DMO_OUTPUT_DATA_BUFFERF_DISCONTINUITY</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferfIncomplete">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputDataBufferFlags.DmoOutputDataBufferFIncomplete">
             <summary>	
             No documentation.	
             </summary>	
@@ -2786,7 +2786,7 @@
             <unmanaged>_DMO_OUTPUT_STREAM_INFO_FLAGS</unmanaged>	
             <unmanaged-short>_DMO_OUTPUT_STREAM_INFO_FLAGS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamfWholeSamples">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamFWholeSamples">
             <summary>	
             No documentation.	
             </summary>	
@@ -2794,7 +2794,7 @@
             <unmanaged>DMO_OUTPUT_STREAMF_WHOLE_SAMPLES</unmanaged>	
             <unmanaged-short>DMO_OUTPUT_STREAMF_WHOLE_SAMPLES</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamfSingleSamplePerBuffer">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamFSingleSamplePerBuffer">
             <summary>	
             No documentation.	
             </summary>	
@@ -2802,7 +2802,7 @@
             <unmanaged>DMO_OUTPUT_STREAMF_SINGLE_SAMPLE_PER_BUFFER</unmanaged>	
             <unmanaged-short>DMO_OUTPUT_STREAMF_SINGLE_SAMPLE_PER_BUFFER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamfFixedSampleSize">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamFFixedSampleSize">
             <summary>	
             No documentation.	
             </summary>	
@@ -2810,7 +2810,7 @@
             <unmanaged>DMO_OUTPUT_STREAMF_FIXED_SAMPLE_SIZE</unmanaged>	
             <unmanaged-short>DMO_OUTPUT_STREAMF_FIXED_SAMPLE_SIZE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamfDiscardable">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamFDiscardable">
             <summary>	
             No documentation.	
             </summary>	
@@ -2818,7 +2818,7 @@
             <unmanaged>DMO_OUTPUT_STREAMF_DISCARDABLE</unmanaged>	
             <unmanaged-short>DMO_OUTPUT_STREAMF_DISCARDABLE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamfOptional">
+        <member name="F:SharpDX.MediaFoundation.DmoOutputStreamInformationFlags.DmoOutputStreamFOptional">
             <summary>	
             No documentation.	
             </summary>	
@@ -2890,7 +2890,7 @@
             <unmanaged>None</unmanaged>	
             <unmanaged-short>None</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.MediaFoundation.MediaEngineCanplay">
+        <member name="T:SharpDX.MediaFoundation.MediaEngineCanPlay">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Queries how likely it is that the Media Engine can play a specified type of media resource.</p>	
             </summary>	
@@ -2902,7 +2902,7 @@
             <unmanaged>MF_MEDIA_ENGINE_CANPLAY</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_CANPLAY</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCanplay.NotSupported">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCanPlay.NotSupported">
             <summary>	
             <dd> <p>A string that contains a MIME type with an optional codecs parameter, as defined in RFC 4281.</p> </dd>	
             </summary>	
@@ -2911,16 +2911,16 @@
             <unmanaged>MF_MEDIA_ENGINE_CANPLAY_NOT_SUPPORTED</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_CANPLAY_NOT_SUPPORTED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCanplay.Maybe">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCanPlay.Maybe">
             <summary>	
-            <dd> <p>Receives an <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineCanplay"/></strong> enumeration value.</p> </dd>	
+            <dd> <p>Receives an <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineCanPlay"/></strong> enumeration value.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MF_MEDIA_ENGINE_CANPLAY_MAYBE']/*"/>	
             <msdn-id>hh447978</msdn-id>	
             <unmanaged>MF_MEDIA_ENGINE_CANPLAY_MAYBE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_CANPLAY_MAYBE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCanplay.Probably">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCanPlay.Probably">
             <summary>	
             No documentation.	
             </summary>	
@@ -2928,16 +2928,16 @@
             <unmanaged>MF_MEDIA_ENGINE_CANPLAY_PROBABLY</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_CANPLAY_PROBABLY</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.MediaFoundation.MediaEngineCreateflags">
+        <member name="T:SharpDX.MediaFoundation.MediaEngineCreateFlags">
             <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Contains flags for the <strong><see cref="M:SharpDX.MediaFoundation.MediaEngineClassFactory.CreateInstance(SharpDX.MediaFoundation.MediaEngineCreateflags,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.MediaEngine)"/></strong> method.</p>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps only</p><p>Contains flags for the <strong><see cref="M:SharpDX.MediaFoundation.MediaEngineClassFactory.CreateInstance(SharpDX.MediaFoundation.MediaEngineCreateFlags,SharpDX.MediaFoundation.MediaAttributes,SharpDX.MediaFoundation.MediaEngine)"/></strong> method.</p>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MF_MEDIA_ENGINE_CREATEFLAGS']/*"/>	
             <msdn-id>hh162839</msdn-id>	
             <unmanaged>MF_MEDIA_ENGINE_CREATEFLAGS</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_CREATEFLAGS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateflags.Audioonly">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.AudioOnly">
             <summary>	
             No documentation.	
             </summary>	
@@ -2945,7 +2945,7 @@
             <unmanaged>MF_MEDIA_ENGINE_AUDIOONLY</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_AUDIOONLY</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateflags.WaitforstableState">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.WaitForStableState">
             <summary>	
             No documentation.	
             </summary>	
@@ -2953,7 +2953,7 @@
             <unmanaged>MF_MEDIA_ENGINE_WAITFORSTABLE_STATE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_WAITFORSTABLE_STATE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateflags.Forcemute">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.ForceMute">
             <summary>	
             No documentation.	
             </summary>	
@@ -2961,7 +2961,7 @@
             <unmanaged>MF_MEDIA_ENGINE_FORCEMUTE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_FORCEMUTE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateflags.RealTimeMode">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.RealTimeMode">
             <summary>	
             No documentation.	
             </summary>	
@@ -2969,7 +2969,7 @@
             <unmanaged>MF_MEDIA_ENGINE_REAL_TIME_MODE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_REAL_TIME_MODE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateflags.DisableLocalPlugins">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.DisableLocalPlugins">
             <summary>	
             No documentation.	
             </summary>	
@@ -2977,7 +2977,7 @@
             <unmanaged>MF_MEDIA_ENGINE_DISABLE_LOCAL_PLUGINS</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_DISABLE_LOCAL_PLUGINS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateflags.CreateflagsMask">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.CreateFlagsMask">
             <summary>	
             No documentation.	
             </summary>	
@@ -2985,7 +2985,7 @@
             <unmanaged>MF_MEDIA_ENGINE_CREATEFLAGS_MASK</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_CREATEFLAGS_MASK</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateflags.None">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.None">
             <summary>	
             None.	
             </summary>	
@@ -3062,7 +3062,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadstart">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart">
             <summary>	
             <dd> <p>The Media Engine has started to load the source. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p> </dd>	
             </summary>	
@@ -3143,7 +3143,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_PAUSE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_PAUSE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadedmetadata">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata">
             <summary>	
             <dd> <p>The Media Engine has loaded enough source data to determine the duration and dimensions  of the source.</p> </dd>	
             </summary>	
@@ -3152,7 +3152,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_LOADEDMETADATA</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_LOADEDMETADATA</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Loadeddata">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData">
             <summary>	
             <dd> <p>The Media Engine has loaded enough data to render some content (for example, a video frame).</p> </dd>	
             </summary>	
@@ -3179,7 +3179,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_PLAYING</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_PLAYING</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplay">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay">
             <summary>	
             <dd> <p>Playback can start, but the Media Engine might need to stop to buffer more data.</p> </dd>	
             </summary>	
@@ -3188,7 +3188,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_CANPLAY</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_CANPLAY</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Canplaythrough">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough">
             <summary>	
             <dd> <p>The Media Engine can probably play through to the end of the resource, without stopping to buffer data.</p> </dd>	
             </summary>	
@@ -3215,7 +3215,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_SEEKED</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_SEEKED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Timeupdate">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.TimeUpdate">
             <summary>	
             <dd> <p>The playback position has changed. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.GetCurrentTime"/></strong>.</p> </dd>	
             </summary>	
@@ -3233,7 +3233,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_ENDED</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_ENDED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Ratechange">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.RateChange">
             <summary>	
             <dd> <p>The playback rate has changed. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetPlaybackRate(System.Double)"/></strong>.</p> </dd>	
             </summary>	
@@ -3242,7 +3242,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_RATECHANGE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_RATECHANGE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Durationchange">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.DurationChange">
             <summary>	
             <dd> <p>The duration of the media source has changed. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.GetDuration"/></strong>.</p> </dd>	
             </summary>	
@@ -3251,7 +3251,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_DURATIONCHANGE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_DURATIONCHANGE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Volumechange">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.VolumeChange">
             <summary>	
             <dd> <p>The audio volume changed. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetVolume(System.Double)"/></strong>.</p> </dd>	
             </summary>	
@@ -3260,7 +3260,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_VOLUMECHANGE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_VOLUMECHANGE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Formatchange">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.FormatChange">
             <summary>	
             <dd> <p>The output format of the media source has changed.</p> <table> <tr><th>Event Parameter</th><th>Description</th></tr> <tr><td><em>param1</em></td><td>Zero if the video format changed, 1 if the audio format changed.</td></tr> <tr><td><em>param2</em></td><td>Zero.</td></tr> </table> <p>?</p> </dd>	
             </summary>	
@@ -3269,7 +3269,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_FORMATCHANGE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_FORMATCHANGE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Purgequeuedevents">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.PurgeQueuedEvents">
             <summary>	
             <dd> <p>The Media Engine flushed any pending events from its 	queue.</p> </dd>	
             </summary>	
@@ -3287,7 +3287,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_TIMELINE_MARKER</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_TIMELINE_MARKER</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Balancechange">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.BalanceChange">
             <summary>	
             <dd> <p>The audio balance changed. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEngineEx.SetBalance(System.Double)"/></strong>.</p> </dd>	
             </summary>	
@@ -3296,7 +3296,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_BALANCECHANGE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_BALANCECHANGE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Downloadcomplete">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.DownloadComplete">
             <summary>	
             <dd> <p>The Media Engine has finished downloading the source data.</p> </dd>	
             </summary>	
@@ -3305,7 +3305,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_DOWNLOADCOMPLETE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_DOWNLOADCOMPLETE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Bufferingstarted">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.BufferingStarted">
             <summary>	
             <dd> <p>The media source has started to buffer data.</p> </dd>	
             </summary>	
@@ -3314,7 +3314,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_BUFFERINGSTARTED</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_BUFFERINGSTARTED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Bufferingended">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.BufferingEnded">
             <summary>	
             <dd> <p>The media source has stopped buffering data.</p> </dd>	
             </summary>	
@@ -3323,7 +3323,7 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_BUFFERINGENDED</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_BUFFERINGENDED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Framestepcompleted">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.FrameStepCompleted">
             <summary>	
             <dd> <p>The <strong><see cref="M:SharpDX.MediaFoundation.MediaEngineEx.FrameStep(SharpDX.Bool)"/></strong> method completed.</p> </dd>	
             </summary>	
@@ -3332,16 +3332,16 @@
             <unmanaged>MF_MEDIA_ENGINE_EVENT_FRAMESTEPCOMPLETED</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_FRAMESTEPCOMPLETED</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Notifystablestate">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.NotifyStableState">
             <summary>	
-            <dd> <p>The Media Engine's <strong>Load</strong> algorithm is waiting to start.</p> <table> <tr><th>Event Parameter</th><th>Description</th></tr> <tr><td><em>param1</em></td><td>A handle to a waitable event, of type <strong>HANDLE</strong>.</td></tr> <tr><td><em>param2</em></td><td>Zero.</td></tr> </table> <p>?</p> <p>If Media Engine is created with the <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineCreateflags.WaitforstableState"/></strong> flag, the Media Engine sends the <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Notifystablestate"/></strong> event at the start of the <strong>Load</strong> algorithm. The <em>param1</em> parameter is a handle to a waitable event. The <strong>Load</strong> thread waits for the application to signal the event by calling <strong>SetEvent</strong>.</p> <p>If the Media Engine is not created with the <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineCreateflags.WaitforstableState"/></strong>, it does not send this event, and the <strong>Load</strong> thread does not wait to be signalled.</p> </dd>	
+            <dd> <p>The Media Engine's <strong>Load</strong> algorithm is waiting to start.</p> <table> <tr><th>Event Parameter</th><th>Description</th></tr> <tr><td><em>param1</em></td><td>A handle to a waitable event, of type <strong>HANDLE</strong>.</td></tr> <tr><td><em>param2</em></td><td>Zero.</td></tr> </table> <p>?</p> <p>If Media Engine is created with the <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.WaitForStableState"/></strong> flag, the Media Engine sends the <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.NotifyStableState"/></strong> event at the start of the <strong>Load</strong> algorithm. The <em>param1</em> parameter is a handle to a waitable event. The <strong>Load</strong> thread waits for the application to signal the event by calling <strong>SetEvent</strong>.</p> <p>If the Media Engine is not created with the <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineCreateFlags.WaitForStableState"/></strong>, it does not send this event, and the <strong>Load</strong> thread does not wait to be signalled.</p> </dd>	
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE']/*"/>	
             <msdn-id>hh162842</msdn-id>	
             <unmanaged>MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE</unmanaged>	
             <unmanaged-short>MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.Firstframeready">
+        <member name="F:SharpDX.MediaFoundation.MediaEngineEvent.FirstFrameReady">
             <summary>	
             No documentation.	
             </summary>	
@@ -5162,7 +5162,7 @@
             <unmanaged>MF_OBJECT_TYPE</unmanaged>	
             <unmanaged-short>MF_OBJECT_TYPE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.ObjectType.Mediasource">
+        <member name="F:SharpDX.MediaFoundation.ObjectType.MediaSource">
             <summary>	
             <dd> <p>Media source. You can query the object for the <strong>IMFMediaSource</strong> interface.</p> </dd>	
             </summary>	
@@ -5171,7 +5171,7 @@
             <unmanaged>MF_OBJECT_MEDIASOURCE</unmanaged>	
             <unmanaged-short>MF_OBJECT_MEDIASOURCE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.ObjectType.Bytestream">
+        <member name="F:SharpDX.MediaFoundation.ObjectType.ByteStream">
             <summary>	
             <dd> <p>Byte stream. You can query the object for the <strong><see cref="T:SharpDX.MediaFoundation.IByteStream"/></strong> interface.</p> </dd>	
             </summary>	
@@ -5197,7 +5197,7 @@
             <unmanaged>__MIDL___MIDL_itf_mfidl_0000_0001_0001</unmanaged>	
             <unmanaged-short>__MIDL___MIDL_itf_mfidl_0000_0001_0001</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.SourceResolverFlags.Mediasource">
+        <member name="F:SharpDX.MediaFoundation.SourceResolverFlags.MediaSource">
             <summary>	
             No documentation.	
             </summary>	
@@ -5205,7 +5205,7 @@
             <unmanaged>MF_RESOLUTION_MEDIASOURCE</unmanaged>	
             <unmanaged-short>MF_RESOLUTION_MEDIASOURCE</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.SourceResolverFlags.Bytestream">
+        <member name="F:SharpDX.MediaFoundation.SourceResolverFlags.ByteStream">
             <summary>	
             No documentation.	
             </summary>	
@@ -6223,8 +6223,8 @@
             </summary>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='SharpDX.MediaFoundation.AudioFormatGuids']/*"/>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.AudioFormatGuids.Msp1">
-            <summary>Constant Msp1.</summary>
+        <member name="F:SharpDX.MediaFoundation.AudioFormatGuids.MultisampledP1">
+            <summary>Constant MultisampledP1.</summary>
             <unmanaged>MFAudioFormat_MSP1</unmanaged>
         </member>
         <member name="F:SharpDX.MediaFoundation.AudioFormatGuids.Drm">
@@ -8600,11 +8600,11 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.MediaFoundation.ByteStreamBuffering.SetBufferingParams(SharpDX.MediaFoundation.BytestreamBufferingParams@)">
+        <member name="M:SharpDX.MediaFoundation.ByteStreamBuffering.SetBufferingParams(SharpDX.MediaFoundation.ByteStreamBufferingParameters@)">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Sets the buffering parameters.</p>	
             </summary>	
-            <param name="paramsRef"><dd> <p>Pointer to an <strong><see cref="T:SharpDX.MediaFoundation.BytestreamBufferingParams"/></strong> structure that contains the buffering parameters. The byte stream uses this information to calculate how much data to buffer from the network.</p> </dd></param>	
+            <param name="paramsRef"><dd> <p>Pointer to an <strong><see cref="T:SharpDX.MediaFoundation.ByteStreamBufferingParameters"/></strong> structure that contains the buffering parameters. The byte stream uses this information to calculate how much data to buffer from the network.</p> </dd></param>	
             <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> </table><p>?</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFByteStreamBuffering::SetBufferingParams']/*"/>	
             <msdn-id>aa366520</msdn-id>	
@@ -8618,7 +8618,7 @@
             <param name="fEnable"><dd> <p>Specifies whether the byte stream buffers data. If <strong>TRUE</strong>, buffering is enabled. If <strong><see cref="F:SharpDX.Result.False"/></strong>, buffering is disabled.</p> </dd></param>	
             <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
-            <p>Before calling this method, call <strong><see cref="M:SharpDX.MediaFoundation.ByteStreamBuffering.SetBufferingParams(SharpDX.MediaFoundation.BytestreamBufferingParams@)"/></strong> to set the buffering parameters on the byte stream.</p>	
+            <p>Before calling this method, call <strong><see cref="M:SharpDX.MediaFoundation.ByteStreamBuffering.SetBufferingParams(SharpDX.MediaFoundation.ByteStreamBufferingParameters@)"/></strong> to set the buffering parameters on the byte stream.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFByteStreamBuffering::EnableBuffering']/*"/>	
             <msdn-id>aa369933</msdn-id>	
@@ -10812,7 +10812,7 @@
             <unmanaged>unsigned char bSampleAlpha8</unmanaged>	
             <unmanaged-short>unsigned char bSampleAlpha8</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.MediaFoundation.BytestreamBufferingParams">
+        <member name="T:SharpDX.MediaFoundation.ByteStreamBufferingParameters">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps only</p><p> </p><p>Contains private data for the <strong>IDirectXVideoDecoder::Execute</strong> method.</p>	
             </summary>	
@@ -10824,7 +10824,7 @@
             <unmanaged>MFBYTESTREAM_BUFFERING_PARAMS</unmanaged>	
             <unmanaged-short>MFBYTESTREAM_BUFFERING_PARAMS</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamBufferingParams.CbTotalFileSize">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamBufferingParameters.CbTotalFileSize">
             <summary>	
             No documentation.	
             </summary>	
@@ -10832,7 +10832,7 @@
             <unmanaged>unsigned longlong cbTotalFileSize</unmanaged>	
             <unmanaged-short>unsigned longlong cbTotalFileSize</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamBufferingParams.CbPlayableDataSize">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamBufferingParameters.CbPlayableDataSize">
             <summary>	
             No documentation.	
             </summary>	
@@ -10840,7 +10840,7 @@
             <unmanaged>unsigned longlong cbPlayableDataSize</unmanaged>	
             <unmanaged-short>unsigned longlong cbPlayableDataSize</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamBufferingParams.PrgBuckets">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamBufferingParameters.PrgBuckets">
             <summary>	
             No documentation.	
             </summary>	
@@ -10848,7 +10848,7 @@
             <unmanaged>MF_LEAKY_BUCKET_PAIR* prgBuckets</unmanaged>	
             <unmanaged-short>MF_LEAKY_BUCKET_PAIR prgBuckets</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamBufferingParams.CBuckets">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamBufferingParameters.CBuckets">
             <summary>	
             No documentation.	
             </summary>	
@@ -10856,7 +10856,7 @@
             <unmanaged>unsigned int cBuckets</unmanaged>	
             <unmanaged-short>unsigned int cBuckets</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamBufferingParams.QwNetBufferingTime">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamBufferingParameters.QwNetBufferingTime">
             <summary>	
             No documentation.	
             </summary>	
@@ -10864,7 +10864,7 @@
             <unmanaged>unsigned longlong qwNetBufferingTime</unmanaged>	
             <unmanaged-short>unsigned longlong qwNetBufferingTime</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamBufferingParams.QwExtraBufferingTimeDuringSeek">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamBufferingParameters.QwExtraBufferingTimeDuringSeek">
             <summary>	
             No documentation.	
             </summary>	
@@ -10872,7 +10872,7 @@
             <unmanaged>unsigned longlong qwExtraBufferingTimeDuringSeek</unmanaged>	
             <unmanaged-short>unsigned longlong qwExtraBufferingTimeDuringSeek</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamBufferingParams.QwPlayDuration">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamBufferingParameters.QwPlayDuration">
             <summary>	
             No documentation.	
             </summary>	
@@ -10880,7 +10880,7 @@
             <unmanaged>unsigned longlong qwPlayDuration</unmanaged>	
             <unmanaged-short>unsigned longlong qwPlayDuration</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.MediaFoundation.BytestreamBufferingParams.DRate">
+        <member name="F:SharpDX.MediaFoundation.ByteStreamBufferingParameters.DRate">
             <summary>	
             No documentation.	
             </summary>	

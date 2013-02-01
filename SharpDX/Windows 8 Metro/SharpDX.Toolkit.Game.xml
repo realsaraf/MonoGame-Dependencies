@@ -9,6 +9,78 @@
             The <see cref="A:SharpDX.Toolkit.Game"/> assembly provides a high level Game API.
             </summary>
         </member>
+        <member name="T:SharpDX.Toolkit.IContentable">
+            <summary>
+            An interface to load and unload content.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Toolkit.IContentable.LoadContent">
+            <summary>
+            Loads the content.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Toolkit.IContentable.UnloadContent">
+            <summary>
+            Called when graphics resources need to be unloaded. Override this method to unload any game-specific graphics resources.
+            </summary>
+        </member>
+        <member name="T:SharpDX.Toolkit.GameGraphicsParameters">
+            <summary>
+              Describess how data will be displayed to the screen.
+            </summary>
+            <msdn-id>bb173075</msdn-id>
+            <unmanaged>DXGI_SWAP_CHAIN_DESC</unmanaged>
+            <unmanaged-short>DXGI_SWAP_CHAIN_DESC</unmanaged-short>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.PreferredBackBufferWidth">
+            <summary>
+              A value that describes the resolution width.
+            </summary>
+            <msdn-id>bb173075</msdn-id>
+            <unmanaged>DXGI_MODE_DESC BufferDesc</unmanaged>
+            <unmanaged-short>DXGI_MODE_DESC BufferDesc</unmanaged-short>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.PreferredBackBufferHeight">
+            <summary>
+              A value that describes the resolution height.
+            </summary>
+            <msdn-id>bb173075</msdn-id>
+            <unmanaged>DXGI_MODE_DESC BufferDesc</unmanaged>
+            <unmanaged-short>DXGI_MODE_DESC BufferDesc</unmanaged-short>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.PreferredBackBufferFormat">
+            <summary>
+              A <strong><see cref="T:SharpDX.DXGI.Format"/></strong> structure describing the display format.
+            </summary>
+            <msdn-id>bb173075</msdn-id>
+            <unmanaged>DXGI_MODE_DESC BufferDesc</unmanaged>
+            <unmanaged-short>DXGI_MODE_DESC BufferDesc</unmanaged-short>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.PreferredDepthStencilFormat">
+            <summary>
+            Gets or sets the depth stencil format
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.IsFullScreen">
+            <summary>
+              Gets or sets a value indicating whether the application is in full screen mode.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.PreferredGraphicsProfile">
+            <summary>
+            Gets or sets the minimum graphics profile.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.PreferMultiSampling">
+            <summary>
+              Gets or sets a value indicating the number of sample locations during multisampling.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.SynchronizeWithVerticalRetrace">
+            <summary>
+            Gets or sets a value indicating whether to synochrnize present with vertical blanking.
+            </summary>
+        </member>
         <member name="T:SharpDX.Toolkit.GameWindowWinRT">
             <summary>
             An abstract window.
@@ -17,6 +89,21 @@
         <member name="T:SharpDX.Toolkit.GameWindow">
             <summary>
             An abstract window.
+            </summary>
+        </member>
+        <member name="E:SharpDX.Toolkit.GameWindow.ClientSizeChanged">
+            <summary>
+            Occurs, when device client size is changed.
+            </summary>
+        </member>
+        <member name="E:SharpDX.Toolkit.GameWindow.OrientationChanged">
+            <summary>
+            Occurs, when device orientation is changed.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Toolkit.GameWindow.AllowUserResizing">
+            <summary>
+            Gets or sets, user possibility to resize this window.
             </summary>
         </member>
         <member name="P:SharpDX.Toolkit.GameWindow.ClientBounds">
@@ -348,11 +435,29 @@
             </summary>
             <param name="registry">The registry.</param>
         </member>
+        <member name="M:SharpDX.Toolkit.GameSystem.#ctor(SharpDX.Toolkit.Game)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.Toolkit.GameSystem"/> class.
+            </summary>
+            <param name="game">The game.</param>
+        </member>
         <member name="P:SharpDX.Toolkit.GameSystem.Game">
             <summary>
             Gets the <see cref="P:SharpDX.Toolkit.GameSystem.Game"/> associated with this <see cref="T:SharpDX.Toolkit.GameSystem"/>. This value can be null in a mock environment.
             </summary>
             <value>The game.</value>
+        </member>
+        <member name="P:SharpDX.Toolkit.GameSystem.Content">
+            <summary>
+            Gets the content manager.
+            </summary>
+            <value>The content.</value>
+        </member>
+        <member name="P:SharpDX.Toolkit.GameSystem.GraphicsDevice">
+            <summary>
+            Gets the graphics device.
+            </summary>
+            <value>The graphics device.</value>
         </member>
         <member name="T:SharpDX.Toolkit.GameSystemCollection">
             <summary>A collection of game components.</summary>
@@ -436,6 +541,13 @@
             Initializes a new instance of the <see cref="T:SharpDX.Toolkit.GraphicsDeviceInformation"/> class.
             </summary>
         </member>
+        <member name="M:SharpDX.Toolkit.GraphicsDeviceInformation.Equals(System.Object)">
+            <summary>Returns a value that indicates whether the current instance is equal to a specified object.</summary>
+            <param name="obj">The Object to compare with the current GraphicsDeviceInformation.</param>
+        </member>
+        <member name="M:SharpDX.Toolkit.GraphicsDeviceInformation.GetHashCode">
+            <summary>Gets the hash code for this object.</summary>
+        </member>
         <member name="M:SharpDX.Toolkit.GraphicsDeviceInformation.Clone">
             <summary>
             Clones this instance.
@@ -462,6 +574,12 @@
             </summary>
             <value>The presentation parameters.</value>
             <exception cref="T:System.ArgumentNullException">if value is null</exception>
+        </member>
+        <member name="P:SharpDX.Toolkit.GraphicsDeviceInformation.DeviceCreationFlags">
+            <summary>
+            Gets or sets the creation flags.
+            </summary>
+            <value>The creation flags.</value>
         </member>
         <member name="T:SharpDX.Toolkit.GraphicsDeviceManager">
             <summary>
@@ -506,6 +624,13 @@
             <param name="game">The game.</param>
             <exception cref="T:System.ArgumentNullException">The game instance cannot be null.</exception>
         </member>
+        <member name="M:SharpDX.Toolkit.GraphicsDeviceManager.SetPreferredGraphicsProfile(SharpDX.Direct3D.FeatureLevel[])">
+            <summary>
+            Sets the preferred graphics profile.
+            </summary>
+            <param name="levels">The levels.</param>
+            <seealso cref="P:SharpDX.Toolkit.GraphicsDeviceManager.PreferredGraphicsProfile"/>
+        </member>
         <member name="M:SharpDX.Toolkit.GraphicsDeviceManager.ApplyChanges">
             <summary>
             Applies the changes from this instance and change or create the <see cref="P:SharpDX.Toolkit.GraphicsDeviceManager.GraphicsDevice"/> according to the new values.
@@ -531,11 +656,20 @@
             </summary>
             <param name="foundDevices">The list of devices that can be reorder.</param>
         </member>
-        <member name="P:SharpDX.Toolkit.GraphicsDeviceManager.GraphicsProfile">
+        <member name="P:SharpDX.Toolkit.GraphicsDeviceManager.PreferredGraphicsProfile">
             <summary>
-            Gets or sets the graphics profile.
+            Gets or sets the list of graphics profile to select from the best feature to the lower feature. See remarks.
             </summary>
             <value>The graphics profile.</value>
+            <remarks>
+            By default, the PreferredGraphicsProfile is set to { <see cref="F:SharpDX.Direct3D.FeatureLevel.Level_11_1"/>, 
+            <see cref="F:SharpDX.Direct3D.FeatureLevel.Level_11_0"/>,
+            <see cref="F:SharpDX.Direct3D.FeatureLevel.Level_10_1"/>,
+            <see cref="F:SharpDX.Direct3D.FeatureLevel.Level_10_0"/>,
+            <see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_3"/>,
+            <see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_2"/>,
+            <see cref="F:SharpDX.Direct3D.FeatureLevel.Level_9_1"/>}
+            </remarks>
         </member>
         <member name="P:SharpDX.Toolkit.GraphicsDeviceManager.IsFullScreen">
             <summary>
@@ -548,6 +682,12 @@
             Gets or sets a value indicating whether [prefer multi sampling].
             </summary>
             <value><c>true</c> if [prefer multi sampling]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:SharpDX.Toolkit.GraphicsDeviceManager.DeviceCreationFlags">
+            <summary>
+            Gets or sets the device creation flags that will be used to create the <see cref="P:SharpDX.Toolkit.GraphicsDeviceManager.GraphicsDevice"/>
+            </summary>
+            <value>The device creation flags.</value>
         </member>
         <member name="P:SharpDX.Toolkit.GraphicsDeviceManager.PreferredBackBufferFormat">
             <summary>
