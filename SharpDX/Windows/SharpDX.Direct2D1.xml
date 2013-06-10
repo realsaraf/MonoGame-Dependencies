@@ -2997,7 +2997,7 @@
             <unmanaged>HRESULT IWICBitmapSource::CopyPalette([In, Optional] IWICPalette* pIPalette)</unmanaged>	
             <unmanaged-short>IWICBitmapSource::CopyPalette</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels(System.Nullable{SharpDX.DrawingRectangle},System.Int32,System.Int32,System.IntPtr)">
+        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels(System.IntPtr,System.Int32,System.Int32,System.IntPtr)">
             <summary>	
             <p>Instructs the object to produce pixels.</p>	
             </summary>	
@@ -3012,10 +3012,10 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapSource::CopyPixels']/*"/>	
             <msdn-id>ee690179</msdn-id>	
-            <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
+            <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In] const void* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
             <unmanaged-short>IWICBitmapSource::CopyPixels</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels(SharpDX.DrawingRectangle,System.Int32,SharpDX.DataPointer)">
+        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels(SharpDX.Rectangle,System.Int32,SharpDX.DataPointer)">
             <summary>	
             <p>Instructs the object to produce pixels.</p>	
             </summary>	
@@ -3059,7 +3059,7 @@
             <unmanaged>HRESULT IWICBitmapSource::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
             <unmanaged-short>IWICBitmapSource::CopyPixels</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels``1(SharpDX.DrawingRectangle,``0[])">
+        <member name="M:SharpDX.WIC.BitmapSource.CopyPixels``1(SharpDX.Rectangle,``0[])">
             <summary>	
             <p>Instructs the object to produce pixels.</p>	
             </summary>	
@@ -3125,7 +3125,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.WIC.Bitmap.Lock(System.Nullable{SharpDX.DrawingRectangle},SharpDX.WIC.BitmapLockFlags)">
+        <member name="M:SharpDX.WIC.Bitmap.Lock(System.IntPtr,SharpDX.WIC.BitmapLockFlags)">
             <summary>	
             <p>Provides access to a rectangular area of the bitmap.</p>	
             </summary>	
@@ -3137,7 +3137,7 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmap::Lock']/*"/>	
             <msdn-id>ee690187</msdn-id>	
-            <unmanaged>HRESULT IWICBitmap::Lock([In, Optional] const WICRect* prcLock,[In] WICBitmapLockFlags flags,[Out] IWICBitmapLock** ppILock)</unmanaged>	
+            <unmanaged>HRESULT IWICBitmap::Lock([In] const void* prcLock,[In] WICBitmapLockFlags flags,[Out] IWICBitmapLock** ppILock)</unmanaged>	
             <unmanaged-short>IWICBitmap::Lock</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.Bitmap.SetPalette(SharpDX.WIC.Palette)">
@@ -3204,7 +3204,7 @@
             <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromSource([In, Optional] IWICBitmapSource* pIBitmapSource,[In] WICBitmapCreateCacheOption option,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
             <unmanaged-short>IWICImagingFactory::CreateBitmapFromSource</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.BitmapSource,SharpDX.DrawingRectangle)">
+        <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,SharpDX.WIC.BitmapSource,SharpDX.Rectangle)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from a <see cref="T:SharpDX.WIC.BitmapSource"/>.
             </summary>
@@ -3246,6 +3246,33 @@
             <param name="options">The options.</param>
             <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromHBITMAP([In] HBITMAP hBitmap,[In, Optional] HPALETTE hPalette,[In] WICBitmapAlphaChannelOption options,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>
         </member>
+        <member name="M:SharpDX.WIC.Bitmap.Lock(SharpDX.WIC.BitmapLockFlags)">
+            <summary>	
+            <p>Provides access to a rectangular area of the bitmap.</p>	
+            </summary>	
+            <param name="flags"><dd>  <p>The access mode you wish to obtain for the lock. This is a bitwise combination of <strong><see cref="T:SharpDX.WIC.BitmapLockFlags"/></strong> for read, write, or read and write access.</p> <table> <tr><th>Value</th><th>Meaning</th></tr> <tr><td><dl> <dt><strong><see cref="F:SharpDX.WIC.BitmapLockFlags.Read"/></strong></dt> </dl> </td><td> <p>The read access lock.</p> </td></tr> <tr><td><dl> <dt><strong><see cref="F:SharpDX.WIC.BitmapLockFlags.Write"/></strong></dt> </dl> </td><td> <p>The write access lock.</p> </td></tr> </table> <p>?</p> </dd></param>	
+            <returns><dd>  <p>A reference that receives the locked memory location.</p> </dd></returns>	
+            <remarks>	
+            <p>Locks are exclusive for writing but can be shared for reading. You cannot call <strong>CopyPixels</strong> while the <strong><see cref="T:SharpDX.WIC.Bitmap"/></strong> is locked for writing. Doing so will return an error, since locks are exclusive.</p>	
+            </remarks>	
+            <msdn-id>ee690187</msdn-id>	
+            <unmanaged>HRESULT IWICBitmap::Lock([In, Optional] const WICRect* prcLock,[In] WICBitmapLockFlags flags,[Out] IWICBitmapLock** ppILock)</unmanaged>	
+            <unmanaged-short>IWICBitmap::Lock</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.Bitmap.Lock(SharpDX.Rectangle,SharpDX.WIC.BitmapLockFlags)">
+            <summary>	
+            <p>Provides access to a rectangular area of the bitmap.</p>	
+            </summary>	
+            <param name="rcLockRef"><dd>  <p>The rectangle to be accessed.</p> </dd></param>	
+            <param name="flags"><dd>  <p>The access mode you wish to obtain for the lock. This is a bitwise combination of <strong><see cref="T:SharpDX.WIC.BitmapLockFlags"/></strong> for read, write, or read and write access.</p> <table> <tr><th>Value</th><th>Meaning</th></tr> <tr><td><dl> <dt><strong><see cref="F:SharpDX.WIC.BitmapLockFlags.Read"/></strong></dt> </dl> </td><td> <p>The read access lock.</p> </td></tr> <tr><td><dl> <dt><strong><see cref="F:SharpDX.WIC.BitmapLockFlags.Write"/></strong></dt> </dl> </td><td> <p>The write access lock.</p> </td></tr> </table> <p>?</p> </dd></param>	
+            <returns><dd>  <p>A reference that receives the locked memory location.</p> </dd></returns>	
+            <remarks>	
+            <p>Locks are exclusive for writing but can be shared for reading. You cannot call <strong>CopyPixels</strong> while the <strong><see cref="T:SharpDX.WIC.Bitmap"/></strong> is locked for writing. Doing so will return an error, since locks are exclusive.</p>	
+            </remarks>	
+            <msdn-id>ee690187</msdn-id>	
+            <unmanaged>HRESULT IWICBitmap::Lock([In, Optional] const WICRect* prcLock,[In] WICBitmapLockFlags flags,[Out] IWICBitmapLock** ppILock)</unmanaged>	
+            <unmanaged-short>IWICBitmap::Lock</unmanaged-short>	
+        </member>
         <member name="P:SharpDX.WIC.Bitmap.Palette">
             <summary>	
             <p>Provides access for palette modifications.</p>	
@@ -3280,7 +3307,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.WIC.BitmapClipper.Initialize(SharpDX.WIC.BitmapSource,SharpDX.DrawingRectangle)">
+        <member name="M:SharpDX.WIC.BitmapClipper.Initialize(SharpDX.WIC.BitmapSource,System.IntPtr)">
             <summary>	
             <p>Initializes the bitmap clipper with the provided parameters.</p>	
             </summary>	
@@ -3289,7 +3316,7 @@
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapClipper::Initialize']/*"/>	
             <msdn-id>ee719677</msdn-id>	
-            <unmanaged>HRESULT IWICBitmapClipper::Initialize([In, Optional] IWICBitmapSource* pISource,[In] const WICRect* prc)</unmanaged>	
+            <unmanaged>HRESULT IWICBitmapClipper::Initialize([In, Optional] IWICBitmapSource* pISource,[In] const void* prc)</unmanaged>	
             <unmanaged-short>IWICBitmapClipper::Initialize</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.BitmapClipper.#ctor(SharpDX.WIC.ImagingFactory)">
@@ -3297,6 +3324,17 @@
             Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapClipper"/> class.
             </summary>
             <param name="factory">The factory.</param>
+        </member>
+        <member name="M:SharpDX.WIC.BitmapClipper.Initialize(SharpDX.WIC.BitmapSource,SharpDX.Rectangle)">
+            <summary>	
+            <p>Initializes the bitmap clipper with the provided parameters.</p>	
+            </summary>	
+            <param name="sourceRef"><dd>  <p>he input bitmap source.</p> </dd></param>	
+            <param name="rectangleRef"><dd>  <p>The rectangle of the bitmap source to clip.</p> </dd></param>	
+            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
+            <msdn-id>ee719677</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapClipper::Initialize([In, Optional] IWICBitmapSource* pISource,[In] const WICRect* prc)</unmanaged>	
+            <unmanaged-short>IWICBitmapClipper::Initialize</unmanaged-short>	
         </member>
         <member name="T:SharpDX.WIC.BitmapCodecInfo">
             <summary>	
@@ -4862,7 +4900,7 @@
             <unmanaged>HRESULT IWICBitmapFrameEncode::WritePixels([In] unsigned int lineCount,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In, Buffer] void* pbPixels)</unmanaged>	
             <unmanaged-short>IWICBitmapFrameEncode::WritePixels</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.WIC.BitmapFrameEncode.WriteSource(SharpDX.WIC.BitmapSource,System.Nullable{SharpDX.DrawingRectangle})">
+        <member name="M:SharpDX.WIC.BitmapFrameEncode.WriteSource(SharpDX.WIC.BitmapSource,System.IntPtr)">
             <summary>	
             <p>Encodes a bitmap source.</p>	
             </summary>	
@@ -4874,7 +4912,7 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapFrameEncode::WriteSource']/*"/>	
             <msdn-id>ee690159</msdn-id>	
-            <unmanaged>HRESULT IWICBitmapFrameEncode::WriteSource([In, Optional] IWICBitmapSource* pIBitmapSource,[In, Optional] WICRect* prc)</unmanaged>	
+            <unmanaged>HRESULT IWICBitmapFrameEncode::WriteSource([In, Optional] IWICBitmapSource* pIBitmapSource,[In] void* prc)</unmanaged>	
             <unmanaged-short>IWICBitmapFrameEncode::WriteSource</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.BitmapFrameEncode.Commit">
@@ -4964,6 +5002,33 @@
             <msdn-id>ee690158</msdn-id>	
             <unmanaged>HRESULT IWICBitmapFrameEncode::WritePixels([In] unsigned int lineCount,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In, Buffer] void* pbPixels)</unmanaged>	
             <unmanaged-short>IWICBitmapFrameEncode::WritePixels</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapFrameEncode.WriteSource(SharpDX.WIC.BitmapSource)">
+            <summary>	
+            <p>Encodes a bitmap source.</p>	
+            </summary>	
+            <param name="bitmapSourceRef"><dd>  <p>The bitmap source to encode.</p> </dd></param>	
+            <remarks>	
+            <p>If <strong>SetSize</strong> is not called prior to calling <strong>WriteSource</strong>, the size given in <em>prc</em> is used if not <strong><c>null</c></strong>. Otherwise, the size of the <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> given in <em>pIBitmapSource</em> is used. </p><p>If <strong>SetPixelFormat</strong> is not called prior to calling <strong>WriteSource</strong>, the pixel format of the <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> given in <em>pIBitmapSource</em> is used.</p><p>If <strong>SetResolution</strong> is not called prior to calling <strong>WriteSource</strong>, the pixel format of <em>pIBitmapSource</em> is used.</p><p>If <strong>SetPalette</strong> is not called prior to calling <strong>WriteSource</strong>, the target pixel format is indexed, and the pixel format of <em>pIBitmapSource</em> matches the encoder frame's pixel format, then the <em>pIBitmapSource</em> pixel format is used.</p><p>When encoding a GIF image, if the global palette is set and the frame level palette is not set directly by the user or by a custom independent software vendor (ISV) GIF codec, <strong>WriteSource</strong> will use the global palette to encode the frame even when <em>pIBitmapSource</em> has a frame level palette.</p><p><strong>Windows Vista:</strong>The source rect width must match the width set through SetSize. Repeated <strong>WriteSource</strong> calls can be made as long as the total accumulated source rect height is the same as set through SetSize.</p>	
+            </remarks>	
+            <!-- Failed to insert some or all of included XML --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapFrameEncode::WriteSource']/*"/>	
+            <msdn-id>ee690159</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapFrameEncode::WriteSource([In, Optional] IWICBitmapSource* pIBitmapSource,[In, Optional] WICRect* prc)</unmanaged>	
+            <unmanaged-short>IWICBitmapFrameEncode::WriteSource</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapFrameEncode.WriteSource(SharpDX.WIC.BitmapSource,SharpDX.Rectangle)">
+            <summary>	
+            <p>Encodes a bitmap source.</p>	
+            </summary>	
+            <param name="bitmapSourceRef"><dd>  <p>The bitmap source to encode.</p> </dd></param>	
+            <param name="rectangleRef"><dd>  <p>The size rectangle of the bitmap source.</p> </dd></param>	
+            <remarks>	
+            <p>If <strong>SetSize</strong> is not called prior to calling <strong>WriteSource</strong>, the size given in <em>prc</em> is used if not <strong><c>null</c></strong>. Otherwise, the size of the <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> given in <em>pIBitmapSource</em> is used. </p><p>If <strong>SetPixelFormat</strong> is not called prior to calling <strong>WriteSource</strong>, the pixel format of the <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> given in <em>pIBitmapSource</em> is used.</p><p>If <strong>SetResolution</strong> is not called prior to calling <strong>WriteSource</strong>, the pixel format of <em>pIBitmapSource</em> is used.</p><p>If <strong>SetPalette</strong> is not called prior to calling <strong>WriteSource</strong>, the target pixel format is indexed, and the pixel format of <em>pIBitmapSource</em> matches the encoder frame's pixel format, then the <em>pIBitmapSource</em> pixel format is used.</p><p>When encoding a GIF image, if the global palette is set and the frame level palette is not set directly by the user or by a custom independent software vendor (ISV) GIF codec, <strong>WriteSource</strong> will use the global palette to encode the frame even when <em>pIBitmapSource</em> has a frame level palette.</p><p><strong>Windows Vista:</strong>The source rect width must match the width set through SetSize. Repeated <strong>WriteSource</strong> calls can be made as long as the total accumulated source rect height is the same as set through SetSize.</p>	
+            </remarks>	
+            <!-- Failed to insert some or all of included XML --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapFrameEncode::WriteSource']/*"/>	
+            <msdn-id>ee690159</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapFrameEncode::WriteSource([In, Optional] IWICBitmapSource* pIBitmapSource,[In, Optional] WICRect* prc)</unmanaged>	
+            <unmanaged-short>IWICBitmapFrameEncode::WriteSource</unmanaged-short>	
         </member>
         <member name="P:SharpDX.WIC.BitmapFrameEncode.Palette">
             <summary>	
@@ -5189,7 +5254,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.WIC.BitmapSourceTransform.CopyPixels(System.Nullable{SharpDX.DrawingRectangle},System.Int32,System.Int32,System.Nullable{System.Guid},SharpDX.WIC.BitmapTransformOptions,System.Int32,System.Int32,System.IntPtr)">
+        <member name="M:SharpDX.WIC.BitmapSourceTransform.CopyPixels(System.IntPtr,System.Int32,System.Int32,System.Nullable{System.Guid},SharpDX.WIC.BitmapTransformOptions,System.Int32,System.Int32,System.IntPtr)">
             <summary>	
             <p>Copies pixel data using the supplied input parameters.</p>	
             </summary>	
@@ -5207,7 +5272,7 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapSourceTransform::CopyPixels']/*"/>	
             <msdn-id>ee690173</msdn-id>	
-            <unmanaged>HRESULT IWICBitmapSourceTransform::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int uiWidth,[In] unsigned int uiHeight,[In, Optional] GUID* pguidDstFormat,[In] WICBitmapTransformOptions dstTransform,[In] unsigned int nStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
+            <unmanaged>HRESULT IWICBitmapSourceTransform::CopyPixels([In] const void* prc,[In] unsigned int uiWidth,[In] unsigned int uiHeight,[In, Optional] GUID* pguidDstFormat,[In] WICBitmapTransformOptions dstTransform,[In] unsigned int nStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>	
             <unmanaged-short>IWICBitmapSourceTransform::CopyPixels</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.BitmapSourceTransform.GetClosestSize(System.Int32@,System.Int32@)">
@@ -5281,7 +5346,7 @@
             <returns></returns>
             <unmanaged>HRESULT IWICBitmapSourceTransform::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int uiWidth,[In] unsigned int uiHeight,[In, Optional] GUID* pguidDstFormat,[In] WICBitmapTransformOptions dstTransform,[In] unsigned int nStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>
         </member>
-        <member name="M:SharpDX.WIC.BitmapSourceTransform.CopyPixels(SharpDX.DrawingRectangle,System.Int32,System.Int32,System.Guid,SharpDX.WIC.BitmapTransformOptions,System.Int32,SharpDX.DataStream)">
+        <member name="M:SharpDX.WIC.BitmapSourceTransform.CopyPixels(SharpDX.Rectangle,System.Int32,System.Int32,System.Guid,SharpDX.WIC.BitmapTransformOptions,System.Int32,SharpDX.DataStream)">
             <summary>
             Copies pixel data using the supplied input parameters.
             </summary>
@@ -5295,7 +5360,7 @@
             <returns></returns>
             <unmanaged>HRESULT IWICBitmapSourceTransform::CopyPixels([In, Optional] const WICRect* prc,[In] unsigned int uiWidth,[In] unsigned int uiHeight,[In, Optional] GUID* pguidDstFormat,[In] WICBitmapTransformOptions dstTransform,[In] unsigned int nStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer)</unmanaged>
         </member>
-        <member name="M:SharpDX.WIC.BitmapSourceTransform.GetClosestSize(SharpDX.DrawingSize@)">
+        <member name="M:SharpDX.WIC.BitmapSourceTransform.GetClosestSize(SharpDX.Size2@)">
             <summary>
             Returns the closest dimensions the implementation can natively scale to given the desired dimensions.
             </summary>
@@ -7966,7 +8031,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.CreateBitmap(SharpDX.DrawingSize,System.IntPtr,System.Int32,SharpDX.Direct2D1.BitmapProperties,SharpDX.Direct2D1.Bitmap)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.CreateBitmap(SharpDX.Size2,System.IntPtr,System.Int32,SharpDX.Direct2D1.BitmapProperties,SharpDX.Direct2D1.Bitmap)">
             <summary>	
             <p>Creates a Direct2D bitmap from a reference to in-memory source data.</p>	
             </summary>	
@@ -8084,7 +8149,7 @@
             <unmanaged>HRESULT ID2D1RenderTarget::CreateRadialGradientBrush([In] const D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES* radialGradientBrushProperties,[In, Optional] const D2D1_BRUSH_PROPERTIES* brushProperties,[In] ID2D1GradientStopCollection* gradientStopCollection,[Out, Fast] ID2D1RadialGradientBrush** radialGradientBrush)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::CreateRadialGradientBrush</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.CreateCompatibleRenderTarget(System.Nullable{SharpDX.DrawingSizeF},System.Nullable{SharpDX.DrawingSize},System.Nullable{SharpDX.Direct2D1.PixelFormat},SharpDX.Direct2D1.CompatibleRenderTargetOptions,SharpDX.Direct2D1.BitmapRenderTarget)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.CreateCompatibleRenderTarget(System.Nullable{SharpDX.Size2F},System.Nullable{SharpDX.Size2},System.Nullable{SharpDX.Direct2D1.PixelFormat},SharpDX.Direct2D1.CompatibleRenderTargetOptions,SharpDX.Direct2D1.BitmapRenderTarget)">
             <summary>	
             Creates a new  bitmap render target for use during intermediate offscreen drawing that is compatible with the current render target .Overload list	
             </summary>	
@@ -8099,7 +8164,7 @@
             <unmanaged>HRESULT ID2D1RenderTarget::CreateCompatibleRenderTarget([In, Optional] const D2D_SIZE_F* desiredSize,[In, Optional] const D2D_SIZE_U* desiredPixelSize,[In, Optional] const D2D1_PIXEL_FORMAT* desiredFormat,[In] D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options,[Out, Fast] ID2D1BitmapRenderTarget** bitmapRenderTarget)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::CreateCompatibleRenderTarget</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.CreateLayer(System.Nullable{SharpDX.DrawingSizeF},SharpDX.Direct2D1.Layer)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.CreateLayer(System.Nullable{SharpDX.Size2F},SharpDX.Direct2D1.Layer)">
             <summary>	
             <p>Creates a layer resource that can be used with this render target and its compatible render targets. </p>	
             </summary>	
@@ -8128,7 +8193,7 @@
             <unmanaged>HRESULT ID2D1RenderTarget::CreateMesh([Out, Fast] ID2D1Mesh** mesh)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::CreateMesh</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawLine(SharpDX.DrawingPointF,SharpDX.DrawingPointF,SharpDX.Direct2D1.Brush,System.Single,SharpDX.Direct2D1.StrokeStyle)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawLine(SharpDX.Vector2,SharpDX.Vector2,SharpDX.Direct2D1.Brush,System.Single,SharpDX.Direct2D1.StrokeStyle)">
             <summary>	
             <p>Draws a line between the specified points using the specified stroke style. </p>	
             </summary>	
@@ -8327,14 +8392,14 @@
             <param name="options">No documentation.</param>	
             <param name="measuringMode">No documentation.</param>	
             <remarks>	
-            <p>To draw text with Direct2D,  use the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawText(System.String,System.Int32,SharpDX.DirectWrite.TextFormat,SharpDX.RectangleF,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions,SharpDX.Direct2D1.MeasuringMode)"/></strong> method for text that has a single format, or the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.DrawingPointF,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)"/></strong> method when you need multiple formats, advanced OpenType features, or hit testing. These methods use the DirectWrite API to provide high-quality text display.</p><p>This method doesn't return an error code if it fails. To determine whether a drawing operation (such as <strong>DrawText</strong>) failed, check the result returned by the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.EndDraw(System.Int64@,System.Int64@)"/></strong> or <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.Flush(System.Int64@,System.Int64@)"/></strong> methods. </p>	
+            <p>To draw text with Direct2D,  use the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawText(System.String,System.Int32,SharpDX.DirectWrite.TextFormat,SharpDX.RectangleF,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions,SharpDX.Direct2D1.MeasuringMode)"/></strong> method for text that has a single format, or the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.Vector2,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)"/></strong> method when you need multiple formats, advanced OpenType features, or hit testing. These methods use the DirectWrite API to provide high-quality text display.</p><p>This method doesn't return an error code if it fails. To determine whether a drawing operation (such as <strong>DrawText</strong>) failed, check the result returned by the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.EndDraw(System.Int64@,System.Int64@)"/></strong> or <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.Flush(System.Int64@,System.Int64@)"/></strong> methods. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1RenderTarget::DrawTextW']/*"/>	
             <msdn-id>dd742848</msdn-id>	
             <unmanaged>void ID2D1RenderTarget::DrawTextW([In, Buffer] const wchar_t* string,[In] unsigned int stringLength,[In] IDWriteTextFormat* textFormat,[In] const D2D_RECT_F* layoutRect,[In] ID2D1Brush* defaultForegroundBrush,[In] D2D1_DRAW_TEXT_OPTIONS options,[In] DWRITE_MEASURING_MODE measuringMode)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::DrawTextW</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.DrawingPointF,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.Vector2,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)">
             <summary>	
             <p>Draws the formatted text described by the specified <strong><see cref="T:SharpDX.DirectWrite.TextLayout"/></strong> object.</p>	
             </summary>	
@@ -8350,7 +8415,7 @@
             <unmanaged>void ID2D1RenderTarget::DrawTextLayout([In] D2D_POINT_2F origin,[In] IDWriteTextLayout* textLayout,[In] ID2D1Brush* defaultForegroundBrush,[In] D2D1_DRAW_TEXT_OPTIONS options)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::DrawTextLayout</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawGlyphRun(SharpDX.DrawingPointF,SharpDX.DirectWrite.GlyphRun,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.MeasuringMode)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawGlyphRun(SharpDX.Vector2,SharpDX.DirectWrite.GlyphRun,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.MeasuringMode)">
             <summary>	
             <p>Draws the specified glyphs. </p>	
             </summary>	
@@ -8790,7 +8855,7 @@
             <param name="strokeWidth">The thickness of the geometry's stroke. The stroke is centered on the geometry's outline. </param>
             <unmanaged>void ID2D1RenderTarget::DrawGeometry([In] ID2D1Geometry* geometry,[In] ID2D1Brush* brush,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawLine(SharpDX.DrawingPointF,SharpDX.DrawingPointF,SharpDX.Direct2D1.Brush)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawLine(SharpDX.Vector2,SharpDX.Vector2,SharpDX.Direct2D1.Brush)">
             <summary>	
             Draws a line between the specified points. 	
             </summary>	
@@ -8802,7 +8867,7 @@
             <param name="brush">The brush used to paint the line's stroke. </param>
             <unmanaged>void ID2D1RenderTarget::DrawLine([None] D2D1_POINT_2F point0,[None] D2D1_POINT_2F point1,[In] ID2D1Brush* brush,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawLine(SharpDX.DrawingPointF,SharpDX.DrawingPointF,SharpDX.Direct2D1.Brush,System.Single)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawLine(SharpDX.Vector2,SharpDX.Vector2,SharpDX.Direct2D1.Brush,System.Single)">
             <summary>	
             Draws a line between the specified points. 	
             </summary>	
@@ -8916,7 +8981,7 @@
             <param name="measuringMode">A value that indicates how glyph metrics are used to measure text when it is formatted.  The default value is DWRITE_MEASURING_MODE_NATURAL.  </param>
             <unmanaged>void ID2D1RenderTarget::DrawTextA([In, Buffer] const wchar_t* string,[None] int stringLength,[In] IDWriteTextFormat* textFormat,[In] const D2D1_RECT_F* layoutRect,[In] ID2D1Brush* defaultForegroundBrush,[None] D2D1_DRAW_TEXT_OPTIONS options,[None] DWRITE_MEASURING_MODE measuringMode)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.DrawingPointF,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush)">
+        <member name="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.Vector2,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush)">
             <summary>	
             Draws the formatted text described by the specified <see cref="T:SharpDX.DirectWrite.TextLayout" /> object.	
             </summary>	
@@ -9224,7 +9289,7 @@
             <unmanaged>HRESULT IDWriteBitmapRenderTarget::SetCurrentTransform([In, Optional] const DWRITE_MATRIX* transform)</unmanaged>	
             <unmanaged-short>IDWriteBitmapRenderTarget::SetCurrentTransform</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.BitmapRenderTarget.GetSize(SharpDX.DrawingSize@)">
+        <member name="M:SharpDX.DirectWrite.BitmapRenderTarget.GetSize(SharpDX.Size2@)">
             <summary>	
             <p> Gets the dimensions of the target bitmap. </p>	
             </summary>	
@@ -12970,7 +13035,7 @@
             } </code></pre><p>The <strong><see cref="T:SharpDX.DirectWrite.TextLayout"/></strong> interface allows the application to change the format for ranges of the text it represents, specified by a <strong><see cref="T:SharpDX.DirectWrite.TextRange"/></strong> structure.   The following example shows how to set the font weight for a text range.</p><pre><code> // Set the font weight to bold for the first 5 letters.	
             <see cref="T:SharpDX.DirectWrite.TextRange"/> textRange = {0, 4}; if (SUCCEEDED(hr))	
             { hr = pTextLayout_-&gt;SetFontWeight(<see cref="F:SharpDX.DirectWrite.FontWeight.Bold"/>, textRange);	
-            } </code></pre><p><strong><see cref="T:SharpDX.DirectWrite.TextLayout"/></strong> also provides methods for adding strikethrough,  underline, and inline objects to the text.</p><p>To draw the block of text represented by an <strong><see cref="T:SharpDX.DirectWrite.TextLayout"/></strong> object, Direct2D provides the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.DrawingPointF,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)"/></strong> method. To draw using a custom renderer implement an <strong><see cref="T:SharpDX.DirectWrite.TextRenderer"/></strong> interface and  call the  <strong><see cref="M:SharpDX.DirectWrite.TextLayout.Draw_(System.IntPtr,System.IntPtr,System.Single,System.Single)"/></strong> method</p>DirectWrite and Direct2D<p>To draw a formatted string represented by an <strong><see cref="T:SharpDX.DirectWrite.TextLayout"/></strong> object, Direct2D provides the  <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.DrawingPointF,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)"/></strong> method.</p>Other Rendering Options<p>To render using a custom renderer, use the <strong><see cref="M:SharpDX.DirectWrite.TextLayout.Draw_(System.IntPtr,System.IntPtr,System.Single,System.Single)"/></strong> method, which takes a callback interface derived from <strong><see cref="T:SharpDX.DirectWrite.TextRenderer"/></strong> as an argument, as shown in the following code.</p><pre><code> // Draw the text layout using DirectWrite and the CustomTextRenderer class.	
+            } </code></pre><p><strong><see cref="T:SharpDX.DirectWrite.TextLayout"/></strong> also provides methods for adding strikethrough,  underline, and inline objects to the text.</p><p>To draw the block of text represented by an <strong><see cref="T:SharpDX.DirectWrite.TextLayout"/></strong> object, Direct2D provides the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.Vector2,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)"/></strong> method. To draw using a custom renderer implement an <strong><see cref="T:SharpDX.DirectWrite.TextRenderer"/></strong> interface and  call the  <strong><see cref="M:SharpDX.DirectWrite.TextLayout.Draw_(System.IntPtr,System.IntPtr,System.Single,System.Single)"/></strong> method</p>DirectWrite and Direct2D<p>To draw a formatted string represented by an <strong><see cref="T:SharpDX.DirectWrite.TextLayout"/></strong> object, Direct2D provides the  <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.Vector2,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)"/></strong> method.</p>Other Rendering Options<p>To render using a custom renderer, use the <strong><see cref="M:SharpDX.DirectWrite.TextLayout.Draw_(System.IntPtr,System.IntPtr,System.Single,System.Single)"/></strong> method, which takes a callback interface derived from <strong><see cref="T:SharpDX.DirectWrite.TextRenderer"/></strong> as an argument, as shown in the following code.</p><pre><code> // Draw the text layout using DirectWrite and the CustomTextRenderer class.	
             hr = pTextLayout_-&gt;Draw( <c>null</c>, pTextRenderer_,  // Custom text renderer. origin.x, origin.y ); </code></pre><p> <strong><see cref="T:SharpDX.DirectWrite.TextRenderer"/></strong> declares methods for drawing a glyph run, underline, strikethrough and inline objects.  It is up to the application to implement these methods.  Creating a custom text renderer allows the application to apply additional effects when rendering text, such as a custom fill or outline.</p><p>Using a custom text renderer also enables you to render using another technology, such as GDI.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextLayout']/*"/>	
@@ -13381,7 +13446,7 @@
             <param name="textRange"><dd> <p>The text range to which this change applies.</p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>An <strong><see cref="T:SharpDX.Direct2D1.Brush"/></strong>, such as a color or gradient brush, can be set as a drawing effect if you are using the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.DrawingPointF,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)"/></strong> to draw text and that brush will be used to draw the specified range of text.</p><p> This drawing effect is associated with the specified range and will be passed back to the application by way of the callback when the range is drawn at drawing time. </p>	
+            <p>An <strong><see cref="T:SharpDX.Direct2D1.Brush"/></strong>, such as a color or gradient brush, can be set as a drawing effect if you are using the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.DrawTextLayout(SharpDX.Vector2,SharpDX.DirectWrite.TextLayout,SharpDX.Direct2D1.Brush,SharpDX.Direct2D1.DrawTextOptions)"/></strong> to draw text and that brush will be used to draw the specified range of text.</p><p> This drawing effect is associated with the specified range and will be passed back to the application by way of the callback when the range is drawn at drawing time. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IDWriteTextLayout::SetDrawingEffect']/*"/>	
             <msdn-id>dd371477</msdn-id>	
@@ -13900,14 +13965,14 @@
             <p>Represents a bitmap that has been bound to an <strong><see cref="T:SharpDX.Direct2D1.RenderTarget"/></strong>.</p>	
             </summary>	
             <remarks>	
-            Creating <see cref="T:SharpDX.Direct2D1.Bitmap"/> Objects<p>To create a bitmap, use one of the following methods of the render target on which the bitmap will be drawn: </p><ul> <li> <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.CreateBitmap(SharpDX.DrawingSize,System.IntPtr,System.Int32,SharpDX.Direct2D1.BitmapProperties,SharpDX.Direct2D1.Bitmap)"/></strong> </li> <li> <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.CreateBitmapFromWicBitmap(SharpDX.WIC.BitmapSource,System.Nullable{SharpDX.Direct2D1.BitmapProperties},SharpDX.Direct2D1.Bitmap@)"/></strong> </li> </ul><p>For information about the pixel formats supported by Direct2D bitmaps, see Supported Pixel Formats and Alpha Modes.</p><p>An <strong><see cref="T:SharpDX.Direct2D1.Bitmap"/></strong> is a device-dependent resource: your application should create bitmaps after it initializes the render target with which the bitmap will be used, and recreate the bitmap whenever the render target needs recreated. (For more information about resources, see Resources Overview.)</p>	
+            Creating <see cref="T:SharpDX.Direct2D1.Bitmap"/> Objects<p>To create a bitmap, use one of the following methods of the render target on which the bitmap will be drawn: </p><ul> <li> <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.CreateBitmap(SharpDX.Size2,System.IntPtr,System.Int32,SharpDX.Direct2D1.BitmapProperties,SharpDX.Direct2D1.Bitmap)"/></strong> </li> <li> <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.CreateBitmapFromWicBitmap(SharpDX.WIC.BitmapSource,System.Nullable{SharpDX.Direct2D1.BitmapProperties},SharpDX.Direct2D1.Bitmap@)"/></strong> </li> </ul><p>For information about the pixel formats supported by Direct2D bitmaps, see Supported Pixel Formats and Alpha Modes.</p><p>An <strong><see cref="T:SharpDX.Direct2D1.Bitmap"/></strong> is a device-dependent resource: your application should create bitmaps after it initializes the render target with which the bitmap will be used, and recreate the bitmap whenever the render target needs recreated. (For more information about resources, see Resources Overview.)</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1Bitmap']/*"/>	
             <msdn-id>dd371109</msdn-id>	
             <unmanaged>ID2D1Bitmap</unmanaged>	
             <unmanaged-short>ID2D1Bitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Size2)">
             <summary>	
             Creates a Direct2D bitmap from a pointer to in-memory source data.	
             </summary>	
@@ -13917,7 +13982,7 @@
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmap([In] D2D_SIZE_U size,[In, Optional] const void* srcData,[In] unsigned int pitch,[In] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::CreateBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,SharpDX.Direct2D1.BitmapProperties)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Size2,SharpDX.Direct2D1.BitmapProperties)">
             <summary>	
             Creates a Direct2D bitmap from a pointer to in-memory source data.	
             </summary>	
@@ -13928,7 +13993,7 @@
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmap([In] D2D_SIZE_U size,[In, Optional] const void* srcData,[In] unsigned int pitch,[In] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::CreateBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,SharpDX.DataPointer,System.Int32)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Size2,SharpDX.DataPointer,System.Int32)">
             <summary>	
             Creates a Direct2D bitmap from a pointer to in-memory source data.	
             </summary>	
@@ -13940,7 +14005,7 @@
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmap([In] D2D_SIZE_U size,[In, Optional] const void* srcData,[In] unsigned int pitch,[In] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::CreateBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,SharpDX.DataPointer,System.Int32,SharpDX.Direct2D1.BitmapProperties)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Size2,SharpDX.DataPointer,System.Int32,SharpDX.Direct2D1.BitmapProperties)">
             <summary>	
             Creates a Direct2D bitmap from a pointer to in-memory source data.	
             </summary>	
@@ -13995,7 +14060,7 @@
             <unmanaged>HRESULT ID2D1RenderTarget::CreateSharedBitmap([In] const GUID&amp; riid,[In] void* data,[In, Optional] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out, Fast] ID2D1Bitmap** bitmap)</unmanaged>	
             <unmanaged-short>ID2D1RenderTarget::CreateSharedBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.New``1(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingSize,``0[],SharpDX.Direct2D1.BitmapProperties)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.New``1(SharpDX.Direct2D1.RenderTarget,SharpDX.Size2,``0[],SharpDX.Direct2D1.BitmapProperties)">
             <summary>	
             Creates a Direct2D bitmap from a pointer to in-memory source data.	
             </summary>	
@@ -14043,7 +14108,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromBitmap([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1Bitmap* bitmap,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromBitmap(SharpDX.Direct2D1.Bitmap,SharpDX.DrawingPoint)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromBitmap(SharpDX.Direct2D1.Bitmap,SharpDX.Point)">
             <summary>	
             Copies the specified region from the specified bitmap into the current bitmap. 	
             </summary>	
@@ -14057,7 +14122,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromBitmap([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1Bitmap* bitmap,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromBitmap(SharpDX.Direct2D1.Bitmap,SharpDX.DrawingPoint,SharpDX.Rectangle)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromBitmap(SharpDX.Direct2D1.Bitmap,SharpDX.Point,SharpDX.Rectangle)">
             <summary>	
             Copies the specified region from the specified bitmap into the current bitmap. 	
             </summary>	
@@ -14172,7 +14237,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromRenderTarget(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingPoint)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromRenderTarget(SharpDX.Direct2D1.RenderTarget,SharpDX.Point)">
             <summary>	
             Copies the specified region from the specified render target into the current bitmap. 	
             </summary>	
@@ -14186,7 +14251,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromRenderTarget([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1RenderTarget* renderTarget,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromRenderTarget</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromRenderTarget(SharpDX.Direct2D1.RenderTarget,SharpDX.DrawingPoint,SharpDX.Rectangle)">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromRenderTarget(SharpDX.Direct2D1.RenderTarget,SharpDX.Point,SharpDX.Rectangle)">
             <summary>	
             Copies the specified region from the specified render target into the current bitmap. 	
             </summary>	
@@ -14291,7 +14356,7 @@
             <unmanaged>void ID2D1Bitmap::GetDpi([Out] float* dpiX,[Out] float* dpiY)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::GetDpi</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromBitmap(System.Nullable{SharpDX.DrawingPoint},SharpDX.Direct2D1.Bitmap,System.Nullable{SharpDX.Rectangle})">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromBitmap(System.Nullable{SharpDX.Point},SharpDX.Direct2D1.Bitmap,System.Nullable{SharpDX.Rectangle})">
             <summary>	
             <p>Copies the specified region from the specified bitmap into the current bitmap. </p>	
             </summary>	
@@ -14307,7 +14372,7 @@
             <unmanaged>HRESULT ID2D1Bitmap::CopyFromBitmap([In, Optional] const D2D_POINT_2U* destPoint,[In] ID2D1Bitmap* bitmap,[In, Optional] const D2D_RECT_U* srcRect)</unmanaged>	
             <unmanaged-short>ID2D1Bitmap::CopyFromBitmap</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromRenderTarget(System.Nullable{SharpDX.DrawingPoint},SharpDX.Direct2D1.RenderTarget,System.Nullable{SharpDX.Rectangle})">
+        <member name="M:SharpDX.Direct2D1.Bitmap.CopyFromRenderTarget(System.Nullable{SharpDX.Point},SharpDX.Direct2D1.RenderTarget,System.Nullable{SharpDX.Rectangle})">
             <summary>	
             <p>Copies the specified region from the specified render target into the current bitmap. </p>	
             </summary>	
@@ -14743,7 +14808,7 @@
             <p>Renders to an intermediate texture created by the <strong>CreateCompatibleRenderTarget</strong> method.  </p>	
             </summary>	
             <remarks>	
-            <p>An <strong><see cref="T:SharpDX.Direct2D1.BitmapRenderTarget"/></strong> writes to an intermediate texture. It's useful for creating patterns for use with an <strong><see cref="T:SharpDX.Direct2D1.BitmapBrush"/></strong> or caching drawing data that will be used repeatedly. </p><p>To write directly to a WIC bitmap instead, use the <strong><see cref="M:SharpDX.Direct2D1.Factory.CreateWicBitmapRenderTarget(SharpDX.WIC.Bitmap,SharpDX.Direct2D1.RenderTargetProperties@,SharpDX.Direct2D1.RenderTarget)"/></strong> method. This method returns an <strong><see cref="T:SharpDX.Direct2D1.RenderTarget"/></strong> that writes to the specified WIC bitmap. For an example, see the Save as Image File Sample.</p>Creating <see cref="T:SharpDX.Direct2D1.BitmapRenderTarget"/> Objects<p>To create a bitmap render target, call the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.CreateCompatibleRenderTarget(System.Nullable{SharpDX.DrawingSizeF},System.Nullable{SharpDX.DrawingSize},System.Nullable{SharpDX.Direct2D1.PixelFormat},SharpDX.Direct2D1.CompatibleRenderTargetOptions,SharpDX.Direct2D1.BitmapRenderTarget)"/></strong> method.</p><p>Like other render targets, an <strong><see cref="T:SharpDX.Direct2D1.BitmapRenderTarget"/></strong> is a device-dependent resource and must be recreated when the associated device becomes unavailable. For more information, see the Resources Overview.</p>	
+            <p>An <strong><see cref="T:SharpDX.Direct2D1.BitmapRenderTarget"/></strong> writes to an intermediate texture. It's useful for creating patterns for use with an <strong><see cref="T:SharpDX.Direct2D1.BitmapBrush"/></strong> or caching drawing data that will be used repeatedly. </p><p>To write directly to a WIC bitmap instead, use the <strong><see cref="M:SharpDX.Direct2D1.Factory.CreateWicBitmapRenderTarget(SharpDX.WIC.Bitmap,SharpDX.Direct2D1.RenderTargetProperties@,SharpDX.Direct2D1.RenderTarget)"/></strong> method. This method returns an <strong><see cref="T:SharpDX.Direct2D1.RenderTarget"/></strong> that writes to the specified WIC bitmap. For an example, see the Save as Image File Sample.</p>Creating <see cref="T:SharpDX.Direct2D1.BitmapRenderTarget"/> Objects<p>To create a bitmap render target, call the <strong><see cref="M:SharpDX.Direct2D1.RenderTarget.CreateCompatibleRenderTarget(System.Nullable{SharpDX.Size2F},System.Nullable{SharpDX.Size2},System.Nullable{SharpDX.Direct2D1.PixelFormat},SharpDX.Direct2D1.CompatibleRenderTargetOptions,SharpDX.Direct2D1.BitmapRenderTarget)"/></strong> method.</p><p>Like other render targets, an <strong><see cref="T:SharpDX.Direct2D1.BitmapRenderTarget"/></strong> is a device-dependent resource and must be recreated when the associated device becomes unavailable. For more information, see the Resources Overview.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='ID2D1BitmapRenderTarget']/*"/>	
             <msdn-id>dd371146</msdn-id>	
@@ -14758,7 +14823,7 @@
             <param name="options">A value that specifies whether the new render target must be compatible with GDI.</param>
             <unmanaged>HRESULT CreateCompatibleRenderTarget([In, Optional] const D2D1_SIZE_F* desiredSize,[In, Optional] const D2D1_SIZE_U* desiredPixelSize,[In, Optional] const D2D1_PIXEL_FORMAT* desiredFormat,[None] D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options,[Out] ID2D1BitmapRenderTarget** bitmapRenderTarget)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.BitmapRenderTarget.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Direct2D1.CompatibleRenderTargetOptions,SharpDX.DrawingSizeF)">
+        <member name="M:SharpDX.Direct2D1.BitmapRenderTarget.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Direct2D1.CompatibleRenderTargetOptions,SharpDX.Size2F)">
             <summary>	
              Creates a bitmap render target for use during intermediate offscreen drawing that is compatible with the current render target with same pixel size and pixel format.
             </summary>	
@@ -14776,7 +14841,7 @@
             <param name="options">A value that specifies whether the new render target must be compatible with GDI.</param>
             <unmanaged>HRESULT CreateCompatibleRenderTarget([In, Optional] const D2D1_SIZE_F* desiredSize,[In, Optional] const D2D1_SIZE_U* desiredPixelSize,[In, Optional] const D2D1_PIXEL_FORMAT* desiredFormat,[None] D2D1_COMPATIBLE_RENDER_TARGET_OPTIONS options,[Out] ID2D1BitmapRenderTarget** bitmapRenderTarget)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.BitmapRenderTarget.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Direct2D1.CompatibleRenderTargetOptions,System.Nullable{SharpDX.DrawingSizeF},System.Nullable{SharpDX.DrawingSize},System.Nullable{SharpDX.Direct2D1.PixelFormat})">
+        <member name="M:SharpDX.Direct2D1.BitmapRenderTarget.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Direct2D1.CompatibleRenderTargetOptions,System.Nullable{SharpDX.Size2F},System.Nullable{SharpDX.Size2},System.Nullable{SharpDX.Direct2D1.PixelFormat})">
             <summary>	
              Creates a bitmap render target for use during intermediate offscreen drawing that is compatible with the current render target.	
             </summary>	
@@ -15044,7 +15109,7 @@
             <unmanaged>D2D1_ELLIPSE</unmanaged>	
             <unmanaged-short>D2D1_ELLIPSE</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Ellipse.#ctor(SharpDX.DrawingPointF,System.Single,System.Single)">
+        <member name="M:SharpDX.Direct2D1.Ellipse.#ctor(SharpDX.Vector2,System.Single,System.Single)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Direct2D1.Ellipse"/> struct.
             </summary>
@@ -19646,7 +19711,7 @@
             <unmanaged>BOOL D2D1InvertMatrix([InOut] D2D_MATRIX_3X2_F* matrix)</unmanaged>	
             <unmanaged-short>D2D1InvertMatrix</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.D2D1.MakeSkewMatrix(System.Single,System.Single,SharpDX.DrawingPointF,SharpDX.Matrix3x2@)">
+        <member name="M:SharpDX.Direct2D1.D2D1.MakeSkewMatrix(System.Single,System.Single,SharpDX.Vector2,SharpDX.Matrix3x2@)">
             <summary>	
             <p>Creates a skew transformation that has the specified x-axis angle, y-axis angle, and center point. </p>	
             </summary>	
@@ -19676,7 +19741,7 @@
             <unmanaged>HRESULT D2D1CreateFactory([In] D2D1_FACTORY_TYPE factoryType,[In] const GUID&amp; riid,[In, Optional] const D2D1_FACTORY_OPTIONS* pFactoryOptions,[Out] void** ppIFactory)</unmanaged>	
             <unmanaged-short>D2D1CreateFactory</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.D2D1.MakeRotateMatrix(System.Single,SharpDX.DrawingPointF,SharpDX.Matrix3x2@)">
+        <member name="M:SharpDX.Direct2D1.D2D1.MakeRotateMatrix(System.Single,SharpDX.Vector2,SharpDX.Matrix3x2@)">
             <summary>	
             <p>Creates a rotation transformation that rotates by the specified angle about the specified point.</p>	
             </summary>	
@@ -20053,7 +20118,7 @@
             <unmanaged>HRESULT ID2D1Geometry::GetWidenedBounds([In] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle,[In, Optional] const D2D_MATRIX_3X2_F* worldTransform,[In] float flatteningTolerance,[Out] D2D_RECT_F* bounds)</unmanaged>	
             <unmanaged-short>ID2D1Geometry::GetWidenedBounds</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.DrawingPointF,System.Single,SharpDX.Direct2D1.StrokeStyle,System.Nullable{SharpDX.Matrix3x2},System.Single)">
+        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.Vector2,System.Single,SharpDX.Direct2D1.StrokeStyle,System.Nullable{SharpDX.Matrix3x2},System.Single)">
             <summary>	
             <p>Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform. </p>	
             </summary>	
@@ -20068,7 +20133,7 @@
             <unmanaged>HRESULT ID2D1Geometry::StrokeContainsPoint([In] D2D_POINT_2F point,[In] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle,[In, Optional] const D2D_MATRIX_3X2_F* worldTransform,[In] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>	
             <unmanaged-short>ID2D1Geometry::StrokeContainsPoint</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.DrawingPointF,System.Nullable{SharpDX.Matrix3x2},System.Single)">
+        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.Vector2,System.Nullable{SharpDX.Matrix3x2},System.Single)">
             <summary>	
             <p>Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance. </p>	
             </summary>	
@@ -20180,7 +20245,7 @@
             <unmanaged>HRESULT ID2D1Geometry::ComputeLength([In, Optional] const D2D_MATRIX_3X2_F* worldTransform,[In] float flatteningTolerance,[Out] float* length)</unmanaged>	
             <unmanaged-short>ID2D1Geometry::ComputeLength</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.ComputePointAtLength(System.Single,System.Nullable{SharpDX.Matrix3x2},System.Single,SharpDX.DrawingPointF@)">
+        <member name="M:SharpDX.Direct2D1.Geometry.ComputePointAtLength(System.Single,System.Nullable{SharpDX.Matrix3x2},System.Single,SharpDX.Vector2@)">
             <summary>	
             <p>Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.</p>	
             </summary>	
@@ -20295,7 +20360,7 @@
             <returns>When this method returns, contains a reference to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter. </returns>
             <unmanaged>HRESULT ID2D1Geometry::ComputeLength([In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] float* length)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.ComputePointAtLength(System.Single,SharpDX.DrawingPointF@)">
+        <member name="M:SharpDX.Direct2D1.Geometry.ComputePointAtLength(System.Single,SharpDX.Vector2@)">
             <summary>	
             Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.	
             </summary>	
@@ -20304,7 +20369,7 @@
             <returns>The location at the specified distance along the geometry. If the geometry is empty,  this point contains NaN as its x and y values. </returns>
             <unmanaged>HRESULT ID2D1Geometry::ComputePointAtLength([None] float length,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out, Optional] D2D1_POINT_2F* point,[Out, Optional] D2D1_POINT_2F* unitTangentVector)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.ComputePointAtLength(System.Single,System.Single,SharpDX.DrawingPointF@)">
+        <member name="M:SharpDX.Direct2D1.Geometry.ComputePointAtLength(System.Single,System.Single,SharpDX.Vector2@)">
             <summary>	
             Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.	
             </summary>	
@@ -20314,7 +20379,7 @@
             <returns>The location at the specified distance along the geometry. If the geometry is empty,  this point contains NaN as its x and y values. </returns>
             <unmanaged>HRESULT ID2D1Geometry::ComputePointAtLength([None] float length,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out, Optional] D2D1_POINT_2F* point,[Out, Optional] D2D1_POINT_2F* unitTangentVector)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.DrawingPoint)">
+        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.Point)">
             <summary>	
             Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance. 	
             </summary>	
@@ -20322,7 +20387,7 @@
             <returns>When this method returns, contains a bool value that is true if the area filled by the geometry contains point; otherwise, false.You must allocate storage for this parameter. </returns>
             <unmanaged>HRESULT ID2D1Geometry::FillContainsPoint([None] D2D1_POINT_2F point,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.DrawingPointF)">
+        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.Vector2)">
             <summary>	
             Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance. 	
             </summary>	
@@ -20330,16 +20395,7 @@
             <returns>When this method returns, contains a bool value that is true if the area filled by the geometry contains point; otherwise, false.You must allocate storage for this parameter. </returns>
             <unmanaged>HRESULT ID2D1Geometry::FillContainsPoint([None] D2D1_POINT_2F point,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.DrawingPoint,System.Single)">
-            <summary>	
-            Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance. 	
-            </summary>	
-            <param name="point">The point to test. </param>
-            <param name="flatteningTolerance">The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the fill by less than the tolerance are still considered inside.  Smaller values produce more accurate results but cause slower execution.  </param>
-            <returns>When this method returns, contains a bool value that is true if the area filled by the geometry contains point; otherwise, false.You must allocate storage for this parameter. </returns>
-            <unmanaged>HRESULT ID2D1Geometry::FillContainsPoint([None] D2D1_POINT_2F point,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
-        </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.DrawingPointF,System.Single)">
+        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.Point,System.Single)">
             <summary>	
             Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance. 	
             </summary>	
@@ -20348,7 +20404,16 @@
             <returns>When this method returns, contains a bool value that is true if the area filled by the geometry contains point; otherwise, false.You must allocate storage for this parameter. </returns>
             <unmanaged>HRESULT ID2D1Geometry::FillContainsPoint([None] D2D1_POINT_2F point,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.DrawingPoint,SharpDX.Matrix3x2,System.Single)">
+        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.Vector2,System.Single)">
+            <summary>	
+            Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance. 	
+            </summary>	
+            <param name="point">The point to test. </param>
+            <param name="flatteningTolerance">The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the fill by less than the tolerance are still considered inside.  Smaller values produce more accurate results but cause slower execution.  </param>
+            <returns>When this method returns, contains a bool value that is true if the area filled by the geometry contains point; otherwise, false.You must allocate storage for this parameter. </returns>
+            <unmanaged>HRESULT ID2D1Geometry::FillContainsPoint([None] D2D1_POINT_2F point,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
+        </member>
+        <member name="M:SharpDX.Direct2D1.Geometry.FillContainsPoint(SharpDX.Point,SharpDX.Matrix3x2,System.Single)">
             <summary>	
             Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance. 	
             </summary>	
@@ -20458,7 +20523,7 @@
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
             <unmanaged>HRESULT Simplify([None] D2D1_GEOMETRY_SIMPLIFICATION_OPTION simplificationOption,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] FLOAT flatteningTolerance,[In] ID2D1SimplifiedGeometrySink* geometrySink)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.DrawingPoint,System.Single)">
+        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.Point,System.Single)">
             <summary>	
             Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform. 	
             </summary>	
@@ -20467,7 +20532,7 @@
             <returns>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter. </returns>
             <unmanaged>HRESULT ID2D1Geometry::StrokeContainsPoint([None] D2D1_POINT_2F point,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.DrawingPointF,System.Single)">
+        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.Vector2,System.Single)">
             <summary>	
             Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform. 	
             </summary>	
@@ -20476,17 +20541,7 @@
             <returns>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter. </returns>
             <unmanaged>HRESULT ID2D1Geometry::StrokeContainsPoint([None] D2D1_POINT_2F point,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.DrawingPoint,System.Single,SharpDX.Direct2D1.StrokeStyle)">
-            <summary>	
-            Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform. 	
-            </summary>	
-            <param name="point">The point to test for containment. </param>
-            <param name="strokeWidth">The thickness of the stroke to apply. </param>
-            <param name="strokeStyle">The style of stroke to apply. </param>
-            <returns>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter. </returns>
-            <unmanaged>HRESULT ID2D1Geometry::StrokeContainsPoint([None] D2D1_POINT_2F point,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
-        </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.DrawingPointF,System.Single,SharpDX.Direct2D1.StrokeStyle)">
+        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.Point,System.Single,SharpDX.Direct2D1.StrokeStyle)">
             <summary>	
             Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform. 	
             </summary>	
@@ -20496,18 +20551,17 @@
             <returns>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter. </returns>
             <unmanaged>HRESULT ID2D1Geometry::StrokeContainsPoint([None] D2D1_POINT_2F point,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.DrawingPoint,System.Single,SharpDX.Direct2D1.StrokeStyle,SharpDX.Matrix3x2)">
+        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.Vector2,System.Single,SharpDX.Direct2D1.StrokeStyle)">
             <summary>	
             Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform. 	
             </summary>	
             <param name="point">The point to test for containment. </param>
             <param name="strokeWidth">The thickness of the stroke to apply. </param>
             <param name="strokeStyle">The style of stroke to apply. </param>
-            <param name="transform">The transform to apply to the stroked geometry.  </param>
             <returns>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter. </returns>
             <unmanaged>HRESULT ID2D1Geometry::StrokeContainsPoint([None] D2D1_POINT_2F point,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.DrawingPointF,System.Single,SharpDX.Direct2D1.StrokeStyle,SharpDX.Matrix3x2)">
+        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.Point,System.Single,SharpDX.Direct2D1.StrokeStyle,SharpDX.Matrix3x2)">
             <summary>	
             Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform. 	
             </summary>	
@@ -20518,7 +20572,18 @@
             <returns>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter. </returns>
             <unmanaged>HRESULT ID2D1Geometry::StrokeContainsPoint([None] D2D1_POINT_2F point,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.DrawingPoint,System.Single,SharpDX.Direct2D1.StrokeStyle,SharpDX.Matrix3x2,System.Single)">
+        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.Vector2,System.Single,SharpDX.Direct2D1.StrokeStyle,SharpDX.Matrix3x2)">
+            <summary>	
+            Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform. 	
+            </summary>	
+            <param name="point">The point to test for containment. </param>
+            <param name="strokeWidth">The thickness of the stroke to apply. </param>
+            <param name="strokeStyle">The style of stroke to apply. </param>
+            <param name="transform">The transform to apply to the stroked geometry.  </param>
+            <returns>When this method returns, contains a boolean value set to true if the geometry's stroke contains the specified point; otherwise, false. You must allocate storage for this parameter. </returns>
+            <unmanaged>HRESULT ID2D1Geometry::StrokeContainsPoint([None] D2D1_POINT_2F point,[None] float strokeWidth,[In, Optional] ID2D1StrokeStyle* strokeStyle,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out] BOOL* contains)</unmanaged>
+        </member>
+        <member name="M:SharpDX.Direct2D1.Geometry.StrokeContainsPoint(SharpDX.Point,System.Single,SharpDX.Direct2D1.StrokeStyle,SharpDX.Matrix3x2,System.Single)">
             <summary>	
             Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform. 	
             </summary>	
@@ -21067,7 +21132,7 @@
             <param name="vertexFlags">Stroke and join options to be applied to new segments added to the geometry sink.</param>
             <unmanaged>void SetSegmentFlags([None] D2D1_PATH_SEGMENT vertexFlags)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.SimplifiedGeometrySink.BeginFigure(SharpDX.DrawingPointF,SharpDX.Direct2D1.FigureBegin)">
+        <member name="M:SharpDX.Direct2D1.SimplifiedGeometrySink.BeginFigure(SharpDX.Vector2,SharpDX.Direct2D1.FigureBegin)">
             <summary>	
             Starts a new figure at the specified point. 	
             </summary>	
@@ -21078,7 +21143,7 @@
             <param name="figureBegin">Whether the new figure should be hollow or filled.</param>
             <unmanaged>void BeginFigure([None] D2D1_POINT_2F startPoint,[None] D2D1_FIGURE_BEGIN figureBegin)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.SimplifiedGeometrySink.AddLines(SharpDX.DrawingPointF[])">
+        <member name="M:SharpDX.Direct2D1.SimplifiedGeometrySink.AddLines(SharpDX.Vector2[])">
             <summary>	
              Creates a sequence of lines using the specified points and adds them to the geometry sink.	
             </summary>	
@@ -21111,7 +21176,7 @@
             </remarks>	
             <unmanaged>HRESULT Close()</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.GeometrySink.AddLine(SharpDX.DrawingPointF)">
+        <member name="M:SharpDX.Direct2D1.GeometrySink.AddLine(SharpDX.Vector2)">
             <summary>	
             Creates a line segment between the current point and the specified end point and adds it to the geometry sink. 	
             </summary>	
@@ -21211,7 +21276,7 @@
             <unmanaged>void ID2D1SimplifiedGeometrySink::SetSegmentFlags([In] D2D1_PATH_SEGMENT vertexFlags)</unmanaged>	
             <unmanaged-short>ID2D1SimplifiedGeometrySink::SetSegmentFlags</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.SimplifiedGeometrySinkNative.BeginFigure_(SharpDX.DrawingPointF,SharpDX.Direct2D1.FigureBegin)">
+        <member name="M:SharpDX.Direct2D1.SimplifiedGeometrySinkNative.BeginFigure_(SharpDX.Vector2,SharpDX.Direct2D1.FigureBegin)">
             <summary>	
             <p>Starts a new figure at the specified point. </p>	
             </summary>	
@@ -21225,7 +21290,7 @@
             <unmanaged>void ID2D1SimplifiedGeometrySink::BeginFigure([In] D2D_POINT_2F startPoint,[In] D2D1_FIGURE_BEGIN figureBegin)</unmanaged>	
             <unmanaged-short>ID2D1SimplifiedGeometrySink::BeginFigure</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.SimplifiedGeometrySinkNative.AddLines_(SharpDX.DrawingPointF[],System.Int32)">
+        <member name="M:SharpDX.Direct2D1.SimplifiedGeometrySinkNative.AddLines_(SharpDX.Vector2[],System.Int32)">
             <summary>	
             <p> Creates a sequence of lines using the specified points and adds them to the geometry sink.</p>	
             </summary>	
@@ -21288,7 +21353,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct2D1.GeometrySinkNative.AddLine_(SharpDX.DrawingPointF)">
+        <member name="M:SharpDX.Direct2D1.GeometrySinkNative.AddLine_(SharpDX.Vector2)">
             <summary>	
             <p>Creates a line segment between the current point and the specified end point and adds it to the geometry sink. </p>	
             </summary>	
@@ -21523,7 +21588,7 @@
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <unmanaged>HRESULT CreateLayer([In, Optional] const D2D1_SIZE_F* size,[Out] ID2D1Layer** layer)</unmanaged>
         </member>
-        <member name="M:SharpDX.Direct2D1.Layer.#ctor(SharpDX.Direct2D1.RenderTarget,System.Nullable{SharpDX.DrawingSizeF})">
+        <member name="M:SharpDX.Direct2D1.Layer.#ctor(SharpDX.Direct2D1.RenderTarget,System.Nullable{SharpDX.Size2F})">
             <summary>	
             Creates a layer resource that can be used with this render target and its compatible render targets. The new layer has the specified initial size.  	
             </summary>	
@@ -21572,7 +21637,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct2D1.LinearGradientBrush.SetStartPoint(SharpDX.DrawingPointF)">
+        <member name="M:SharpDX.Direct2D1.LinearGradientBrush.SetStartPoint(SharpDX.Vector2)">
             <summary>	
             <p>Sets the starting coordinates of the linear gradient in the brush's coordinate space.  </p>	
             </summary>	
@@ -21585,7 +21650,7 @@
             <unmanaged>void ID2D1LinearGradientBrush::SetStartPoint([In] D2D_POINT_2F startPoint)</unmanaged>	
             <unmanaged-short>ID2D1LinearGradientBrush::SetStartPoint</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.LinearGradientBrush.SetEndPoint(SharpDX.DrawingPointF)">
+        <member name="M:SharpDX.Direct2D1.LinearGradientBrush.SetEndPoint(SharpDX.Vector2)">
             <summary>	
             <p>Sets the ending coordinates of the linear gradient in the brush's coordinate space.</p>	
             </summary>	
@@ -21893,7 +21958,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.Direct2D1.RadialGradientBrush.SetCenter(SharpDX.DrawingPointF)">
+        <member name="M:SharpDX.Direct2D1.RadialGradientBrush.SetCenter(SharpDX.Vector2)">
             <summary>	
             <p>Specifies the center of the gradient ellipse in the brush's coordinate space. </p>	
             </summary>	
@@ -21903,7 +21968,7 @@
             <unmanaged>void ID2D1RadialGradientBrush::SetCenter([In] D2D_POINT_2F center)</unmanaged>	
             <unmanaged-short>ID2D1RadialGradientBrush::SetCenter</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.RadialGradientBrush.SetGradientOriginOffset(SharpDX.DrawingPointF)">
+        <member name="M:SharpDX.Direct2D1.RadialGradientBrush.SetGradientOriginOffset(SharpDX.Vector2)">
             <summary>	
             <p>Specifies the offset of the gradient origin relative to the gradient ellipse's center.</p>	
             </summary>	
@@ -22662,7 +22727,7 @@
             <unmanaged>D2D1_WINDOW_STATE ID2D1HwndRenderTarget::CheckWindowState()</unmanaged>	
             <unmanaged-short>ID2D1HwndRenderTarget::CheckWindowState</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.Direct2D1.WindowRenderTarget.Resize(SharpDX.DrawingSize)">
+        <member name="M:SharpDX.Direct2D1.WindowRenderTarget.Resize(SharpDX.Size2)">
             <summary>	
             Changes the size of the render target to the specified pixel size.Overload list	
             </summary>	
