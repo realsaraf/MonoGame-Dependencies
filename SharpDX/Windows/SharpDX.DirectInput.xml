@@ -4892,7 +4892,7 @@ First-person action game device. The following subtypes are defined.
             <unmanaged>DIK_HOME</unmanaged>	
             <unmanaged-short>DIK_HOME</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.DirectInput.Key.UpArrow">
+        <member name="F:SharpDX.DirectInput.Key.Up">
             <summary>	
             No documentation.	
             </summary>	
@@ -6166,10 +6166,6 @@ First-person action game device. The following subtypes are defined.
             <summary>Constant Flapsdown.</summary>
             <unmanaged>DIBUTTON_FLYINGC_FLAPSDOWN</unmanaged>
         </member>
-        <member name="F:SharpDX.DirectInput.CivilianFlightControls.GlanceDownLink">
-            <summary>Constant GlanceDownLink.</summary>
-            <unmanaged>DIBUTTON_FLYINGC_GLANCE_DOWN_LINK</unmanaged>
-        </member>
         <member name="F:SharpDX.DirectInput.CivilianFlightControls.GlanceLeftLink">
             <summary>Constant GlanceLeftLink.</summary>
             <unmanaged>DIBUTTON_FLYINGC_GLANCE_LEFT_LINK</unmanaged>
@@ -6189,6 +6185,10 @@ First-person action game device. The following subtypes are defined.
         <member name="F:SharpDX.DirectInput.CivilianFlightControls.Menu">
             <summary>Constant Menu.</summary>
             <unmanaged>DIBUTTON_FLYINGC_MENU</unmanaged>
+        </member>
+        <member name="F:SharpDX.DirectInput.CivilianFlightControls.GlanceDownLink">
+            <summary>Constant GlanceDownLink.</summary>
+            <unmanaged>DIBUTTON_FLYINGC_GLANCE_DOWN_LINK</unmanaged>
         </member>
         <member name="F:SharpDX.DirectInput.CivilianFlightControls.Device">
             <summary>Constant Device.</summary>
@@ -7132,13 +7132,13 @@ First-person action game device. The following subtypes are defined.
             <summary>Constant Menu.</summary>
             <unmanaged>DIBUTTON_FIGHTINGH_MENU</unmanaged>
         </member>
-        <member name="F:SharpDX.DirectInput.HandToHandControls.Punch">
-            <summary>Constant Punch.</summary>
-            <unmanaged>DIBUTTON_FIGHTINGH_PUNCH</unmanaged>
-        </member>
         <member name="F:SharpDX.DirectInput.HandToHandControls.Kick">
             <summary>Constant Kick.</summary>
             <unmanaged>DIBUTTON_FIGHTINGH_KICK</unmanaged>
+        </member>
+        <member name="F:SharpDX.DirectInput.HandToHandControls.Punch">
+            <summary>Constant Punch.</summary>
+            <unmanaged>DIBUTTON_FIGHTINGH_PUNCH</unmanaged>
         </member>
         <member name="F:SharpDX.DirectInput.HandToHandControls.Special1">
             <summary>Constant Special1.</summary>
@@ -7185,6 +7185,10 @@ First-person action game device. The following subtypes are defined.
         <member name="F:SharpDX.DirectInput.HelicopterCombatControls.Throttle">
             <summary>Constant Throttle.</summary>
             <unmanaged>DIAXIS_FLYINGH_THROTTLE</unmanaged>
+        </member>
+        <member name="F:SharpDX.DirectInput.HelicopterCombatControls.View">
+            <summary>Constant View.</summary>
+            <unmanaged>DIBUTTON_FLYINGH_VIEW</unmanaged>
         </member>
         <member name="F:SharpDX.DirectInput.HelicopterCombatControls.FasterLink">
             <summary>Constant FasterLink.</summary>
@@ -7233,10 +7237,6 @@ First-person action game device. The following subtypes are defined.
         <member name="F:SharpDX.DirectInput.HelicopterCombatControls.GlanceLeftLink">
             <summary>Constant GlanceLeftLink.</summary>
             <unmanaged>DIBUTTON_FLYINGH_GLANCE_LEFT_LINK</unmanaged>
-        </member>
-        <member name="F:SharpDX.DirectInput.HelicopterCombatControls.View">
-            <summary>Constant View.</summary>
-            <unmanaged>DIBUTTON_FLYINGH_VIEW</unmanaged>
         </member>
         <member name="F:SharpDX.DirectInput.HelicopterCombatControls.Pause">
             <summary>Constant Pause.</summary>
@@ -9242,13 +9242,13 @@ First-person action game device. The following subtypes are defined.
             <summary>Constant SoccerDefenseGenre.</summary>
             <unmanaged>DIVIRTUAL_SPORTS_SOCCER_DEFENSE</unmanaged>
         </member>
-        <member name="F:SharpDX.DirectInput.SoccerDefenseControls.Move">
-            <summary>Constant Move.</summary>
-            <unmanaged>DIAXIS_SOCCERD_MOVE</unmanaged>
-        </member>
         <member name="F:SharpDX.DirectInput.SoccerDefenseControls.Lateral">
             <summary>Constant Lateral.</summary>
             <unmanaged>DIAXIS_SOCCERD_LATERAL</unmanaged>
+        </member>
+        <member name="F:SharpDX.DirectInput.SoccerDefenseControls.Move">
+            <summary>Constant Move.</summary>
+            <unmanaged>DIAXIS_SOCCERD_MOVE</unmanaged>
         </member>
         <member name="F:SharpDX.DirectInput.SoccerDefenseControls.Head">
             <summary>Constant Head.</summary>
@@ -9376,6 +9376,10 @@ First-person action game device. The following subtypes are defined.
             <summary>Constant Control.</summary>
             <unmanaged>DIBUTTON_SOCCERO_CONTROL</unmanaged>
         </member>
+        <member name="F:SharpDX.DirectInput.SoccerOffenceControls.Head">
+            <summary>Constant Head.</summary>
+            <unmanaged>DIBUTTON_SOCCERO_HEAD</unmanaged>
+        </member>
         <member name="F:SharpDX.DirectInput.SoccerOffenceControls.Shoot">
             <summary>Constant Shoot.</summary>
             <unmanaged>DIBUTTON_SOCCERO_SHOOT</unmanaged>
@@ -9399,10 +9403,6 @@ First-person action game device. The following subtypes are defined.
         <member name="F:SharpDX.DirectInput.SoccerOffenceControls.Fake">
             <summary>Constant Fake.</summary>
             <unmanaged>DIBUTTON_SOCCERO_FAKE</unmanaged>
-        </member>
-        <member name="F:SharpDX.DirectInput.SoccerOffenceControls.Head">
-            <summary>Constant Head.</summary>
-            <unmanaged>DIBUTTON_SOCCERO_HEAD</unmanaged>
         </member>
         <member name="F:SharpDX.DirectInput.SoccerOffenceControls.Pause">
             <summary>Constant Pause.</summary>
