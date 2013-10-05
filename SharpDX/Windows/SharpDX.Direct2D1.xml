@@ -22,7 +22,7 @@
         </member>
         <member name="T:SharpDX.Direct2D1.Effects.NamespaceDoc">
             <summary>
-            The <see cref="N:SharpDX.Direct2D1.Effects"/> namespace provides a managed Direct2D1 builtin Effects API.
+            The <see cref="N:SharpDX.Direct2D1.Effects"/> namespace provides a managed Direct2D1 built in Effects API.
             </summary>
             <msdn-id>hh706327</msdn-id>
             <unmanaged>Direct2D1 Effects</unmanaged>	
@@ -3217,34 +3217,17 @@
         </member>
         <member name="M:SharpDX.WIC.Bitmap.New``1(SharpDX.WIC.ImagingFactory,System.Int32,System.Int32,System.Guid,``0[],System.Int32)">
             <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from an array of pixel datas.
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from an array of pixel data.
             </summary>
             <param name="factory">The factory.</param>
             <param name="width">The width.</param>
             <param name="height">The height.</param>
             <param name="pixelFormat">The pixel format.</param>
-            <param name="pixelDatas">The pixel datas.</param>
+            <param name="pixelDatas">The pixel data.</param>
             <param name="stride">Stride of a row of pixels (number of bytes per row). By default the stride is == 0, and calculated by taking the sizeof(T) * width.</param>
             <msdn-id>ee690291</msdn-id>	
             <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromMemory([In] unsigned int uiWidth,[In] unsigned int uiHeight,[In] const GUID&amp; pixelFormat,[In] unsigned int cbStride,[In] unsigned int cbBufferSize,[In] void* pbBuffer,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>	
             <unmanaged-short>IWICImagingFactory::CreateBitmapFromMemory</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,System.Drawing.Icon)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from a <see cref="T:System.Drawing.Icon"/>.
-            </summary>
-            <param name="factory">The factory.</param>
-            <param name="icon">The icon.</param>
-            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromHICON([In] HICON hIcon,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>
-        </member>
-        <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,System.Drawing.Bitmap,SharpDX.WIC.BitmapAlphaChannelOption)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from a <see cref="T:System.Drawing.Bitmap"/>.
-            </summary>
-            <param name="factory">The factory.</param>
-            <param name="bitmap">The bitmap.</param>
-            <param name="options">The options.</param>
-            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromHBITMAP([In] HBITMAP hBitmap,[In, Optional] HPALETTE hPalette,[In] WICBitmapAlphaChannelOption options,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>
         </member>
         <member name="M:SharpDX.WIC.Bitmap.Lock(SharpDX.WIC.BitmapLockFlags)">
             <summary>	
@@ -3272,6 +3255,23 @@
             <msdn-id>ee690187</msdn-id>	
             <unmanaged>HRESULT IWICBitmap::Lock([In, Optional] const WICRect* prcLock,[In] WICBitmapLockFlags flags,[Out] IWICBitmapLock** ppILock)</unmanaged>	
             <unmanaged-short>IWICBitmap::Lock</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,System.Drawing.Icon)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from a <see cref="T:System.Drawing.Icon"/>.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="icon">The icon.</param>
+            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromHICON([In] HICON hIcon,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>
+        </member>
+        <member name="M:SharpDX.WIC.Bitmap.#ctor(SharpDX.WIC.ImagingFactory,System.Drawing.Bitmap,SharpDX.WIC.BitmapAlphaChannelOption)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.Bitmap"/> class from a <see cref="T:System.Drawing.Bitmap"/>.
+            </summary>
+            <param name="factory">The factory.</param>
+            <param name="bitmap">The bitmap.</param>
+            <param name="options">The options.</param>
+            <unmanaged>HRESULT IWICImagingFactory::CreateBitmapFromHBITMAP([In] HBITMAP hBitmap,[In, Optional] HPALETTE hPalette,[In] WICBitmapAlphaChannelOption options,[Out, Fast] IWICBitmap** ppIBitmap)</unmanaged>
         </member>
         <member name="P:SharpDX.WIC.Bitmap.Palette">
             <summary>	
@@ -3791,7 +3791,7 @@
         </member>
         <member name="P:SharpDX.WIC.BitmapCodecInfo.ColorManagementVersion">
             <summary>
-            Gets the color manangement version number the codec supports.
+            Gets the color management version number the codec supports.
             </summary>
         </member>
         <member name="P:SharpDX.WIC.BitmapCodecInfo.DeviceManufacturer">
@@ -3978,7 +3978,20 @@
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapDecoder::GetColorContexts']/*"/>	
             <msdn-id>ee690093</msdn-id>	
-            <unmanaged>HRESULT IWICBitmapDecoder::GetColorContexts([In] unsigned int cCount,[Out, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
+            <unmanaged>HRESULT IWICBitmapDecoder::GetColorContexts([In] unsigned int cCount,[InOut, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
+            <unmanaged-short>IWICBitmapDecoder::GetColorContexts</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapDecoder.GetColorContexts(System.Int32,SharpDX.ComArray{SharpDX.WIC.ColorContext},System.Int32@)">
+            <summary>	
+            <p>Retrieves the <strong><see cref="T:SharpDX.WIC.ColorContext"/></strong> objects of the image.</p>	
+            </summary>	
+            <param name="count">No documentation.</param>	
+            <param name="colorContextsOut">No documentation.</param>	
+            <param name="actualCountRef">No documentation.</param>	
+            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapDecoder::GetColorContexts']/*"/>	
+            <msdn-id>ee690093</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapDecoder::GetColorContexts([In] unsigned int cCount,[InOut, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
             <unmanaged-short>IWICBitmapDecoder::GetColorContexts</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.BitmapDecoder.GetThumbnail(SharpDX.WIC.BitmapSource@)">
@@ -4111,7 +4124,7 @@
         </member>
         <member name="M:SharpDX.WIC.BitmapDecoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.FileStream,SharpDX.WIC.DecodeOptions)">
             <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapDecoder"/> class from a filestream.
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapDecoder"/> class from a file stream.
             </summary>
             <param name="factory">The factory.</param>
             <param name="fileStream">The filename.</param>
@@ -4120,7 +4133,7 @@
         </member>
         <member name="M:SharpDX.WIC.BitmapDecoder.#ctor(SharpDX.WIC.ImagingFactory,System.IO.FileStream,System.Guid,SharpDX.WIC.DecodeOptions)">
             <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapDecoder"/> class from a filestream.
+            Initializes a new instance of the <see cref="T:SharpDX.WIC.BitmapDecoder"/> class from a file stream.
             </summary>
             <param name="factory">The factory.</param>
             <param name="fileStream">The filename.</param>
@@ -4144,6 +4157,28 @@
             <param name="cacheOptions">The cache options.</param>
             <returns>If the method succeeds, it returns <see cref="F:SharpDX.Result.Ok"/>. Otherwise, it throws an exception.</returns>
             <unmanaged>HRESULT IWICBitmapDecoder::Initialize([In, Optional] IStream* pIStream,[In] WICDecodeOptions cacheOptions)</unmanaged>
+        </member>
+        <member name="M:SharpDX.WIC.BitmapDecoder.TryGetColorContexts(SharpDX.WIC.ImagingFactory,SharpDX.WIC.ColorContext[]@)">
+            <summary>
+            Get the <see cref="T:SharpDX.WIC.ColorContext"/> of the image (if any)
+            </summary>
+            <param name="imagingFactory">The factory for creating new color contexts</param>
+            <param name="colorContexts">The color context array, or null</param>
+            <remarks>
+            When the image format does not support color contexts,
+            <see cref="F:SharpDX.WIC.ResultCode.UnsupportedOperation"/> is returned.
+            </remarks>
+            <unmanaged>HRESULT IWICBitmapDecoder::GetColorContexts([In] unsigned int cCount,[Out, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapDecoder.TryGetColorContexts(SharpDX.WIC.ImagingFactory)">
+            <summary>
+            Get the <see cref="T:SharpDX.WIC.ColorContext"/> of the image (if any)
+            </summary>
+            <returns>
+            null if the decoder does not support color contexts;
+            otherwise an array of zero or more ColorContext objects
+            </returns>
+            <unmanaged>HRESULT IWICBitmapDecoder::GetColorContexts([In] unsigned int cCount,[Out, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] </unmanaged>
         </member>
         <member name="P:SharpDX.WIC.BitmapDecoder.ContainerFormat">
             <summary>	
@@ -4210,12 +4245,6 @@
             <unmanaged>GetFrameCount</unmanaged>	
             <unmanaged-short>GetFrameCount</unmanaged-short>	
             <unmanaged>HRESULT IWICBitmapDecoder::GetFrameCount([Out] unsigned int* pCount)</unmanaged>
-        </member>
-        <member name="P:SharpDX.WIC.BitmapDecoder.ColorContexts">
-            <summary>
-            Gets the <see cref="T:SharpDX.WIC.ColorContext"/> objects of the image.
-            </summary>
-            <unmanaged>HRESULT IWICBitmapDecoder::GetColorContexts([In] unsigned int cCount,[Out, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
         </member>
         <member name="T:SharpDX.WIC.BitmapDecoderInfo">
             <summary>	
@@ -4715,7 +4744,20 @@
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapFrameDecode::GetColorContexts']/*"/>	
             <msdn-id>ee690135</msdn-id>	
-            <unmanaged>HRESULT IWICBitmapFrameDecode::GetColorContexts([In] unsigned int cCount,[Out, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
+            <unmanaged>HRESULT IWICBitmapFrameDecode::GetColorContexts([In] unsigned int cCount,[InOut, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
+            <unmanaged-short>IWICBitmapFrameDecode::GetColorContexts</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapFrameDecode.GetColorContexts(System.Int32,SharpDX.ComArray{SharpDX.WIC.ColorContext},System.Int32@)">
+            <summary>	
+            <p>Retrieves the <strong><see cref="T:SharpDX.WIC.ColorContext"/></strong> associated with the image frame.</p>	
+            </summary>	
+            <param name="count">No documentation.</param>	
+            <param name="colorContextsOut">No documentation.</param>	
+            <param name="actualCountRef">No documentation.</param>	
+            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
+            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICBitmapFrameDecode::GetColorContexts']/*"/>	
+            <msdn-id>ee690135</msdn-id>	
+            <unmanaged>HRESULT IWICBitmapFrameDecode::GetColorContexts([In] unsigned int cCount,[InOut, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
             <unmanaged-short>IWICBitmapFrameDecode::GetColorContexts</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.BitmapFrameDecode.GetThumbnail(SharpDX.WIC.BitmapSource@)">
@@ -4731,6 +4773,28 @@
             <msdn-id>ee690139</msdn-id>	
             <unmanaged>HRESULT IWICBitmapFrameDecode::GetThumbnail([Out] IWICBitmapSource** ppIThumbnail)</unmanaged>	
             <unmanaged-short>IWICBitmapFrameDecode::GetThumbnail</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapFrameDecode.TryGetColorContexts(SharpDX.WIC.ImagingFactory,SharpDX.WIC.ColorContext[]@)">
+            <summary>
+            Get the <see cref="T:SharpDX.WIC.ColorContext"/> of the image (if any)
+            </summary>
+            <param name="imagingFactory">The factory for creating new color contexts</param>
+            <param name="colorContexts">The color context array, or null</param>
+            <remarks>
+            When the image format does not support color contexts,
+            <see cref="F:SharpDX.WIC.ResultCode.UnsupportedOperation"/> is returned.
+            </remarks>
+            <unmanaged>HRESULT IWICBitmapDecoder::GetColorContexts([In] unsigned int cCount,[Out, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
+        </member>
+        <member name="M:SharpDX.WIC.BitmapFrameDecode.TryGetColorContexts(SharpDX.WIC.ImagingFactory)">
+            <summary>
+            Get the <see cref="T:SharpDX.WIC.ColorContext"/> of the image (if any)
+            </summary>
+            <returns>
+            null if the decoder does not support color contexts;
+            otherwise an array of zero or more ColorContext objects
+            </returns>
+            <unmanaged>HRESULT IWICBitmapDecoder::GetColorContexts([In] unsigned int cCount,[Out, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] </unmanaged>
         </member>
         <member name="P:SharpDX.WIC.BitmapFrameDecode.MetadataQueryReader">
             <summary>	
@@ -4754,12 +4818,6 @@
             <unmanaged>GetThumbnail</unmanaged>	
             <unmanaged-short>GetThumbnail</unmanaged-short>	
             <unmanaged>HRESULT IWICBitmapFrameDecode::GetThumbnail([Out] IWICBitmapSource** ppIThumbnail)</unmanaged>
-        </member>
-        <member name="P:SharpDX.WIC.BitmapFrameDecode.ColorContexts">
-            <summary>
-            Gets the <see cref="T:SharpDX.WIC.ColorContext"/> objects of the image.
-            </summary>
-            <unmanaged>HRESULT IWICBitmapFrameDecode::GetColorContexts([In] unsigned int cCount,[InOut, Buffer, Optional] IWICColorContext** ppIColorContexts,[Out] unsigned int* pcActualCount)</unmanaged>	
         </member>
         <member name="T:SharpDX.WIC.BitmapFrameEncode">
             <summary>	
@@ -5007,7 +5065,7 @@
             <summary>	
             <p>Encodes a bitmap source.</p>	
             </summary>	
-            <param name="bitmapSourceRef"><dd>  <p>The bitmap source to encode.</p> </dd></param>	
+            <param name="bitmapSource"><dd>  <p>The bitmap source to encode.</p> </dd></param>	
             <remarks>	
             <p>If <strong>SetSize</strong> is not called prior to calling <strong>WriteSource</strong>, the size given in <em>prc</em> is used if not <strong><c>null</c></strong>. Otherwise, the size of the <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> given in <em>pIBitmapSource</em> is used. </p><p>If <strong>SetPixelFormat</strong> is not called prior to calling <strong>WriteSource</strong>, the pixel format of the <strong><see cref="T:SharpDX.WIC.BitmapSource"/></strong> given in <em>pIBitmapSource</em> is used.</p><p>If <strong>SetResolution</strong> is not called prior to calling <strong>WriteSource</strong>, the pixel format of <em>pIBitmapSource</em> is used.</p><p>If <strong>SetPalette</strong> is not called prior to calling <strong>WriteSource</strong>, the target pixel format is indexed, and the pixel format of <em>pIBitmapSource</em> matches the encoder frame's pixel format, then the <em>pIBitmapSource</em> pixel format is used.</p><p>When encoding a GIF image, if the global palette is set and the frame level palette is not set directly by the user or by a custom independent software vendor (ISV) GIF codec, <strong>WriteSource</strong> will use the global palette to encode the frame even when <em>pIBitmapSource</em> has a frame level palette.</p><p><strong>Windows Vista:</strong>The source rect width must match the width set through SetSize. Repeated <strong>WriteSource</strong> calls can be made as long as the total accumulated source rect height is the same as set through SetSize.</p>	
             </remarks>	
@@ -5471,11 +5529,11 @@
             <param name="factory">The factory.</param>
             <unmanaged>HRESULT IWICImagingFactory::CreateColorContext([Out, Fast] IWICColorContext** ppIWICColorContext)</unmanaged>	
         </member>
-        <member name="M:SharpDX.WIC.ColorContext.InitializeFromMemory(SharpDX.DataStream)">
+        <member name="M:SharpDX.WIC.ColorContext.InitializeFromMemory(SharpDX.DataPointer)">
             <summary>
             Initializes from memory.
             </summary>
-            <param name="dataStream">The data stream.</param>
+            <param name="dataPointer">The data pointer.</param>
             <returns></returns>
             <unmanaged>HRESULT IWICColorContext::InitializeFromMemory([In] const void* pbBuffer,[In] unsigned int cbBufferSize)</unmanaged>
         </member>
@@ -6840,7 +6898,7 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IWICMetadataQueryReader::GetMetadataByName']/*"/>	
             <msdn-id>ee719715</msdn-id>	
-            <unmanaged>HRESULT IWICMetadataQueryReader::GetMetadataByName([In] const wchar_t* wzName,[InOut, Optional] PROPVARIANT* pvarValue)</unmanaged>	
+            <unmanaged>HRESULT IWICMetadataQueryReader::GetMetadataByName([In] const wchar_t* wzName,[In] void* pvarValue)</unmanaged>	
             <unmanaged-short>IWICMetadataQueryReader::GetMetadataByName</unmanaged-short>	
         </member>
         <member name="M:SharpDX.WIC.MetadataQueryReader.GetEnumerator">
@@ -6856,6 +6914,23 @@
             <unmanaged>HRESULT IWICMetadataQueryReader::GetEnumerator([Out] void** ppIEnumString)</unmanaged>	
             <unmanaged-short>IWICMetadataQueryReader::GetEnumerator</unmanaged-short>	
         </member>
+        <member name="M:SharpDX.WIC.MetadataQueryReader.TryGetMetadataByName(System.String,System.Object@)">
+            <summary>
+            Try to get the metadata value by name.
+            </summary>
+            <param name="name">The name.</param>
+            <param name="value">The metadata value, or null if the metadata was not found or an error occurred</param>
+            <returns>The WIC error code</returns>
+            <unmanaged>HRESULT IWICMetadataQueryReader::GetMetadataByName([In] const wchar_t* wzName,[InOut, Optional] PROPVARIANT* pvarValue)</unmanaged>
+        </member>
+        <member name="M:SharpDX.WIC.MetadataQueryReader.TryGetMetadataByName(System.String)">
+            <summary>
+            Try to get the metadata value by name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>the metadata value, or null if the metadata was not found</returns>
+            <unmanaged>HRESULT IWICMetadataQueryReader::GetMetadataByName([In] const wchar_t* wzName,[InOut, Optional] PROPVARIANT* pvarValue)</unmanaged>
+        </member>
         <member name="M:SharpDX.WIC.MetadataQueryReader.GetMetadataByName(System.String)">
             <summary>
             Gets the metadata value by name.
@@ -6866,7 +6941,7 @@
         </member>
         <member name="M:SharpDX.WIC.MetadataQueryReader.Dump(System.IO.TextWriter,System.Int32)">
             <summary>
-            Dumps all metadatas.
+            Dumps all metadata.
             </summary>
             <param name="writer">The text writer output.</param>
             <param name="level">The level of tabulations.</param>
@@ -6887,6 +6962,12 @@
         <member name="P:SharpDX.WIC.MetadataQueryReader.Enumerator">
             <summary>
             Gets the enumerator on the metadata names.
+            </summary>
+        </member>
+        <member name="P:SharpDX.WIC.MetadataQueryReader.QueryPaths">
+            <summary>
+            Gets the enumerator on all the metadata query paths.
+            http://msdn.microsoft.com/en-us/library/windows/desktop/ee719796(v=vs.85).aspx#expressionanatomy
             </summary>
         </member>
         <member name="P:SharpDX.WIC.MetadataQueryReader.Location">
@@ -7952,7 +8033,7 @@
         </member>
         <member name="T:SharpDX.Direct2D1.WicRenderTarget">
             <summary>
-            A Wic RenderTarget.
+            A WIC RenderTarget.
             </summary>
         </member>
         <member name="T:SharpDX.Direct2D1.RenderTarget">
@@ -8768,7 +8849,7 @@
             To write to a Direct3D surface, you obtain an <see cref="T:SharpDX.DXGI.Surface"/> and pass it to the {{CreateDxgiSurfaceRenderTarget}} method to create a DXGI surface render target; you can then use the DXGI surface render target to draw 2-D content to the DXGI surface.  A DXGI surface render target is a type of <see cref="T:SharpDX.Direct2D1.RenderTarget"/>. Like other Direct2D render targets, you can use it to create resources and issue drawing commands. The DXGI surface render target and the DXGI surface must use the same DXGI format. If you specify the {{DXGI_FORMAT_UNKOWN}} format when you create the render target, it will automatically use the surface's format.The DXGI surface render target does not perform DXGI surface synchronization. To work with Direct2D, the Direct3D device that provides the <see cref="T:SharpDX.DXGI.Surface"/> must be created with the D3D10_CREATE_DEVICE_BGRA_SUPPORT flag.For more information about creating and using DXGI surface render targets, see the {{Direct2D and Direct3D Interoperability Overview}}.When you create a render target and hardware acceleration is available, you allocate resources on the computer's GPU. By creating a render target once and retaining it as long as possible, you gain performance benefits. Your application should create render targets once and hold onto them for the life of the application or until the render target's {{EndDraw}} method returns the {{D2DERR_RECREATE_TARGET}} error. When you receive this error, you need to recreate the render target (and any resources it created). 	
             </remarks>	
             <param name="factory">an instance of <see cref="T:SharpDX.Direct2D1.Factory"/></param>
-            <param name="dxgiSurface">The dxgi surface to bind this render target to</param>
+            <param name="dxgiSurface">The DXGI surface to bind this render target to</param>
             <param name="properties">The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see  {{Supported Pixel  Formats and Alpha Modes}}.</param>
         </member>
         <member name="M:SharpDX.Direct2D1.RenderTarget.DrawBitmap(SharpDX.Direct2D1.Bitmap,System.Single,SharpDX.Direct2D1.BitmapInterpolationMode)">
@@ -9149,7 +9230,7 @@
             Initializes a new instance of the <see cref="T:SharpDX.Direct2D1.WicRenderTarget"/> class from a <see cref="T:SharpDX.WIC.Bitmap"/>.
             </summary>
             <param name="factory">The factory.</param>
-            <param name="wicBitmap">The wic bitmap.</param>
+            <param name="wicBitmap">The WIC bitmap.</param>
             <param name="renderTargetProperties">The render target properties.</param>
         </member>
         <member name="T:SharpDX.DirectWrite.BitmapRenderTarget">
@@ -9267,7 +9348,7 @@
             <unmanaged>HRESULT IDWriteBitmapRenderTarget::SetPixelsPerDip([In] float pixelsPerDip)</unmanaged>	
             <unmanaged-short>IDWriteBitmapRenderTarget::SetPixelsPerDip</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.BitmapRenderTarget.GetCurrentTransform(SharpDX.DirectWrite.Matrix@)">
+        <member name="M:SharpDX.DirectWrite.BitmapRenderTarget.GetCurrentTransform(SharpDX.Matrix3x2@)">
             <summary>	
             <p> Gets the transform that maps abstract coordinates to DIPs. By default this is the identity  transform. Note that this is unrelated to the world transform of the underlying device context. </p>	
             </summary>	
@@ -9278,7 +9359,7 @@
             <unmanaged>HRESULT IDWriteBitmapRenderTarget::GetCurrentTransform([Out] DWRITE_MATRIX* transform)</unmanaged>	
             <unmanaged-short>IDWriteBitmapRenderTarget::GetCurrentTransform</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.BitmapRenderTarget.SetCurrentTransform(System.Nullable{SharpDX.DirectWrite.Matrix})">
+        <member name="M:SharpDX.DirectWrite.BitmapRenderTarget.SetCurrentTransform(System.Nullable{SharpDX.Matrix3x2})">
             <summary>	
             <p> Sets the transform that maps abstract coordinate to DIPs (device-independent pixel). This does not affect the world transform of the underlying device context. </p>	
             </summary>	
@@ -9409,7 +9490,7 @@
             <summary>	
             <see cref="T:SharpDX.DirectWrite.TextLayout"/> calls this callback function to get the measurement of the inline object. 	
             </summary>	
-            <returns>a structure describing the geometric measurement of anapplication-defined inline object.  These metrics are in relation to the baseline of the adjacent text. </returns>
+            <returns>A structure describing the geometric measurement of an application-defined inline object.  These metrics are in relation to the baseline of the adjacent text. </returns>
             <unmanaged>HRESULT IDWriteInlineObject::GetMetrics([Out] DWRITE_INLINE_OBJECT_METRICS* metrics)</unmanaged>
         </member>
         <member name="P:SharpDX.DirectWrite.InlineObject.OverhangMetrics">
@@ -9512,7 +9593,7 @@
             <summary>	
             <see cref="T:SharpDX.DirectWrite.TextLayout"/> calls this callback function to get the measurement of the inline object. 	
             </summary>	
-            <returns>a structure describing the geometric measurement of anapplication-defined inline object.  These metrics are in relation to the baseline of the adjacent text. </returns>
+            <returns>A structure describing the geometric measurement of an application-defined inline object.  These metrics are in relation to the baseline of the adjacent text. </returns>
             <unmanaged>HRESULT IDWriteInlineObject::GetMetrics([Out] DWRITE_INLINE_OBJECT_METRICS* metrics)</unmanaged>
         </member>
         <member name="P:SharpDX.DirectWrite.InlineObjectNative.OverhangMetrics">
@@ -9568,7 +9649,7 @@
             Registers a custom font collection loader with the factory object. 	
             </summary>	
             <remarks>	
-            This function registers a font collection loader with DirectWrite. The font collection loader interface, which should be implemented by a singleton object, handles enumerating font files in a font collection given a particular type of key. A given instance can only be registered once. Succeeding attempts will return an error, indicating that it has already been registered. Note that font file loader implementations must not register themselves with DirectWrite inside their constructors, and must not unregister themselves inside their destructors, because registration and unregistraton operations increment and decrement the object reference count respectively. Instead, registration and unregistration with DirectWrite of font file loaders should be performed outside of the font file loader implementation. 	
+            This function registers a font collection loader with DirectWrite. The font collection loader interface, which should be implemented by a singleton object, handles enumerating font files in a font collection given a particular type of key. A given instance can only be registered once. Succeeding attempts will return an error, indicating that it has already been registered. Note that font file loader implementations must not register themselves with DirectWrite inside their constructors, and must not unregister themselves inside their destructors, because registration and unregistration operations increment and decrement the object reference count respectively. Instead, registration and unregistration with DirectWrite of font file loaders should be performed outside of the font file loader implementation. 	
             </remarks>	
             <param name="fontCollectionLoader">Reference to a <see cref="T:SharpDX.DirectWrite.FontCollectionLoader"/> object to be registered. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
@@ -9587,7 +9668,7 @@
             Registers a font file loader with DirectWrite. 	
             </summary>	
             <remarks>	
-            This function registers a font file loader with DirectWrite. The font file loader interface, which should be implemented   by a singleton object, handles loading font file resources of a particular type from a key. A given instance can only be registered once. Succeeding attempts will return an error, indicating that it has already been registered. Note that font file loader implementations must not register themselves with DirectWrite inside their constructors, and must not unregister themselves inside their destructors, because registration and unregistraton operations increment and decrement the object reference count respectively. Instead, registration and unregistration with DirectWrite of font file loaders should be performed outside of the font file loader implementation.  	
+            This function registers a font file loader with DirectWrite. The font file loader interface, which should be implemented   by a singleton object, handles loading font file resources of a particular type from a key. A given instance can only be registered once. Succeeding attempts will return an error, indicating that it has already been registered. Note that font file loader implementations must not register themselves with DirectWrite inside their constructors, and must not unregister themselves inside their destructors, because registration and unregistration operations increment and decrement the object reference count respectively. Instead, registration and unregistration with DirectWrite of font file loaders should be performed outside of the font file loader implementation.  	
             </remarks>	
             <param name="fontFileLoader">Pointer to a <see cref="T:SharpDX.DirectWrite.FontFileLoader"/> object for a particular file resource type. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
@@ -9598,7 +9679,7 @@
             Unregisters a font file loader that was previously registered with the DirectWrite font system using {{RegisterFontFileLoader}}. 	
             </summary>	
             <remarks>	
-            This function unregisters font file loader callbacks with the DirectWrite font system. You should implement the font file loader interface by a singleton object. Note that font file loader implementations must not register themselves with DirectWrite inside their constructors and must not unregister themselves in their destructors, because registration and unregistraton operations increment and decrement the object reference count respectively. Instead, registration and unregistration of font file loaders with DirectWrite should be performed outside of the font file loader implementation.  	
+            This function unregisters font file loader callbacks with the DirectWrite font system. You should implement the font file loader interface by a singleton object. Note that font file loader implementations must not register themselves with DirectWrite inside their constructors and must not unregister themselves in their destructors, because registration and unregistration operations increment and decrement the object reference count respectively. Instead, registration and unregistration of font file loaders with DirectWrite should be performed outside of the font file loader implementation.  	
             </remarks>	
             <param name="fontFileLoader">Pointer to the file loader that was previously registered with the DirectWrite font system using {{RegisterFontFileLoader}}. </param>
             <returns>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code. </returns>
@@ -9854,7 +9935,7 @@
             <unmanaged>HRESULT IDWriteFactory::CreateTextLayout([In, Buffer] const wchar_t* string,[In] unsigned int stringLength,[In] IDWriteTextFormat* textFormat,[In] float maxWidth,[In] float maxHeight,[Out, Fast] IDWriteTextLayout** textLayout)</unmanaged>	
             <unmanaged-short>IDWriteFactory::CreateTextLayout</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.Factory.CreateGdiCompatibleTextLayout(System.String,System.Int32,SharpDX.DirectWrite.TextFormat,System.Single,System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},SharpDX.Bool,SharpDX.DirectWrite.TextLayout)">
+        <member name="M:SharpDX.DirectWrite.Factory.CreateGdiCompatibleTextLayout(System.String,System.Int32,SharpDX.DirectWrite.TextFormat,System.Single,System.Single,System.Single,System.Nullable{SharpDX.Matrix3x2},SharpDX.Bool,SharpDX.DirectWrite.TextLayout)">
             <summary>	
             <p> Takes a string, format, and associated constraints, and produces an object representing the result, formatted for a particular display resolution and measuring mode.  </p>	
             </summary>	
@@ -9916,7 +9997,7 @@
             <unmanaged>HRESULT IDWriteFactory::CreateNumberSubstitution([In] DWRITE_NUMBER_SUBSTITUTION_METHOD substitutionMethod,[In, Buffer] const wchar_t* localeName,[In] BOOL ignoreUserOverride,[Out, Fast] IDWriteNumberSubstitution** numberSubstitution)</unmanaged>	
             <unmanaged-short>IDWriteFactory::CreateNumberSubstitution</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.Factory.CreateGlyphRunAnalysis(SharpDX.DirectWrite.GlyphRun,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},SharpDX.DirectWrite.RenderingMode,SharpDX.Direct2D1.MeasuringMode,System.Single,System.Single,SharpDX.DirectWrite.GlyphRunAnalysis)">
+        <member name="M:SharpDX.DirectWrite.Factory.CreateGlyphRunAnalysis(SharpDX.DirectWrite.GlyphRun,System.Single,System.Nullable{SharpDX.Matrix3x2},SharpDX.DirectWrite.RenderingMode,SharpDX.Direct2D1.MeasuringMode,System.Single,System.Single,SharpDX.DirectWrite.GlyphRunAnalysis)">
             <summary>	
             <p> Creates a glyph run analysis object, which encapsulates information used to render a glyph run. </p>	
             </summary>	
@@ -9971,7 +10052,7 @@
             <unmanaged>IDWriteFontCollection</unmanaged>	
             <unmanaged-short>IDWriteFontCollection</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontCollection.#ctor(SharpDX.DirectWrite.Factory,SharpDX.DirectWrite.FontCollectionLoader,SharpDX.DataStream)">
+        <member name="M:SharpDX.DirectWrite.FontCollection.#ctor(SharpDX.DirectWrite.Factory,SharpDX.DirectWrite.FontCollectionLoader,SharpDX.DataPointer)">
             <summary>	
             Creates a font collection using a custom font collection loader. 	
             </summary>	
@@ -10061,7 +10142,7 @@
             <unmanaged>IDWriteFontCollectionLoader</unmanaged>	
             <unmanaged-short>IDWriteFontCollectionLoader</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontCollectionLoader.CreateEnumeratorFromKey(SharpDX.DirectWrite.Factory,SharpDX.DataStream)">
+        <member name="M:SharpDX.DirectWrite.FontCollectionLoader.CreateEnumeratorFromKey(SharpDX.DirectWrite.Factory,SharpDX.DataPointer)">
             <summary>	
             Creates a font file enumerator object that encapsulates a collection of font files. The font system calls back to this interface to create a font collection. 	
             </summary>	
@@ -10117,11 +10198,11 @@
             <returns>an array of <see cref="T:SharpDX.DirectWrite.GlyphMetrics"/> structures. </returns>
             <unmanaged>HRESULT IDWriteFontFace::GetDesignGlyphMetrics([In, Buffer] const short* glyphIndices,[None] int glyphCount,[Out, Buffer] DWRITE_GLYPH_METRICS* glyphMetrics,[None] BOOL isSideways)</unmanaged>
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFace.GetGdiCompatibleGlyphMetrics(System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},System.Boolean,System.Int16[],System.Boolean)">
+        <member name="M:SharpDX.DirectWrite.FontFace.GetGdiCompatibleGlyphMetrics(System.Single,System.Single,System.Nullable{SharpDX.Matrix},System.Boolean,System.Int16[],System.Boolean)">
             <summary>	
             Obtains glyph metrics in font design units with the return values compatible with what GDI would produce.	
             </summary>	
-            <param name="fontSize">The ogical size of the font in DIP units. </param>
+            <param name="fontSize">The logical size of the font in DIP units. </param>
             <param name="pixelsPerDip">The number of physical pixels per DIP. </param>
             <param name="transform">An optional transform applied to the glyphs and their positions. This transform is applied after the scaling specified by the font size and pixelsPerDip. </param>
             <param name="useGdiNatural">When set to FALSE, the metrics are the same as the metrics of GDI aliased text.  When set to TRUE, the metrics are the same as the metrics of text measured by GDI using a font created with CLEARTYPE_NATURAL_QUALITY. </param>
@@ -10151,7 +10232,7 @@
             <returns>An array that stores references to font files representing the font face. This parameter can be NULL if the user wants only the number of files representing the font face. This API increments reference count of the font file references returned according to COM conventions, and the client should release them when finished. </returns>
             <unmanaged>HRESULT IDWriteFontFace::GetFiles([InOut] int* numberOfFiles,[Out, Buffer, Optional] IDWriteFontFile** fontFiles)</unmanaged>
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFace.TryGetFontTable(System.Int32,SharpDX.DataStream@,System.IntPtr@)">
+        <member name="M:SharpDX.DirectWrite.FontFace.TryGetFontTable(System.Int32,SharpDX.DataPointer@,System.IntPtr@)">
             <summary>	
             Finds the specified OpenType font table if it exists and returns a reference to it. The function accesses the underlying font data through the <see cref="T:SharpDX.DirectWrite.FontFileStream" /> interface implemented by the font file loader. 	
             </summary>	
@@ -10361,7 +10442,7 @@
             <unmanaged>HRESULT IDWriteFontFace::GetRecommendedRenderingMode([In] float emSize,[In] float pixelsPerDip,[In] DWRITE_MEASURING_MODE measuringMode,[In] IDWriteRenderingParams* renderingParams,[Out] DWRITE_RENDERING_MODE* renderingMode)</unmanaged>	
             <unmanaged-short>IDWriteFontFace::GetRecommendedRenderingMode</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFace.GetGdiCompatibleMetrics(System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix})">
+        <member name="M:SharpDX.DirectWrite.FontFace.GetGdiCompatibleMetrics(System.Single,System.Single,System.Nullable{SharpDX.Matrix3x2})">
             <summary>	
             <p>Obtains design units and common metrics for the font face. These metrics are applicable to all the glyphs within a fontface and are used by applications for layout calculations.</p>	
             </summary>	
@@ -10374,7 +10455,7 @@
             <unmanaged>HRESULT IDWriteFontFace::GetGdiCompatibleMetrics([In] float emSize,[In] float pixelsPerDip,[In, Optional] const DWRITE_MATRIX* transform,[Out] DWRITE_FONT_METRICS* fontFaceMetrics)</unmanaged>	
             <unmanaged-short>IDWriteFontFace::GetGdiCompatibleMetrics</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFace.GetGdiCompatibleGlyphMetrics(System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},SharpDX.Bool,System.Int16[],System.Int32,SharpDX.DirectWrite.GlyphMetrics[],SharpDX.Bool)">
+        <member name="M:SharpDX.DirectWrite.FontFace.GetGdiCompatibleGlyphMetrics(System.Single,System.Single,System.Nullable{SharpDX.Matrix3x2},SharpDX.Bool,System.Int16[],System.Int32,SharpDX.DirectWrite.GlyphMetrics[],SharpDX.Bool)">
             <summary>	
             <p>Obtains glyph metrics in font design units with the return values compatible with what GDI would produce.</p>	
             </summary>	
@@ -10626,7 +10707,7 @@
         </member>
         <member name="M:SharpDX.DirectWrite.FontFileEnumeratorShadow.ToIntPtr(SharpDX.DirectWrite.FontFileEnumerator)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -10657,7 +10738,7 @@
             <unmanaged>IDWriteFontFileLoader</unmanaged>	
             <unmanaged-short>IDWriteFontFileLoader</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFileLoader.CreateStreamFromKey(SharpDX.DataStream)">
+        <member name="M:SharpDX.DirectWrite.FontFileLoader.CreateStreamFromKey(SharpDX.DataPointer)">
             <summary>	
             Creates a font file stream object that encapsulates an open file resource. 	
             </summary>	
@@ -10675,7 +10756,7 @@
         </member>
         <member name="M:SharpDX.DirectWrite.FontFileLoaderShadow.ToIntPtr(SharpDX.DirectWrite.FontFileLoader)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -10695,7 +10776,7 @@
             <unmanaged>IDWriteFontFileLoader</unmanaged>	
             <unmanaged-short>IDWriteFontFileLoader</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.FontFileLoaderNative.CreateStreamFromKey(SharpDX.DataStream)">
+        <member name="M:SharpDX.DirectWrite.FontFileLoaderNative.CreateStreamFromKey(SharpDX.DataPointer)">
             <summary>	
             Creates a font file stream object that encapsulates an open file resource. 	
             </summary>	
@@ -10794,7 +10875,7 @@
         </member>
         <member name="M:SharpDX.DirectWrite.FontFileStreamShadow.ToIntPtr(SharpDX.DirectWrite.FontFileStream)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -11191,7 +11272,7 @@
             </remarks>
             <unmanaged>HRESULT IDWriteFactory::CreateGlyphRunAnalysis([In] const DWRITE_GLYPH_RUN* glyphRun,[None] float pixelsPerDip,[In, Optional] const DWRITE_MATRIX* transform,[None] DWRITE_RENDERING_MODE renderingMode,[None] DWRITE_MEASURING_MODE measuringMode,[None] float baselineOriginX,[None] float baselineOriginY,[Out] IDWriteGlyphRunAnalysis** glyphRunAnalysis)</unmanaged>
         </member>
-        <member name="M:SharpDX.DirectWrite.GlyphRunAnalysis.#ctor(SharpDX.DirectWrite.Factory,SharpDX.DirectWrite.GlyphRun,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},SharpDX.DirectWrite.RenderingMode,SharpDX.Direct2D1.MeasuringMode,System.Single,System.Single)">
+        <member name="M:SharpDX.DirectWrite.GlyphRunAnalysis.#ctor(SharpDX.DirectWrite.Factory,SharpDX.DirectWrite.GlyphRun,System.Single,System.Nullable{SharpDX.Matrix},SharpDX.DirectWrite.RenderingMode,SharpDX.Direct2D1.MeasuringMode,System.Single,System.Single)">
             <summary>
             Creates a glyph run analysis object, which encapsulates information used to render a glyph run.
             </summary>
@@ -11343,7 +11424,7 @@
         </member>
         <member name="M:SharpDX.DirectWrite.InlineObjectShadow.ToIntPtr(SharpDX.DirectWrite.InlineObject)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -12080,7 +12161,7 @@
         </member>
         <member name="M:SharpDX.DirectWrite.TextAnalysisSinkShadow.ToIntPtr(SharpDX.DirectWrite.TextAnalysisSink)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -12171,7 +12252,7 @@
         </member>
         <member name="M:SharpDX.DirectWrite.TextAnalysisSourceShadow.ToIntPtr(SharpDX.DirectWrite.TextAnalysisSource)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -12305,7 +12386,7 @@
             <param name="glyphProps">The glyph props.</param>
             <param name="glyphCount">The glyph count.</param>
             <param name="fontFace">The font face.</param>
-            <param name="fontEmSize">Size of the font em.</param>
+            <param name="fontEmSize">Size of the font in ems.</param>
             <param name="isSideways">if set to <c>true</c> [is sideways].</param>
             <param name="isRightToLeft">if set to <c>true</c> [is right to left].</param>
             <param name="scriptAnalysis">The script analysis.</param>
@@ -12319,7 +12400,7 @@
             </returns>
             <unmanaged>HRESULT IDWriteTextAnalyzer::GetGlyphPlacements([In, Buffer] const wchar_t* textString,[In, Buffer] const unsigned short* clusterMap,[In, Buffer] DWRITE_SHAPING_TEXT_PROPERTIES* textProps,[In] unsigned int textLength,[In, Buffer] const unsigned short* glyphIndices,[In, Buffer] const DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps,[In] unsigned int glyphCount,[In] IDWriteFontFace* fontFace,[In] float fontEmSize,[In] BOOL isSideways,[In] BOOL isRightToLeft,[In] const DWRITE_SCRIPT_ANALYSIS* scriptAnalysis,[In, Buffer, Optional] const wchar_t* localeName,[In, Optional] const void** features,[In, Buffer, Optional] const unsigned int* featureRangeLengths,[In] unsigned int featureRanges,[Out, Buffer] float* glyphAdvances,[Out, Buffer] DWRITE_GLYPH_OFFSET* glyphOffsets)</unmanaged>
         </member>
-        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGdiCompatibleGlyphPlacements(System.String,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32,SharpDX.DirectWrite.FontFace,System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},System.Boolean,System.Boolean,System.Boolean,SharpDX.DirectWrite.ScriptAnalysis,System.String,SharpDX.DirectWrite.FontFeature[][],System.Int32[],System.Single[],SharpDX.DirectWrite.GlyphOffset[])">
+        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGdiCompatibleGlyphPlacements(System.String,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32,SharpDX.DirectWrite.FontFace,System.Single,System.Single,System.Nullable{SharpDX.Matrix3x2},System.Boolean,System.Boolean,System.Boolean,SharpDX.DirectWrite.ScriptAnalysis,System.String,SharpDX.DirectWrite.FontFeature[][],System.Int32[],System.Single[],SharpDX.DirectWrite.GlyphOffset[])">
             <summary>
             Gets the GDI compatible glyph placements.
             </summary>
@@ -12493,7 +12574,7 @@
             <unmanaged>HRESULT IDWriteTextAnalyzer::GetGlyphPlacements([In, Buffer] const wchar_t* textString,[In, Buffer] const unsigned short* clusterMap,[In, Buffer] DWRITE_SHAPING_TEXT_PROPERTIES* textProps,[In] unsigned int textLength,[In, Buffer] const unsigned short* glyphIndices,[In, Buffer] const DWRITE_SHAPING_GLYPH_PROPERTIES* glyphProps,[In] unsigned int glyphCount,[In] IDWriteFontFace* fontFace,[In] float fontEmSize,[In] BOOL isSideways,[In] BOOL isRightToLeft,[In] const DWRITE_SCRIPT_ANALYSIS* scriptAnalysis,[In, Buffer, Optional] const wchar_t* localeName,[In, Optional] const void** features,[In, Buffer, Optional] const unsigned int* featureRangeLengths,[In] unsigned int featureRanges,[Out, Buffer] float* glyphAdvances,[Out, Buffer] DWRITE_GLYPH_OFFSET* glyphOffsets)</unmanaged>	
             <unmanaged-short>IDWriteTextAnalyzer::GetGlyphPlacements</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGdiCompatibleGlyphPlacements(System.String,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32,SharpDX.DirectWrite.FontFace,System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},SharpDX.Bool,SharpDX.Bool,SharpDX.Bool,SharpDX.DirectWrite.ScriptAnalysis,System.String,System.IntPtr,System.Int32[],System.Int32,System.Single[],SharpDX.DirectWrite.GlyphOffset[])">
+        <member name="M:SharpDX.DirectWrite.TextAnalyzer.GetGdiCompatibleGlyphPlacements(System.String,System.Int16[],SharpDX.DirectWrite.ShapingTextProperties[],System.Int32,System.Int16[],SharpDX.DirectWrite.ShapingGlyphProperties[],System.Int32,SharpDX.DirectWrite.FontFace,System.Single,System.Single,System.Nullable{SharpDX.Matrix3x2},SharpDX.Bool,SharpDX.Bool,SharpDX.Bool,SharpDX.DirectWrite.ScriptAnalysis,System.String,System.IntPtr,System.Int32[],System.Int32,System.Single[],SharpDX.DirectWrite.GlyphOffset[])">
             <summary>	
             <p>Place glyphs output from the <strong>GetGlyphs</strong> method according to the font  and the writing system's rendering rules.</p>	
             </summary>	
@@ -13070,9 +13151,9 @@
             <param name="useGdiNatural">Instructs the text layout to use the same metrics as GDI bi-level text when set to FALSE. When set to TRUE, instructs the text layout to use the same metrics as text measured by GDI using a font created with CLEARTYPE_NATURAL_QUALITY.  </param>
             <unmanaged>HRESULT IDWriteFactory::CreateGdiCompatibleTextLayout([In, Buffer] const wchar_t* string,[None] int stringLength,[None] IDWriteTextFormat* textFormat,[None] float layoutWidth,[None] float layoutHeight,[None] float pixelsPerDip,[In, Optional] const DWRITE_MATRIX* transform,[None] BOOL useGdiNatural,[Out] IDWriteTextLayout** textLayout)</unmanaged>
         </member>
-        <member name="M:SharpDX.DirectWrite.TextLayout.#ctor(SharpDX.DirectWrite.Factory,System.String,SharpDX.DirectWrite.TextFormat,System.Single,System.Single,System.Single,System.Nullable{SharpDX.DirectWrite.Matrix},System.Boolean)">
+        <member name="M:SharpDX.DirectWrite.TextLayout.#ctor(SharpDX.DirectWrite.Factory,System.String,SharpDX.DirectWrite.TextFormat,System.Single,System.Single,System.Single,System.Nullable{SharpDX.Matrix},System.Boolean)">
             <summary>	
-            Create a Gdi Compatible TextLayout. Takes a string, format, and associated constraints, and produces an object representing the result, formatted for a particular display resolution and measuring mode.  	
+            Create a GDI Compatible TextLayout. Takes a string, format, and associated constraints, and produces an object representing the result, formatted for a particular display resolution and measuring mode.  	
             </summary>	
             <remarks>	
             The resulting text layout should only be used for the intended resolution, and for cases where text scalability is desired {{CreateTextLayout}} should be used instead. 	
@@ -13183,7 +13264,7 @@
             Gets the font em height of the text at the specified position. 	
             </summary>	
             <param name="currentPosition">The position of the text to inspect. </param>
-            <returns>the size of the font in ems  of the text at the specified position. </returns>
+            <returns>The size of the font in ems of the text at the specified position. </returns>
             <unmanaged>HRESULT IDWriteTextLayout::GetFontSize([None] int currentPosition,[Out] float* fontSize,[Out, Optional] DWRITE_TEXT_RANGE* textRange)</unmanaged>
         </member>
         <member name="M:SharpDX.DirectWrite.TextLayout.GetFontStretch(System.Int32)">
@@ -14074,10 +14155,10 @@
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.FromWicBitmap(SharpDX.Direct2D1.RenderTarget,SharpDX.WIC.BitmapSource)">
             <summary>
-            Creates a Bitmap from a wic bitmap.
+            Creates a Bitmap from a WIC bitmap.
             </summary>
             <param name="renderTarget">The render target.</param>
-            <param name="wicBitmapSource">A reference to a <see cref="T:SharpDX.WIC.BitmapSource"/> wic bitmap.</param>
+            <param name="wicBitmapSource">A reference to a <see cref="T:SharpDX.WIC.BitmapSource"/> WIC bitmap.</param>
             <returns></returns>
             <msdn-id>dd371797</msdn-id>	
             <unmanaged>HRESULT ID2D1RenderTarget::CreateBitmapFromWicBitmap([In] IWICBitmapSource* wicBitmapSource,[In, Optional] const D2D1_BITMAP_PROPERTIES* bitmapProperties,[Out] ID2D1Bitmap** bitmap)</unmanaged>	
@@ -14085,10 +14166,10 @@
         </member>
         <member name="M:SharpDX.Direct2D1.Bitmap.FromWicBitmap(SharpDX.Direct2D1.RenderTarget,SharpDX.WIC.BitmapSource,SharpDX.Direct2D1.BitmapProperties)">
             <summary>
-            Creates a Bitmap from a wic bitmap.
+            Creates a Bitmap from a WIC bitmap.
             </summary>
             <param name="renderTarget">The render target.</param>
-            <param name="wicBitmap">The wic bitmap.</param>
+            <param name="wicBitmap">The WIC bitmap.</param>
             <param name="bitmapProperties">The bitmap properties.</param>
             <returns></returns>
             <msdn-id>dd371797</msdn-id>	
@@ -14408,7 +14489,7 @@
             <summary>	
             Return the dots per inch (DPI) of the bitmap.	
             </summary>	
-            <value>The dots per inch (DPI) of the bitma.</value>
+            <value>The dots per inch (DPI) of the bitmap.</value>
         </member>
         <member name="P:SharpDX.Direct2D1.Bitmap.Size">
             <summary>	
@@ -14817,7 +14898,7 @@
         </member>
         <member name="M:SharpDX.Direct2D1.BitmapRenderTarget.#ctor(SharpDX.Direct2D1.RenderTarget,SharpDX.Direct2D1.CompatibleRenderTargetOptions)">
             <summary>	
-             Creates a bitmap render target for use during intermediate offscreen drawing that is compatible with the current render targe with same size, pixel size and pixel format.
+             Creates a bitmap render target for use during intermediate offscreen drawing that is compatible with the current render target with same size, pixel size and pixel format.
             </summary>	
             <param name="renderTarget">an instance of <see cref="T:SharpDX.Direct2D1.RenderTarget"/></param>
             <param name="options">A value that specifies whether the new render target must be compatible with GDI.</param>
@@ -14998,7 +15079,7 @@
         </member>
         <member name="M:SharpDX.DirectWrite.TextRendererShadow.ToIntPtr(SharpDX.DirectWrite.TextRenderer)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -18084,69 +18165,6 @@
             <unmanaged>BOOL isTrimmed</unmanaged>	
             <unmanaged-short>BOOL isTrimmed</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.DirectWrite.Matrix">
-            <summary>	
-            <p>The <strong><see cref="T:SharpDX.DirectWrite.Matrix"/></strong> structure specifies the graphics transform to be applied to rendered glyphs.</p>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DWRITE_MATRIX']/*"/>	
-            <msdn-id>dd368105</msdn-id>	
-            <unmanaged>DWRITE_MATRIX</unmanaged>	
-            <unmanaged-short>DWRITE_MATRIX</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DirectWrite.Matrix.M11">
-            <summary>	
-            <dd> <p>A value indicating the horizontal scaling / cosine of rotation.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DWRITE_MATRIX::m11']/*"/>	
-            <msdn-id>dd368105</msdn-id>	
-            <unmanaged>float m11</unmanaged>	
-            <unmanaged-short>float m11</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DirectWrite.Matrix.M12">
-            <summary>	
-            <dd> <p>A value indicating the vertical shear / sine of rotation.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DWRITE_MATRIX::m12']/*"/>	
-            <msdn-id>dd368105</msdn-id>	
-            <unmanaged>float m12</unmanaged>	
-            <unmanaged-short>float m12</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DirectWrite.Matrix.M21">
-            <summary>	
-            <dd> <p>A value indicating the horizontal shear / negative sine of rotation.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DWRITE_MATRIX::m21']/*"/>	
-            <msdn-id>dd368105</msdn-id>	
-            <unmanaged>float m21</unmanaged>	
-            <unmanaged-short>float m21</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DirectWrite.Matrix.M22">
-            <summary>	
-            <dd> <p>A value indicating the vertical scaling / cosine of rotation.</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DWRITE_MATRIX::m22']/*"/>	
-            <msdn-id>dd368105</msdn-id>	
-            <unmanaged>float m22</unmanaged>	
-            <unmanaged-short>float m22</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DirectWrite.Matrix.Dx">
-            <summary>	
-            <dd> <p>A value indicating the horizontal shift (always orthogonal regardless of rotation).</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DWRITE_MATRIX::dx']/*"/>	
-            <msdn-id>dd368105</msdn-id>	
-            <unmanaged>float dx</unmanaged>	
-            <unmanaged-short>float dx</unmanaged-short>	
-        </member>
-        <member name="F:SharpDX.DirectWrite.Matrix.Dy">
-            <summary>	
-            <dd> <p>A value indicating the vertical shift (always orthogonal regardless of rotation.)</p> </dd>	
-            </summary>	
-            <!-- No matching elements were found for the following include tag --><include file="..\..\Documentation\CodeComments.xml" path="/comments/comment[@id='DWRITE_MATRIX::dy']/*"/>	
-            <msdn-id>dd368105</msdn-id>	
-            <unmanaged>float dy</unmanaged>	
-            <unmanaged-short>float dy</unmanaged-short>	
-        </member>
         <member name="T:SharpDX.DirectWrite.OverhangMetrics">
             <summary>	
             <p>Indicates how much any visible DIPs (device independent pixels) overshoot each side of the layout or inline objects.</p><p>Positive overhangs indicate that the visible area extends outside the layout box or inline object, while negative values mean there is whitespace inside. The returned values are unaffected by rendering transforms or pixel snapping.  Additionally, they may not exactly match the final target's pixel bounds after applying grid fitting and hinting.</p>	
@@ -20365,7 +20383,7 @@
             Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.	
             </summary>	
             <param name="length">The distance along the geometry of the point and tangent to find. If this distance is less then 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry. </param>
-            <param name="unitTangentVector">Whenthis method returns, contains a reference to the tangent vector at the specified distance along the geometry. If the geometry is empty,  this vector contains NaN as its x and y values. You must allocate storage for this parameter. </param>
+            <param name="unitTangentVector">When this method returns, contains a reference to the tangent vector at the specified distance along the geometry. If the geometry is empty,  this vector contains NaN as its x and y values. You must allocate storage for this parameter. </param>
             <returns>The location at the specified distance along the geometry. If the geometry is empty,  this point contains NaN as its x and y values. </returns>
             <unmanaged>HRESULT ID2D1Geometry::ComputePointAtLength([None] float length,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out, Optional] D2D1_POINT_2F* point,[Out, Optional] D2D1_POINT_2F* unitTangentVector)</unmanaged>
         </member>
@@ -20375,7 +20393,7 @@
             </summary>	
             <param name="length">The distance along the geometry of the point and tangent to find. If this distance is less then 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry. </param>
             <param name="flatteningTolerance">The maximum bounds on the distance between points in the polygonal approximation of the geometry. Smaller values produce more accurate results but cause slower execution. </param>
-            <param name="unitTangentVector">Whenthis method returns, contains a reference to the tangent vector at the specified distance along the geometry. If the geometry is empty,  this vector contains NaN as its x and y values. You must allocate storage for this parameter. </param>
+            <param name="unitTangentVector">When this method returns, contains a reference to the tangent vector at the specified distance along the geometry. If the geometry is empty,  this vector contains NaN as its x and y values. You must allocate storage for this parameter. </param>
             <returns>The location at the specified distance along the geometry. If the geometry is empty,  this point contains NaN as its x and y values. </returns>
             <unmanaged>HRESULT ID2D1Geometry::ComputePointAtLength([None] float length,[In, Optional] const D2D1_MATRIX_3X2_F* worldTransform,[None] float flatteningTolerance,[Out, Optional] D2D1_POINT_2F* point,[Out, Optional] D2D1_POINT_2F* unitTangentVector)</unmanaged>
         </member>
@@ -23131,7 +23149,7 @@
             Initializes a new instance of the <see cref="T:SharpDX.Direct2D1.PixelFormat"/> struct.
             </summary>
             <param name="format">A value that specifies the size and arrangement of channels in each pixel.</param>
-            <param name="alphaMode">A value that specifies whether the alpha channel is using pre-multiplied alpha, straight alpha, whether it should be ignored and considered opaque, or whether it is unkown.</param>
+            <param name="alphaMode">A value that specifies whether the alpha channel is using pre-multiplied alpha, straight alpha, whether it should be ignored and considered opaque, or whether it is unknown.</param>
         </member>
         <member name="T:SharpDX.Direct2D1.QuadraticBezierSegment">
             <summary>	
@@ -23449,7 +23467,7 @@
         </member>
         <member name="M:SharpDX.Direct2D1.SimplifiedGeometrySinkShadow.ToIntPtr(SharpDX.Direct2D1.SimplifiedGeometrySink)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -23459,7 +23477,7 @@
             Get a native callback pointer from a managed callback.
             </summary>
             <param name="geometrySink">The geometry sink.</param>
-            <returns>A pointer to the unmanaged geomerty sink counterpart</returns>
+            <returns>A pointer to the unmanaged geometry sink counterpart</returns>
         </member>
         <member name="T:SharpDX.Direct2D1.TessellationSinkShadow">
             <summary>
@@ -23471,7 +23489,7 @@
             Get a native callback pointer from a managed callback.
             </summary>
             <param name="tessellationSink">The geometry sink.</param>
-            <returns>A pointer to the unmanaged geomerty sink counterpart</returns>
+            <returns>A pointer to the unmanaged geometry sink counterpart</returns>
         </member>
         <member name="T:SharpDX.WIC.BitmapEncoderOptions">
             <summary>
@@ -23594,10 +23612,10 @@
         </member>
         <member name="P:SharpDX.WIC.BitmapEncoderOptions.JpegYCrCbSubsampling">
             <summary>
-            Gets or sets the JPEG Y cr cb subsampling.
+            Gets or sets the JPEG Y Cr Cb subsampling.
             </summary>
             <value>
-            The JPEG Y cr cb subsampling.
+            The JPEG Y Cr Cb subsampling.
             </value>
             <remarks>
             Range value: <see cref="T:SharpDX.WIC.JpegYCrCbSubsamplingOption"/>
@@ -24005,7 +24023,7 @@
         </member>
         <member name="T:SharpDX.WIC.WmpBitmapEncoder">
             <summary>
-            Wmp bitmap encoder using <see cref="T:SharpDX.WIC.BitmapEncoder"/> initialized with default guid <see cref="F:SharpDX.WIC.ContainerFormatGuids.Wmp"/>.
+            WMP bitmap encoder using <see cref="T:SharpDX.WIC.BitmapEncoder"/> initialized with default guid <see cref="F:SharpDX.WIC.ContainerFormatGuids.Wmp"/>.
             </summary>
         </member>
         <member name="M:SharpDX.WIC.WmpBitmapEncoder.#ctor(System.IntPtr)">
