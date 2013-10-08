@@ -3675,7 +3675,7 @@
         </member>
         <member name="M:SharpDX.D3DCompiler.IncludeShadow.ToIntPtr(SharpDX.D3DCompiler.Include)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -4723,7 +4723,7 @@
             <summary>	
             Decompresses all shaders from a compressed set.	
             </summary>	
-            <returns>Returns an array of decompresss shader bytecode.</returns>	
+            <returns>Returns an array of decompress shader bytecode.</returns>	
             <unmanaged>HRESULT D3DDecompressShaders([In, Buffer] const void* pSrcData,[In] SIZE_T SrcDataSize,[In] unsigned int uNumShaders,[In] unsigned int uStartIndex,[In, Buffer, Optional] unsigned int* pIndices,[In] unsigned int uFlags,[Out, Buffer] ID3D10Blob** ppShaders,[Out, Optional] unsigned int* pTotalShaders)</unmanaged>	
         </member>
         <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Decompress(System.Int32,System.Int32)">
@@ -4732,7 +4732,7 @@
             </summary>	
             <param name="numShaders"><para>The number of shaders to decompress.</para></param>	
             <param name="startIndex"><para>The index of the first shader to decompress.</para></param>	
-            <returns>Returns an array of decompresss shader bytecode.</returns>	
+            <returns>Returns an array of decompress shader bytecode.</returns>	
             <unmanaged>HRESULT D3DDecompressShaders([In, Buffer] const void* pSrcData,[In] SIZE_T SrcDataSize,[In] unsigned int uNumShaders,[In] unsigned int uStartIndex,[In, Buffer, Optional] unsigned int* pIndices,[In] unsigned int uFlags,[Out, Buffer] ID3D10Blob** ppShaders,[Out, Optional] unsigned int* pTotalShaders)</unmanaged>	
         </member>
         <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Decompress(System.Int32[])">
@@ -4740,7 +4740,7 @@
             Decompresses one or more shaders from a compressed set.	
             </summary>	
             <param name="indices"><para>An array of indexes that represent the shaders to decompress.</para></param>	
-            <returns>Returns an array of decompresss shader bytecode.</returns>	
+            <returns>Returns an array of decompress shader bytecode.</returns>	
             <unmanaged>HRESULT D3DDecompressShaders([In, Buffer] const void* pSrcData,[In] SIZE_T SrcDataSize,[In] unsigned int uNumShaders,[In] unsigned int uStartIndex,[In, Buffer, Optional] unsigned int* pIndices,[In] unsigned int uFlags,[Out, Buffer] ID3D10Blob** ppShaders,[Out, Optional] unsigned int* pTotalShaders)</unmanaged>	
         </member>
         <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Disassemble">
@@ -4781,9 +4781,9 @@
             Gets the trace instruction offsets.
             </summary>
             <param name="isIncludingNonExecutableCode">if set to <c>true</c> [is including non executable code].</param>
-            <param name="startInstIndex">Start index of the inst.</param>
-            <param name="numInsts">The num insts.</param>
-            <param name="totalInstsRef">The total insts ref.</param>
+            <param name="startInstIndex">Start index of the instructions.</param>
+            <param name="numInsts">The number of instructions.</param>
+            <param name="totalInstsRef">The total instructions ref.</param>
             <returns>An offset</returns>
             <unmanaged>HRESULT D3DGetTraceInstructionOffsets([In, Buffer] const void* pSrcData,[In] SIZE_T SrcDataSize,[In] unsigned int Flags,[In] SIZE_T StartInstIndex,[In] SIZE_T NumInsts,[Out, Buffer, Optional] SIZE_T* pOffsets,[Out, Optional] SIZE_T* pTotalInsts)</unmanaged>
         </member>
@@ -4816,7 +4816,7 @@
         </member>
         <member name="M:SharpDX.D3DCompiler.ShaderBytecode.Save(System.IO.Stream)">
             <summary>
-            Saves this bycode to the specified stream.
+            Saves this bytecode to the specified stream.
             </summary>
             <param name="stream">The stream.</param>
         </member>
@@ -4852,7 +4852,8 @@
             <summary>
               Preprocesses the provided shader or effect source.
             </summary>
-            <param name = "shaderSource">An array of bytes containing the raw source of the shader or effect to preprocess.</param>
+            <param name = "shaderSourcePtr">An array of bytes containing the raw source of the shader or effect to preprocess.</param>
+            <param name = "shaderSourceLength"></param>
             <param name = "defines">A set of macros to define during preprocessing.</param>
             <param name = "include">An interface for handling include files.</param>
             <param name = "compilationErrors">When the method completes, contains a string of compilation errors, or an empty string if preprocessing succeeded.</param>

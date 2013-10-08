@@ -55,8 +55,15 @@
             Unloads all data that was loaded by this ContentManager. All data will be disposed.
             </summary>
             <remarks>
-            Unlike <see cref="M:SharpDX.Toolkit.Content.ContentManager.Load``1(System.String,System.Object)"/> method, this method is not threadsafe and must be called by a single caller at a single time.
+            Unlike <see cref="M:SharpDX.Toolkit.Content.ContentManager.Load``1(System.String,System.Object)"/> method, this method is not thread safe and must be called by a single caller at a single time.
             </remarks>
+        </member>
+        <member name="M:SharpDX.Toolkit.Content.IContentManager.Unload(System.String)">
+            <summary>
+            Unloads and disposes an asset.
+            </summary>
+            <param name="assetName">The asset name</param>
+            <returns><c>true</c> if the asset exists and was unloaded, <c>false</c> otherwise.</returns>
         </member>
         <member name="P:SharpDX.Toolkit.Content.IContentManager.ServiceProvider">
             <summary>
@@ -70,7 +77,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Content.ContentManager.#ctor(System.IServiceProvider)">
             <summary>
-            Initializes a new instance of ContentManager.  Reference page contains code sample.
+            Initializes a new instance of ContentManager. Reference page contains code sample.
             </summary>
             <param name="serviceProvider">The service provider that the ContentManager should use to locate services.</param>
         </member>
@@ -90,8 +97,15 @@
             Unloads all data that was loaded by this ContentManager. All data will be disposed.
             </summary>
             <remarks>
-            Unlike <see cref="M:SharpDX.Toolkit.Content.ContentManager.Load``1(System.String,System.Object)"/> method, this method is not threadsafe and must be called by a single caller at a single time.
+            Unlike <see cref="M:SharpDX.Toolkit.Content.ContentManager.Load``1(System.String,System.Object)"/> method, this method is not thread safe and must be called by a single caller at a single time.
             </remarks>
+        </member>
+        <member name="M:SharpDX.Toolkit.Content.ContentManager.Unload(System.String)">
+            <summary>
+            Unloads and disposes an asset.
+            </summary>
+            <param name="assetName">The asset name</param>
+            <returns><c>true</c> if the asset exists and was unloaded, <c>false</c> otherwise.</returns>
         </member>
         <member name="P:SharpDX.Toolkit.Content.ContentManager.Resolvers">
             <summary>
@@ -131,6 +145,36 @@
             </summary>
             <value>The type of the content reader.</value>
         </member>
+        <member name="T:SharpDX.Toolkit.Content.ContentReaderParameters">
+            <summary>
+            Parameters used by <see cref="M:SharpDX.Toolkit.Content.IContentReader.ReadContent(SharpDX.Toolkit.Content.IContentManager,SharpDX.Toolkit.Content.ContentReaderParameters@)"/>
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.Content.ContentReaderParameters.AssetName">
+            <summary>
+            Name of the asset currently loaded when using <see cref="M:SharpDX.Toolkit.Content.IContentManager.Load``1(System.String,System.Object)"/>.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.Content.ContentReaderParameters.AssetType">
+            <summary>
+            Type of the asset currently loaded when using <see cref="M:SharpDX.Toolkit.Content.IContentManager.Load``1(System.String,System.Object)"/>.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.Content.ContentReaderParameters.Stream">
+            <summary>
+            Stream of the asset to load.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.Content.ContentReaderParameters.KeepStreamOpen">
+            <summary>
+            This parameter is an out parameter for <see cref="M:SharpDX.Toolkit.Content.IContentReader.ReadContent(SharpDX.Toolkit.Content.IContentManager,SharpDX.Toolkit.Content.ContentReaderParameters@)"/>. Set to true to let the ContentManager close the stream once the reader is done.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.Content.ContentReaderParameters.Options">
+            <summary>
+            Custom options provided when using <see cref="M:SharpDX.Toolkit.Content.IContentManager.Load``1(System.String,System.Object)"/>.
+            </summary>
+        </member>
         <member name="T:SharpDX.Toolkit.Content.FileSystemContentResolver">
             <summary>
             This <see cref="T:SharpDX.Toolkit.Content.IContentResolver"/> is loading an asset name from a root directory from a physical disk.
@@ -155,11 +199,23 @@
             <param name="assetName">Name of the asset.</param>
             <returns>A Stream of the asset. This value can be null if this resolver was not able to locate the asset.</returns>
         </member>
+        <member name="F:SharpDX.Toolkit.Content.FileSystemContentResolver.DefaultExtension">
+            <summary>
+            The default extension for asset files which is appended to any asset names that do not specify an extension.
+            </summary>
+        </member>
         <member name="M:SharpDX.Toolkit.Content.FileSystemContentResolver.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Toolkit.Content.FileSystemContentResolver"/> class.
             </summary>
             <param name="rootDirectory">The root directory.</param>
+        </member>
+        <member name="M:SharpDX.Toolkit.Content.FileSystemContentResolver.GetAssetPath(System.String)">
+            <summary>
+            Gets the full asset path based on the root directory and default extension.
+            </summary>
+            <param name="assetName">The asset name.</param>
+            <returns>The full asset path.</returns>
         </member>
         <member name="P:SharpDX.Toolkit.Content.FileSystemContentResolver.RootDirectory">
             <summary>
@@ -172,15 +228,12 @@
             A content reader is in charge of reading object data from a stream.
             </summary>
         </member>
-        <member name="M:SharpDX.Toolkit.Content.IContentReader.ReadContent(SharpDX.Toolkit.Content.IContentManager,System.String,System.IO.Stream,System.Boolean@,System.Object)">
+        <member name="M:SharpDX.Toolkit.Content.IContentReader.ReadContent(SharpDX.Toolkit.Content.IContentManager,SharpDX.Toolkit.Content.ContentReaderParameters@)">
             <summary>
             Reads the content of a particular data from a stream.
             </summary>
             <param name="contentManager">The content manager.</param>
-            <param name="assetName">The name of the asset associated with the stream.</param>
-            <param name="stream">The steam of the asset to load data from.</param>
-            <param name="keepStreamOpen"><c>true</c> to keep the stream opened after the content was read, otherwise the stream will be closed after if this content reader succeeded to read the data.</param>
-            <param name="options">The options passed to the content manager.</param>
+            <param name="parameters"></param>
             <returns>The data decoded from the stream, or null if the kind of asset is not supported by this content reader.</returns>
         </member>
         <member name="T:SharpDX.Toolkit.Content.NamespaceDoc">
@@ -361,7 +414,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.MaterialKeysBase.Shininess">
             <summary>
-            Defines the shininess of a phong-shaded material. This is actually the exponent of the phong specular equation 
+            Defines the shininess of a Phong-shaded material. This is actually the exponent of the Phong specular equation 
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.MaterialKeysBase.Reflectivity">
@@ -381,7 +434,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.MaterialKeysBase.ColorDiffuse">
             <summary>
-            Diffuse color of the material. This is typically scaled by the amount of incoming diffuse light (e.g. using gouraud shading).
+            Diffuse color of the material. This is typically scaled by the amount of incoming diffuse light (e.g. using Gouraud shading).
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.MaterialKeysBase.ColorAmbient">
@@ -391,12 +444,12 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.MaterialKeysBase.ColorSpecular">
             <summary>
-            Specular color of the material. This is typically scaled by the amount of incoming specular light (e.g. using phong shading) 
+            Specular color of the material. This is typically scaled by the amount of incoming specular light (e.g. using Phong shading) 
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.MaterialKeysBase.ColorEmissive">
             <summary>
-            Emissive color of the material. This is the amount of light emitted by the object. In real time applications it will usually not affect surrounding objects, but raytracing applications may wish to treat emissive objects as light sources. 
+            Emissive color of the material. This is the amount of light emitted by the object. In real time applications it will usually not affect surrounding objects, but ray tracing applications may wish to treat emissive objects as light sources. 
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.MaterialKeysBase.ColorTransparent">
@@ -553,7 +606,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.MaterialTextureFlags.Invert">
             <summary>
-            The texture's color values have to be inverted (componentwise 1-n)
+            The texture's color values have to be inverted (component-wise 1-n)
             </summary>
             
         </member>
@@ -625,7 +678,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.ModelData.MaximumBufferSizeInBytes">
             <summary>
-            Gest the maximum buffer size in bytes that will be needed when loading this model.
+            Gets the maximum buffer size in bytes that will be needed when loading this model.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.ModelData.Textures">
@@ -853,12 +906,12 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.ModelData.MeshPart.IndexBufferRange">
             <summary>
-            The index buffer range. The slot in the buffer range is the position of the index buffer in <see cref="!:ModelData.IndexBuffers"/>.
+            The index buffer range. The slot in the buffer range is the position of the index buffer in <see cref="T:SharpDX.Toolkit.Graphics.ModelData.IndexBuffer"/>s.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.ModelData.MeshPart.VertexBufferRange">
             <summary>
-            The vertex buffer range. The slot in the buffer range is the position of the vertex buffer in <see cref="!:ModelData.VertexBuffers"/>.
+            The vertex buffer range. The slot in the buffer range is the position of the vertex buffer in <see cref="T:SharpDX.Toolkit.Graphics.ModelData.VertexBuffer"/>s.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.ModelData.MeshPart.BoneOffsetMatrices">
@@ -978,7 +1031,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.EffectData.CompilerArguments.DependencyFilePath">
             <summary>
-            The absolute path to dependency filepath generated when compiling this effect.
+            The absolute path to dependency file path generated when compiling this effect.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.EffectData.CompilerArguments.CompilerFlags">
@@ -1121,7 +1174,7 @@
             <param name="systemValueType">A predefined string that determines the functionality of certain pipeline stages.</param>
             <param name="componentType">The per-component-data type that is stored in a register.</param>
             <param name="usageMask">Mask which indicates which components of a register are used.</param>
-            <param name="readWriteMask">sk which indicates whether a given component is never written (if the signature is an output signature) or always read (if the signature is an input signature).</param>
+            <param name="readWriteMask">Mask which indicates whether a given component is never written (if the signature is an output signature) or always read (if the signature is an input signature).</param>
             <param name="stream">Indicates which stream the geometry shader is using for the signature parameter.</param>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.EffectData.Semantic.SharpDX#Serialization#IDataSerializable#Serialize(SharpDX.Serialization.BinarySerializer)">
@@ -1515,7 +1568,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.IEffectCompiler.Compile(System.String,System.String,SharpDX.Toolkit.Graphics.EffectCompilerFlags,System.Collections.Generic.List{SharpDX.Toolkit.Graphics.EffectData.ShaderMacro},System.Collections.Generic.List{System.String},System.Boolean,System.String)">
             <summary>
-            Compiles an effect from the specified source code and filepath.
+            Compiles an effect from the specified source code and file path.
             </summary>
             <param name="sourceCode">The source code.</param>
             <param name="filePath">The file path.</param>
@@ -1603,20 +1656,20 @@
             Data for a SpriteFont object that supports kerning.
             </summary>
             <remarks>
-            Loading of SpriteFontData supports DirectXTk "MakeSpriteFont" fornat and AngelCode Bitmap Font Maker (binary format).
+            Loading of SpriteFontData supports DirectXTk "MakeSpriteFont" format and AngelCode Bitmap Font Maker (binary format).
             </remarks>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.SpriteFontData.SerializeBMFFont(SharpDX.Serialization.BinarySerializer)">
             <summary>
              This method for loading/saving a font file generated from AngelCode BMFont.
             </summary>
-            <param name="serializer">The binaryserializer to use.</param>
+            <param name="serializer">The binary serializer to use.</param>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.SpriteFontData.SerializeMakeSpriteFont(SharpDX.Serialization.BinarySerializer)">
             <summary>
              This method for loading/saving a font file generated from MakeSpriteFont.
             </summary>
-            <param name="serializer">The binaryserializer to use.</param>
+            <param name="serializer">The binary serializer to use.</param>
             <returns></returns>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.SpriteFontData.BaseOffset">
@@ -1729,7 +1782,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.SpriteFontData.BitmapData.Width">
             <summary>
-            Wisth of the bitmap.
+            Width of the bitmap.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.SpriteFontData.BitmapData.Height">
@@ -1744,12 +1797,12 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.SpriteFontData.BitmapData.RowStride">
             <summary>
-            Srite in bytes of a row of pixels.
+            Stride in bytes of a row of pixels.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.SpriteFontData.BitmapData.CompressedHeight">
             <summary>
-            Number of rowstride (may be less than <see cref="F:SharpDX.Toolkit.Graphics.SpriteFontData.BitmapData.Height"/> when using compressed format.
+            Number of row strides (may be less than <see cref="F:SharpDX.Toolkit.Graphics.SpriteFontData.BitmapData.Height"/> when using compressed format.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.SpriteFontData.BitmapData.Data">
@@ -2024,7 +2077,7 @@
         <member name="F:SharpDX.Toolkit.Graphics.VertexElement.AppendAligned">
             <summary>
               Returns a value that can be used for the offset parameter of an InputElement to indicate that the element
-              should be aligned directly after the previous element, including any packing if neccessary.
+              should be aligned directly after the previous element, including any packing if necessary.
             </summary>
             <returns>A value used to align input elements.</returns>
             <unmanaged>D3D11_APPEND_ALIGNED_ELEMENT</unmanaged>

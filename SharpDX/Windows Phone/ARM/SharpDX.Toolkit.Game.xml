@@ -155,7 +155,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.IDrawable.EndDraw">
             <summary>
-            Ends the drawing of a frame. This method is preceeded by calls to Draw and BeginDraw.
+            Ends the drawing of a frame. This method is preceded by calls to Draw and BeginDraw.
             </summary>
         </member>
         <member name="E:SharpDX.Toolkit.IDrawable.DrawOrderChanged">
@@ -244,7 +244,7 @@
         </member>
         <member name="E:SharpDX.Toolkit.EffectCompilerSystem.CompilationError">
             <summary>
-            Occurs when a compilation error occured for an effect.
+            Occurs when a compilation error occurred for an effect.
             </summary>
         </member>
         <member name="E:SharpDX.Toolkit.EffectCompilerSystem.CompilationStarted">
@@ -409,7 +409,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.GameGraphicsParameters">
             <summary>
-              Describess how data will be displayed to the screen.
+              Describes how data will be displayed to the screen.
             </summary>
             <msdn-id>bb173075</msdn-id>
             <unmanaged>DXGI_SWAP_CHAIN_DESC</unmanaged>
@@ -461,7 +461,17 @@
         </member>
         <member name="F:SharpDX.Toolkit.GameGraphicsParameters.SynchronizeWithVerticalRetrace">
             <summary>
-            Gets or sets a value indicating whether to synochrnize present with vertical blanking.
+            Gets or sets a value indicating whether to synchronize present with vertical blanking.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.PreferredFullScreenOutputIndex">
+            <summary>
+            The output (monitor) index to use when switching to fullscreen mode. Doesn't have any effect when windowed mode is used.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.GameGraphicsParameters.DepthBufferShaderResource">
+            <summary>
+            Indicates whether the DepthBuffer should be created with the ShaderResource flag. Default is false.
             </summary>
         </member>
         <member name="T:SharpDX.Toolkit.GameWindow">
@@ -474,6 +484,14 @@
             Initializes the GameWindow with the specified window context.
             </summary>
             <param name="gameContext">The window context.</param>
+        </member>
+        <member name="M:SharpDX.Toolkit.GameWindow.CreateGraphicsPresenter(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Toolkit.Graphics.PresentationParameters)">
+            <summary>
+            Allows derived classes to create a custom graphics presenter
+            </summary>
+            <param name="device">The graphics device to use for renderer creation</param>
+            <param name="parameters">The desired presentation parameters to use for renderer creation</param>
+            <returns>Default implementation returns null</returns>
         </member>
         <member name="E:SharpDX.Toolkit.GameWindow.Activated">
             <summary>
@@ -626,7 +644,7 @@
             </param>
         </member>
         <member name="M:SharpDX.Toolkit.Game.EndDraw">
-            <summary>Ends the drawing of a frame. This method is preceeded by calls to Draw and BeginDraw.</summary>
+            <summary>Ends the drawing of a frame. This method is preceded by calls to Draw and BeginDraw.</summary>
         </member>
         <member name="M:SharpDX.Toolkit.Game.EndRun">
             <summary>Called after the game loop has stopped running before exiting.</summary>
@@ -1045,6 +1063,16 @@
             Gets or sets the preferred depth stencil format.
             </summary>
             <value>The preferred depth stencil format.</value>
+        </member>
+        <member name="P:SharpDX.Toolkit.GraphicsDeviceManager.PreferredFullScreenOutputIndex">
+            <summary>
+            The output (monitor) index to use when switching to fullscreen mode. Doesn't have any effect when windowed mode is used.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Toolkit.GraphicsDeviceManager.DepthBufferShaderResource">
+            <summary>
+            Gets or sets a value indicating whether the DepthBuffer should be created with the ShaderResource flag. Default is false.
+            </summary>
         </member>
         <member name="P:SharpDX.Toolkit.GraphicsDeviceManager.SupportedOrientations">
             <summary>

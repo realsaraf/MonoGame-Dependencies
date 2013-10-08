@@ -44,7 +44,7 @@
             </summary>
             <param name="from">The GraphicsResource to convert from.</param>
         </member>
-        <member name="M:SharpDX.Toolkit.Graphics.GraphicsResource.GetCputAccessFlagsFromUsage(SharpDX.Direct3D11.ResourceUsage)">
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsResource.GetCpuAccessFlagsFromUsage(SharpDX.Direct3D11.ResourceUsage)">
             <summary>
             Gets the CPU access flags from the <see cref="T:SharpDX.Direct3D11.ResourceUsage"/>.
             </summary>
@@ -91,7 +91,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.BlendState.New(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Direct3D11.RenderTargetBlendDescription,SharpDX.Color4,System.Int32)">
             <summary>
-            <p>Create a blend-state object that encapsules blend state for the output-merger stage.</p>
+            <p>Create a blend-state object that encapsulates blend state for the output-merger stage.</p>
             </summary>
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="renderTargetBlend0">The render target blend description for the first render target.</param>
@@ -105,7 +105,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.BlendState.New(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Direct3D11.RenderTargetBlendDescription,System.Int32)">
             <summary>
-            <p>Create a blend-state object that encapsules blend state for the output-merger stage.</p>
+            <p>Create a blend-state object that encapsulates blend state for the output-merger stage.</p>
             </summary>
             <param name="device">The  <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="renderTargetBlend0">The render target blend description for the first render target.</param>
@@ -118,7 +118,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.BlendState.New(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOperation,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOperation,SharpDX.Direct3D11.ColorWriteMaskFlags,System.Int32)">
             <summary>
-            <p>Create a blend-state object that encapsules blend state for the output-merger stage.</p>
+            <p>Create a blend-state object that encapsulates blend state for the output-merger stage.</p>
             </summary>
             <param name="device">The  <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="sourceBlend">The source blend.</param>
@@ -137,7 +137,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.BlendState.New(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOperation,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOption,SharpDX.Direct3D11.BlendOperation,SharpDX.Direct3D11.ColorWriteMaskFlags,SharpDX.Color4,System.Int32)">
             <summary>
-            <p>Create a blend-state object that encapsules blend state for the output-merger stage.</p>
+            <p>Create a blend-state object that encapsulates blend state for the output-merger stage.</p>
             </summary>
             <param name="device">The  <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="sourceBlend">The source blend.</param>
@@ -157,7 +157,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.BlendState.New(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Direct3D11.BlendStateDescription,System.Int32)">
             <summary>
-            <p>Create a blend-state object that encapsules blend state for the output-merger stage.</p>
+            <p>Create a blend-state object that encapsulates blend state for the output-merger stage.</p>
             </summary>
             <param name="device">The  <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="description"><dd>  <p>Pointer to a blend-state description (see <strong><see cref="T:SharpDX.Direct3D11.BlendStateDescription"/></strong>).</p> </dd></param>
@@ -170,7 +170,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.BlendState.New(SharpDX.Toolkit.Graphics.GraphicsDevice,System.String,SharpDX.Direct3D11.BlendStateDescription,System.Int32)">
             <summary>
-            <p>Create a blend-state object that encapsules blend state for the output-merger stage.</p>
+            <p>Create a blend-state object that encapsulates blend state for the output-merger stage.</p>
             </summary>
             <param name="device">The  <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="name">Name of this blend state.</param>
@@ -184,7 +184,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.BlendState.New(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Direct3D11.BlendStateDescription,SharpDX.Color4,System.Int32)">
             <summary>
-            <p>Create a blend-state object that encapsules blend state for the output-merger stage.</p>
+            <p>Create a blend-state object that encapsulates blend state for the output-merger stage.</p>
             </summary>
             <param name="device">The  <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="description"><dd>  <p>Pointer to a blend-state description (see <strong><see cref="T:SharpDX.Direct3D11.BlendStateDescription"/></strong>).</p> </dd></param>
@@ -244,7 +244,7 @@
             </summary>
             <param name="device">The device.</param>
             <param name="name">The name of the state to create.</param>
-            <returns>An instsance of T or null if not supported.</returns>
+            <returns>An instance of T or null if not supported.</returns>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.BlendStateCollection.Additive">
             <summary>
@@ -258,7 +258,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.BlendStateCollection.NonPremultiplied">
             <summary>
-            A built-in state object with settings for blending with non-premultipled alpha, that is blending source and destination data using alpha while assuming the color data contains no alpha information.
+            A built-in state object with settings for blending with non-premultiplied alpha, that is blending source and destination data using alpha while assuming the color data contains no alpha information.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.BlendStateCollection.Opaque">
@@ -545,7 +545,7 @@
             Provides a set of default parameters that could be defined in an effect. See remarks for usage.
             </summary>
             <remarks>&gt;
-            An effect can have several default optionnal parameters that are accessible when using <see cref="M:SharpDX.Toolkit.Graphics.Model.Draw(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Matrix,SharpDX.Matrix,SharpDX.Matrix,SharpDX.Toolkit.Graphics.Effect)"/>.
+            An effect can have several default optional parameters that are accessible when using <see cref="M:SharpDX.Toolkit.Graphics.Model.Draw(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Matrix,SharpDX.Matrix,SharpDX.Matrix,SharpDX.Toolkit.Graphics.Effect)"/>.
             These parameters are stored in this structure. Each of them can be null.
             </remarks>
         </member>
@@ -653,7 +653,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.EffectDefaultParametersContext.IsViewProjectionCalculated">
             <summary>
-            A boolean indicating wheter the <see cref="F:SharpDX.Toolkit.Graphics.EffectDefaultParametersContext.ViewProjection"/> matrix is already calculated.
+            A boolean indicating whether the <see cref="F:SharpDX.Toolkit.Graphics.EffectDefaultParametersContext.ViewProjection"/> matrix is already calculated.
             </summary>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.EffectInstallerBase">
@@ -666,7 +666,7 @@
             Describes the interface to install effects into a model.
             </summary>
             <remarks>
-            This interface should be implemeneted by a client that wants to setup its own effects on a model.
+            This interface should be implemented by a client that wants to setup its own effects on a model.
             This interface doesn't force to install a single type of effects but could be use to perform more process on a model.
             </remarks>
         </member>
@@ -777,7 +777,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.GeometricPrimitive`1.ReverseWinding``1(`0[],``0[])">
             <summary>
-            Helper for flipping winding of geometric primitives for LH vs. RH coords
+            Helper for flipping winding of geometric primitives for LH vs. RH coordinates
             </summary>
             <typeparam name="TIndex">The type of the T index.</typeparam>
             <param name="vertices">The vertices.</param>
@@ -820,7 +820,7 @@
             <param name="tessellation">The tessellation.</param>
             <param name="toLeftHanded">if set to <c>true</c> vertices and indices will be transformed to left handed. Default is true.</param>
             <returns>A cylinder primitive.</returns>
-            <exception cref="T:System.ArgumentOutOfRangeException">tessellation;tesselation must be &gt;= 3</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">tessellation;tessellation must be &gt;= 3</exception>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.GeometricPrimitive.GeoSphere">
             <summary>
@@ -859,10 +859,10 @@
             <param name="device">The device.</param>
             <param name="sizeX">The size X.</param>
             <param name="sizeY">The size Y.</param>
-            <param name="tesselation">The tesselation, as the number of quads per axis.</param>
+            <param name="tessellation">The tessellation, as the number of quads per axis.</param>
             <param name="toLeftHanded">if set to <c>true</c> vertices and indices will be transformed to left handed. Default is true.</param>
             <returns>A Plane primitive.</returns>
-            <exception cref="T:System.ArgumentOutOfRangeException">tesselation;tesselation must be &gt; 0</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">tessellation;tessellation must be &gt; 0</exception>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.GeometricPrimitive.Sphere">
             <summary>
@@ -894,7 +894,7 @@
             <param name="tessellation">The tessellation.</param>
             <param name="toLeftHanded">if set to <c>true</c> vertices and indices will be transformed to left handed. Default is true.</param>
             <returns>GeometricPrimitive.</returns>
-            <exception cref="T:System.ArgumentOutOfRangeException">tessellation;tesselation must be &gt; 0</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">tessellation;tessellation must be &gt; 0</exception>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.GeometricPrimitive.Torus">
             <summary>
@@ -911,7 +911,74 @@
             <param name="tessellation">The tessellation.</param>
             <param name="toLeftHanded">if set to <c>true</c> vertices and indices will be transformed to left handed. Default is true.</param>
             <returns>A Torus primitive.</returns>
-            <exception cref="T:System.ArgumentOutOfRangeException">tessellation;tesselation parameter out of range</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">tessellation;tessellation parameter out of range</exception>
+        </member>
+        <member name="T:SharpDX.Toolkit.Graphics.GraphicsOutput">
+            <summary>
+            Provides methods to retrieve and manipulate an graphics output (a monitor), it is equivalent to <see cref="T:SharpDX.DXGI.Output"/>.
+            </summary>
+            <msdn-id>bb174546</msdn-id>	
+            <unmanaged>IDXGIOutput</unmanaged>	
+            <unmanaged-short>IDXGIOutput</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsOutput.#ctor(SharpDX.DXGI.Output)">
+            <summary>
+            Initializes a new instance of <see cref="T:SharpDX.Toolkit.Graphics.GraphicsOutput"/>.
+            </summary>
+            <param name="output">The DXGI <see cref="T:SharpDX.DXGI.Output"/> counterpart of this instance.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Is thrown when <paramref name="outputOrdinal"/> is less than zero.</exception>
+            <exception cref="T:System.ArgumentNullException">Is thrown when <paramref name="output"/> is null.</exception>
+        </member>
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsOutput.op_Implicit(SharpDX.Toolkit.Graphics.GraphicsOutput)~SharpDX.DXGI.Output">
+            <summary>
+            <see cref="T:SharpDX.DXGI.Output"/> casting operator.
+            </summary>
+            <param name="from">Source of the.</param>
+            <returns>The DXGI <see cref="T:SharpDX.DXGI.Output"/> counterpart of the <paramref name="from"/> instance.</returns>
+        </member>
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsOutput.InitializeSupportedDisplayModes">
+            <summary>
+            Enumerates all available display modes for this output and stores them in <see cref="P:SharpDX.Toolkit.Graphics.GraphicsOutput.SupportedDisplayModes"/>.
+            </summary>
+        </member>
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsOutput.InitializeCurrentDisplayMode">
+            <summary>
+            Initializes <see cref="P:SharpDX.Toolkit.Graphics.GraphicsOutput.CurrentDisplayMode"/> with the most appropiate mode from <see cref="P:SharpDX.Toolkit.Graphics.GraphicsOutput.SupportedDisplayModes"/>.
+            </summary>
+            <remarks>It checks first for a mode with <see cref="F:SharpDX.DXGI.Format.R8G8B8A8_UNorm"/>,
+            if it is not found - it checks for <see cref="F:SharpDX.DXGI.Format.B8G8R8A8_UNorm"/>.</remarks>
+        </member>
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsOutput.TryFindMatchingDisplayMode(SharpDX.DXGI.Format)">
+            <summary>
+            Tries to find a display mode that has the same size as the current <see cref="T:SharpDX.DXGI.OutputDescription"/> associated with this instance
+            of the specified format.
+            </summary>
+            <param name="format">The format to match with.</param>
+            <returns>A matched <see cref="T:SharpDX.Toolkit.Graphics.DisplayMode"/> or null if nothing is found.</returns>
+        </member>
+        <member name="P:SharpDX.Toolkit.Graphics.GraphicsOutput.CurrentDisplayMode">
+            <summary>
+            Gets the current display mode.
+            </summary>
+            <value>The current display mode.</value>
+        </member>
+        <member name="P:SharpDX.Toolkit.Graphics.GraphicsOutput.SupportedDisplayModes">
+            <summary>
+            Returns a collection of supported display modes for this <see cref="T:SharpDX.Toolkit.Graphics.GraphicsOutput"/>.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Toolkit.Graphics.GraphicsOutput.MonitorHandle">
+            <summary>
+            Retrieves the handle of the monitor associated with this <see cref="T:SharpDX.Toolkit.Graphics.GraphicsOutput"/>.
+            </summary>
+            <msdn-id>bb173068</msdn-id>	
+            <unmanaged>HMONITOR Monitor</unmanaged>	
+            <unmanaged-short>HMONITOR Monitor</unmanaged-short>	
+        </member>
+        <member name="P:SharpDX.Toolkit.Graphics.GraphicsOutput.DesktopBounds">
+            <summary>
+            Gets the desktop bounds of the current output.
+            </summary>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.ModelContentReader">
             <summary>
@@ -926,7 +993,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.MaterialKeys">
             <summary>
-            Default keys optionnaly stored in <see cref="F:SharpDX.Toolkit.Graphics.Material.Properties"/>.
+            Default keys optionally stored in <see cref="F:SharpDX.Toolkit.Graphics.Material.Properties"/>.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.MaterialKeys.DiffuseTexture">
@@ -978,7 +1045,7 @@
             </summary>
             <remarks>
             The glossiness is in fact the exponent of the specular
-            (phong) lighting equation. Usually there is a conversion
+            (Phong) lighting equation. Usually there is a conversion
             function defined to map the linear color values in the
             texture to a suitable exponent. Have fun.
             </remarks>
@@ -1028,7 +1095,7 @@
             <remarks>
             A texture reference that does not match any of the definitions 
             above is considered to be 'unknown'. It is still imported,
-            but is excluded from any further postprocessing.
+            but is excluded from any further post processing.
             </remarks>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.MaterialTexture">
@@ -1162,7 +1229,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Model.ForEach(System.Action{SharpDX.Toolkit.Graphics.ModelMeshPart})">
             <summary>
-            Iterator on each <see cref="T:SharpDX.Toolkit.Graphics.ModelMeshPart"/>.
+            Iterate on each <see cref="T:SharpDX.Toolkit.Graphics.ModelMeshPart"/>.
             </summary>
             <param name="meshPartFunction">The mesh part function.</param>
         </member>
@@ -1310,7 +1377,7 @@
             Draws all of the ModelMeshPart objects in this mesh, using their current Effect settings.
             </summary>
             <param name="context">The graphics context.</param>
-            <param name="effectOverride">The effect to use instead of the effect attached to eash mesh part. Default is null (use Effect in MeshPart)</param>
+            <param name="effectOverride">The effect to use instead of the effect attached to each mesh part. Default is null (use Effect in MeshPart)</param>
             <exception cref="T:System.InvalidOperationException">Model has no effect</exception>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.ModelMeshPart">
@@ -1485,7 +1552,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.PrimitiveBatch`1.DrawIndexed(SharpDX.Toolkit.Graphics.PrimitiveType,System.Int16[],`0[])">
             <summary>
-            Draws the indexed vertices with the specified toplogy.
+            Draws the indexed vertices with the specified topology.
             </summary>
             <param name="topology">The topology.</param>
             <param name="indices">The indices.</param>
@@ -1522,7 +1589,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.GraphicsPresenter">
             <summary>
-            This class is a frontend to <see cref="T:SharpDX.DXGI.SwapChain"/> and <see cref="T:SharpDX.DXGI.SwapChain1"/>.
+            This class is a front end to <see cref="T:SharpDX.DXGI.SwapChain"/> and <see cref="T:SharpDX.DXGI.SwapChain1"/>.
             </summary>
             <remarks>
             In order to create a new <see cref="T:SharpDX.Toolkit.Graphics.GraphicsPresenter"/>, a <see cref="P:SharpDX.Toolkit.Graphics.GraphicsPresenter.GraphicsDevice"/> should have been initialized first.
@@ -1550,8 +1617,9 @@
             <summary>
             Resizes the current presenter, by resizing the back buffer and the depth stencil buffer.
             </summary>
-            <param name="width"></param>
-            <param name="height"></param>
+            <param name="width">New backbuffer width</param>
+            <param name="height">New backbuffer height</param>
+            <param name="format">Backbuffer display format.</param>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.GraphicsPresenter.CreateDepthStencilBuffer">
             <summary>
@@ -1599,6 +1667,11 @@
               <unmanaged>HRESULT IDXGISwapChain::SetFullscreenState([In] BOOL Fullscreen,[In, Optional] IDXGIOutput* pTarget)</unmanaged>
               <unmanaged-short>IDXGISwapChain::SetFullscreenState</unmanaged-short>
             <remarks>This method is only valid on Windows Desktop and has no effect on Windows Metro.</remarks>
+        </member>
+        <member name="P:SharpDX.Toolkit.Graphics.GraphicsPresenter.PrefferedFullScreenOutputIndex">
+            <summary>
+            Gets or sets the output index to use when switching to fullscreen mode.
+            </summary>
         </member>
         <member name="P:SharpDX.Toolkit.Graphics.GraphicsPresenter.PresentInterval">
             <summary>
@@ -1757,9 +1830,19 @@
             Occurs when a device is lost.
             </summary>
         </member>
+        <member name="E:SharpDX.Toolkit.Graphics.IGraphicsDeviceService.DeviceChangeBegin">
+            <summary>
+            Occurs right before device is about to change (recreate or resize)
+            </summary>
+        </member>
+        <member name="E:SharpDX.Toolkit.Graphics.IGraphicsDeviceService.DeviceChangeEnd">
+            <summary>
+            Occurs when device is changed (recreated or resized)
+            </summary>
+        </member>
         <member name="P:SharpDX.Toolkit.Graphics.IGraphicsDeviceService.GraphicsDevice">
             <summary>
-            Gets the current graphcs device.
+            Gets the current graphics device.
             </summary>
             <value>The graphics device.</value>
         </member>
@@ -1775,32 +1858,32 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.RasterizerStateCollection.WireFrame">
             <summary>
-            Built-in raterizer state object with settings for wireframe rendering.
+            Built-in rasterizer state object with settings for wireframe rendering.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.RasterizerStateCollection.WireFrameCullNone">
             <summary>
-            Built-in raterizer state object with settings for wireframe rendering.
+            Built-in rasterizer state object with settings for wireframe rendering.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.RasterizerStateCollection.CullFront">
             <summary>
-            Built-in raterizer state object with settings for culling primitives with clockwise winding order (front facing).
+            Built-in rasterizer state object with settings for culling primitives with clockwise winding order (front facing).
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.RasterizerStateCollection.CullBack">
             <summary>
-            Built-in raterizer state object with settings for culling primitives with counter-clockwise winding order (back facing).
+            Built-in rasterizer state object with settings for culling primitives with counter-clockwise winding order (back facing).
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.RasterizerStateCollection.CullNone">
             <summary>
-            Built-in raterizer state object with settings for not culling any primitives.
+            Built-in rasterizer state object with settings for not culling any primitives.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.RasterizerStateCollection.Default">
             <summary>
-            Built-in default raterizer state object is back facing (see <see cref="F:SharpDX.Toolkit.Graphics.RasterizerStateCollection.CullBack"/>).
+            Built-in default rasterizer state object is back facing (see <see cref="F:SharpDX.Toolkit.Graphics.RasterizerStateCollection.CullBack"/>).
             </summary>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.RasterizerStateCollection.#ctor(SharpDX.Toolkit.Graphics.GraphicsDevice)">
@@ -2042,21 +2125,21 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.SpriteBatch.DrawString(SharpDX.Toolkit.Graphics.SpriteFont,System.String,SharpDX.Vector2,SharpDX.Color)">
             <summary>Adds a string to a batch of sprites for rendering using the specified font, text, position, and color.</summary>
-            <param name="spriteFont">A font for diplaying text.</param>
+            <param name="spriteFont">A font for displaying text.</param>
             <param name="text">A text string.</param>
             <param name="position">The location (in screen coordinates) to draw the sprite.</param>
             <param name="color">The color to tint a sprite. Use Color.White for full color with no tinting.</param>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.SpriteBatch.DrawString(SharpDX.Toolkit.Graphics.SpriteFont,System.Text.StringBuilder,SharpDX.Vector2,SharpDX.Color)">
             <summary>Adds a string to a batch of sprites for rendering using the specified font, text, position, and color.</summary>
-            <param name="spriteFont">A font for diplaying text.</param>
+            <param name="spriteFont">A font for displaying text.</param>
             <param name="text">Text string.</param>
             <param name="position">The location (in screen coordinates) to draw the sprite.</param>
             <param name="color">The color to tint a sprite. Use Color.White for full color with no tinting.</param>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.SpriteBatch.DrawString(SharpDX.Toolkit.Graphics.SpriteFont,System.String,SharpDX.Vector2,SharpDX.Color,System.Single,SharpDX.Vector2,SharpDX.Vector2,SharpDX.Toolkit.Graphics.SpriteEffects,System.Single)">
             <summary>Adds a string to a batch of sprites for rendering using the specified font, text, position, color, rotation, origin, scale, effects and layer.</summary>
-            <param name="spriteFont">A font for diplaying text.</param>
+            <param name="spriteFont">A font for displaying text.</param>
             <param name="text">A text string.</param>
             <param name="position">The location (in screen coordinates) to draw the sprite.</param>
             <param name="color">The color to tint a sprite. Use Color.White for full color with no tinting.</param>
@@ -2068,7 +2151,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.SpriteBatch.DrawString(SharpDX.Toolkit.Graphics.SpriteFont,System.String,SharpDX.Vector2,SharpDX.Color,System.Single,SharpDX.Vector2,System.Single,SharpDX.Toolkit.Graphics.SpriteEffects,System.Single)">
             <summary>Adds a string to a batch of sprites for rendering using the specified font, text, position, color, rotation, origin, scale, effects and layer.</summary>
-            <param name="spriteFont">A font for diplaying text.</param>
+            <param name="spriteFont">A font for displaying text.</param>
             <param name="text">A text string.</param>
             <param name="position">The location (in screen coordinates) to draw the sprite.</param>
             <param name="color">The color to tint a sprite. Use Color.White for full color with no tinting.</param>
@@ -2080,7 +2163,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.SpriteBatch.DrawString(SharpDX.Toolkit.Graphics.SpriteFont,System.Text.StringBuilder,SharpDX.Vector2,SharpDX.Color,System.Single,SharpDX.Vector2,SharpDX.Vector2,SharpDX.Toolkit.Graphics.SpriteEffects,System.Single)">
             <summary>Adds a string to a batch of sprites for rendering using the specified font, text, position, color, rotation, origin, scale, effects and layer.</summary>
-            <param name="spriteFont">A font for diplaying text.</param>
+            <param name="spriteFont">A font for displaying text.</param>
             <param name="text">Text string.</param>
             <param name="position">The location (in screen coordinates) to draw the sprite.</param>
             <param name="color">The color to tint a sprite. Use Color.White for full color with no tinting.</param>
@@ -2092,7 +2175,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.SpriteBatch.DrawString(SharpDX.Toolkit.Graphics.SpriteFont,System.Text.StringBuilder,SharpDX.Vector2,SharpDX.Color,System.Single,SharpDX.Vector2,System.Single,SharpDX.Toolkit.Graphics.SpriteEffects,System.Single)">
             <summary>Adds a string to a batch of sprites for rendering using the specified font, text, position, color, rotation, origin, scale, effects and layer.</summary>
-            <param name="spriteFont">A font for diplaying text.</param>
+            <param name="spriteFont">A font for displaying text.</param>
             <param name="text">Text string.</param>
             <param name="position">The location (in screen coordinates) to draw the sprite.</param>
             <param name="color">The color to tint a sprite. Use Color.White for full color with no tinting.</param>
@@ -2142,7 +2225,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.SpriteEffects.FlipBoth">
             <summary>
-            Rotate 180 degress around both the X and Y axis before rendering.
+            Rotate 180 degrees around both the X and Y axis before rendering.
             </summary>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.SpriteFont">
@@ -2349,7 +2432,7 @@
             <typeparam name="TData">The type of the T data.</typeparam>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.
-            This method creates internally a stagging resource if this texture is not already a stagging resouce, copies to it and map it to memory. Use method with explicit staging resource
+            This method creates internally a staging resource if this texture is not already a staging resource, copies to it and map it to memory. Use method with explicit staging resource
             for optimal performances.</remarks>
             <msdn-id>ff476457</msdn-id>	
             <unmanaged>HRESULT ID3D11DeviceContext::Map([In] ID3D11Resource* pResource,[In] unsigned int Subresource,[In] D3D11_MAP MapType,[In] D3D11_MAP_FLAG MapFlags,[Out] D3D11_MAPPED_SUBRESOURCE* pMappedResource)</unmanaged>	
@@ -2360,10 +2443,10 @@
             Copies the content of this buffer to an array of data.
             </summary>
             <typeparam name="TData">The type of the T data.</typeparam>
-            <param name="toData">The destination buffer to receive a copy of the texture datas.</param>
+            <param name="toData">The destination buffer to receive a copy of the texture data.</param>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.
-            This method creates internally a stagging resource if this texture is not already a stagging resouce, copies to it and map it to memory. Use method with explicit staging resource
+            This method creates internally a staging resource if this texture is not already a staging resource, copies to it and map it to memory. Use method with explicit staging resource
             for optimal performances.</remarks>
             <msdn-id>ff476457</msdn-id>	
             <unmanaged>HRESULT ID3D11DeviceContext::Map([In] ID3D11Resource* pResource,[In] unsigned int Subresource,[In] D3D11_MAP MapType,[In] D3D11_MAP_FLAG MapFlags,[Out] D3D11_MAPPED_SUBRESOURCE* pMappedResource)</unmanaged>	
@@ -2374,10 +2457,10 @@
             Copies the content of this buffer to an array of data.
             </summary>
             <typeparam name="TData">The type of the T data.</typeparam>
-            <param name="toData">The destination buffer to receive a copy of the texture datas.</param>
+            <param name="toData">The destination buffer to receive a copy of the texture data.</param>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.
-            This method creates internally a stagging resource if this texture is not already a stagging resouce, copies to it and map it to memory. Use method with explicit staging resource
+            This method creates internally a staging resource if this texture is not already a staging resource, copies to it and map it to memory. Use method with explicit staging resource
             for optimal performances.</remarks>
             <msdn-id>ff476457</msdn-id>	
             <unmanaged>HRESULT ID3D11DeviceContext::Map([In] ID3D11Resource* pResource,[In] unsigned int Subresource,[In] D3D11_MAP MapType,[In] D3D11_MAP_FLAG MapFlags,[Out] D3D11_MAPPED_SUBRESOURCE* pMappedResource)</unmanaged>	
@@ -2434,6 +2517,7 @@
             <typeparam name="TData">The type of the T data.</typeparam>
             <param name="fromData">The data to copy from.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Data writing behavior</param>
             <exception cref="T:System.ArgumentException"></exception>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>. See the unmanaged documentation about Map/UnMap for usage and restrictions.
@@ -2448,6 +2532,8 @@
             </summary>
             <typeparam name="TData">The type of the T data.</typeparam>
             <param name="fromData">The data to copy from.</param>
+            <param name="startIndex">Index to begin setting data from.</param>
+            <param name="elementCount">The number of elements to set.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
             <exception cref="T:System.ArgumentException"></exception>
             <remarks>
@@ -2463,6 +2549,7 @@
             </summary>
             <param name="fromData">A data pointer.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Buffer data behavior</param>
             <exception cref="T:System.ArgumentException"></exception>
             <msdn-id>ff476457</msdn-id>
               <unmanaged>HRESULT ID3D11DeviceContext::Map([In] ID3D11Resource* pResource,[In] unsigned int Subresource,[In] D3D11_MAP MapType,[In] D3D11_MAP_FLAG MapFlags,[Out] D3D11_MAPPED_SUBRESOURCE* pMappedResource)</unmanaged>
@@ -2479,6 +2566,7 @@
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="fromData">The data to copy from.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Buffer data behavior</param>
             <exception cref="T:System.ArgumentException"></exception>
             <remarks>
             See the unmanaged documentation about Map/UnMap for usage and restrictions.
@@ -2494,7 +2582,10 @@
             <typeparam name="TData">The type of the T data.</typeparam>
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="fromData">The data to copy from.</param>
+            <param name="startIndex">The starting index to begin setting data from.</param>
+            <param name="elementCount">The number of elements to set.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Buffer data behavior.</param>
             <exception cref="T:System.ArgumentException"></exception>
             <remarks>
             See the unmanaged documentation about Map/UnMap for usage and restrictions.
@@ -2510,6 +2601,7 @@
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="fromData">A data pointer.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Buffer data behavior.</param>
             <exception cref="T:System.ArgumentException"></exception>
             <msdn-id>ff476457</msdn-id>
               <unmanaged>HRESULT ID3D11DeviceContext::Map([In] ID3D11Resource* pResource,[In] unsigned int Subresource,[In] D3D11_MAP MapType,[In] D3D11_MAP_FLAG MapFlags,[Out] D3D11_MAPPED_SUBRESOURCE* pMappedResource)</unmanaged>
@@ -2525,6 +2617,7 @@
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="fromData">A data pointer.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Buffer data behavior</param>
             <exception cref="T:System.ArgumentException"></exception>
             <msdn-id>ff476457</msdn-id>
               <unmanaged>HRESULT ID3D11DeviceContext::Map([In] ID3D11Resource* pResource,[In] unsigned int Subresource,[In] D3D11_MAP MapType,[In] D3D11_MAP_FLAG MapFlags,[Out] D3D11_MAPPED_SUBRESOURCE* pMappedResource)</unmanaged>
@@ -2575,7 +2668,7 @@
             Creates a new <see cref="T:SharpDX.Toolkit.Graphics.Buffer"/> instance.
             </summary>
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
-            <param name="elementCount">Number of T elment in this buffer.</param>
+            <param name="elementCount">Number of T elements in this buffer.</param>
             <param name="bufferFlags">The buffer flags to specify the type of buffer.</param>
             <param name="usage">The usage.</param>
             <returns>An instance of a new <see cref="T:SharpDX.Toolkit.Graphics.Buffer"/></returns>
@@ -2925,7 +3018,7 @@
         <!-- Badly formed XML comment ignored for member "T:SharpDX.Toolkit.Graphics.Buffer.Structured" -->
         <member name="M:SharpDX.Toolkit.Graphics.Buffer.Structured.New(SharpDX.Toolkit.Graphics.GraphicsDevice,System.Int32,System.Int32,System.Boolean)">
             <summary>
-            Creates a new Structured buffer accessible as a <see cref="T:SharpDX.Direct3D11.ShaderResourceView"/> and optionaly as a <see cref="T:SharpDX.Direct3D11.UnorderedAccessView"/>.
+            Creates a new Structured buffer accessible as a <see cref="T:SharpDX.Direct3D11.ShaderResourceView"/> and optionally as a <see cref="T:SharpDX.Direct3D11.UnorderedAccessView"/>.
             </summary>
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="count">The number of element in this buffer.</param>
@@ -2935,7 +3028,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Buffer.Structured.New``1(SharpDX.Toolkit.Graphics.GraphicsDevice,System.Int32,System.Boolean)">
             <summary>
-            Creates a new Structured buffer accessible as a <see cref="T:SharpDX.Direct3D11.ShaderResourceView"/> and optionaly as a <see cref="T:SharpDX.Direct3D11.UnorderedAccessView"/>.
+            Creates a new Structured buffer accessible as a <see cref="T:SharpDX.Direct3D11.ShaderResourceView"/> and optionally as a <see cref="T:SharpDX.Direct3D11.UnorderedAccessView"/>.
             </summary>
             <typeparam name="T">Type of the element in the structured buffer</typeparam>
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
@@ -2975,7 +3068,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Buffer.StructuredAppend.New``1(SharpDX.Toolkit.Graphics.GraphicsDevice,System.Int32)">
             <summary>
-            Creates a new StructuredAppend buffer accessible as a <see cref="T:SharpDX.Direct3D11.ShaderResourceView"/> and optionaly as a <see cref="T:SharpDX.Direct3D11.UnorderedAccessView"/>.
+            Creates a new StructuredAppend buffer accessible as a <see cref="T:SharpDX.Direct3D11.ShaderResourceView"/> and optionally as a <see cref="T:SharpDX.Direct3D11.UnorderedAccessView"/>.
             </summary>
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <typeparam name="T">Type of the element in the structured buffer</typeparam>
@@ -3012,7 +3105,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Buffer.StructuredCounter.New``1(SharpDX.Toolkit.Graphics.GraphicsDevice,System.Int32)">
             <summary>
-            Creates a new StructuredCounter buffer accessible as a <see cref="T:SharpDX.Direct3D11.ShaderResourceView"/> and optionaly as a <see cref="T:SharpDX.Direct3D11.UnorderedAccessView"/>.
+            Creates a new StructuredCounter buffer accessible as a <see cref="T:SharpDX.Direct3D11.ShaderResourceView"/> and optionally as a <see cref="T:SharpDX.Direct3D11.UnorderedAccessView"/>.
             </summary>
             <typeparam name="T">Type of the element in the structured buffer</typeparam>
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
@@ -3187,7 +3280,7 @@
               <unmanaged>HRESULT ID3D11DeviceContext::Map([In] ID3D11Resource* pResource,[In] unsigned int Subresource,[In] D3D11_MAP MapType,[In] D3D11_MAP_FLAG MapFlags,[Out] D3D11_MAPPED_SUBRESOURCE* pMappedResource)</unmanaged>
               <unmanaged-short>ID3D11DeviceContext::Map</unmanaged-short>
             <remarks>This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.
-            This method creates internally a stagging resource if this texture is not already a stagging resouce, copies to it and map it to memory. Use method with explicit staging resource
+            This method creates internally a staging resource if this texture is not already a staging resource, copies to it and map it to memory. Use method with explicit staging resource
             for optimal performances.</remarks>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Buffer`1.SetData(`0@,System.Int32,SharpDX.Toolkit.Graphics.SetDataOptions)">
@@ -3196,6 +3289,7 @@
             </summary>
             <param name="fromData">The data to copy from.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Buffer data behavior.</param>
             <exception cref="T:System.ArgumentException"></exception>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>. See the unmanaged documentation about Map/UnMap for usage and restrictions.
@@ -3209,7 +3303,10 @@
             Copies the content an array of data from CPU memory to this buffer into GPU memory.
             </summary>
             <param name="fromData">The data to copy from.</param>
+            <param name="startIndex">Index to start copying from.</param>
+            <param name="elementCount">Number of elements to copy.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Buffer data behavior.</param>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>. See the unmanaged documentation about Map/UnMap for usage and restrictions.
             </remarks>
@@ -3224,6 +3321,7 @@
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="fromData">The data to copy from.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Buffer data behavior.</param>
             <exception cref="T:System.ArgumentException"></exception>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>. See the unmanaged documentation about Map/UnMap for usage and restrictions.
@@ -3238,7 +3336,10 @@
             </summary>
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
             <param name="fromData">The data to copy from.</param>
+            <param name="startIndex">Buffer index to begin copying from.</param>
+            <param name="elementCount">Number of elements to copy.</param>
             <param name="offsetInBytes">The offset in bytes to write to.</param>
+            <param name="options">Buffer data behavior.</param>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>. See the unmanaged documentation about Map/UnMap for usage and restrictions.
             </remarks>
@@ -3338,7 +3439,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.BufferFlags.StructuredAppendBuffer">
             <summary>
-            Creates a structured buffer that supports unordered acccess and append.
+            Creates a structured buffer that supports unordered access and append.
             </summary>
             <remarks>
             This is equivalent to <see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.BufferStructured"/>.
@@ -3349,7 +3450,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.BufferFlags.StructuredCounterBuffer">
             <summary>
-            Creates a structured buffer that supports unordered acccess and counter.
+            Creates a structured buffer that supports unordered access and counter.
             </summary>
             <remarks>
             This is equivalent to <see cref="F:SharpDX.Direct3D11.ResourceOptionFlags.BufferStructured"/>.
@@ -3410,7 +3511,7 @@
             </summary>
             <remarks>
             Constant buffers are created and shared inside a same <see cref="T:SharpDX.Toolkit.Graphics.EffectPool"/>. The creation of the underlying GPU buffer
-            can be overriden using <see cref="P:SharpDX.Toolkit.Graphics.EffectPool.ConstantBufferAllocator"/>.
+            can be overridden using <see cref="P:SharpDX.Toolkit.Graphics.EffectPool.ConstantBufferAllocator"/>.
             </remarks>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.EffectConstantBuffer.IsDirty">
@@ -3418,7 +3519,7 @@
             Set this flag to true to notify that the buffer was changed
             </summary>
             <remarks>
-            When using Set(value) methods on this buffer, this property must be set to true to ensure that the bufer will
+            When using Set(value) methods on this buffer, this property must be set to true to ensure that the buffer will
             be uploaded.
             </remarks>
         </member>
@@ -3443,7 +3544,7 @@
             This class manages a pool of <see cref="T:SharpDX.Toolkit.Graphics.Effect"/>.
             </summary>
             <remarks>
-            This class is responsible to store all EffectData, create shareable constant buffers betwen effects and reuse shader EffectData instances.
+            This class is responsible to store all EffectData, create shareable constant buffers between effects and reuse shader EffectData instances.
             </remarks>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.EffectPool.RegisterBytecode(SharpDX.Toolkit.Graphics.EffectData)">
@@ -3458,7 +3559,6 @@
             Creates a new effect pool from a specified list of <see cref="T:SharpDX.Toolkit.Graphics.EffectData"/>.
             </summary>
             <param name="device">The device.</param>
-            <param name="effectData">The effect data.</param>
             <returns>An instance of <see cref="T:SharpDX.Toolkit.Graphics.EffectPool"/>.</returns>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.EffectPool.New(SharpDX.Toolkit.Graphics.GraphicsDevice,System.String)">
@@ -3475,7 +3575,6 @@
             Merges an existing <see cref="T:SharpDX.Toolkit.Graphics.EffectData"/> into this instance.
             </summary>
             <param name="source">The EffectData to merge.</param>
-            <param name="logger">Logger used to report merging errors.</param>
             <returns><c>true</c> if XXXX, <c>false</c> otherwise</returns>
             <remarks>This method is useful to build an archive of several effects.</remarks>
         </member>
@@ -3484,7 +3583,7 @@
               Gets or sets the constant buffer allocator used to allocate a GPU constant buffer declared in an Effect.
             </summary>
             <remarks>
-              This delegate must be overriden when you want to control the creation of the GPU Constant buffer.
+              This delegate must be overridden when you want to control the creation of the GPU Constant buffer.
               By default, the allocator is just allocating the buffer using "Buffer.Constant.New(size)" but
               It is sometimes needed to create a constant buffer with different usage scenarios (using for example
               a RawBuffer with multiple usages).
@@ -3847,6 +3946,7 @@
             </summary>
             <param name="logger">The logger used to log errors.</param>
             <param name="effect"> The effect. </param>
+            <param name="technique">The technique. </param>
             <param name="pass"> The pass. </param>
             <param name="name"> The name. </param>
         </member>
@@ -3977,7 +4077,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.EffectResourceLinker">
             <summary>
-            A class used to shader input resource parameters and prepare them (i.e. take their NativePointer asap).
+            A class used to shader input resource parameters and prepare them (i.e. take their NativePointer ASAP).
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.EffectResourceLinker.resources">
@@ -4313,8 +4413,8 @@
             <param name="description">Output texture description.</param>
             <param name="convFlags">Output conversion flags.</param>
             <exception cref="T:System.ArgumentException">If the argument headerPtr is null</exception>
-            <exception cref="T:System.InvalidOperationException">If the DDS header contains invalid datas.</exception>
-            <returns>True if the decoding is successfull, false if this is not a DDS header.</returns>
+            <exception cref="T:System.InvalidOperationException">If the DDS header contains invalid data.</exception>
+            <returns>True if the decoding is successful, false if this is not a DDS header.</returns>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.DDSHelper.EncodeDDSHeader(SharpDX.Toolkit.Graphics.ImageDescription,SharpDX.Toolkit.Graphics.DDSFlags,System.IntPtr,System.Int32,System.Int32@)">
             <summary>
@@ -4326,16 +4426,17 @@
             <param name="maxsize">The maximum size of the destination buffer.</param>
             <param name="required">Output the number of bytes required to write the DDS header.</param>
             <exception cref="T:System.ArgumentException">If the argument headerPtr is null</exception>
-            <exception cref="T:System.InvalidOperationException">If the DDS header contains invalid datas.</exception>
-            <returns>True if the decoding is successfull, false if this is not a DDS header.</returns>
+            <exception cref="T:System.InvalidOperationException">If the DDS header contains invalid data.</exception>
+            <returns>True if the decoding is successful, false if this is not a DDS header.</returns>
         </member>
         <!-- Badly formed XML comment ignored for member "M:SharpDX.Toolkit.Graphics.DDSHelper.LegacyExpandScanline(System.IntPtr,System.Int32,SharpDX.DXGI.Format,System.IntPtr,System.Int32,SharpDX.Toolkit.Graphics.DDSHelper.TEXP_LEGACY_FORMAT,System.Int32*,SharpDX.Toolkit.Graphics.DDSHelper.ScanlineFlags)" -->
         <member name="M:SharpDX.Toolkit.Graphics.DDSHelper.LoadFromDDSMemory(System.IntPtr,System.Int32,System.Boolean,System.Nullable{System.Runtime.InteropServices.GCHandle})">
             <summary>
             Load a DDS file in memory
             </summary>
-            <param name="pSource"></param>
-            <param name="size"></param>
+            <param name="pSource">Source buffer</param>
+            <param name="size">Size of the DDS texture.</param>
+            <param name="makeACopy">Whether or not to make a copy of the DDS</param>
             <param name="handle"></param>
             <returns></returns>
         </member>
@@ -4459,10 +4560,11 @@
             <unmanaged>IDXGIAdapter1</unmanaged>	
             <unmanaged-short>IDXGIAdapter1</unmanaged-short>	
         </member>
-        <member name="F:SharpDX.Toolkit.Graphics.GraphicsAdapter.DefaultFormat">
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.#ctor(System.Int32)">
             <summary>
-            Default PixelFormat used.
+            Initializes a new instance of the <see cref="T:SharpDX.Toolkit.Graphics.GraphicsAdapter"/> class.
             </summary>
+            <param name="adapterOrdinal">The adapter ordinal.</param>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.#cctor">
             <summary>
@@ -4485,28 +4587,14 @@
             </summary>
             <param name="factory1">The factory1.</param>
         </member>
-        <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.Toolkit.Graphics.GraphicsAdapter"/> class.
-            </summary>
-            <param name="adapterOrdinal">The adapter ordinal.</param>
-        </member>
-        <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.ToString">
-            <summary>
-            Return the description of this adapter
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.IsProfileSupported(SharpDX.Direct3D.FeatureLevel)">
-            <summary>
-            Tests to see if the adapter supports the requested profile.
-            </summary>
-            <param name="featureLevel">The graphics profile.</param>
-            <returns>true if the profile is supported</returns>
-        </member>
         <member name="F:SharpDX.Toolkit.Graphics.GraphicsAdapter.Description">
             <summary>
             Gets the description for this adapter.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.Graphics.GraphicsAdapter.DefaultFormat">
+            <summary>
+            Default PixelFormat used.
             </summary>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.op_Implicit(SharpDX.Toolkit.Graphics.GraphicsAdapter)~SharpDX.DXGI.Adapter1">
@@ -4521,22 +4609,26 @@
             </summary>
             <param name="from">Source for the.</param>
         </member>
-        <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.GetSupportedDisplayModes">
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.GetOutputAt(System.Int32)">
             <summary>
-            Returns a collection of supported display modes for a particular Format.
+            Gets the <see cref="T:SharpDX.Toolkit.Graphics.GraphicsOutput"/> attached to this adapter at the specified index.
             </summary>
-            <returns>a read-only collection of display modes</returns>
+            <param name="index">The index of the output to get.</param>
+            <returns>The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsOutput"/> at the specified <paramref name="index"/>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Is thrown when <paramref name="index"/> is less than zero or greater or equal to <see cref="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.OutputsCount"/>.</exception>
         </member>
-        <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.Factory">
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.IsProfileSupported(SharpDX.Direct3D.FeatureLevel)">
             <summary>
-            Gets the <see cref="T:SharpDX.DXGI.Factory1"/> used by all GraphicsAdapter.
+            Tests to see if the adapter supports the requested profile.
             </summary>
+            <param name="featureLevel">The graphics profile.</param>
+            <returns>true if the profile is supported</returns>
         </member>
-        <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.CurrentDisplayMode">
+        <member name="M:SharpDX.Toolkit.Graphics.GraphicsAdapter.ToString">
             <summary>
-            Gets the current display mode.
+            Return the description of this adapter
             </summary>
-            <value>The current display mode.</value>
+            <returns></returns>
         </member>
         <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.Adapters">
             <summary>
@@ -4547,6 +4639,27 @@
             <summary>
             Gets the default adapter.
             </summary>
+        </member>
+        <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.OutputsCount">
+            <summary>
+            Gets the number of <see cref="T:SharpDX.Toolkit.Graphics.GraphicsOutput"/> attached to this <see cref="T:SharpDX.Toolkit.Graphics.GraphicsAdapter"/>.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.Factory">
+            <summary>
+            Gets the <see cref="T:SharpDX.DXGI.Factory1"/> used by all GraphicsAdapter.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.IsDefaultAdapter">
+            <summary>
+            Determines if this instance of GraphicsAdapter is the default adapter.
+            </summary>
+        </member>
+        <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.CurrentDisplayMode">
+            <summary>
+            Gets the current display mode.
+            </summary>
+            <value>The current display mode.</value>
         </member>
         <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.SupportedDisplayModes">
             <summary>
@@ -4560,11 +4673,6 @@
             <msdn-id>bb173068</msdn-id>	
             <unmanaged>RECT DesktopCoordinates</unmanaged>	
             <unmanaged-short>RECT DesktopCoordinates</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.IsDefaultAdapter">
-            <summary>
-            Determines if this instance of GraphicsAdapter is the default adapter.
-            </summary>
         </member>
         <member name="P:SharpDX.Toolkit.Graphics.GraphicsAdapter.MonitorHandle">
             <summary>
@@ -4616,7 +4724,7 @@
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.Image.handle">
             <summary>
-            Handke != null if the buffer is a pinned managed object on the LOH (Large Object Heap).
+            Handle != null if the buffer is a pinned managed object on the LOH (Large Object Heap).
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.Image.Description">
@@ -4631,7 +4739,7 @@
             <param name="description">The image description.</param>
             <param name="dataPointer">The pointer to the data buffer.</param>
             <param name="offset">The offset from the beginning of the data buffer.</param>
-            <param name="handle">The handle (optionnal).</param>
+            <param name="handle">The handle (optional).</param>
             <param name="bufferIsDisposable">if set to <c>true</c> [buffer is disposable].</param>
             <exception cref="T:System.InvalidOperationException">If the format is invalid, or width/height/depth/arraysize is invalid with respect to the dimension.</exception>
         </member>
@@ -4665,7 +4773,7 @@
             <summary>
             Registers a loader/saver for a specified image file type.
             </summary>
-            <param name="type">The file type (use integer and explicit casting to <see cref="T:SharpDX.Toolkit.Graphics.ImageFileType"/> to register other fileformat.</param>
+            <param name="type">The file type (use integer and explicit casting to <see cref="T:SharpDX.Toolkit.Graphics.ImageFileType"/> to register other file format.</param>
             <param name="loader">The loader delegate (can be null).</param>
             <param name="saver">The saver delegate (can be null).</param>
             <exception cref="T:System.ArgumentException"></exception>
@@ -5161,7 +5269,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.PresentationParameters">
             <summary>
-              Describess how data will be displayed to the screen.
+            Describes how data will be displayed to the screen.
             </summary>
             <msdn-id>bb173075</msdn-id>
             <unmanaged>DXGI_SWAP_CHAIN_DESC</unmanaged>
@@ -5247,6 +5355,16 @@
             <msdn-id>bb173075</msdn-id>
             <unmanaged>DXGI_USAGE_ENUM BufferUsage</unmanaged>
             <unmanaged-short>DXGI_USAGE_ENUM BufferUsage</unmanaged-short>
+        </member>
+        <member name="F:SharpDX.Toolkit.Graphics.PresentationParameters.PreferredFullScreenOutputIndex">
+            <summary>
+            The output (monitor) index to use when switching to fullscreen mode. Doesn't have any effect when windowed mode is used.
+            </summary>
+        </member>
+        <member name="F:SharpDX.Toolkit.Graphics.PresentationParameters.DepthBufferShaderResource">
+            <summary>
+            Indicates whether the DepthBuffer should be created with the ShaderResource flag. Default is false.
+            </summary>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.PresentationParameters.#ctor">
             <summary>
@@ -6139,7 +6257,7 @@
             PrimitiveType is equivalent to <see cref="T:SharpDX.Direct3D.PrimitiveTopology"/>.
             </summary>
             <remarks>
-            This structure is implicitly castable to and from <see cref="T:SharpDX.Direct3D.PrimitiveTopology"/>, you can use it inplace where <see cref="T:SharpDX.Direct3D.PrimitiveTopology"/> is required
+            This structure is implicitly castable to and from <see cref="T:SharpDX.Direct3D.PrimitiveTopology"/>, you can use it in place where <see cref="T:SharpDX.Direct3D.PrimitiveTopology"/> is required
             and vice-versa.
             </remarks>
             <msdn-id>ff728726</msdn-id>	
@@ -6428,7 +6546,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.DepthStencilBuffer">
             <summary>
-            A DepthStencilBuffer frontend to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
+            A DepthStencilBuffer front end to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
             </summary>
             <remarks>
             This class instantiates a <see cref="T:SharpDX.Toolkit.Graphics.Texture2D"/> with the binding flags <see cref="F:SharpDX.Direct3D11.BindFlags.DepthStencil"/>.
@@ -6436,7 +6554,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.Texture2DBase">
             <summary>
-            Abstract class frontend to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
+            Abstract class front end to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
             </summary>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.Texture">
@@ -6556,7 +6674,7 @@
             <typeparam name="TData">The type of the T pixel data.</typeparam>
             <param name="mipLevel">The mip level.</param>
             <returns>The number of pixel data.</returns>
-            <remarks>This method is used to allocated a texture data buffer to hold pixel datas: var textureData = new T[ texture.CalculatePixelCount&lt;T&gt;() ] ;.</remarks>
+            <remarks>This method is used to allocated a texture data buffer to hold pixel data: var textureData = new T[ texture.CalculatePixelCount&lt;T&gt;() ] ;.</remarks>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture.Clone">
             <summary>
@@ -6593,7 +6711,7 @@
               <unmanaged-short>ID3D11DeviceContext::Map</unmanaged-short>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.
-            This method creates internally a stagging resource, copies to it and map it to memory. Use method with explicit staging resource
+            This method creates internally a staging resource, copies to it and map it to memory. Use method with explicit staging resource
             for optimal performances.</remarks>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture.GetData``1(``0[],System.Int32,System.Int32)">
@@ -6601,7 +6719,7 @@
             Copies the content of this texture to an array of data.
             </summary>
             <typeparam name="TData">The type of the T data.</typeparam>
-            <param name="toData">The destination buffer to receive a copy of the texture datas.</param>
+            <param name="toData">The destination buffer to receive a copy of the texture data.</param>
             <param name="arraySlice">The array slice index. This value must be set to 0 for Texture 3D.</param>
             <param name="mipSlice">The mip slice index.</param>
             <msdn-id>ff476457</msdn-id>
@@ -6609,7 +6727,7 @@
               <unmanaged-short>ID3D11DeviceContext::Map</unmanaged-short>
             <remarks>
             This method is only working when called from the main thread that is accessing the main <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.
-            This method creates internally a stagging resource if this texture is not already a stagging resouce, copies to it and map it to memory. Use method with explicit staging resource
+            This method creates internally a staging resource if this texture is not already a staging resource, copies to it and map it to memory. Use method with explicit staging resource
             for optimal performances.</remarks>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture.New(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Toolkit.Graphics.TextureDescription)">
@@ -6673,7 +6791,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture.SetData(SharpDX.DataPointer,System.Int32,System.Int32,System.Nullable{SharpDX.Direct3D11.ResourceRegion})">
             <summary>
-            Copies the content an data on CPU memory to this texture into GPU memory using the specified <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/> (The graphics device could be deffered).
+            Copies the content an data on CPU memory to this texture into GPU memory using the specified <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/> (The graphics device could be deferred).
             </summary>
             <param name="fromData">The data to copy from.</param>
             <param name="arraySlice">The array slice index. This value must be set to 0 for Texture 3D.</param>
@@ -6690,7 +6808,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture.SetData``1(SharpDX.Toolkit.Graphics.GraphicsDevice,``0[],System.Int32,System.Int32,System.Nullable{SharpDX.Direct3D11.ResourceRegion})">
             <summary>
-            Copies the content an array of data on CPU memory to this texture into GPU memory using the specified <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/> (The graphics device could be deffered).
+            Copies the content an array of data on CPU memory to this texture into GPU memory using the specified <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/> (The graphics device could be deferred).
             </summary>
             <typeparam name="TData">The type of the T data.</typeparam>
             <param name="device">The <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>.</param>
@@ -6845,14 +6963,14 @@
             <summary>
             Saves this texture to a file with a specified format.
             </summary>
-            <param name="filePath">The filepath to save the texture to.</param>
+            <param name="filePath">The file path to save the texture to.</param>
             <param name="fileType">Type of the image file.</param>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture.Save(System.String,SharpDX.Toolkit.Graphics.Texture,SharpDX.Toolkit.Graphics.ImageFileType)">
             <summary>
             Saves this texture to a stream with a specified format.
             </summary>
-            <param name="filePath">The filepath to save the texture to.</param>
+            <param name="filePath">The file path to save the texture to.</param>
             <param name="stagingTexture">The staging texture used to temporary transfer the image from the GPU to CPU.</param>
             <param name="fileType">Type of the image file.</param>
             <exception cref="T:System.ArgumentException">If stagingTexture is not a staging texture.</exception>
@@ -7028,7 +7146,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.RenderTargetCube">
             <summary>
-            A RenderTargetCube frontend to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
+            A RenderTargetCube front end to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
             </summary>
             <remarks>
             This class instantiates a <see cref="T:SharpDX.Toolkit.Graphics.Texture2D"/> with the binding flags <see cref="F:SharpDX.Direct3D11.BindFlags.RenderTarget"/>.
@@ -7189,7 +7307,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.Texture2D">
             <summary>
-            A Texture 2D frontend to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
+            A Texture 2D front end to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
             </summary>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture2D.Clone">
@@ -7291,7 +7409,7 @@
             <param name="height">The height.</param>
             <param name="format">Describes the format to use.</param>
             <param name="mipCount">Number of mipmaps, set to true to have all mipmaps, set to an int &gt;=1 for a particular mipmap count.</param>
-            <param name="textureData">Texture datas through an array of <see cref="T:SharpDX.DataBox"/> </param>
+            <param name="textureData">Texture data through an array of <see cref="T:SharpDX.DataBox"/> </param>
             <param name="flags">Sets the texture flags (for unordered access...etc.)</param>
             <param name="arraySize">Size of the texture 2D array, default to 1.</param>
             <param name="usage">The usage.</param>
@@ -7337,7 +7455,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.RenderTarget3D">
             <summary>
-            A RenderTarget3D frontend to <see cref="T:SharpDX.Direct3D11.Texture3D"/>.
+            A RenderTarget3D front end to <see cref="T:SharpDX.Direct3D11.Texture3D"/>.
             </summary>
             <remarks>
             This class instantiates a <see cref="T:SharpDX.Toolkit.Graphics.Texture3D"/> with the binding flags <see cref="F:SharpDX.Direct3D11.BindFlags.RenderTarget"/>.
@@ -7346,7 +7464,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.Texture3DBase">
             <summary>
-            Abstract class frontend to <see cref="T:SharpDX.Direct3D11.Texture3D"/>.
+            Abstract class front end to <see cref="T:SharpDX.Direct3D11.Texture3D"/>.
             </summary>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture3DBase.#ctor(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Direct3D11.Texture3DDescription)">
@@ -7508,7 +7626,7 @@
             <summary>
             Gets the <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDeviceFeatures.FeaturesPerFormat"/> for the specified <see cref="T:SharpDX.DXGI.Format"/>.
             </summary>
-            <param name="dxgiFormat">The dxgi format.</param>
+            <param name="dxgiFormat">The DXGI format.</param>
             <returns>Features for the specific format.</returns>
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.GraphicsDeviceFeatures.FeaturesPerFormat">
@@ -7541,7 +7659,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.RenderTarget1D">
             <summary>
-            A RenderTarget1D frontend to <see cref="T:SharpDX.Direct3D11.Texture1D"/>.
+            A RenderTarget1D front end to <see cref="T:SharpDX.Direct3D11.Texture1D"/>.
             </summary>
             <remarks>
             This class instantiates a <see cref="T:SharpDX.Toolkit.Graphics.Texture1D"/> with the binding flags <see cref="F:SharpDX.Direct3D11.BindFlags.RenderTarget"/>.
@@ -7550,7 +7668,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.Texture1DBase">
             <summary>
-            Abstract class frontend to <see cref="T:SharpDX.Direct3D11.Texture1D"/>.
+            Abstract class front end to <see cref="T:SharpDX.Direct3D11.Texture1D"/>.
             </summary>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture1DBase.#ctor(SharpDX.Toolkit.Graphics.GraphicsDevice,SharpDX.Direct3D11.Texture1DDescription)">
@@ -7659,7 +7777,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.Texture3D">
             <summary>
-            A Texture 3D frontend to <see cref="T:SharpDX.Direct3D11.Texture3D"/>.
+            A Texture 3D front end to <see cref="T:SharpDX.Direct3D11.Texture3D"/>.
             </summary>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture3D.Clone">
@@ -7747,7 +7865,7 @@
             <param name="depth">The depth.</param>
             <param name="format">Describes the format to use.</param>
             <param name="usage">The usage.</param>
-            <param name="textureData">The texture data, width * height * depth datas </param>
+            <param name="textureData">The texture data, width * height * depth data </param>
             <param name="flags">Sets the texture flags (for unordered access...etc.)</param>
             <returns>A new instance of <see cref="T:SharpDX.Toolkit.Graphics.Texture3D"/> class.</returns>
             <remarks>
@@ -7814,7 +7932,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.Texture1D">
             <summary>
-            A Texture 1D frontend to <see cref="T:SharpDX.Direct3D11.Texture1D"/>.
+            A Texture 1D front end to <see cref="T:SharpDX.Direct3D11.Texture1D"/>.
             </summary>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.Texture1D.Clone">
@@ -7945,7 +8063,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.GraphicsDevice">
             <summary>
-            This class is a frontend to <see cref="T:SharpDX.Direct3D11.Device"/> and <see cref="T:SharpDX.Direct3D11.DeviceContext"/>.
+            This class is a front end to <see cref="T:SharpDX.Direct3D11.Device"/> and <see cref="T:SharpDX.Direct3D11.DeviceContext"/>.
             </summary>
         </member>
         <member name="F:SharpDX.Toolkit.Graphics.GraphicsDevice.Features">
@@ -8063,7 +8181,7 @@
             <param name="view">The buffer to clear.</param>	
             <param name="value">The value used to clear.</param>	
             <remarks>	
-            <p>This API copies the lower ni bits from each array element i to the corresponding channel, where ni is the number of bits in  the ith channel of the resource format (for example, R8G8B8_FLOAT has 8 bits for the first 3 channels). This works on any UAV with no format conversion.  For a raw or structured buffer view, only the first array element value is used.</p>	
+            <p>This API copies the lower ni bits from each array element i to the corresponding channel, where ni is the number of bits in the ith channel of the resource format (for example, R8G8B8_FLOAT has 8 bits for the first 3 channels). This works on any UAV with no format conversion.  For a raw or structured buffer view, only the first array element value is used.</p>	
             </remarks>	
             <msdn-id>ff476391</msdn-id>	
             <unmanaged>void ID3D11DeviceContext::ClearUnorderedAccessViewUint([In] ID3D11UnorderedAccessView* pUnorderedAccessView,[In] const unsigned int* Values)</unmanaged>	
@@ -8098,7 +8216,7 @@
             Copy a region from a source resource to a destination resource.	
             </summary>	
             <remarks>	
-            The source box must be within the size of the source resource. The destination offsets, (x, y, and z) allow the source box to be offset when writing into the destination resource; however, the dimensions of the source box and the offsets must be within the size of the resource. If the resources are buffers, all coordinates are in bytes; if the resources are textures, all coordinates are in texels. {{D3D11CalcSubresource}} is a helper function for calculating subresource indexes. CopySubresourceRegion performs the copy on the GPU (similar to a memcpy by the CPU). As a consequence, the source and destination resources:  Must be different subresources (although they can be from the same resource). Must be the same type. Must have compatible DXGI formats (identical or from the same type group). For example, a DXGI_FORMAT_R32G32B32_FLOAT texture can be copied to an DXGI_FORMAT_R32G32B32_UINT texture since both of these formats are in the DXGI_FORMAT_R32G32B32_TYPELESS group. May not be currently mapped.  CopySubresourceRegion only supports copy; it does not support any stretch, color key, blend, or format conversions. An application that needs to copy an entire resource should use <see cref="M:SharpDX.Direct3D11.DeviceContext.CopyResource_(SharpDX.Direct3D11.Resource,SharpDX.Direct3D11.Resource)"/> instead. CopySubresourceRegion is an asynchronous call which may be added to the command-buffer queue, this attempts to remove pipeline stalls that may occur when copying data. See performance considerations for more details. Note??If you use CopySubresourceRegion with a depth-stencil buffer or a multisampled resource, you must copy the whole subresource. In this situation, you must pass 0 to the DstX, DstY, and DstZ parameters and NULL to the pSrcBox parameter. In addition, source and destination resources, which are represented by the pSrcResource and pDstResource parameters, should have identical sample count values. Example The following code snippet copies a box (located at (120,100),(200,220)) from a source texture into a reqion (10,20),(90,140) in a destination texture. 	
+            The source box must be within the size of the source resource. The destination offsets, (x, y, and z) allow the source box to be offset when writing into the destination resource; however, the dimensions of the source box and the offsets must be within the size of the resource. If the resources are buffers, all coordinates are in bytes; if the resources are textures, all coordinates are in texels. {{D3D11CalcSubresource}} is a helper function for calculating subresource indexes. CopySubresourceRegion performs the copy on the GPU (similar to a memcpy by the CPU). As a consequence, the source and destination resources:  Must be different subresources (although they can be from the same resource). Must be the same type. Must have compatible DXGI formats (identical or from the same type group). For example, a DXGI_FORMAT_R32G32B32_FLOAT texture can be copied to an DXGI_FORMAT_R32G32B32_UINT texture since both of these formats are in the DXGI_FORMAT_R32G32B32_TYPELESS group. May not be currently mapped.  CopySubresourceRegion only supports copy; it does not support any stretch, color key, blend, or format conversions. An application that needs to copy an entire resource should use <see cref="M:SharpDX.Direct3D11.DeviceContext.CopyResource_(SharpDX.Direct3D11.Resource,SharpDX.Direct3D11.Resource)"/> instead. CopySubresourceRegion is an asynchronous call which may be added to the command-buffer queue, this attempts to remove pipeline stalls that may occur when copying data. See performance considerations for more details. Note??If you use CopySubresourceRegion with a depth-stencil buffer or a multisampled resource, you must copy the whole subresource. In this situation, you must pass 0 to the DstX, DstY, and DstZ parameters and NULL to the pSrcBox parameter. In addition, source and destination resources, which are represented by the pSrcResource and pDstResource parameters, should have identical sample count values. Example The following code snippet copies a box (located at (120,100),(200,220)) from a source texture into a region (10,20),(90,140) in a destination texture. 	
             <code> D3D11_BOX sourceRegion;	
             sourceRegion.left = 120;	
             sourceRegion.right = 200;	
@@ -8125,7 +8243,7 @@
             Copy a region from a source resource to a destination resource.	
             </summary>	
             <remarks>	
-            The source box must be within the size of the source resource. The destination offsets, (x, y, and z) allow the source box to be offset when writing into the destination resource; however, the dimensions of the source box and the offsets must be within the size of the resource. If the resources are buffers, all coordinates are in bytes; if the resources are textures, all coordinates are in texels. {{D3D11CalcSubresource}} is a helper function for calculating subresource indexes. CopySubresourceRegion performs the copy on the GPU (similar to a memcpy by the CPU). As a consequence, the source and destination resources:  Must be different subresources (although they can be from the same resource). Must be the same type. Must have compatible DXGI formats (identical or from the same type group). For example, a DXGI_FORMAT_R32G32B32_FLOAT texture can be copied to an DXGI_FORMAT_R32G32B32_UINT texture since both of these formats are in the DXGI_FORMAT_R32G32B32_TYPELESS group. May not be currently mapped.  CopySubresourceRegion only supports copy; it does not support any stretch, color key, blend, or format conversions. An application that needs to copy an entire resource should use <see cref="M:SharpDX.Direct3D11.DeviceContext.CopyResource_(SharpDX.Direct3D11.Resource,SharpDX.Direct3D11.Resource)"/> instead. CopySubresourceRegion is an asynchronous call which may be added to the command-buffer queue, this attempts to remove pipeline stalls that may occur when copying data. See performance considerations for more details. Note??If you use CopySubresourceRegion with a depth-stencil buffer or a multisampled resource, you must copy the whole subresource. In this situation, you must pass 0 to the DstX, DstY, and DstZ parameters and NULL to the pSrcBox parameter. In addition, source and destination resources, which are represented by the pSrcResource and pDstResource parameters, should have identical sample count values. Example The following code snippet copies a box (located at (120,100),(200,220)) from a source texture into a reqion (10,20),(90,140) in a destination texture. 	
+            The source box must be within the size of the source resource. The destination offsets, (x, y, and z) allow the source box to be offset when writing into the destination resource; however, the dimensions of the source box and the offsets must be within the size of the resource. If the resources are buffers, all coordinates are in bytes; if the resources are textures, all coordinates are in texels. {{D3D11CalcSubresource}} is a helper function for calculating subresource indexes. CopySubresourceRegion performs the copy on the GPU (similar to a memcpy by the CPU). As a consequence, the source and destination resources:  Must be different subresources (although they can be from the same resource). Must be the same type. Must have compatible DXGI formats (identical or from the same type group). For example, a DXGI_FORMAT_R32G32B32_FLOAT texture can be copied to an DXGI_FORMAT_R32G32B32_UINT texture since both of these formats are in the DXGI_FORMAT_R32G32B32_TYPELESS group. May not be currently mapped.  CopySubresourceRegion only supports copy; it does not support any stretch, color key, blend, or format conversions. An application that needs to copy an entire resource should use <see cref="M:SharpDX.Direct3D11.DeviceContext.CopyResource_(SharpDX.Direct3D11.Resource,SharpDX.Direct3D11.Resource)"/> instead. CopySubresourceRegion is an asynchronous call which may be added to the command-buffer queue, this attempts to remove pipeline stalls that may occur when copying data. See performance considerations for more details. Note??If you use CopySubresourceRegion with a depth-stencil buffer or a multisampled resource, you must copy the whole subresource. In this situation, you must pass 0 to the DstX, DstY, and DstZ parameters and NULL to the pSrcBox parameter. In addition, source and destination resources, which are represented by the pSrcResource and pDstResource parameters, should have identical sample count values. Example The following code snippet copies a box (located at (120,100),(200,220)) from a source texture into a region (10,20),(90,140) in a destination texture. 	
             <code> D3D11_BOX sourceRegion;	
             sourceRegion.left = 120;	
             sourceRegion.right = 200;	
@@ -8153,7 +8271,7 @@
             Copy a multisampled resource into a non-multisampled resource.	
             </summary>	
             <remarks>	
-            This API is most useful when re-using the resulting rendertarget of one render pass as an input to a second render pass. The source and destination resources must be the same resource type and have the same dimensions. In addition, they must have compatible formats. There are three scenarios for this:  ScenarioRequirements Source and destination are prestructured and typedBoth the source and destination must have identical formats and that format must be specified in the Format parameter. One resource is prestructured and typed and the other is prestructured and typelessThe typed resource must have a format that is compatible with the typeless resource (i.e. the typed resource is DXGI_FORMAT_R32_FLOAT and the typeless resource is DXGI_FORMAT_R32_TYPELESS). The format of the typed resource must be specified in the Format parameter. Source and destination are prestructured and typelessBoth the source and desintation must have the same typeless format (i.e. both must have DXGI_FORMAT_R32_TYPELESS), and the Format parameter must specify a format that is compatible with the source and destination (i.e. if both are DXGI_FORMAT_R32_TYPELESS then DXGI_FORMAT_R32_FLOAT could be specified in the Format parameter). For example, given the DXGI_FORMAT_R16G16B16A16_TYPELESS format:  The source (or dest) format could be DXGI_FORMAT_R16G16B16A16_UNORM The dest (or source) format could be DXGI_FORMAT_R16G16B16A16_FLOAT    ? 	
+            This API is most useful when re-using the resulting render target of one render pass as an input to a second render pass. The source and destination resources must be the same resource type and have the same dimensions. In addition, they must have compatible formats. There are three scenarios for this:  ScenarioRequirements Source and destination are prestructured and typedBoth the source and destination must have identical formats and that format must be specified in the Format parameter. One resource is prestructured and typed and the other is prestructured and typelessThe typed resource must have a format that is compatible with the typeless resource (i.e. the typed resource is DXGI_FORMAT_R32_FLOAT and the typeless resource is DXGI_FORMAT_R32_TYPELESS). The format of the typed resource must be specified in the Format parameter. Source and destination are prestructured and typelessBoth the source and destination must have the same typeless format (i.e. both must have DXGI_FORMAT_R32_TYPELESS), and the Format parameter must specify a format that is compatible with the source and destination (i.e. if both are DXGI_FORMAT_R32_TYPELESS then DXGI_FORMAT_R32_FLOAT could be specified in the Format parameter). For example, given the DXGI_FORMAT_R16G16B16A16_TYPELESS format:  The source (or dest) format could be DXGI_FORMAT_R16G16B16A16_UNORM The dest (or source) format could be DXGI_FORMAT_R16G16B16A16_FLOAT    ? 	
             </remarks>	
             <param name="source">Source resource. Must be multisampled. </param>
             <param name="sourceSubresource">&gt;The source subresource of the source resource. </param>
@@ -8319,14 +8437,14 @@
             Draws a fullscreen quad with a pixel shader to output a texture with a particular sampler (default linear clamp).
             </summary>
             <param name="texture">The texture.</param>
-            <param name="tranform">The matrix tranform.</param>
+            <param name="tranform">The matrix transform.</param>
             <param name="samplerState">State of the sampler. If null, default sampler is <see cref="F:SharpDX.Toolkit.Graphics.SamplerStateCollection.LinearClamp"/>.</param>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.GraphicsDevice.DrawQuad(SharpDX.Matrix)">
             <summary>
             Draw a fullscreen quad. An effect with at least a pixel shader (with the expected signature - float2:TEXCOORD) must have been applied before using this method.
             </summary>
-            <param name="tranform">The tranform.</param>
+            <param name="tranform">The transform.</param>
             <seealso cref="T:SharpDX.Toolkit.Graphics.PrimitiveQuad"/>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.GraphicsDevice.DrawQuad(SharpDX.Toolkit.Graphics.Effect)">
@@ -8375,7 +8493,7 @@
             </summary>	
             <param name="threadGroupCountX"><dd>  <p>The number of groups dispatched in the x direction. <em>ThreadGroupCountX</em> must be less than <see cref="F:SharpDX.Direct3D11.ComputeShaderStage.DispatchMaximumThreadGroupsPerDimension"/> (65535).</p> </dd></param>	
             <param name="threadGroupCountY"><dd>  <p>The number of groups dispatched in the y direction. <em>ThreadGroupCountY</em> must be less than <see cref="F:SharpDX.Direct3D11.ComputeShaderStage.DispatchMaximumThreadGroupsPerDimension"/> (65535).</p> </dd></param>	
-            <param name="threadGroupCountZ"><dd>  <p>The number of groups dispatched in the z direction.  <em>ThreadGroupCountZ</em> must be less than <see cref="F:SharpDX.Direct3D11.ComputeShaderStage.DispatchMaximumThreadGroupsPerDimension"/> (65535).  In feature level 10 the value for <em>ThreadGroupCountZ</em> must be 1.</p> </dd></param>	
+            <param name="threadGroupCountZ"><dd>  <p>The number of groups dispatched in the z direction. <em>ThreadGroupCountZ</em> must be less than <see cref="F:SharpDX.Direct3D11.ComputeShaderStage.DispatchMaximumThreadGroupsPerDimension"/> (65535).  In feature level 10 the value for <em>ThreadGroupCountZ</em> must be 1.</p> </dd></param>	
             <remarks>	
             <p>You call the <strong>Dispatch</strong> method to execute commands in a compute shader. A compute shader can be run on many threads in parallel, within a thread group. Index a particular thread, within a thread group using a 3D vector  given by (x,y,z).</p><p>In the following illustration, assume a thread group with 50 threads where the size of the group is given by (5,5,2). A single thread is identified from a  thread group with 50 threads in it, using the vector (4,1,1).</p><p></p><p>The following illustration shows the relationship between the parameters passed to <strong><see cref="M:SharpDX.Direct3D11.DeviceContext.Dispatch(System.Int32,System.Int32,System.Int32)"/></strong>, Dispatch(5,3,2), the values specified in the numthreads attribute, numthreads(10,8,3), and values that will passed to the compute shader for the thread-related system values 	
             (SV_GroupIndex,SV_DispatchThreadID,SV_GroupThreadID,SV_GroupID).</p><p></p>	
@@ -8505,7 +8623,7 @@
             <summary>	
             <p>Sets the <strong>rasterizer state</strong> for the rasterizer stage of the pipeline.</p>	
             </summary>	
-            <param name="rasterizerState">The rasterizser state to set on this device.</param>	
+            <param name="rasterizerState">The rasterizer state to set on this device.</param>	
             <msdn-id>ff476479</msdn-id>	
             <unmanaged>void ID3D11DeviceContext::RSSetState([In, Optional] ID3D11RasterizerState* pRasterizerState)</unmanaged>	
             <unmanaged-short>ID3D11DeviceContext::RSSetState</unmanaged-short>	
@@ -8542,14 +8660,14 @@
             Gets the viewport.
             </summary>
             <param name="index">The index.</param>
-            <returns>Returns a viewport bind on a specified mulrendertarget</returns>
+            <returns>Returns a viewport bound to a specified render target</returns>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.GraphicsDevice.SetViewport(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
             <summary>
             Binds a single viewport to the rasterizer stage.
             </summary>
-            <param name="x">The x coord of the viewport.</param>
-            <param name="y">The x coord of the viewport.</param>
+            <param name="x">The x coordinate of the viewport.</param>
+            <param name="y">The y coordinate of the viewport.</param>
             <param name="width">The width.</param>
             <param name="height">The height.</param>
             <param name="minZ">The min Z.</param>
@@ -8595,7 +8713,7 @@
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.GraphicsDevice.GetRenderTargets(SharpDX.Direct3D11.DepthStencilView@)">
             <summary>
-            Gets the render targets currently binded to the <see cref="F:SharpDX.Toolkit.Graphics.GraphicsDevice.OutputMergerStage"/> through this <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>instance.
+            Gets the render targets currently bound to the <see cref="F:SharpDX.Toolkit.Graphics.GraphicsDevice.OutputMergerStage"/> through this <see cref="T:SharpDX.Toolkit.Graphics.GraphicsDevice"/>instance.
             </summary>
             <param name="depthStencilViewRef">The depth stencil view, may ne null.</param>
             <returns>An array of <see cref="T:SharpDX.Direct3D11.RenderTargetView"/>.</returns>
@@ -8663,7 +8781,7 @@
             Sets the stream output targets bound to the StreamOutput stage.
             </summary>
             <param name="buffer">The buffer to bind on the first stream output slot.</param>
-            <param name="offsets">The offests in bytes of the buffer. An offset of -1 will cause the stream output buffer to be appended, continuing after the last location written to the buffer in a previous stream output pass.</param>
+            <param name="offsets">The offsets in bytes of the buffer. An offset of -1 will cause the stream output buffer to be appended, continuing after the last location written to the buffer in a previous stream output pass.</param>
             <msdn-id>ff476484</msdn-id>
             <unmanaged>void ID3D11DeviceContext::SOSetTargets([In] unsigned int NumBuffers,[In, Buffer, Optional] const ID3D11Buffer** ppSOTargets,[In, Buffer, Optional] const unsigned int* pOffsets)</unmanaged>
             <unmanaged-short>ID3D11DeviceContext::SOSetTargets</unmanaged-short>
@@ -8814,9 +8932,9 @@
         </member>
         <member name="P:SharpDX.Toolkit.Graphics.GraphicsDevice.AutoViewportFromRenderTargets">
             <summary>
-            Gets or sets a value indicating whether the viewport is automatically calculated and set when a rendertarget is set. Default is true.
+            Gets or sets a value indicating whether the viewport is automatically calculated and set when a render target is set. Default is true.
             </summary>
-            <value><c>true</c> if the viewport is automatically calculated and set when a rendertarget is set; otherwise, <c>false</c>.</value>
+            <value><c>true</c> if the viewport is automatically calculated and set when a render target is set; otherwise, <c>false</c>.</value>
         </member>
         <member name="P:SharpDX.Toolkit.Graphics.GraphicsDevice.GraphicsDeviceStatus">
             <summary>
@@ -8925,7 +9043,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.RenderTarget2D">
             <summary>
-            A RenderTarget2D frontend to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
+            A RenderTarget2D front end to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
             </summary>
             <remarks>
             This class instantiates a <see cref="T:SharpDX.Toolkit.Graphics.Texture2D"/> with the binding flags <see cref="F:SharpDX.Direct3D11.BindFlags.RenderTarget"/>.
@@ -9077,7 +9195,7 @@
         </member>
         <member name="T:SharpDX.Toolkit.Graphics.TextureCube">
             <summary>
-            A TextureCube frontend to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
+            A TextureCube front end to <see cref="T:SharpDX.Direct3D11.Texture2D"/>.
             </summary>
         </member>
         <member name="M:SharpDX.Toolkit.Graphics.TextureCube.Clone">
