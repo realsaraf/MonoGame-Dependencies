@@ -70,7 +70,7 @@
             <summary>
             Initializes this instance and starts listening to keyboard input events
             </summary>
-            <exception cref="T:System.NotSupportedException">Is thrown if keyboard manager is used on an usupported platform.</exception>
+            <exception cref="T:System.NotSupportedException">Is thrown if keyboard manager is used on an unsupported platform.</exception>
         </member>
         <member name="M:SharpDX.Toolkit.Input.KeyboardManager.GetState">
             <summary>
@@ -204,7 +204,7 @@
             <param name="chunk">The chunk from whose bits should be recreated the <see cref="T:SharpDX.Toolkit.Input.Keys"/> values</param>
             <param name="arrayOffset">The offset of bit (0-256)</param>
             <param name="pressedKeys">The destination array</param>
-            <param name="index">The index of element in array. Increased for evey new element</param>
+            <param name="index">The index of element in array. Increased for every new element</param>
         </member>
         <member name="M:SharpDX.Toolkit.Input.KeyboardState.Equals(SharpDX.Toolkit.Input.KeyboardState)">
             <summary>
@@ -383,7 +383,7 @@
             <summary>
             Initializes this instance and starts listening to mouse input events
             </summary>
-            <exception cref="T:System.NotSupportedException">Is thrown if mouse manager is used on an usupported platform.</exception>
+            <exception cref="T:System.NotSupportedException">Is thrown if mouse manager is used on an unsupported platform.</exception>
         </member>
         <member name="M:SharpDX.Toolkit.Input.MouseManager.GetState">
             <summary>
@@ -429,7 +429,7 @@
             <summary>
             The <see cref="T:SharpDX.Toolkit.Input.MouseState"/> structure represents a snapshot of mouse state.
             </summary>
-            <remarks>Is inmutable.</remarks>
+            <remarks>Is immutable.</remarks>
         </member>
         <member name="M:SharpDX.Toolkit.Input.MouseState.#ctor(SharpDX.Toolkit.Input.ButtonState,SharpDX.Toolkit.Input.ButtonState,SharpDX.Toolkit.Input.ButtonState,SharpDX.Toolkit.Input.ButtonState,SharpDX.Toolkit.Input.ButtonState,System.Single,System.Single,System.Int32)">
             <summary>
@@ -649,13 +649,13 @@
         </member>
         <member name="T:SharpDX.Toolkit.Input.PointerPlatformWP8">
             <summary>
-            WinPhone 8 platform-specific implmentation of <see cref="T:SharpDX.Toolkit.Input.PointerPlatform"/>.
+            WinPhone 8 platform-specific implementation of <see cref="T:SharpDX.Toolkit.Input.PointerPlatform"/>.
             </summary>
             <remarks>Implements <see cref="T:Windows.Phone.Input.Interop.IDrawingSurfaceManipulationHandler"/>.</remarks>
         </member>
         <member name="M:SharpDX.Toolkit.Input.PointerPlatformWP8.#ctor(System.Object,SharpDX.Toolkit.Input.PointerManager)">
             <summary>
-            Initializes a new instace of <see cref="T:SharpDX.Toolkit.Input.PointerPlatformWP8"/> class.
+            Initializes a new instance of <see cref="T:SharpDX.Toolkit.Input.PointerPlatformWP8"/> class.
             </summary>
             <param name="nativeWindow">The platform-specific reference to window object</param>
             <param name="manager">The <see cref="T:SharpDX.Toolkit.Input.PointerManager"/> whose events will be raised in response to platform-specific events</param>
@@ -746,12 +746,12 @@
         </member>
         <member name="P:SharpDX.Toolkit.Input.PointerPoint.Timestamp">
             <summary>
-            The timestamp when the event occured.
+            The timestamp when the event occurred.
             </summary>
         </member>
         <member name="P:SharpDX.Toolkit.Input.PointerPoint.KeyModifiers">
             <summary>
-            The pressed key modifiers when the event occured.
+            The pressed key modifiers when the event occurred.
             </summary>
         </member>
         <member name="P:SharpDX.Toolkit.Input.PointerPoint.ContactRect">
@@ -759,7 +759,7 @@
             The bounding rectangle of the contact area (typically for touch).
             </summary>
         </member>
-        <member name="P:SharpDX.Toolkit.Input.PointerPoint.IsBarrelButtonPresset">
+        <member name="P:SharpDX.Toolkit.Input.PointerPoint.IsBarrelButtonPressed">
             <summary>
             Indicates whether the barrel button of the pen/stylus device is pressed.
             </summary>

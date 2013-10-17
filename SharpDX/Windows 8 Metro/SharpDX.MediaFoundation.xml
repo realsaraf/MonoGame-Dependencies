@@ -641,6 +641,58 @@
             <unmanaged>MediaFoundation</unmanaged>	
             <unmanaged-short>MediaFoundation</unmanaged-short>	
         </member>
+        <member name="T:SharpDX.MediaFoundation.AsyncCallbackBase">
+            <summary>
+            A default implementation of AsyncCallbackBase.
+            </summary>
+        </member>
+        <member name="T:SharpDX.MediaFoundation.IAsyncCallback">
+            <summary>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Callback interface to notify the application when an asynchronous method completes. </p>	
+            </summary>	
+            <remarks>	
+            <p> For more information about asynchronous methods in Microsoft Media Foundation, see Asynchronous Callback Methods. </p><p>This interface is also used to perform  a work item in a Media Foundation work-queue. For more information, see Work Queues. </p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncCallback']/*"/>	
+            <msdn-id>ms699856</msdn-id>	
+            <unmanaged>IMFAsyncCallback</unmanaged>	
+            <unmanaged-short>IMFAsyncCallback</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)">
+            <summary>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Called when an asynchronous operation is completed.</p>	
+            </summary>	
+            <param name="asyncResultRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.AsyncResult"/></strong> interface. Pass this reference to the asynchronous <strong>End...</strong> method to complete the asynchronous call.</p> </dd></param>	
+            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> </table><p>?</p></returns>	
+            <remarks>	
+            <p>Within your implementation of <strong>Invoke</strong>, call the corresponding <strong>End...</strong> method.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            </remarks>	
+            <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncCallback::Invoke']/*"/>	
+            <msdn-id>bb970360</msdn-id>	
+            <unmanaged>HRESULT IMFAsyncCallback::Invoke([In, Optional] IMFAsyncResult* pAsyncResult)</unmanaged>	
+            <unmanaged-short>IMFAsyncCallback::Invoke</unmanaged-short>	
+        </member>
+        <member name="P:SharpDX.MediaFoundation.IAsyncCallback.Flags">
+            <summary>
+            Gets a flag indicating the behavior of the callback object's <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method. Default behavior should be <see cref="F:SharpDX.MediaFoundation.AsyncCallbackFlags.None"/>.
+            </summary>
+            <value>The a flag indicating the behavior of the callback object's <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method.</value>
+              <msdn-id>bb970381</msdn-id>
+              <unmanaged>HRESULT IMFAsyncCallback::GetParameters([Out] MFASYNC_CALLBACK_FLAGS* pdwFlags,[Out] unsigned int* pdwQueue)</unmanaged>
+              <unmanaged-short>IMFAsyncCallback::GetParameters</unmanaged-short>
+        </member>
+        <member name="P:SharpDX.MediaFoundation.IAsyncCallback.WorkQueueId">
+            <summary>
+            Gets the identifier of the work queue on which the callback is dispatched. See remarks.
+            </summary>
+            <value>The work queue identifier.</value>
+            <remarks>
+            <p>This value can specify one of the standard Media Foundation work queues, or a work queue created by the application. For list of standard Media Foundation work queues, see <strong>Work Queue Identifiers</strong>. To create a new work queue, call <strong><see cref="!:SharpDX.MediaFoundation.MediaFactory.AllocateWorkQueue"/></strong>. The default value is <strong><see cref="F:SharpDX.MediaFoundation.WorkQueueType.Standard"/></strong>.</p> <p>If the work queue is not compatible with the value returned in <em>pdwFlags</em>, the Media Foundation platform returns <strong><see cref="F:SharpDX.MediaFoundation.ResultCode.InvalidWorkqueue"/></strong> when it tries to dispatch the callback. (See <strong><see cref="!:SharpDX.MediaFoundation.MediaFactory.PutWorkItem"/></strong>.)</p>
+            </remarks>
+              <msdn-id>bb970381</msdn-id>
+              <unmanaged>HRESULT IMFAsyncCallback::GetParameters([Out] MFASYNC_CALLBACK_FLAGS* pdwFlags,[Out] unsigned int* pdwQueue)</unmanaged>
+              <unmanaged-short>IMFAsyncCallback::GetParameters</unmanaged-short>
+        </member>
         <member name="T:SharpDX.MediaFoundation.AudioDecoder">
             <summary>
             Decoder from compressed audio (mp3, wma...etc.) to PCM.
@@ -715,7 +767,7 @@
         </member>
         <member name="P:SharpDX.MediaFoundation.AudioDecoder.WaveFormat">
             <summary>
-            Gets the PCM wave format outputed by this decoder.
+            Gets the PCM wave format output by this decoder.
             </summary>
             <value>The wave format.</value>
         </member>
@@ -764,8 +816,9 @@
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> Begins an asynchronous read operation from the stream. </p>	
             </summary>	
-            <param name="bRef"><dd> <p> Pointer to a buffer that receives the data. The caller must allocate the buffer. </p> </dd></param>	
-            <param name="cb"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
+            <param name="bRef"><dd> <p> Pointer to a buffer that receives the data. The caller must allocate the buffer. </p> </dd></param>
+            <param name="offset">Offset within the buffer to begin reading at.</param>
+            <param name="count"><dd> <p> Size of the buffer in bytes. </p> </dd></param>
             <param name="callbackRef"><dd> <p> Pointer to the <strong><see cref="!:SharpDX.MediaFoundation.AsyncCallback"/></strong> interface of a callback object. The caller must implement this interface. </p> </dd></param>	
             <param name="unkStateRef"><dd> <p> Pointer to the <strong><see cref="T:SharpDX.ComObject"/></strong> interface of a state object, defined by the caller. This parameter can be <strong><c>null</c></strong>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
@@ -793,9 +846,9 @@
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Writes data to the stream.</p>	
             </summary>	
-            <param name="bRef"><dd> <p> Pointer to a buffer that contains the data to write. </p> </dd></param>	
-            <param name="cb"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
-            <param name="cbWrittenRef"><dd> <p> Receives the number of bytes that are written. </p> </dd></param>	
+            <param name="bRef"><dd> <p> Pointer to a buffer that contains the data to write. </p> </dd></param>
+            <param name="offset">The offset within the buffer to begin writing to.</param>
+            <param name="count"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
             <p> This method writes the contents of the <em>pb</em> buffer to the stream, starting at the current stream position. The number of bytes that were written is returned in the <em>pcbWritten</em> parameter. </p><p> This method is synchronous. It blocks until the write operation completes. </p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
@@ -808,8 +861,9 @@
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> Begins an asynchronous write operation to the stream. </p>	
             </summary>	
-            <param name="bRef"><dd> <p> Pointer to a buffer containing the data to write. </p> </dd></param>	
-            <param name="cb"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
+            <param name="bRef"><dd> <p> Pointer to a buffer containing the data to write. </p> </dd></param>
+            <param name="offset">The offset within the buffer to begin writing at.</param>
+            <param name="count"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
             <param name="callbackRef"><dd> <p> Pointer to the <strong><see cref="!:SharpDX.MediaFoundation.AsyncCallback"/></strong> interface of a callback object. The caller must implement this interface. </p> </dd></param>	
             <param name="unkStateRef"><dd> <p> Pointer to the <strong><see cref="T:SharpDX.ComObject"/></strong> interface of a state object, defined by the caller. This parameter can be <strong><c>null</c></strong>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
@@ -963,8 +1017,9 @@
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> Begins an asynchronous read operation from the stream. </p>	
             </summary>	
-            <param name="bRef"><dd> <p> Pointer to a buffer that receives the data. The caller must allocate the buffer. </p> </dd></param>	
-            <param name="cb"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
+            <param name="bRef"><dd> <p> Pointer to a buffer that receives the data. The caller must allocate the buffer. </p> </dd></param>
+            <param name="offset">The offset in the buffer to begin reading from.</param>
+            <param name="count"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
             <param name="callbackRef"><dd> <p> Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.IAsyncCallback"/></strong> interface of a callback object. The caller must implement this interface. </p> </dd></param>	
             <param name="context"><dd> <p> Pointer to the <strong><see cref="T:SharpDX.ComObject"/></strong> interface of a state object, defined by the caller. This parameter can be <strong><c>null</c></strong>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
@@ -992,8 +1047,9 @@
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Writes data to the stream.</p>	
             </summary>	
-            <param name="bRef"><dd> <p> Pointer to a buffer that contains the data to write. </p> </dd></param>	
-            <param name="cb"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
+            <param name="bRef"><dd> <p> Pointer to a buffer that contains the data to write. </p> </dd></param>
+            <param name="offset">The offset within the buffer to begin writing at.</param>
+            <param name="count"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
             <returns>The number of bytes that are written.</returns>	
             <remarks>	
             <p> This method writes the contents of the <em>pb</em> buffer to the stream, starting at the current stream position. The number of bytes that were written is returned in the <em>pcbWritten</em> parameter. </p><p> This method is synchronous. It blocks until the write operation completes. </p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
@@ -1006,8 +1062,9 @@
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> Begins an asynchronous write operation to the stream. </p>	
             </summary>	
-            <param name="bRef"><dd> <p> Pointer to a buffer containing the data to write. </p> </dd></param>	
-            <param name="cb"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
+            <param name="bRef"><dd> <p> Pointer to a buffer containing the data to write. </p> </dd></param>
+            <param name="offset">The offset within the buffer to begin writing at.</param>
+            <param name="count"><dd> <p> Size of the buffer in bytes. </p> </dd></param>	
             <param name="callbackRef"><dd> <p> Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.IAsyncCallback"/></strong> interface of a callback object. The caller must implement this interface. </p> </dd></param>	
             <param name="context"><dd> <p> Pointer to the <strong><see cref="T:SharpDX.ComObject"/></strong> interface of a state object, defined by the caller. This parameter can be <strong><c>null</c></strong>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
@@ -1356,6 +1413,24 @@
             <unmanaged>HRESULT IMFByteStream::IsEndOfStream([Out] BOOL* pfEndOfStream)</unmanaged>	
             <unmanaged-short>IMFByteStream::IsEndOfStream</unmanaged-short>	
         </member>
+        <member name="T:SharpDX.MediaFoundation.AsyncCallbackShadow">
+            <summary>
+            Internal AsyncCallback Callback
+            </summary>
+        </member>
+        <member name="M:SharpDX.MediaFoundation.AsyncCallbackShadow.ToIntPtr(SharpDX.MediaFoundation.IAsyncCallback)">
+            <summary>
+            Return a pointer to the unmanaged version of this callback.
+            </summary>
+            <param name="callback">The callback.</param>
+            <returns>A pointer to a shadow c++ callback</returns>
+        </member>
+        <member name="T:SharpDX.MediaFoundation.AsyncCallbackShadow.AsyncCallbackVtbl.GetParametersDelegate">
+            <unmanaged>HRESULT IMFAsyncCallback::GetParameters([Out] MFASYNC_CALLBACK_FLAGS* pdwFlags,[Out] unsigned int* pdwQueue)</unmanaged>	
+        </member>
+        <member name="T:SharpDX.MediaFoundation.AsyncCallbackShadow.AsyncCallbackVtbl.InvokeDelegate">
+            <unmanaged>HRESULT IMFAsyncCallback::Invoke([In, Optional] IMFAsyncResult* pAsyncResult)</unmanaged>	
+        </member>
         <member name="T:SharpDX.MediaFoundation.DirectX.NamespaceDoc">
             <summary>
             The <see cref="N:SharpDX.MediaFoundation.DirectX"/> namespace provides a managed MediaFoundation for DirectX integration API.
@@ -1523,52 +1598,134 @@
             <unmanaged>HRESULT IMFDXGIDeviceManager::UnlockDevice([In] void* hDevice,[In] BOOL fSaveState)</unmanaged>	
             <unmanaged-short>IMFDXGIDeviceManager::UnlockDevice</unmanaged-short>	
         </member>
-        <member name="T:SharpDX.MediaFoundation.IAsyncCallback">
+        <member name="T:SharpDX.MediaFoundation.AsyncResult">
             <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Callback interface to notify the application when an asynchronous method completes. </p>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> Provides information about the result of an asynchronous operation. </p>	
             </summary>	
             <remarks>	
-            <p> For more information about asynchronous methods in Microsoft Media Foundation, see Asynchronous Callback Methods. </p><p>This interface is also used to perform  a work item in a Media Foundation work-queue. For more information, see Work Queues. </p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            <p>Use this interface to complete an asynchronous operation. You get a reference to this interface when your callback object's <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method is called. To complete the operation, pass the <strong><see cref="T:SharpDX.MediaFoundation.AsyncResult"/></strong> reference to the <strong>End...</strong> method that corresponds to the <strong>Begin...</strong> method that starts the operation. For example, if the asynchronous method is named <strong>BeginRead</strong>, call the <strong>EndRead</strong> method. For more information, see Calling Asynchronous Methods.</p><p>If you are implementing an asynchronous method, call <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> to create an instance of this object. For more information, see Writing an Asynchronous Method.</p><p>Any custom implementation of this interface must inherit the <strong><see cref="T:SharpDX.MediaFoundation.Mfasyncresult"/></strong> structure.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
             </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncCallback']/*"/>	
-            <msdn-id>ms699856</msdn-id>	
-            <unmanaged>IMFAsyncCallback</unmanaged>	
-            <unmanaged-short>IMFAsyncCallback</unmanaged-short>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult']/*"/>	
+            <msdn-id>ms700196</msdn-id>	
+            <unmanaged>IMFAsyncResult</unmanaged>	
+            <unmanaged-short>IMFAsyncResult</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)">
+        <member name="M:SharpDX.MediaFoundation.AsyncResult.#ctor(System.IntPtr)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SharpDX.MediaFoundation.AsyncResult"/> class.
+            </summary>
+            <param name="nativePtr">The native pointer.</param>	
+        </member>
+        <member name="M:SharpDX.MediaFoundation.AsyncResult.op_Explicit(System.IntPtr)~SharpDX.MediaFoundation.AsyncResult">
+            <summary>
+            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.MediaFoundation.AsyncResult"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
+            </summary>
+            <param name="nativePointer">The native pointer.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:SharpDX.MediaFoundation.AsyncResult.GetState(System.IntPtr@)">
             <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Called when an asynchronous operation is completed.</p>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns the state object specified by the caller in the asynchronous <strong>Begin</strong> method.</p>	
             </summary>	
-            <param name="asyncResultRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.AsyncResult"/></strong> interface. Pass this reference to the asynchronous <strong>End...</strong> method to complete the asynchronous call.</p> </dd></param>	
-            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> </table><p>?</p></returns>	
+            <param name="unkStateOut"><dd> <p>Receives a reference to the state object's <strong><see cref="T:SharpDX.ComObject"/></strong> interface. If the value is not <strong><c>null</c></strong>, the caller must release the interface.</p> </dd></param>	
+            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> <tr><td> <dl> <dt><strong>E_POINTER</strong></dt> </dl> </td><td> <p>There is no state object associated with this asynchronous result.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
-            <p>Within your implementation of <strong>Invoke</strong>, call the corresponding <strong>End...</strong> method.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            <p>The caller of the asynchronous method specifies the state object, and can use it for any caller-defined purpose. The state object can be <strong><c>null</c></strong>. If the state object is <strong><c>null</c></strong>, <strong>GetState</strong> returns <strong>E_POINTER</strong>.</p><p>If you are implementing an asynchronous method, set the state object on the through the <em>punkState</em> parameter of the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> function.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
             </remarks>	
-            <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncCallback::Invoke']/*"/>	
-            <msdn-id>bb970360</msdn-id>	
-            <unmanaged>HRESULT IMFAsyncCallback::Invoke([In, Optional] IMFAsyncResult* pAsyncResult)</unmanaged>	
-            <unmanaged-short>IMFAsyncCallback::Invoke</unmanaged-short>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetState']/*"/>	
+            <msdn-id>bb970576</msdn-id>	
+            <unmanaged>HRESULT IMFAsyncResult::GetState([Out] void** ppunkState)</unmanaged>	
+            <unmanaged-short>IMFAsyncResult::GetState</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.MediaFoundation.IAsyncCallback.Flags">
-            <summary>
-            Gets a flag indicating the behavior of the callback object's <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method. Default behavior should be <see cref="F:SharpDX.MediaFoundation.AsyncCallbackFlags.None"/>.
-            </summary>
-            <value>The a flag indicating the behavior of the callback object's <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method.</value>
-              <msdn-id>bb970381</msdn-id>
-              <unmanaged>HRESULT IMFAsyncCallback::GetParameters([Out] MFASYNC_CALLBACK_FLAGS* pdwFlags,[Out] unsigned int* pdwQueue)</unmanaged>
-              <unmanaged-short>IMFAsyncCallback::GetParameters</unmanaged-short>
+        <member name="M:SharpDX.MediaFoundation.AsyncResult.GetStatus">
+            <summary>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns the status of the asynchronous operation.</p>	
+            </summary>	
+            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The operation completed successfully.</p> </td></tr> </table><p>?</p></returns>	
+            <remarks>	
+            <p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetStatus']/*"/>	
+            <msdn-id>ms702095</msdn-id>	
+            <unmanaged>HRESULT IMFAsyncResult::GetStatus()</unmanaged>	
+            <unmanaged-short>IMFAsyncResult::GetStatus</unmanaged-short>	
         </member>
-        <member name="P:SharpDX.MediaFoundation.IAsyncCallback.WorkQueueId">
+        <member name="M:SharpDX.MediaFoundation.AsyncResult.SetStatus(SharpDX.Result)">
+            <summary>	
+            <p>Sets the status of the asynchronous operation.</p>  <see cref="T:SharpDX.Result"/> SetStatus( <see cref="T:SharpDX.Result"/> hrStatus	
+            );<p></p>Parameters <p> hrStatus </p> <p>The status of the asynchronous operation.</p>  <p>The method returns an <see cref="T:SharpDX.Result"/>. Possible values include, but are not limited to, those in the following table.</p> <table><tr> <th> Return code              </th> <th> Description              </th> </tr><tr> <td> <p><see cref="F:SharpDX.Result.Ok"/></p> </td> <td> <p>The method succeeded.</p> </td> </tr></table>  <p>If you implement an asynchronous method, call SetStatus to set the status code for the operation. </p>  <p> Client: Requires Windows Vista.</p> <p> Header: Defined in mfobjects.h; include mfidl.h.</p> <p> Library: Use mfuuid.lib.</p> ReferenceIMFAsyncResult InterfaceConceptsAsynchronous Callback Methods	
+            </summary>	
+            <param name="hrStatus">No documentation.</param>	
+            <returns>No documentation.</returns>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::SetStatus']/*"/>	
+            <msdn-id>ms697440</msdn-id>	
+            <unmanaged>HRESULT IMFAsyncResult::SetStatus([In] HRESULT hrStatus)</unmanaged>	
+            <unmanaged-short>IMFAsyncResult::SetStatus</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.MediaFoundation.AsyncResult.GetObject(SharpDX.ComObject@)">
+            <summary>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns an object associated with the asynchronous operation. The type of object, if any, depends on the asynchronous method that was called.</p>	
+            </summary>	
+            <param name="objectOut"><dd> <p>Receives a reference to the object's <strong><see cref="T:SharpDX.ComObject"/></strong> interface. If no object is associated with the operation, this parameter receives the value <strong><c>null</c></strong>. If the value is not <strong><c>null</c></strong>, the caller must release the interface.</p> </dd></param>	
+            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> <tr><td> <dl> <dt><strong>E_POINTER</strong></dt> </dl> </td><td> <p>There is no object associated with this asynchronous result.</p> </td></tr> </table><p>?</p></returns>	
+            <remarks>	
+            <p>Typically, this object is used by the component that implements the asynchronous method. It provides a way for the function that invokes the callback to pass information to the asynchronous <strong>End...</strong> method that completes the operation.</p><p>If you are implementing an asynchronous method, you can set the object through the <em>punkObject</em> parameter of the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> function.</p><p>If the asynchronous result object's internal <strong><see cref="T:SharpDX.ComObject"/></strong> reference is <strong><c>null</c></strong>, the method returns <strong>E_POINTER</strong>.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetObject']/*"/>	
+            <msdn-id>bb970500</msdn-id>	
+            <unmanaged>HRESULT IMFAsyncResult::GetObject([Out] IUnknown** ppObject)</unmanaged>	
+            <unmanaged-short>IMFAsyncResult::GetObject</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.MediaFoundation.AsyncResult.GetStateNoAddRef">
+            <summary>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns the state object specified by the caller in the asynchronous <strong>Begin</strong> method, without incrementing the object's reference count.</p>	
+            </summary>	
+            <returns><p>Returns a reference to the state object's <strong><see cref="T:SharpDX.ComObject"/></strong> interface, or <strong><c>null</c></strong> if no object was set. This reference does not have an outstanding reference count. If you store this reference, you must call <strong>AddRef</strong> on the reference.</p></returns>	
+            <remarks>	
+            <p>This method cannot be called remotely.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            </remarks>	
+            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetStateNoAddRef']/*"/>	
+            <msdn-id>ms696238</msdn-id>	
+            <unmanaged>IUnknown* IMFAsyncResult::GetStateNoAddRef()</unmanaged>	
+            <unmanaged-short>IMFAsyncResult::GetStateNoAddRef</unmanaged-short>	
+        </member>
+        <member name="P:SharpDX.MediaFoundation.AsyncResult.State">
             <summary>
-            Gets the identifier of the work queue on which the callback is dispatched. See remarks.
+            Gets the state object specified by the caller in the asynchronous <strong>Begin</strong> method. If the value is not <strong><c>null</c></strong>, the caller must dispose.
             </summary>
-            <value>The work queue identifier.</value>
-            <remarks>
-            <p>This value can specify one of the standard Media Foundation work queues, or a work queue created by the application. For list of standard Media Foundation work queues, see <strong>Work Queue Identifiers</strong>. To create a new work queue, call <strong><see cref="!:SharpDX.MediaFoundation.MediaFactory.AllocateWorkQueue"/></strong>. The default value is <strong><see cref="F:SharpDX.MediaFoundation.WorkQueueType.Standard"/></strong>.</p> <p>If the work queue is not compatible with the value returned in <em>pdwFlags</em>, the Media Foundation platform returns <strong><see cref="F:SharpDX.MediaFoundation.ResultCode.InvalidWorkqueue"/></strong> when it tries to dispatch the callback. (See <strong><see cref="!:SharpDX.MediaFoundation.MediaFactory.PutWorkItem"/></strong>.)</p>
-            </remarks>
-              <msdn-id>bb970381</msdn-id>
-              <unmanaged>HRESULT IMFAsyncCallback::GetParameters([Out] MFASYNC_CALLBACK_FLAGS* pdwFlags,[Out] unsigned int* pdwQueue)</unmanaged>
-              <unmanaged-short>IMFAsyncCallback::GetParameters</unmanaged-short>
+            <value>The state.</value>
+            <remarks>	
+            <p>The caller of the asynchronous method specifies the state object, and can use it for any caller-defined purpose. The state object can be <strong><c>null</c></strong>. If the state object is <strong><c>null</c></strong>, <strong>GetState</strong> returns <strong>E_POINTER</strong>.</p><p>If you are implementing an asynchronous method, set the state object on the through the <em>punkState</em> parameter of the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> function.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            </remarks>	
+            <msdn-id>bb970576</msdn-id>	
+            <unmanaged>HRESULT IMFAsyncResult::GetState([Out] IUnknown** ppunkState)</unmanaged>	
+            <unmanaged-short>IMFAsyncResult::GetState</unmanaged-short>	
+        </member>
+        <member name="P:SharpDX.MediaFoundation.AsyncResult.Status">
+            <summary>	
+            <p>Get or sets the status of the asynchronous operation.</p>	
+            </summary>	
+            <value><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The operation completed successfully.</p> </td></tr> </table><p>?</p></value>	
+            <remarks>	
+            <p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            </remarks>	
+            <msdn-id>ms702095</msdn-id>	
+            <unmanaged>HRESULT IMFAsyncResult::GetStatus()</unmanaged>	
+            <unmanaged-short>IMFAsyncResult::GetStatus</unmanaged-short>	
+        </member>
+        <member name="P:SharpDX.MediaFoundation.AsyncResult.PrivateObject">
+            <summary>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns an object associated with the asynchronous operation. The type of object, if any, depends on the asynchronous method that was called.</p>	
+            </summary>	
+            <value><dd> <p>Receives a reference to the object's <strong><see cref="T:SharpDX.ComObject"/></strong> interface. If no object is associated with the operation, this parameter receives the value <strong><c>null</c></strong>. If the value is not <strong><c>null</c></strong>, the caller must release the interface.</p> </dd></value>	
+            <remarks>	
+            <p>Typically, this object is used by the component that implements the asynchronous method. It provides a way for the function that invokes the callback to pass information to the asynchronous <strong>End...</strong> method that completes the operation.</p><p>If you are implementing an asynchronous method, you can set the object through the <em>punkObject</em> parameter of the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> function.</p><p>If the asynchronous result object's internal <strong><see cref="T:SharpDX.ComObject"/></strong> reference is <strong><c>null</c></strong>, the method returns <strong>E_POINTER</strong>.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
+            </remarks>	
+            <msdn-id>bb970500</msdn-id>	
+            <unmanaged>HRESULT IMFAsyncResult::GetObjectW([Out] IUnknown** ppObject)</unmanaged>	
+            <unmanaged-short>IMFAsyncResult::GetObjectW</unmanaged-short>	
         </member>
         <member name="T:SharpDX.MediaFoundation.MediaEngineClassFactory">
             <summary>	
@@ -1710,14 +1867,14 @@
             <param name="srcElementsRef"><dd> <p>A reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface. The caller must implement this interface. </p> </dd></param>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>This method corresponds to adding a list of <strong>source</strong> elements to a media element in HTML5. </p><p>The Media Engine tries to load each item in the <em>pSrcElements</em> list, until it finds one that loads successfully. After this method is called, the application can use the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface to update the list at any time. To reload the list, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method completes asynchronously. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load a URL, it sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>If the application also calls <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong>, the URL passed to <strong>SetSource</strong> takes precedence over the list given to <strong>SetSourceElements</strong>.</p>	
+            <p>This method corresponds to adding a list of <strong>source</strong> elements to a media element in HTML5. </p><p>The Media Engine tries to load each item in the <em>pSrcElements</em> list, until it finds one that loads successfully. After this method is called, the application can use the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface to update the list at any time. To reload the list, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method completes asynchronously. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load a URL, it sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>If the application also calls <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.IntPtr)"/></strong>, the URL passed to <strong>SetSource</strong> takes precedence over the list given to <strong>SetSourceElements</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetSourceElements']/*"/>	
             <msdn-id>hh448018</msdn-id>	
             <unmanaged>HRESULT IMFMediaEngine::SetSourceElements([In] IMFMediaEngineSrcElements* pSrcElements)</unmanaged>	
             <unmanaged-short>IMFMediaEngine::SetSourceElements</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)">
+        <member name="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.IntPtr)">
             <summary>	
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the URL of a media resource.</p>	
             </summary>	
@@ -1728,7 +1885,7 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetSource']/*"/>	
             <msdn-id>hh448017</msdn-id>	
-            <unmanaged>HRESULT IMFMediaEngine::SetSource([In] wchar_t* pUrl)</unmanaged>	
+            <unmanaged>HRESULT IMFMediaEngine::SetSource([In] void* pUrl)</unmanaged>	
             <unmanaged-short>IMFMediaEngine::SetSource</unmanaged-short>	
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaEngine.GetCurrentSource(System.IntPtr)">
@@ -1805,7 +1962,7 @@
             </summary>	
             <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
             <remarks>	
-            <p>The main purpose of this method is to reload a list of source elements after updating the list. For more information, see <strong>SetSourceElements</strong>. Otherwise, calling this method is generally not required. To load a new media source, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong>.</p><p>The <strong>Load</strong> method explictly invokes the Media Engine's media resource loading algorithm. Before calling this method, you must set the media resource by calling <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong>. </p><p>This method completes asynchronously. When the <strong>Load</strong> operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load the file, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>This method corresponds to the <strong>load</strong> method of the <strong>HTMLMediaElement</strong> interface in HTML5. </p>	
+            <p>The main purpose of this method is to reload a list of source elements after updating the list. For more information, see <strong>SetSourceElements</strong>. Otherwise, calling this method is generally not required. To load a new media source, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.IntPtr)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong>.</p><p>The <strong>Load</strong> method explictly invokes the Media Engine's media resource loading algorithm. Before calling this method, you must set the media resource by calling <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.IntPtr)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong>. </p><p>This method completes asynchronously. When the <strong>Load</strong> operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load the file, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>This method corresponds to the <strong>load</strong> method of the <strong>HTMLMediaElement</strong> interface in HTML5. </p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::Load']/*"/>	
             <msdn-id>hh448005</msdn-id>	
@@ -2283,26 +2440,13 @@
             <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets a list of media sources.</p>	
             </summary>	
             <remarks>	
-            <p>This method corresponds to adding a list of <strong>source</strong> elements to a media element in HTML5. </p><p>The Media Engine tries to load each item in the <em>pSrcElements</em> list, until it finds one that loads successfully. After this method is called, the application can use the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface to update the list at any time. To reload the list, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method completes asynchronously. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load a URL, it sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>If the application also calls <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.String)"/></strong>, the URL passed to <strong>SetSource</strong> takes precedence over the list given to <strong>SetSourceElements</strong>.</p>	
+            <p>This method corresponds to adding a list of <strong>source</strong> elements to a media element in HTML5. </p><p>The Media Engine tries to load each item in the <em>pSrcElements</em> list, until it finds one that loads successfully. After this method is called, the application can use the <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineSrcElements"/></strong> interface to update the list at any time. To reload the list, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method completes asynchronously. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load a URL, it sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p><p>If the application also calls <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSource(System.IntPtr)"/></strong>, the URL passed to <strong>SetSource</strong> takes precedence over the list given to <strong>SetSourceElements</strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetSourceElements']/*"/>	
             <msdn-id>hh448018</msdn-id>	
             <unmanaged>SetSourceElements</unmanaged>	
             <unmanaged-short>SetSourceElements</unmanaged-short>	
             <unmanaged>HRESULT IMFMediaEngine::SetSourceElements([In] IMFMediaEngineSrcElements* pSrcElements)</unmanaged>
-        </member>
-        <member name="P:SharpDX.MediaFoundation.MediaEngine.Source">
-            <summary>	
-            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the URL of a media resource.</p>	
-            </summary>	
-            <remarks>	
-            <p>This method corresponds to setting the <strong>src</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>The URL specified by this method takes precedence over media resources specified in the <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong> method. To load the URL, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method asynchronously loads the URL. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load the URL, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetSource']/*"/>	
-            <msdn-id>hh448017</msdn-id>	
-            <unmanaged>SetSource</unmanaged>	
-            <unmanaged-short>SetSource</unmanaged-short>	
-            <unmanaged>HRESULT IMFMediaEngine::SetSource([In] wchar_t* pUrl)</unmanaged>
         </member>
         <member name="P:SharpDX.MediaFoundation.MediaEngine.NetworkState">
             <summary>	
@@ -2536,6 +2680,20 @@
             <summary>
             Media engine playback event.
             </summary>
+        </member>
+        <member name="P:SharpDX.MediaFoundation.MediaEngine.Source">
+            <summary>	
+            <p>[This documentation is preliminary and is subject to change.]</p><p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Sets the URL of a media resource.</p>	
+            </summary>	
+            <param name="urlRef"><dd> <p>The URL of the media resource.</p> </dd></param>	
+            <returns><p>If this method succeeds, it returns <strong><see cref="F:SharpDX.Result.Ok"/></strong>. Otherwise, it returns an <strong><see cref="T:SharpDX.Result"/></strong> error code.</p></returns>	
+            <remarks>	
+            <p>This method corresponds to setting the <strong>src</strong> attribute of the <strong>HTMLMediaElement</strong> interface in HTML5.</p><p>The URL specified by this method takes precedence over media resources specified in the <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.SetSourceElements(SharpDX.MediaFoundation.MediaEngineSrcElements)"/></strong> method. To load the URL, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEngine.Load"/></strong>.</p><p>This method asynchronously loads the URL. When the operation starts, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadStart"/></strong> event. If no errors occur during the <strong>Load</strong> operation, several other events are generated, including the following.</p><ul> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedMetadata"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.LoadedData"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlay"/></strong></li> <li><strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.CanPlayThrough"/></strong></li> </ul><p>If the Media Engine is unable to load the URL, the Media Engine sends an <strong><see cref="F:SharpDX.MediaFoundation.MediaEngineEvent.Error"/></strong> event. </p><p>For more information about event handling in the Media Engine, see <strong><see cref="T:SharpDX.MediaFoundation.MediaEngineNotify"/></strong>.</p>	
+            </remarks>	
+            <!-- Failed to insert some or all of included XML --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEngine::SetSource']/*"/>	
+            <msdn-id>hh448017</msdn-id>	
+            <unmanaged>HRESULT IMFMediaEngine::SetSource([In] wchar_t* pUrl)</unmanaged>	
+            <unmanaged-short>IMFMediaEngine::SetSource</unmanaged-short>	
         </member>
         <member name="T:SharpDX.MediaFoundation.MediaEngineNotify">
             <summary>	
@@ -3149,7 +3307,7 @@
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaEngineNotifyShadow.ToIntPtr(SharpDX.MediaFoundation.MediaEngineNotify)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -9318,7 +9476,7 @@
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Creates a media event object.</p>	
             </summary>	
-            <param name="met"><dd> <p>The event type. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetTypeInfo(System.Int32@)"/></strong>. For a list of event types, see Media Foundation Events.</p> </dd></param>	
+            <param name="met"><dd> <p>The event type. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetTypeInfo(SharpDX.MediaFoundation.MediaEventTypes@)"/></strong>. For a list of event types, see Media Foundation Events.</p> </dd></param>	
             <param name="guidExtendedType"><dd> <p>The extended type. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetExtendedType(System.Guid@)"/></strong>. If the event type does not have an extended type, use the value GUID_NULL.</p> </dd></param>	
             <param name="hrStatus"><dd> <p>The event status. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetStatus(SharpDX.Result@)"/></strong> </p> </dd></param>	
             <param name="vValueRef"><dd> <p>The value associated with the event, if any. See <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetValue(SharpDX.Win32.Variant@)"/></strong>. This parameter can be <strong><c>null</c></strong>.</p> </dd></param>	
@@ -10674,10 +10832,6 @@
             <summary>Constant CannotCreateSink.</summary>
             <unmanaged>MF_E_CANNOT_CREATE_SINK</unmanaged>
         </member>
-        <member name="F:SharpDX.MediaFoundation.ResultCode.PolicyMgrActionOufOfBounds">
-            <summary>Constant PolicyMgrActionOufOfBounds.</summary>
-            <unmanaged>MF_E_POLICY_MGR_ACTION_OUTOFBOUNDS</unmanaged>
-        </member>
         <member name="F:SharpDX.MediaFoundation.ResultCode.NetUnsupportedConfiguration">
             <summary>Constant NetUnsupportedConfiguration.</summary>
             <unmanaged>MF_E_NET_UNSUPPORTED_CONFIGURATION</unmanaged>
@@ -11109,6 +11263,10 @@
         <member name="F:SharpDX.MediaFoundation.ResultCode.AudioRecordingDeviceInUse">
             <summary>Constant AudioRecordingDeviceInUse.</summary>
             <unmanaged>MF_E_AUDIO_RECORDING_DEVICE_IN_USE</unmanaged>
+        </member>
+        <member name="F:SharpDX.MediaFoundation.ResultCode.PolicyMgrActionOufOfBounds">
+            <summary>Constant PolicyMgrActionOufOfBounds.</summary>
+            <unmanaged>MF_E_POLICY_MGR_ACTION_OUTOFBOUNDS</unmanaged>
         </member>
         <member name="F:SharpDX.MediaFoundation.ResultCode.ReverseUnsupported">
             <summary>Constant ReverseUnsupported.</summary>
@@ -11741,151 +11899,6 @@
         <member name="F:SharpDX.MediaFoundation.TransformCategoryGuids.AudioEncoder">
             <summary>Constant AudioEncoder.</summary>
             <unmanaged>MFT_CATEGORY_AUDIO_ENCODER</unmanaged>
-        </member>
-        <member name="T:SharpDX.MediaFoundation.AsyncResult">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> Provides information about the result of an asynchronous operation. </p>	
-            </summary>	
-            <remarks>	
-            <p>Use this interface to complete an asynchronous operation. You get a reference to this interface when your callback object's <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method is called. To complete the operation, pass the <strong><see cref="T:SharpDX.MediaFoundation.AsyncResult"/></strong> reference to the <strong>End...</strong> method that corresponds to the <strong>Begin...</strong> method that starts the operation. For example, if the asynchronous method is named <strong>BeginRead</strong>, call the <strong>EndRead</strong> method. For more information, see Calling Asynchronous Methods.</p><p>If you are implementing an asynchronous method, call <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> to create an instance of this object. For more information, see Writing an Asynchronous Method.</p><p>Any custom implementation of this interface must inherit the <strong><see cref="T:SharpDX.MediaFoundation.Mfasyncresult"/></strong> structure.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult']/*"/>	
-            <msdn-id>ms700196</msdn-id>	
-            <unmanaged>IMFAsyncResult</unmanaged>	
-            <unmanaged-short>IMFAsyncResult</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.AsyncResult.#ctor(System.IntPtr)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SharpDX.MediaFoundation.AsyncResult"/> class.
-            </summary>
-            <param name="nativePtr">The native pointer.</param>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.AsyncResult.op_Explicit(System.IntPtr)~SharpDX.MediaFoundation.AsyncResult">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.IntPtr"/> to <see cref="T:SharpDX.MediaFoundation.AsyncResult"/>. (This method is a shortcut to <see cref="P:SharpDX.CppObject.NativePointer"/>) 
-            </summary>
-            <param name="nativePointer">The native pointer.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:SharpDX.MediaFoundation.AsyncResult.GetState(SharpDX.ComObject@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns the state object specified by the caller in the asynchronous <strong>Begin</strong> method.</p>	
-            </summary>	
-            <param name="unkStateOut"><dd> <p>Receives a reference to the state object's <strong><see cref="T:SharpDX.ComObject"/></strong> interface. If the value is not <strong><c>null</c></strong>, the caller must release the interface.</p> </dd></param>	
-            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> <tr><td> <dl> <dt><strong>E_POINTER</strong></dt> </dl> </td><td> <p>There is no state object associated with this asynchronous result.</p> </td></tr> </table><p>?</p></returns>	
-            <remarks>	
-            <p>The caller of the asynchronous method specifies the state object, and can use it for any caller-defined purpose. The state object can be <strong><c>null</c></strong>. If the state object is <strong><c>null</c></strong>, <strong>GetState</strong> returns <strong>E_POINTER</strong>.</p><p>If you are implementing an asynchronous method, set the state object on the through the <em>punkState</em> parameter of the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> function.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetState']/*"/>	
-            <msdn-id>bb970576</msdn-id>	
-            <unmanaged>HRESULT IMFAsyncResult::GetState([Out] IUnknown** ppunkState)</unmanaged>	
-            <unmanaged-short>IMFAsyncResult::GetState</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.AsyncResult.GetStatus">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns the status of the asynchronous operation.</p>	
-            </summary>	
-            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The operation completed successfully.</p> </td></tr> </table><p>?</p></returns>	
-            <remarks>	
-            <p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetStatus']/*"/>	
-            <msdn-id>ms702095</msdn-id>	
-            <unmanaged>HRESULT IMFAsyncResult::GetStatus()</unmanaged>	
-            <unmanaged-short>IMFAsyncResult::GetStatus</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.AsyncResult.SetStatus(SharpDX.Result)">
-            <summary>	
-            <p>Sets the status of the asynchronous operation.</p>  <see cref="T:SharpDX.Result"/> SetStatus( <see cref="T:SharpDX.Result"/> hrStatus	
-            );<p></p>Parameters <p> hrStatus </p> <p>The status of the asynchronous operation.</p>  <p>The method returns an <see cref="T:SharpDX.Result"/>. Possible values include, but are not limited to, those in the following table.</p> <table><tr> <th> Return code              </th> <th> Description              </th> </tr><tr> <td> <p><see cref="F:SharpDX.Result.Ok"/></p> </td> <td> <p>The method succeeded.</p> </td> </tr></table>  <p>If you implement an asynchronous method, call SetStatus to set the status code for the operation. </p>  <p> Client: Requires Windows Vista.</p> <p> Header: Defined in mfobjects.h; include mfidl.h.</p> <p> Library: Use mfuuid.lib.</p> ReferenceIMFAsyncResult InterfaceConceptsAsynchronous Callback Methods	
-            </summary>	
-            <param name="hrStatus">No documentation.</param>	
-            <returns>No documentation.</returns>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::SetStatus']/*"/>	
-            <msdn-id>ms697440</msdn-id>	
-            <unmanaged>HRESULT IMFAsyncResult::SetStatus([In] HRESULT hrStatus)</unmanaged>	
-            <unmanaged-short>IMFAsyncResult::SetStatus</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.AsyncResult.GetObject(SharpDX.ComObject@)">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns an object associated with the asynchronous operation. The type of object, if any, depends on the asynchronous method that was called.</p>	
-            </summary>	
-            <param name="objectOut"><dd> <p>Receives a reference to the object's <strong><see cref="T:SharpDX.ComObject"/></strong> interface. If no object is associated with the operation, this parameter receives the value <strong><c>null</c></strong>. If the value is not <strong><c>null</c></strong>, the caller must release the interface.</p> </dd></param>	
-            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> <tr><td> <dl> <dt><strong>E_POINTER</strong></dt> </dl> </td><td> <p>There is no object associated with this asynchronous result.</p> </td></tr> </table><p>?</p></returns>	
-            <remarks>	
-            <p>Typically, this object is used by the component that implements the asynchronous method. It provides a way for the function that invokes the callback to pass information to the asynchronous <strong>End...</strong> method that completes the operation.</p><p>If you are implementing an asynchronous method, you can set the object through the <em>punkObject</em> parameter of the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> function.</p><p>If the asynchronous result object's internal <strong><see cref="T:SharpDX.ComObject"/></strong> reference is <strong><c>null</c></strong>, the method returns <strong>E_POINTER</strong>.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetObject']/*"/>	
-            <msdn-id>bb970500</msdn-id>	
-            <unmanaged>HRESULT IMFAsyncResult::GetObject([Out] IUnknown** ppObject)</unmanaged>	
-            <unmanaged-short>IMFAsyncResult::GetObject</unmanaged-short>	
-        </member>
-        <member name="M:SharpDX.MediaFoundation.AsyncResult.GetStateNoAddRef">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns the state object specified by the caller in the asynchronous <strong>Begin</strong> method, without incrementing the object's reference count.</p>	
-            </summary>	
-            <returns><p>Returns a reference to the state object's <strong><see cref="T:SharpDX.ComObject"/></strong> interface, or <strong><c>null</c></strong> if no object was set. This reference does not have an outstanding reference count. If you store this reference, you must call <strong>AddRef</strong> on the reference.</p></returns>	
-            <remarks>	
-            <p>This method cannot be called remotely.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetStateNoAddRef']/*"/>	
-            <msdn-id>ms696238</msdn-id>	
-            <unmanaged>IUnknown* IMFAsyncResult::GetStateNoAddRef()</unmanaged>	
-            <unmanaged-short>IMFAsyncResult::GetStateNoAddRef</unmanaged-short>	
-        </member>
-        <member name="P:SharpDX.MediaFoundation.AsyncResult.State">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns the state object specified by the caller in the asynchronous <strong>Begin</strong> method.</p>	
-            </summary>	
-            <remarks>	
-            <p>The caller of the asynchronous method specifies the state object, and can use it for any caller-defined purpose. The state object can be <strong><c>null</c></strong>. If the state object is <strong><c>null</c></strong>, <strong>GetState</strong> returns <strong>E_POINTER</strong>.</p><p>If you are implementing an asynchronous method, set the state object on the through the <em>punkState</em> parameter of the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> function.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetState']/*"/>	
-            <msdn-id>bb970576</msdn-id>	
-            <unmanaged>GetState</unmanaged>	
-            <unmanaged-short>GetState</unmanaged-short>	
-            <unmanaged>HRESULT IMFAsyncResult::GetState([Out] IUnknown** ppunkState)</unmanaged>
-        </member>
-        <member name="P:SharpDX.MediaFoundation.AsyncResult.Status">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns the status of the asynchronous operation.</p>	
-            </summary>	
-            <remarks>	
-            <p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetStatus']/*"/>	
-            <msdn-id>ms702095</msdn-id>	
-            <unmanaged>GetStatus / SetStatus</unmanaged>	
-            <unmanaged-short>GetStatus</unmanaged-short>	
-            <unmanaged>HRESULT IMFAsyncResult::GetStatus()</unmanaged>
-        </member>
-        <member name="P:SharpDX.MediaFoundation.AsyncResult.Object">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns an object associated with the asynchronous operation. The type of object, if any, depends on the asynchronous method that was called.</p>	
-            </summary>	
-            <remarks>	
-            <p>Typically, this object is used by the component that implements the asynchronous method. It provides a way for the function that invokes the callback to pass information to the asynchronous <strong>End...</strong> method that completes the operation.</p><p>If you are implementing an asynchronous method, you can set the object through the <em>punkObject</em> parameter of the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateAsyncResult(SharpDX.ComObject,System.IntPtr,SharpDX.ComObject,SharpDX.MediaFoundation.AsyncResult@)"/></strong> function.</p><p>If the asynchronous result object's internal <strong><see cref="T:SharpDX.ComObject"/></strong> reference is <strong><c>null</c></strong>, the method returns <strong>E_POINTER</strong>.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetObject']/*"/>	
-            <msdn-id>bb970500</msdn-id>	
-            <unmanaged>GetObject</unmanaged>	
-            <unmanaged-short>GetObject</unmanaged-short>	
-            <unmanaged>HRESULT IMFAsyncResult::GetObject([Out] IUnknown** ppObject)</unmanaged>
-        </member>
-        <member name="P:SharpDX.MediaFoundation.AsyncResult.StateNoAddRef">
-            <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Returns the state object specified by the caller in the asynchronous <strong>Begin</strong> method, without incrementing the object's reference count.</p>	
-            </summary>	
-            <remarks>	
-            <p>This method cannot be called remotely.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
-            </remarks>	
-            <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFAsyncResult::GetStateNoAddRef']/*"/>	
-            <msdn-id>ms696238</msdn-id>	
-            <unmanaged>GetStateNoAddRef</unmanaged>	
-            <unmanaged-short>GetStateNoAddRef</unmanaged-short>	
-            <unmanaged>IUnknown* IMFAsyncResult::GetStateNoAddRef()</unmanaged>
         </member>
         <member name="T:SharpDX.MediaFoundation.Buffer2D">
             <summary>	
@@ -13590,7 +13603,7 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaEvent.GetTypeInfo(System.Int32@)">
+        <member name="M:SharpDX.MediaFoundation.MediaEvent.GetTypeInfo(SharpDX.MediaFoundation.MediaEventTypes@)">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Retrieves the event type. The event type indicates what happened to trigger the event. It also defines the meaning of the event value.</p>	
             </summary>	
@@ -13601,7 +13614,7 @@
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEvent::GetType']/*"/>	
             <msdn-id>ms702255</msdn-id>	
-            <unmanaged>HRESULT IMFMediaEvent::GetType([Out] unsigned int* pmet)</unmanaged>	
+            <unmanaged>HRESULT IMFMediaEvent::GetType([Out] MEDIA_EVENT_TYPES* pmet)</unmanaged>	
             <unmanaged-short>IMFMediaEvent::GetType</unmanaged-short>	
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaEvent.GetExtendedType(System.Guid@)">
@@ -13634,7 +13647,7 @@
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaEvent.GetValue(SharpDX.Win32.Variant@)">
             <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Represents an event generated by a Media Foundation object. Use this interface to get information about the event.</p><p>To get a reference to this interface, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,SharpDX.ComObject)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.GetEvent(System.Int32,SharpDX.MediaFoundation.MediaEvent@)"/></strong> on the event generator.</p>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Represents an event generated by a Media Foundation object. Use this interface to get information about the event.</p><p>To get a reference to this interface, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,System.IntPtr)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.GetEvent(System.Int32,SharpDX.MediaFoundation.MediaEvent@)"/></strong> on the event generator.</p>	
             </summary>	
             <param name="vValueRef">No documentation.</param>	
             <returns>No documentation.</returns>	
@@ -13657,7 +13670,7 @@
             <msdn-id>ms702255</msdn-id>	
             <unmanaged>GetType</unmanaged>	
             <unmanaged-short>GetType</unmanaged-short>	
-            <unmanaged>HRESULT IMFMediaEvent::GetType([Out] unsigned int* pmet)</unmanaged>
+            <unmanaged>HRESULT IMFMediaEvent::GetType([Out] MEDIA_EVENT_TYPES* pmet)</unmanaged>
         </member>
         <member name="P:SharpDX.MediaFoundation.MediaEvent.ExtendedType">
             <summary>	
@@ -13687,7 +13700,7 @@
         </member>
         <member name="P:SharpDX.MediaFoundation.MediaEvent.Value">
             <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Represents an event generated by a Media Foundation object. Use this interface to get information about the event.</p><p>To get a reference to this interface, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,SharpDX.ComObject)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.GetEvent(System.Int32,SharpDX.MediaFoundation.MediaEvent@)"/></strong> on the event generator.</p>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p>Represents an event generated by a Media Foundation object. Use this interface to get information about the event.</p><p>To get a reference to this interface, call <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,System.IntPtr)"/></strong> or <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.GetEvent(System.Int32,SharpDX.MediaFoundation.MediaEvent@)"/></strong> on the event generator.</p>	
             </summary>	
             <remarks>	
             <p>If you are implementing an object that generates events, call the <strong><see cref="M:SharpDX.MediaFoundation.MediaFactory.CreateMediaEvent(System.Int32,System.Guid,SharpDX.Result,System.Nullable{SharpDX.Win32.Variant},SharpDX.MediaFoundation.MediaEvent@)"/></strong> function to create a new event object.</p><p>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</p><ul> <li>Windows?XP with Service Pack?2 (SP2) and later.</li> <li>Windows?XP Media Center Edition?2005 with KB900325 (Windows?XP Media Center Edition?2005) and KB925766 (October 2006 Update Rollup for Windows?XP Media Center Edition) installed.</li> </ul>	
@@ -13733,14 +13746,14 @@
             <param name="eventOut"><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEvent"/></strong> interface. The caller must release the interface.</p> </dd></param>	
             <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> <tr><td> <dl> <dt><strong>E_INVALIDARG</strong></dt> </dl> </td><td> <p><c>null</c> reference argument.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.MediaFoundation.ResultCode.MultipleSubScribers"/></strong></dt> </dl> </td><td> <p>There is a pending request.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.MediaFoundation.ResultCode.NoEventsAvailable"/></strong></dt> </dl> </td><td> <p>There are no events in the queue.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.MediaFoundation.ResultCode.Shutdown"/></strong></dt> </dl> </td><td> <p>The object was shut down.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
-            <p>This method executes synchronously.</p><p>If the queue already contains an event, the method returns <see cref="F:SharpDX.Result.Ok"/> immediately. If the queue does not contain an event, the behavior depends on the value of <em>dwFlags</em>:</p><ul> <li> <p>If <em>dwFlags</em> is 0, the method blocks indefinitely until a new event is queued, or until the event generator is shut down.</p> </li> <li> <p>If <em>dwFlags</em> is MF_EVENT_FLAG_NO_WAIT, the method fails immediately with the return code <see cref="F:SharpDX.MediaFoundation.ResultCode.NoEventsAvailable"/>.</p> </li> </ul><p>This method returns <see cref="F:SharpDX.MediaFoundation.ResultCode.MultipleSubScribers"/> if you previously called <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,SharpDX.ComObject)"/></strong> and have not yet called <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult,SharpDX.MediaFoundation.MediaEvent@)"/></strong>.</p>	
+            <p>This method executes synchronously.</p><p>If the queue already contains an event, the method returns <see cref="F:SharpDX.Result.Ok"/> immediately. If the queue does not contain an event, the behavior depends on the value of <em>dwFlags</em>:</p><ul> <li> <p>If <em>dwFlags</em> is 0, the method blocks indefinitely until a new event is queued, or until the event generator is shut down.</p> </li> <li> <p>If <em>dwFlags</em> is MF_EVENT_FLAG_NO_WAIT, the method fails immediately with the return code <see cref="F:SharpDX.MediaFoundation.ResultCode.NoEventsAvailable"/>.</p> </li> </ul><p>This method returns <see cref="F:SharpDX.MediaFoundation.ResultCode.MultipleSubScribers"/> if you previously called <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,System.IntPtr)"/></strong> and have not yet called <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult)"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEventGenerator::GetEvent']/*"/>	
             <msdn-id>ms704754</msdn-id>	
             <unmanaged>HRESULT IMFMediaEventGenerator::GetEvent([In] unsigned int dwFlags,[Out] IMFMediaEvent** ppEvent)</unmanaged>	
             <unmanaged-short>IMFMediaEventGenerator::GetEvent</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,SharpDX.ComObject)">
+        <member name="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,System.IntPtr)">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Begins an asynchronous request for the next event in the queue.</p>	
             </summary>	
@@ -13748,22 +13761,21 @@
             <param name="unkStateRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.ComObject"/></strong> interface of a state object, defined by the caller. This parameter can be <strong><c>null</c></strong>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</p> </dd></param>	
             <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> <tr><td> <dl> <dt><strong>E_INVALIDARG</strong></dt> </dl> </td><td> <p><strong><c>null</c></strong> reference argument.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.MediaFoundation.ResultCode.MultipleBegin"/></strong></dt> </dl> </td><td> <p>There is a pending request with the same callback reference and a different state object.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.MediaFoundation.ResultCode.MultipleSubScribers"/></strong></dt> </dl> </td><td> <p>There is a pending request with a different callback reference.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.MediaFoundation.ResultCode.Shutdown"/></strong></dt> </dl> </td><td> <p>The object was shut down.</p> </td></tr> <tr><td> <dl> <dt><strong>MF_S_MULTIPLE_BEGIN</strong></dt> </dl> </td><td> <p>There is a pending request with the same callback reference and state object.</p> </td></tr> </table><p>?</p></returns>	
             <remarks>	
-            <p>When a new event is available, the event generator calls the <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method. The <strong>Invoke</strong> method should call <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult,SharpDX.MediaFoundation.MediaEvent@)"/></strong> to get a reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEvent"/></strong> interface, and use that interface to examine the event.</p><p>Do not call <strong>BeginGetEvent</strong> a second time before calling <strong>EndGetEvent</strong>. While the first call is still pending, additional calls to the same object will fail. Also, the <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.GetEvent(System.Int32,SharpDX.MediaFoundation.MediaEvent@)"/></strong> method fails if an asynchronous request is still pending.</p>	
+            <p>When a new event is available, the event generator calls the <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method. The <strong>Invoke</strong> method should call <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult)"/></strong> to get a reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEvent"/></strong> interface, and use that interface to examine the event.</p><p>Do not call <strong>BeginGetEvent</strong> a second time before calling <strong>EndGetEvent</strong>. While the first call is still pending, additional calls to the same object will fail. Also, the <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.GetEvent(System.Int32,SharpDX.MediaFoundation.MediaEvent@)"/></strong> method fails if an asynchronous request is still pending.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEventGenerator::BeginGetEvent']/*"/>	
             <msdn-id>ms701637</msdn-id>	
-            <unmanaged>HRESULT IMFMediaEventGenerator::BeginGetEvent([In] IMFAsyncCallback* pCallback,[In] IUnknown* punkState)</unmanaged>	
+            <unmanaged>HRESULT IMFMediaEventGenerator::BeginGetEvent([In] IMFAsyncCallback* pCallback,[In] void* punkState)</unmanaged>	
             <unmanaged-short>IMFMediaEventGenerator::BeginGetEvent</unmanaged-short>	
         </member>
-        <member name="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult,SharpDX.MediaFoundation.MediaEvent@)">
+        <member name="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult)">
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Completes an asynchronous request for the next event in the queue.</p>	
             </summary>	
             <param name="resultRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.AsyncResult"/></strong> interface. Pass in the same reference that your callback object received in the <strong>Invoke</strong> method.</p> </dd></param>	
-            <param name="eventOut"><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEvent"/></strong> interface. The caller must release the interface.</p> </dd></param>	
-            <returns><p>The method returns an <strong><see cref="T:SharpDX.Result"/></strong>. Possible values include, but are not limited to, those in the following table.</p><table> <tr><th>Return code</th><th>Description</th></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.Result.Ok"/></strong></dt> </dl> </td><td> <p>The method succeeded.</p> </td></tr> <tr><td> <dl> <dt><strong><see cref="F:SharpDX.MediaFoundation.ResultCode.Shutdown"/></strong></dt> </dl> </td><td> <p>The object was shut down.</p> </td></tr> </table><p>?</p></returns>	
+            <returns><dd> <p>Receives a reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEvent"/></strong> interface. The caller must release the interface.</p> </dd></returns>	
             <remarks>	
-            <p>Call this method from inside your application's <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method. For example code, see <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,SharpDX.ComObject)"/></strong>.</p>	
+            <p>Call this method from inside your application's <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method. For example code, see <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,System.IntPtr)"/></strong>.</p>	
             </remarks>	
             <!-- No matching elements were found for the following include tag --><include file=".\..\Documentation\CodeComments.xml" path="/comments/comment[@id='IMFMediaEventGenerator::EndGetEvent']/*"/>	
             <msdn-id>ms698866</msdn-id>	
@@ -13774,7 +13786,7 @@
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Puts a new event in the object's queue.</p>	
             </summary>	
-            <param name="met"><dd> <p>Specifies the event type. The event type is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetTypeInfo(System.Int32@)"/></strong> method. For a list of event types, see Media Foundation Events.</p> </dd></param>	
+            <param name="met"><dd> <p>Specifies the event type. The event type is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetTypeInfo(SharpDX.MediaFoundation.MediaEventTypes@)"/></strong> method. For a list of event types, see Media Foundation Events.</p> </dd></param>	
             <param name="guidExtendedType"><dd> <p>The extended type. If the event does not have an extended type, use the value GUID_NULL. The extended type is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetExtendedType(System.Guid@)"/></strong> method.</p> </dd></param>	
             <param name="hrStatus"><dd> <p>A success or failure code indicating the status of the event. This value is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetStatus(SharpDX.Result@)"/></strong> method.</p> </dd></param>	
             <param name="vValueRef"><dd> <p>Pointer to a <strong><see cref="T:SharpDX.Win32.Variant"/></strong> that contains the event value. This parameter can be <strong><c>null</c></strong>. This value is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetValue(SharpDX.Win32.Variant@)"/></strong> method.</p> </dd></param>	
@@ -13783,6 +13795,32 @@
             <msdn-id>ms696255</msdn-id>	
             <unmanaged>HRESULT IMFMediaEventGenerator::QueueEvent([In] unsigned int met,[In] const GUID&amp; guidExtendedType,[In] HRESULT hrStatus,[In, Optional] const PROPVARIANT* pvValue)</unmanaged>	
             <unmanaged-short>IMFMediaEventGenerator::QueueEvent</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.MediaFoundation.MediaEventGenerator.GetEvent(System.Boolean)">
+            <summary>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Retrieves the next event in the queue. This method is synchronous.</p>	
+            </summary>	
+            <param name="isBlocking"><c>true</c> if the method blocks until the event generator queues an event, <c>false</c> otherwise.</param>
+            <returns>a reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEvent"/></strong> interface. The caller must release the interface.</returns>	
+            <remarks>	
+            <p>This method executes synchronously.</p><p>If the queue already contains an event, the method returns <see cref="F:SharpDX.Result.Ok"/> immediately. If the queue does not contain an event, the behavior depends on the value of <em>dwFlags</em>:</p><ul> <li> <p>If <em>dwFlags</em> is 0, the method blocks indefinitely until a new event is queued, or until the event generator is shut down.</p> </li> <li> <p>If <em>dwFlags</em> is MF_EVENT_FLAG_NO_WAIT, the method fails immediately with the return code <see cref="F:SharpDX.MediaFoundation.ResultCode.NoEventsAvailable"/>.</p> </li> </ul><p>This method returns <see cref="F:SharpDX.MediaFoundation.ResultCode.MultipleSubScribers"/> if you previously called <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,System.IntPtr)"/></strong> and have not yet called <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult)"/></strong>.</p>	
+            </remarks>	
+            <msdn-id>ms704754</msdn-id>	
+            <unmanaged>HRESULT IMFMediaEventGenerator::GetEvent([In] unsigned int dwFlags,[Out] IMFMediaEvent** ppEvent)</unmanaged>	
+            <unmanaged-short>IMFMediaEventGenerator::GetEvent</unmanaged-short>	
+        </member>
+        <member name="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent(SharpDX.MediaFoundation.IAsyncCallback,System.Object)">
+            <summary>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Begins an asynchronous request for the next event in the queue.</p>	
+            </summary>	
+            <param name="callback"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.MediaFoundation.IAsyncCallback"/></strong> interface of a callback object. The client must implement this interface.</p> </dd></param>	
+            <param name="stateObject">A reference to a state object, defined by the caller. This parameter can be <strong><c>null</c></strong>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</param>	
+            <remarks>	
+            <p>When a new event is available, the event generator calls the <strong><see cref="M:SharpDX.MediaFoundation.IAsyncCallback.Invoke(SharpDX.MediaFoundation.AsyncResult)"/></strong> method. The <strong>Invoke</strong> method should call <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult)"/></strong> to get a reference to the <strong><see cref="T:SharpDX.MediaFoundation.MediaEvent"/></strong> interface, and use that interface to examine the event.</p><p>Do not call <strong>BeginGetEvent</strong> a second time before calling <strong>EndGetEvent</strong>. While the first call is still pending, additional calls to the same object will fail. Also, the <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.GetEvent(System.Int32,SharpDX.MediaFoundation.MediaEvent@)"/></strong> method fails if an asynchronous request is still pending.</p>	
+            </remarks>	
+            <msdn-id>ms701637</msdn-id>	
+            <unmanaged>HRESULT IMFMediaEventGenerator::BeginGetEvent([In] IMFAsyncCallback* pCallback,[In] void* punkState)</unmanaged>	
+            <unmanaged-short>IMFMediaEventGenerator::BeginGetEvent</unmanaged-short>	
         </member>
         <member name="T:SharpDX.MediaFoundation.MediaEventQueue">
             <summary>	
@@ -13828,7 +13866,7 @@
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaEventQueue.BeginGetEvent_(System.IntPtr,SharpDX.ComObject)">
             <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Begins an asynchronous request for the next event in the queue.</p><p>Call this method inside your implementation of <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,SharpDX.ComObject)"/></strong>. Pass the parameters from that method directly to this method.</p>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Begins an asynchronous request for the next event in the queue.</p><p>Call this method inside your implementation of <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.BeginGetEvent_(System.IntPtr,System.IntPtr)"/></strong>. Pass the parameters from that method directly to this method.</p>	
             </summary>	
             <param name="callbackRef">No documentation.</param>	
             <param name="unkStateRef">No documentation.</param>	
@@ -13843,7 +13881,7 @@
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaEventQueue.EndGetEvent(SharpDX.MediaFoundation.AsyncResult,SharpDX.MediaFoundation.MediaEvent@)">
             <summary>	
-            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Completes an asynchronous request for the next event in the queue.</p><p>Call this method inside your implementation of <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult,SharpDX.MediaFoundation.MediaEvent@)"/></strong>. Pass the parameters from that method directly to this method.</p>	
+            <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Completes an asynchronous request for the next event in the queue.</p><p>Call this method inside your implementation of <strong><see cref="M:SharpDX.MediaFoundation.MediaEventGenerator.EndGetEvent(SharpDX.MediaFoundation.AsyncResult)"/></strong>. Pass the parameters from that method directly to this method.</p>	
             </summary>	
             <param name="resultRef">No documentation.</param>	
             <param name="eventOut">No documentation.</param>	
@@ -13891,7 +13929,7 @@
             <summary>	
             <p><strong>Applies to: </strong>desktop apps | Metro style apps</p><p> </p><p>Creates an event, sets an <strong><see cref="T:SharpDX.ComObject"/></strong> reference as the event data, and puts the event in the queue.</p>	
             </summary>	
-            <param name="met"><dd> <p>Specifies the event type of the event to be added to the queue. The event type is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetTypeInfo(System.Int32@)"/></strong> method. For a list of event types, see Media Foundation Events.</p> </dd></param>	
+            <param name="met"><dd> <p>Specifies the event type of the event to be added to the queue. The event type is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetTypeInfo(SharpDX.MediaFoundation.MediaEventTypes@)"/></strong> method. For a list of event types, see Media Foundation Events.</p> </dd></param>	
             <param name="guidExtendedType"><dd> <p>The extended type of the event. If the event does not have an extended type, use the value GUID_NULL. The extended type is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetExtendedType(System.Guid@)"/></strong> method.</p> </dd></param>	
             <param name="hrStatus"><dd> <p>A success or failure code indicating the status of the event. This value is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetStatus(SharpDX.Result@)"/></strong> method.</p> </dd></param>	
             <param name="unkRef"><dd> <p>Pointer to the <strong><see cref="T:SharpDX.ComObject"/></strong> interface. The method sets this reference as the event value. The reference is returned by the event's <strong><see cref="M:SharpDX.MediaFoundation.MediaEvent.GetValue(SharpDX.Win32.Variant@)"/></strong> method.</p> </dd></param>	
@@ -20047,7 +20085,7 @@
         </member>
         <member name="T:SharpDX.MediaFoundation.MediaAttributeKey">
             <summary>
-            Associate an attribute key with a type used to retreive keys from a <see cref="T:SharpDX.MediaFoundation.MediaAttributes"/> instance.
+            Associate an attribute key with a type used to retrieve keys from a <see cref="T:SharpDX.MediaFoundation.MediaAttributes"/> instance.
             </summary>
         </member>
         <member name="M:SharpDX.MediaFoundation.MediaAttributeKey.#ctor(System.Guid,System.Type)">

@@ -6,7 +6,7 @@
     <members>
         <member name="T:SharpDX.AngleSingle">
             <summary>
-            Represents a unit independant angle using a single-precision floating-point
+            Represents a unit independent angle using a single-precision floating-point
             internal representation.
             </summary>
         </member>
@@ -365,7 +365,7 @@
         <member name="P:SharpDX.AngleSingle.Seconds">
             <summary>
             Gets or sets the seconds of the degrees this SharpDX.AngleSingle represents.
-            When setting te seconds, if the value is in the range (-60, 60) the whole minutes
+            When setting the seconds, if the value is in the range (-60, 60) the whole minutes
             or whole degrees are not changed; otherwise, the whole minutes or whole degrees
             may be changed.
             </summary>
@@ -840,14 +840,14 @@
             <param name="znear">The znear.</param>
             <param name="zfar">The zfar.</param>
             <param name="aspect">The aspect.</param>
-            <returns>The bouding frustum calculated from perspective camera</returns>
+            <returns>The bounding frustum calculated from perspective camera</returns>
         </member>
         <member name="M:SharpDX.BoundingFrustum.FromCamera(SharpDX.FrustumCameraParams)">
             <summary>
             Creates a new frustum relaying on perspective camera parameters
             </summary>
             <param name="cameraParams">The camera params.</param>
-            <returns>The bouding frustum from camera params</returns>
+            <returns>The bounding frustum from camera params</returns>
         </member>
         <member name="M:SharpDX.BoundingFrustum.GetCorners">
             <summary>
@@ -877,7 +877,7 @@
         </member>
         <member name="M:SharpDX.BoundingFrustum.GetCameraParams">
             <summary>
-            Extracts perspective camera parameters from the frustum, dosn't work with orthographic frustums.
+            Extracts perspective camera parameters from the frustum, doesn't work with orthographic frustums.
             </summary>
             <returns>Perspective camera parameters from the frustum</returns>
         </member>
@@ -904,7 +904,7 @@
         </member>
         <member name="M:SharpDX.BoundingFrustum.Contains(SharpDX.Vector3[],SharpDX.ContainmentType@)">
             <summary>
-            Checks whether a group of points lay totally inside the frsutrum (Contains), or lay partially inside the frustum (Intersects), or lay outside the frustum (Disjoint).
+            Checks whether a group of points lay totally inside the frustum (Contains), or lay partially inside the frustum (Intersects), or lay outside the frustum (Disjoint).
             </summary>
             <param name="points">The points.</param>
             <param name="result">Type of the containment.</param>
@@ -1048,8 +1048,8 @@
             <summary>
             Get the distance which when added to camera position along the lookat direction will do the effect of zoom to extents (zoom to fit) operation,
             so all the passed points will fit in the current view.
-            if the returned value is poistive, the camera will move toward the lookat direction (ZoomIn).
-            if the returned value is negative, the camera will move in the revers direction of the lookat direction (ZoomOut).
+            if the returned value is positive, the camera will move toward the lookat direction (ZoomIn).
+            if the returned value is negative, the camera will move in the reverse direction of the lookat direction (ZoomOut).
             </summary>
             <param name="points">The points.</param>
             <returns>The zoom to fit distance</returns>
@@ -1058,8 +1058,8 @@
             <summary>
             Get the distance which when added to camera position along the lookat direction will do the effect of zoom to extents (zoom to fit) operation,
             so all the passed points will fit in the current view.
-            if the returned value is poistive, the camera will move toward the lookat direction (ZoomIn).
-            if the returned value is negative, the camera will move in the revers direction of the lookat direction (ZoomOut).
+            if the returned value is positive, the camera will move toward the lookat direction (ZoomIn).
+            if the returned value is negative, the camera will move in the reverse direction of the lookat direction (ZoomOut).
             </summary>
             <param name="boundingBox">The bounding box.</param>
             <returns>The zoom to fit distance</returns>
@@ -1138,7 +1138,7 @@
         </member>
         <member name="F:SharpDX.BoundingSphere.Radius">
             <summary>
-            The radious of the sphere.
+            The radius of the sphere.
             </summary>
         </member>
         <member name="M:SharpDX.BoundingSphere.#ctor(SharpDX.Vector3,System.Single)">
@@ -1185,7 +1185,7 @@
             Determines if there is an intersection between the current object and a triangle.
             </summary>
             <param name="vertex1">The first vertex of the triangle to test.</param>
-            <param name="vertex2">The second vertex of the triagnle to test.</param>
+            <param name="vertex2">The second vertex of the triangle to test.</param>
             <param name="vertex3">The third vertex of the triangle to test.</param>
             <returns>Whether the two objects intersected.</returns>
         </member>
@@ -1229,7 +1229,7 @@
             Determines whether the current objects contains a triangle.
             </summary>
             <param name="vertex1">The first vertex of the triangle to test.</param>
-            <param name="vertex2">The second vertex of the triagnle to test.</param>
+            <param name="vertex2">The second vertex of the triangle to test.</param>
             <param name="vertex3">The third vertex of the triangle to test.</param>
             <returns>The type of containment the two objects have.</returns>
         </member>
@@ -1532,6 +1532,19 @@
             <summary>Gets a specific element in the collection by using a name.</summary>
             <param name="name">Name of the EffectTechnique to get.</param>
         </member>
+        <member name="T:SharpDX.ModuleInit">
+            <summary>
+            Internal class used to initialize this assembly.
+            </summary>
+        </member>
+        <member name="M:SharpDX.ModuleInit.Setup">
+            <summary>
+            Initializes this assembly.
+            </summary>
+            <remarks>
+            This method is called when the assembly is loaded.
+            </remarks>
+        </member>
         <member name="T:SharpDX.OrientedBoundingBox">
             <summary>
             OrientedBoundingBox (OBB) is a rectangular block, much like an AABB (BoundingBox) but with an arbitrary orientation.
@@ -1539,12 +1552,12 @@
         </member>
         <member name="F:SharpDX.OrientedBoundingBox.Extents">
             <summary>
-            Half lengths of the box along eaxh axis.
+            Half lengths of the box along each axis.
             </summary>
         </member>
         <member name="F:SharpDX.OrientedBoundingBox.Transformation">
             <summary>
-            The matrix which aligns and scales the box, and its tarnslation vector represents the center of the box.
+            The matrix which aligns and scales the box, and its translation vector represents the center of the box.
             </summary>
         </member>
         <member name="M:SharpDX.OrientedBoundingBox.#ctor(SharpDX.BoundingBox)">
@@ -1680,7 +1693,7 @@
             <param name="IgnoreScale">Optimize the check operation by assuming that <see cref="T:SharpDX.OrientedBoundingBox"/> has no scaling applied</param>
             <returns>The type of containment the two objects have.</returns>
             <remarks>
-            This method is not desgined for <see cref="T:SharpDX.OrientedBoundingBox"/> which has a non-uniform scaling appliend to its transformation matrix.
+            This method is not designed for <see cref="T:SharpDX.OrientedBoundingBox"/> which has a non-uniform scaling applied to its transformation matrix.
             But any type of scaling applied using Scale method will keep this method accurate.
             </remarks>
         </member>
@@ -1742,7 +1755,7 @@
         </member>
         <member name="M:SharpDX.OrientedBoundingBox.GetBoxToBoxMatrix(SharpDX.OrientedBoundingBox@,SharpDX.OrientedBoundingBox@,System.Boolean)">
             <summary>
-            Caculates the matrix required to transfer any point from one <see cref="T:SharpDX.OrientedBoundingBox"/> local corrdinates to another.
+            Calculates the matrix required to transfer any point from one <see cref="T:SharpDX.OrientedBoundingBox"/> local coordinates to another.
             </summary>
             <param name="A">The source OrientedBoundingBox.</param>
             <param name="B">The target OrientedBoundingBox.</param>
@@ -2431,14 +2444,14 @@
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct.
             </summary>
-            <param name="value">The red, green, and blue compoennts of the color.</param>
+            <param name="value">The red, green, and blue components of the color.</param>
             <param name="alpha">The alpha component of the color.</param>
         </member>
         <member name="M:SharpDX.Color.#ctor(SharpDX.Vector3)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Color"/> struct. Alpha is set to 255.
             </summary>
-            <param name="value">The red, green, and blue compoennts of the color.</param>
+            <param name="value">The red, green, and blue components of the color.</param>
         </member>
         <member name="M:SharpDX.Color.#ctor(System.UInt32)">
             <summary>
@@ -2655,8 +2668,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <param name="result">When the method completes, contains the linear interpolation of the two colors.</param>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -2669,8 +2680,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <returns>The linear interpolation of the two colors.</returns>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -2694,11 +2703,11 @@
         </member>
         <member name="M:SharpDX.Color.Max(SharpDX.Color@,SharpDX.Color@,SharpDX.Color@)">
             <summary>
-            Returns a color containing the smallest components of the specified colorss.
+            Returns a color containing the smallest components of the specified colors.
             </summary>
             <param name="left">The first source color.</param>
             <param name="right">The second source color.</param>
-            <param name="result">When the method completes, contains an new color composed of the largest components of the source colorss.</param>
+            <param name="result">When the method completes, contains an new color composed of the largest components of the source colors.</param>
         </member>
         <member name="M:SharpDX.Color.Max(SharpDX.Color,SharpDX.Color)">
             <summary>
@@ -2768,7 +2777,7 @@
             <summary>
             Assert a color (return it unchanged).
             </summary>
-            <param name="value">The color to assert (unchange).</param>
+            <param name="value">The color to assert (unchanged).</param>
             <returns>The asserted (unchanged) color.</returns>
         </member>
         <member name="M:SharpDX.Color.op_Subtraction(SharpDX.Color,SharpDX.Color)">
@@ -2855,7 +2864,7 @@
         </member>
         <member name="M:SharpDX.Color.op_Implicit(SharpDX.Color)~SharpDX.Color4">
             <summary>
-            Performs an explicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:SharpDX.Color4"/>.
+            Performs an implicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:SharpDX.Color4"/>.
             </summary>
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
@@ -2918,7 +2927,7 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
-            <param name="format">The format.</param>
+            <param name="format">The format to apply to each channel element (byte).</param>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
@@ -2936,7 +2945,7 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
-            <param name="format">The format.</param>
+            <param name="format">The format to apply to each channel element (byte).</param>
             <param name="formatProvider">The format provider.</param>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
@@ -3755,7 +3764,7 @@
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.ColorBGRA"/> struct.
             </summary>
-            <param name="value">The red, green, and blue compoennts of the color.</param>
+            <param name="value">The red, green, and blue components of the color.</param>
             <param name="alpha">The alpha component of the color.</param>
         </member>
         <member name="M:SharpDX.ColorBGRA.#ctor(System.UInt32)">
@@ -3973,8 +3982,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <param name="result">When the method completes, contains the linear interpolation of the two colors.</param>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -3987,8 +3994,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <returns>The linear interpolation of the two colors.</returns>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -4202,14 +4207,14 @@
         </member>
         <member name="M:SharpDX.ColorBGRA.op_Implicit(SharpDX.Color)~SharpDX.ColorBGRA">
             <summary>
-            Performs an explicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:SharpDX.ColorBGRA"/>.
+            Performs an implicit conversion from <see cref="T:SharpDX.Color"/> to <see cref="T:SharpDX.ColorBGRA"/>.
             </summary>
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
         </member>
         <member name="M:SharpDX.ColorBGRA.op_Implicit(SharpDX.ColorBGRA)~SharpDX.Color">
             <summary>
-            Performs an explicit conversion from <see cref="T:SharpDX.ColorBGRA"/> to <see cref="T:SharpDX.Color"/>.
+            Performs an implicit conversion from <see cref="T:SharpDX.ColorBGRA"/> to <see cref="T:SharpDX.Color"/>.
             </summary>
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
@@ -4244,7 +4249,7 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
-            <param name="format">The format.</param>
+            <param name="format">The format to apply to each channel (byte).</param>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
@@ -4262,7 +4267,7 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
-            <param name="format">The format.</param>
+            <param name="format">The format to apply to each channel (byte).</param>
             <param name="formatProvider">The format provider.</param>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
@@ -4453,7 +4458,7 @@
             </summary>
             <typeparam name="TCallback">The type of the callback.</typeparam>
             <param name="callback">The callback.</param>
-            <returns>A pointer to the unamanaged C++ object of the callback</returns>
+            <returns>A pointer to the unmanaged C++ object of the callback</returns>
         </member>
         <member name="P:SharpDX.CppObject.Tag">
             <summary>
@@ -4501,7 +4506,7 @@
         </member>
         <member name="M:SharpDX.InspectableShadow.ToIntPtr(SharpDX.IInspectable)">
             <summary>
-            Return a pointer to the unamanged version of this callback.
+            Return a pointer to the unmanaged version of this callback.
             </summary>
             <param name="callback">The callback.</param>
             <returns>A pointer to a shadow c++ callback</returns>
@@ -4620,14 +4625,14 @@
         </member>
         <member name="M:SharpDX.SingletonString.op_Explicit(System.String)~SharpDX.SingletonString">
             <summary>
-            Performs an explcit conversion from <see cref="T:System.String"/> to <see cref="T:SharpDX.SingletonString"/>.
+            Performs an explicit conversion from <see cref="T:System.String"/> to <see cref="T:SharpDX.SingletonString"/>.
             </summary>
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
         </member>
         <member name="T:SharpDX.ComponentBase">
             <summary>
-            A lighweight Component base class.
+            A lightweight Component base class.
             </summary>
         </member>
         <member name="F:SharpDX.ComponentBase.name">
@@ -5058,7 +5063,7 @@
             <summary>
             Assert a vector (return it unchanged).
             </summary>
-            <param name = "value">The vector to assert (unchange).</param>
+            <param name = "value">The vector to assert (unchanged).</param>
             <returns>The asserted (unchanged) vector.</returns>
         </member>
         <member name="M:SharpDX.Int3.op_Subtraction(SharpDX.Int3,SharpDX.Int3)">
@@ -5317,7 +5322,7 @@
             <li>Optimized binary format, data serialized to the strict minimum.</li>
             <li>Should be compatible with Win8/WinRT, Desktop.</li>
             <li>Not reflection based serializer, but fully compile time serializer.</li>
-            <li>Format could be readback from C/C++.</li>
+            <li>Format could be read back from C/C++.</li>
             
             </ul>
             </remarks>
@@ -5490,9 +5495,9 @@
             <param name="chunkId">The chunk id.</param>
             <exception cref="T:SharpDX.Serialization.InvalidChunkException">If the chuck to read is not the expecting chunk.</exception>
             <remarks>
-            A Chunk is an identifiable portion of data that will serialized. Chunk are usefull to encapsulate a variable 
+            A Chunk is an identifiable portion of data that will serialized. Chunk are useful to encapsulate a variable 
             data (and check for the presence of the chunk Id). Chunk are storing a 4 bytes identifier and the length of 
-            the chunk before reading/writing actual datas.
+            the chunk before reading/writing actual data.
             </remarks>
         </member>
         <member name="M:SharpDX.Serialization.BinarySerializer.EndChunk">
@@ -5593,7 +5598,7 @@
             <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
-            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
+            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is useful
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
@@ -5629,7 +5634,7 @@
             <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
-            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
+            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is useful
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
@@ -5652,7 +5657,7 @@
             <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
-            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
+            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is useful
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
@@ -5700,7 +5705,7 @@
             <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
-            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
+            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is useful
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
@@ -5715,7 +5720,7 @@
             <param name="serializeFlags">Type of serialization, see <see cref="T:SharpDX.Serialization.SerializeFlags"/>.</param>
             <remarks>
             Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.<br/>
-            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is usefull
+            <strong>Caution</strong>: Also unlike the plain array version, the count is not serialized. This method is useful
             when we want to serialize the count of an array separately from the array.
             </remarks>
         </member>
@@ -5885,7 +5890,7 @@
             <param name="dataRegion">The pointer to an unmanaged memory region. For read operation, this pointer must be allocated by the caller.</param>
             <exception cref="T:System.IO.EndOfStreamException">If the end of stream was reached before reading all the bytes.</exception>
             <remarks>Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
-            This method doesn't serialize the sizeInBytes of the region, so the size must be serialized serparetely.
+            This method doesn't serialize the sizeInBytes of the region, so the size must be serialized separately.
             </remarks>
         </member>
         <member name="M:SharpDX.Serialization.BinarySerializer.SerializeMemoryRegion(System.IntPtr,System.Int32)">
@@ -5896,7 +5901,7 @@
             <param name="sizeInBytes">The size in bytes. See remarks.</param>
             <exception cref="T:System.IO.EndOfStreamException">If the end of stream was reached before reading all the bytes.</exception>
             <remarks>Note that depending on the serialization <see cref="P:SharpDX.Serialization.BinarySerializer.Mode"/>, this method reads or writes the value.
-            This method doesn't serialize the sizeInBytes of the region, so the size must be serialized serparetely.
+            This method doesn't serialize the sizeInBytes of the region, so the size must be serialized separately.
             </remarks>
         </member>
         <member name="M:SharpDX.Serialization.BinarySerializer.Serialize(System.UInt32@)">
@@ -6267,35 +6272,31 @@
         </member>
         <member name="M:SharpDX.Matrix5x4.Lerp(SharpDX.Matrix5x4@,SharpDX.Matrix5x4@,System.Single,SharpDX.Matrix5x4@)">
             <summary>
-            Performs a linear interpolation between two matricies.
+            Performs a linear interpolation between two matrices.
             </summary>
             <param name="start">Start Matrix5x4.</param>
             <param name="end">End Matrix5x4.</param>
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
-            <param name="result">When the method completes, contains the linear interpolation of the two matricies.</param>
+            <param name="result">When the method completes, contains the linear interpolation of the two matrices.</param>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
         <member name="M:SharpDX.Matrix5x4.Lerp(SharpDX.Matrix5x4,SharpDX.Matrix5x4,System.Single)">
             <summary>
-            Performs a linear interpolation between two matricies.
+            Performs a linear interpolation between two matrices.
             </summary>
             <param name="start">Start Matrix5x4.</param>
             <param name="end">End Matrix5x4.</param>
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <returns>The linear interpolation of the two matrices.</returns>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
         <member name="M:SharpDX.Matrix5x4.SmoothStep(SharpDX.Matrix5x4@,SharpDX.Matrix5x4@,System.Single,SharpDX.Matrix5x4@)">
             <summary>
-            Performs a cubic interpolation between two matricies.
+            Performs a cubic interpolation between two matrices.
             </summary>
             <param name="start">Start Matrix5x4.</param>
             <param name="end">End Matrix5x4.</param>
@@ -6332,6 +6333,7 @@
             <param name="x">Scaling factor that is applied along the x-axis.</param>
             <param name="y">Scaling factor that is applied along the y-axis.</param>
             <param name="z">Scaling factor that is applied along the z-axis.</param>
+            <param name="w">Scaling factor that is applied along the w-axis.</param>
             <param name="result">When the method completes, contains the created scaling Matrix5x4.</param>
         </member>
         <member name="M:SharpDX.Matrix5x4.Scaling(System.Single,System.Single,System.Single,System.Single)">
@@ -6346,14 +6348,14 @@
         </member>
         <member name="M:SharpDX.Matrix5x4.Scaling(System.Single,SharpDX.Matrix5x4@)">
             <summary>
-            Creates a Matrix5x4 that uniformally scales along all three axis.
+            Creates a Matrix5x4 that uniformly scales along all three axis.
             </summary>
             <param name="scale">The uniform scale that is applied along all axis.</param>
             <param name="result">When the method completes, contains the created scaling Matrix5x4.</param>
         </member>
         <member name="M:SharpDX.Matrix5x4.Scaling(System.Single)">
             <summary>
-            Creates a Matrix5x4 that uniformally scales along all three axis.
+            Creates a Matrix5x4 that uniformly scales along all three axis.
             </summary>
             <param name="scale">The uniform scale that is applied along all axis.</param>
             <returns>The created scaling Matrix5x4.</returns>
@@ -6379,6 +6381,7 @@
             <param name="x">X-coordinate offset.</param>
             <param name="y">Y-coordinate offset.</param>
             <param name="z">Z-coordinate offset.</param>
+            <param name="w">W-coordinate offset.</param>
             <param name="result">When the method completes, contains the created translation Matrix5x4.</param>
         </member>
         <member name="M:SharpDX.Matrix5x4.Translation(System.Single,System.Single,System.Single,System.Single)">
@@ -6393,26 +6396,26 @@
         </member>
         <member name="M:SharpDX.Matrix5x4.op_Addition(SharpDX.Matrix5x4,SharpDX.Matrix5x4)">
             <summary>
-            Adds two matricies.
+            Adds two matrices.
             </summary>
             <param name="left">The first Matrix5x4 to add.</param>
             <param name="right">The second Matrix5x4 to add.</param>
-            <returns>The sum of the two matricies.</returns>
+            <returns>The sum of the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix5x4.op_UnaryPlus(SharpDX.Matrix5x4)">
             <summary>
             Assert a Matrix5x4 (return it unchanged).
             </summary>
-            <param name="value">The Matrix5x4 to assert (unchange).</param>
+            <param name="value">The Matrix5x4 to assert (unchanged).</param>
             <returns>The asserted (unchanged) Matrix5x4.</returns>
         </member>
         <member name="M:SharpDX.Matrix5x4.op_Subtraction(SharpDX.Matrix5x4,SharpDX.Matrix5x4)">
             <summary>
-            Subtracts two matricies.
+            Subtracts two matrices.
             </summary>
             <param name="left">The first Matrix5x4 to subtract.</param>
             <param name="right">The second Matrix5x4 to subtract.</param>
-            <returns>The difference between the two matricies.</returns>
+            <returns>The difference between the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix5x4.op_UnaryNegation(SharpDX.Matrix5x4)">
             <summary>
@@ -6635,6 +6638,20 @@
             The result of the conversion.
             </returns>
         </member>
+        <member name="M:SharpDX.ResultDescriptor.op_Explicit(SharpDX.ResultDescriptor)~System.Int32">
+            <summary>
+            Performs an implicit conversion from <see cref="T:SharpDX.ResultDescriptor"/> to <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="result">The result.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:SharpDX.ResultDescriptor.op_Explicit(SharpDX.ResultDescriptor)~System.UInt32">
+            <summary>
+            Performs an implicit conversion from <see cref="T:SharpDX.ResultDescriptor"/> to <see cref="T:System.UInt32"/>.
+            </summary>
+            <param name="result">The result.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
         <member name="M:SharpDX.ResultDescriptor.op_Equality(SharpDX.ResultDescriptor,SharpDX.Result)">
             <summary>
             Implements the operator ==.
@@ -6671,6 +6688,12 @@
             <summary>
             Gets the result.
             </summary>
+        </member>
+        <member name="P:SharpDX.ResultDescriptor.Code">
+            <summary>
+            Gets the HRESULT error code.
+            </summary>
+            <value>The HRESULT error code.</value>
         </member>
         <member name="P:SharpDX.ResultDescriptor.Module">
             <summary>
@@ -6982,7 +7005,7 @@
         </member>
         <member name="M:SharpDX.IO.NativeFile.Create(System.String,SharpDX.IO.NativeFileAccess,SharpDX.IO.NativeFileShare,SharpDX.IO.NativeFileMode,System.IntPtr)">
             <summary>
-            Creates the specified lp file name.
+            Creates the file.
             </summary>
             <param name="fileName">Name of the file.</param>
             <param name="desiredAccess">The desired access.</param>
@@ -7291,7 +7314,7 @@
         </member>
         <member name="T:SharpDX.Matrix3x2">
             <summary>
-            Direct2D Matrix3x2 3x2. Use <see cref="T:SharpDX.Matrix3x2"/> and implicit cast to <see cref="T:SharpDX.Matrix3x2"/>.
+            Direct2D Matrix3x2. Supports implicit cast from <see cref="T:SharpDX.Matrix"/>.
             </summary>
         </member>
         <member name="F:SharpDX.Matrix3x2.Identity">
@@ -7351,9 +7374,9 @@
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Matrix3x2"/> struct.
             </summary>
-            <param name="values">The values to assign to the components of the matrix. This must be an array with sixteen elements.</param>
+            <param name="values">The values to assign to the components of the matrix. This must be an array with six elements.</param>
             <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="values"/> is <c>null</c>.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="values"/> contains more or less than sixteen elements.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="values"/> contains more or less than six elements.</exception>
         </member>
         <member name="M:SharpDX.Matrix3x2.ToArray">
             <summary>
@@ -7455,23 +7478,65 @@
             <param name="value">The matrix to be negated.</param>
             <returns>The negated matrix.</returns>
         </member>
+        <member name="M:SharpDX.Matrix3x2.Lerp(SharpDX.Matrix3x2@,SharpDX.Matrix3x2@,System.Single,SharpDX.Matrix3x2@)">
+            <summary>
+            Performs a linear interpolation between two matrices.
+            </summary>
+            <param name="start">Start matrix.</param>
+            <param name="end">End matrix.</param>
+            <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
+            <param name="result">When the method completes, contains the linear interpolation of the two matrices.</param>
+            <remarks>
+            Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
+            </remarks>
+        </member>
+        <member name="M:SharpDX.Matrix3x2.Lerp(SharpDX.Matrix3x2,SharpDX.Matrix3x2,System.Single)">
+            <summary>
+            Performs a linear interpolation between two matrices.
+            </summary>
+            <param name="start">Start matrix.</param>
+            <param name="end">End matrix.</param>
+            <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
+            <returns>The linear interpolation of the two matrices.</returns>
+            <remarks>
+            Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
+            </remarks>
+        </member>
+        <member name="M:SharpDX.Matrix3x2.SmoothStep(SharpDX.Matrix3x2@,SharpDX.Matrix3x2@,System.Single,SharpDX.Matrix3x2@)">
+            <summary>
+            Performs a cubic interpolation between two matrices.
+            </summary>
+            <param name="start">Start matrix.</param>
+            <param name="end">End matrix.</param>
+            <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
+            <param name="result">When the method completes, contains the cubic interpolation of the two matrices.</param>
+        </member>
+        <member name="M:SharpDX.Matrix3x2.SmoothStep(SharpDX.Matrix3x2,SharpDX.Matrix3x2,System.Single)">
+            <summary>
+            Performs a cubic interpolation between two matrices.
+            </summary>
+            <param name="start">Start matrix.</param>
+            <param name="end">End matrix.</param>
+            <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
+            <returns>The cubic interpolation of the two matrices.</returns>
+        </member>
         <member name="M:SharpDX.Matrix3x2.Scaling(SharpDX.Vector2@,SharpDX.Matrix3x2@)">
             <summary>
-            Creates a matrix that scales along the x-axis, y-axis, and y-axis.
+            Creates a matrix that scales along the x-axis and y-axis.
             </summary>
-            <param name="scale">Scaling factor for all three axes.</param>
+            <param name="scale">Scaling factor for both axes.</param>
             <param name="result">When the method completes, contains the created scaling matrix.</param>
         </member>
         <member name="M:SharpDX.Matrix3x2.Scaling(SharpDX.Vector2)">
             <summary>
-            Creates a matrix that scales along the x-axis, y-axis, and y-axis.
+            Creates a matrix that scales along the x-axis and y-axis.
             </summary>
-            <param name="scale">Scaling factor for all three axes.</param>
+            <param name="scale">Scaling factor for both axes.</param>
             <returns>The created scaling matrix.</returns>
         </member>
         <member name="M:SharpDX.Matrix3x2.Scaling(System.Single,System.Single,SharpDX.Matrix3x2@)">
             <summary>
-            Creates a matrix that scales along the x-axis, y-axis, and y-axis.
+            Creates a matrix that scales along the x-axis and y-axis.
             </summary>
             <param name="x">Scaling factor that is applied along the x-axis.</param>
             <param name="y">Scaling factor that is applied along the y-axis.</param>
@@ -7479,7 +7544,7 @@
         </member>
         <member name="M:SharpDX.Matrix3x2.Scaling(System.Single,System.Single)">
             <summary>
-            Creates a matrix that scales along the x-axis, y-axis, and y-axis.
+            Creates a matrix that scales along the x-axis and y-axis.
             </summary>
             <param name="x">Scaling factor that is applied along the x-axis.</param>
             <param name="y">Scaling factor that is applied along the y-axis.</param>
@@ -7487,16 +7552,16 @@
         </member>
         <member name="M:SharpDX.Matrix3x2.Scaling(System.Single,SharpDX.Matrix3x2@)">
             <summary>
-            Creates a matrix that uniformally scales along all three axis.
+            Creates a matrix that uniformly scales along both axes.
             </summary>
-            <param name="scale">The uniform scale that is applied along all axis.</param>
+            <param name="scale">The uniform scale that is applied along both axes.</param>
             <param name="result">When the method completes, contains the created scaling matrix.</param>
         </member>
         <member name="M:SharpDX.Matrix3x2.Scaling(System.Single)">
             <summary>
-            Creates a matrix that uniformally scales along all three axis.
+            Creates a matrix that uniformly scales along both axes.
             </summary>
-            <param name="scale">The uniform scale that is applied along all axis.</param>
+            <param name="scale">The uniform scale that is applied along both axes.</param>
             <returns>The created scaling matrix.</returns>
         </member>
         <member name="M:SharpDX.Matrix3x2.Scaling(System.Single,System.Single,SharpDX.Vector2)">
@@ -7537,18 +7602,56 @@
             <param name="angle">Angle of rotation in radians. Angles are measured clockwise when looking along the rotation axis.</param>
             <returns>The created rotation matrix.</returns>
         </member>
+        <member name="M:SharpDX.Matrix3x2.Rotation(System.Single,SharpDX.Vector2)">
+            <summary>
+            Creates a matrix that rotates about a specified center.
+            </summary>
+            <param name="angle">Angle of rotation in radians. Angles are measured clockwise when looking along the rotation axis.</param>
+            <param name="center">The center of the rotation.</param>
+            <returns>The created rotation matrix.</returns>
+        </member>
+        <member name="M:SharpDX.Matrix3x2.Rotation(System.Single,SharpDX.Vector2,SharpDX.Matrix3x2@)">
+            <summary>
+            Creates a matrix that rotates about a specified center.
+            </summary>
+            <param name="angle">Angle of rotation in radians. Angles are measured clockwise when looking along the rotation axis.</param>
+            <param name="center">The center of the rotation.</param>
+            <param name="result">When the method completes, contains the created rotation matrix.</param>
+        </member>
+        <member name="M:SharpDX.Matrix3x2.Transformation(System.Single,System.Single,System.Single,System.Single,System.Single,SharpDX.Matrix3x2@)">
+            <summary>
+            Creates a transformation matrix.
+            </summary>
+            <param name="xScale">Scaling factor that is applied along the x-axis.</param>
+            <param name="yScale">Scaling factor that is applied along the y-axis.</param>
+            <param name="angle">Angle of rotation in radians. Angles are measured clockwise when looking along the rotation axis.</param>
+            <param name="xOffset">X-coordinate offset.</param>
+            <param name="yOffset">Y-coordinate offset.</param>
+            <param name="result">When the method completes, contains the created transformation matrix.</param>
+        </member>
+        <member name="M:SharpDX.Matrix3x2.Transformation(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates a transformation matrix.
+            </summary>
+            <param name="xScale">Scaling factor that is applied along the x-axis.</param>
+            <param name="yScale">Scaling factor that is applied along the y-axis.</param>
+            <param name="angle">Angle of rotation in radians.</param>
+            <param name="xOffset">X-coordinate offset.</param>
+            <param name="yOffset">Y-coordinate offset.</param>
+            <returns>The created transformation matrix.</returns>
+        </member>
         <member name="M:SharpDX.Matrix3x2.Translation(SharpDX.Vector2@,SharpDX.Matrix3x2@)">
             <summary>
             Creates a translation matrix using the specified offsets.
             </summary>
-            <param name="value">The offset for all three coordinate planes.</param>
+            <param name="value">The offset for both coordinate planes.</param>
             <param name="result">When the method completes, contains the created translation matrix.</param>
         </member>
         <member name="M:SharpDX.Matrix3x2.Translation(SharpDX.Vector2)">
             <summary>
             Creates a translation matrix using the specified offsets.
             </summary>
-            <param name="value">The offset for all three coordinate planes.</param>
+            <param name="value">The offset for both coordinate planes.</param>
             <returns>The created translation matrix.</returns>
         </member>
         <member name="M:SharpDX.Matrix3x2.Translation(System.Single,System.Single,SharpDX.Matrix3x2@)">
@@ -7557,7 +7660,6 @@
             </summary>
             <param name="x">X-coordinate offset.</param>
             <param name="y">Y-coordinate offset.</param>
-            <param name="z">Z-coordinate offset.</param>
             <param name="result">When the method completes, contains the created translation matrix.</param>
         </member>
         <member name="M:SharpDX.Matrix3x2.Translation(System.Single,System.Single)">
@@ -7566,14 +7668,13 @@
             </summary>
             <param name="x">X-coordinate offset.</param>
             <param name="y">Y-coordinate offset.</param>
-            <param name="z">Z-coordinate offset.</param>
             <returns>The created translation matrix.</returns>
         </member>
         <member name="M:SharpDX.Matrix3x2.TransformPoint(SharpDX.Matrix3x2,SharpDX.Vector2)">
             <summary>
             Transforms a vector by this matrix.
             </summary>
-            <param name="matrix">The matrix to use as a tranformation matrix.</param>
+            <param name="matrix">The matrix to use as a transformation matrix.</param>
             <param name="point">The original vector to apply the transformation.</param>
             <returns>The result of the transformation for the input vector.</returns>
         </member>
@@ -7581,7 +7682,7 @@
             <summary>
             Transforms a vector by this matrix.
             </summary>
-            <param name="matrix">The matrix to use as a tranformation matrix.</param>
+            <param name="matrix">The matrix to use as a transformation matrix.</param>
             <param name="point">The original vector to apply the transformation.</param>
             <param name="result">The result of the transformation for the input vector.</param>
             <returns></returns>
@@ -7607,26 +7708,26 @@
         </member>
         <member name="M:SharpDX.Matrix3x2.op_Addition(SharpDX.Matrix3x2,SharpDX.Matrix3x2)">
             <summary>
-            Adds two matricies.
+            Adds two matrices.
             </summary>
             <param name="left">The first matrix to add.</param>
             <param name="right">The second matrix to add.</param>
-            <returns>The sum of the two matricies.</returns>
+            <returns>The sum of the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix3x2.op_UnaryPlus(SharpDX.Matrix3x2)">
             <summary>
             Assert a matrix (return it unchanged).
             </summary>
-            <param name="value">The matrix to assert (unchange).</param>
+            <param name="value">The matrix to assert (unchanged).</param>
             <returns>The asserted (unchanged) matrix.</returns>
         </member>
         <member name="M:SharpDX.Matrix3x2.op_Subtraction(SharpDX.Matrix3x2,SharpDX.Matrix3x2)">
             <summary>
-            Subtracts two matricies.
+            Subtracts two matrices.
             </summary>
             <param name="left">The first matrix to subtract.</param>
             <param name="right">The second matrix to subtract.</param>
-            <returns>The difference between the two matricies.</returns>
+            <returns>The difference between the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix3x2.op_UnaryNegation(SharpDX.Matrix3x2)">
             <summary>
@@ -7653,11 +7754,11 @@
         </member>
         <member name="M:SharpDX.Matrix3x2.op_Multiply(SharpDX.Matrix3x2,SharpDX.Matrix3x2)">
             <summary>
-            Multiplies two matricies.
+            Multiplies two matrices.
             </summary>
             <param name="left">The first matrix to multiply.</param>
             <param name="right">The second matrix to multiply.</param>
-            <returns>The product of the two matricies.</returns>
+            <returns>The product of the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix3x2.op_Division(SharpDX.Matrix3x2,System.Single)">
             <summary>
@@ -7669,11 +7770,11 @@
         </member>
         <member name="M:SharpDX.Matrix3x2.op_Division(SharpDX.Matrix3x2,SharpDX.Matrix3x2)">
             <summary>
-            Divides two matricies.
+            Divides two matrices.
             </summary>
             <param name="left">The first matrix to divide.</param>
             <param name="right">The second matrix to divide.</param>
-            <returns>The quotient of the two matricies.</returns>
+            <returns>The quotient of the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix3x2.op_Equality(SharpDX.Matrix3x2,SharpDX.Matrix3x2)">
             <summary>
@@ -7758,44 +7859,44 @@
         </member>
         <member name="M:SharpDX.Matrix3x2.op_Implicit(SharpDX.Matrix)~SharpDX.Matrix3x2">
             <summary>
-            Performs an implicit conversion from <see cref="T:SharpDX.Matrix3x2"/> to <see cref="T:SharpDX.Matrix3x2"/>.
+            Performs an implicit conversion from <see cref="T:SharpDX.Matrix"/> to <see cref="T:SharpDX.Matrix3x2"/>.
             </summary>
             <param name="matrix">The matrix.</param>
             <returns>The result of the conversion.</returns>
         </member>
         <member name="P:SharpDX.Matrix3x2.Row1">
             <summary>
-            Gets or sets the first row in the matrix; that is M11, M12.
+            Gets or sets the first row in the matrix; that is M11 and M12.
             </summary>
         </member>
         <member name="P:SharpDX.Matrix3x2.Row2">
             <summary>
-            Gets or sets the second row in the matrix; that is M21, M22.
+            Gets or sets the second row in the matrix; that is M21 and M22.
             </summary>
         </member>
         <member name="P:SharpDX.Matrix3x2.Row3">
             <summary>
-            Gets or sets the third row in the matrix; that is M31, M32.
+            Gets or sets the third row in the matrix; that is M31 and M32.
             </summary>
         </member>
         <member name="P:SharpDX.Matrix3x2.Column1">
             <summary>
-            Gets or sets the first column in the matrix; that is M11, M21, M31.
+            Gets or sets the first column in the matrix; that is M11, M21, and M31.
             </summary>
         </member>
         <member name="P:SharpDX.Matrix3x2.Column2">
             <summary>
-            Gets or sets the second column in the matrix; that is M12, M22, M32, and M42.
+            Gets or sets the second column in the matrix; that is M12, M22, and M32.
             </summary>
         </member>
         <member name="P:SharpDX.Matrix3x2.TranslationVector">
             <summary>
-            Gets or sets the translation of the matrix; that is M41, M42.
+            Gets or sets the translation of the matrix; that is M31 and M32.
             </summary>
         </member>
         <member name="P:SharpDX.Matrix3x2.ScaleVector">
             <summary>
-            Gets or sets the scale of the matrix; that is M11, M22.
+            Gets or sets the scale of the matrix; that is M11 and M22.
             </summary>
         </member>
         <member name="P:SharpDX.Matrix3x2.IsIdentity">
@@ -7880,7 +7981,7 @@
             <param name="result">When the method completes, contains the closest point between the two objects;
             or, if the point is directly in the center of the sphere, contains <see cref="F:SharpDX.Vector3.Zero"/>.</param>
             <remarks>
-            If the two spheres are overlapping, but not directly ontop of each other, the closest point
+            If the two spheres are overlapping, but not directly on top of each other, the closest point
             is the 'closest' point of intersection. This can also be considered is the deepest point of
             intersection.
             </remarks>
@@ -7979,7 +8080,7 @@
             </summary>
             <param name="ray">The ray to test.</param>
             <param name="vertex1">The first vertex of the triangle to test.</param>
-            <param name="vertex2">The second vertex of the triagnle to test.</param>
+            <param name="vertex2">The second vertex of the triangle to test.</param>
             <param name="vertex3">The third vertex of the triangle to test.</param>
             <param name="distance">When the method completes, contains the distance of the intersection,
             or 0 if there was no intersection.</param>
@@ -7998,7 +8099,7 @@
             </summary>
             <param name="ray">The ray to test.</param>
             <param name="vertex1">The first vertex of the triangle to test.</param>
-            <param name="vertex2">The second vertex of the triagnle to test.</param>
+            <param name="vertex2">The second vertex of the triangle to test.</param>
             <param name="vertex3">The third vertex of the triangle to test.</param>
             <param name="point">When the method completes, contains the point of intersection,
             or <see cref="F:SharpDX.Vector3.Zero"/> if there was no intersection.</param>
@@ -8081,7 +8182,7 @@
             </summary>
             <param name="plane">The plane to test.</param>
             <param name="vertex1">The first vertex of the triangle to test.</param>
-            <param name="vertex2">The second vertex of the triagnle to test.</param>
+            <param name="vertex2">The second vertex of the triangle to test.</param>
             <param name="vertex3">The third vertex of the triangle to test.</param>
             <returns>Whether the two objects intersected.</returns>
         </member>
@@ -8123,7 +8224,7 @@
             </summary>
             <param name="sphere">The sphere to test.</param>
             <param name="vertex1">The first vertex of the triangle to test.</param>
-            <param name="vertex2">The second vertex of the triagnle to test.</param>
+            <param name="vertex2">The second vertex of the triangle to test.</param>
             <param name="vertex3">The third vertex of the triangle to test.</param>
             <returns>Whether the two objects intersected.</returns>
         </member>
@@ -8173,7 +8274,7 @@
             </summary>
             <param name="sphere">The sphere to test.</param>
             <param name="vertex1">The first vertex of the triangle to test.</param>
-            <param name="vertex2">The second vertex of the triagnle to test.</param>
+            <param name="vertex2">The second vertex of the triangle to test.</param>
             <param name="vertex3">The third vertex of the triangle to test.</param>
             <returns>The type of containment the two objects have.</returns>
         </member>
@@ -8389,8 +8490,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <param name="result">When the method completes, contains the linear interpolation of the two colors.</param>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -8403,8 +8502,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <returns>The linear interpolation of the two colors.</returns>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -8428,15 +8525,15 @@
         </member>
         <member name="M:SharpDX.Color3.Max(SharpDX.Color3@,SharpDX.Color3@,SharpDX.Color3@)">
             <summary>
-            Returns a color containing the smallest components of the specified colorss.
+            Returns a color containing the smallest components of the specified colors.
             </summary>
             <param name="left">The first source color.</param>
             <param name="right">The second source color.</param>
-            <param name="result">When the method completes, contains an new color composed of the largest components of the source colorss.</param>
+            <param name="result">When the method completes, contains an new color composed of the largest components of the source colors.</param>
         </member>
         <member name="M:SharpDX.Color3.Max(SharpDX.Color3,SharpDX.Color3)">
             <summary>
-            Returns a color containing the largest components of the specified colorss.
+            Returns a color containing the largest components of the specified colors.
             </summary>
             <param name="left">The first source color.</param>
             <param name="right">The second source color.</param>
@@ -8502,7 +8599,7 @@
             <summary>
             Assert a color (return it unchanged).
             </summary>
-            <param name="value">The color to assert (unchange).</param>
+            <param name="value">The color to assert (unchanged).</param>
             <returns>The asserted (unchanged) color.</returns>
         </member>
         <member name="M:SharpDX.Color3.op_Subtraction(SharpDX.Color3,SharpDX.Color3)">
@@ -8569,14 +8666,14 @@
         </member>
         <member name="M:SharpDX.Color3.op_Implicit(SharpDX.Color3)~SharpDX.Vector3">
             <summary>
-            Performs an explicit conversion from <see cref="T:SharpDX.Color3"/> to <see cref="T:SharpDX.Vector3"/>.
+            Performs an implicit conversion from <see cref="T:SharpDX.Color3"/> to <see cref="T:SharpDX.Vector3"/>.
             </summary>
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
         </member>
         <member name="M:SharpDX.Color3.op_Implicit(SharpDX.Vector3)~SharpDX.Color3">
             <summary>
-            Performs an explicit conversion from <see cref="T:SharpDX.Vector3"/> to <see cref="T:SharpDX.Color3"/>.
+            Performs an implicit conversion from <see cref="T:SharpDX.Vector3"/> to <see cref="T:SharpDX.Color3"/>.
             </summary>
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
@@ -8600,7 +8697,7 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
-            <param name="format">The format.</param>
+            <param name="format">The format to apply to each channel element (float)</param>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
@@ -8618,7 +8715,7 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
-            <param name="format">The format.</param>
+            <param name="format">The format to apply to each channel element (float).</param>
             <param name="formatProvider">The format provider.</param>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
@@ -8722,7 +8819,7 @@
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Color4"/> struct.
             </summary>
-            <param name="value">The red, green, and blue compoennts of the color.</param>
+            <param name="value">The red, green, and blue components of the color.</param>
             <param name="alpha">The alpha component of the color.</param>
         </member>
         <member name="M:SharpDX.Color4.#ctor(System.UInt32)">
@@ -8749,13 +8846,13 @@
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Color4"/> struct.
             </summary>
-            <param name="value"><see cref="T:SharpDX.Color3"/> used to initialize the color.</param>
+            <param name="color"><see cref="T:SharpDX.Color3"/> used to initialize the color.</param>
         </member>
         <member name="M:SharpDX.Color4.#ctor(SharpDX.Color3,System.Single)">
             <summary>
             Initializes a new instance of the <see cref="T:SharpDX.Color4"/> struct.
             </summary>
-            <param name="value"><see cref="T:SharpDX.Color3"/> used to initialize the color.</param>
+            <param name="color"><see cref="T:SharpDX.Color3"/> used to initialize the color.</param>
             <param name="alpha">The alpha component of the color.</param>
         </member>
         <member name="M:SharpDX.Color4.ToBgra">
@@ -8899,8 +8996,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <param name="result">When the method completes, contains the linear interpolation of the two colors.</param>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -8913,8 +9008,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <returns>The linear interpolation of the two colors.</returns>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -8938,15 +9031,15 @@
         </member>
         <member name="M:SharpDX.Color4.Max(SharpDX.Color4@,SharpDX.Color4@,SharpDX.Color4@)">
             <summary>
-            Returns a color containing the smallest components of the specified colorss.
+            Returns a color containing the smallest components of the specified colors.
             </summary>
             <param name="left">The first source color.</param>
             <param name="right">The second source color.</param>
-            <param name="result">When the method completes, contains an new color composed of the largest components of the source colorss.</param>
+            <param name="result">When the method completes, contains an new color composed of the largest components of the source colors.</param>
         </member>
         <member name="M:SharpDX.Color4.Max(SharpDX.Color4,SharpDX.Color4)">
             <summary>
-            Returns a color containing the largest components of the specified colorss.
+            Returns a color containing the largest components of the specified colors.
             </summary>
             <param name="left">The first source color.</param>
             <param name="right">The second source color.</param>
@@ -9012,7 +9105,7 @@
             <summary>
             Assert a color (return it unchanged).
             </summary>
-            <param name="value">The color to assert (unchange).</param>
+            <param name="value">The color to assert (unchanged).</param>
             <returns>The asserted (unchanged) color.</returns>
         </member>
         <member name="M:SharpDX.Color4.op_Subtraction(SharpDX.Color4,SharpDX.Color4)">
@@ -9086,7 +9179,7 @@
         </member>
         <member name="M:SharpDX.Color4.op_Implicit(SharpDX.Color4)~SharpDX.Vector4">
             <summary>
-            Performs an explicit conversion from <see cref="T:SharpDX.Color4"/> to <see cref="T:SharpDX.Vector4"/>.
+            Performs an implicit conversion from <see cref="T:SharpDX.Color4"/> to <see cref="T:SharpDX.Vector4"/>.
             </summary>
             <param name="value">The value.</param>
             <returns>The result of the conversion.</returns>
@@ -9149,7 +9242,7 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
-            <param name="format">The format.</param>
+            <param name="format">The format to apply to each channel (float).</param>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
@@ -9167,7 +9260,7 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
-            <param name="format">The format.</param>
+            <param name="format">The format to apply to each channel (float).</param>
             <param name="formatProvider">The format provider.</param>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
@@ -9237,7 +9330,7 @@
             </summary>
             <param name="guid">The guid of the interface.</param>
             <param name="comObject">The output COM object reference.</param>
-            <returns>If successfull, <see cref="F:SharpDX.Result.Ok"/> </returns>
+            <returns>If successful, <see cref="F:SharpDX.Result.Ok"/> </returns>
         </member>
         <member name="M:SharpDX.IUnknown.AddReference">
             <summary>
@@ -9400,7 +9493,7 @@
         </member>
         <member name="T:SharpDX.ComObjectCallback">
             <summary>
-            Base class for unmanaged callabackable Com object.
+            Base class for unmanaged callbackable Com object.
             </summary>
         </member>
         <member name="M:SharpDX.ComObjectCallback.#ctor(System.IntPtr)">
@@ -9480,13 +9573,13 @@
         <member name="P:SharpDX.SharpDXException.ResultCode">
             <summary>
               Gets the <see cref = "T:SharpDX.Result">Result code</see> for the exception. This value indicates
-              the specific type of failure that occured within SharpDX.
+              the specific type of failure that occurred within SharpDX.
             </summary>
         </member>
         <member name="P:SharpDX.SharpDXException.Descriptor">
             <summary>
               Gets the <see cref = "T:SharpDX.Result">Result code</see> for the exception. This value indicates
-              the specific type of failure that occured within SharpDX.
+              the specific type of failure that occurred within SharpDX.
             </summary>
         </member>
         <member name="M:SharpDX.CompilationException.#ctor(System.String)">
@@ -9517,14 +9610,15 @@
             impact on performance and should be used only while debugging.
             </remarks>
         </member>
-        <member name="F:SharpDX.Configuration.EnableReleaseOnFinalizer">
-            <summary>
-            Enables or disables release of ComObject on finalizer. Default is disabled (false).
-            </summary>
-        </member>
         <member name="F:SharpDX.Configuration.ThrowOnShaderCompileError">
             <summary>
-            Throws a <see cref="T:SharpDX.CompilationException"/> when a shader or effect compilation error occured. Default is enabled (true).
+            Throws a <see cref="T:SharpDX.CompilationException"/> when a shader or effect compilation error occurred. Default is enabled (true).
+            </summary>
+        </member>
+        <member name="F:SharpDX.Configuration.UseThreadStaticObjectTracking">
+            <summary>
+            By default all objects in the process are tracked.
+            Use this property to track objects per thread.
             </summary>
         </member>
         <member name="T:SharpDX.DataBox">
@@ -10159,7 +10253,7 @@
             Provides methods to perform fast read/write random access data on a buffer located in an unmanaged memory.
             </summary>
             <remarks>
-            This class doesn't validate the position read/write from. It is the responsability of the client of this class
+            This class doesn't validate the position read/write from. It is the responsibility of the client of this class
             to verify that access is done within the size of the buffer.
             </remarks>
         </member>
@@ -38567,7 +38661,7 @@
             <summary>
             Assert a vector (return it unchanged).
             </summary>
-            <param name = "value">The vector to assert (unchange).</param>
+            <param name = "value">The vector to assert (unchanged).</param>
             <returns>The asserted (unchanged) vector.</returns>
         </member>
         <member name="M:SharpDX.Int4.op_Subtraction(SharpDX.Int4,SharpDX.Int4)">
@@ -38885,7 +38979,7 @@
             <param name="value">The value.</param>
             <param name="min">The min.</param>
             <param name="max">The max.</param>
-            <returns>The result of clamiping a value between min and max</returns>
+            <returns>The result of clamping a value between min and max</returns>
         </member>
         <member name="M:SharpDX.MathUtil.Clamp(System.Int32,System.Int32,System.Int32)">
             <summary>
@@ -38894,7 +38988,46 @@
             <param name="value">The value.</param>
             <param name="min">The min.</param>
             <param name="max">The max.</param>
-            <returns>The result of clamiping a value between min and max</returns>
+            <returns>The result of clamping a value between min and max</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Lerp(System.Double,System.Double,System.Double)">
+            <summary>
+            Interpolates between two values using a linear function by a given amount.
+            </summary>
+            <remarks>
+            See http://www.encyclopediaofmath.org/index.php/Linear_interpolation and
+            http://fgiesen.wordpress.com/2012/08/15/linear-interpolation-past-present-and-future/
+            </remarks>
+            <param name="from">Value to interpolate from.</param>
+            <param name="to">Value to interpolate to.</param>
+            <param name="amount">Interpolation amount.</param>
+            <returns>The result of linear interpolation of values based on the amount.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Lerp(System.Single,System.Single,System.Single)">
+            <summary>
+            Interpolates between two values using a linear function by a given amount.
+            </summary>
+            <remarks>
+            See http://www.encyclopediaofmath.org/index.php/Linear_interpolation and
+            http://fgiesen.wordpress.com/2012/08/15/linear-interpolation-past-present-and-future/
+            </remarks>
+            <param name="from">Value to interpolate from.</param>
+            <param name="to">Value to interpolate to.</param>
+            <param name="amount">Interpolation amount.</param>
+            <returns>The result of linear interpolation of values based on the amount.</returns>
+        </member>
+        <member name="M:SharpDX.MathUtil.Lerp(System.Byte,System.Byte,System.Single)">
+            <summary>
+            Interpolates between two values using a linear function by a given amount.
+            </summary>
+            <remarks>
+            See http://www.encyclopediaofmath.org/index.php/Linear_interpolation and
+            http://fgiesen.wordpress.com/2012/08/15/linear-interpolation-past-present-and-future/
+            </remarks>
+            <param name="from">Value to interpolate from.</param>
+            <param name="to">Value to interpolate to.</param>
+            <param name="amount">Interpolation amount.</param>
+            <returns>The result of linear interpolation of values based on the amount.</returns>
         </member>
         <member name="M:SharpDX.MathUtil.Mod(System.Single,System.Single)">
             <summary>
@@ -38913,21 +39046,23 @@
         </member>
         <member name="M:SharpDX.MathUtil.Wrap(System.Int32,System.Int32,System.Int32)">
             <summary>
-            Wraps the specified value into a range.
+            Wraps the specified value into a range [min, max]
             </summary>
             <param name="value">The value to wrap.</param>
             <param name="min">The min.</param>
             <param name="max">The max.</param>
             <returns>Result of the wrapping.</returns>
+            <exception cref="T:System.ArgumentException">Is thrown when <paramref name="min"/> is greater than <paramref name="max"/>.</exception>
         </member>
         <member name="M:SharpDX.MathUtil.Wrap(System.Single,System.Single,System.Single)">
             <summary>
-            Wraps the specified value into a range.
+            Wraps the specified value into a range [min, max[
             </summary>
             <param name="value">The value.</param>
             <param name="min">The min.</param>
             <param name="max">The max.</param>
             <returns>Result of the wrapping.</returns>
+            <exception cref="T:System.ArgumentException">Is thrown when <paramref name="min"/> is greater than <paramref name="max"/>.</exception>
         </member>
         <member name="M:SharpDX.MathUtil.Gauss(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
             <summary>
@@ -38940,7 +39075,7 @@
             <param name="radY">Radius Y.</param>
             <param name="sigmaX">Curve sigma X.</param>
             <param name="sigmaY">Curve sigma Y.</param>
-            <returns>The result of gaussian function.</returns>
+            <returns>The result of Gaussian function.</returns>
         </member>
         <member name="M:SharpDX.MathUtil.Gauss(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
@@ -38953,7 +39088,7 @@
             <param name="radY">Radius Y.</param>
             <param name="sigmaX">Curve sigma X.</param>
             <param name="sigmaY">Curve sigma Y.</param>
-            <returns>The result of gaussian function.</returns>
+            <returns>The result of Gaussian function.</returns>
         </member>
         <member name="M:SharpDX.MathUtil.NextFloat(System.Random,System.Single,System.Single)">
             <summary>
@@ -39267,7 +39402,7 @@
         </member>
         <member name="M:SharpDX.Matrix.DecomposeQR(SharpDX.Matrix@,SharpDX.Matrix@)">
             <summary>
-            Decomposes a matrix into an orthonormalized matrix Q and a right traingular matrix R.
+            Decomposes a matrix into an orthonormalized matrix Q and a right triangular matrix R.
             </summary>
             <param name="Q">When the method completes, contains the orthonormalized matrix of the decomposition.</param>
             <param name="R">When the method completes, contains the right triangular matrix of the decomposition.</param>
@@ -39284,7 +39419,7 @@
             Decomposes a matrix into a scale, rotation, and translation.
             </summary>
             <param name="scale">When the method completes, contains the scaling component of the decomposed matrix.</param>
-            <param name="rotation">When the method completes, contains the rtoation component of the decomposed matrix.</param>
+            <param name="rotation">When the method completes, contains the rotation component of the decomposed matrix.</param>
             <param name="translation">When the method completes, contains the translation component of the decomposed matrix.</param>
             <remarks>
             This method is designed to decompose an SRT transformation matrix only.
@@ -39440,35 +39575,31 @@
         </member>
         <member name="M:SharpDX.Matrix.Lerp(SharpDX.Matrix@,SharpDX.Matrix@,System.Single,SharpDX.Matrix@)">
             <summary>
-            Performs a linear interpolation between two matricies.
+            Performs a linear interpolation between two matrices.
             </summary>
             <param name="start">Start matrix.</param>
             <param name="end">End matrix.</param>
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
-            <param name="result">When the method completes, contains the linear interpolation of the two matricies.</param>
+            <param name="result">When the method completes, contains the linear interpolation of the two matrices.</param>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
         <member name="M:SharpDX.Matrix.Lerp(SharpDX.Matrix,SharpDX.Matrix,System.Single)">
             <summary>
-            Performs a linear interpolation between two matricies.
+            Performs a linear interpolation between two matrices.
             </summary>
             <param name="start">Start matrix.</param>
             <param name="end">End matrix.</param>
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <returns>The linear interpolation of the two matrices.</returns>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
         <member name="M:SharpDX.Matrix.SmoothStep(SharpDX.Matrix@,SharpDX.Matrix@,System.Single,SharpDX.Matrix@)">
             <summary>
-            Performs a cubic interpolation between two matricies.
+            Performs a cubic interpolation between two matrices.
             </summary>
             <param name="start">Start matrix.</param>
             <param name="end">End matrix.</param>
@@ -39597,12 +39728,12 @@
         </member>
         <member name="M:SharpDX.Matrix.UpperTriangularForm(SharpDX.Matrix@,SharpDX.Matrix@)">
             <summary>
-            Brings the matrix into upper triangular form using elementry row operations.
+            Brings the matrix into upper triangular form using elementary row operations.
             </summary>
             <param name="value">The matrix to put into upper triangular form.</param>
             <param name="result">When the method completes, contains the upper triangular matrix.</param>
             <remarks>
-            If the matrix is not invertable (i.e. its determinant is zero) than the result of this
+            If the matrix is not invertible (i.e. its determinant is zero) than the result of this
             method may produce Single.Nan and Single.Inf values. When the matrix represents a system
             of linear equations, than this often means that either no solution exists or an infinite
             number of solutions exist.
@@ -39610,12 +39741,12 @@
         </member>
         <member name="M:SharpDX.Matrix.UpperTriangularForm(SharpDX.Matrix)">
             <summary>
-            Brings the matrix into upper triangular form using elementry row operations.
+            Brings the matrix into upper triangular form using elementary row operations.
             </summary>
             <param name="value">The matrix to put into upper triangular form.</param>
             <returns>The upper triangular matrix.</returns>
             <remarks>
-            If the matrix is not invertable (i.e. its determinant is zero) than the result of this
+            If the matrix is not invertible (i.e. its determinant is zero) than the result of this
             method may produce Single.Nan and Single.Inf values. When the matrix represents a system
             of linear equations, than this often means that either no solution exists or an infinite
             number of solutions exist.
@@ -39623,12 +39754,12 @@
         </member>
         <member name="M:SharpDX.Matrix.LowerTriangularForm(SharpDX.Matrix@,SharpDX.Matrix@)">
             <summary>
-            Brings the matrix into lower triangular form using elementry row operations.
+            Brings the matrix into lower triangular form using elementary row operations.
             </summary>
             <param name="value">The matrix to put into lower triangular form.</param>
             <param name="result">When the method completes, contains the lower triangular matrix.</param>
             <remarks>
-            If the matrix is not invertable (i.e. its determinant is zero) than the result of this
+            If the matrix is not invertible (i.e. its determinant is zero) than the result of this
             method may produce Single.Nan and Single.Inf values. When the matrix represents a system
             of linear equations, than this often means that either no solution exists or an infinite
             number of solutions exist.
@@ -39636,12 +39767,12 @@
         </member>
         <member name="M:SharpDX.Matrix.LowerTriangularForm(SharpDX.Matrix)">
             <summary>
-            Brings the matrix into lower triangular form using elementry row operations.
+            Brings the matrix into lower triangular form using elementary row operations.
             </summary>
             <param name="value">The matrix to put into lower triangular form.</param>
             <returns>The lower triangular matrix.</returns>
             <remarks>
-            If the matrix is not invertable (i.e. its determinant is zero) than the result of this
+            If the matrix is not invertible (i.e. its determinant is zero) than the result of this
             method may produce Single.Nan and Single.Inf values. When the matrix represents a system
             of linear equations, than this often means that either no solution exists or an infinite
             number of solutions exist.
@@ -39649,28 +39780,28 @@
         </member>
         <member name="M:SharpDX.Matrix.RowEchelonForm(SharpDX.Matrix@,SharpDX.Matrix@)">
             <summary>
-            Brings the matrix into row echelon form using elementry row operations;
+            Brings the matrix into row echelon form using elementary row operations;
             </summary>
             <param name="value">The matrix to put into row echelon form.</param>
             <param name="result">When the method completes, contains the row echelon form of the matrix.</param>
         </member>
         <member name="M:SharpDX.Matrix.RowEchelonForm(SharpDX.Matrix)">
             <summary>
-            Brings the matrix into row echelon form using elementry row operations;
+            Brings the matrix into row echelon form using elementary row operations;
             </summary>
             <param name="value">The matrix to put into row echelon form.</param>
             <returns>When the method completes, contains the row echelon form of the matrix.</returns>
         </member>
         <member name="M:SharpDX.Matrix.ReducedRowEchelonForm(SharpDX.Matrix@,SharpDX.Vector4@,SharpDX.Matrix@,SharpDX.Vector4@)">
             <summary>
-            Brings the matrix into reduced row echelon form using elementry row operations.
+            Brings the matrix into reduced row echelon form using elementary row operations.
             </summary>
             <param name="value">The matrix to put into reduced row echelon form.</param>
             <param name="augment">The fifth column of the matrix.</param>
             <param name="result">When the method completes, contains the resultant matrix after the operation.</param>
             <param name="augmentResult">When the method completes, contains the resultant fifth column of the matrix.</param>
             <remarks>
-            <para>The fifth column is often called the agumented part of the matrix. This is because the fifth
+            <para>The fifth column is often called the augmented part of the matrix. This is because the fifth
             column is really just an extension of the matrix so that there is a place to put all of the
             non-zero components after the operation is complete.</para>
             <para>Often times the resultant matrix will the identity matrix or a matrix similar to the identity
@@ -40018,14 +40149,14 @@
         </member>
         <member name="M:SharpDX.Matrix.Scaling(System.Single,SharpDX.Matrix@)">
             <summary>
-            Creates a matrix that uniformally scales along all three axis.
+            Creates a matrix that uniformly scales along all three axis.
             </summary>
             <param name="scale">The uniform scale that is applied along all axis.</param>
             <param name="result">When the method completes, contains the created scaling matrix.</param>
         </member>
         <member name="M:SharpDX.Matrix.Scaling(System.Single)">
             <summary>
-            Creates a matrix that uniformally scales along all three axis.
+            Creates a matrix that uniformly scales along all three axis.
             </summary>
             <param name="scale">The uniform scale that is applied along all axis.</param>
             <returns>The created scaling matrix.</returns>
@@ -40074,7 +40205,7 @@
         </member>
         <member name="M:SharpDX.Matrix.RotationAxis(SharpDX.Vector3@,System.Single,SharpDX.Matrix@)">
             <summary>
-            Creates a matrix that rotates around an arbitary axis.
+            Creates a matrix that rotates around an arbitrary axis.
             </summary>
             <param name="axis">The axis around which to rotate. This parameter is assumed to be normalized.</param>
             <param name="angle">Angle of rotation in radians. Angles are measured clockwise when looking along the rotation axis toward the origin.</param>
@@ -40082,7 +40213,7 @@
         </member>
         <member name="M:SharpDX.Matrix.RotationAxis(SharpDX.Vector3,System.Single)">
             <summary>
-            Creates a matrix that rotates around an arbitary axis.
+            Creates a matrix that rotates around an arbitrary axis.
             </summary>
             <param name="axis">The axis around which to rotate. This parameter is assumed to be normalized.</param>
             <param name="angle">Angle of rotation in radians. Angles are measured clockwise when looking along the rotation axis toward the origin.</param>
@@ -40154,7 +40285,7 @@
         </member>
         <member name="M:SharpDX.Matrix.Skew(System.Single,SharpDX.Vector3@,SharpDX.Vector3@,SharpDX.Matrix@)">
             <summary>
-            Creats a skew/shear matrix by means of a translation vector, a rotation vector, and a rotation angle.
+            Creates a skew/shear matrix by means of a translation vector, a rotation vector, and a rotation angle.
             shearing is performed in the direction of translation vector, where translation vector and rotation vector define the shearing plane.
             The effect is such that the skewed rotation vector has the specified angle with rotation itself.
             </summary>
@@ -40289,26 +40420,26 @@
         </member>
         <member name="M:SharpDX.Matrix.op_Addition(SharpDX.Matrix,SharpDX.Matrix)">
             <summary>
-            Adds two matricies.
+            Adds two matrices.
             </summary>
             <param name="left">The first matrix to add.</param>
             <param name="right">The second matrix to add.</param>
-            <returns>The sum of the two matricies.</returns>
+            <returns>The sum of the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix.op_UnaryPlus(SharpDX.Matrix)">
             <summary>
             Assert a matrix (return it unchanged).
             </summary>
-            <param name="value">The matrix to assert (unchange).</param>
+            <param name="value">The matrix to assert (unchanged).</param>
             <returns>The asserted (unchanged) matrix.</returns>
         </member>
         <member name="M:SharpDX.Matrix.op_Subtraction(SharpDX.Matrix,SharpDX.Matrix)">
             <summary>
-            Subtracts two matricies.
+            Subtracts two matrices.
             </summary>
             <param name="left">The first matrix to subtract.</param>
             <param name="right">The second matrix to subtract.</param>
-            <returns>The difference between the two matricies.</returns>
+            <returns>The difference between the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix.op_UnaryNegation(SharpDX.Matrix)">
             <summary>
@@ -40335,11 +40466,11 @@
         </member>
         <member name="M:SharpDX.Matrix.op_Multiply(SharpDX.Matrix,SharpDX.Matrix)">
             <summary>
-            Multiplies two matricies.
+            Multiplies two matrices.
             </summary>
             <param name="left">The first matrix to multiply.</param>
             <param name="right">The second matrix to multiply.</param>
-            <returns>The product of the two matricies.</returns>
+            <returns>The product of the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix.op_Division(SharpDX.Matrix,System.Single)">
             <summary>
@@ -40351,11 +40482,11 @@
         </member>
         <member name="M:SharpDX.Matrix.op_Division(SharpDX.Matrix,SharpDX.Matrix)">
             <summary>
-            Divides two matricies.
+            Divides two matrices.
             </summary>
             <param name="left">The first matrix to divide.</param>
             <param name="right">The second matrix to divide.</param>
-            <returns>The quotient of the two matricies.</returns>
+            <returns>The quotient of the two matrices.</returns>
         </member>
         <member name="M:SharpDX.Matrix.op_Equality(SharpDX.Matrix,SharpDX.Matrix)">
             <summary>
@@ -40894,9 +41025,15 @@
         </member>
         <member name="M:SharpDX.Multimedia.WaveFormat.GetHashCode">
             <summary>
-            Provides a Hashcode for this WaveFormat
+            Provides a hash code for this WaveFormat
             </summary>
-            <returns>A hashcode</returns>
+            <returns>A hash code</returns>
+        </member>
+        <member name="M:SharpDX.Multimedia.WaveFormat.Serialize(SharpDX.Serialization.BinarySerializer)">
+            <summary>
+            Reads or writes data from/to the given binary serializer.
+            </summary>
+            <param name="serializer">The binary serializer.</param>
         </member>
         <member name="P:SharpDX.Multimedia.WaveFormat.Encoding">
             <summary>
@@ -41142,7 +41279,7 @@
         </member>
         <member name="P:SharpDX.Multimedia.RiffChunk.Size">
             <summary>
-            Gets the size of the data enbedded by this chunk.
+            Gets the size of the data embedded by this chunk.
             </summary>
         </member>
         <member name="P:SharpDX.Multimedia.RiffChunk.DataPosition">
@@ -41321,7 +41458,7 @@
         </member>
         <member name="T:SharpDX.TimerTick">
             <summary>
-            This provides timing information similar to <see cref="T:System.Diagnostics.Stopwatch"/> but an update occuring only on a <see cref="M:SharpDX.TimerTick.Tick"/> method.
+            This provides timing information similar to <see cref="T:System.Diagnostics.Stopwatch"/> but an update occurring only on a <see cref="M:SharpDX.TimerTick.Tick"/> method.
             </summary>
         </member>
         <member name="M:SharpDX.TimerTick.#ctor">
@@ -41361,7 +41498,7 @@
         </member>
         <member name="P:SharpDX.TimerTick.TotalTime">
             <summary>
-            Gets the total time elasped since the last reset or when this timer was created.
+            Gets the total time elapsed since the last reset or when this timer was created.
             </summary>
         </member>
         <member name="P:SharpDX.TimerTick.ElapsedAdjustedTime">
@@ -41650,7 +41787,7 @@
             Determines if there is an intersection between the current object and a triangle.
             </summary>
             <param name="vertex1">The first vertex of the triangle to test.</param>
-            <param name="vertex2">The second vertex of the triagnle to test.</param>
+            <param name="vertex2">The second vertex of the triangle to test.</param>
             <param name="vertex3">The third vertex of the triangle to test.</param>
             <returns>Whether the two objects intersected.</returns>
         </member>
@@ -42084,7 +42221,7 @@
             </summary>
             <param name="left">The first quaternion to modulate.</param>
             <param name="right">The second quaternion to modulate.</param>
-            <param name="result">When the moethod completes, contains the modulated quaternion.</param>
+            <param name="result">When the method completes, contains the modulated quaternion.</param>
         </member>
         <member name="M:SharpDX.Quaternion.Multiply(SharpDX.Quaternion,SharpDX.Quaternion)">
             <summary>
@@ -42316,7 +42453,7 @@
             </summary>
             <param name="value1">First source quaternion.</param>
             <param name="value2">Second source quaternion.</param>
-            <param name="value3">Thrid source quaternion.</param>
+            <param name="value3">Third source quaternion.</param>
             <param name="value4">Fourth source quaternion.</param>
             <param name="amount">Value between 0 and 1 indicating the weight of interpolation.</param>
             <param name="result">When the method completes, contains the spherical quadrangle interpolation of the quaternions.</param>
@@ -42327,7 +42464,7 @@
             </summary>
             <param name="value1">First source quaternion.</param>
             <param name="value2">Second source quaternion.</param>
-            <param name="value3">Thrid source quaternion.</param>
+            <param name="value3">Third source quaternion.</param>
             <param name="value4">Fourth source quaternion.</param>
             <param name="amount">Value between 0 and 1 indicating the weight of interpolation.</param>
             <returns>The spherical quadrangle interpolation of the quaternions.</returns>
@@ -42781,21 +42918,6 @@
             <param name="width">The width.</param>
             <param name="height">The height.</param>
         </member>
-        <member name="M:SharpDX.Rectangle.Contains(System.Single,System.Single)">
-            <summary>
-            Checks, if specified point is inside <see cref="T:SharpDX.Rectangle"/>.
-            </summary>
-            <param name="x">X point coordinate.</param>
-            <param name="y">Y point coordinate.</param>
-            <returns><c>true</c> if point is inside <see cref="T:SharpDX.Rectangle"/>, otherwise <c>false</c>.</returns>
-        </member>
-        <member name="M:SharpDX.Rectangle.Contains(SharpDX.Vector2)">
-            <summary>
-            Checks, if specified <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.Rectangle"/>. 
-            </summary> 
-            <param name="vector2D">Coordinate <see cref="T:SharpDX.Vector2"/>.</param>
-            <returns><c>true</c> if <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.Rectangle"/>, otherwise <c>false</c>.</returns>
-        </member>
         <member name="M:SharpDX.Rectangle.Offset(SharpDX.Point)">
             <summary>Changes the position of the Rectangle.</summary>
             <param name="amount">The values to adjust the position of the Rectangle by.</param>
@@ -42832,6 +42954,21 @@
             <summary>Determines whether this Rectangle entirely contains a specified Rectangle.</summary>
             <param name="value">The Rectangle to evaluate.</param>
             <param name="result">[OutAttribute] On exit, is true if this Rectangle entirely contains the specified Rectangle, or false if not.</param>
+        </member>
+        <member name="M:SharpDX.Rectangle.Contains(System.Single,System.Single)">
+            <summary>
+            Checks, if specified point is inside <see cref="T:SharpDX.Rectangle"/>.
+            </summary>
+            <param name="x">X point coordinate.</param>
+            <param name="y">Y point coordinate.</param>
+            <returns><c>true</c> if point is inside <see cref="T:SharpDX.Rectangle"/>, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:SharpDX.Rectangle.Contains(SharpDX.Vector2)">
+            <summary>
+            Checks, if specified <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.Rectangle"/>. 
+            </summary> 
+            <param name="vector2D">Coordinate <see cref="T:SharpDX.Vector2"/>.</param>
+            <returns><c>true</c> if <see cref="T:SharpDX.Vector2"/> is inside <see cref="T:SharpDX.Rectangle"/>, otherwise <c>false</c>.</returns>
         </member>
         <member name="M:SharpDX.Rectangle.Intersects(SharpDX.Rectangle)">
             <summary>Determines whether a specified Rectangle intersects with this Rectangle.</summary>
@@ -42976,6 +43113,36 @@
         <member name="P:SharpDX.Rectangle.IsEmpty">
             <summary>Gets a value that indicates whether the Rectangle is empty.</summary>
         </member>
+        <member name="P:SharpDX.Rectangle.Size">
+            <summary>
+            Gets or sets the size of the rectangle.
+            </summary>
+            <value>The size of the rectangle.</value>
+        </member>
+        <member name="P:SharpDX.Rectangle.TopLeft">
+            <summary>
+            Gets the position of the top-left corner of the rectangle.
+            </summary>
+            <value>The top-left corner of the rectangle.</value>
+        </member>
+        <member name="P:SharpDX.Rectangle.TopRight">
+            <summary>
+            Gets the position of the top-right corner of the rectangle.
+            </summary>
+            <value>The top-right corner of the rectangle.</value>
+        </member>
+        <member name="P:SharpDX.Rectangle.BottomLeft">
+            <summary>
+            Gets the position of the bottom-left corner of the rectangle.
+            </summary>
+            <value>The bottom-left corner of the rectangle.</value>
+        </member>
+        <member name="P:SharpDX.Rectangle.BottomRight">
+            <summary>
+            Gets the position of the bottom-right corner of the rectangle.
+            </summary>
+            <value>The bottom-right corner of the rectangle.</value>
+        </member>
         <member name="T:SharpDX.RectangleF">
             <summary>
             Define a RectangleF. This structure is slightly different from System.Drawing.RectangleF as It is 
@@ -42997,13 +43164,37 @@
             <param name="width">The width.</param>
             <param name="height">The height.</param>
         </member>
-        <member name="M:SharpDX.RectangleF.Contains(System.Int32,System.Int32)">
-            <summary>
-            Checks, if specified point is inside <see cref="T:SharpDX.RectangleF"/>.
-            </summary>
-            <param name="x">X point coordinate.</param>
-            <param name="y">Y point coordinate.</param>
-            <returns><c>true</c> if point is inside <see cref="T:SharpDX.RectangleF"/>, otherwise <c>false</c>.</returns>
+        <member name="M:SharpDX.RectangleF.Offset(SharpDX.Point)">
+            <summary>Changes the position of the Rectangle.</summary>
+            <param name="amount">The values to adjust the position of the Rectangle by.</param>
+        </member>
+        <member name="M:SharpDX.RectangleF.Offset(SharpDX.Vector2)">
+            <summary>Changes the position of the Rectangle.</summary>
+            <param name="amount">The values to adjust the position of the Rectangle by.</param>
+        </member>
+        <member name="M:SharpDX.RectangleF.Offset(System.Single,System.Single)">
+            <summary>Changes the position of the Rectangle.</summary>
+            <param name="offsetX">Change in the x-position.</param>
+            <param name="offsetY">Change in the y-position.</param>
+        </member>
+        <member name="M:SharpDX.RectangleF.Inflate(System.Single,System.Single)">
+            <summary>Pushes the edges of the Rectangle out by the horizontal and vertical values specified.</summary>
+            <param name="horizontalAmount">Value to push the sides out by.</param>
+            <param name="verticalAmount">Value to push the top and bottom out by.</param>
+        </member>
+        <member name="M:SharpDX.RectangleF.Contains(SharpDX.Vector2@,System.Boolean@)">
+            <summary>Determines whether this Rectangle contains a specified Point.</summary>
+            <param name="value">The Point to evaluate.</param>
+            <param name="result">[OutAttribute] true if the specified Point is contained within this Rectangle; false otherwise.</param>
+        </member>
+        <member name="M:SharpDX.RectangleF.Contains(SharpDX.Rectangle)">
+            <summary>Determines whether this Rectangle entirely contains a specified Rectangle.</summary>
+            <param name="value">The Rectangle to evaluate.</param>
+        </member>
+        <member name="M:SharpDX.RectangleF.Contains(SharpDX.RectangleF@,System.Boolean@)">
+            <summary>Determines whether this Rectangle entirely contains a specified Rectangle.</summary>
+            <param name="value">The Rectangle to evaluate.</param>
+            <param name="result">[OutAttribute] On exit, is true if this Rectangle entirely contains the specified Rectangle, or false if not.</param>
         </member>
         <member name="M:SharpDX.RectangleF.Contains(System.Single,System.Single)">
             <summary>
@@ -43026,34 +43217,6 @@
             </summary>
             <param name="point">Coordinate <see cref="T:SharpDX.Point"/>.</param> 
             <returns><c>true</c> if <see cref="T:SharpDX.Point"/> is inside <see cref="T:SharpDX.RectangleF"/>, otherwise <c>false</c>.</returns>
-        </member>
-        <member name="M:SharpDX.RectangleF.Offset(SharpDX.Point)">
-            <summary>Changes the position of the Rectangle.</summary>
-            <param name="amount">The values to adjust the position of the Rectangle by.</param>
-        </member>
-        <member name="M:SharpDX.RectangleF.Offset(System.Int32,System.Int32)">
-            <summary>Changes the position of the Rectangle.</summary>
-            <param name="offsetX">Change in the x-position.</param>
-            <param name="offsetY">Change in the y-position.</param>
-        </member>
-        <member name="M:SharpDX.RectangleF.Inflate(System.Int32,System.Int32)">
-            <summary>Pushes the edges of the Rectangle out by the horizontal and vertical values specified.</summary>
-            <param name="horizontalAmount">Value to push the sides out by.</param>
-            <param name="verticalAmount">Value to push the top and bottom out by.</param>
-        </member>
-        <member name="M:SharpDX.RectangleF.Contains(SharpDX.Vector2@,System.Boolean@)">
-            <summary>Determines whether this Rectangle contains a specified Point.</summary>
-            <param name="value">The Point to evaluate.</param>
-            <param name="result">[OutAttribute] true if the specified Point is contained within this Rectangle; false otherwise.</param>
-        </member>
-        <member name="M:SharpDX.RectangleF.Contains(SharpDX.Rectangle)">
-            <summary>Determines whether this Rectangle entirely contains a specified Rectangle.</summary>
-            <param name="value">The Rectangle to evaluate.</param>
-        </member>
-        <member name="M:SharpDX.RectangleF.Contains(SharpDX.RectangleF@,System.Boolean@)">
-            <summary>Determines whether this Rectangle entirely contains a specified Rectangle.</summary>
-            <param name="value">The Rectangle to evaluate.</param>
-            <param name="result">[OutAttribute] On exit, is true if this Rectangle entirely contains the specified Rectangle, or false if not.</param>
         </member>
         <member name="M:SharpDX.RectangleF.Intersects(SharpDX.RectangleF)">
             <summary>Determines whether a specified Rectangle intersects with this Rectangle.</summary>
@@ -43192,6 +43355,36 @@
         <member name="P:SharpDX.RectangleF.IsEmpty">
             <summary>Gets a value that indicates whether the Rectangle is empty.</summary>
         </member>
+        <member name="P:SharpDX.RectangleF.Size">
+            <summary>
+            Gets or sets the size of the rectangle.
+            </summary>
+            <value>The size of the rectangle.</value>
+        </member>
+        <member name="P:SharpDX.RectangleF.TopLeft">
+            <summary>
+            Gets the position of the top-left corner of the rectangle.
+            </summary>
+            <value>The top-left corner of the rectangle.</value>
+        </member>
+        <member name="P:SharpDX.RectangleF.TopRight">
+            <summary>
+            Gets the position of the top-right corner of the rectangle.
+            </summary>
+            <value>The top-right corner of the rectangle.</value>
+        </member>
+        <member name="P:SharpDX.RectangleF.BottomLeft">
+            <summary>
+            Gets the position of the bottom-left corner of the rectangle.
+            </summary>
+            <value>The bottom-left corner of the rectangle.</value>
+        </member>
+        <member name="P:SharpDX.RectangleF.BottomRight">
+            <summary>
+            Gets the position of the bottom-right corner of the rectangle.
+            </summary>
+            <value>The bottom-right corner of the rectangle.</value>
+        </member>
         <member name="T:SharpDX.Result">
             <summary>
             Result structure for COM methods.
@@ -43239,10 +43432,12 @@
         </member>
         <member name="M:SharpDX.Result.Equals(SharpDX.Result)">
             <summary>
-            Equalses the specified other.
+            Indicates whether the current object is equal to another object of the same type.
             </summary>
-            <param name="other">The other.</param>
-            <returns></returns>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
+            </returns>
         </member>
         <member name="M:SharpDX.Result.Equals(System.Object)">
             <summary>
@@ -43311,61 +43506,85 @@
             <summary>
             Result code Ok
             </summary>
+            <unmanaged>S_OK</unmanaged>
         </member>
         <member name="F:SharpDX.Result.False">
             <summary>
             Result code False
             </summary>
+            <unmanaged>S_FALSE</unmanaged>
         </member>
-        <member name="F:SharpDX.Result.Abord">
+        <member name="F:SharpDX.Result.Abort">
             <summary>
-            Result code Abord
+            Result code Abort
             </summary>
+            <unmanaged>E_ABORT</unmanaged>
         </member>
         <member name="F:SharpDX.Result.AccessDenied">
             <summary>
             Result code AccessDenied
             </summary>
+            <unmanaged>E_ACCESSDENIED</unmanaged>
         </member>
         <member name="F:SharpDX.Result.Fail">
             <summary>
             Result code Fail
             </summary>
+            <unmanaged>E_FAIL</unmanaged>
         </member>
         <member name="F:SharpDX.Result.Handle">
             <summary>
-            Resuld code Handle
+            Result code Handle
             </summary>
+            <unmanaged>E_HANDLE</unmanaged>
         </member>
         <member name="F:SharpDX.Result.InvalidArg">
             <summary>
             Result code invalid argument
             </summary>
+            <unmanaged>E_INVALIDARG</unmanaged>
         </member>
         <member name="F:SharpDX.Result.NoInterface">
             <summary>
             Result code no interface
             </summary>
+            <unmanaged>E_NOINTERFACE</unmanaged>
         </member>
         <member name="F:SharpDX.Result.NotImplemented">
             <summary>
             Result code not implemented
             </summary>
+            <unmanaged>E_NOTIMPL</unmanaged>
         </member>
         <member name="F:SharpDX.Result.OutOfMemory">
             <summary>
             Result code out of memory
             </summary>
+            <unmanaged>E_OUTOFMEMORY</unmanaged>
         </member>
         <member name="F:SharpDX.Result.InvalidPointer">
             <summary>
             Result code Invalid pointer
             </summary>
+            <unmanaged>E_POINTER</unmanaged>
         </member>
         <member name="F:SharpDX.Result.UnexpectedFailure">
             <summary>
             Unexpected failure
             </summary>
+            <unmanaged>E_UNEXPECTED</unmanaged>
+        </member>
+        <member name="F:SharpDX.Result.WaitAbandoned">
+            <summary>
+            Result of a wait abandonned.
+            </summary>
+            <unmanaged>WAIT_ABANDONED</unmanaged>
+        </member>
+        <member name="F:SharpDX.Result.WaitTimeout">
+            <summary>
+            Result of a wait timeout.
+            </summary>
+            <unmanaged>WAIT_TIMEOUT</unmanaged>
         </member>
         <member name="P:SharpDX.Result.Code">
             <summary>
@@ -43470,7 +43689,7 @@
             <summary>
               Assert a size (return it unchanged).
             </summary>
-            <param name = "value">The size to assert (unchange).</param>
+            <param name = "value">The size to assert (unchanged).</param>
             <returns>The asserted (unchanged) size.</returns>
         </member>
         <member name="M:SharpDX.PointerSize.op_Subtraction(SharpDX.PointerSize,SharpDX.PointerSize)">
@@ -43801,7 +44020,7 @@
         </member>
         <member name="M:SharpDX.Utilities.AllocateClearedMemory(System.Int32,System.Byte,System.Int32)">
             <summary>
-            Allocate an aligned memory buffer and clear it with a specified value (0 by defaault).
+            Allocate an aligned memory buffer and clear it with a specified value (0 by default).
             </summary>
             <param name="sizeInBytes">Size of the buffer to allocate.</param>
             <param name="clearValue">Default value used to clear the buffer.</param>
@@ -43832,7 +44051,7 @@
             <summary>
             Converts a pointer to a null-terminating string up to maxLength characters to a .Net string.
             </summary>
-            <param name="pointer">The pointer to an ansi null string.</param>
+            <param name="pointer">The pointer to an ANSI null string.</param>
             <param name="maxLength">Maximum length of the string.</param>
             <returns>The converted string.</returns>
         </member>
@@ -43840,7 +44059,7 @@
             <summary>
             Converts a pointer to a null-terminating string up to maxLength characters to a .Net string.
             </summary>
-            <param name="pointer">The pointer to an unicode null string.</param>
+            <param name="pointer">The pointer to an Unicode null string.</param>
             <param name="maxLength">Maximum length of the string.</param>
             <returns>The converted string.</returns>
         </member>
@@ -43854,6 +44073,13 @@
         <member name="M:SharpDX.Utilities.StringToHGlobalUni(System.String)">
             <summary>
             Copies the contents of a managed String into unmanaged memory.
+            </summary>
+            <param name="s">A managed string to be copied.</param> 
+            <returns>The address, in unmanaged memory, to where s was copied, or IntPtr.Zero if s is null.</returns>
+        </member>
+        <member name="M:SharpDX.Utilities.StringToCoTaskMemUni(System.String)">
+            <summary>
+            Copies the contents of a managed String into unmanaged memory using <see cref="M:System.Runtime.InteropServices.Marshal.AllocCoTaskMem(System.Int32)"/>
             </summary>
             <param name="s">A managed string to be copied.</param> 
             <returns>The address, in unmanaged memory, to where s was copied, or IntPtr.Zero if s is null.</returns>
@@ -43880,23 +44106,23 @@
             </summary>
             <param name="separator">The separator.</param>
             <param name="array">The array.</param>
-            <returns>A string with array elements serparated by the seperator.</returns>
+            <returns>A string with array elements separated by the separator.</returns>
         </member>
         <member name="M:SharpDX.Utilities.Join(System.String,System.Collections.IEnumerable)">
             <summary>
-            String helper join method to display an enumrable of object as a single string.
+            String helper join method to display an enumerable of object as a single string.
             </summary>
             <param name="separator">The separator.</param>
             <param name="elements">The enumerable.</param>
-            <returns>A string with array elements serparated by the seperator.</returns>
+            <returns>A string with array elements separated by the separator.</returns>
         </member>
         <member name="M:SharpDX.Utilities.Join(System.String,System.Collections.IEnumerator)">
             <summary>
-            String helper join method to display an enumrable of object as a single string.
+            String helper join method to display an enumerable of object as a single string.
             </summary>
             <param name="separator">The separator.</param>
             <param name="elements">The enumerable.</param>
-            <returns>A string with array elements serparated by the seperator.</returns>
+            <returns>A string with array elements separated by the separator.</returns>
         </member>
         <member name="M:SharpDX.Utilities.BlobToString(SharpDX.Direct3D.Blob)">
             <summary>
@@ -43935,7 +44161,7 @@
             </summary>
             <param name="left">A "from" enumerator.</param>
             <param name="right">A "to" enumerator.</param>
-            <returns><c>true</c> if lists are identical, <c>false</c> otherwis.</returns>
+            <returns><c>true</c> if lists are identical, <c>false</c> otherwise.</returns>
         </member>
         <member name="M:SharpDX.Utilities.Compare(System.Collections.IEnumerator,System.Collections.IEnumerator)">
             <summary>
@@ -43950,8 +44176,8 @@
             Compares two collection, element by elements.
             </summary>
             <param name="left">The collection to compare from.</param>
-            <param name="right">The colllection to compare to.</param>
-            <returns><c>true</c> if lists are identical (but no necessarely of the same time); otherwise , <c>false</c>.</returns>
+            <param name="right">The collection to compare to.</param>
+            <returns><c>true</c> if lists are identical (but not necessarily of the same time); otherwise , <c>false</c>.</returns>
         </member>
         <member name="M:SharpDX.Utilities.GetCustomAttribute``1(System.Reflection.MemberInfo,System.Boolean)">
             <summary>
@@ -43992,11 +44218,11 @@
         </member>
         <member name="M:SharpDX.Utilities.IsValueType(System.Type)">
             <summary>
-            Determines whether the specified type to test is a valuetype.
+            Determines whether the specified type to test is a value type.
             </summary>
             <param name="typeToTest">The type to test.</param>
             <returns>
-            <c>true</c> if the specified type to test is a valuetype; otherwise, <c>false</c>.
+            <c>true</c> if the specified type to test is a value type; otherwise, <c>false</c>.
             </returns>
         </member>
         <member name="M:SharpDX.Utilities.BuildPropertyGetter``1(System.Type,System.Reflection.PropertyInfo)">
@@ -44025,7 +44251,7 @@
         </member>
         <member name="M:SharpDX.Utilities.FindExplicitConverstion(System.Type,System.Type)">
             <summary>
-            Finds an explicit converstion between a source type and a target type.
+            Finds an explicit conversion between a source type and a target type.
             </summary>
             <param name="sourceType">Type of the source.</param>
             <param name="targetType">Type of the target.</param>
@@ -44036,12 +44262,12 @@
             Loads a native library.
             </summary>
             <param name="dllName">Name of the DLL.</param>
-            <exception cref="T:System.DllNotFoundException">If dll was not found.</exception>
+            <exception cref="T:System.DllNotFoundException">If DLL was not found.</exception>
             <returns>Handle to the module.</returns>
         </member>
         <member name="M:SharpDX.Utilities.GetProcAddress(System.IntPtr,System.String)">
             <summary>
-            Gets the proc address of a dll.
+            Gets the proc address of a DLL.
             </summary>
             <param name="handle">The handle.</param>
             <param name="dllFunctionToImport">The DLL function to import.</param>
@@ -44057,7 +44283,7 @@
         </member>
         <member name="M:SharpDX.Utilities.Dispose``1(``0@)">
             <summary>
-            Safely dispose a referencem if not null, and set it to null after dispose.
+            Safely dispose a reference if not null, and set it to null after dispose.
             </summary>
             <typeparam name="T">The type of COM interface to dispose.</typeparam>
             <param name="comObject">Object to dispose.</param>
@@ -44447,8 +44673,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <param name="result">When the method completes, contains the linear interpolation of the two vectors.</param>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -44461,8 +44685,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <returns>The linear interpolation of the two vectors.</returns>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -44679,8 +44901,8 @@
             <remarks>
             A coordinate transform performs the transformation with the assumption that the w component
             is one. The four dimensional vector obtained from the transformation operation has each
-            component in the vector divided by the w component. This forces the wcomponent to be one and
-            therefore makes the vector homogeneous. The homogeneous vector is often prefered when working
+            component in the vector divided by the w component. This forces the w component to be one and
+            therefore makes the vector homogeneous. The homogeneous vector is often preferred when working
             with coordinates as the w component can safely be ignored.
             </remarks>
         </member>
@@ -44694,8 +44916,8 @@
             <remarks>
             A coordinate transform performs the transformation with the assumption that the w component
             is one. The four dimensional vector obtained from the transformation operation has each
-            component in the vector divided by the w component. This forces the wcomponent to be one and
-            therefore makes the vector homogeneous. The homogeneous vector is often prefered when working
+            component in the vector divided by the w component. This forces the w component to be one and
+            therefore makes the vector homogeneous. The homogeneous vector is often preferred when working
             with coordinates as the w component can safely be ignored.
             </remarks>
         </member>
@@ -44703,7 +44925,7 @@
             <summary>
             Performs a coordinate transformation on an array of vectors using the given <see cref="T:SharpDX.Matrix"/>.
             </summary>
-            <param name="source">The array of coordinate vectors to trasnform.</param>
+            <param name="source">The array of coordinate vectors to transform.</param>
             <param name="transform">The transformation <see cref="T:SharpDX.Matrix"/>.</param>
             <param name="destination">The array for which the transformed vectors are stored.
             This array may be the same array as <paramref name="source"/>.</param>
@@ -44712,8 +44934,8 @@
             <remarks>
             A coordinate transform performs the transformation with the assumption that the w component
             is one. The four dimensional vector obtained from the transformation operation has each
-            component in the vector divided by the w component. This forces the wcomponent to be one and
-            therefore makes the vector homogeneous. The homogeneous vector is often prefered when working
+            component in the vector divided by the w component. This forces the w component to be one and
+            therefore makes the vector homogeneous. The homogeneous vector is often preferred when working
             with coordinates as the w component can safely be ignored.
             </remarks>
         </member>
@@ -44726,9 +44948,9 @@
             <param name="result">When the method completes, contains the transformed normal.</param>
             <remarks>
             A normal transform performs the transformation with the assumption that the w component
-            is zero. This causes the fourth row and fourth collumn of the matrix to be unused. The
+            is zero. This causes the fourth row and fourth column of the matrix to be unused. The
             end result is a vector that is not translated, but all other transformation properties
-            apply. This is often prefered for normal vectors as normals purely represent direction
+            apply. This is often preferred for normal vectors as normals purely represent direction
             rather than location because normal vectors should not be translated.
             </remarks>
         </member>
@@ -44741,9 +44963,9 @@
             <returns>The transformed normal.</returns>
             <remarks>
             A normal transform performs the transformation with the assumption that the w component
-            is zero. This causes the fourth row and fourth collumn of the matrix to be unused. The
+            is zero. This causes the fourth row and fourth column of the matrix to be unused. The
             end result is a vector that is not translated, but all other transformation properties
-            apply. This is often prefered for normal vectors as normals purely represent direction
+            apply. This is often preferred for normal vectors as normals purely represent direction
             rather than location because normal vectors should not be translated.
             </remarks>
         </member>
@@ -44759,9 +44981,9 @@
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="destination"/> is shorter in length than <paramref name="source"/>.</exception>
             <remarks>
             A normal transform performs the transformation with the assumption that the w component
-            is zero. This causes the fourth row and fourth collumn of the matrix to be unused. The
+            is zero. This causes the fourth row and fourth column of the matrix to be unused. The
             end result is a vector that is not translated, but all other transformation properties
-            apply. This is often prefered for normal vectors as normals purely represent direction
+            apply. This is often preferred for normal vectors as normals purely represent direction
             rather than location because normal vectors should not be translated.
             </remarks>
         </member>
@@ -44785,7 +45007,7 @@
             <summary>
             Assert a vector (return it unchanged).
             </summary>
-            <param name="value">The vector to assert (unchange).</param>
+            <param name="value">The vector to assert (unchanged).</param>
             <returns>The asserted (unchanged) vector.</returns>
         </member>
         <member name="M:SharpDX.Vector2.op_Subtraction(SharpDX.Vector2,SharpDX.Vector2)">
@@ -45355,8 +45577,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <param name="result">When the method completes, contains the linear interpolation of the two vectors.</param>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -45369,8 +45589,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <returns>The linear interpolation of the two vectors.</returns>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -45643,8 +45861,8 @@
             <remarks>
             A coordinate transform performs the transformation with the assumption that the w component
             is one. The four dimensional vector obtained from the transformation operation has each
-            component in the vector divided by the w component. This forces the wcomponent to be one and
-            therefore makes the vector homogeneous. The homogeneous vector is often prefered when working
+            component in the vector divided by the w component. This forces the w component to be one and
+            therefore makes the vector homogeneous. The homogeneous vector is often preferred when working
             with coordinates as the w component can safely be ignored.
             </remarks>
         </member>
@@ -45658,8 +45876,8 @@
             <remarks>
             A coordinate transform performs the transformation with the assumption that the w component
             is one. The four dimensional vector obtained from the transformation operation has each
-            component in the vector divided by the w component. This forces the wcomponent to be one and
-            therefore makes the vector homogeneous. The homogeneous vector is often prefered when working
+            component in the vector divided by the w component. This forces the w component to be one and
+            therefore makes the vector homogeneous. The homogeneous vector is often preferred when working
             with coordinates as the w component can safely be ignored.
             </remarks>
         </member>
@@ -45667,7 +45885,7 @@
             <summary>
             Performs a coordinate transformation on an array of vectors using the given <see cref="T:SharpDX.Matrix"/>.
             </summary>
-            <param name="source">The array of coordinate vectors to trasnform.</param>
+            <param name="source">The array of coordinate vectors to transform.</param>
             <param name="transform">The transformation <see cref="T:SharpDX.Matrix"/>.</param>
             <param name="destination">The array for which the transformed vectors are stored.
             This array may be the same array as <paramref name="source"/>.</param>
@@ -45676,8 +45894,8 @@
             <remarks>
             A coordinate transform performs the transformation with the assumption that the w component
             is one. The four dimensional vector obtained from the transformation operation has each
-            component in the vector divided by the w component. This forces the wcomponent to be one and
-            therefore makes the vector homogeneous. The homogeneous vector is often prefered when working
+            component in the vector divided by the w component. This forces the w component to be one and
+            therefore makes the vector homogeneous. The homogeneous vector is often preferred when working
             with coordinates as the w component can safely be ignored.
             </remarks>
         </member>
@@ -45690,9 +45908,9 @@
             <param name="result">When the method completes, contains the transformed normal.</param>
             <remarks>
             A normal transform performs the transformation with the assumption that the w component
-            is zero. This causes the fourth row and fourth collumn of the matrix to be unused. The
+            is zero. This causes the fourth row and fourth column of the matrix to be unused. The
             end result is a vector that is not translated, but all other transformation properties
-            apply. This is often prefered for normal vectors as normals purely represent direction
+            apply. This is often preferred for normal vectors as normals purely represent direction
             rather than location because normal vectors should not be translated.
             </remarks>
         </member>
@@ -45705,9 +45923,9 @@
             <returns>The transformed normal.</returns>
             <remarks>
             A normal transform performs the transformation with the assumption that the w component
-            is zero. This causes the fourth row and fourth collumn of the matrix to be unused. The
+            is zero. This causes the fourth row and fourth column of the matrix to be unused. The
             end result is a vector that is not translated, but all other transformation properties
-            apply. This is often prefered for normal vectors as normals purely represent direction
+            apply. This is often preferred for normal vectors as normals purely represent direction
             rather than location because normal vectors should not be translated.
             </remarks>
         </member>
@@ -45723,9 +45941,9 @@
             <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="destination"/> is shorter in length than <paramref name="source"/>.</exception>
             <remarks>
             A normal transform performs the transformation with the assumption that the w component
-            is zero. This causes the fourth row and fourth collumn of the matrix to be unused. The
+            is zero. This causes the fourth row and fourth column of the matrix to be unused. The
             end result is a vector that is not translated, but all other transformation properties
-            apply. This is often prefered for normal vectors as normals purely represent direction
+            apply. This is often preferred for normal vectors as normals purely represent direction
             rather than location because normal vectors should not be translated.
             </remarks>
         </member>
@@ -45749,7 +45967,7 @@
             <summary>
             Assert a vector (return it unchanged).
             </summary>
-            <param name="value">The vector to assert (unchange).</param>
+            <param name="value">The vector to assert (unchanged).</param>
             <returns>The asserted (unchanged) vector.</returns>
         </member>
         <member name="M:SharpDX.Vector3.op_Subtraction(SharpDX.Vector3,SharpDX.Vector3)">
@@ -46264,8 +46482,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <param name="result">When the method completes, contains the linear interpolation of the two vectors.</param>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -46278,8 +46494,6 @@
             <param name="amount">Value between 0 and 1 indicating the weight of <paramref name="end"/>.</param>
             <returns>The linear interpolation of the two vectors.</returns>
             <remarks>
-            This method performs the linear interpolation based on the following formula.
-            <code>start + (end - start) * amount</code>
             Passing <paramref name="amount"/> a value of 0 will cause <paramref name="start"/> to be returned; a value of 1 will cause <paramref name="end"/> to be returned. 
             </remarks>
         </member>
@@ -46503,7 +46717,7 @@
             <summary>
             Assert a vector (return it unchanged).
             </summary>
-            <param name="value">The vector to assert (unchange).</param>
+            <param name="value">The vector to assert (unchanged).</param>
             <returns>The asserted (unchanged) vector.</returns>
         </member>
         <member name="M:SharpDX.Vector4.op_Subtraction(SharpDX.Vector4,SharpDX.Vector4)">

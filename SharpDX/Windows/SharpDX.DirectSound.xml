@@ -1131,17 +1131,17 @@
         </member>
         <member name="F:SharpDX.DirectSound.Compressor.ReleaseDefault">
             <summary>
-            Default speed at which compression is stopped after input drops below Threshold, in miliseconds. The default value is 200 ms.
+            Default speed at which compression is stopped after input drops below Threshold, in milliseconds. The default value is 200 ms.
             </summary>
         </member>
         <member name="F:SharpDX.DirectSound.Compressor.ReleaseMax">
             <summary>
-            Maximum speed at which compression is stopped after input drops below Threshold, in miliseconds. 
+            Maximum speed at which compression is stopped after input drops below Threshold, in milliseconds. 
             </summary>
         </member>
         <member name="F:SharpDX.DirectSound.Compressor.ReleaseMin">
             <summary>
-            Minimum speed at which compression is stopped after input drops below Threshold, in miliseconds. 
+            Minimum speed at which compression is stopped after input drops below Threshold, in milliseconds. 
             </summary>
         </member>
         <member name="F:SharpDX.DirectSound.Compressor.ThresholdDefault">
@@ -2289,9 +2289,9 @@
         </member>
         <member name="P:SharpDX.DirectSound.EnumDelegateCallback.Informations">
             <summary>
-            Gets or sets the informations.
+            Gets or sets the device informations.
             </summary>
-            <value>The informations.</value>
+            <value>The device informations.</value>
         </member>
         <member name="T:SharpDX.DirectSound.Flanger">
             <summary>	
