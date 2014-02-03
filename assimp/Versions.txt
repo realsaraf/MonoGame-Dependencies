@@ -1,5 +1,6 @@
 assimp from https://github.com/assimp/assimp
-commit de7b1aaa50a117d0e62efeea6ba72f0f593c2d9b
+commit c0871b35c0ab7091f68c794eb954493722522d4c 
 
 assimp-net from http://code.google.com/p/assimp-net/
-revision 74
+revision 101
+
